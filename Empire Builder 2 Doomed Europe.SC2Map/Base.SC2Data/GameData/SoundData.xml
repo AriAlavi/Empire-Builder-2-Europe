@@ -1,0 +1,1830 @@
+<?xml version="1.0" encoding="us-ascii"?>
+<Catalog>
+    <CSound id="101" parent="MUSIC">
+        <AssetArray File="Military\Music\10-2.ogg" Volume="6.000000,6.000000" FacialGroup=""/>
+    </CSound>
+    <CSound id="1012" parent="MUSIC">
+        <AssetArray File="Military\Music\10-2.ogg" Volume="6.000000,6.000000" FacialGroup=""/>
+    </CSound>
+    <CSound id="10122" parent="MUSIC">
+        <AssetArray File="Military\Music\10-3.ogg" Volume="6.000000,6.000000" FacialGroup=""/>
+    </CSound>
+    <CSound id="11" parent="MUSIC">
+        <AssetArray File="Military\Music\1-1.ogg" Volume="6.000000,6.000000" FacialGroup=""/>
+        <Volume value="6.000000,6.000000"/>
+        <LocalVolumeAdjustment value="6.000000,6.000000"/>
+    </CSound>
+    <CSound id="111" parent="MUSIC">
+        <AssetArray File="Military\Music\11-1.ogg" Volume="6.000000,6.000000" FacialGroup=""/>
+    </CSound>
+    <CSound id="1112" parent="MUSIC">
+        <AssetArray File="Military\Music\11-3.ogg" Volume="6.000000,6.000000" FacialGroup=""/>
+    </CSound>
+    <CSound id="11122" parent="MUSIC">
+        <AssetArray File="Military\Music\11-3.ogg" Volume="6.000000,6.000000" FacialGroup=""/>
+    </CSound>
+    <CSound id="112" parent="MUSIC">
+        <AssetArray File="Military\Music\1-2.ogg" Volume="6.000000,6.000000" FacialGroup=""/>
+        <Volume value="6.000000,6.000000"/>
+        <LocalVolumeAdjustment value="6.000000,6.000000"/>
+    </CSound>
+    <CSound id="1122" parent="MUSIC">
+        <AssetArray File="Military\Music\1-3.ogg" Volume="6.000000,6.000000" FacialGroup=""/>
+        <Volume value="6.000000,6.000000"/>
+        <LocalVolumeAdjustment value="6.000000,6.000000"/>
+    </CSound>
+    <CSound id="121" parent="MUSIC">
+        <AssetArray File="Military\Music\12-1.ogg" Volume="6.000000,6.000000" FacialGroup=""/>
+    </CSound>
+    <CSound id="1212" parent="MUSIC">
+        <AssetArray File="Military\Music\12-2.ogg" Volume="6.000000,6.000000" FacialGroup=""/>
+    </CSound>
+    <CSound id="12122" parent="MUSIC">
+        <AssetArray File="Military\Music\12-3.ogg" Volume="6.000000,6.000000" FacialGroup=""/>
+    </CSound>
+    <CSound id="131" parent="MUSIC">
+        <AssetArray File="Military\Music\13-1.ogg" Volume="6.000000,6.000000" FacialGroup=""/>
+    </CSound>
+    <CSound id="1312" parent="MUSIC">
+        <AssetArray File="Military\Music\13-2.ogg" Volume="6.000000,6.000000" FacialGroup=""/>
+    </CSound>
+    <CSound id="13122" parent="MUSIC">
+        <AssetArray File="Military\Music\13-3.ogg" Volume="6.000000,6.000000" FacialGroup=""/>
+    </CSound>
+    <CSound id="21" parent="MUSIC">
+        <AssetArray File="Military\Music\2-1.ogg" Volume="6.000000,6.000000" FacialGroup=""/>
+    </CSound>
+    <CSound id="212" parent="MUSIC">
+        <AssetArray File="Military\Music\2-2.ogg" Volume="6.000000,6.000000" FacialGroup=""/>
+    </CSound>
+    <CSound id="2122" parent="MUSIC">
+        <AssetArray File="Military\Music\2-3.ogg" Volume="6.000000,6.000000" FacialGroup=""/>
+    </CSound>
+    <CSound id="31" parent="MUSIC">
+        <AssetArray File="Military\Music\3-1.ogg" Volume="6.000000,6.000000" FacialGroup=""/>
+    </CSound>
+    <CSound id="312" parent="MUSIC">
+        <AssetArray File="Military\Music\3-2.ogg" Volume="6.000000,6.000000" FacialGroup=""/>
+    </CSound>
+    <CSound id="3122" parent="MUSIC">
+        <AssetArray File="Military\Music\3-3.ogg" Volume="6.000000,6.000000" FacialGroup=""/>
+    </CSound>
+    <CSound id="41" parent="MUSIC">
+        <AssetArray File="Military\Music\4-1.ogg" Volume="6.000000,6.000000" FacialGroup=""/>
+    </CSound>
+    <CSound id="412" parent="MUSIC">
+        <AssetArray File="Military\Music\4-2.ogg" Volume="6.000000,6.000000" FacialGroup=""/>
+    </CSound>
+    <CSound id="4122" parent="MUSIC">
+        <AssetArray File="Military\Music\4-3.ogg" Volume="6.000000,6.000000" FacialGroup=""/>
+    </CSound>
+    <CSound id="51" parent="MUSIC">
+        <AssetArray File="Military\Music\5-1.ogg" Volume="6.000000,6.000000" FacialGroup=""/>
+    </CSound>
+    <CSound id="512" parent="MUSIC">
+        <AssetArray File="Military\Music\5-2.ogg" Volume="6.000000,6.000000" FacialGroup=""/>
+    </CSound>
+    <CSound id="5122" parent="MUSIC">
+        <AssetArray File="Military\Music\5-3.ogg" Volume="6.000000,6.000000" FacialGroup=""/>
+    </CSound>
+    <CSound id="61" parent="MUSIC">
+        <AssetArray File="Military\Music\6-1.ogg" Volume="6.000000,6.000000" FacialGroup=""/>
+    </CSound>
+    <CSound id="612" parent="MUSIC">
+        <AssetArray File="Military\Music\6-2.ogg" Volume="6.000000,6.000000" FacialGroup=""/>
+    </CSound>
+    <CSound id="6122" parent="MUSIC">
+        <AssetArray File="Military\Music\6-3.ogg" Volume="6.000000,6.000000" FacialGroup=""/>
+    </CSound>
+    <CSound id="81" parent="MUSIC">
+        <AssetArray File="Military\Music\8-1.ogg" Volume="6.000000,6.000000" FacialGroup=""/>
+    </CSound>
+    <CSound id="812" parent="MUSIC">
+        <AssetArray File="Military\Music\8-2.ogg" Volume="6.000000,6.000000" FacialGroup=""/>
+    </CSound>
+    <CSound id="8122" parent="MUSIC">
+        <AssetArray File="Military\Music\8-3.ogg" Volume="6.000000,6.000000" FacialGroup=""/>
+    </CSound>
+    <CSound id="91" parent="MUSIC">
+        <AssetArray File="Military\Music\9-1.ogg" Volume="6.000000,6.000000" FacialGroup=""/>
+    </CSound>
+    <CSound id="912" parent="MUSIC">
+        <AssetArray File="Military\Music\9-2.ogg" Volume="6.000000,6.000000" FacialGroup=""/>
+    </CSound>
+    <CSound id="9122" parent="MUSIC">
+        <AssetArray File="Military\Music\9-3.ogg" Volume="6.000000,6.000000" FacialGroup=""/>
+    </CSound>
+    <CSound id="Armory_Explode2" parent="Terran_ExplosionLarge">
+        <DupeMaximumMethod value="Prevent"/>
+        <DupeMuteCount value="10"/>
+        <Pitch value="0.000000,2.000000"/>
+        <Volume value="-4.000000,0.000000"/>
+    </CSound>
+    <CSound id="Armory_Ready2" parent="Ready">
+        <EditorCategories value="Race:Terran"/>
+        <AssetArray File="Assets\Sounds\Terran\Armory\Armory_What.ogg"/>
+        <Volume value="-9.000000,-9.000000"/>
+    </CSound>
+    <CSound id="Armory_What2" parent="Voice">
+        <EditorCategories value="Race:Terran"/>
+        <AssetArray File="Assets\Sounds\Terran\Armory\Armory_What.ogg"/>
+        <Volume value="-9.000000,-9.000000"/>
+    </CSound>
+    <CSound id="ArtilleryAttackLaunch" parent="Combat">
+        <AssetArray File="Military\Screenshots\PossibleScreenshots\Yes\Yes\Research\Special\Research\Special\PlaneAndTankSounds\Artillery\ArtilleryFire1.ogg" FacialGroup=""/>
+        <AssetArray File="Military\Screenshots\PossibleScreenshots\Yes\Yes\Research\Special\Research\Special\PlaneAndTankSounds\Artillery\ArtilleryFire2.ogg" FacialGroup=""/>
+        <AssetArray File="Military\Screenshots\PossibleScreenshots\Yes\Yes\Research\Special\Research\Special\PlaneAndTankSounds\Artillery\ArtilleryFire3.ogg" FacialGroup=""/>
+        <AssetArray File="Military\Screenshots\PossibleScreenshots\Yes\Yes\Research\Special\Research\Special\PlaneAndTankSounds\Artillery\ArtilleryFire4.ogg" FacialGroup=""/>
+    </CSound>
+    <CSound id="Barracks_Explode2" parent="Terran_ExplosionLarge">
+        <DupeMaximumMethod value="Prevent"/>
+        <DupeMuteCount value="10"/>
+    </CSound>
+    <CSound id="Barracks_Explode22" parent="Terran_ExplosionLarge">
+        <DupeMaximumMethod value="Prevent"/>
+        <DupeMuteCount value="10"/>
+    </CSound>
+    <CSound id="Barracks_Movement2" parent="Terran_BuildingMovement">
+        <OffsetFadeIn index="1" Time="250"/>
+        <Pitch value="-1.000000,1.000000"/>
+        <Volume value="-3.000000,-3.000000"/>
+    </CSound>
+    <CSound id="Barracks_Movement22" parent="Terran_BuildingMovement">
+        <OffsetFadeIn index="1" Time="250"/>
+        <Pitch value="-1.000000,1.000000"/>
+        <Volume value="-3.000000,-3.000000"/>
+    </CSound>
+    <CSound id="Barracks_Ready2" parent="Ready">
+        <EditorCategories value="Race:Terran"/>
+        <AssetArray File="Assets\Sounds\Terran\Barracks\Barracks_What.ogg"/>
+        <Volume value="-12.000000,-12.000000"/>
+    </CSound>
+    <CSound id="Barracks_Ready22" parent="Ready">
+        <EditorCategories value="Race:Terran"/>
+        <AssetArray File="Assets\Sounds\Terran\Barracks\Barracks_What.ogg"/>
+        <Volume value="-12.000000,-12.000000"/>
+    </CSound>
+    <CSound id="Barracks_What2" parent="Voice">
+        <EditorCategories value="Race:Terran"/>
+        <AssetArray File="Assets\Sounds\Terran\Barracks\Barracks_What.ogg"/>
+        <Volume value="-12.000000,-12.000000"/>
+    </CSound>
+    <CSound id="Barracks_What22" parent="Voice">
+        <EditorCategories value="Race:Terran"/>
+        <AssetArray File="Assets\Sounds\Terran\Barracks\Barracks_What.ogg"/>
+        <Volume value="-12.000000,-12.000000"/>
+    </CSound>
+    <CSound id="CivilianDeath2" parent="Death">
+        <EditorCategories value="Race:Terran"/>
+        <AssetArray File="LocalizedData\Sounds\TerranVO\CampaignUnits\Civilians\Civilian_Death01.wav"/>
+        <AssetArray File="LocalizedData\Sounds\TerranVO\CampaignUnits\Civilians\Civilian_Death02.wav"/>
+        <AssetArray File="LocalizedData\Sounds\TerranVO\CampaignUnits\Civilians\Civilian_Death03.wav"/>
+        <AssetArray File="LocalizedData\Sounds\TerranVO\CampaignUnits\Civilians\Civilian_Death04.wav"/>
+        <AssetArray File="LocalizedData\Sounds\TerranVO\CampaignUnits\Civilians\Civilian_Death05.wav"/>
+        <AssetArray File="LocalizedData\Sounds\TerranVO\CampaignUnits\Civilians\Civilian_Death06.wav"/>
+        <AssetArray File="LocalizedData\Sounds\TerranVO\CampaignUnits\Civilians\Civilian_Death07.wav"/>
+        <AssetArray File="LocalizedData\Sounds\TerranVO\CampaignUnits\Civilians\Civilian_Death08.wav"/>
+        <AssetArray File="LocalizedData\Sounds\TerranVO\CampaignUnits\Civilians\Civilian_Death09.wav"/>
+        <AssetArray File="LocalizedData\Sounds\TerranVO\CampaignUnits\Civilians\Civilian_Death10.wav"/>
+        <AssetArray File="LocalizedData\Sounds\TerranVO\CampaignUnits\Civilians\Civilian_Death11.wav"/>
+        <AssetArray File="LocalizedData\Sounds\TerranVO\CampaignUnits\Civilians\Civilian_Death12.wav"/>
+        <AssetArray File="LocalizedData\Sounds\TerranVO\CampaignUnits\Civilians\Civilian_Death13.wav"/>
+        <AssetArray File="LocalizedData\Sounds\TerranVO\CampaignUnits\Civilians\Civilian_Death14.wav"/>
+        <Flags index="VariationFallback" value="0"/>
+        <Volume value="-3.000000,-3.000000"/>
+    </CSound>
+    <CSound id="ColonyTransport_Movement2" parent="Movement">
+        <EditorCategories value="Race:Terran"/>
+        <AssetArray File="Assets\Sounds\Uni\Units\Trucks\TruckSmall_Movement0.wav"/>
+        <AssetArray File="Assets\Sounds\Uni\Units\Trucks\TruckSmall_Movement1.wav"/>
+        <Flags index="Stream" value="1"/>
+        <DupeDestroyCount value="2"/>
+        <DupeMuteCount value="2"/>
+        <Volume value="-6.000000,-6.000000"/>
+    </CSound>
+    <CSound id="ColonyTransport_What2" parent="Ambience_Object">
+        <EditorCategories value="Race:Neutral"/>
+        <AssetArray File="Assets\Sounds\Uni\Units\Trucks\TruckSmall_What0.wav"/>
+        <SustainFade index="1" Time="2000" Volume="-96.000000"/>
+        <Volume value="-3.000000,-3.000000"/>
+    </CSound>
+    <CSound id="CommuneSelection">
+        <AssetArray File="Assets\Declare War, Neutral, Peace\CommunistSocialistLarge\CommuneGroup1.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Declare War, Neutral, Peace\CommunistSocialistLarge\CommuneGroup2.ogg" FacialGroup=""/>
+    </CSound>
+    <CSound id="CruiserBike_Explode2" parent="Terran_ExplosionMedium">
+        <EditorCategories value="Race:Neutral"/>
+        <AssetArray index="0" File="Assets\Sounds\Terran_BuildingExplosionSmall0.wav" FacialGroup=""/>
+        <AssetArray index="1" File="Assets\Sounds\Terran_BuildingExplosionSmall1.wav" FacialGroup=""/>
+        <AssetArray index="2" File="Assets\Sounds\Terran_BuildingExplosionSmall2.wav" FacialGroup=""/>
+        <AssetArray index="3" File="Assets\Sounds\Terran_BuildingExplosionSmall3.wav" FacialGroup=""/>
+        <AssetArray index="4" File="Assets\Sounds\Terran_BuildingExplosionSmall4.wav" FacialGroup=""/>
+        <AssetArray index="5" File="Assets\Sounds\Terran_BuildingExplosionSmall5.wav" FacialGroup=""/>
+        <AssetArray index="6" File="Assets\Sounds\Terran_BuildingExplosionSmall6.wav" FacialGroup=""/>
+        <AssetArray index="7" File="Assets\Sounds\Terran_BuildingExplosionSmall7.wav" FacialGroup=""/>
+        <AssetArray index="8" File="Assets\Sounds\Terran_BuildingExplosionSmall8.wav" FacialGroup=""/>
+        <AssetArray index="9" File="Assets\Sounds\Terran_BuildingExplosionSmall9.wav" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\Terran_BuildingExplosionMedium2.wav" FacialGroup=""/>
+        <Pitch value="0.000000,2.000000"/>
+        <Volume value="-4.000000,-2.000000"/>
+    </CSound>
+    <CSound id="DefaultSoundtrack" parent="MUSIC">
+        <AssetArray File="Assets\Music\Mission_MusicCue004.ogg" Volume="6.000000,6.000000" FacialGroup=""/>
+    </CSound>
+    <CSound id="EarthDestruction" parent="MUSIC">
+        <AssetArray>
+            <File value="Assets\Music\MissionMusic\Music_T09.ogg"/>
+            <Pitch value="-10.000000,-10.000000"/>
+            <Volume value="6.000000,6.000000"/>
+            <FacialGroup value=""/>
+        </AssetArray>
+    </CSound>
+    <CSound id="EngineeringBay_Explode2" parent="Terran_ExplosionLarge">
+        <DupeMaximumMethod value="Prevent"/>
+        <DupeMuteCount value="10"/>
+    </CSound>
+    <CSound id="EngineeringBay_Ready2" parent="Ready">
+        <EditorCategories value="Race:Terran"/>
+        <AssetArray File="Assets\Sounds\Terran\EngineeringBay\EngineeringBay_What.ogg"/>
+        <Volume value="-12.000000,-12.000000"/>
+    </CSound>
+    <CSound id="EngineeringBay_What2" parent="Voice">
+        <EditorCategories value="Race:Terran"/>
+        <AssetArray File="Assets\Sounds\Terran\EngineeringBay\EngineeringBay_What.ogg"/>
+        <Volume value="-12.000000,-12.000000"/>
+    </CSound>
+    <CSound id="Factory_Explode2" parent="Terran_ExplosionLarge">
+        <Category value="Death"/>
+        <DupeMaximumMethod value="Prevent"/>
+        <DupeMuteCount value="10"/>
+    </CSound>
+    <CSound id="Factory_Movement2" parent="Terran_BuildingMovement">
+        <OffsetFadeIn index="1" Time="250"/>
+        <Pitch value="-1.000000,1.000000"/>
+    </CSound>
+    <CSound id="Factory_Ready2" parent="Ready">
+        <EditorCategories value="Race:Terran"/>
+        <AssetArray File="Assets\Sounds\Terran\Factory\Factory_What.ogg"/>
+        <Volume value="-9.000000,-9.000000"/>
+    </CSound>
+    <CSound id="Factory_What2" parent="Voice">
+        <EditorCategories value="Race:Terran"/>
+        <AssetArray File="Assets\Sounds\Terran\Factory\Factory_What.ogg"/>
+        <Volume value="-9.000000,-9.000000"/>
+    </CSound>
+    <CSound id="FlakkerAttackLaunch" parent="Combat">
+        <AssetArray File="Military\Screenshots\PossibleScreenshots\Yes\Yes\Research\Special\Research\Special\PlaneAndTankSounds\Flakker\FlakkerFire1.ogg" Weight="87" FacialGroup=""/>
+        <AssetArray File="Military\Screenshots\PossibleScreenshots\Yes\Yes\Research\Special\Research\Special\PlaneAndTankSounds\Flakker\FlakkerFire2.ogg" Weight="88" FacialGroup=""/>
+        <AssetArray File="Military\Screenshots\PossibleScreenshots\Yes\Yes\Research\Special\Research\Special\PlaneAndTankSounds\Flakker\FlakkerFire4.ogg" FacialGroup=""/>
+        <AssetArray File="Military\Screenshots\PossibleScreenshots\Yes\Yes\Research\Special\Research\Special\PlaneAndTankSounds\Flakker\FlakkerFire3.ogg" Weight="89" FacialGroup=""/>
+    </CSound>
+    <CSound id="FreeSelection">
+        <AssetArray File="Assets\Declare War, Neutral, Peace\Free\FreeGroup1.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Declare War, Neutral, Peace\Free\FreeGroup2.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Declare War, Neutral, Peace\Free\FreeGroup3.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Declare War, Neutral, Peace\Free\FreeGroup4.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Declare War, Neutral, Peace\Free\FreeGroup5.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Declare War, Neutral, Peace\Free\FreeGroup6.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Declare War, Neutral, Peace\Free\FreeGroup7.ogg" FacialGroup=""/>
+    </CSound>
+    <CSound id="GameMusicTerr">
+        <AssetArray index="0" File="08508(1).mp3" Volume="6.000000,6.000000" FacialGroup=""/>
+        <AssetArray index="1" File="Boris Nechljudov - Lucifers Fall.mp3" Volume="6.000000,6.000000" FacialGroup=""/>
+        <AssetArray index="2" File="Unreal Tournament 2003 - KR Menu Music V2(1).mp3" Volume="6.000000,6.000000" FacialGroup=""/>
+        <AssetArray index="3" File="Supreme Commander   bellum infinitus theme music.mp3" Volume="6.000000,6.000000" FacialGroup=""/>
+        <AssetArray index="4" File="Supreme Commander 2 Soundtrack - Cybran Battle 1.mp3" Volume="6.000000,6.000000" FacialGroup=""/>
+        <AssetArray index="5" File="Triarii - Muse in Arms.mp3" Volume="6.000000,6.000000" FacialGroup=""/>
+        <AssetArray index="6" File="Triarii - Victoria.mp3" Volume="6.000000,6.000000" FacialGroup=""/>
+        <AssetArray index="7" File="World12.mp3" Volume="6.000000,6.000000" FacialGroup=""/>
+        <AssetArray index="8" File="World16 (1).mp3" Volume="6.000000,6.000000" FacialGroup=""/>
+        <AssetArray index="9" removed="1"/>
+        <AssetArray index="10" removed="1"/>
+        <AssetArray index="11" removed="1"/>
+        <AssetArray index="12" removed="1"/>
+        <AssetArray index="13" removed="1"/>
+        <AssetArray index="14" removed="1"/>
+        <AssetArray index="15" removed="1"/>
+        <AssetArray index="16" removed="1"/>
+        <AssetArray index="17" removed="1"/>
+        <AssetArray index="18" removed="1"/>
+        <AssetArray index="19" removed="1"/>
+        <AssetArray index="20" removed="1"/>
+        <AssetArray index="21" removed="1"/>
+        <AssetArray index="22" removed="1"/>
+        <AssetArray index="23" removed="1"/>
+        <AssetArray index="24" removed="1"/>
+        <AssetArray index="25" removed="1"/>
+        <Volume value="6.000000,6.000000"/>
+    </CSound>
+    <CSound id="GameMusicTrollstep" parent="GameMusicTerr">
+        <AssetArray index="0">
+            <File value="Assets\Music\ZSwarm_Music_Terran7_Action.ogg"/>
+            <Pitch value="1.000000,1.000000"/>
+            <Volume value="6.000000,6.000000"/>
+            <FacialGroup value=""/>
+        </AssetArray>
+        <AssetArray index="1" removed="1"/>
+        <AssetArray index="2" removed="1"/>
+        <AssetArray index="3" removed="1"/>
+        <AssetArray index="4" removed="1"/>
+        <AssetArray index="5" removed="1"/>
+        <AssetArray index="6" removed="1"/>
+        <AssetArray index="7" removed="1"/>
+        <AssetArray index="8" removed="1"/>
+        <Volume value="-4.000000,-4.000000"/>
+    </CSound>
+    <CSound id="Ghost_Death2" parent="Death">
+        <EditorCategories value="Race:Terran"/>
+        <AssetArray File="LocalizedData\Sounds\TerranUnitVO\Ghost\Ghost_Death00.wav" PortraitModel="GhostPortrait" Speaker="ConversationState/Characters/CharGhost"/>
+        <AssetArray File="LocalizedData\Sounds\TerranUnitVO\Ghost\Ghost_Death01.wav"/>
+        <AssetArray File="LocalizedData\Sounds\TerranUnitVO\Ghost\Ghost_Death02.wav"/>
+        <AssetArray File="LocalizedData\Sounds\TerranUnitVO\Ghost\Ghost_Death03.wav"/>
+        <AssetArray File="LocalizedData\Sounds\TerranUnitVO\Ghost\Ghost_Death04.wav"/>
+        <AssetArray File="LocalizedData\Sounds\TerranUnitVO\Ghost\Ghost_Death05.wav"/>
+        <Volume value="-1.000000,-1.000000"/>
+    </CSound>
+    <CSound id="Ghost_Explode2" parent="Zerg_ExplosionSmall">
+        <EditorCategories value="Race:Terran"/>
+    </CSound>
+    <CSound id="GoliathGroundAttackLaunch">
+        <AssetArray index="0" File="Assets\Textures\SniperNoise\Sniper1.wav" Volume="6.000000,6.000000" FacialGroup=""/>
+        <AssetArray index="1" File="Assets\Textures\SniperNoise\Sniper2.wav" Volume="6.000000,6.000000" FacialGroup=""/>
+        <AssetArray index="2" File="Assets\Textures\SniperNoise\Sniper3.wav" Volume="6.000000,6.000000" FacialGroup=""/>
+        <AssetArray File="Assets\Textures\SniperNoise\Sniper4.wav" Volume="6.000000,6.000000" FacialGroup=""/>
+        <AssetArray File="Assets\Textures\SniperNoise\Sniper5.wav" Volume="6.000000,6.000000" FacialGroup=""/>
+        <Volume value="6.000000,6.000000"/>
+    </CSound>
+    <CSound id="GoliathGroundAttackLaunch2" parent="Combat">
+        <EditorCategories value="Race:Terran"/>
+        <AssetArray File="Assets\Textures\SniperNoise\Sniper1.wav" Volume="6.000000,6.000000" FacialGroup=""/>
+        <AssetArray File="Assets\Textures\SniperNoise\Sniper2.wav" Volume="6.000000,6.000000" FacialGroup=""/>
+        <AssetArray File="Assets\Textures\SniperNoise\Sniper3.wav" Volume="6.000000,6.000000" FacialGroup=""/>
+        <AssetArray File="Assets\Textures\SniperNoise\Sniper4.wav" Volume="6.000000,6.000000" FacialGroup=""/>
+        <AssetArray File="Assets\Textures\SniperNoise\Sniper5.wav" Volume="6.000000,6.000000" FacialGroup=""/>
+        <DupeDestroyCount value="8"/>
+        <Pitch value="-8.440000,-8.230000"/>
+        <Volume value="6.000000,6.000000"/>
+    </CSound>
+    <CSound id="HeavyExplosiveImpact" parent="Combat">
+        <AssetArray File="Military\Screenshots\PossibleScreenshots\Yes\Yes\Research\Special\Research\Special\PlaneAndTankSounds\ExplosiveImpacts\Strong\StrongImpact1.ogg" FacialGroup=""/>
+        <AssetArray File="Military\Screenshots\PossibleScreenshots\Yes\Yes\Research\Special\Research\Special\PlaneAndTankSounds\ExplosiveImpacts\Strong\StrongImpact2.ogg" FacialGroup=""/>
+        <AssetArray File="Military\Screenshots\PossibleScreenshots\Yes\Yes\Research\Special\Research\Special\PlaneAndTankSounds\ExplosiveImpacts\Strong\StrongImpact3.ogg" FacialGroup=""/>
+        <AssetArray File="Military\Screenshots\PossibleScreenshots\Yes\Yes\Research\Special\Research\Special\PlaneAndTankSounds\ExplosiveImpacts\Strong\StrongImpact4.ogg" FacialGroup=""/>
+        <AssetArray File="Military\Screenshots\PossibleScreenshots\Yes\Yes\Research\Special\Research\Special\PlaneAndTankSounds\ExplosiveImpacts\Strong\StrongImpact5.ogg" FacialGroup=""/>
+    </CSound>
+    <CSound id="Hellion_Explode2" parent="Terran_ExplosionMedium">
+        <AssetArray index="0" File="Assets\Sounds\Terran\SharedEffects\Explosions\Terran_ExplosionMedium0.wav" Pitch="-3.000000,3.000000"/>
+        <AssetArray index="1" File="Assets\Sounds\Terran\SharedEffects\Explosions\Terran_ExplosionMedium1.wav" Pitch="-3.000000,3.000000"/>
+        <AssetArray index="2" File="Assets\Sounds\Terran\SharedEffects\Explosions\Terran_ExplosionMedium2.wav" Pitch="-3.000000,3.000000"/>
+        <AssetArray index="3" File="Assets\Sounds\Terran\SharedEffects\Explosions\Terran_ExplosionMedium3.wav" Pitch="-3.000000,3.000000"/>
+        <AssetArray index="4" File="Assets\Sounds\Terran\SharedEffects\Explosions\Terran_ExplosionMedium4.wav" Pitch="-3.000000,3.000000"/>
+        <AssetArray index="5" File="Assets\Sounds\Terran\SharedEffects\Explosions\Terran_ExplosionMedium5.wav" Pitch="-3.000000,3.000000"/>
+        <AssetArray index="6" File="Assets\Sounds\Terran\SharedEffects\Explosions\Terran_ExplosionMedium6.wav" Pitch="-3.000000,3.000000"/>
+        <AssetArray index="7" File="Assets\Sounds\Terran\SharedEffects\Explosions\Terran_ExplosionMedium7.wav" Pitch="-3.000000,3.000000"/>
+        <AssetArray index="8" File="Assets\Sounds\Terran\SharedEffects\Explosions\Terran_ExplosionMedium8.wav" Pitch="-3.000000,3.000000"/>
+        <AssetArray index="9" File="Assets\Sounds\Terran\SharedEffects\Explosions\Terran_ExplosionMedium9.wav" Pitch="-3.000000,3.000000"/>
+        <DupeMaximumMethod value="Prevent"/>
+        <DupeMuteCount value="10"/>
+        <Pitch value="0.000000,0.000000"/>
+        <Volume value="0.000000,0.000000"/>
+    </CSound>
+    <CSound id="Immortal_AttackImpact2" parent="Protoss_ExplosionSmall"/>
+    <CSound id="Immortal_AttackLaunch">
+        <AssetArray index="0" File="Assets\Textures\AssaultRifleNoise\AssaultRifle1.wav" Volume="6.000000,6.000000" FacialGroup=""/>
+        <AssetArray index="1" File="Assets\Textures\AssaultRifleNoise\AssaultRifle2.wav" Volume="6.000000,6.000000" FacialGroup=""/>
+        <AssetArray index="2" File="Assets\Textures\AssaultRifleNoise\AssaultRifle3.wav" Volume="6.000000,6.000000" FacialGroup=""/>
+        <AssetArray File="Assets\Textures\AssaultRifleNoise\AssaultRifle4.wav" Volume="6.000000,6.000000" FacialGroup=""/>
+        <AssetArray File="Assets\Textures\AssaultRifleNoise\AssaultRifle5.wav" Volume="6.000000,6.000000" FacialGroup=""/>
+        <Volume value="0.000000,0.000000"/>
+    </CSound>
+    <CSound id="Immortal_AttackLaunch2" parent="Combat">
+        <EditorCategories value="Race:Protoss"/>
+        <AssetArray File="Assets\Sounds\Protoss\Immortal\Immortal_AttackLaunch0.wav"/>
+        <AssetArray File="Assets\Sounds\Protoss\Immortal\Immortal_AttackLaunch1.wav"/>
+        <AssetArray File="Assets\Sounds\Protoss\Immortal\Immortal_AttackLaunch2.wav"/>
+        <DupeMaximumMethod value="Replace"/>
+        <Volume value="-1.940000,-1.940000"/>
+    </CSound>
+    <CSound id="InfestedCivilian_Explode2" parent="Zerg_ExplosionSmall"/>
+    <CSound id="InfestedTerranPissed2" parent="InfestedTerran_Pissed"/>
+    <CSound id="InfestedTerranPissed3" parent="InfestedTerran_Pissed"/>
+    <CSound id="InfestedTerranReady2" parent="InfestedTerran_Ready"/>
+    <CSound id="InfestedTerranReady3" parent="InfestedTerran_Ready"/>
+    <CSound id="InfestedTerranWhat2" parent="InfestedTerran_What"/>
+    <CSound id="InfestedTerranWhat3" parent="InfestedTerran_What"/>
+    <CSound id="InfestedTerranYes2" parent="InfestedTerran_Yes"/>
+    <CSound id="InfestedTerranYes3" parent="InfestedTerran_Yes"/>
+    <CSound id="InfestedTerran_Explode2" parent="InfestedTerran_Explode"/>
+    <CSound id="Karass_AttackLaunch2" parent="Combat">
+        <EditorCategories value="Race:Protoss"/>
+        <AssetArray File="Assets\Sounds\Protoss\Karass\Karass_AttackLaunch0.wav"/>
+        <AssetArray File="Assets\Sounds\Protoss\Karass\Karass_AttackLaunch1.wav"/>
+        <AssetArray File="Assets\Sounds\Protoss\Karass\Karass_AttackLaunch2.wav"/>
+        <AssetArray File="Assets\Sounds\Protoss\Karass\Karass_AttackLaunch3.wav"/>
+        <Pitch value="-1.000000,1.000000"/>
+        <Volume value="-12.000000,-12.000000"/>
+    </CSound>
+    <CSound id="Marauder_Attack2" parent="TerranAck">
+        <AssetArray File="LocalizedData\Sounds\TerranUnitVO\Marauder\Marauder_Attack00.ogg" FacialAnim="Marauder_Attack00"/>
+        <AssetArray File="LocalizedData\Sounds\TerranUnitVO\Marauder\Marauder_Attack01.ogg" FacialAnim="Marauder_Attack01"/>
+        <AssetArray File="LocalizedData\Sounds\TerranUnitVO\Marauder\Marauder_Attack02.ogg" FacialAnim="Marauder_Attack02"/>
+        <AssetArray File="LocalizedData\Sounds\TerranUnitVO\Marauder\Marauder_Attack03.ogg" FacialAnim="Marauder_Attack03"/>
+        <AssetArray File="LocalizedData\Sounds\TerranUnitVO\Marauder\Marauder_Attack04.ogg" FacialAnim="Marauder_Attack04"/>
+        <AssetArray File="LocalizedData\Sounds\TerranUnitVO\Marauder\Marauder_Attack05.ogg" FacialAnim="Marauder_Attack05"/>
+        <Flags index="Download" value="0"/>
+        <Volume value="-1.000000,-1.000000"/>
+    </CSound>
+    <CSound id="Marauder_Attack3" parent="TerranAck">
+        <AssetArray File="LocalizedData\Sounds\TerranUnitVO\Marauder\Marauder_Attack00.ogg" FacialAnim="Marauder_Attack00"/>
+        <AssetArray File="LocalizedData\Sounds\TerranUnitVO\Marauder\Marauder_Attack01.ogg" FacialAnim="Marauder_Attack01"/>
+        <AssetArray File="LocalizedData\Sounds\TerranUnitVO\Marauder\Marauder_Attack02.ogg" FacialAnim="Marauder_Attack02"/>
+        <AssetArray File="LocalizedData\Sounds\TerranUnitVO\Marauder\Marauder_Attack03.ogg" FacialAnim="Marauder_Attack03"/>
+        <AssetArray File="LocalizedData\Sounds\TerranUnitVO\Marauder\Marauder_Attack04.ogg" FacialAnim="Marauder_Attack04"/>
+        <AssetArray File="LocalizedData\Sounds\TerranUnitVO\Marauder\Marauder_Attack05.ogg" FacialAnim="Marauder_Attack05"/>
+        <Flags index="Download" value="0"/>
+        <Volume value="-1.000000,-1.000000"/>
+    </CSound>
+    <CSound id="Marauder_AttackImpact2" parent="Terran_ExplosionSmall">
+        <DupeMuteCount value="3"/>
+        <DupeThresholdPoints/>
+        <DupeThresholdPoints Count="2" Volume="-3.000000"/>
+        <DupePrioritization value="Oldest"/>
+        <Pitch value="1.000000,2.000000"/>
+        <Volume value="-10.000000,-10.000000"/>
+    </CSound>
+    <CSound id="Marauder_AttackImpact3" parent="Terran_ExplosionSmall">
+        <DupeMuteCount value="3"/>
+        <DupeThresholdPoints/>
+        <DupeThresholdPoints Count="2" Volume="-3.000000"/>
+        <DupePrioritization value="Oldest"/>
+        <Pitch value="1.000000,2.000000"/>
+        <Volume value="-10.000000,-10.000000"/>
+    </CSound>
+    <CSound id="Marauder_AttackLaunch2" parent="Combat">
+        <EditorCategories value="Race:Terran"/>
+        <AssetArray File="Assets\Sounds\Terran\Marauder\Marauder_AttackLaunch0.wav"/>
+        <AssetArray File="Assets\Sounds\Terran\Marauder\Marauder_AttackLaunch1.wav"/>
+        <AssetArray File="Assets\Sounds\Terran\Marauder\Marauder_AttackLaunch2.wav"/>
+        <AssetArray File="Assets\Sounds\Terran\Marauder\Marauder_AttackLaunch3.wav"/>
+        <AssetArray File="Assets\Sounds\Terran\Marauder\Marauder_AttackLaunch4.wav"/>
+        <AssetArray File="Assets\Sounds\Terran\Marauder\Marauder_AttackLaunch5.wav"/>
+        <DupeDestroyCount value="5"/>
+        <DupeMaximumMethod value="Replace"/>
+        <DupeMuteCount value="3"/>
+        <DupeThresholdPoints/>
+        <DupeThresholdPoints Count="2" Volume="-4.500000"/>
+        <DupePrioritization value="Oldest"/>
+        <OverlapTimeDelta value="100"/>
+        <Pitch value="3.160000,7.010000"/>
+        <Volume value="-10.480000,-7.960000"/>
+    </CSound>
+    <CSound id="Marauder_AttackLaunch3" parent="Combat">
+        <EditorCategories value="Race:Terran"/>
+        <AssetArray File="Assets\Sounds\Terran\Marauder\Marauder_AttackLaunch0.wav"/>
+        <AssetArray File="Assets\Sounds\Terran\Marauder\Marauder_AttackLaunch1.wav"/>
+        <AssetArray File="Assets\Sounds\Terran\Marauder\Marauder_AttackLaunch2.wav"/>
+        <AssetArray File="Assets\Sounds\Terran\Marauder\Marauder_AttackLaunch3.wav"/>
+        <AssetArray File="Assets\Sounds\Terran\Marauder\Marauder_AttackLaunch4.wav"/>
+        <AssetArray File="Assets\Sounds\Terran\Marauder\Marauder_AttackLaunch5.wav"/>
+        <DupeDestroyCount value="5"/>
+        <DupeMaximumMethod value="Replace"/>
+        <DupeMuteCount value="3"/>
+        <DupeThresholdPoints/>
+        <DupeThresholdPoints Count="2" Volume="-4.500000"/>
+        <DupePrioritization value="Oldest"/>
+        <OverlapTimeDelta value="100"/>
+        <Pitch value="3.160000,7.010000"/>
+        <Volume value="-10.480000,-7.960000"/>
+    </CSound>
+    <CSound id="Marauder_Explode2" parent="Combat">
+        <EditorCategories value="Race:Terran"/>
+        <AssetArray File="Assets\Sounds\Terran\Marauder\Marauder_Explode0.wav"/>
+        <AssetArray File="Assets\Sounds\Terran\Marauder\Marauder_Explode1.wav"/>
+        <AssetArray File="Assets\Sounds\Terran\Marauder\Marauder_Explode2.wav"/>
+        <AssetArray File="Assets\Sounds\Terran\Marauder\Marauder_Explode3.wav"/>
+        <AssetArray File="Assets\Sounds\Terran\Marauder\Marauder_Explode4.wav"/>
+        <AssetArray File="Assets\Sounds\Terran\Marauder\Marauder_Explode5.wav"/>
+        <AssetArray File="Assets\Sounds\Terran\Marauder\Marauder_Explode6.wav"/>
+        <Pitch value="-2.000000,2.000000"/>
+    </CSound>
+    <CSound id="Marauder_Explode3" parent="Combat">
+        <EditorCategories value="Race:Terran"/>
+        <AssetArray File="Assets\Sounds\Terran\Marauder\Marauder_Explode0.wav"/>
+        <AssetArray File="Assets\Sounds\Terran\Marauder\Marauder_Explode1.wav"/>
+        <AssetArray File="Assets\Sounds\Terran\Marauder\Marauder_Explode2.wav"/>
+        <AssetArray File="Assets\Sounds\Terran\Marauder\Marauder_Explode3.wav"/>
+        <AssetArray File="Assets\Sounds\Terran\Marauder\Marauder_Explode4.wav"/>
+        <AssetArray File="Assets\Sounds\Terran\Marauder\Marauder_Explode5.wav"/>
+        <AssetArray File="Assets\Sounds\Terran\Marauder\Marauder_Explode6.wav"/>
+        <Pitch value="-2.000000,2.000000"/>
+    </CSound>
+    <CSound id="Marauder_Help2" parent="Alert">
+        <EditorCategories value="Race:Terran"/>
+        <AssetArray File="LocalizedData\Sounds\TerranUnitVO\Marauder\Marauder_Help00.ogg" FacialAnim="Marauder_Help00"/>
+        <Mode value="3DWorld"/>
+    </CSound>
+    <CSound id="Marauder_Help3" parent="Alert">
+        <EditorCategories value="Race:Terran"/>
+        <AssetArray File="LocalizedData\Sounds\TerranUnitVO\Marauder\Marauder_Help00.ogg" FacialAnim="Marauder_Help00"/>
+        <Mode value="3DWorld"/>
+    </CSound>
+    <CSound id="Marauder_Pissed2" parent="TerranAck">
+        <AssetArray File="LocalizedData\Sounds\TerranUnitVO\Marauder\Marauder_Pissed00.ogg" FacialAnim="Marauder_Pissed00"/>
+        <AssetArray File="LocalizedData\Sounds\TerranUnitVO\Marauder\Marauder_Pissed01.ogg" FacialAnim="Marauder_Pissed01"/>
+        <AssetArray File="LocalizedData\Sounds\TerranUnitVO\Marauder\Marauder_Pissed02.ogg" FacialAnim="Marauder_Pissed02"/>
+        <AssetArray File="LocalizedData\Sounds\TerranUnitVO\Marauder\Marauder_Pissed03.ogg" FacialAnim="Marauder_Pissed03"/>
+        <AssetArray File="LocalizedData\Sounds\TerranUnitVO\Marauder\Marauder_Pissed04.ogg" FacialAnim="Marauder_Pissed04"/>
+        <AssetArray File="LocalizedData\Sounds\TerranUnitVO\Marauder\Marauder_Pissed05.ogg" FacialAnim="Marauder_Pissed05"/>
+        <AssetArray File="LocalizedData\Sounds\TerranUnitVO\Marauder\Marauder_Pissed06.ogg" FacialAnim="Marauder_Pissed06"/>
+        <Flags index="Download" value="0"/>
+        <Select value="Sequential"/>
+        <Volume value="-1.000000,-1.000000"/>
+    </CSound>
+    <CSound id="Marauder_Pissed3" parent="TerranAck">
+        <AssetArray File="LocalizedData\Sounds\TerranUnitVO\Marauder\Marauder_Pissed00.ogg" FacialAnim="Marauder_Pissed00"/>
+        <AssetArray File="LocalizedData\Sounds\TerranUnitVO\Marauder\Marauder_Pissed01.ogg" FacialAnim="Marauder_Pissed01"/>
+        <AssetArray File="LocalizedData\Sounds\TerranUnitVO\Marauder\Marauder_Pissed02.ogg" FacialAnim="Marauder_Pissed02"/>
+        <AssetArray File="LocalizedData\Sounds\TerranUnitVO\Marauder\Marauder_Pissed03.ogg" FacialAnim="Marauder_Pissed03"/>
+        <AssetArray File="LocalizedData\Sounds\TerranUnitVO\Marauder\Marauder_Pissed04.ogg" FacialAnim="Marauder_Pissed04"/>
+        <AssetArray File="LocalizedData\Sounds\TerranUnitVO\Marauder\Marauder_Pissed05.ogg" FacialAnim="Marauder_Pissed05"/>
+        <AssetArray File="LocalizedData\Sounds\TerranUnitVO\Marauder\Marauder_Pissed06.ogg" FacialAnim="Marauder_Pissed06"/>
+        <Flags index="Download" value="0"/>
+        <Select value="Sequential"/>
+        <Volume value="-1.000000,-1.000000"/>
+    </CSound>
+    <CSound id="Marauder_Ready2" parent="Ready">
+        <EditorCategories value="Race:Terran"/>
+        <AssetArray File="LocalizedData\Sounds\TerranUnitVO\Marauder\Marauder_Attack02.ogg"/>
+        <AssetArray File="LocalizedData\Sounds\TerranUnitVO\Marauder\Marauder_Ready00.ogg" FacialAnim="Marauder_Ready00"/>
+        <AssetArray File="LocalizedData\Sounds\TerranUnitVO\Marauder\Marauder_Yes00.ogg"/>
+        <AssetArray File="LocalizedData\Sounds\TerranUnitVO\Marauder\Marauder_Yes04.ogg"/>
+        <AssetArray File="LocalizedData\Sounds\TerranUnitVO\Marauder\Marauder_Yes05.ogg"/>
+        <Volume value="-1.000000,-1.000000"/>
+    </CSound>
+    <CSound id="Marauder_Ready3" parent="Ready">
+        <EditorCategories value="Race:Terran"/>
+        <AssetArray File="LocalizedData\Sounds\TerranUnitVO\Marauder\Marauder_Attack02.ogg"/>
+        <AssetArray File="LocalizedData\Sounds\TerranUnitVO\Marauder\Marauder_Ready00.ogg" FacialAnim="Marauder_Ready00"/>
+        <AssetArray File="LocalizedData\Sounds\TerranUnitVO\Marauder\Marauder_Yes00.ogg"/>
+        <AssetArray File="LocalizedData\Sounds\TerranUnitVO\Marauder\Marauder_Yes04.ogg"/>
+        <AssetArray File="LocalizedData\Sounds\TerranUnitVO\Marauder\Marauder_Yes05.ogg"/>
+        <Volume value="-1.000000,-1.000000"/>
+    </CSound>
+    <CSound id="Marauder_Stimpack2" parent="Spell">
+        <EditorCategories value="Race:Terran"/>
+        <AssetArray File="Assets\Sounds\Terran\Marine\Marine_Stimpack0.wav"/>
+        <AssetArray File="Assets\Sounds\Terran\Marine\Marine_Stimpack1.wav"/>
+        <AssetArray File="Assets\Sounds\Terran\Marine\Marine_Stimpack2.wav"/>
+        <AssetArray File="Assets\Sounds\Terran\Marine\Marine_Stimpack3.wav"/>
+        <AssetArray File="Assets\Sounds\Terran\Marine\Marine_Stimpack4.wav"/>
+        <AssetArray File="Assets\Sounds\Terran\Marine\Marine_Stimpack5.wav"/>
+        <AssetArray File="Assets\Sounds\Terran\Marine\Marine_Stimpack6.wav"/>
+        <AssetArray File="Assets\Sounds\Terran\Marine\Marine_Stimpack7.wav"/>
+    </CSound>
+    <CSound id="Marauder_What2" parent="TerranAck">
+        <AssetArray File="LocalizedData\Sounds\TerranUnitVO\Marauder\Marauder_What00.ogg" FacialAnim="Marauder_What00"/>
+        <AssetArray File="LocalizedData\Sounds\TerranUnitVO\Marauder\Marauder_What01.ogg" FacialAnim="Marauder_What01"/>
+        <AssetArray File="LocalizedData\Sounds\TerranUnitVO\Marauder\Marauder_What02.ogg" FacialAnim="Marauder_What02"/>
+        <AssetArray File="LocalizedData\Sounds\TerranUnitVO\Marauder\Marauder_What03.ogg" FacialAnim="Marauder_What03"/>
+        <AssetArray File="LocalizedData\Sounds\TerranUnitVO\Marauder\Marauder_What04.ogg" FacialAnim="Marauder_What04"/>
+        <AssetArray File="LocalizedData\Sounds\TerranUnitVO\Marauder\Marauder_What05.ogg" FacialAnim="Marauder_What05"/>
+        <Volume value="-1.000000,-1.000000"/>
+    </CSound>
+    <CSound id="Marauder_What3" parent="TerranAck">
+        <AssetArray File="LocalizedData\Sounds\TerranUnitVO\Marauder\Marauder_What00.ogg" FacialAnim="Marauder_What00"/>
+        <AssetArray File="LocalizedData\Sounds\TerranUnitVO\Marauder\Marauder_What01.ogg" FacialAnim="Marauder_What01"/>
+        <AssetArray File="LocalizedData\Sounds\TerranUnitVO\Marauder\Marauder_What02.ogg" FacialAnim="Marauder_What02"/>
+        <AssetArray File="LocalizedData\Sounds\TerranUnitVO\Marauder\Marauder_What03.ogg" FacialAnim="Marauder_What03"/>
+        <AssetArray File="LocalizedData\Sounds\TerranUnitVO\Marauder\Marauder_What04.ogg" FacialAnim="Marauder_What04"/>
+        <AssetArray File="LocalizedData\Sounds\TerranUnitVO\Marauder\Marauder_What05.ogg" FacialAnim="Marauder_What05"/>
+        <Volume value="-1.000000,-1.000000"/>
+    </CSound>
+    <CSound id="Marauder_Yes2" parent="TerranAck">
+        <AssetArray File="LocalizedData\Sounds\TerranUnitVO\Marauder\Marauder_Yes00.ogg" FacialAnim="Marauder_Yes00"/>
+        <AssetArray File="LocalizedData\Sounds\TerranUnitVO\Marauder\Marauder_Yes01.ogg" FacialAnim="Marauder_Yes01"/>
+        <AssetArray File="LocalizedData\Sounds\TerranUnitVO\Marauder\Marauder_Yes02.ogg" FacialAnim="Marauder_Yes02"/>
+        <AssetArray File="LocalizedData\Sounds\TerranUnitVO\Marauder\Marauder_Yes03.ogg" FacialAnim="Marauder_Yes03"/>
+        <AssetArray File="LocalizedData\Sounds\TerranUnitVO\Marauder\Marauder_Yes04.ogg" FacialAnim="Marauder_Yes04"/>
+        <AssetArray File="LocalizedData\Sounds\TerranUnitVO\Marauder\Marauder_Yes05.ogg" FacialAnim="Marauder_Yes05"/>
+        <AssetArray File="LocalizedData\Sounds\TerranUnitVO\Marauder\Marauder_Yes06.ogg" FacialAnim="Marauder_Yes06"/>
+        <AssetArray File="LocalizedData\Sounds\TerranUnitVO\Marauder\Marauder_Yes07.ogg" FacialAnim="Marauder_Yes07"/>
+        <AssetArray File="LocalizedData\Sounds\TerranUnitVO\Marauder\Marauder_Yes08.ogg" FacialAnim="Marauder_Yes08"/>
+        <AssetArray File="LocalizedData\Sounds\TerranUnitVO\Marauder\Marauder_Yes09.ogg" FacialAnim="Marauder_Yes09"/>
+        <AssetArray File="LocalizedData\Sounds\TerranUnitVO\Marauder\Marauder_Yes10.ogg" FacialAnim="Marauder_Yes10"/>
+        <AssetArray File="LocalizedData\Sounds\TerranUnitVO\Marauder\Marauder_Yes11.ogg" FacialAnim="Marauder_Yes11"/>
+        <Volume value="-1.000000,-1.000000"/>
+    </CSound>
+    <CSound id="Marauder_Yes3" parent="TerranAck">
+        <AssetArray File="LocalizedData\Sounds\TerranUnitVO\Marauder\Marauder_Yes00.ogg" FacialAnim="Marauder_Yes00"/>
+        <AssetArray File="LocalizedData\Sounds\TerranUnitVO\Marauder\Marauder_Yes01.ogg" FacialAnim="Marauder_Yes01"/>
+        <AssetArray File="LocalizedData\Sounds\TerranUnitVO\Marauder\Marauder_Yes02.ogg" FacialAnim="Marauder_Yes02"/>
+        <AssetArray File="LocalizedData\Sounds\TerranUnitVO\Marauder\Marauder_Yes03.ogg" FacialAnim="Marauder_Yes03"/>
+        <AssetArray File="LocalizedData\Sounds\TerranUnitVO\Marauder\Marauder_Yes04.ogg" FacialAnim="Marauder_Yes04"/>
+        <AssetArray File="LocalizedData\Sounds\TerranUnitVO\Marauder\Marauder_Yes05.ogg" FacialAnim="Marauder_Yes05"/>
+        <AssetArray File="LocalizedData\Sounds\TerranUnitVO\Marauder\Marauder_Yes06.ogg" FacialAnim="Marauder_Yes06"/>
+        <AssetArray File="LocalizedData\Sounds\TerranUnitVO\Marauder\Marauder_Yes07.ogg" FacialAnim="Marauder_Yes07"/>
+        <AssetArray File="LocalizedData\Sounds\TerranUnitVO\Marauder\Marauder_Yes08.ogg" FacialAnim="Marauder_Yes08"/>
+        <AssetArray File="LocalizedData\Sounds\TerranUnitVO\Marauder\Marauder_Yes09.ogg" FacialAnim="Marauder_Yes09"/>
+        <AssetArray File="LocalizedData\Sounds\TerranUnitVO\Marauder\Marauder_Yes10.ogg" FacialAnim="Marauder_Yes10"/>
+        <AssetArray File="LocalizedData\Sounds\TerranUnitVO\Marauder\Marauder_Yes11.ogg" FacialAnim="Marauder_Yes11"/>
+        <Volume value="-1.000000,-1.000000"/>
+    </CSound>
+    <CSound id="Marine_Attack2" parent="TerranAck">
+        <AssetArray File="LocalizedData\Sounds\TerranUnitVO\Marine\Marine_Attack00.ogg" FacialAnim="Marine_Attack00"/>
+        <AssetArray File="LocalizedData\Sounds\TerranUnitVO\Marine\Marine_Attack01.ogg" FacialAnim="Marine_Attack01"/>
+        <AssetArray File="LocalizedData\Sounds\TerranUnitVO\Marine\Marine_Attack02.ogg" FacialAnim="Marine_Attack02"/>
+        <AssetArray File="LocalizedData\Sounds\TerranUnitVO\Marine\Marine_Attack03.ogg" FacialAnim="Marine_Attack03"/>
+        <AssetArray File="LocalizedData\Sounds\TerranUnitVO\Marine\Marine_Attack04.ogg" FacialAnim="Marine_Attack04"/>
+        <AssetArray File="LocalizedData\Sounds\TerranUnitVO\Marine\Marine_Attack05.ogg" FacialAnim="Marine_Attack05"/>
+        <AssetArray File="LocalizedData\Sounds\TerranUnitVO\Marine\Marine_Attack06.ogg" FacialAnim="Marine_Attack06"/>
+        <AssetArray File="LocalizedData\Sounds\TerranUnitVO\Marine\Marine_Attack07.ogg" FacialAnim="Marine_Attack07"/>
+        <AssetArray File="LocalizedData\Sounds\TerranUnitVO\Marine\Marine_Attack08.ogg" FacialAnim="Marine_Attack08"/>
+        <Flags index="Download" value="0"/>
+        <Volume value="-1.000000,-1.000000"/>
+    </CSound>
+    <CSound id="Marine_Attack3" parent="TerranAck">
+        <AssetArray File="LocalizedData\Sounds\TerranUnitVO\Marine\Marine_Attack00.ogg" FacialAnim="Marine_Attack00"/>
+        <AssetArray File="LocalizedData\Sounds\TerranUnitVO\Marine\Marine_Attack01.ogg" FacialAnim="Marine_Attack01"/>
+        <AssetArray File="LocalizedData\Sounds\TerranUnitVO\Marine\Marine_Attack02.ogg" FacialAnim="Marine_Attack02"/>
+        <AssetArray File="LocalizedData\Sounds\TerranUnitVO\Marine\Marine_Attack03.ogg" FacialAnim="Marine_Attack03"/>
+        <AssetArray File="LocalizedData\Sounds\TerranUnitVO\Marine\Marine_Attack04.ogg" FacialAnim="Marine_Attack04"/>
+        <AssetArray File="LocalizedData\Sounds\TerranUnitVO\Marine\Marine_Attack05.ogg" FacialAnim="Marine_Attack05"/>
+        <AssetArray File="LocalizedData\Sounds\TerranUnitVO\Marine\Marine_Attack06.ogg" FacialAnim="Marine_Attack06"/>
+        <AssetArray File="LocalizedData\Sounds\TerranUnitVO\Marine\Marine_Attack07.ogg" FacialAnim="Marine_Attack07"/>
+        <AssetArray File="LocalizedData\Sounds\TerranUnitVO\Marine\Marine_Attack08.ogg" FacialAnim="Marine_Attack08"/>
+        <Flags index="Download" value="0"/>
+        <Volume value="-1.000000,-1.000000"/>
+    </CSound>
+    <CSound id="Marine_Attack4" parent="TerranAck">
+        <AssetArray File="LocalizedData\Sounds\TerranUnitVO\Marine\Marine_Attack00.ogg" FacialAnim="Marine_Attack00"/>
+        <AssetArray File="LocalizedData\Sounds\TerranUnitVO\Marine\Marine_Attack01.ogg" FacialAnim="Marine_Attack01"/>
+        <AssetArray File="LocalizedData\Sounds\TerranUnitVO\Marine\Marine_Attack02.ogg" FacialAnim="Marine_Attack02"/>
+        <AssetArray File="LocalizedData\Sounds\TerranUnitVO\Marine\Marine_Attack03.ogg" FacialAnim="Marine_Attack03"/>
+        <AssetArray File="LocalizedData\Sounds\TerranUnitVO\Marine\Marine_Attack04.ogg" FacialAnim="Marine_Attack04"/>
+        <AssetArray File="LocalizedData\Sounds\TerranUnitVO\Marine\Marine_Attack05.ogg" FacialAnim="Marine_Attack05"/>
+        <AssetArray File="LocalizedData\Sounds\TerranUnitVO\Marine\Marine_Attack06.ogg" FacialAnim="Marine_Attack06"/>
+        <AssetArray File="LocalizedData\Sounds\TerranUnitVO\Marine\Marine_Attack07.ogg" FacialAnim="Marine_Attack07"/>
+        <AssetArray File="LocalizedData\Sounds\TerranUnitVO\Marine\Marine_Attack08.ogg" FacialAnim="Marine_Attack08"/>
+        <Flags index="Download" value="0"/>
+        <Volume value="-1.000000,-1.000000"/>
+    </CSound>
+    <CSound id="Marine_DeathFXBlast2" parent="Terran_ExplosionSmall">
+        <DupeMaximumMethod value="Prevent"/>
+        <DupeMuteCount value="10"/>
+        <Volume value="0.000000,0.000000"/>
+    </CSound>
+    <CSound id="Marine_DeathFXBlast3" parent="Terran_ExplosionSmall">
+        <DupeMaximumMethod value="Prevent"/>
+        <DupeMuteCount value="10"/>
+        <Volume value="0.000000,0.000000"/>
+    </CSound>
+    <CSound id="Marine_DeathFXBlast4" parent="Terran_ExplosionSmall">
+        <DupeMaximumMethod value="Prevent"/>
+        <DupeMuteCount value="10"/>
+        <Volume value="0.000000,0.000000"/>
+    </CSound>
+    <CSound id="Marine_DeathFXBloodSpray2" parent="Zerg_ExplosionSmall">
+        <EditorCategories value="Race:Terran"/>
+    </CSound>
+    <CSound id="Marine_DeathFXBloodSpray3" parent="Zerg_ExplosionSmall">
+        <EditorCategories value="Race:Terran"/>
+    </CSound>
+    <CSound id="Marine_DeathFXBloodSpray4" parent="Zerg_ExplosionSmall">
+        <EditorCategories value="Race:Terran"/>
+    </CSound>
+    <CSound id="Marine_DeathFXEat2" parent="Uni_DeathFXEat"/>
+    <CSound id="Marine_DeathFXEat3" parent="Uni_DeathFXEat"/>
+    <CSound id="Marine_DeathFXEat4" parent="Uni_DeathFXEat"/>
+    <CSound id="Marine_DeathFXEviscerate2" parent="Uni_DeathFXEviscerate">
+        <AssetArray index="1" removed="1"/>
+        <AssetArray index="2" removed="1"/>
+    </CSound>
+    <CSound id="Marine_DeathFXEviscerate3" parent="Uni_DeathFXEviscerate">
+        <AssetArray index="1" removed="1"/>
+        <AssetArray index="2" removed="1"/>
+    </CSound>
+    <CSound id="Marine_DeathFXEviscerate4" parent="Uni_DeathFXEviscerate">
+        <AssetArray index="1" removed="1"/>
+        <AssetArray index="2" removed="1"/>
+    </CSound>
+    <CSound id="Marine_DeathFXFire2" parent="Uni_DeathFXFire">
+        <AssetArray index="1" removed="1"/>
+        <AssetArray index="2" removed="1"/>
+        <AssetArray index="3" removed="1"/>
+        <AssetArray index="4" removed="1"/>
+        <AssetArray index="5" removed="1"/>
+        <Pitch value="0.000000,0.000000"/>
+        <Volume value="0.000000,0.000000"/>
+    </CSound>
+    <CSound id="Marine_DeathFXFire3" parent="Uni_DeathFXFire">
+        <AssetArray index="1" removed="1"/>
+        <AssetArray index="2" removed="1"/>
+        <AssetArray index="3" removed="1"/>
+        <AssetArray index="4" removed="1"/>
+        <AssetArray index="5" removed="1"/>
+        <Pitch value="0.000000,0.000000"/>
+        <Volume value="0.000000,0.000000"/>
+    </CSound>
+    <CSound id="Marine_DeathFXFire4" parent="Uni_DeathFXFire">
+        <AssetArray index="1" removed="1"/>
+        <AssetArray index="2" removed="1"/>
+        <AssetArray index="3" removed="1"/>
+        <AssetArray index="4" removed="1"/>
+        <AssetArray index="5" removed="1"/>
+        <Pitch value="0.000000,0.000000"/>
+        <Volume value="0.000000,0.000000"/>
+    </CSound>
+    <CSound id="Marine_DeathFXSilentKill2" parent="Uni_DeathFXSilentKill"/>
+    <CSound id="Marine_DeathFXSilentKill3" parent="Uni_DeathFXSilentKill"/>
+    <CSound id="Marine_DeathFXSilentKill4" parent="Uni_DeathFXSilentKill"/>
+    <CSound id="Marine_Help2" parent="Alert">
+        <EditorCategories value="Race:Terran"/>
+        <AssetArray File="LocalizedData\Sounds\TerranUnitVO\Marine\Marine_Help00.ogg" FacialAnim="Marine_Help00"/>
+        <Mode value="3DWorld"/>
+        <Volume value="-1.000000,-1.000000"/>
+    </CSound>
+    <CSound id="Marine_Help3" parent="Alert">
+        <EditorCategories value="Race:Terran"/>
+        <AssetArray File="LocalizedData\Sounds\TerranUnitVO\Marine\Marine_Help00.ogg" FacialAnim="Marine_Help00"/>
+        <Mode value="3DWorld"/>
+        <Volume value="-1.000000,-1.000000"/>
+    </CSound>
+    <CSound id="Marine_Help4" parent="Alert">
+        <EditorCategories value="Race:Terran"/>
+        <AssetArray File="LocalizedData\Sounds\TerranUnitVO\Marine\Marine_Help00.ogg" FacialAnim="Marine_Help00"/>
+        <Mode value="3DWorld"/>
+        <Volume value="-1.000000,-1.000000"/>
+    </CSound>
+    <CSound id="Marine_Pissed2" parent="TerranAck">
+        <AssetArray>
+            <File value="LocalizedData\Sounds\TerranUnitVO\Marine\Marine_Pissed00.ogg"/>
+            <FacialAnim value="Marine_Pissed00"/>
+            <PortraitModel value="MarinePortrait"/>
+            <Speaker value="ConversationState/Characters/CharMarine"/>
+        </AssetArray>
+        <AssetArray File="LocalizedData\Sounds\TerranUnitVO\Marine\Marine_Pissed01.ogg" FacialAnim="Marine_Pissed01"/>
+        <AssetArray File="LocalizedData\Sounds\TerranUnitVO\Marine\Marine_Pissed02.ogg" FacialAnim="Marine_Pissed02"/>
+        <AssetArray File="LocalizedData\Sounds\TerranUnitVO\Marine\Marine_Pissed03.ogg" FacialAnim="Marine_Pissed03"/>
+        <AssetArray File="LocalizedData\Sounds\TerranUnitVO\Marine\Marine_Pissed04.ogg" FacialAnim="Marine_Pissed04"/>
+        <AssetArray File="LocalizedData\Sounds\TerranUnitVO\Marine\Marine_Pissed05.ogg" FacialAnim="Marine_Pissed05"/>
+        <AssetArray File="LocalizedData\Sounds\TerranUnitVO\Marine\Marine_Pissed06.ogg" FacialAnim="Marine_Pissed06"/>
+        <AssetArray File="LocalizedData\Sounds\TerranUnitVO\Marine\Marine_Pissed07.ogg" FacialAnim="Marine_Pissed07"/>
+        <AssetArray File="LocalizedData\Sounds\TerranUnitVO\Marine\Marine_Pissed09.ogg" FacialAnim="Marine_Pissed09"/>
+        <AssetArray File="LocalizedData\Sounds\TerranUnitVO\Marine\Marine_Pissed11.ogg" FacialAnim="Marine_Pissed11"/>
+        <AssetArray File="LocalizedData\Sounds\TerranUnitVO\Marine\Marine_Pissed12.ogg" FacialAnim="Marine_Pissed12"/>
+        <Flags index="Download" value="0"/>
+        <Select value="Sequential"/>
+        <Volume value="-1.000000,-1.000000"/>
+    </CSound>
+    <CSound id="Marine_Pissed3" parent="TerranAck">
+        <AssetArray>
+            <File value="LocalizedData\Sounds\TerranUnitVO\Marine\Marine_Pissed00.ogg"/>
+            <FacialAnim value="Marine_Pissed00"/>
+            <PortraitModel value="MarinePortrait"/>
+            <Speaker value="ConversationState/Characters/CharMarine"/>
+        </AssetArray>
+        <AssetArray File="LocalizedData\Sounds\TerranUnitVO\Marine\Marine_Pissed01.ogg" FacialAnim="Marine_Pissed01"/>
+        <AssetArray File="LocalizedData\Sounds\TerranUnitVO\Marine\Marine_Pissed02.ogg" FacialAnim="Marine_Pissed02"/>
+        <AssetArray File="LocalizedData\Sounds\TerranUnitVO\Marine\Marine_Pissed03.ogg" FacialAnim="Marine_Pissed03"/>
+        <AssetArray File="LocalizedData\Sounds\TerranUnitVO\Marine\Marine_Pissed04.ogg" FacialAnim="Marine_Pissed04"/>
+        <AssetArray File="LocalizedData\Sounds\TerranUnitVO\Marine\Marine_Pissed05.ogg" FacialAnim="Marine_Pissed05"/>
+        <AssetArray File="LocalizedData\Sounds\TerranUnitVO\Marine\Marine_Pissed06.ogg" FacialAnim="Marine_Pissed06"/>
+        <AssetArray File="LocalizedData\Sounds\TerranUnitVO\Marine\Marine_Pissed07.ogg" FacialAnim="Marine_Pissed07"/>
+        <AssetArray File="LocalizedData\Sounds\TerranUnitVO\Marine\Marine_Pissed09.ogg" FacialAnim="Marine_Pissed09"/>
+        <AssetArray File="LocalizedData\Sounds\TerranUnitVO\Marine\Marine_Pissed11.ogg" FacialAnim="Marine_Pissed11"/>
+        <AssetArray File="LocalizedData\Sounds\TerranUnitVO\Marine\Marine_Pissed12.ogg" FacialAnim="Marine_Pissed12"/>
+        <Flags index="Download" value="0"/>
+        <Select value="Sequential"/>
+        <Volume value="-1.000000,-1.000000"/>
+    </CSound>
+    <CSound id="Marine_Pissed4" parent="TerranAck">
+        <AssetArray>
+            <File value="LocalizedData\Sounds\TerranUnitVO\Marine\Marine_Pissed00.ogg"/>
+            <FacialAnim value="Marine_Pissed00"/>
+            <PortraitModel value="MarinePortrait"/>
+            <Speaker value="ConversationState/Characters/CharMarine"/>
+        </AssetArray>
+        <AssetArray File="LocalizedData\Sounds\TerranUnitVO\Marine\Marine_Pissed01.ogg" FacialAnim="Marine_Pissed01"/>
+        <AssetArray File="LocalizedData\Sounds\TerranUnitVO\Marine\Marine_Pissed02.ogg" FacialAnim="Marine_Pissed02"/>
+        <AssetArray File="LocalizedData\Sounds\TerranUnitVO\Marine\Marine_Pissed03.ogg" FacialAnim="Marine_Pissed03"/>
+        <AssetArray File="LocalizedData\Sounds\TerranUnitVO\Marine\Marine_Pissed04.ogg" FacialAnim="Marine_Pissed04"/>
+        <AssetArray File="LocalizedData\Sounds\TerranUnitVO\Marine\Marine_Pissed05.ogg" FacialAnim="Marine_Pissed05"/>
+        <AssetArray File="LocalizedData\Sounds\TerranUnitVO\Marine\Marine_Pissed06.ogg" FacialAnim="Marine_Pissed06"/>
+        <AssetArray File="LocalizedData\Sounds\TerranUnitVO\Marine\Marine_Pissed07.ogg" FacialAnim="Marine_Pissed07"/>
+        <AssetArray File="LocalizedData\Sounds\TerranUnitVO\Marine\Marine_Pissed09.ogg" FacialAnim="Marine_Pissed09"/>
+        <AssetArray File="LocalizedData\Sounds\TerranUnitVO\Marine\Marine_Pissed11.ogg" FacialAnim="Marine_Pissed11"/>
+        <AssetArray File="LocalizedData\Sounds\TerranUnitVO\Marine\Marine_Pissed12.ogg" FacialAnim="Marine_Pissed12"/>
+        <Flags index="Download" value="0"/>
+        <Select value="Sequential"/>
+        <Volume value="-1.000000,-1.000000"/>
+    </CSound>
+    <CSound id="Marine_Ready2" parent="Ready">
+        <EditorCategories value="Race:Terran"/>
+        <AssetArray>
+            <File value="LocalizedData\Sounds\TerranUnitVO\Marine\Marine_Ready00.ogg"/>
+            <FacialAnim value="Marine_Ready00"/>
+            <PortraitModel value="MarinePortrait"/>
+            <Speaker value="ConversationState/Characters/CharMarine"/>
+        </AssetArray>
+        <AssetArray File="LocalizedData\Sounds\TerranUnitVO\Marine\Marine_What00.ogg"/>
+        <AssetArray File="LocalizedData\Sounds\TerranUnitVO\Marine\Marine_What03.ogg"/>
+        <AssetArray File="LocalizedData\Sounds\TerranUnitVO\Marine\Marine_What04.ogg"/>
+        <AssetArray File="LocalizedData\Sounds\TerranUnitVO\Marine\Marine_Yes04.ogg"/>
+        <AssetArray File="LocalizedData\Sounds\TerranUnitVO\Marine\Marine_Yes12.ogg"/>
+        <Volume value="-1.000000,-1.000000"/>
+    </CSound>
+    <CSound id="Marine_Ready3" parent="Ready">
+        <EditorCategories value="Race:Terran"/>
+        <AssetArray>
+            <File value="LocalizedData\Sounds\TerranUnitVO\Marine\Marine_Ready00.ogg"/>
+            <FacialAnim value="Marine_Ready00"/>
+            <PortraitModel value="MarinePortrait"/>
+            <Speaker value="ConversationState/Characters/CharMarine"/>
+        </AssetArray>
+        <AssetArray File="LocalizedData\Sounds\TerranUnitVO\Marine\Marine_What00.ogg"/>
+        <AssetArray File="LocalizedData\Sounds\TerranUnitVO\Marine\Marine_What03.ogg"/>
+        <AssetArray File="LocalizedData\Sounds\TerranUnitVO\Marine\Marine_What04.ogg"/>
+        <AssetArray File="LocalizedData\Sounds\TerranUnitVO\Marine\Marine_Yes04.ogg"/>
+        <AssetArray File="LocalizedData\Sounds\TerranUnitVO\Marine\Marine_Yes12.ogg"/>
+        <Volume value="-1.000000,-1.000000"/>
+    </CSound>
+    <CSound id="Marine_Ready4" parent="Ready">
+        <EditorCategories value="Race:Terran"/>
+        <AssetArray>
+            <File value="LocalizedData\Sounds\TerranUnitVO\Marine\Marine_Ready00.ogg"/>
+            <FacialAnim value="Marine_Ready00"/>
+            <PortraitModel value="MarinePortrait"/>
+            <Speaker value="ConversationState/Characters/CharMarine"/>
+        </AssetArray>
+        <AssetArray File="LocalizedData\Sounds\TerranUnitVO\Marine\Marine_What00.ogg"/>
+        <AssetArray File="LocalizedData\Sounds\TerranUnitVO\Marine\Marine_What03.ogg"/>
+        <AssetArray File="LocalizedData\Sounds\TerranUnitVO\Marine\Marine_What04.ogg"/>
+        <AssetArray File="LocalizedData\Sounds\TerranUnitVO\Marine\Marine_Yes04.ogg"/>
+        <AssetArray File="LocalizedData\Sounds\TerranUnitVO\Marine\Marine_Yes12.ogg"/>
+        <Volume value="-1.000000,-1.000000"/>
+    </CSound>
+    <CSound id="Marine_What2" parent="TerranAck">
+        <AssetArray File="LocalizedData\Sounds\TerranUnitVO\Marine\Marine_What00.ogg" FacialAnim="Marine_What00"/>
+        <AssetArray File="LocalizedData\Sounds\TerranUnitVO\Marine\Marine_What01.ogg" FacialAnim="Marine_What01"/>
+        <AssetArray File="LocalizedData\Sounds\TerranUnitVO\Marine\Marine_What02.ogg" FacialAnim="Marine_What02"/>
+        <AssetArray File="LocalizedData\Sounds\TerranUnitVO\Marine\Marine_What03.ogg" FacialAnim="Marine_What03"/>
+        <AssetArray File="LocalizedData\Sounds\TerranUnitVO\Marine\Marine_What04.ogg" FacialAnim="Marine_What04"/>
+        <AssetArray File="LocalizedData\Sounds\TerranUnitVO\Marine\Marine_What05.ogg" FacialAnim="Marine_What05"/>
+        <Volume value="-1.000000,-1.000000"/>
+    </CSound>
+    <CSound id="Marine_What3" parent="TerranAck">
+        <AssetArray File="LocalizedData\Sounds\TerranUnitVO\Marine\Marine_What00.ogg" FacialAnim="Marine_What00"/>
+        <AssetArray File="LocalizedData\Sounds\TerranUnitVO\Marine\Marine_What01.ogg" FacialAnim="Marine_What01"/>
+        <AssetArray File="LocalizedData\Sounds\TerranUnitVO\Marine\Marine_What02.ogg" FacialAnim="Marine_What02"/>
+        <AssetArray File="LocalizedData\Sounds\TerranUnitVO\Marine\Marine_What03.ogg" FacialAnim="Marine_What03"/>
+        <AssetArray File="LocalizedData\Sounds\TerranUnitVO\Marine\Marine_What04.ogg" FacialAnim="Marine_What04"/>
+        <AssetArray File="LocalizedData\Sounds\TerranUnitVO\Marine\Marine_What05.ogg" FacialAnim="Marine_What05"/>
+        <Volume value="-1.000000,-1.000000"/>
+    </CSound>
+    <CSound id="Marine_What4" parent="TerranAck">
+        <AssetArray File="LocalizedData\Sounds\TerranUnitVO\Marine\Marine_What00.ogg" FacialAnim="Marine_What00"/>
+        <AssetArray File="LocalizedData\Sounds\TerranUnitVO\Marine\Marine_What01.ogg" FacialAnim="Marine_What01"/>
+        <AssetArray File="LocalizedData\Sounds\TerranUnitVO\Marine\Marine_What02.ogg" FacialAnim="Marine_What02"/>
+        <AssetArray File="LocalizedData\Sounds\TerranUnitVO\Marine\Marine_What03.ogg" FacialAnim="Marine_What03"/>
+        <AssetArray File="LocalizedData\Sounds\TerranUnitVO\Marine\Marine_What04.ogg" FacialAnim="Marine_What04"/>
+        <AssetArray File="LocalizedData\Sounds\TerranUnitVO\Marine\Marine_What05.ogg" FacialAnim="Marine_What05"/>
+        <Volume value="-1.000000,-1.000000"/>
+    </CSound>
+    <CSound id="Marine_Yes2" parent="TerranAck">
+        <AssetArray File="LocalizedData\Sounds\TerranUnitVO\Marine\Marine_Yes00.ogg" FacialAnim="Marine_Yes00"/>
+        <AssetArray File="LocalizedData\Sounds\TerranUnitVO\Marine\Marine_Yes01.ogg" FacialAnim="Marine_Yes01"/>
+        <AssetArray File="LocalizedData\Sounds\TerranUnitVO\Marine\Marine_Yes02.ogg" FacialAnim="Marine_Yes02"/>
+        <AssetArray File="LocalizedData\Sounds\TerranUnitVO\Marine\Marine_Yes03.ogg" FacialAnim="Marine_Yes03"/>
+        <AssetArray File="LocalizedData\Sounds\TerranUnitVO\Marine\Marine_Yes04.ogg" FacialAnim="Marine_Yes04"/>
+        <AssetArray File="LocalizedData\Sounds\TerranUnitVO\Marine\Marine_Yes05.ogg" FacialAnim="Marine_Yes05"/>
+        <AssetArray File="LocalizedData\Sounds\TerranUnitVO\Marine\Marine_Yes06.ogg" FacialAnim="Marine_Yes06"/>
+        <AssetArray File="LocalizedData\Sounds\TerranUnitVO\Marine\Marine_Yes07.ogg" FacialAnim="Marine_Yes07"/>
+        <AssetArray File="LocalizedData\Sounds\TerranUnitVO\Marine\Marine_Yes08.ogg" FacialAnim="Marine_Yes08"/>
+        <AssetArray File="LocalizedData\Sounds\TerranUnitVO\Marine\Marine_Yes09.ogg" FacialAnim="Marine_Yes09"/>
+        <AssetArray File="LocalizedData\Sounds\TerranUnitVO\Marine\Marine_Yes10.ogg" FacialAnim="Marine_Yes10"/>
+        <AssetArray File="LocalizedData\Sounds\TerranUnitVO\Marine\Marine_Yes11.ogg" FacialAnim="Marine_Yes11"/>
+        <AssetArray File="LocalizedData\Sounds\TerranUnitVO\Marine\Marine_Yes12.ogg" FacialAnim="Marine_Yes12"/>
+        <AssetArray File="LocalizedData\Sounds\TerranUnitVO\Marine\Marine_Yes13.ogg" FacialAnim="Marine_Yes13"/>
+        <AssetArray File="LocalizedData\Sounds\TerranUnitVO\Marine\Marine_Yes14.ogg" FacialAnim="Marine_Yes14"/>
+        <AssetArray File="LocalizedData\Sounds\TerranUnitVO\Marine\Marine_Yes15.ogg" FacialAnim="Marine_Yes15"/>
+        <AssetArray File="LocalizedData\Sounds\TerranUnitVO\Marine\Marine_Yes16.ogg" FacialAnim="Marine_Yes16"/>
+        <AssetArray File="LocalizedData\Sounds\TerranUnitVO\Marine\Marine_Yes17.ogg" FacialAnim="Marine_Yes17"/>
+        <AssetArray File="LocalizedData\Sounds\TerranUnitVO\Marine\Marine_Yes18.ogg" FacialAnim="Marine_Yes18"/>
+        <AssetArray File="LocalizedData\Sounds\TerranUnitVO\Marine\Marine_Yes19.ogg" FacialAnim="Marine_Yes19"/>
+        <AssetArray File="LocalizedData\Sounds\TerranUnitVO\Marine\Marine_Yes20.ogg" FacialAnim="Marine_Yes20"/>
+        <AssetArray File="LocalizedData\Sounds\TerranUnitVO\Marine\Marine_Yes21.ogg" FacialAnim="Marine_Yes21"/>
+        <AssetArray File="LocalizedData\Sounds\TerranUnitVO\Marine\Marine_Yes22.ogg" FacialAnim="Marine_Yes22"/>
+        <Volume value="-1.000000,-1.000000"/>
+    </CSound>
+    <CSound id="Marine_Yes3" parent="TerranAck">
+        <AssetArray File="LocalizedData\Sounds\TerranUnitVO\Marine\Marine_Yes00.ogg" FacialAnim="Marine_Yes00"/>
+        <AssetArray File="LocalizedData\Sounds\TerranUnitVO\Marine\Marine_Yes01.ogg" FacialAnim="Marine_Yes01"/>
+        <AssetArray File="LocalizedData\Sounds\TerranUnitVO\Marine\Marine_Yes02.ogg" FacialAnim="Marine_Yes02"/>
+        <AssetArray File="LocalizedData\Sounds\TerranUnitVO\Marine\Marine_Yes03.ogg" FacialAnim="Marine_Yes03"/>
+        <AssetArray File="LocalizedData\Sounds\TerranUnitVO\Marine\Marine_Yes04.ogg" FacialAnim="Marine_Yes04"/>
+        <AssetArray File="LocalizedData\Sounds\TerranUnitVO\Marine\Marine_Yes05.ogg" FacialAnim="Marine_Yes05"/>
+        <AssetArray File="LocalizedData\Sounds\TerranUnitVO\Marine\Marine_Yes06.ogg" FacialAnim="Marine_Yes06"/>
+        <AssetArray File="LocalizedData\Sounds\TerranUnitVO\Marine\Marine_Yes07.ogg" FacialAnim="Marine_Yes07"/>
+        <AssetArray File="LocalizedData\Sounds\TerranUnitVO\Marine\Marine_Yes08.ogg" FacialAnim="Marine_Yes08"/>
+        <AssetArray File="LocalizedData\Sounds\TerranUnitVO\Marine\Marine_Yes09.ogg" FacialAnim="Marine_Yes09"/>
+        <AssetArray File="LocalizedData\Sounds\TerranUnitVO\Marine\Marine_Yes10.ogg" FacialAnim="Marine_Yes10"/>
+        <AssetArray File="LocalizedData\Sounds\TerranUnitVO\Marine\Marine_Yes11.ogg" FacialAnim="Marine_Yes11"/>
+        <AssetArray File="LocalizedData\Sounds\TerranUnitVO\Marine\Marine_Yes12.ogg" FacialAnim="Marine_Yes12"/>
+        <AssetArray File="LocalizedData\Sounds\TerranUnitVO\Marine\Marine_Yes13.ogg" FacialAnim="Marine_Yes13"/>
+        <AssetArray File="LocalizedData\Sounds\TerranUnitVO\Marine\Marine_Yes14.ogg" FacialAnim="Marine_Yes14"/>
+        <AssetArray File="LocalizedData\Sounds\TerranUnitVO\Marine\Marine_Yes15.ogg" FacialAnim="Marine_Yes15"/>
+        <AssetArray File="LocalizedData\Sounds\TerranUnitVO\Marine\Marine_Yes16.ogg" FacialAnim="Marine_Yes16"/>
+        <AssetArray File="LocalizedData\Sounds\TerranUnitVO\Marine\Marine_Yes17.ogg" FacialAnim="Marine_Yes17"/>
+        <AssetArray File="LocalizedData\Sounds\TerranUnitVO\Marine\Marine_Yes18.ogg" FacialAnim="Marine_Yes18"/>
+        <AssetArray File="LocalizedData\Sounds\TerranUnitVO\Marine\Marine_Yes19.ogg" FacialAnim="Marine_Yes19"/>
+        <AssetArray File="LocalizedData\Sounds\TerranUnitVO\Marine\Marine_Yes20.ogg" FacialAnim="Marine_Yes20"/>
+        <AssetArray File="LocalizedData\Sounds\TerranUnitVO\Marine\Marine_Yes21.ogg" FacialAnim="Marine_Yes21"/>
+        <AssetArray File="LocalizedData\Sounds\TerranUnitVO\Marine\Marine_Yes22.ogg" FacialAnim="Marine_Yes22"/>
+        <Volume value="-1.000000,-1.000000"/>
+    </CSound>
+    <CSound id="Marine_Yes4" parent="TerranAck">
+        <AssetArray File="LocalizedData\Sounds\TerranUnitVO\Marine\Marine_Yes00.ogg" FacialAnim="Marine_Yes00"/>
+        <AssetArray File="LocalizedData\Sounds\TerranUnitVO\Marine\Marine_Yes01.ogg" FacialAnim="Marine_Yes01"/>
+        <AssetArray File="LocalizedData\Sounds\TerranUnitVO\Marine\Marine_Yes02.ogg" FacialAnim="Marine_Yes02"/>
+        <AssetArray File="LocalizedData\Sounds\TerranUnitVO\Marine\Marine_Yes03.ogg" FacialAnim="Marine_Yes03"/>
+        <AssetArray File="LocalizedData\Sounds\TerranUnitVO\Marine\Marine_Yes04.ogg" FacialAnim="Marine_Yes04"/>
+        <AssetArray File="LocalizedData\Sounds\TerranUnitVO\Marine\Marine_Yes05.ogg" FacialAnim="Marine_Yes05"/>
+        <AssetArray File="LocalizedData\Sounds\TerranUnitVO\Marine\Marine_Yes06.ogg" FacialAnim="Marine_Yes06"/>
+        <AssetArray File="LocalizedData\Sounds\TerranUnitVO\Marine\Marine_Yes07.ogg" FacialAnim="Marine_Yes07"/>
+        <AssetArray File="LocalizedData\Sounds\TerranUnitVO\Marine\Marine_Yes08.ogg" FacialAnim="Marine_Yes08"/>
+        <AssetArray File="LocalizedData\Sounds\TerranUnitVO\Marine\Marine_Yes09.ogg" FacialAnim="Marine_Yes09"/>
+        <AssetArray File="LocalizedData\Sounds\TerranUnitVO\Marine\Marine_Yes10.ogg" FacialAnim="Marine_Yes10"/>
+        <AssetArray File="LocalizedData\Sounds\TerranUnitVO\Marine\Marine_Yes11.ogg" FacialAnim="Marine_Yes11"/>
+        <AssetArray File="LocalizedData\Sounds\TerranUnitVO\Marine\Marine_Yes12.ogg" FacialAnim="Marine_Yes12"/>
+        <AssetArray File="LocalizedData\Sounds\TerranUnitVO\Marine\Marine_Yes13.ogg" FacialAnim="Marine_Yes13"/>
+        <AssetArray File="LocalizedData\Sounds\TerranUnitVO\Marine\Marine_Yes14.ogg" FacialAnim="Marine_Yes14"/>
+        <AssetArray File="LocalizedData\Sounds\TerranUnitVO\Marine\Marine_Yes15.ogg" FacialAnim="Marine_Yes15"/>
+        <AssetArray File="LocalizedData\Sounds\TerranUnitVO\Marine\Marine_Yes16.ogg" FacialAnim="Marine_Yes16"/>
+        <AssetArray File="LocalizedData\Sounds\TerranUnitVO\Marine\Marine_Yes17.ogg" FacialAnim="Marine_Yes17"/>
+        <AssetArray File="LocalizedData\Sounds\TerranUnitVO\Marine\Marine_Yes18.ogg" FacialAnim="Marine_Yes18"/>
+        <AssetArray File="LocalizedData\Sounds\TerranUnitVO\Marine\Marine_Yes19.ogg" FacialAnim="Marine_Yes19"/>
+        <AssetArray File="LocalizedData\Sounds\TerranUnitVO\Marine\Marine_Yes20.ogg" FacialAnim="Marine_Yes20"/>
+        <AssetArray File="LocalizedData\Sounds\TerranUnitVO\Marine\Marine_Yes21.ogg" FacialAnim="Marine_Yes21"/>
+        <AssetArray File="LocalizedData\Sounds\TerranUnitVO\Marine\Marine_Yes22.ogg" FacialAnim="Marine_Yes22"/>
+        <Volume value="-1.000000,-1.000000"/>
+    </CSound>
+    <CSound id="MissileTurret_AttackImpact2" parent="Combat">
+        <EditorCategories value="Race:Terran"/>
+        <AssetArray File="Assets\Sounds\Terran\SharedEffects\Explosions\Terran_ExplosionSmall0.wav"/>
+        <AssetArray File="Assets\Sounds\Terran\SharedEffects\Explosions\Terran_ExplosionSmall1.wav"/>
+        <AssetArray File="Assets\Sounds\Terran\SharedEffects\Explosions\Terran_ExplosionSmall2.wav"/>
+        <AssetArray File="Assets\Sounds\Terran\SharedEffects\Explosions\Terran_ExplosionSmall3.wav"/>
+        <AssetArray File="Assets\Sounds\Terran\SharedEffects\Explosions\Terran_ExplosionSmall4.wav"/>
+        <AssetArray File="Assets\Sounds\Terran\SharedEffects\Explosions\Terran_ExplosionSmall5.wav"/>
+        <Pitch value="-6.000000,6.000000"/>
+    </CSound>
+    <CSound id="MissileTurret_AttackLaunch2" parent="Combat">
+        <EditorCategories value="Race:Terran"/>
+        <AssetArray File="Assets\Sounds\Terran\MissileTurret\MissileTurret_AttackLaunch0.wav"/>
+        <AssetArray File="Assets\Sounds\Terran\MissileTurret\MissileTurret_AttackLaunch1.wav"/>
+        <AssetArray File="Assets\Sounds\Terran\MissileTurret\MissileTurret_AttackLaunch2.wav"/>
+        <DupeDestroyCount value="5"/>
+        <DupeMaximumMethod value="Replace"/>
+        <OverlapTimeDelta value="100"/>
+        <Pitch value="-2.000000,3.000000"/>
+        <Volume value="-6.000000,-6.000000"/>
+    </CSound>
+    <CSound id="MissileTurret_Explode2" parent="Terran_ExplosionMedium">
+        <AssetArray index="0" File="Assets\Sounds\Terran\SharedEffects\Explosions\Terran_ExplosionMedium0.wav" Pitch="-3.000000,3.000000"/>
+        <AssetArray index="1" File="Assets\Sounds\Terran\SharedEffects\Explosions\Terran_ExplosionMedium1.wav" Pitch="-3.000000,3.000000"/>
+        <AssetArray index="2" File="Assets\Sounds\Terran\SharedEffects\Explosions\Terran_ExplosionMedium2.wav" Pitch="-3.000000,3.000000"/>
+        <AssetArray index="3" File="Assets\Sounds\Terran\SharedEffects\Explosions\Terran_ExplosionMedium3.wav" Pitch="-3.000000,3.000000"/>
+        <AssetArray index="4" File="Assets\Sounds\Terran\SharedEffects\Explosions\Terran_ExplosionMedium4.wav" Pitch="-3.000000,3.000000"/>
+        <AssetArray index="5" File="Assets\Sounds\Terran\SharedEffects\Explosions\Terran_ExplosionMedium5.wav" Pitch="-3.000000,3.000000"/>
+        <AssetArray index="6" File="Assets\Sounds\Terran\SharedEffects\Explosions\Terran_ExplosionMedium6.wav" Pitch="-3.000000,3.000000"/>
+        <AssetArray index="7" File="Assets\Sounds\Terran\SharedEffects\Explosions\Terran_ExplosionMedium7.wav" Pitch="-3.000000,3.000000"/>
+        <AssetArray index="8" File="Assets\Sounds\Terran\SharedEffects\Explosions\Terran_ExplosionMedium8.wav" Pitch="-3.000000,3.000000"/>
+        <AssetArray index="9" File="Assets\Sounds\Terran\SharedEffects\Explosions\Terran_ExplosionMedium9.wav" Pitch="-3.000000,3.000000"/>
+        <DupeMaximumMethod value="Prevent"/>
+        <DupeMuteCount value="10"/>
+        <Pitch value="0.000000,0.000000"/>
+        <Volume value="0.000000,0.000000"/>
+    </CSound>
+    <CSound id="MissileTurret_Ready2" parent="Ready">
+        <EditorCategories value="Race:Terran"/>
+        <AssetArray File="Assets\Sounds\Terran\MissileTurret\MissileTurret_What.ogg"/>
+        <Volume value="-9.000000,-9.000000"/>
+    </CSound>
+    <CSound id="MissileTurret_What2" parent="Voice">
+        <EditorCategories value="Race:Terran"/>
+        <AssetArray File="Assets\Sounds\Terran\MissileTurret\MissileTurret_What.ogg"/>
+        <Volume value="-9.000000,-9.000000"/>
+    </CSound>
+    <CSound id="MoneyChing">
+        <AssetArray File="Assets\Declare War, Neutral, Peace\Money1.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Declare War, Neutral, Peace\Money2.ogg" Volume="-0.830000,0.000000" FacialGroup=""/>
+        <AssetArray File="Assets\Declare War, Neutral, Peace\Money3.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Declare War, Neutral, Peace\Money4.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Declare War, Neutral, Peace\Money5.ogg" FacialGroup=""/>
+        <Flags index="Ignorable" value="1"/>
+        <Flags index="Stream" value="1"/>
+        <PanLevel value="0.750000"/>
+        <Select value="Random"/>
+        <Volume value="-1.000000,-1.000000"/>
+    </CSound>
+    <CSound id="MortarAttackImpact">
+        <AssetArray File="Assets\Textures\MortarNoise\MortarImpact.wav" Volume="-9.300000,-9.300000" FacialGroup=""/>
+        <Volume value="-6.000000,-6.000000"/>
+    </CSound>
+    <CSound id="MortarAttackLaunch">
+        <AssetArray>
+            <File value="Assets\Textures\MortarNoise\MortarFire1.wav"/>
+            <Pitch value="3.430000,3.430000"/>
+            <Volume value="-15.860000,-15.860000"/>
+            <FacialGroup value=""/>
+        </AssetArray>
+        <AssetArray>
+            <File value="Assets\Textures\MortarNoise\MortarFire2.wav"/>
+            <Pitch value="2.740000,2.740000"/>
+            <Volume value="-15.860000,-15.860000"/>
+            <FacialGroup value=""/>
+        </AssetArray>
+        <AssetArray>
+            <File value="Assets\Textures\MortarNoise\MortarFire3.wav"/>
+            <Pitch value="2.740000,2.740000"/>
+            <Volume value="-16.590000,-16.590000"/>
+            <FacialGroup value=""/>
+        </AssetArray>
+        <Volume value="-5.000000,-5.000000"/>
+        <VolumeRolloffPoints/>
+        <VolumeRolloffPoints Distance="15.095580" Volume="-96.000000"/>
+    </CSound>
+    <CSound id="NuclearWar" parent="MUSIC">
+        <AssetArray File="Assets\Music\MissionMusic\Music_T16.ogg" Volume="6.000000,6.000000" FacialGroup=""/>
+    </CSound>
+    <CSound id="Obelisk_Explode2" parent="Protoss_ExplosionLarge"/>
+    <CSound id="Obelisk_What2" parent="Voice">
+        <EditorCategories value="Race:Protoss"/>
+        <AssetArray File="Assets\Sounds\Protoss\Obelisk\Obelisk_What.ogg"/>
+        <Volume value="-6.000000,-6.000000"/>
+    </CSound>
+    <CSound id="PlanetaryFortress_AttackImpact2" parent="Terran_ExplosionMedium">
+        <AssetArray index="0" File="Assets\Sounds\Terran\SharedEffects\Explosions\Terran_ExplosionMedium0.wav" Pitch="-3.000000,3.000000"/>
+        <AssetArray index="1" File="Assets\Sounds\Terran\SharedEffects\Explosions\Terran_ExplosionMedium1.wav" Pitch="-3.000000,3.000000"/>
+        <AssetArray index="2" File="Assets\Sounds\Terran\SharedEffects\Explosions\Terran_ExplosionMedium2.wav" Pitch="-3.000000,3.000000"/>
+        <AssetArray index="3" File="Assets\Sounds\Terran\SharedEffects\Explosions\Terran_ExplosionMedium3.wav" Pitch="-3.000000,3.000000"/>
+        <AssetArray index="4" File="Assets\Sounds\Terran\SharedEffects\Explosions\Terran_ExplosionMedium4.wav" Pitch="-3.000000,3.000000"/>
+        <AssetArray index="5" File="Assets\Sounds\Terran\SharedEffects\Explosions\Terran_ExplosionMedium5.wav" Pitch="-3.000000,3.000000"/>
+        <AssetArray index="6" File="Assets\Sounds\Terran\SharedEffects\Explosions\Terran_ExplosionMedium6.wav" Pitch="-3.000000,3.000000"/>
+        <AssetArray index="7" File="Assets\Sounds\Terran\SharedEffects\Explosions\Terran_ExplosionMedium7.wav" Pitch="-3.000000,3.000000"/>
+        <AssetArray index="8" File="Assets\Sounds\Terran\SharedEffects\Explosions\Terran_ExplosionMedium8.wav" Pitch="-3.000000,3.000000"/>
+        <AssetArray index="9" File="Assets\Sounds\Terran\SharedEffects\Explosions\Terran_ExplosionMedium9.wav" Pitch="-3.000000,3.000000"/>
+        <DupeMaximumMethod value="Prevent"/>
+        <DupeMuteCount value="10"/>
+        <Pitch value="0.000000,0.000000"/>
+        <Volume value="-9.000000,-9.000000"/>
+    </CSound>
+    <CSound id="Protoss_BuildingPlacementSmall2" parent="UI">
+        <EditorCategories value="Race:Protoss"/>
+        <AssetArray File="Assets\Sounds\Protoss\SharedEffects\Construction\Protoss_BuildingPlacementSmall0.wav"/>
+        <Pitch value="9.000000,9.000000"/>
+        <Volume value="-6.180000,-6.180000"/>
+    </CSound>
+    <CSound id="Protoss_PowerDownLarge2" parent="Spell">
+        <EditorCategories value="Race:Protoss"/>
+        <AssetArray File="Assets\Sounds\Protoss\SharedEffects\Construction\Protoss_PowerDownLarge0.wav"/>
+        <AssetArray File="Assets\Sounds\Protoss\SharedEffects\Construction\Protoss_PowerDownLarge1.wav"/>
+        <DupeDestroyCount value="3"/>
+        <Volume value="-12.000000,-12.000000"/>
+    </CSound>
+    <CSound id="Protoss_PowerDownLarge3" parent="Spell">
+        <EditorCategories value="Race:Protoss"/>
+        <AssetArray File="Assets\Sounds\Protoss\SharedEffects\Construction\Protoss_PowerDownLarge0.wav"/>
+        <AssetArray File="Assets\Sounds\Protoss\SharedEffects\Construction\Protoss_PowerDownLarge1.wav"/>
+        <DupeDestroyCount value="3"/>
+        <Volume value="-12.000000,-12.000000"/>
+    </CSound>
+    <CSound id="Protoss_PowerDownLarge32" parent="Spell">
+        <EditorCategories value="Race:Protoss"/>
+        <AssetArray File="Assets\Sounds\Protoss\SharedEffects\Construction\Protoss_PowerDownLarge0.wav"/>
+        <AssetArray File="Assets\Sounds\Protoss\SharedEffects\Construction\Protoss_PowerDownLarge1.wav"/>
+        <DupeDestroyCount value="3"/>
+        <Volume value="-12.000000,-12.000000"/>
+    </CSound>
+    <CSound id="Protoss_PowerDownLarge33" parent="Spell">
+        <EditorCategories value="Race:Protoss"/>
+        <AssetArray File="Assets\Sounds\Protoss\SharedEffects\Construction\Protoss_PowerDownLarge0.wav"/>
+        <AssetArray File="Assets\Sounds\Protoss\SharedEffects\Construction\Protoss_PowerDownLarge1.wav"/>
+        <DupeDestroyCount value="3"/>
+        <Volume value="-12.000000,-12.000000"/>
+    </CSound>
+    <CSound id="Protoss_PowerDownLarge4" parent="Spell">
+        <EditorCategories value="Race:Protoss"/>
+        <AssetArray File="Assets\Sounds\Protoss\SharedEffects\Construction\Protoss_PowerDownLarge0.wav"/>
+        <AssetArray File="Assets\Sounds\Protoss\SharedEffects\Construction\Protoss_PowerDownLarge1.wav"/>
+        <DupeDestroyCount value="3"/>
+        <Volume value="-12.000000,-12.000000"/>
+    </CSound>
+    <CSound id="Protoss_PowerDownLarge5" parent="Spell">
+        <EditorCategories value="Race:Protoss"/>
+        <AssetArray File="Assets\Sounds\Protoss\SharedEffects\Construction\Protoss_PowerDownLarge0.wav"/>
+        <AssetArray File="Assets\Sounds\Protoss\SharedEffects\Construction\Protoss_PowerDownLarge1.wav"/>
+        <DupeDestroyCount value="3"/>
+        <Volume value="-12.000000,-12.000000"/>
+    </CSound>
+    <CSound id="Protoss_PowerDownSmall2" parent="Spell">
+        <EditorCategories value="Race:Protoss"/>
+        <AssetArray File="Assets\Sounds\Protoss\SharedEffects\Construction\Protoss_PowerDownSmall0.wav"/>
+        <AssetArray File="Assets\Sounds\Protoss\SharedEffects\Construction\Protoss_PowerDownSmall1.wav"/>
+        <DupeDestroyCount value="3"/>
+        <Volume value="-12.000000,-12.000000"/>
+    </CSound>
+    <CSound id="Protoss_PowerUpLarge2" parent="Spell">
+        <EditorCategories value="Race:Protoss"/>
+        <AssetArray File="Assets\Sounds\Protoss\SharedEffects\Construction\Protoss_PowerUpLarge0.wav"/>
+        <AssetArray File="Assets\Sounds\Protoss\SharedEffects\Construction\Protoss_PowerUpLarge1.wav"/>
+        <DupeDestroyCount value="3"/>
+        <Volume value="-12.000000,-12.000000"/>
+    </CSound>
+    <CSound id="Protoss_PowerUpLarge3" parent="Spell">
+        <EditorCategories value="Race:Protoss"/>
+        <AssetArray File="Assets\Sounds\Protoss\SharedEffects\Construction\Protoss_PowerUpLarge0.wav"/>
+        <AssetArray File="Assets\Sounds\Protoss\SharedEffects\Construction\Protoss_PowerUpLarge1.wav"/>
+        <DupeDestroyCount value="3"/>
+        <Volume value="-12.000000,-12.000000"/>
+    </CSound>
+    <CSound id="Protoss_PowerUpLarge32" parent="Spell">
+        <EditorCategories value="Race:Protoss"/>
+        <AssetArray File="Assets\Sounds\Protoss\SharedEffects\Construction\Protoss_PowerUpLarge0.wav"/>
+        <AssetArray File="Assets\Sounds\Protoss\SharedEffects\Construction\Protoss_PowerUpLarge1.wav"/>
+        <DupeDestroyCount value="3"/>
+        <Volume value="-12.000000,-12.000000"/>
+    </CSound>
+    <CSound id="Protoss_PowerUpLarge33" parent="Spell">
+        <EditorCategories value="Race:Protoss"/>
+        <AssetArray File="Assets\Sounds\Protoss\SharedEffects\Construction\Protoss_PowerUpLarge0.wav"/>
+        <AssetArray File="Assets\Sounds\Protoss\SharedEffects\Construction\Protoss_PowerUpLarge1.wav"/>
+        <DupeDestroyCount value="3"/>
+        <Volume value="-12.000000,-12.000000"/>
+    </CSound>
+    <CSound id="Protoss_PowerUpLarge4" parent="Spell">
+        <EditorCategories value="Race:Protoss"/>
+        <AssetArray File="Assets\Sounds\Protoss\SharedEffects\Construction\Protoss_PowerUpLarge0.wav"/>
+        <AssetArray File="Assets\Sounds\Protoss\SharedEffects\Construction\Protoss_PowerUpLarge1.wav"/>
+        <DupeDestroyCount value="3"/>
+        <Volume value="-12.000000,-12.000000"/>
+    </CSound>
+    <CSound id="Protoss_PowerUpLarge5" parent="Spell">
+        <EditorCategories value="Race:Protoss"/>
+        <AssetArray File="Assets\Sounds\Protoss\SharedEffects\Construction\Protoss_PowerUpLarge0.wav"/>
+        <AssetArray File="Assets\Sounds\Protoss\SharedEffects\Construction\Protoss_PowerUpLarge1.wav"/>
+        <DupeDestroyCount value="3"/>
+        <Volume value="-12.000000,-12.000000"/>
+    </CSound>
+    <CSound id="Protoss_PowerUpSmall2" parent="Spell">
+        <EditorCategories value="Race:Protoss"/>
+        <AssetArray File="Assets\Sounds\Protoss\SharedEffects\Construction\Protoss_PowerUpSmall0.wav"/>
+        <AssetArray File="Assets\Sounds\Protoss\SharedEffects\Construction\Protoss_PowerUpSmall1.wav"/>
+        <DupeDestroyCount value="3"/>
+        <Volume value="-12.000000,-12.000000"/>
+    </CSound>
+    <CSound id="RPGFire">
+        <AssetArray File="Assets\Textures\RPGNoise\RPGFire2.wav" Volume="-21.689999,-21.689999" FacialGroup=""/>
+        <AssetArray File="Assets\Textures\RPGNoise\RPGFire1.wav" Volume="-20.959999,-20.959999" FacialGroup=""/>
+    </CSound>
+    <CSound id="RailGun_Impact2" parent="Combat">
+        <EditorCategories value="Race:Terran"/>
+        <AssetArray File="Assets\Sounds\HellFire_Shotgun_Impact_01.wav" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\HellFire_Shotgun_Impact_02.wav" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\HellFire_Shotgun_Impact_03.wav" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\HellFire_Shotgun_Impact_04.wav" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\HellFire_Shotgun_Impact_05.wav" FacialGroup=""/>
+        <Pitch value="-1.000000,1.000000"/>
+        <Spread value="20.000000"/>
+        <Volume value="-2.000000,0.000000"/>
+    </CSound>
+    <CSound id="RailGun_Launch2" parent="RailGun_Launch"/>
+    <!--                                                                                         -->
+    <!-- Units                                                                                   -->
+    <!--                                                                                         -->
+    <CSound id="Raven_AutoTurretAttackLaunch">
+        <AssetArray index="0" File="Assets\A10\Brt1.wav" FacialGroup=""/>
+        <AssetArray index="1" File="Assets\A10\Brt2.wav" FacialGroup=""/>
+        <AssetArray index="2" File="Assets\A10\Brt3.wav" FacialGroup=""/>
+        <AssetArray index="3" removed="1"/>
+    </CSound>
+    <CSound id="Raven_AutoTurretBirth2" parent="Build">
+        <EditorCategories value="Race:Terran"/>
+        <AssetArray File="Assets\Sounds\Terran\Raven\Raven_AutoTurretBirth0.wav"/>
+        <Pitch value="4.540000,4.540000"/>
+        <Volume value="-1.940000,-1.940000"/>
+    </CSound>
+    <CSound id="Raven_AutoTurretExplode2" parent="Terran_ExplosionMedium">
+        <AssetArray index="0" File="Assets\Sounds\Terran\SharedEffects\Explosions\Terran_ExplosionMedium0.wav" Pitch="-3.000000,3.000000"/>
+        <AssetArray index="1" File="Assets\Sounds\Terran\SharedEffects\Explosions\Terran_ExplosionMedium1.wav" Pitch="-3.000000,3.000000"/>
+        <AssetArray index="2" File="Assets\Sounds\Terran\SharedEffects\Explosions\Terran_ExplosionMedium2.wav" Pitch="-3.000000,3.000000"/>
+        <AssetArray index="3" File="Assets\Sounds\Terran\SharedEffects\Explosions\Terran_ExplosionMedium3.wav" Pitch="-3.000000,3.000000"/>
+        <AssetArray index="4" File="Assets\Sounds\Terran\SharedEffects\Explosions\Terran_ExplosionMedium4.wav" Pitch="-3.000000,3.000000"/>
+        <AssetArray index="5" File="Assets\Sounds\Terran\SharedEffects\Explosions\Terran_ExplosionMedium5.wav" Pitch="-3.000000,3.000000"/>
+        <AssetArray index="6" File="Assets\Sounds\Terran\SharedEffects\Explosions\Terran_ExplosionMedium6.wav" Pitch="-3.000000,3.000000"/>
+        <AssetArray index="7" File="Assets\Sounds\Terran\SharedEffects\Explosions\Terran_ExplosionMedium7.wav" Pitch="-3.000000,3.000000"/>
+        <AssetArray index="8" File="Assets\Sounds\Terran\SharedEffects\Explosions\Terran_ExplosionMedium8.wav" Pitch="-3.000000,3.000000"/>
+        <AssetArray index="9" File="Assets\Sounds\Terran\SharedEffects\Explosions\Terran_ExplosionMedium9.wav" Pitch="-3.000000,3.000000"/>
+        <DupeMaximumMethod value="Prevent"/>
+        <DupeMuteCount value="10"/>
+        <Pitch value="0.000000,0.000000"/>
+        <Volume value="0.000000,0.000000"/>
+    </CSound>
+    <CSound id="Raven_AutoTurretReady2" parent="Ready">
+        <EditorCategories value="Race:Terran"/>
+        <AssetArray File="Assets\Sounds\Terran\Raven\Raven_AutoTurretWhat0.wav"/>
+        <Volume value="-6.000000,-6.000000"/>
+    </CSound>
+    <CSound id="Raven_AutoTurretWhat2" parent="TerranAck">
+        <AssetArray File="Assets\Sounds\Terran\Raven\Raven_AutoTurretWhat0.wav"/>
+        <Volume value="-6.000000,-6.000000"/>
+    </CSound>
+    <CSound id="Raven_PointDefenseDroneAttackImpact2" parent="Combat">
+        <EditorCategories value="Race:Terran"/>
+        <AssetArray File="Assets\Sounds\Terran\Raven\Raven_PointDefenseDroneAttackImpact0.wav"/>
+        <Pitch value="0.000000,3.000000"/>
+        <SustainFade index="1" Time="2500"/>
+        <Volume value="-3.000000,-3.000000"/>
+    </CSound>
+    <CSound id="Raven_PointDefenseDroneAttackLaunch2" parent="Combat">
+        <EditorCategories value="Race:Terran"/>
+        <AssetArray File="Assets\Sounds\Terran\Raven\Raven_PointDefenseDroneAttackLaunch0.wav"/>
+        <AssetArray File="Assets\Sounds\Terran\Raven\Raven_PointDefenseDroneAttackLaunch1.wav"/>
+        <AssetArray File="Assets\Sounds\Terran\Raven\Raven_PointDefenseDroneAttackLaunch2.wav"/>
+        <DupeDestroyCount value="4"/>
+        <Pitch value="0.000000,3.000000"/>
+        <SustainFade index="1" Time="2500"/>
+    </CSound>
+    <CSound id="RaynorAttackLaunch2" parent="Marine_AttackLaunch">
+        <Pitch value="-2.000000,3.000000"/>
+        <Volume value="-13.000000,-10.000000"/>
+    </CSound>
+    <CSound id="RaynorCommandoAttackLaunch">
+        <AssetArray index="0" File="Assets\Textures\AntiMaterialRifle\AntiMaterialRifle1.wav" Volume="6.000000,6.000000" FacialGroup=""/>
+        <AssetArray index="1" File="Assets\Textures\AntiMaterialRifle\AntiMaterialRifle2.wav" Volume="6.000000,6.000000" FacialGroup=""/>
+        <AssetArray index="2" removed="1"/>
+        <Pitch value="0.000000,0.000000"/>
+        <Volume value="0.000000,0.000000"/>
+    </CSound>
+    <CSound id="Raynor_Attack2" parent="TerranAck" Portrait="RaynorMarinePortrait" Subtitle="zUnit_HeroRaynor" Speaker="Raynor" Line="00017">
+        <AssetArray File="LocalizedData\Sounds\TerranVO\CampaignUnits\Raynor\Raynor_Attack00.ogg" FacialAnim="Raynor_Attack00"/>
+        <AssetArray File="LocalizedData\Sounds\TerranVO\CampaignUnits\Raynor\Raynor_Attack01.ogg" FacialAnim="Raynor_Attack01"/>
+        <AssetArray File="LocalizedData\Sounds\TerranVO\CampaignUnits\Raynor\Raynor_Attack02.ogg" FacialAnim="Raynor_Attack02"/>
+        <AssetArray File="LocalizedData\Sounds\TerranVO\CampaignUnits\Raynor\Raynor_Attack03.ogg" FacialAnim="Raynor_Attack03"/>
+        <Flags index="NeedsUpdate" value="1"/>
+        <Flags index="NeedsTTS" value="1"/>
+        <Volume value="-1.000000,-1.000000"/>
+    </CSound>
+    <CSound id="Raynor_AttackImpact2" parent="Terran_MultipleBulletAttackImpact"/>
+    <CSound id="Raynor_Explode2" parent="Zerg_ExplosionMedium">
+        <EditorCategories value="Race:Terran"/>
+    </CSound>
+    <CSound id="Raynor_Help2" parent="TerranAck" Portrait="RaynorMarinePortrait" Subtitle="zUnit_HeroRaynor" Speaker="Raynor" Line="00033">
+        <AssetArray File="LocalizedData\Sounds\TerranVO\CampaignUnits\Raynor\Raynor_Help00.ogg" FacialAnim="Raynor_Help00"/>
+        <AssetArray File="LocalizedData\Sounds\TerranVO\CampaignUnits\Raynor\Raynor_Help01.ogg" FacialAnim="Raynor_Help01"/>
+        <AssetArray File="LocalizedData\Sounds\TerranVO\CampaignUnits\Raynor\Raynor_Help02.ogg" FacialAnim="Raynor_Help02"/>
+        <Flags index="NeedsUpdate" value="1"/>
+        <Flags index="NeedsTTS" value="1"/>
+        <Category value="Alert"/>
+        <Volume value="-1.000000,-1.000000"/>
+    </CSound>
+    <CSound id="Raynor_Pissed2" parent="Pissed" Portrait="RaynorMarinePortrait" Subtitle="zUnit_HeroRaynor" Speaker="Raynor" Line="00031">
+        <EditorCategories value="Race:Terran"/>
+        <AssetArray File="LocalizedData\Sounds\TerranVO\CampaignUnits\Raynor\Raynor_Pissed00.ogg" FacialAnim="Raynor_Pissed00"/>
+        <AssetArray File="LocalizedData\Sounds\TerranVO\CampaignUnits\Raynor\Raynor_Pissed01.ogg" FacialAnim="Raynor_Pissed01"/>
+        <AssetArray File="LocalizedData\Sounds\TerranVO\CampaignUnits\Raynor\Raynor_Pissed02.ogg" FacialAnim="Raynor_Pissed02"/>
+        <AssetArray File="LocalizedData\Sounds\TerranVO\CampaignUnits\Raynor\Raynor_Pissed03.ogg" FacialAnim="Raynor_Pissed03"/>
+        <AssetArray File="LocalizedData\Sounds\TerranVO\CampaignUnits\Raynor\Raynor_Pissed04.ogg" FacialAnim="Raynor_Pissed04"/>
+        <AssetArray File="LocalizedData\Sounds\TerranVO\CampaignUnits\Raynor\Raynor_Pissed05.ogg" FacialAnim="Raynor_Pissed05"/>
+        <AssetArray File="LocalizedData\Sounds\TerranVO\CampaignUnits\Raynor\Raynor_Pissed07.ogg" FacialAnim="Raynor_Pissed07"/>
+        <AssetArray File="LocalizedData\Sounds\TerranVO\CampaignUnits\Raynor\Raynor_Pissed08.ogg" FacialAnim="Raynor_Pissed08"/>
+        <AssetArray File="LocalizedData\Sounds\TerranVO\CampaignUnits\Raynor\Raynor_Pissed09.ogg" FacialAnim="Raynor_Pissed09"/>
+        <AssetArray File="LocalizedData\Sounds\TerranVO\CampaignUnits\Raynor\Raynor_Pissed10.ogg" FacialAnim="Raynor_Pissed10"/>
+        <AssetArray File="LocalizedData\Sounds\TerranVO\CampaignUnits\Raynor\Raynor_Pissed11.ogg" FacialAnim="Raynor_Pissed11"/>
+        <Flags index="NeedsUpdate" value="1"/>
+        <Flags index="NeedsTTS" value="1"/>
+        <Volume value="-1.000000,-1.000000"/>
+    </CSound>
+    <CSound id="Raynor_Ready2" parent="Ready" Portrait="RaynorMarinePortrait" Subtitle="zUnit_HeroRaynor" Speaker="Raynor" Line="00001">
+        <EditorCategories value="Race:Terran"/>
+        <AssetArray File="LocalizedData\Sounds\TerranVO\CampaignUnits\Raynor\Raynor_Ready00.ogg" FacialAnim="Raynor_Help01"/>
+        <Flags index="NeedsUpdate" value="1"/>
+        <Flags index="NeedsTTS" value="1"/>
+        <Volume value="-1.000000,-1.000000"/>
+    </CSound>
+    <CSound id="Raynor_What2" parent="TerranAck" Portrait="RaynorMarinePortrait" Subtitle="zUnit_HeroRaynor" Speaker="Raynor" Line="00006">
+        <AssetArray File="LocalizedData\Sounds\TerranVO\CampaignUnits\Raynor\Raynor_What00.ogg" FacialAnim="Raynor_What00"/>
+        <AssetArray File="LocalizedData\Sounds\TerranVO\CampaignUnits\Raynor\Raynor_What01.ogg" FacialAnim="Raynor_What01"/>
+        <AssetArray File="LocalizedData\Sounds\TerranVO\CampaignUnits\Raynor\Raynor_What02.ogg" FacialAnim="Raynor_What02"/>
+        <AssetArray File="LocalizedData\Sounds\TerranVO\CampaignUnits\Raynor\Raynor_What03.ogg" FacialAnim="Raynor_What03"/>
+        <AssetArray File="LocalizedData\Sounds\TerranVO\CampaignUnits\Raynor\Raynor_What04.ogg" FacialAnim="Raynor_What04"/>
+        <Flags index="NeedsUpdate" value="1"/>
+        <Flags index="NeedsTTS" value="1"/>
+        <Volume value="-1.000000,-1.000000"/>
+    </CSound>
+    <CSound id="Raynor_Yes2" parent="TerranAck" Portrait="RaynorMarinePortrait" Subtitle="zUnit_HeroRaynor" Speaker="Raynor" Line="00025">
+        <AssetArray File="LocalizedData\Sounds\TerranVO\CampaignUnits\Raynor\Raynor_Yes05.ogg" Volume="-2.000000,-2.000000" FacialAnim="Raynor_Yes05"/>
+        <AssetArray File="LocalizedData\Sounds\TerranVO\CampaignUnits\Raynor\Raynor_Yes06.ogg" Volume="-2.000000,-2.000000" FacialAnim="Raynor_Yes06"/>
+        <AssetArray File="LocalizedData\Sounds\TerranVO\CampaignUnits\Raynor\Raynor_Attack04.ogg" FacialAnim="Raynor_Attack04"/>
+        <AssetArray File="LocalizedData\Sounds\TerranVO\CampaignUnits\Raynor\Raynor_Pissed06.ogg" Volume="-2.000000,-2.000000" FacialAnim="Raynor_Pissed06"/>
+        <Flags index="NeedsUpdate" value="1"/>
+        <Flags index="NeedsTTS" value="1"/>
+    </CSound>
+    <CSound id="ScoutGroundAttackLaunch">
+        <AssetArray index="0">
+            <File value="Assets\Textures\RifleNoise\Rifle1.wav"/>
+            <Pitch value="1.370000,1.370000"/>
+            <Volume value="6.000000,6.000000"/>
+            <FacialGroup value=""/>
+        </AssetArray>
+        <AssetArray index="1">
+            <File value="Assets\Textures\RifleNoise\Rifle2.wav"/>
+            <Pitch value="0.690000,0.690000"/>
+            <Volume value="6.000000,6.000000"/>
+            <FacialGroup value=""/>
+        </AssetArray>
+        <AssetArray index="2">
+            <File value="Assets\Textures\RifleNoise\Rifle3.wav"/>
+            <Pitch value="2.740000,2.740000"/>
+            <Volume value="6.000000,6.000000"/>
+            <FacialGroup value=""/>
+        </AssetArray>
+        <AssetArray>
+            <File value="Assets\Textures\RifleNoise\Rifle4.wav"/>
+            <Pitch value="-0.690000,-0.690000"/>
+            <Volume value="6.000000,6.000000"/>
+            <FacialGroup value=""/>
+        </AssetArray>
+        <Volume value="0.000000,0.000000"/>
+    </CSound>
+    <CSound id="Scout_GroundAttackImpact">
+        <AssetArray index="0" removed="1"/>
+        <AssetArray index="1" removed="1"/>
+        <AssetArray index="2" removed="1"/>
+    </CSound>
+    <CSound id="ShadowUnit_DeathFX2" parent="Combat">
+        <AssetArray File="Assets\Sounds\SpiritPlasmaA_01.wav" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\SpiritPlasmaA_02.wav" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\SpiritPlasmaA_03.wav" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\SpiritPlasmaA_04.wav" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\SpiritPlasmaA_05.wav" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\SpiritPlasmaA_06.wav" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\SpiritPlasmaA_07.wav" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\SpiritPlasmaA_08.wav" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\SpiritPlasmaA_09.wav" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\SpiritPlasmaA_10.wav" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\SpiritPlasmaA_11.wav" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\SpiritPlasmaA_12.wav" FacialGroup=""/>
+        <DupeMaximumMethod value="Replace"/>
+        <DupeMuteCount value="2"/>
+        <DupeThresholdPoints/>
+        <DupeThresholdPoints Count="3" Volume="-3.000000"/>
+        <DupePrioritization value="Oldest"/>
+        <Pitch value="-1.000000,1.000000"/>
+        <Volume value="-3.000000,-2.000000"/>
+    </CSound>
+    <CSound id="ShieldBattery_Recharge_Loop2" parent="Spell">
+        <EditorCategories value="Race:Protoss"/>
+        <AssetArray File="Assets\Sounds\ShieldBattery_ReCharge2_Loop.wav" FacialGroup=""/>
+        <LoopCount value="-1"/>
+        <MuteFadeOut/>
+        <MuteFadeOut Time="299" Volume="-96.000000"/>
+        <OffsetFadeIn Volume="-96.000000"/>
+        <OffsetFadeIn Time="100"/>
+        <OffsetShiftBlend value="Logarithmic"/>
+        <Pitch value="-1.000000,0.000000"/>
+        <Volume value="-6.000000,-6.000000"/>
+    </CSound>
+    <CSound id="ShipmentCenter_Explode2" parent="Combat">
+        <EditorCategories value="Race:Neutral"/>
+        <AssetArray File="Assets\Sounds\Uni\Units\TRaynor01RadioTower\TRaynor01RadioTower_Death.wav"/>
+    </CSound>
+    <CSound id="ShipmentCenter_Explode22" parent="Combat">
+        <EditorCategories value="Race:Neutral"/>
+        <AssetArray File="Assets\Sounds\Uni\Units\TRaynor01RadioTower\TRaynor01RadioTower_Death.wav"/>
+    </CSound>
+    <CSound id="ShipmentCenter_Explode3" parent="Combat">
+        <EditorCategories value="Race:Neutral"/>
+        <AssetArray File="Assets\Sounds\Uni\Units\TRaynor01RadioTower\TRaynor01RadioTower_Death.wav"/>
+    </CSound>
+    <CSound id="SiegeTank_Attack2" parent="TerranAck">
+        <AssetArray File="LocalizedData\Sounds\TerranUnitVO\SiegeTank\SiegeTank_Attack00.ogg" FacialAnim="SiegeTank_Attack00"/>
+        <AssetArray File="LocalizedData\Sounds\TerranUnitVO\SiegeTank\SiegeTank_Attack01.ogg" FacialAnim="SiegeTank_Attack01"/>
+        <AssetArray File="LocalizedData\Sounds\TerranUnitVO\SiegeTank\SiegeTank_Attack02.ogg" FacialAnim="SiegeTank_Attack02"/>
+        <AssetArray File="LocalizedData\Sounds\TerranUnitVO\SiegeTank\SiegeTank_Attack03.ogg" FacialAnim="SiegeTank_Attack03"/>
+        <AssetArray File="LocalizedData\Sounds\TerranUnitVO\SiegeTank\SiegeTank_Attack04.ogg" FacialAnim="SiegeTank_Attack04"/>
+        <AssetArray File="LocalizedData\Sounds\TerranUnitVO\SiegeTank\SiegeTank_Attack05.ogg" FacialAnim="SiegeTank_Attack05"/>
+        <AssetArray File="LocalizedData\Sounds\TerranUnitVO\SiegeTank\SiegeTank_Attack06.ogg" FacialAnim="SiegeTank_Attack06"/>
+        <AssetArray File="LocalizedData\Sounds\TerranUnitVO\SiegeTank\SiegeTank_Attack07.ogg" FacialAnim="SiegeTank_Attack07"/>
+        <AssetArray File="LocalizedData\Sounds\TerranUnitVO\SiegeTank\SiegeTank_Attack08.ogg" FacialAnim="SiegeTank_Attack08"/>
+        <AssetArray File="LocalizedData\Sounds\TerranUnitVO\SiegeTank\SiegeTank_Attack09.ogg" FacialAnim="SiegeTank_Attack09"/>
+        <Flags index="Download" value="0"/>
+        <Volume value="1.000000,1.000000"/>
+    </CSound>
+    <CSound id="SiegeTank_Attack3" parent="TerranAck">
+        <AssetArray File="LocalizedData\Sounds\TerranUnitVO\SiegeTank\SiegeTank_Attack00.ogg" FacialAnim="SiegeTank_Attack00"/>
+        <AssetArray File="LocalizedData\Sounds\TerranUnitVO\SiegeTank\SiegeTank_Attack01.ogg" FacialAnim="SiegeTank_Attack01"/>
+        <AssetArray File="LocalizedData\Sounds\TerranUnitVO\SiegeTank\SiegeTank_Attack02.ogg" FacialAnim="SiegeTank_Attack02"/>
+        <AssetArray File="LocalizedData\Sounds\TerranUnitVO\SiegeTank\SiegeTank_Attack03.ogg" FacialAnim="SiegeTank_Attack03"/>
+        <AssetArray File="LocalizedData\Sounds\TerranUnitVO\SiegeTank\SiegeTank_Attack04.ogg" FacialAnim="SiegeTank_Attack04"/>
+        <AssetArray File="LocalizedData\Sounds\TerranUnitVO\SiegeTank\SiegeTank_Attack05.ogg" FacialAnim="SiegeTank_Attack05"/>
+        <AssetArray File="LocalizedData\Sounds\TerranUnitVO\SiegeTank\SiegeTank_Attack06.ogg" FacialAnim="SiegeTank_Attack06"/>
+        <AssetArray File="LocalizedData\Sounds\TerranUnitVO\SiegeTank\SiegeTank_Attack07.ogg" FacialAnim="SiegeTank_Attack07"/>
+        <AssetArray File="LocalizedData\Sounds\TerranUnitVO\SiegeTank\SiegeTank_Attack08.ogg" FacialAnim="SiegeTank_Attack08"/>
+        <AssetArray File="LocalizedData\Sounds\TerranUnitVO\SiegeTank\SiegeTank_Attack09.ogg" FacialAnim="SiegeTank_Attack09"/>
+        <Flags index="Download" value="0"/>
+        <Volume value="1.000000,1.000000"/>
+    </CSound>
+    <CSound id="SiegeTank_AttackImpact2" parent="Terran_ExplosionSmall">
+        <AssetArray index="0" File="Assets\Sounds\Terran\SharedEffects\Explosions\SiegeTank_ImpactSmall0.wav" Pitch="0.000000,0.000000" FacialGroup=""/>
+        <AssetArray index="1" File="Assets\Sounds\Terran\SharedEffects\Explosions\SiegeTank_ImpactSmall1.wav" Pitch="0.000000,0.000000" FacialGroup=""/>
+        <AssetArray index="2" File="Assets\Sounds\Terran\SharedEffects\Explosions\SiegeTank_ImpactSmall2.wav" Pitch="0.000000,0.000000" FacialGroup=""/>
+        <AssetArray index="3" File="Assets\Sounds\Terran\SharedEffects\Explosions\SiegeTank_ImpactSmall3.wav" Pitch="0.000000,0.000000" FacialGroup=""/>
+        <AssetArray index="4" File="Assets\Sounds\Terran\SharedEffects\Explosions\SiegeTank_ImpactSmall4.wav" Pitch="0.000000,0.000000" FacialGroup=""/>
+        <AssetArray index="5" File="Assets\Sounds\Terran\SharedEffects\Explosions\SiegeTank_ImpactSmall5.wav" Pitch="0.000000,0.000000" FacialGroup=""/>
+        <AssetArray index="6" File="Assets\Sounds\Terran\SharedEffects\Explosions\SiegeTank_ImpactSmall6.wav" Pitch="0.000000,0.000000" FacialGroup=""/>
+        <AssetArray index="7" File="Assets\Sounds\Terran\SharedEffects\Explosions\SiegeTank_ImpactSmall7.wav" Pitch="0.000000,0.000000" FacialGroup=""/>
+        <AssetArray index="8" File="Assets\Sounds\Terran\SharedEffects\Explosions\SiegeTank_ImpactSmall8.wav" Pitch="0.000000,0.000000" FacialGroup=""/>
+        <AssetArray index="9" File="Assets\Sounds\Terran\SharedEffects\Explosions\SiegeTank_ImpactSmall9.wav" Pitch="0.000000,0.000000" FacialGroup=""/>
+        <DupeMuteCount value="10"/>
+        <Pitch value="-3.000000,3.000000"/>
+        <Volume value="-3.000000,0.000000"/>
+    </CSound>
+    <CSound id="SiegeTank_AttackLaunch2" parent="Combat">
+        <EditorCategories value="Race:Terran"/>
+        <AssetArray File="Assets\Sounds\Terran\SiegeTank\SiegeTank_AttackLaunch0.wav"/>
+        <AssetArray File="Assets\Sounds\Terran\SiegeTank\SiegeTank_AttackLaunch1.wav"/>
+        <AssetArray File="Assets\Sounds\Terran\SiegeTank\SiegeTank_AttackLaunch2.wav"/>
+        <AssetArray File="Assets\Sounds\Terran\SiegeTank\SiegeTank_AttackLaunch3.wav"/>
+        <DupeDestroyCount value="8"/>
+        <DupeMaximumMethod value="Replace"/>
+        <Pitch value="-6.180000,-1.820000"/>
+        <Volume value="-6.000000,-6.000000"/>
+    </CSound>
+    <CSound id="SiegeTank_Explode2" parent="Terran_ExplosionMedium">
+        <AssetArray index="0" File="Assets\Sounds\Terran\SharedEffects\Explosions\Terran_ExplosionMedium0.wav" Pitch="-3.000000,3.000000"/>
+        <AssetArray index="1" File="Assets\Sounds\Terran\SharedEffects\Explosions\Terran_ExplosionMedium1.wav" Pitch="-3.000000,3.000000"/>
+        <AssetArray index="2" File="Assets\Sounds\Terran\SharedEffects\Explosions\Terran_ExplosionMedium2.wav" Pitch="-3.000000,3.000000"/>
+        <AssetArray index="3" File="Assets\Sounds\Terran\SharedEffects\Explosions\Terran_ExplosionMedium3.wav" Pitch="-3.000000,3.000000"/>
+        <AssetArray index="4" File="Assets\Sounds\Terran\SharedEffects\Explosions\Terran_ExplosionMedium4.wav" Pitch="-3.000000,3.000000"/>
+        <AssetArray index="5" File="Assets\Sounds\Terran\SharedEffects\Explosions\Terran_ExplosionMedium5.wav" Pitch="-3.000000,3.000000"/>
+        <AssetArray index="6" File="Assets\Sounds\Terran\SharedEffects\Explosions\Terran_ExplosionMedium6.wav" Pitch="-3.000000,3.000000"/>
+        <AssetArray index="7" File="Assets\Sounds\Terran\SharedEffects\Explosions\Terran_ExplosionMedium7.wav" Pitch="-3.000000,3.000000"/>
+        <AssetArray index="8" File="Assets\Sounds\Terran\SharedEffects\Explosions\Terran_ExplosionMedium8.wav" Pitch="-3.000000,3.000000"/>
+        <AssetArray index="9" File="Assets\Sounds\Terran\SharedEffects\Explosions\Terran_ExplosionMedium9.wav" Pitch="-3.000000,3.000000"/>
+        <DupeMaximumMethod value="Prevent"/>
+        <DupeMuteCount value="10"/>
+        <Pitch value="0.000000,0.000000"/>
+        <Volume value="0.000000,0.000000"/>
+    </CSound>
+    <CSound id="SiegeTank_Explode3" parent="Terran_ExplosionMedium">
+        <AssetArray index="0" File="Assets\Sounds\Terran\SharedEffects\Explosions\Terran_ExplosionMedium0.wav" Pitch="-3.000000,3.000000"/>
+        <AssetArray index="1" File="Assets\Sounds\Terran\SharedEffects\Explosions\Terran_ExplosionMedium1.wav" Pitch="-3.000000,3.000000"/>
+        <AssetArray index="2" File="Assets\Sounds\Terran\SharedEffects\Explosions\Terran_ExplosionMedium2.wav" Pitch="-3.000000,3.000000"/>
+        <AssetArray index="3" File="Assets\Sounds\Terran\SharedEffects\Explosions\Terran_ExplosionMedium3.wav" Pitch="-3.000000,3.000000"/>
+        <AssetArray index="4" File="Assets\Sounds\Terran\SharedEffects\Explosions\Terran_ExplosionMedium4.wav" Pitch="-3.000000,3.000000"/>
+        <AssetArray index="5" File="Assets\Sounds\Terran\SharedEffects\Explosions\Terran_ExplosionMedium5.wav" Pitch="-3.000000,3.000000"/>
+        <AssetArray index="6" File="Assets\Sounds\Terran\SharedEffects\Explosions\Terran_ExplosionMedium6.wav" Pitch="-3.000000,3.000000"/>
+        <AssetArray index="7" File="Assets\Sounds\Terran\SharedEffects\Explosions\Terran_ExplosionMedium7.wav" Pitch="-3.000000,3.000000"/>
+        <AssetArray index="8" File="Assets\Sounds\Terran\SharedEffects\Explosions\Terran_ExplosionMedium8.wav" Pitch="-3.000000,3.000000"/>
+        <AssetArray index="9" File="Assets\Sounds\Terran\SharedEffects\Explosions\Terran_ExplosionMedium9.wav" Pitch="-3.000000,3.000000"/>
+        <DupeMaximumMethod value="Prevent"/>
+        <DupeMuteCount value="10"/>
+        <Pitch value="0.000000,0.000000"/>
+        <Volume value="0.000000,0.000000"/>
+    </CSound>
+    <CSound id="SiegeTank_Help2" parent="Alert">
+        <EditorCategories value="Race:Terran"/>
+        <AssetArray File="LocalizedData\Sounds\TerranUnitVO\SiegeTank\SiegeTank_Help00.ogg" FacialAnim="SiegeTank_Help00"/>
+        <Mode value="3DWorld"/>
+        <Volume value="1.000000,1.000000"/>
+    </CSound>
+    <CSound id="SiegeTank_Help3" parent="Alert">
+        <EditorCategories value="Race:Terran"/>
+        <AssetArray File="LocalizedData\Sounds\TerranUnitVO\SiegeTank\SiegeTank_Help00.ogg" FacialAnim="SiegeTank_Help00"/>
+        <Mode value="3DWorld"/>
+        <Volume value="1.000000,1.000000"/>
+    </CSound>
+    <CSound id="SiegeTank_Pissed2" parent="TerranAck">
+        <AssetArray File="LocalizedData\Sounds\TerranUnitVO\SiegeTank\SiegeTank_Pissed00.ogg" FacialAnim="SiegeTank_Pissed00"/>
+        <AssetArray File="LocalizedData\Sounds\TerranUnitVO\SiegeTank\SiegeTank_Pissed01.ogg" FacialAnim="SiegeTank_Pissed01"/>
+        <AssetArray File="LocalizedData\Sounds\TerranUnitVO\SiegeTank\SiegeTank_Pissed02.ogg" FacialAnim="SiegeTank_Pissed02"/>
+        <AssetArray File="LocalizedData\Sounds\TerranUnitVO\SiegeTank\SiegeTank_Pissed03.ogg" FacialAnim="SiegeTank_Pissed03"/>
+        <AssetArray File="LocalizedData\Sounds\TerranUnitVO\SiegeTank\SiegeTank_Pissed04.ogg" FacialAnim="SiegeTank_Pissed04"/>
+        <AssetArray File="LocalizedData\Sounds\TerranUnitVO\SiegeTank\SiegeTank_Pissed05.ogg" FacialAnim="SiegeTank_Pissed05"/>
+        <AssetArray File="LocalizedData\Sounds\TerranUnitVO\SiegeTank\SiegeTank_Pissed06.ogg" FacialAnim="SiegeTank_Pissed06"/>
+        <AssetArray File="LocalizedData\Sounds\TerranUnitVO\SiegeTank\SiegeTank_Pissed07.ogg" FacialAnim="SiegeTank_Pissed07"/>
+        <AssetArray File="LocalizedData\Sounds\TerranUnitVO\SiegeTank\SiegeTank_Pissed08.ogg" FacialAnim="SiegeTank_Pissed08"/>
+        <AssetArray File="LocalizedData\Sounds\TerranUnitVO\SiegeTank\SiegeTank_Pissed09.ogg" FacialAnim="SiegeTank_Pissed09"/>
+        <Flags index="Download" value="0"/>
+        <Select value="Sequential"/>
+        <Volume value="1.000000,1.000000"/>
+    </CSound>
+    <CSound id="SiegeTank_Pissed3" parent="TerranAck">
+        <AssetArray File="LocalizedData\Sounds\TerranUnitVO\SiegeTank\SiegeTank_Pissed00.ogg" FacialAnim="SiegeTank_Pissed00"/>
+        <AssetArray File="LocalizedData\Sounds\TerranUnitVO\SiegeTank\SiegeTank_Pissed01.ogg" FacialAnim="SiegeTank_Pissed01"/>
+        <AssetArray File="LocalizedData\Sounds\TerranUnitVO\SiegeTank\SiegeTank_Pissed02.ogg" FacialAnim="SiegeTank_Pissed02"/>
+        <AssetArray File="LocalizedData\Sounds\TerranUnitVO\SiegeTank\SiegeTank_Pissed03.ogg" FacialAnim="SiegeTank_Pissed03"/>
+        <AssetArray File="LocalizedData\Sounds\TerranUnitVO\SiegeTank\SiegeTank_Pissed04.ogg" FacialAnim="SiegeTank_Pissed04"/>
+        <AssetArray File="LocalizedData\Sounds\TerranUnitVO\SiegeTank\SiegeTank_Pissed05.ogg" FacialAnim="SiegeTank_Pissed05"/>
+        <AssetArray File="LocalizedData\Sounds\TerranUnitVO\SiegeTank\SiegeTank_Pissed06.ogg" FacialAnim="SiegeTank_Pissed06"/>
+        <AssetArray File="LocalizedData\Sounds\TerranUnitVO\SiegeTank\SiegeTank_Pissed07.ogg" FacialAnim="SiegeTank_Pissed07"/>
+        <AssetArray File="LocalizedData\Sounds\TerranUnitVO\SiegeTank\SiegeTank_Pissed08.ogg" FacialAnim="SiegeTank_Pissed08"/>
+        <AssetArray File="LocalizedData\Sounds\TerranUnitVO\SiegeTank\SiegeTank_Pissed09.ogg" FacialAnim="SiegeTank_Pissed09"/>
+        <Flags index="Download" value="0"/>
+        <Select value="Sequential"/>
+        <Volume value="1.000000,1.000000"/>
+    </CSound>
+    <CSound id="SiegeTank_Ready2" parent="Ready">
+        <EditorCategories value="Race:Terran"/>
+        <AssetArray File="LocalizedData\Sounds\TerranUnitVO\SiegeTank\SiegeTank_Ready00.ogg"/>
+        <AssetArray File="LocalizedData\Sounds\TerranUnitVO\SiegeTank\SiegeTank_Ready01.ogg"/>
+        <Volume value="1.000000,1.000000"/>
+    </CSound>
+    <CSound id="SiegeTank_Ready3" parent="Ready">
+        <EditorCategories value="Race:Terran"/>
+        <AssetArray File="LocalizedData\Sounds\TerranUnitVO\SiegeTank\SiegeTank_Ready00.ogg"/>
+        <AssetArray File="LocalizedData\Sounds\TerranUnitVO\SiegeTank\SiegeTank_Ready01.ogg"/>
+        <Volume value="1.000000,1.000000"/>
+    </CSound>
+    <CSound id="SiegeTank_What2" parent="SiegeTank_What"/>
+    <CSound id="SiegeTank_What3" parent="SiegeTank_What"/>
+    <CSound id="SiegeTank_Yes2" parent="SiegeTank_Yes"/>
+    <CSound id="SiegeTank_Yes3" parent="SiegeTank_Yes"/>
+    <CSound id="SoftExplosiveImpact" parent="Combat">
+        <AssetArray File="Military\Screenshots\PossibleScreenshots\Yes\Yes\Research\Special\Research\Special\PlaneAndTankSounds\ExplosiveImpacts\Soft\SoftImpact1.ogg" FacialGroup=""/>
+        <AssetArray File="Military\Screenshots\PossibleScreenshots\Yes\Yes\Research\Special\Research\Special\PlaneAndTankSounds\ExplosiveImpacts\Soft\SoftImpact2.ogg" FacialGroup=""/>
+        <AssetArray File="Military\Screenshots\PossibleScreenshots\Yes\Yes\Research\Special\Research\Special\PlaneAndTankSounds\ExplosiveImpacts\Soft\SoftImpact3.ogg" FacialGroup=""/>
+        <AssetArray File="Military\Screenshots\PossibleScreenshots\Yes\Yes\Research\Special\Research\Special\PlaneAndTankSounds\ExplosiveImpacts\Soft\SoftImpact4.ogg" FacialGroup=""/>
+        <AssetArray File="Military\Screenshots\PossibleScreenshots\Yes\Yes\Research\Special\Research\Special\PlaneAndTankSounds\ExplosiveImpacts\Soft\SoftImpact5.ogg" FacialGroup=""/>
+        <AssetArray File="Military\Screenshots\PossibleScreenshots\Yes\Yes\Research\Special\Research\Special\PlaneAndTankSounds\ExplosiveImpacts\Soft\SoftImpact6.ogg" FacialGroup=""/>
+    </CSound>
+    <CSound id="Terran_BuildingPlacement2" parent="UI">
+        <EditorCategories value="Race:Terran"/>
+        <AssetArray File="Assets\Sounds\Terran\SharedEffects\Construction\Terran_BuildingPlacement0.wav"/>
+        <Mode value="3DWorld"/>
+        <VolumeRolloffPoints Distance="100.000000"/>
+        <VolumeRolloffPoints Distance="1000.000000" Volume="-96.000000"/>
+    </CSound>
+    <CSound id="Terran_BuildingPlacement22" parent="UI">
+        <EditorCategories value="Race:Terran"/>
+        <AssetArray File="Assets\Sounds\Terran\SharedEffects\Construction\Terran_BuildingPlacement0.wav"/>
+        <Mode value="3DWorld"/>
+        <VolumeRolloffPoints Distance="100.000000"/>
+        <VolumeRolloffPoints Distance="1000.000000" Volume="-96.000000"/>
+    </CSound>
+    <CSound id="Terran_BuildingPlacement3" parent="UI">
+        <EditorCategories value="Race:Terran"/>
+        <AssetArray File="Assets\Sounds\Terran\SharedEffects\Construction\Terran_BuildingPlacement0.wav"/>
+        <Mode value="3DWorld"/>
+        <VolumeRolloffPoints Distance="100.000000"/>
+        <VolumeRolloffPoints Distance="1000.000000" Volume="-96.000000"/>
+    </CSound>
+    <CSound id="Terran_BuildingPlacement4" parent="UI">
+        <EditorCategories value="Race:Terran"/>
+        <AssetArray File="Assets\Sounds\Terran\SharedEffects\Construction\Terran_BuildingPlacement0.wav"/>
+        <Mode value="3DWorld"/>
+        <VolumeRolloffPoints Distance="100.000000"/>
+        <VolumeRolloffPoints Distance="1000.000000" Volume="-96.000000"/>
+    </CSound>
+    <CSound id="Terran_BuildingPlacement5" parent="UI">
+        <EditorCategories value="Race:Terran"/>
+        <AssetArray File="Assets\Sounds\Terran\SharedEffects\Construction\Terran_BuildingPlacement0.wav"/>
+        <Mode value="3DWorld"/>
+        <VolumeRolloffPoints Distance="100.000000"/>
+        <VolumeRolloffPoints Distance="1000.000000" Volume="-96.000000"/>
+    </CSound>
+    <CSound id="Terran_BuildingPlacement6" parent="UI">
+        <EditorCategories value="Race:Terran"/>
+        <AssetArray File="Assets\Sounds\Terran\SharedEffects\Construction\Terran_BuildingPlacement0.wav"/>
+        <Mode value="3DWorld"/>
+        <VolumeRolloffPoints Distance="100.000000"/>
+        <VolumeRolloffPoints Distance="1000.000000" Volume="-96.000000"/>
+    </CSound>
+    <CSound id="Terran_BuildingPlacementSmall2" parent="UI">
+        <EditorCategories value="Race:Terran"/>
+        <AssetArray File="Assets\Sounds\Terran\SharedEffects\Construction\Terran_BuildingPlacementSmall0.wav"/>
+        <Pitch value="3.000000,3.000000"/>
+        <Volume value="-6.000000,-6.000000"/>
+    </CSound>
+    <CSound id="Terran_ConstructionWhat2" parent="Build">
+        <EditorCategories value="Race:Terran"/>
+        <AssetArray File="Assets\Sounds\Terran\SharedEffects\Construction\Terran_ConstructionWhat0.wav"/>
+        <AssetArray File="Assets\Sounds\Terran\SharedEffects\Construction\Terran_ConstructionWhat1.wav"/>
+        <AssetArray File="Assets\Sounds\Terran\SharedEffects\Construction\Terran_ConstructionWhat2.wav"/>
+        <Volume value="-3.000000,-3.000000"/>
+    </CSound>
+    <CSound id="Terran_ConstructionWhat3" parent="Build">
+        <EditorCategories value="Race:Terran"/>
+        <AssetArray File="Assets\Sounds\Terran\SharedEffects\Construction\Terran_ConstructionWhat0.wav"/>
+        <AssetArray File="Assets\Sounds\Terran\SharedEffects\Construction\Terran_ConstructionWhat1.wav"/>
+        <AssetArray File="Assets\Sounds\Terran\SharedEffects\Construction\Terran_ConstructionWhat2.wav"/>
+        <Volume value="-3.000000,-3.000000"/>
+    </CSound>
+    <CSound id="Terran_ConstructionWhat32" parent="Build">
+        <EditorCategories value="Race:Terran"/>
+        <AssetArray File="Assets\Sounds\Terran\SharedEffects\Construction\Terran_ConstructionWhat0.wav"/>
+        <AssetArray File="Assets\Sounds\Terran\SharedEffects\Construction\Terran_ConstructionWhat1.wav"/>
+        <AssetArray File="Assets\Sounds\Terran\SharedEffects\Construction\Terran_ConstructionWhat2.wav"/>
+        <Volume value="-3.000000,-3.000000"/>
+    </CSound>
+    <CSound id="Terran_ConstructionWhat4" parent="Build">
+        <EditorCategories value="Race:Terran"/>
+        <AssetArray File="Assets\Sounds\Terran\SharedEffects\Construction\Terran_ConstructionWhat0.wav"/>
+        <AssetArray File="Assets\Sounds\Terran\SharedEffects\Construction\Terran_ConstructionWhat1.wav"/>
+        <AssetArray File="Assets\Sounds\Terran\SharedEffects\Construction\Terran_ConstructionWhat2.wav"/>
+        <Volume value="-3.000000,-3.000000"/>
+    </CSound>
+    <CSound id="Terran_ConstructionWhat5" parent="Build">
+        <EditorCategories value="Race:Terran"/>
+        <AssetArray File="Assets\Sounds\Terran\SharedEffects\Construction\Terran_ConstructionWhat0.wav"/>
+        <AssetArray File="Assets\Sounds\Terran\SharedEffects\Construction\Terran_ConstructionWhat1.wav"/>
+        <AssetArray File="Assets\Sounds\Terran\SharedEffects\Construction\Terran_ConstructionWhat2.wav"/>
+        <Volume value="-3.000000,-3.000000"/>
+    </CSound>
+    <CSound id="Terran_ConstructionWhat6" parent="Build">
+        <EditorCategories value="Race:Terran"/>
+        <AssetArray File="Assets\Sounds\Terran\SharedEffects\Construction\Terran_ConstructionWhat0.wav"/>
+        <AssetArray File="Assets\Sounds\Terran\SharedEffects\Construction\Terran_ConstructionWhat1.wav"/>
+        <AssetArray File="Assets\Sounds\Terran\SharedEffects\Construction\Terran_ConstructionWhat2.wav"/>
+        <Volume value="-3.000000,-3.000000"/>
+    </CSound>
+    <CSound id="Terran_ExplosionLarge2" parent="Combat">
+        <EditorCategories value="Race:Terran"/>
+        <AssetArray File="Assets\Sounds\Terran\SharedEffects\Explosions\Terran_ExplosionLarge0.wav" Pitch="-3.000000,3.000000"/>
+        <AssetArray File="Assets\Sounds\Terran\SharedEffects\Explosions\Terran_ExplosionLarge1.wav" Pitch="-3.000000,3.000000"/>
+        <AssetArray File="Assets\Sounds\Terran\SharedEffects\Explosions\Terran_ExplosionLarge2.wav" Pitch="-3.000000,3.000000"/>
+        <AssetArray File="Assets\Sounds\Terran\SharedEffects\Explosions\Terran_ExplosionLarge3.wav" Pitch="-3.000000,3.000000"/>
+        <AssetArray File="Assets\Sounds\Terran\SharedEffects\Explosions\Terran_ExplosionLarge4.wav" Pitch="-3.000000,3.000000"/>
+        <AssetArray File="Assets\Sounds\Terran\SharedEffects\Explosions\Terran_ExplosionLarge5.wav" Pitch="-3.000000,3.000000"/>
+        <AssetArray File="Assets\Sounds\Terran\SharedEffects\Explosions\Terran_ExplosionLarge6.wav" Pitch="-3.000000,3.000000"/>
+        <AssetArray File="Assets\Sounds\Terran\SharedEffects\Explosions\Terran_ExplosionLarge7.wav" Pitch="-3.000000,3.000000"/>
+        <AssetArray File="Assets\Sounds\Terran\SharedEffects\Explosions\Terran_ExplosionLarge8.wav" Pitch="-3.000000,3.000000"/>
+        <AssetArray File="Assets\Sounds\Terran\SharedEffects\Explosions\Terran_ExplosionLarge9.wav" Pitch="-3.000000,3.000000"/>
+        <DupeDestroyCount value="5"/>
+        <DupeMaximumMethod value="Replace"/>
+        <DupeMuteCount value="5"/>
+    </CSound>
+    <CSound id="TransportTruck_Explode2" parent="Terran_ExplosionMedium">
+        <EditorCategories value="Race:Neutral"/>
+    </CSound>
+    <CSound id="Uni_DeathFXAcid2" parent="Death">
+        <AssetArray File="Assets\Sounds\Uni\Deaths\Uni_DeathFXAcid0.wav"/>
+        <AssetArray File="Assets\Sounds\Uni\Deaths\Uni_DeathFXAcid1.wav"/>
+        <AssetArray File="Assets\Sounds\Uni\Deaths\Uni_DeathFXAcid2.wav"/>
+        <AssetArray File="Assets\Sounds\Uni\Deaths\Uni_DeathFXAcid3.wav"/>
+        <AssetArray File="Assets\Sounds\Uni\Deaths\Uni_DeathFXAcid4.wav"/>
+        <AssetArray File="Assets\Sounds\Uni\Deaths\Uni_DeathFXAcid5.wav"/>
+        <AssetArray File="Assets\Sounds\Uni\Deaths\Uni_DeathFXAcid6.wav"/>
+        <Pitch value="-2.000000,2.000000"/>
+    </CSound>
+    <CSound id="Uni_DeathFXAcid3" parent="Death">
+        <AssetArray File="Assets\Sounds\Uni\Deaths\Uni_DeathFXAcid0.wav"/>
+        <AssetArray File="Assets\Sounds\Uni\Deaths\Uni_DeathFXAcid1.wav"/>
+        <AssetArray File="Assets\Sounds\Uni\Deaths\Uni_DeathFXAcid2.wav"/>
+        <AssetArray File="Assets\Sounds\Uni\Deaths\Uni_DeathFXAcid3.wav"/>
+        <AssetArray File="Assets\Sounds\Uni\Deaths\Uni_DeathFXAcid4.wav"/>
+        <AssetArray File="Assets\Sounds\Uni\Deaths\Uni_DeathFXAcid5.wav"/>
+        <AssetArray File="Assets\Sounds\Uni\Deaths\Uni_DeathFXAcid6.wav"/>
+        <Pitch value="-2.000000,2.000000"/>
+    </CSound>
+    <CSound id="Uni_DeathFXEviscerate2" parent="Death">
+        <AssetArray File="Assets\Sounds\Uni\Deaths\Uni_DeathFXEviscerate0.wav"/>
+        <AssetArray File="Assets\Sounds\Uni\Deaths\Uni_DeathFXEviscerate1.wav"/>
+        <AssetArray File="Assets\Sounds\Uni\Deaths\Uni_DeathFXEviscerate2.wav"/>
+        <Pitch value="0.000000,2.000000"/>
+        <Volume value="-6.000000,-4.000000"/>
+    </CSound>
+    <CSound id="Uni_DeathFXEviscerate3" parent="Death">
+        <AssetArray File="Assets\Sounds\Uni\Deaths\Uni_DeathFXEviscerate0.wav"/>
+        <AssetArray File="Assets\Sounds\Uni\Deaths\Uni_DeathFXEviscerate1.wav"/>
+        <AssetArray File="Assets\Sounds\Uni\Deaths\Uni_DeathFXEviscerate2.wav"/>
+        <Pitch value="0.000000,2.000000"/>
+        <Volume value="-6.000000,-4.000000"/>
+    </CSound>
+    <CSound id="Uni_DeathFXFire2" parent="Death">
+        <AssetArray File="Assets\Sounds\Uni\Deaths\Uni_DeathFXFire0.wav"/>
+        <AssetArray File="Assets\Sounds\Uni\Deaths\Uni_DeathFXFire1.wav"/>
+        <AssetArray File="Assets\Sounds\Uni\Deaths\Uni_DeathFXFire2.wav"/>
+        <AssetArray File="Assets\Sounds\Uni\Deaths\Uni_DeathFXFire3.wav"/>
+        <AssetArray File="Assets\Sounds\Uni\Deaths\Uni_DeathFXFire4.wav"/>
+        <AssetArray File="Assets\Sounds\Uni\Deaths\Uni_DeathFXFire5.wav"/>
+        <Pitch value="-2.000000,2.000000"/>
+        <Volume value="-6.000000,-6.000000"/>
+    </CSound>
+    <CSound id="Uni_DeathFXFire3" parent="Death">
+        <AssetArray File="Assets\Sounds\Uni\Deaths\Uni_DeathFXFire0.wav"/>
+        <AssetArray File="Assets\Sounds\Uni\Deaths\Uni_DeathFXFire1.wav"/>
+        <AssetArray File="Assets\Sounds\Uni\Deaths\Uni_DeathFXFire2.wav"/>
+        <AssetArray File="Assets\Sounds\Uni\Deaths\Uni_DeathFXFire3.wav"/>
+        <AssetArray File="Assets\Sounds\Uni\Deaths\Uni_DeathFXFire4.wav"/>
+        <AssetArray File="Assets\Sounds\Uni\Deaths\Uni_DeathFXFire5.wav"/>
+        <Pitch value="-2.000000,2.000000"/>
+        <Volume value="-6.000000,-6.000000"/>
+    </CSound>
+    <CSound id="Uni_DeathFXFire4" parent="Death">
+        <AssetArray File="Assets\Sounds\Uni\Deaths\Uni_DeathFXFire0.wav"/>
+        <AssetArray File="Assets\Sounds\Uni\Deaths\Uni_DeathFXFire1.wav"/>
+        <AssetArray File="Assets\Sounds\Uni\Deaths\Uni_DeathFXFire2.wav"/>
+        <AssetArray File="Assets\Sounds\Uni\Deaths\Uni_DeathFXFire3.wav"/>
+        <AssetArray File="Assets\Sounds\Uni\Deaths\Uni_DeathFXFire4.wav"/>
+        <AssetArray File="Assets\Sounds\Uni\Deaths\Uni_DeathFXFire5.wav"/>
+        <Pitch value="-2.000000,2.000000"/>
+        <Volume value="-6.000000,-6.000000"/>
+    </CSound>
+    <CSound id="Uni_DeathFXFire5" parent="Death">
+        <AssetArray File="Assets\Sounds\Uni\Deaths\Uni_DeathFXFire0.wav"/>
+        <AssetArray File="Assets\Sounds\Uni\Deaths\Uni_DeathFXFire1.wav"/>
+        <AssetArray File="Assets\Sounds\Uni\Deaths\Uni_DeathFXFire2.wav"/>
+        <AssetArray File="Assets\Sounds\Uni\Deaths\Uni_DeathFXFire3.wav"/>
+        <AssetArray File="Assets\Sounds\Uni\Deaths\Uni_DeathFXFire4.wav"/>
+        <AssetArray File="Assets\Sounds\Uni\Deaths\Uni_DeathFXFire5.wav"/>
+        <Pitch value="-2.000000,2.000000"/>
+        <Volume value="-6.000000,-6.000000"/>
+    </CSound>
+    <CSound id="Uni_DeathFXSilentKill2" parent="Combat">
+        <AssetArray File="Assets\Sounds\Uni\Deaths\Uni_DeathFXSilentKill0.wav"/>
+    </CSound>
+    <CSound id="Victory_Africa" parent="MUSIC">
+        <AssetArray>
+            <File value="Assets\Music\Mission_MusicCue004.ogg"/>
+            <Pitch value="-5.000000,-5.000000"/>
+            <Volume value="6.000000,6.000000"/>
+            <FacialGroup value=""/>
+        </AssetArray>
+        <Flags index="Stream" value="0"/>
+    </CSound>
+    <CSound id="Victory_China" parent="MUSIC">
+        <AssetArray>
+            <File value="Assets\Music\MissionMusic\Mission_MusicCue002.ogg"/>
+            <Pitch value="10.000000,10.000000"/>
+            <Volume value="6.000000,6.000000"/>
+            <FacialGroup value=""/>
+        </AssetArray>
+    </CSound>
+    <CSound id="Victory_Europe" parent="MUSIC">
+        <AssetArray File="Assets\Music\LostViking\LostViking_MusicBossFightLoop.ogg" Volume="6.000000,6.000000" FacialGroup=""/>
+    </CSound>
+    <CSound id="Victory_India" parent="MUSIC">
+        <AssetArray File="Assets\Music\SC1_Zerg4.ogg" Volume="6.000000,6.000000" FacialGroup=""/>
+    </CSound>
+    <CSound id="Victory_Japan" parent="MUSIC">
+        <AssetArray>
+            <File value="Assets\Music\MissionMusic\Mission_MusicCue002.ogg"/>
+            <Pitch value="15.000000,15.000000"/>
+            <Volume value="6.000000,6.000000"/>
+            <FacialGroup value=""/>
+        </AssetArray>
+    </CSound>
+    <CSound id="Victory_LA" parent="MUSIC">
+        <AssetArray>
+            <File value="Assets\Music\LostViking\LostViking_MusicGameLoop.ogg"/>
+            <Pitch value="-15.000000,-15.000000"/>
+            <Volume value="6.000000,6.000000"/>
+            <FacialGroup value=""/>
+        </AssetArray>
+    </CSound>
+    <CSound id="Victory_ME" parent="MUSIC">
+        <AssetArray>
+            <File value="Assets\Music\SC1_Zerg4.ogg"/>
+            <Pitch value="15.000000,15.000000"/>
+            <Volume value="6.000000,6.000000"/>
+            <FacialGroup value=""/>
+        </AssetArray>
+    </CSound>
+    <CSound id="Victory_MEALT" parent="MUSIC">
+        <AssetArray>
+            <File value="Assets\Sounds\Uni\Units\LostViking\LostViking_TerraTronBirth.wav"/>
+            <Pitch value="-10.000000,-10.000000"/>
+            <Volume value="6.000000,6.000000"/>
+            <FacialGroup value=""/>
+        </AssetArray>
+    </CSound>
+    <CSound id="Victory_Russia" parent="MUSIC">
+        <AssetArray>
+            <File value="Assets\Music\MissionMusic\Mission_MusicCue002.ogg"/>
+            <Pitch value="-15.000000,-15.000000"/>
+            <Volume value="6.000000,6.000000"/>
+            <FacialGroup value=""/>
+        </AssetArray>
+    </CSound>
+    <CSound id="Victory_SA" parent="MUSIC">
+        <AssetArray>
+            <File value="Assets\Music\MissionMusic\LibertyMusicLightStinger_C.ogg"/>
+            <Pitch value="-10.000000,-10.000000"/>
+            <Volume value="6.000000,6.000000"/>
+            <FacialGroup value=""/>
+        </AssetArray>
+    </CSound>
+    <CSound id="Victory_USA" parent="MUSIC">
+        <AssetArray>
+            <File value="Assets\Music\LostViking\LostViking_MusicBossFightLoop.ogg"/>
+            <Pitch value="-16.000000,-16.000000"/>
+            <Volume value="6.000000,6.000000"/>
+            <FacialGroup value=""/>
+        </AssetArray>
+    </CSound>
+    <CSound id="XenArrival" parent="MUSIC">
+        <AssetArray File="Assets\Music\MissionMusic\Music_DangerAlertFull.ogg" Volume="6.000000,6.000000" FacialGroup=""/>
+    </CSound>
+</Catalog>

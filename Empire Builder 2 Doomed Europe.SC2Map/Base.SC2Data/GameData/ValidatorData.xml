@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="us-ascii"?>
+<Catalog>
+    <CValidatorUnitCompareBehaviorCount id="NotRazing">
+        <WhichUnit Value="Caster"/>
+        <Behavior value="Razing"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="NotShieldGenerator">
+        <Behavior value="ShieldGenerator"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorPlayerRequirement id="ResearchedEater">
+        <Value value="TheWorldeaterProject"/>
+    </CValidatorPlayerRequirement>
+    <CValidatorPlayerRequirement id="ResearchedThinner">
+        <Value value="WeaponizedDiseases"/>
+    </CValidatorPlayerRequirement>
+    <CValidatorPlayerRequirement id="ResearchedBlight">
+        <Value value="ModifiedDiseases"/>
+    </CValidatorPlayerRequirement>
+    <CValidatorUnitFilters id="SourceAliveandTank">
+        <WhichUnit Value="Source"/>
+        <Filters value="Mechanical;Dead"/>
+    </CValidatorUnitFilters>
+    <CValidatorUnitFilters id="UnitIsNotResistant">
+        <Filters value="-;Resistant"/>
+    </CValidatorUnitFilters>
+    <CValidatorUnitCompareBehaviorCount id="UrbanCombatAuraCheck">
+        <WhichUnit Value="Source"/>
+        <Compare value="GT"/>
+        <Behavior value="UrbanCombatAura"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="UrbanCombatNotExist">
+        <Behavior value="UrbanCombat"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorLocationCompareRange id="UrbanCombatRange">
+        <WhichLocation Value="TargetUnit"/>
+        <Compare value="LE"/>
+        <Range value="2"/>
+        <Value Value="SourceUnit"/>
+    </CValidatorLocationCompareRange>
+    <CValidatorUnitFilters id="UrbanCombatTargetFilter">
+        <Filters value="-;Player,Ally,Neutral,RawResource,HarvestableResource,Missile,Destructible,Item,Dead,Invulnerable"/>
+    </CValidatorUnitFilters>
+    <CValidatorPlayerRequirement id="WeaponizedDiseasesResearched">
+        <Value value="WeaponizedDiseases"/>
+    </CValidatorPlayerRequirement>
+    <CValidatorPlayerRequirement id="ModifiedDiseasesResearched">
+        <Value value="ModifiedDiseases"/>
+    </CValidatorPlayerRequirement>
+</Catalog>

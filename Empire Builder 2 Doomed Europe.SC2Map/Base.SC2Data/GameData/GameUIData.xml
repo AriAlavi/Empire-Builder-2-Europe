@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="us-ascii"?>
+<Catalog>
+    <CGameUI id="Dflt">
+        <SoundData index="Test">
+            <VolumeRolloffPoints index="1" Distance="50.000000"/>
+        </SoundData>
+        <SoundData index="ME">
+            <VolumeRolloffPoints index="1" Distance="50.000000"/>
+        </SoundData>
+        <SoundData index="Music">
+            <VolumeRolloffPoints index="1" Distance="50.000000"/>
+        </SoundData>
+        <SoundData index="Other">
+            <VolumeRolloffPoints index="1" Distance="50.000000"/>
+        </SoundData>
+        <SoundData index="Ambient">
+            <VolumeRolloffPoints index="1" Distance="50.000000"/>
+        </SoundData>
+        <SoundData index="Spell">
+            <VolumeRolloffPoints index="1" Distance="50.000000"/>
+        </SoundData>
+        <SoundData index="Combat">
+            <VolumeRolloffPoints index="1" Distance="50.000000"/>
+        </SoundData>
+        <SoundData index="Message">
+            <VolumeRolloffPoints index="1" Distance="50.000000"/>
+        </SoundData>
+        <SoundData index="Movement">
+            <VolumeRolloffPoints index="1" Distance="50.000000"/>
+        </SoundData>
+    </CGameUI>
+</Catalog>

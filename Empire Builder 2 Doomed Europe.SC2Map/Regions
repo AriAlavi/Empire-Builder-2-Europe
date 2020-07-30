@@ -1,0 +1,1365 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Regions>
+    <region id="1">
+        <name value="MiddleEastSpawn"/>
+        <color value="255,255,255,255"/>
+        <invisible/>
+        <shape type="circle">
+            <center value="222.2336,5.5444"/>
+            <radius value="1.5"/>
+        </shape>
+        <shape type="rect">
+            <quad value="217.2336,4.2944,227.2336,6.7944"/>
+        </shape>
+    </region>
+    <region id="62">
+        <name value="East"/>
+        <invisible/>
+        <shape type="rect">
+            <quad value="139.6091,5.6203,255.9926,93.2885"/>
+        </shape>
+    </region>
+    <region id="64">
+        <name value="PMoscow"/>
+        <shape type="rect">
+            <quad value="199.6044,57.8461,217.7844,77.4213"/>
+        </shape>
+    </region>
+    <region id="65">
+        <name value="Snow"/>
+        <color value="255,0,255,255"/>
+        <invisible/>
+        <shape type="rect">
+            <quad value="160.9045,60.5722,280.9045,95.5722"/>
+        </shape>
+        <shape type="diamond">
+            <center value="225,75"/>
+            <width value="75"/>
+            <height value="50"/>
+        </shape>
+        <shape type="rect">
+            <quad value="203.4072,56.3356,248.4072,80.8264"/>
+        </shape>
+        <shape type="rect">
+            <quad value="145,70,215,100"/>
+        </shape>
+        <shape type="rect">
+            <quad value="85,85,175,105"/>
+        </shape>
+        <shape type="rect">
+            <quad value="-3.5,27.5,31.5,62.5"/>
+        </shape>
+    </region>
+    <region id="66">
+        <name value="Desert"/>
+        <color value="255,255,255,0"/>
+        <invisible/>
+        <shape type="rect">
+            <quad value="28.6718,0.0412,108.6718,5.041"/>
+        </shape>
+        <shape type="rect">
+            <quad value="177,-12.5,233,12.5"/>
+        </shape>
+        <shape type="circle">
+            <center value="218,15"/>
+            <radius value="10"/>
+        </shape>
+        <shape type="diamond">
+            <center value="75,21"/>
+            <width value="20"/>
+            <height value="10"/>
+        </shape>
+    </region>
+    <region id="67">
+        <name value="Mountainous"/>
+        <color value="255,128,64,0"/>
+        <invisible/>
+        <shape type="rect">
+            <quad value="106.3298,42.491,137.2014,51.8347"/>
+        </shape>
+        <shape type="diamond">
+            <center value="140.9711,34.9931"/>
+            <width value="5"/>
+            <height value="40"/>
+        </shape>
+        <shape type="diamond">
+            <center value="101.9711,37.9931"/>
+            <width value="23"/>
+            <height value="11"/>
+        </shape>
+        <shape type="diamond">
+            <center value="87.9711,29.9931"/>
+            <width value="8"/>
+            <height value="23"/>
+        </shape>
+        <shape type="circle">
+            <center value="67,28"/>
+            <radius value="6"/>
+        </shape>
+        <shape type="rect">
+            <quad value="147.5,13,156.5,23"/>
+        </shape>
+        <shape type="rect">
+            <quad value="172.5,12.25,207.5,17.75"/>
+        </shape>
+        <shape type="rect">
+            <quad value="168.5,-3.5,175.5,15.5"/>
+        </shape>
+        <shape type="rect">
+            <quad value="193.5,22.5,246.5,37.5"/>
+        </shape>
+        <shape type="diamond">
+            <center value="207,19.17"/>
+            <width value="15"/>
+            <height value="5"/>
+        </shape>
+        <shape type="rect">
+            <quad value="103,11,113,31"/>
+        </shape>
+        <shape type="diamond">
+            <center value="120,31"/>
+            <width value="5"/>
+            <height value="12"/>
+        </shape>
+        <shape type="rect">
+            <quad value="130,16,134,22"/>
+        </shape>
+    </region>
+    <region id="2">
+        <name value="PNew New England"/>
+        <shape type="rect">
+            <quad value="5.0764,22.242,34.7224,42.8681"/>
+        </shape>
+    </region>
+    <region id="3">
+        <name value="PNew York"/>
+        <shape type="rect">
+            <quad value="0.1926,16.5393,20.364,24.9565"/>
+        </shape>
+    </region>
+    <region id="4">
+        <name value="PNewJersey"/>
+        <shape type="rect">
+            <quad value="0.0725,8.2031,14.557,16.5554"/>
+        </shape>
+    </region>
+    <region id="6">
+        <name value="PDelaware"/>
+        <shape type="rect">
+            <quad value="0.1062,0.036,6,8.1638"/>
+        </shape>
+    </region>
+    <region id="7">
+        <name value="PQuebec"/>
+        <shape type="rect">
+            <quad value="0,24.1718,5.3732,44.6545"/>
+        </shape>
+    </region>
+    <region id="8">
+        <name value="PNewfoundland"/>
+        <shape type="rect">
+            <quad value="0.381,42.0336,28.3864,55.0153"/>
+        </shape>
+    </region>
+    <region id="9">
+        <name value="PDublin"/>
+        <shape type="diamond">
+            <center value="80.05,78.3842"/>
+            <width value="6.2272"/>
+            <height value="8.0207"/>
+        </shape>
+    </region>
+    <region id="10">
+        <name value="PIreland"/>
+        <shape type="diamond">
+            <center value="77.8012,79.2736"/>
+            <width value="15.208"/>
+            <height value="14.1196"/>
+        </shape>
+    </region>
+    <region id="11">
+        <name value="PWales"/>
+        <shape type="rect">
+            <quad value="84.0583,69.6301,90.9787,77.7607"/>
+        </shape>
+    </region>
+    <region id="12">
+        <name value="PWessex"/>
+        <shape type="rect">
+            <quad value="80.1777,61.089,94.3955,70.293"/>
+        </shape>
+    </region>
+    <region id="13">
+        <name value="PLondon"/>
+        <shape type="rect">
+            <quad value="90.8854,69.4062,99.3027,73.1674"/>
+        </shape>
+    </region>
+    <region id="14">
+        <name value="PNorthumbria"/>
+        <shape type="rect">
+            <quad value="90.9638,73.0468,98.1962,78.602"/>
+        </shape>
+    </region>
+    <region id="15">
+        <name value="PInverness"/>
+        <shape type="rect">
+            <quad value="87.9616,83.2487,102.0373,91.5744"/>
+        </shape>
+    </region>
+    <region id="16">
+        <name value="PLothian"/>
+        <shape type="rect">
+            <quad value="88.315,77.6711,98.9291,83.933"/>
+        </shape>
+    </region>
+    <region id="17">
+        <name value="PKent"/>
+        <shape type="rect">
+            <quad value="94.3916,62.7038,99.207,67.7192"/>
+        </shape>
+    </region>
+    <region id="18">
+        <name value="PGalicia"/>
+        <shape type="rect">
+            <quad value="58.3906,32.7485,68.1115,42.987"/>
+        </shape>
+    </region>
+    <region id="19">
+        <name value="PNavarra"/>
+        <shape type="rect">
+            <quad value="68.0588,33.8066,77.7702,39.482"/>
+        </shape>
+    </region>
+    <region id="20">
+        <name value="PAragon"/>
+        <shape type="rect">
+            <quad value="75.5498,25.3754,82.305,38.2897"/>
+        </shape>
+    </region>
+    <region id="21">
+        <name value="PCatalonia"/>
+        <shape type="rect">
+            <quad value="81.766,24.099,86.6674,36.3234"/>
+        </shape>
+    </region>
+    <region id="22">
+        <name value="PPortugal"/>
+        <shape type="diamond">
+            <center value="53.219,28.5578"/>
+            <width value="17.7543"/>
+            <height value="15.7292"/>
+        </shape>
+    </region>
+    <region id="23">
+        <name value="PCastille"/>
+        <shape type="rect">
+            <quad value="61.6643,25.917,75.6293,33.8845"/>
+        </shape>
+    </region>
+    <region id="24">
+        <name value="PMadrid"/>
+        <shape type="rect">
+            <quad value="63.9338,21.6264,75.6413,27.2756"/>
+        </shape>
+    </region>
+    <region id="25">
+        <name value="PValencia"/>
+        <shape type="diamond">
+            <center value="75.144,19.4426"/>
+            <width value="17.1584"/>
+            <height value="8.8547"/>
+        </shape>
+    </region>
+    <region id="26">
+        <name value="PAndalucia"/>
+        <shape type="diamond">
+            <center value="62.4172,18.9394"/>
+            <width value="11.747"/>
+            <height value="13.314"/>
+        </shape>
+    </region>
+    <region id="27">
+        <name value="PTunis"/>
+        <shape type="rect">
+            <quad value="101.463,-2.1384,114.537,7.8613"/>
+        </shape>
+    </region>
+    <region id="28">
+        <name value="PTangiers"/>
+        <shape type="rect">
+            <quad value="51.43,5.1335,64.8964,12.6491"/>
+        </shape>
+    </region>
+    <region id="29">
+        <name value="PRabat"/>
+        <shape type="rect">
+            <quad value="43.0544,0,52.2734,6.8747"/>
+        </shape>
+    </region>
+    <region id="30">
+        <name value="PMeknes"/>
+        <shape type="rect">
+            <quad value="52.3173,0,64.907,5.3178"/>
+        </shape>
+    </region>
+    <region id="31">
+        <name value="POran"/>
+        <shape type="rect">
+            <quad value="63.8508,0,78.7348,9.7902"/>
+        </shape>
+    </region>
+    <region id="32">
+        <name value="PAlgiers"/>
+        <shape type="rect">
+            <quad value="78.663,0,92.253,9.8703"/>
+        </shape>
+    </region>
+    <region id="33">
+        <name value="PConstantine"/>
+        <shape type="rect">
+            <quad value="92.0517,0,103.2155,7.8161"/>
+        </shape>
+    </region>
+    <region id="34">
+        <name value="PBalearia"/>
+        <shape type="rect">
+            <quad value="87.0803,15.4694,92.2333,20.8056"/>
+        </shape>
+    </region>
+    <region id="35">
+        <name value="PBrittany"/>
+        <shape type="diamond">
+            <center value="82.4865,55.982"/>
+            <width value="6.236"/>
+            <height value="10.3176"/>
+        </shape>
+    </region>
+    <region id="36">
+        <name value="PNormandy"/>
+        <shape type="rect">
+            <quad value="86.871,52.142,98.5024,60.4206"/>
+        </shape>
+    </region>
+    <region id="37">
+        <name value="PCalais"/>
+        <shape type="rect">
+            <quad value="97.7397,56.1618,104.8496,64.4914"/>
+        </shape>
+    </region>
+    <region id="38">
+        <name value="PParis"/>
+        <shape type="rect">
+            <quad value="95.7412,50.9018,101.8708,56.35"/>
+        </shape>
+    </region>
+    <region id="39">
+        <name value="PCorsica"/>
+        <shape type="rect">
+            <quad value="107.3515,21.8146,112.7204,30.3671"/>
+        </shape>
+    </region>
+    <region id="40">
+        <name value="PLorraine"/>
+        <shape type="rect">
+            <quad value="101.8452,49.0615,107.638,58.765"/>
+        </shape>
+    </region>
+    <region id="41">
+        <name value="PAquataine"/>
+        <shape type="rect">
+            <quad value="82.9777,36.276,90.3483,45.8527"/>
+        </shape>
+    </region>
+    <region id="42">
+        <name value="PLoire"/>
+        <shape type="rect">
+            <quad value="84.1611,45.701,96.0451,52.9245"/>
+        </shape>
+    </region>
+    <region id="43">
+        <name value="PBourgogne"/>
+        <shape type="rect">
+            <quad value="95.8771,45.762,103.922,50.9594"/>
+        </shape>
+    </region>
+    <region id="44">
+        <name value="PLanguedoc"/>
+        <shape type="diamond">
+            <center value="91.5781,36.2568"/>
+            <width value="13.6716"/>
+            <height value="6.321"/>
+        </shape>
+    </region>
+    <region id="45">
+        <name value="PProvonce"/>
+        <shape type="rect">
+            <quad value="96.6616,31.8041,103.9716,41.174"/>
+        </shape>
+    </region>
+    <region id="46">
+        <name value="PAuvergne"/>
+        <shape type="rect">
+            <quad value="90.335,41.166,103.5708,45.8618"/>
+        </shape>
+    </region>
+    <region id="47">
+        <name value="PSardinia"/>
+        <shape type="rect">
+            <quad value="105.4501,11.6696,112.4726,22.6633"/>
+        </shape>
+    </region>
+    <region id="48">
+        <name value="PPiedmont"/>
+        <shape type="diamond">
+            <center value="107.7441,36.142"/>
+            <width value="9.3217"/>
+            <height value="4.4406"/>
+        </shape>
+    </region>
+    <region id="49">
+        <name value="PTuscany"/>
+        <shape type="diamond">
+            <center value="116.1728,30.606"/>
+            <width value="4.9902"/>
+            <height value="15.4301"/>
+        </shape>
+    </region>
+    <region id="50">
+        <name value="PLombardy"/>
+        <shape type="rect">
+            <quad value="110.125,34.7834,125.2734,42.7824"/>
+        </shape>
+    </region>
+    <region id="51">
+        <name value="PRome"/>
+        <shape type="rect">
+            <quad value="119.6396,18.7805,134.45,27.5068"/>
+        </shape>
+    </region>
+    <region id="52">
+        <name value="PMarche"/>
+        <shape type="diamond">
+            <center value="122.5417,32.0327"/>
+            <width value="6.3752"/>
+            <height value="14.477"/>
+        </shape>
+    </region>
+    <region id="53">
+        <name value="PSicily"/>
+        <shape type="rect">
+            <quad value="114.0068,0.3398,132.0065,9.4885"/>
+        </shape>
+    </region>
+    <region id="54">
+        <name value="PCalabria"/>
+        <shape type="rect">
+            <quad value="126.8576,3.358,136.5671,14.6848"/>
+        </shape>
+    </region>
+    <region id="55">
+        <name value="PCampania"/>
+        <shape type="rect">
+            <quad value="121.41,12.1408,140.0026,19.7226"/>
+        </shape>
+    </region>
+    <region id="56">
+        <name value="PSwitzerland"/>
+        <shape type="diamond">
+            <center value="108.2502,44.2297"/>
+            <width value="11.515"/>
+            <height value="7.8435"/>
+        </shape>
+    </region>
+    <region id="57">
+        <name value="PTyrol"/>
+        <shape type="rect">
+            <quad value="111.189,42.2431,120.6545,50.3334"/>
+        </shape>
+    </region>
+    <region id="58">
+        <name value="PCarinthia"/>
+        <shape type="rect">
+            <quad value="125.087,32.8547,136.0122,42.382"/>
+        </shape>
+    </region>
+    <region id="59">
+        <name value="PSalzberg"/>
+        <shape type="rect">
+            <quad value="120.6052,45.6855,130.9204,50.415"/>
+        </shape>
+    </region>
+    <region id="60">
+        <name value="PVienna"/>
+        <shape type="rect">
+            <quad value="130.9213,42.9497,137.6513,49.574"/>
+        </shape>
+    </region>
+    <region id="68">
+        <name value="PLuxembourg"/>
+        <shape type="rect">
+            <quad value="104.2775,58.3415,107.3312,61.164"/>
+        </shape>
+    </region>
+    <region id="69">
+        <name value="PAmsterdam"/>
+        <shape type="rect">
+            <quad value="105.6477,65.5815,109.5957,71.948"/>
+        </shape>
+    </region>
+    <region id="70">
+        <name value="PAntwerp"/>
+        <shape type="rect">
+            <quad value="104.2263,60.3728,107.311,65.5727"/>
+        </shape>
+    </region>
+    <region id="71">
+        <name value="PBrussels"/>
+        <shape type="rect">
+            <quad value="107.2021,61.445,110.295,65.571"/>
+        </shape>
+    </region>
+    <region id="72">
+        <name value="PFriesland"/>
+        <shape type="rect">
+            <quad value="109.53,64.16,113.8615,72.292"/>
+        </shape>
+    </region>
+    <region id="73">
+        <name value="PJutland"/>
+        <shape type="rect">
+            <quad value="115.253,76.715,121.6076,82.9868"/>
+        </shape>
+    </region>
+    <region id="74">
+        <name value="PFyn"/>
+        <shape type="rect">
+            <quad value="120.848,74.02,123.5422,77.1264"/>
+        </shape>
+    </region>
+    <region id="75">
+        <name value="PCopenhagen"/>
+        <shape type="rect">
+            <quad value="123.928,72.6281,129.6481,81.3432"/>
+        </shape>
+    </region>
+    <region id="76">
+        <name value="PStockholm"/>
+        <shape type="rect">
+            <quad value="133.9414,87.417,142.0678,94.5236"/>
+        </shape>
+    </region>
+    <region id="77">
+        <name value="PGotland"/>
+        <shape type="rect">
+            <quad value="139.9147,78.397,143.63,83.1606"/>
+        </shape>
+    </region>
+    <region id="78">
+        <name value="PSmalland"/>
+        <shape type="rect">
+            <quad value="129.6528,72.9497,139.136,82.368"/>
+        </shape>
+    </region>
+    <region id="79">
+        <name value="PVastergotland"/>
+        <shape type="rect">
+            <quad value="132.2387,82.0957,139.1613,87.4707"/>
+        </shape>
+    </region>
+    <region id="80">
+        <name value="PVarmland"/>
+        <shape type="rect">
+            <quad value="128.6545,87.5134,133.8945,94.3996"/>
+        </shape>
+    </region>
+    <region id="81">
+        <name value="PRogaland"/>
+        <shape type="rect">
+            <quad value="116.4802,86.3281,121.3571,94.509"/>
+        </shape>
+    </region>
+    <region id="82">
+        <name value="PAgder"/>
+        <shape type="rect">
+            <quad value="121.2458,86.5834,128.8801,94.4858"/>
+        </shape>
+    </region>
+    <region id="83">
+        <name value="PGothenburg"/>
+        <shape type="rect">
+            <quad value="128.2495,82.362,132.2207,87.586"/>
+        </shape>
+    </region>
+    <region id="84">
+        <name value="PRhineland"/>
+        <shape type="rect">
+            <quad value="107.6025,51.885,114.8603,58.3564"/>
+        </shape>
+    </region>
+    <region id="85">
+        <name value="PWestfalen"/>
+        <shape type="diamond">
+            <center value="110.6892,61.081"/>
+            <width value="7.7502"/>
+            <height value="5.1074"/>
+        </shape>
+    </region>
+    <region id="86">
+        <name value="PHesse"/>
+        <shape type="rect">
+            <quad value="111.563,57.8884,121.0251,64.511"/>
+        </shape>
+    </region>
+    <region id="87">
+        <name value="PWurttenberg"/>
+        <shape type="rect">
+            <quad value="107.454,48.3623,116.2602,52.3833"/>
+        </shape>
+    </region>
+    <region id="88">
+        <name value="PNurnberg"/>
+        <shape type="rect">
+            <quad value="114.5551,53.4323,121.3115,58.617"/>
+        </shape>
+    </region>
+    <region id="89">
+        <name value="PMunich"/>
+        <shape type="rect">
+            <quad value="115.0251,50.319,126.0664,53.527"/>
+        </shape>
+    </region>
+    <region id="90">
+        <name value="PBremen"/>
+        <shape type="rect">
+            <quad value="113.6591,64.4794,120.3161,71.755"/>
+        </shape>
+    </region>
+    <region id="91">
+        <name value="PHolstein"/>
+        <shape type="rect">
+            <quad value="116.2333,71.189,121.498,76.8488"/>
+        </shape>
+    </region>
+    <region id="92">
+        <name value="PMecklenburg"/>
+        <shape type="rect">
+            <quad value="120.1672,65.8151,132.9887,71.4125"/>
+        </shape>
+    </region>
+    <region id="93">
+        <name value="PBerlin"/>
+        <shape type="rect">
+            <quad value="120.3371,60.0817,131.4416,65.9736"/>
+        </shape>
+    </region>
+    <region id="94">
+        <name value="PBrandenburg"/>
+        <shape type="rect">
+            <quad value="120.7175,53.262,131.4516,60.1376"/>
+        </shape>
+    </region>
+    <region id="95">
+        <name value="PBohemia"/>
+        <shape type="rect">
+            <quad value="124.9375,48.8171,130.7353,55.187"/>
+        </shape>
+    </region>
+    <region id="96">
+        <name value="PMoravia"/>
+        <shape type="rect">
+            <quad value="130.6855,49.5395,137.6635,55.2277"/>
+        </shape>
+    </region>
+    <region id="97">
+        <name value="PSlovenia"/>
+        <shape type="rect">
+            <quad value="127.3044,29.9941,135.9763,36.3955"/>
+        </shape>
+    </region>
+    <region id="98">
+        <name value="PCroatia"/>
+        <shape type="diamond">
+            <center value="137.095,26.9958"/>
+            <width value="3.3007"/>
+            <height value="12.284"/>
+        </shape>
+        <shape type="rect">
+            <quad value="133.335,30.245,138.8447,33.755"/>
+        </shape>
+    </region>
+    <region id="99">
+        <name value="PMontenegro"/>
+        <shape type="rect">
+            <quad value="140.6496,20.2048,145.6601,23.8466"/>
+        </shape>
+    </region>
+    <region id="100">
+        <name value="PAlbania"/>
+        <shape type="rect">
+            <quad value="140.4758,13.7526,147.156,20.3137"/>
+        </shape>
+    </region>
+    <region id="101">
+        <name value="PKosovo"/>
+        <shape type="rect">
+            <quad value="145.6035,19.4997,152.9533,25.3432"/>
+        </shape>
+    </region>
+    <region id="102">
+        <name value="PSerbia"/>
+        <shape type="diamond">
+            <center value="148.4162,30.0017"/>
+            <width value="7.4387"/>
+            <height value="10.4372"/>
+        </shape>
+    </region>
+    <region id="103">
+        <name value="PBosnia"/>
+        <shape type="diamond">
+            <center value="141.5773,28.2297"/>
+            <width value="4.8808"/>
+            <height value="10.5466"/>
+        </shape>
+    </region>
+    <region id="104">
+        <name value="PBelegrade"/>
+        <shape type="diamond">
+            <center value="142.485,33.9865"/>
+            <width value="5.727"/>
+            <height value="5.1022"/>
+        </shape>
+    </region>
+    <region id="105">
+        <name value="PMacedonia"/>
+        <shape type="rect">
+            <quad value="150.7578,17.7131,156.8227,22.6665"/>
+        </shape>
+    </region>
+    <region id="106">
+        <name value="PThrace"/>
+        <shape type="rect">
+            <quad value="156.9018,12.3666,163.7121,19.8427"/>
+        </shape>
+    </region>
+    <region id="107">
+        <name value="PThessalia"/>
+        <shape type="rect">
+            <quad value="150.9436,10.2763,156.8872,17.6962"/>
+        </shape>
+    </region>
+    <region id="108">
+        <name value="PAthens"/>
+        <shape type="rect">
+            <quad value="151.1184,4.753,157.339,10.5122"/>
+        </shape>
+    </region>
+    <region id="109">
+        <name value="PIonia"/>
+        <shape type="diamond">
+            <center value="146.796,10.4958"/>
+            <width value="4.5664"/>
+            <height value="11.2114"/>
+        </shape>
+    </region>
+    <region id="110">
+        <name value="PPeloponnesia"/>
+        <shape type="rect">
+            <quad value="148.7004,0.116,158.7177,6.1762"/>
+        </shape>
+    </region>
+    <region id="111">
+        <name value="PIstanbul"/>
+        <shape type="diamond">
+            <center value="167.2607,17.3176"/>
+            <width value="8"/>
+            <height value="9.3598"/>
+        </shape>
+    </region>
+    <region id="112">
+        <name value="PGallipoli"/>
+        <shape type="rect">
+            <quad value="163.6513,7.3137,171.8818,14.3415"/>
+        </shape>
+    </region>
+    <region id="113">
+        <name value="PIzmir"/>
+        <shape type="rect">
+            <quad value="165.2321,0,174.5307,7.689"/>
+        </shape>
+    </region>
+    <region id="114">
+        <name value="PAntalya"/>
+        <shape type="rect">
+            <quad value="174.5556,0.1098,193.294,4.3708"/>
+        </shape>
+    </region>
+    <region id="115">
+        <name value="PAfyon"/>
+        <shape type="rect">
+            <quad value="174.4028,3.9863,193.6716,8.6813"/>
+        </shape>
+    </region>
+    <region id="116">
+        <name value="PBursa"/>
+        <shape type="rect">
+            <quad value="171.016,7.6442,175.9877,19.2727"/>
+        </shape>
+    </region>
+    <region id="117">
+        <name value="PVan"/>
+        <shape type="rect">
+            <quad value="211.6784,0.4626,223.9255,11.5354"/>
+        </shape>
+    </region>
+    <region id="118">
+        <name value="PMardin"/>
+        <shape type="rect">
+            <quad value="192.8823,0,211.6267,4.0422"/>
+        </shape>
+    </region>
+    <region id="119">
+        <name value="PElzaig"/>
+        <shape type="rect">
+            <quad value="193.4653,3.8334,211.7607,8.8745"/>
+        </shape>
+    </region>
+    <region id="120">
+        <name value="PErzurum"/>
+        <shape type="rect">
+            <quad value="202.582,8.7761,212.219,20.0014"/>
+        </shape>
+    </region>
+    <region id="121">
+        <name value="PKars"/>
+        <shape type="rect">
+            <quad value="211.8576,11.4392,223.7934,20.0805"/>
+        </shape>
+    </region>
+    <region id="122">
+        <name value="PTabriz"/>
+        <shape type="rect">
+            <quad value="223.7985,0.1862,237.8784,7.3088"/>
+        </shape>
+    </region>
+    <region id="123">
+        <name value="PArmenia"/>
+        <shape type="rect">
+            <quad value="223.7763,7.1726,229.9697,20.1044"/>
+        </shape>
+    </region>
+    <region id="124">
+        <name value="PTrabzon"/>
+        <shape type="rect">
+            <quad value="195.3818,12.5307,202.4526,18.1262"/>
+        </shape>
+    </region>
+    <region id="125">
+        <name value="PSinop"/>
+        <shape type="diamond">
+            <center value="189.5078,17.048"/>
+            <width value="4.6413"/>
+            <height value="14.1574"/>
+        </shape>
+    </region>
+    <region id="126">
+        <name value="PBartin"/>
+        <shape type="rect">
+            <quad value="174.025,14.768,187.357,23.0761"/>
+        </shape>
+    </region>
+    <region id="127">
+        <name value="PAnkara"/>
+        <shape type="rect">
+            <quad value="175.6618,8.2597,190.4616,14.3305"/>
+        </shape>
+    </region>
+    <region id="128">
+        <name value="PSivas"/>
+        <shape type="rect">
+            <quad value="190.2861,8.5986,202.6953,13.1562"/>
+        </shape>
+    </region>
+    <region id="129">
+        <name value="PAbkhazia"/>
+        <invisible/>
+        <shape type="rect">
+            <quad value="197.329,28.1672,215.1882,35.074"/>
+        </shape>
+    </region>
+    <region id="130">
+        <name value="PAjaria"/>
+        <shape type="rect">
+            <quad value="206.5126,19.9831,214.887,28.472"/>
+        </shape>
+    </region>
+    <region id="131">
+        <name value="PTbilisi"/>
+        <shape type="rect">
+            <quad value="214.5888,19.771,228.744,32.6291"/>
+        </shape>
+    </region>
+    <region id="132">
+        <name value="PStettin"/>
+        <shape type="rect">
+            <quad value="131.4584,62.5,141.9255,72.4338"/>
+        </shape>
+    </region>
+    <region id="133">
+        <name value="PDanzig"/>
+        <shape type="rect">
+            <quad value="140.2058,62.0944,146.1223,69.877"/>
+        </shape>
+    </region>
+    <region id="134">
+        <name value="PPoznan"/>
+        <shape type="rect">
+            <quad value="131.2255,55.1877,143.0708,62.6296"/>
+        </shape>
+    </region>
+    <region id="135">
+        <name value="PKrakow"/>
+        <shape type="rect">
+            <quad value="137.5756,51.014,152.9255,55.4013"/>
+        </shape>
+    </region>
+    <region id="136">
+        <name value="PLodz"/>
+        <shape type="rect">
+            <quad value="143.0224,55.3027,148.658,62.1313"/>
+        </shape>
+    </region>
+    <region id="137">
+        <name value="PWarsaw"/>
+        <shape type="rect">
+            <quad value="148.4995,55.3007,153.6066,61.9768"/>
+        </shape>
+    </region>
+    <region id="138">
+        <name value="POlsztyn"/>
+        <shape type="rect">
+            <quad value="146.0292,61.8923,152.9968,67.5998"/>
+        </shape>
+    </region>
+    <region id="139">
+        <name value="PKalingrad"/>
+        <shape type="rect">
+            <quad value="143.992,67.5498,155.9777,72.7788"/>
+        </shape>
+    </region>
+    <region id="140">
+        <name value="PRiga"/>
+        <shape type="rect">
+            <quad value="153.5085,72.842,159.8718,80.4321"/>
+        </shape>
+    </region>
+    <region id="141">
+        <name value="PTallinn"/>
+        <shape type="rect">
+            <quad value="155.7297,82.2907,159.7658,89.453"/>
+        </shape>
+    </region>
+    <region id="142">
+        <name value="PNarva"/>
+        <shape type="rect">
+            <quad value="159.542,80.3071,163.8937,89.434"/>
+        </shape>
+    </region>
+    <region id="143">
+        <name value="PHiiu"/>
+        <shape type="rect">
+            <quad value="148.9553,83.7443,154.8261,88.167"/>
+        </shape>
+    </region>
+    <region id="144">
+        <name value="PSaare"/>
+        <shape type="rect">
+            <quad value="147.956,79.9821,153.6337,83.7944"/>
+        </shape>
+    </region>
+    <region id="145">
+        <name value="PVilnius"/>
+        <shape type="rect">
+            <quad value="155.8815,67.867,162.659,72.7678"/>
+        </shape>
+    </region>
+    <region id="146">
+        <name value="PRezekne"/>
+        <shape type="rect">
+            <quad value="159.8728,72.773,163.849,80.3356"/>
+        </shape>
+    </region>
+    <region id="147">
+        <name value="PTalsi"/>
+        <shape type="rect">
+            <quad value="145.2355,72.6914,153.4826,79.98"/>
+        </shape>
+    </region>
+    <region id="148">
+        <name value="PSofia"/>
+        <shape type="rect">
+            <quad value="156.7416,19.804,162.7822,25.6767"/>
+        </shape>
+    </region>
+    <region id="149">
+        <name value="PVarna"/>
+        <shape type="rect">
+            <quad value="162.715,19.768,168.1892,26.6083"/>
+        </shape>
+    </region>
+    <region id="150">
+        <name value="PBucharest"/>
+        <shape type="rect">
+            <quad value="156.9802,25.466,168.765,32.938"/>
+        </shape>
+    </region>
+    <region id="151">
+        <name value="PCraiova"/>
+        <shape type="rect">
+            <quad value="150.7966,25.7292,157.1403,33.2807"/>
+        </shape>
+    </region>
+    <region id="152">
+        <name value="PTransilvania"/>
+        <shape type="rect">
+            <quad value="156.9973,32.7448,164.4506,40.4511"/>
+        </shape>
+    </region>
+    <region id="153">
+        <name value="PMoldovia"/>
+        <shape type="rect">
+            <quad value="164.3691,32.0847,169.5512,44.6577"/>
+        </shape>
+    </region>
+    <region id="154">
+        <name value="PMaramures"/>
+        <shape type="rect">
+            <quad value="156.9243,40.464,164.4531,44.5615"/>
+        </shape>
+    </region>
+    <region id="155">
+        <name value="PBudapest"/>
+        <shape type="rect">
+            <quad value="137.5773,44.9672,152.8967,51.206"/>
+        </shape>
+    </region>
+    <region id="156">
+        <name value="PPecs"/>
+        <shape type="diamond">
+            <center value="138.0893,37.2861"/>
+            <width value="7.9177"/>
+            <height value="6.7453"/>
+        </shape>
+    </region>
+    <region id="157">
+        <name value="PSopron"/>
+        <shape type="rect">
+            <quad value="137.4,39.2373,143.7983,45.2602"/>
+        </shape>
+    </region>
+    <region id="158">
+        <name value="PNapoca"/>
+        <shape type="rect">
+            <quad value="148.6181,33.025,157.2158,45.0131"/>
+        </shape>
+    </region>
+    <region id="159">
+        <name value="PTimisoara"/>
+        <shape type="rect">
+            <quad value="141.794,33.488,148.7365,45.0688"/>
+        </shape>
+    </region>
+    <region id="160">
+        <name value="PMinsk"/>
+        <shape type="rect">
+            <quad value="158.0834,60.571,162.6796,69.8217"/>
+        </shape>
+    </region>
+    <region id="161">
+        <name value="PGrodno"/>
+        <shape type="rect">
+            <quad value="152.6115,60.6633,158.174,67.8632"/>
+        </shape>
+    </region>
+    <region id="162">
+        <name value="PKiev"/>
+        <shape type="rect">
+            <quad value="157.649,48.766,164.8566,55.6003"/>
+        </shape>
+    </region>
+    <region id="163">
+        <name value="PLviv"/>
+        <shape type="rect">
+            <quad value="152.5192,44.5327,157.8476,55.8837"/>
+        </shape>
+    </region>
+    <region id="164">
+        <name value="PPinsk"/>
+        <shape type="rect">
+            <quad value="153.1171,55.39,163.6437,60.8764"/>
+        </shape>
+    </region>
+    <region id="165">
+        <name value="PMykolaiv"/>
+        <shape type="rect">
+            <quad value="169.2922,34.888,179.3034,43.0295"/>
+        </shape>
+    </region>
+    <region id="166">
+        <name value="PUman"/>
+        <shape type="rect">
+            <quad value="157.7194,43.1914,172.3183,48.8371"/>
+        </shape>
+    </region>
+    <region id="167">
+        <name value="PCrimea"/>
+        <shape type="rect">
+            <quad value="176.2092,29.1064,185.4433,38.0795"/>
+        </shape>
+    </region>
+    <region id="168">
+        <name value="PKerch"/>
+        <shape type="rect">
+            <quad value="185.3598,32.9294,190.0576,37.849"/>
+        </shape>
+    </region>
+    <region id="169">
+        <name value="PMariupol"/>
+        <shape type="rect">
+            <quad value="179.311,38.0632,189.6604,43.0966"/>
+        </shape>
+    </region>
+    <region id="170">
+        <name value="PDonetsk"/>
+        <shape type="rect">
+            <quad value="172.2312,42.94,186.8,48.6533"/>
+        </shape>
+    </region>
+    <region id="171">
+        <name value="PLuhansk"/>
+        <shape type="rect">
+            <quad value="186.6948,42.11,196.554,49.8466"/>
+        </shape>
+    </region>
+    <region id="172">
+        <name value="PKharkiv"/>
+        <shape type="rect">
+            <quad value="171.9125,48.5852,186.786,52.1406"/>
+        </shape>
+    </region>
+    <region id="173">
+        <name value="PKonotop"/>
+        <shape type="rect">
+            <quad value="164.7993,48.6096,173.846,55.441"/>
+        </shape>
+    </region>
+    <region id="174">
+        <name value="PGomel"/>
+        <shape type="rect">
+            <quad value="163.5952,54.933,172.5876,59.5236"/>
+        </shape>
+    </region>
+    <region id="175">
+        <name value="PViciebsk"/>
+        <shape type="rect">
+            <quad value="162.469,59.4665,173.8725,65.8283"/>
+        </shape>
+    </region>
+    <region id="176">
+        <name value="PPskov"/>
+        <shape type="rect">
+            <quad value="162.4064,65.8327,174.01,72.989"/>
+        </shape>
+    </region>
+    <region id="177">
+        <name value="PStPetersburg"/>
+        <shape type="rect">
+            <quad value="163.5756,72.9113,175.8967,86.8308"/>
+        </shape>
+    </region>
+    <region id="178">
+        <name value="PTver"/>
+        <shape type="rect">
+            <quad value="185.9841,70.2478,199.6967,79.8823"/>
+        </shape>
+    </region>
+    <region id="179">
+        <name value="PNovgorod"/>
+        <shape type="rect">
+            <quad value="173.8474,69.1374,186.0654,79.9316"/>
+        </shape>
+    </region>
+    <region id="180">
+        <name value="PSmolensk"/>
+        <shape type="rect">
+            <quad value="173.84,59.968,186.0764,69.3298"/>
+        </shape>
+    </region>
+    <region id="181">
+        <name value="PBryansk"/>
+        <shape type="rect">
+            <quad value="172.4123,51.8762,186.175,60.0866"/>
+        </shape>
+    </region>
+    <region id="182">
+        <name value="PKursk"/>
+        <shape type="rect">
+            <quad value="186.2004,49.9165,193.97,57.0437"/>
+        </shape>
+    </region>
+    <region id="183">
+        <name value="PKaluga"/>
+        <shape type="rect">
+            <quad value="186.084,60.6713,199.5803,70.4948"/>
+        </shape>
+    </region>
+    <region id="184">
+        <name value="POryol"/>
+        <shape type="rect">
+            <quad value="186.0874,56.2521,203.5981,60.6862"/>
+        </shape>
+    </region>
+    <region id="185">
+        <name value="PKrasnodar"/>
+        <shape type="rect">
+            <quad value="189.8481,30.5366,199.663,39.207"/>
+        </shape>
+    </region>
+    <region id="186">
+        <name value="PRostov"/>
+        <shape type="rect">
+            <quad value="189.8632,37.4072,203.651,44.0422"/>
+        </shape>
+    </region>
+    <region id="187">
+        <name value="PVolgograd"/>
+        <shape type="rect">
+            <quad value="203.6362,43.2653,228.2458,58.0485"/>
+        </shape>
+    </region>
+    <region id="188">
+        <name value="PGrozny"/>
+        <shape type="rect">
+            <quad value="212.0424,31.8857,230.388,43.3984"/>
+        </shape>
+    </region>
+    <region id="189">
+        <name value="PStavropol"/>
+        <shape type="rect">
+            <quad value="203.4797,34.9584,212.1872,43.9362"/>
+        </shape>
+    </region>
+    <region id="190">
+        <name value="PVolgodonsk"/>
+        <shape type="rect">
+            <quad value="193.9506,44.0295,206.4685,57.185"/>
+        </shape>
+    </region>
+    <region id="191">
+        <name value="PYaroslavl"/>
+        <shape type="rect">
+            <quad value="199.5344,77.3132,224.1184,81.5405"/>
+        </shape>
+    </region>
+    <region id="192">
+        <name value="PKazan"/>
+        <shape type="rect">
+            <quad value="217.5688,57.9714,229.2836,80.7888"/>
+        </shape>
+    </region>
+    <region id="193">
+        <name value="PPerm"/>
+        <shape type="rect">
+            <quad value="229.1975,62.7021,236.0212,80.0625"/>
+        </shape>
+    </region>
+    <region id="194">
+        <name value="PTyumen"/>
+        <shape type="rect">
+            <quad value="235.7651,57.3088,246.8994,65.765"/>
+        </shape>
+    </region>
+    <region id="195">
+        <name value="PSorum"/>
+        <shape type="rect">
+            <quad value="236.0185,65.5578,245.844,80.025"/>
+        </shape>
+    </region>
+    <region id="196">
+        <name value="PNizhnevartovsk"/>
+        <shape type="rect">
+            <quad value="245.79,57.4841,254.076,80.0625"/>
+        </shape>
+    </region>
+    <region id="197">
+        <name value="Harsh Snow"/>
+        <color value="255,202,255,255"/>
+        <invisible/>
+        <shape type="rect">
+            <quad value="225.1564,44.5,255.4174,80.0512"/>
+        </shape>
+    </region>
+    <region id="61">
+        <name value="BaseDomain"/>
+        <invisible/>
+        <shape type="rect">
+            <quad value="200.095,58.0288,255.985,80.3803"/>
+        </shape>
+    </region>
+    <region id="5">
+        <name value="West"/>
+        <invisible/>
+        <shape type="rect">
+            <quad value="42.7978,0,117.816,91.7478"/>
+        </shape>
+    </region>
+    <region id="63">
+        <name value="AmericanPlaneland"/>
+        <invisible/>
+        <shape type="rect">
+            <quad value="24.581,4.6801,28.296,80.7377"/>
+        </shape>
+    </region>
+    <region id="198">
+        <name value="PAzerbaijan"/>
+        <shape type="rect">
+            <quad value="229.6691,6.9753,240.919,16.0368"/>
+        </shape>
+    </region>
+    <region id="199">
+        <name value="PGilan"/>
+        <shape type="rect">
+            <quad value="237.8486,0,254.7065,6.9992"/>
+        </shape>
+    </region>
+    <region id="200">
+        <name value="_PlayableMap"/>
+        <invisible/>
+        <shape type="rect">
+            <quad value="44.2163,0,204.2163,92.3928"/>
+        </shape>
+        <shape type="rect">
+            <negative/>
+            <quad value="157.5,80,262.5,100"/>
+        </shape>
+        <shape type="rect">
+            <quad value="175,15,225,35"/>
+        </shape>
+    </region>
+    <region id="201">
+        <name value="United States"/>
+        <invisible/>
+        <shape type="rect">
+            <quad value="-2.0788,0,37.921,53.4841"/>
+        </shape>
+    </region>
+    <region id="202">
+        <name value="SovietUnion"/>
+        <invisible/>
+        <shape type="diamond">
+            <center value="225,80"/>
+            <width value="85"/>
+            <height value="75.799"/>
+        </shape>
+    </region>
+</Regions>
