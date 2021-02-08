@@ -2857,7 +2857,7 @@
         <HotkeyAlias value="SupplyDepot"/>
     </CButton>
     <CButton id="BuildWindTurbine">
-        <Icon value="Assets\Textures\wireframe-general-xelnagatower.dds"/>
+        <Icon value="Assets\Textures\wireframe-terran-refinery-automated.dds"/>
         <HotkeyAlias value="BuildLDHousing"/>
     </CButton>
     <CButton id="BuildFissionPowerPlant">

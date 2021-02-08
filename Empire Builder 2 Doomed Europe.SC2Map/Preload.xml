@@ -82,8 +82,8 @@
 <Asset path="bankruptcyincoming.tga" Type="Image"/>
 <Asset path="direct democracy.dds" Type="Image"/>
 <Asset path="military\research\government\080.tga" Type="Image"/>
-<Asset path="assets\textures\progress bar\clearbox.tga" Type="Image"/>
 <Asset path="assets\economy\019.tga" Type="Image"/>
+<Asset path="assets\textures\progress bar\clearbox.tga" Type="Image"/>
 <Asset path="boom.tga" Type="Image"/>
 <Asset path="military\screenshots\possiblescreenshots\yes\yes\research\special\research\special\078.tga" Type="Image"/>
 <Asset path="assets\economy\026.tga" Type="Image"/>
@@ -110,8 +110,8 @@
 <Asset path="diplomatic policies\research\special\069.tga" Type="Image"/>
 <Asset path="military\music\gamescreens\v2\mainui\mainui\bigorangebox.tga" Type="Image"/>
 <Asset path="farmingbadterrain.tga" Type="Image"/>
-<Asset path="assets\economy\020.tga" Type="Image"/>
 <Asset path="assets\textures\progress bar\yellowbox.tga" Type="Image"/>
+<Asset path="assets\economy\020.tga" Type="Image"/>
 <Asset path="assets\declare war, neutral, peace\001.tga" Type="Image"/>
 <Asset path="military\screenshots\possiblescreenshots\yes\yes\research\special\research\special\symbols\smallredx.tga" Type="Image"/>
 <Asset path="notenoughlabs.tga" Type="Image"/>

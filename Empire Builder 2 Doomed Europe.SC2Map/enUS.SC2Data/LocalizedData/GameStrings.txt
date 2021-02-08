@@ -524,8 +524,8 @@ Behavior/Tooltip/NoOil=You do not have enough oil for your vehicles.
 Behavior/Tooltip/NoSupplyLines=This unit is in hostile territory and has a hard time accessing supplies<n/><n/><c val="FF0000">-.1 Health Per Second<n/>-1 Sight Bonus<n/>-20% Movement Speed</c>
 Behavior/Tooltip/NuclearShield=This unit is protected by a shield generator. All damaged applied will damage the closest shield generator instead. Shield will break if closest shield generator runs out of shields.
 Behavior/Tooltip/Occupation=This unit is occupied and must be taken in an official peace treaty!<n/><n/>-2% Growth Rate<n/>-5 Armor
-Behavior/Tooltip/PopulationThinner=<c val="FF0000">-1 Life Per Second<n/>-75% Pop Growth
-Behavior/Tooltip/PopulationThinner2=<c val="FF0000">-2 Health Per Second<n/>-150% Pop Growth</c>
+Behavior/Tooltip/PopulationThinner=<c val="FF0000">-1 Life Per Second<n/>-85% Pop Growth
+Behavior/Tooltip/PopulationThinner2=<c val="FF0000">-2 Health Per Second<n/>-200% Pop Growth</c>
 Behavior/Tooltip/PopulationThinner22=<c val="FF0000">-100 Life per Second<n/>-2,000% Pop Growth
 Behavior/Tooltip/RussianCity=Russian cities are designed to be centralized and resource independent. All food and electricity needed by homes are produced in the city's capitol.
 Behavior/Tooltip/RussianDivision=Russian military doctrine allows for a large number of units in a single division, up to 5 times our capacity
@@ -591,7 +591,7 @@ Button/Name/AutobuildFussionPlants=Autobuild Fusion Plants
 Button/Name/AutobuildHDHomes=Autobuild HD Homes
 Button/Name/AutobuildHydrofarms=Autobuild Hydrofarms
 Button/Name/AutobuildLDHomes=Autobuild LD Homes
-Button/Name/AutobuildWindmills=Autobuild Windmills
+Button/Name/AutobuildWindmills=Autobuild Oil Power
 Button/Name/Banshee2=Build Gunship Squadron
 Button/Name/Banshee22=Build VTOL Squadron
 Button/Name/Banshee222=Build Recon Helicopter Squadron
@@ -703,7 +703,7 @@ Button/Name/BuildVanguardMBT=Build Vanguard MBT
 Button/Name/BuildViperFighter=Build A110
 Button/Name/BuildWall=Build Wall
 Button/Name/BuildWeatherManipulator=Build Weather Manipulator
-Button/Name/BuildWindTurbine=Build Wind Turbine
+Button/Name/BuildWindTurbine=Build Coal Plant
 Button/Name/BuildWindTurbine2=Build Oil Power Plant
 Button/Name/BuildWorkbot=Build Military Engineer
 Button/Name/Bunker2=Build Bunker Copy
@@ -1348,7 +1348,7 @@ Button/Tooltip/BuildExpounder=Large, advanced anti-ground turret.<n/>Launches a 
 Button/Tooltip/BuildFarm=A basic form of harvesting food. Using high-tech equipment of the 22nd century, the farm can be built anywhere. Provides minor population that doesn't pay tax.<n/><n/><c val="00FF00">Provides half of its energy as population. They pay taxes with food rather than credits.</c><n/><c val="FCD96D">Produces 60 food.</c><n/><c val="D85656">Upkeep: 60 credits</c>
 Button/Tooltip/BuildFissionPowerPlant=Fission Power Plants utilise nuclear fission to generate large amounts of power, at great costs.</c><n/><c val="B4B4B4">Produces 2000 power.</c><n/><c val="D85656">Upkeep: 1000 credits</c>
 Button/Tooltip/BuildFlakker=Flakkers launch flak shells against enemy aircraft. They deal splash damage but struggle against heavily armoured aircraft.<n/><n/><c val="D85656">Upkeep: 50 credits</c>
-Button/Tooltip/BuildFusionReactor=The large Fusion Reactor facility produces massive amounts of power, more efficiently than a fission reactor.</c><n/><c val="B4B4B4">Produces 10000  power.</c><n/><c val="D85656">Upkeep: 5000 credits</c>
+Button/Tooltip/BuildFusionReactor=The large Fusion Reactor facility produces massive amounts of power, more efficiently than a fission reactor.</c><n/><c val="B4B4B4">Produces 8000  power.</c><n/><c val="D85656">Upkeep: 5000 credits</c>
 Button/Tooltip/BuildFusionReactor2=The large Fusion Reactor facility produces massive amounts of power, more efficiently than a fission reactor.</c><n/><c val="B4B4B4">Produces 10000  power.</c><n/><c val="D85656">Upkeep: 5000 credits</c>
 Button/Tooltip/BuildGeothermalPowerPlant=A clean and cheap way of generating large amounts of power.</c><n/><c val="B4B4B4">Produces 1000 power.</c><n/><c val="D85656">Upkeep: 200 credits</c>
 Button/Tooltip/BuildGroundFactory=The ground factory produces ground vehicles.<n/><n/><c val="D85656">Upkeep: 200 credits</c>
@@ -1387,8 +1387,8 @@ Button/Tooltip/BuildVHDHousing=VHD housing is a very high density form of housin
 Button/Tooltip/BuildVanguardMBT=The Vanguard is a relic from past wars. It is a reliable heavy tank that can withstand extreme punishment, but use of old technology makes this tank slow and ineffective against armour. Modernization attempts have updated this tank with a top mounted rapid laser turret in addition to its main cannon.<n/><n/><c val="00FF00">Good vs: light</c><n/><c val="FF0000">Bad vs: heavy armour</c><n/><c val="8080FF">Special: splash damage</c><n/><c val="8D7C36">Oil usage: 14</c><n/><c val="D85656">Upkeep: 1000 credits</c>
 Button/Tooltip/BuildViperFighter=The old A100 was the terror of the sky, deployed by the United States as late as 2040. The design was revived in the 22th century with the A110. Brrrrt<n/><n/><c val="00FF00">Good vs: infantry, air</c><n/><c val="FF0000">Bad vs: heavy armour</c><n/><c val="8080FF">Special: 55% evasion</c><n/><c val="8D7C36">Oil usage: 25</c><n/><c val="D85656">Upkeep: 1000 credits</c>
 Button/Tooltip/BuildWall=The wall is a simple physical barrier. Good for putting turrets behind.<n/><n/><c val="D85656">Upkeep: 5 credits</c>
-Button/Tooltip/BuildWindTurbine=Wind turbines provide power.</c><n/><c val="B4B4B4">Produces 100 power.</c><n/><c val="D85656">Upkeep: 25 credits</c>
-Button/Tooltip/BuildWindTurbine2=Provides power so long as it has oil. Note: all oil usage stats are yearly for all units.</c><n/><c val="B4B4B4">Produces 1200 power.</c><n/><n/><c val="8D7C36">Oil usage: 100</c><n/><c val="D85656">Upkeep: 300 credits</c>
+Button/Tooltip/BuildWindTurbine=Old and inefficient. Coal is plentiful enough that mining it isn't our problem.</c><n/><c val="B4B4B4">Produces 500 power.</c><n/><c val="D85656">Upkeep: 500 credits</c>
+Button/Tooltip/BuildWindTurbine2=Provides power so long as it has oil. Note: all oil usage stats are yearly for all units.</c><n/><c val="B4B4B4">Produces 3000 power.</c><n/><n/><c val="8D7C36">Oil usage: 100/month</c><n/><c val="D85656">Upkeep: 300 credits</c>
 Button/Tooltip/BuildWorkbot=Military engineers are tasked with repairing structures, building defences, and expanding the substation network.<n/><n/><c val="8000FF">Builds ONLY substations and defences. <n/><c val="FF0000">To build civilian structures use the capitol building.</c>
 Button/Tooltip/Bunker=A defensive structure which can keep units safe. Unlike homes, units inside bunkers don't take any damage and the bunker cannot be captured.
 Button/Tooltip/BunkerLoad2=Loads infantry into Bunker.
@@ -1424,7 +1424,7 @@ Button/Tooltip/Conscript=General-purpose infantry.<n/><n/><c val="#ColorAttackIn
 Button/Tooltip/Conscripts=A military consisting entirely of poorly trained conscripts.<n/><n/><c val="E80000">Slower attack speed<n/>Slower movement speed<n/>5% upkeep</c>
 Button/Tooltip/Convoy=Moves resources
 Button/Tooltip/CorporateHeadquarters=
-Button/Tooltip/Corporatocracy=A government ran by shareholders alongside a ruthless capitalist system.<n/><c val="00FF00"><n/>+60% Tax<n/>+10% Fire Rate<c val="FFFF00"><n/>+20% Civilian Demand</c><n/><c val="FF0000">-20% Food<n/>-10% Electricity<n/>-10% Growth<n/>-10% Tech
+Button/Tooltip/Corporatocracy=A government ran by shareholders alongside a ruthless capitalist system.<n/><c val="00FF00"><n/>+60% Tax<n/>+10% Fire Rate<c val="FFFF00"><n/>+20% Civilian Demand</c><n/><c val="FF0000">-60% Food<n/>-10% Electricity<n/>-10% Growth<n/>-10% Tech
 Button/Tooltip/CourierTH=Small dropship used for speical operations. Design from 2045.
 Button/Tooltip/CrusaderMBT=The Crusader is the pride of the old European army. First designed in 2111, it never got to see any real combat. Great at killing large clumps of elite infantry. Economically weak against other tanks, although it can win head on against anything.
 Button/Tooltip/Dart=Short range anti-armor skirmisher. Generally used for scouting or to flank artillery pieces.
@@ -1744,6 +1744,7 @@ Button/Tooltip/Volgograd=Volgograd is the Russian's gate to the oil fields of th
 Button/Tooltip/WarPolicy=Views war policies and allows them to be changed.
 Button/Tooltip/WindTurbine=Produces power inefficiently but without any impact on the planet
 Button/Tooltip/Zombie=When this zombie kills people, they turn into zombies
+Corporations not only trade resources with players, but with civilians and each other.=Corporations not only trade resources with players, but with civilians and each other.
 DocInfo/Author=Unknown Author
 DocInfo/DescLong=The first Grand Strategy game found on the Starcraft Arcade. You must control all aspects of your nation; from its both internal and external politics, to its economy, diplomacy, and its technological advancement in order to the supply armies and conquer your enemies.
 DocInfo/DescShort=5-7
@@ -3035,8 +3036,30 @@ DocInfo/PatchNote2068=Plus optimizations to the code!
 DocInfo/PatchNote2069=
 DocInfo/PatchNote207=-Made larger terrorist attacks more common
 DocInfo/PatchNote2070= 
+DocInfo/PatchNote2071=The "It's a Wrap" Patch - This is intended to remove all noob traps along with fixing many longstanding bugs.
+DocInfo/PatchNote2072=
+DocInfo/PatchNote2073=- Removed food trading from corporations. All food trading now happens directly between players (at a fixed price for now - we'll see)
+DocInfo/PatchNote2074=- Replaced wind generator with coal power plant (inefficient power generation) -500 electricity at 500 upkeep
+DocInfo/PatchNote2075=- Removed school and university from the game. It was a vestige of Empire Builder and now buildings don't need them to upgrade
+DocInfo/PatchNote2076=- MD housing is now locked behind "Urban Development" research in the top government tech tree
+DocInfo/PatchNote2077=- Clinics are still in the game, but only provide plague resistance and growth rate buffs, they do not lock any building progression
+DocInfo/PatchNote2078=- Oil power plant model is now fixed and oil power plant has been buffed from 1.2k electricity to 3k electricity
+DocInfo/PatchNote2079=- Fusion reactor nerfed from 10k electricity to 8k electricity
 DocInfo/PatchNote208=-Increased loan box size
+DocInfo/PatchNote2080=- Corporations can take on far more corporate debt, at least as much as they have in assets, making them go bankrupt rarely
+DocInfo/PatchNote2081=- A110 attack rate is now halved. It makes a good hit and run aircraft, but is more likely to lose in prolonged fights
+DocInfo/PatchNote2082=- Russian tech growth and production now has a log function on it. Russia covering the whole map in structures will not kill you as quickly
+DocInfo/PatchNote2083=- Initial Russian AI difficulty has been increased
+DocInfo/PatchNote2084=- Courier can now transport units, so it should be possible to build in the new world again
+DocInfo/PatchNote2085=- Nerfed corporateocracy food production from -20% to -60% since food trading is now easier
+DocInfo/PatchNote2086=- Fixed mass vaccinations making nations more susceptible to diseases
+DocInfo/PatchNote2087=- Increased deadliness of diseases but reduced their spread
+DocInfo/PatchNote2088=- Changed order of top government tech tree research
+DocInfo/PatchNote2089=- Farms with low centralization no longer sell food to the market, as the food market is entirely player run
 DocInfo/PatchNote209=-Fixed conquer glitch
+DocInfo/PatchNote2090=- Settlers now die less quickly and players who sit in spawn with their settler will be spammed with messages telling them to move
+DocInfo/PatchNote2091=- Added 25 new loading screen tips with things you have to dig deep into the patch notes on discord to know about
+DocInfo/PatchNote2092=
 DocInfo/PatchNote210=-Fixed interest in loan calculations
 DocInfo/PatchNote211=-Added owed debt
 DocInfo/PatchNote212=-Fixed certain combinations of governments giving you income for having a military
@@ -4280,9 +4303,37 @@ Effect/Name/ZergBuildingSpawnBroodling62=Cultist Death Spawn
 Effect/Name/ZergBuildingSpawnBroodling622=Civilian Defense Force Spawn
 Effect/Name/ZergBuildingSpawnBroodling6222=Bauilout Spawn
 Effect/Name/ZergBuildingSpawnBroodling6Delay2=Cultist Death Spawn (Delay)
-LoadingScreen/Subtitle=Version: 3.34 <c val="FF0000"></c><n/>
+Every nation has a national bank which any non-embargoed players can take loans from. The bank grows as your GDP increases and as players borrow money from your bank.=Every nation has a national bank which any non-embargoed players can take loans from. The bank grows as your GDP increases and as players borrow money from your bank.
+Food decays over time. Every month, 20% of food in any stockpile will decay. If you have negative food income and food stored don't panic, you've reached an equilibrium between growth and decay=Food decays over time. Every month, 20% of food in any stockpile will decay. If you have negative food income and food stored don't panic, you've reached an equilibrium between growth and decay
+Join the discord server in the description for tips and to be notified whenever a lobby is made.=Join the discord server in the description for tips and to be notified whenever a lobby is made.
+LoadingScreen/Help00=Corporations not only trade resources with players, but with civilians and each other.
+LoadingScreen/Help01=Every nation has a national bank which any non-embargoed players can take loans from. The bank grows as your GDP increases and as players borrow money from your bank.
+LoadingScreen/Help02=Food decays over time. Every month, 20% of food in any stockpile will decay. If you have negative food income and food stored don't panic, you've reached an equilibrium between growth and decay
+LoadingScreen/Help03=Watch out for centralization. Low centralization decreases yields of all non-resource buildings. Centralization is increased by your capitol, regional capitol, and highways connected to a capitol/regional capitol.
+LoadingScreen/Help04=Join the discord server in the description for tips and to be notified whenever a lobby is made.
+LoadingScreen/Help05=There are two components to research: point genration and research speed. Point generation is set by the research slider under the economy subtab. Research speed is set by the level of the research lab. Research speed dictates how fast research points can be spent.
+LoadingScreen/Help06=This map is full of tooltips. Some provide stats, others provide help to new players. Ever tried hovering over the flag?
+LoadingScreen/Help07=When paying for resourecs on the market you are also paying for the fuel to transport them. Distance often can decide the corporation offering the lowest price. Securing a cheap source of oil can reduce food and metal prices.
+LoadingScreen/Help08=The AI gets harder as the population of Europe increases (to a point). If the population of Europe passes 1 million, it's in danger if being invaded by the United Americas.
+LoadingScreen/Help09=Your credit score increases as you pay back debt and your GDP increases. Better credit score decreases your interest rate, as do some techs.
+LoadingScreen/Help10=Any nation with a strong economy can choose to end the world. The Fully Automated Economy project will destroy everyone's economy over time, The world eater virus spreads easily and will destroy all civilizations it reaches. Halcyon nukes can destroy 1/4 th of the entire continent each. 
+LoadingScreen/Help11=Being president of the European Union, even if not collecting taxes, is a powerful position. Additionally, in PvP and PvE game modes, the EU troops can be a strong force that is summoned quickly. Note that EU armies will only attack Russians/Americans. EU militia will fight any enemies.
+LoadingScreen/Help12=The Russian AI is adaptive. If they notice a lack of air defenses, they will bring air units. Lots of defenses? They'll bring tanks. Don't keep building the same unit and not expect the Russians to start building its hard counter.
+LoadingScreen/Help13=On harder difficulties, the AI uses nukes. Russians like to nuke high-pop civilian areas and generally nuke in retaliation to attacks. Americans like to nuke unit production and armies consistently. 
+LoadingScreen/Help14=Astros interceptors can not only intercept planes, but nukes as well. They're a good stopgap before you can research static anti-nuke missiles. 
+LoadingScreen/Help15=Any nation with a strong economy can choose to end the world. The Fully Automated Economy project will destroy everyone's economy over time, 
+LoadingScreen/Help16=An army of zombies is a hard counter to an enemy infantry only army or to an undefended civilian population. 
+LoadingScreen/Help17=STOP BUILDING DEFENSES AT CHOKE POINTS! You'll have a few units shooting at many advancing units! Build defenses behind choke points that way only a few enemy units can engage your many defenses!
+LoadingScreen/Help18=An AI rebellion will happen if there's too many AI-infused units on the map. During an AI rebellion, all nations with any level of AI researched will have their units join the rebellion. Your factories and airports will switch sides too. The AI will capture resources and power stations in order to build more units.
+LoadingScreen/Help19=Food is the only resource directly traded by players with no corporations as the middlemen. However, delivering food costs fuel - corporations will still profit from food trades.
+LoadingScreen/Help20=Weak corporations can afford to maintain an army for a month or two to capture a nearby resource. Strong corporations will maintain a standing army to patrol and defend valuable resources. If a corporation doesn't fear the consequences, it will invade other player's resources.
+LoadingScreen/Help21=You can use the investment slider and the stock target slider to set aside money each month to invest into a corporation and to choose how much stock in a corporation to buy respectively. Corporations which you have equity in will pay you dividends. You can also sell stock once the price increases.
+LoadingScreen/Help22=Civilian demand increases with a higher GDP/capita and with certain government types. It's a double edged sword in that civilians will drive resource prices higher by purchasing them. It allows import tariffs to generate far greater revenue. At the same time, high demand increases prices of domestic goods.
+LoadingScreen/Help23=If high resource prices are getting you down, check to see which corporations are benefiting from them. If it's your own corporation, "legally" nationalize it and increase the resource share in the economy tab. If it's someone else's corporation, buy them out or invade their country.
+LoadingScreen/Help24=Tariffs can be very useful. High import tariffs on a player will allow your corporation to get first dibs on you and your civilian population's resource purchases. High export tariffs (more effective with strong corporation) on a player will increase how much they have to pay for resources and provide you revenue.
+LoadingScreen/Help25=If you hover over the name of a corporation in the corporation, tab you can see what their yearly budget allocation is. Every year they set their budgets on certain activities such as: expansion, upgrades, and research.
+LoadingScreen/Subtitle=Version: 3.35 <c val="FF0000"></c><n/>
 LoadingScreen/TextBody=150 Years have passed since the end. Much of the world lies in wastes from a war gone too far. With fading radiation, great powers, who have hibernated through nuclear winter, are now emerging from their caves to dominate the world once again.<n/>We are what remains of the European State. Our allies, the Middle East Confederation have provided us with the supplies to rekindle the fire of civilization in Europe. Even with help, our efforts will not be so easy...<n/>The Russian Federation, with bureaucratic AI gone insane, are not open to diplomacy and will seek to remove all life from Europe - vestige programming from the war. In our economic growth, the Americans may find opportunity in invading our continent - we will throw them out if they try.<n/>Brave settlers, beset by vast legions of enemies, go forth and rebuild Europe!
-LoadingScreen/Tip=Build civilian buildings with your capital, build military buildings with your engineers. Expand as fast as possible, loans help, but watch out for low centralization. 
 LoadingScreen/Title=<s val="ArmoryTitle">Doomed Europe<s val="ArmoryTitle"> by Ari </s>
 MapInfo/Player00/Name=Neutral
 MapInfo/Player01/Name=
@@ -4379,6 +4430,7 @@ Param/Value/0A1EA2B9=Recolonization
 Param/Value/0A20BAE3=BBB
 Param/Value/0A2B60F6= has called for a vote to replace our current voting system with a 1 vote per 1 state system. This means that every EU member gets 1 vote.
 Param/Value/0A41C42D='s empire <c val="FF0000">after a cowardly sneak-attack!</c>
+Param/Value/0A575143=)
 Param/Value/0A639737=The European Union has shattered  into a civil war in resistance to the federalization of the union under 
 Param/Value/0A84F76D=<n/>
 Param/Value/0AF4237E=Credit: 
@@ -4451,7 +4503,7 @@ Param/Value/12B0B61A=<c val="B2B2B2">Metal
 Param/Value/12CBF173=0
 Param/Value/12D09E5F=D
 Param/Value/13177913=. 
-Param/Value/1344F9E5=<n/>Avg: 
+Param/Value/1344F9E5=
 Param/Value/1348131B=100%
 Param/Value/1398C5B6= yr
 Param/Value/13A1721C=0
@@ -4495,6 +4547,7 @@ Param/Value/1912BB35=Tries to fill the quantity at the given price per unit or b
 Param/Value/19442966=Evict
 Param/Value/196116F2=Debt Owed To:
 Param/Value/19687D75=One nation, for a united Europe!<n/><n/><c val="FF0000">We will become a subject of the EU leader</c></c>
+Param/Value/1971AC87= resources were sold out of 
 Param/Value/19CBDF90=<s val="Void_BoldMedium2">The Wall Project</s><n/>Cost: 3500<n/>Difficulty: 218<n/>Benefits:<n/><c val="00FF00">+5000 Wall Health<n/>+5000 Bastion Health<n/>+20 Wall Armor<n/>+20 Bastion Armor
 Param/Value/19E89C42=<n/>
 Param/Value/19E8C4DB= has<c val="004080"> delegated </c>
@@ -4527,13 +4580,14 @@ Param/Value/1C44089E=Suicidal
 Param/Value/1C4F15AD=Trade
 Param/Value/1C63E981=<s val="Void_RegularSmall">Light Redistribution
 Param/Value/1C97E51A= yr
-Param/Value/1CE31B5B=<s val="Void_BoldMedium2">Standardized Administration</s><n/>Cost: 300<n/>Difficulty: 6<n/>Benefits:<n/><c val="00FF00">+5% Tax Modifier</c>
+Param/Value/1CE31B5B=<s val="Void_BoldMedium2">Urban Planning</s><n/>Cost: 300<n/>Difficulty: 6<n/>Benefits:<n/><c val="800080">-Can Build MD Housing</c>
 Param/Value/1CF68AF5=<n/>
 Param/Value/1D3EFDB1=<c val="FF8000">Your nationalized corporation cannot afford to pay upkeep and is adding to your "other building expenses" category.</c>
 Param/Value/1D70CE3B=Population Based Voting
 Param/Value/1D8C103C=<c val="FF0000">The people of your country are rioting in the streets!
 Param/Value/1DD24C8E=100%
 Param/Value/1DF5C38E=5000
+Param/Value/1DFA178F=. 
 Param/Value/1E126546= has called for a vote to change how we elect presidents. This new plan will have 4 year term limits.
 Param/Value/1E4CD798=The citizens of 
 Param/Value/1E7A9C82= has subjugated 
@@ -4578,6 +4632,7 @@ Param/Value/22E7D094=We will begin the first step to sitting down at the negotia
 Param/Value/23234B21= has <c val="FF0000">declared war</c> on 
 Param/Value/23E466C1=From 
 Param/Value/23F9B654=-
+Param/Value/2423E2C4=.
 Param/Value/243C178E=<s val="Void_RegularSmall">War Reparations</s>
 Param/Value/2447C6C7=Some government loyalists have risen up to protect the country!
 Param/Value/244EB7EC= has called a vote to set the tax rate to 5%.
@@ -4774,10 +4829,11 @@ Param/Value/3D444B22=[Can reach up to 100%] Value, in terms of yearly income, of
 Param/Value/3D8CAA79=100%
 Param/Value/3D8FBBBB=Credit: 
 Param/Value/3D988B94=0
-Param/Value/3DA10E26=<c val="00FF00">Nice settling spot</c>
+Param/Value/3DA10E26=<c val="00FF00">Easy region to settle</c>
 Param/Value/3DB1E2E0=9999
 Param/Value/3DCDB4E1=<c val="FF0000">You need a captiol to sell resources!</c>
 Param/Value/3DE1A1F8=, y position: 
+Param/Value/3DEB0D0E=Min: 
 Param/Value/3DF0954B=Supply of 
 Param/Value/3E20E43C=--OUR RADAR HAS DETECTED THAT RUSSIA HAS LAUNCHED ABOUT 
 Param/Value/3E27C710=Monthly interest paid on debt
@@ -4962,6 +5018,7 @@ Param/Value/540BB0A1=%
 Param/Value/545865E2='s Empire with the only demand being an <c val="0000FF">alliance</c><c val="0000FF">!</c>
 Param/Value/547432F5=<s val="Void_BoldMedium2">Efficient Government</s><n/>Cost: 2500<n/>Difficulty: 36<n/>Benefits:<n/><c val="00FF00">+15% Centralization</c>
 Param/Value/5481AB7C=Getting metal to purchase
+Param/Value/548BA500=<n/>Max: 
 Param/Value/5496B6EB=<c val="FF0000">There is already a vote in the EU or you cannot call that vote against that player!</c>
 Param/Value/54A704CF=Economic Bust
 Param/Value/54AD6EFB=Corporation Value
@@ -5075,6 +5132,7 @@ Param/Value/5FF852B4=-
 Param/Value/601AC4B8= has set their war policy to limited war!
 Param/Value/6067337D= could <c val="FF0000">not be called in against </c>
 Param/Value/60845F53=<c val="0000FF">Accept it</c>
+Param/Value/6085F8D4= credits were spent with 
 Param/Value/60CA4A2F=420m
 Param/Value/60D59691=<c val="004080">The EU has deployed a peacekeeper squad</c>
 Param/Value/60E92550=The vote has <c val="FF0000">failed</c>! The final results are: 
@@ -5109,9 +5167,11 @@ Param/Value/644F0810=<c val="FF0000">Farmers of your country refuse to work unti
 Param/Value/6493A80B=<s val="Void_BoldSmall">Buy</s>
 Param/Value/6496C2D0=Export food 1
 Param/Value/649E1D02=The vote has <c val="008000">passed</c>! The final results are: 
+Param/Value/64C7EC3E=
 Param/Value/64F3A4F1=Price
 Param/Value/64F45193= votes
 Param/Value/651E0F4B=5000
+Param/Value/656A5167=. 
 Param/Value/65706ACE=Taxes, even if we don't want to pay them, play in important part of keeping the union together.
 Param/Value/6585BF87=, x position: 
 Param/Value/659DFC3E='s economy is facing the <c val="FF0000">economic indicators of a great recession</c>!
@@ -5125,6 +5185,7 @@ Param/Value/66352008=.
 Param/Value/66717F09=-
 Param/Value/66C17548=AI Built oil well
 Param/Value/670B679E=The vote has <c val="FF0000">failed</c>! The final results are: 
+Param/Value/67129EA9=. 
 Param/Value/6734D0CF=The 
 Param/Value/676DC635=5000
 Param/Value/67997183= has called a vote to redistribute 30% of the food. The food will be put into a stockpile and then distributed out to first, countries which are starving, and then equally to all other countries.
@@ -5155,6 +5216,7 @@ Param/Value/6A636723=Buy out all other investors at market price to own 100% of 
 Param/Value/6A8FA204=Vote to Redistribute Food
 Param/Value/6ABDB64E=Easy
 Param/Value/6AF725B7=<c val="FF0000">You do not have enough money for this infusion</c>
+Param/Value/6B282587= credits were made. 
 Param/Value/6B36372B=<s val="Void_RegularSmall">Global
 Param/Value/6B42FF13=Peace Conference With  
 Param/Value/6B445D03=The vote has <c val="FF0000">failed</c>! The final results are: 
@@ -5169,11 +5231,13 @@ Param/Value/6BEBC037=<c val="FF0000">Fancy details and special units are being r
 Param/Value/6C3C2083=
 Param/Value/6CE35C07=The vote to kick 
 Param/Value/6CE80755=-
+Param/Value/6D1E2C1C= credits were made
 Param/Value/6D26F66B=<c val="FF0000"> has placed an embargo on 
 Param/Value/6D48A783= Influence: 
 Param/Value/6D528EAA=considered
 Param/Value/6DA796F1=<s val="Void_BoldSmall">per month
 Param/Value/6DC3DAF5=No AI
+Param/Value/6DDF9613=
 Param/Value/6E056DCE=<c val="D99509">Worldwide recession!</c> The global economy is shrinking, and analysts don't know for how long this will last. Expect reduced tax income.
 Param/Value/6E078C39=For a better European Union!
 Param/Value/6EA9EA5B=+
@@ -5211,6 +5275,7 @@ Param/Value/71D3638E=This is way too complicated! What is the point!
 Param/Value/71DF822A=The vote has <c val="008000">passed</c>! The final results are: 
 Param/Value/7218F0A3=<s val="Void_Small">Gross Research:
 Param/Value/7261BF63= has been <c val="004080">elected for the president of the European Union</c> with 
+Param/Value/7291C2E2=Welcome to<c val="00FF00"> Empire Builder 2 Doomed Europe</c>. Start off by taking control of your settler and using the "Place capitol" button to found your capitol. Pick a spot with plenty of space for buildings, as at the start you can only build around your capitol.
 Param/Value/72BA7172=<c val="E80000">Ultra Hard</c> AI
 Param/Value/72D74931=<n/>Decay(20%): -
 Param/Value/72DDAFFB=5962
@@ -5287,6 +5352,7 @@ Param/Value/7C4C47F8=<n/>Avg:
 Param/Value/7C6F776F= has called for a vote to replace our current voting system with a system of the people's veto. Everyone but the president gets 1 vote. This is because the president gets as many votes as there are people in the European Union. It will take the president + the support of 1 person to pass a law.
 Param/Value/7C7EB531=9999
 Param/Value/7C8AF0C2= has<c val="004080"> delegated </c>
+Param/Value/7C8E78A4= spent on fuel.
 Param/Value/7CA392FB=420m
 Param/Value/7CBE4C4C=Economy
 Param/Value/7CE7139C=<s val="Void_BoldLarge">We have an <c val="0000FF">alliance request</c> from<n/> 
@@ -5388,6 +5454,7 @@ Param/Value/8ACA5112=The vote has <c val="FF0000">failed</c>! The final results 
 Param/Value/8AE9907E=There is an election for president held every 4 years.
 Param/Value/8AF2E025=9999
 Param/Value/8AFEC032= has <c val="FF0000">broken a ceasefire and declared war</c> on 
+Param/Value/8B22882F= resources were purchased out of the 
 Param/Value/8B478FCE=This is the best for preventing tyranny from the larger states.
 Param/Value/8B7DE889=Yay
 Param/Value/8B97C866=AI
@@ -5425,8 +5492,10 @@ Param/Value/8EEE0FA4= has called a vote to impose negative taxes. This means tha
 Param/Value/8EEEB6D5=<s val="Void_BoldMedium2">CPG Concept</s><n/>Cost: 500<n/>Difficulty: 24<n/>Benefits:<n/><c val="00FF00">-Allows for the building of CPG Plants
 Param/Value/8F297DA2=[<c val="FF0000">Only affects nationalized corporations!</c>][Can reach up to 100%] Percent of resources collected from corporations who operate in our territory are obligated to provide to the government. The default resource share value for private corporations is 10%.<n/><n/>Protip: Higher values severely cut the profits of your nationalized corporations, and there is no one else to foot the bill but you. 
 Param/Value/8F379E1B=<s val="Void_BoldMedium2">Futuristic Engine</s><n/>Cost: 2000<n/>Difficulty: 36<n/>Benefits:<n/><c val="00FF00">-Can build Phenom<n/>+20% Vehicle Speed
+Param/Value/8F78D3F1=Supply sources:
 Param/Value/8FA15F4B=Base Price: 
 Param/Value/8FBD0036=Show details
+Param/Value/8FF248CB= spent on tariffs and 
 Param/Value/8FFA9D9E=%
 Param/Value/90053B26=Vote for No Taxes
 Param/Value/90134B79=Max Y: 
@@ -5485,6 +5554,7 @@ Param/Value/9768021E=<c val="F46F35">Very Hard AI</c>
 Param/Value/97C31BC9=[Can reach up to 100%] Value, in terms of yearly income, of stock/bonds  bought per year. Which stocks/bonds are bought can be influenced by your external economic policy.<n/><n/>Protip: Invest in companies that pay high dividends or companies with lots of growth potential
 Param/Value/97D401F4=Word has reached us that 
 Param/Value/97E09317=<c val="FF0000">Please select only one building in the province to annex, the entire province will be selected based on your selected building
+Param/Value/983B9D77=Supply sources:
 Param/Value/984616CE=Grants:
 Param/Value/985A3743=<n/>Investment: 
 Param/Value/986D5992=-
@@ -5495,7 +5565,7 @@ Param/Value/98CFBBF6=Embargo
 Param/Value/98FC2881=!
 Param/Value/99149F65=Max Y: 
 Param/Value/991A0B70=<s val="Void_BoldMedium2"><c val="FF0000">Weaponized Diseases</c></s><n/>Cost: 750<n/>Difficulty: 82<n/>Benefits:<n/><c val="800080">-Can inject population thinner<n/>-Bio-Troops now have a chance of infecting enemies with population thinner
-Param/Value/994CFB37=<s val="Void_BoldMedium2">Alternate Electricity</s><n/>Cost: 1500<n/>Difficulty: 32<n/>Benefits:<n/><c val="00FF00">-Can Build Windmills
+Param/Value/994CFB37=<s val="Void_BoldMedium2">Oil Power</s><n/>Cost: 1500<n/>Difficulty: 32<n/>Benefits:<n/><c val="00FF00">-Can Build Oil Power Plants
 Param/Value/99569997=<c val="FF0000">You are not at war with this player!
 Param/Value/99808FCD=,
 Param/Value/99F1553D=Buy out all other investors at market price to own 100% of the company. <n/><n/>Allows the government to access all the resources owned by this corporation.
@@ -5535,6 +5605,7 @@ Param/Value/9E1C8B65=Government Rank: Regional Power<n/><n/><c val="00FF00">+5% 
 Param/Value/9E1D9269=<s val="Void_BoldMedium2">Advanced Kinetics</s><n/>Cost: 2000<n/>Difficulty: 64<n/>Benefits:<n/><c val="00FF00">-Can build Hypercannon<n/>+5 Vehicle Damage
 Param/Value/9E1E65FB=Oil: 
 Param/Value/9E23AFA4=<c val="FF0000">Declares Bankruptcy<n/></c><n/>Removes all debts and sells as many assets as needed to cover them - you will lose a lot of buildings
+Param/Value/9E2872F0=<n/>
 Param/Value/9E4AB89B=Investment:
 Param/Value/9E9A98B5=0
 Param/Value/9EB3D327=0
@@ -5549,6 +5620,7 @@ Param/Value/9F1F1FB5=Good to know
 Param/Value/9F4BF79D= resources were purchased out of the 
 Param/Value/9F8B9B27=-
 Param/Value/9F8DCE62=9999
+Param/Value/9F8E5A7B= spent on tariffs and 
 Param/Value/9FA82304=--OUR RADAR HAS DETECTED THAT THE UNITED AMERICAS HAS LAUNCHED ABOUT 
 Param/Value/A00BD1DA=You have finished researching 
 Param/Value/A02AF3E8='s point of view. 
@@ -5590,14 +5662,18 @@ Param/Value/A5073384=KenjiAnteepAri
 Param/Value/A50CAE02= 
 Param/Value/A51EAE6E=<s val="Void_BoldXLarge">Title</s>
 Param/Value/A526608C=<c val="FF0000">Reject It</c>
+Param/Value/A57B6E80=The average cost per unit was 
 Param/Value/A58A7953=<c val="00FF00">With the fall of their last major city, the Russians have capitulated!</c>
 Param/Value/A5AF691C=AI Built CPG
 Param/Value/A6725AAC=
 Param/Value/A699361C=[Can reach up to 100%] How much of the budget is devoted to buying metal from the market<n/><n/>Protip: Will not buy metal if there is none being supplied, in which case, you might consider creating a corporation.
 Param/Value/A7052FB7=<c val="FF0000"> has placed an embargo on 
 Param/Value/A714E554=The vote has <c val="FF0000">failed</c>! The final results are: 
+Param/Value/A72E1853= spent on fuel. The average cost per unit was 
 Param/Value/A73B905C= has been selected as<c val="0000FF"> the president of the European Union</c>!
 Param/Value/A797D759=<c val="0000FF">Accept it</c>
+Param/Value/A79E5F10=. 
+Param/Value/A7EE9042=.
 Param/Value/A80DA7B8=Resource: 
 Param/Value/A83EBFA0=Quantity
 Param/Value/A86BD891=
@@ -5664,6 +5740,7 @@ Param/Value/B107C4D7=This 'member' is holding us back...
 Param/Value/B10CEFC7= votes to 
 Param/Value/B13F6EDD=: 
 Param/Value/B14D52D0=This is the stupidest thing I've ever heard!
+Param/Value/B15C01DD= (+
 Param/Value/B1874B75=We can still gain the upper hand at the negotiation table, we may even be able to occupy their capitol, leaving them at our complete mercy...
 Param/Value/B1A36B56=Alliances are invaluable in times like these
 Param/Value/B2088A38=Stocks
@@ -5723,6 +5800,7 @@ Param/Value/BA166BFF=<c val="FF0000">War!</c>
 Param/Value/BA2B41C7= advanced radar. We can estimate that Russia has 
 Param/Value/BA568FF8= has<c val="0000FF"> become the president of the European Union</c> following the death of the last president.
 Param/Value/BA6D5440=<n/>
+Param/Value/BA7499BD= credits were spent with 
 Param/Value/BA816E11=The vote has <c val="008000">passed</c>! The final results are: 
 Param/Value/BACFE9EA=Yay
 Param/Value/BAF458E4=420m
@@ -5769,11 +5847,11 @@ Param/Value/C0317E36=:
 Param/Value/C04248EF=Our president, 
 Param/Value/C05860DD=<c val="FF0000">There are reports of populatino thinner spreading...
 Param/Value/C0692352=GDP
-Param/Value/C06E89D2=<c val="FF0000">Please cut down on your windmills and invest in other forms of electricity</c>
 Param/Value/C082BF7F=The Blight of Nations has broken out in 
 Param/Value/C087A9E5=[All] <c val="FF0000"><Impero>Ari</c>: k
 Param/Value/C08B0BD4=
 Param/Value/C0CDBBBC=KenjiAnteepAri
+Param/Value/C115E814= resources were purchased out of the 
 Param/Value/C11CC126=%
 Param/Value/C171A00F=<s val="Void_BoldMedium3"><c val="FFFF00">Redistribution
 Param/Value/C18FD468= has called for a vote to change how we elect presidents. This new plan will have 4 year term limits and the current president cannot be re-elected.
@@ -5883,19 +5961,20 @@ Param/Value/CDE6B07E=420m
 Param/Value/CDE815F6=You have <c val="004000">recieved </c>
 Param/Value/CE6934D0=Annual Interest Rate
 Param/Value/CE782572=<s val="Void_BoldMedium2">Genetically Modified Humans</s><n/>Cost: 2500<n/>Difficulty: 36<n/>Benefits:<n/><c val="00FF00">+2% Growth Rate<n/>+1 Vision All Bio Units
+Param/Value/CE9A5BF8= credits were made
 Param/Value/CEA5FB88=Suicidal
 Param/Value/CEB3C66B=999
 Param/Value/CEEB108B=<n/>Electricity: 
 Param/Value/CF12085E=<n/>From State Imports: +
 Param/Value/CF226176= has set their war policy to <c val="004000">pacifist</c>.
 Param/Value/CF76F8F3= NUCLEAR WEAPONS--
-Param/Value/CF879D4D=You are in a good position to found the European Union! Research National Unions and build the EU parliament to unite the Europeans under one banner!
+Param/Value/CF879D4D=You are in a good position to found the European Union! Research International Unions and build the EU parliament to unite the Europe under one banner!
 Param/Value/CF9774C1='s tyrannical rule. They are now free to do as they wish
 Param/Value/CFA25B4A=I am President
 Param/Value/CFB938ED=<c val="FF0000">Break relations with the overlord of this subject!
 Param/Value/CFC7269D=This is the best way of preventing one person from dominating the elections
 Param/Value/CFC7E826= has annexed 
-Param/Value/CFD7BFB7=<n/>Food Imports: 
+Param/Value/CFD7BFB7=
 Param/Value/CFDBD71A= has chosen to fight for 
 Param/Value/D0166231= has<c val="004080"> delegated </c>
 Param/Value/D0349786=Bad
@@ -5989,6 +6068,7 @@ Param/Value/DB89F799=See "metal imports" in the economy tab!
 Param/Value/DBABCBA4=We estimate thas russia has 
 Param/Value/DBCA12F5=0
 Param/Value/DC384359=AI Upgraded a mine
+Param/Value/DC6A8F6B=Every 2 minutes flags, government rank, and government title are updated. Check back when you have a flag to see your government rank. There are 3 ranks and they depend on how many provinces you control.
 Param/Value/DC9BB141= have signed a peace deal with the following conditions
 Param/Value/DCB0D844=<c val="004000">Donate</c>
 Param/Value/DCBA5D4B=
@@ -6015,6 +6095,7 @@ Param/Value/DF025212=Given absolute y:
 Param/Value/DF1656EF=Economy
 Param/Value/DF250D1E=<s val="Void_BoldSmall">Sell
 Param/Value/DF2A5593=You have sent a call to arms to 
+Param/Value/DF3187EB= resources were sold out of 
 Param/Value/DF34BB83=-
 Param/Value/DF64A846=<c val="FF0000">--A NUCLEAR LAUNCH HAS BEEN DETECTED--</c>
 Param/Value/DF7721AF=<c val="FF0000">You cannot nationalize your overlord's corporations. Gain independence first!</c>
@@ -6031,7 +6112,9 @@ Param/Value/E0EED561=President
 Param/Value/E18D4CF1=150
 Param/Value/E19DF5B9=Food stockpile
 Param/Value/E1B90E76= has<c val="004080"> delegated </c>
+Param/Value/E1C51B04=.
 Param/Value/E1DB9505=Nay
+Param/Value/E1F0FE9B=.
 Param/Value/E24A100C=<s val="Void_BoldMedium2">Fully Automated Economy Concept</s><n/>Cost: 15000<n/>Difficulty: 12<n/>Benefits:<c val="00FF00"><n/><n/><c val="800080">Dangerous Tech!</c>
 Param/Value/E25C8AF7=<s val="Void_RegularSmall">Vote
 Param/Value/E2AEE83C=<c val="FF0000">You cannot donate to non players!
@@ -6049,6 +6132,7 @@ Param/Value/E3F9841A=Oil+:
 Param/Value/E43CD939= nuclear missiles!
 Param/Value/E469E891=Bank of 
 Param/Value/E4771F6F=<s val="Void_RegularSmall">No Taxes
+Param/Value/E4B1742D= resources were sold out of 
 Param/Value/E4C52E71=You know when you really think about it, we have more guns than the shareholders...<n/><n/>Allows the government to access all the resources owned by this corporation.
 Param/Value/E4CB42FB=Nay
 Param/Value/E4D0434C=0
@@ -6104,7 +6188,7 @@ Param/Value/ECBC4FAA=<s val="Void_BoldMedium2">Collaborative AI Network</c></s><
 Param/Value/ED304A20=Normal
 Param/Value/ED33E380=!
 Param/Value/ED77BCB0=<c val="FF0000">This place is near the Americans  and you will be attacked by them after the world population surpasses 1.5 million. If you choose to settle here, be prepared for their invasions. Otherwise, move further east.
-Param/Value/ED85ADFB=You have National Unions Researched! Build the EU parliament to unite the Europeans under one banner!
+Param/Value/ED85ADFB=You have International Unions Researched! Build the EU parliament to unite Europe under one banner!
 Param/Value/ED8DB7DE= has been <s val="ArmoryTitle"><c val="FF0000">assassinated</c></s>. Their country lays in ruins...
 Param/Value/EE15EF34=The player still lives and controls his empire. He is forced to share all control with you: units, diplomacy and basic resources - credits, metal and techpoints. He also pays 5% of his income to you. Enemies he captures go to you.
 Param/Value/EE4207BE=Export surplus at or above the target price
@@ -6154,6 +6238,7 @@ Param/Value/F449FC2F=This is basically taking away our election rights! Our powe
 Param/Value/F4AA1C5B=<s val="Void_BoldMedium2">Trade Regulations</s><n/>Cost: 500<n/>Difficulty: 64<n/>Benefits:<n/><c val="00FF00">+1 Global Economy Health Per Month
 Param/Value/F4D1BFE4=!
 Param/Value/F4D2342F=<c val="FF0000">You cannot nationalize your overlord's corporations. Gain independence first!</c>
+Param/Value/F5107D23=. 
 Param/Value/F5301E63=Monthly technology income
 Param/Value/F555C531=<c val="FF0000">You cannot break relations with this person!
 Param/Value/F579D584=
@@ -6166,13 +6251,14 @@ Param/Value/F672325B=
 Param/Value/F6E7062F=999
 Param/Value/F711013D= votes to 
 Param/Value/F7111AD7=9999
-Param/Value/F728C208=<s val="Void_BoldMedium2">Natoinal Unions</s><n/>Cost: 750<n/>Difficulty: 12<n/>Benefits:<n/><c val="00FF00">- Can Found European Union</c>
+Param/Value/F728C208=<s val="Void_BoldMedium2">International Unions</s><n/>Cost: 750<n/>Difficulty: 12<n/>Benefits:<n/><c val="00FF00">- Can Found European Union</c>
 Param/Value/F745CF95= has subjugated 
 Param/Value/F782FCAD= in credits.
 Param/Value/F7849BB0= votes suicidal AI
 Param/Value/F7CD0D56=5000
 Param/Value/F84DE81C=Yay
 Param/Value/F863FAD0=Loan Repayment
+Param/Value/F87BC24E=
 Param/Value/F87FD4DC=<c val="004080">The EU has deployed a peacekeeper squad</c>
 Param/Value/F8857070=9999
 Param/Value/F896D8D7=Yearly Cash Flow
@@ -6183,7 +6269,7 @@ Param/Value/F8E1FC26=Graphs
 Param/Value/F8E60417=Credit: 
 Param/Value/F8F386C6=<c val="881E58">No one will help us now...
 Param/Value/F9149BC9=This is good
-Param/Value/F91A6A71=<s val="Void_BoldMedium2">Rudimentary Electricity</s><n/>Cost: 500<n/>Difficulty: 12<n/>Benefits:<n/><c val="00FF00">- Can Build Geothermal Plants<n/>-Can Build Oil Plants
+Param/Value/F91A6A71=<s val="Void_BoldMedium2">Rudimentary Electricity</s><n/>Cost: 500<n/>Difficulty: 12<n/>Benefits:<n/><c val="00FF00">-Can Build Geothermal Plants<n/>-Can Build Coal Plants
 Param/Value/F9245DAE=3333
 Param/Value/F95E9C96=Our president, 
 Param/Value/F97C1853=%
@@ -6204,7 +6290,6 @@ Param/Value/FBA3C879= has called for a vote to ban presidential elections. He wi
 Param/Value/FBD76159=This money shall go to good use...
 Param/Value/FBF6DB8B=<c val="B2B2B2">Metal</c>
 Param/Value/FC3825A8=<c val="FF0000">Part of your Army has defected!
-Param/Value/FC4A1E82=Supply sources:
 Param/Value/FC6F7A58=Export food 2
 Param/Value/FC7E2A26=<c val="00FF00">European Forces have captured New York!</c> However, the Americans have not yet capitulated.
 Param/Value/FCD9DAE7=Vote for Random Elections
@@ -6269,6 +6354,8 @@ SimpleDisplay/Move6=<IMG path="Assets\Textures\tutorialmouserightbuttondown.dds"
 SimpleDisplay/Move7=<IMG path="Assets\Textures\tutorialmouserightbuttondown.dds" alignment="absolutemiddle"/> <s val="@@SimpleCommandRow">to Move</s>
 SimpleDisplay/Move8=<IMG path="Assets\Textures\tutorialmouserightbuttondown.dds" alignment="absolutemiddle"/> <s val="@@SimpleCommandRow">to Move</s>
 SimpleDisplay/Move9=<IMG path="Assets\Textures\tutorialmouserightbuttondown.dds" alignment="absolutemiddle"/> <s val="@@SimpleCommandRow">to Move</s>
+There are two components to research: point genration and research speed. Point generation is set by the research slider under the economy subtab. Research speed is set by the level of the research lab. Research speed dictates how fast research points can be spent.=There are two components to research: point genration and research speed. Point generation is set by the research slider under the economy subtab. Research speed is set by the level of the research lab. Research speed dictates how fast research points can be spent.
+This map is full of tooltips. Some provide stats, others provide help to new players. Ever tried hovering over the flag?=This map is full of tooltips. Some provide stats, others provide help to new players. Ever tried hovering over the flag?
 UI/Minerals=Credits: 
 UI/MineralsCollected=Credits collected
 UI/MineralsSpent=Credits spent
@@ -6303,7 +6390,7 @@ Unit/Name/BasiliskSPA2=Siege Tank
 Unit/Name/Bastion=Bastion
 Unit/Name/BioTrooper=Bio-Trooper
 Unit/Name/Block=Block
-Unit/Name/Bogus=Headquarters of a corporation
+Unit/Name/Bogus=Turns oil into power
 Unit/Name/BoreholeI=Borehole I
 Unit/Name/BoreholeII=Borehole II
 Unit/Name/BoreholeIII=Borehole III
@@ -6432,6 +6519,7 @@ Unit/Name/NewYork=New York
 Unit/Name/Nimbuspillar=Nimbuspillar
 Unit/Name/Nizhnevartovsk=Nizhnevartovsk
 Unit/Name/Oil=Oil
+Unit/Name/OilPowerPlant=Oil Power Plant
 Unit/Name/OilWellI=Oil Well I
 Unit/Name/OilWellII=Oil Well II
 Unit/Name/ParamilitaryForces=Paramilitary Forces
@@ -6448,7 +6536,6 @@ Unit/Name/Radar=Radar
 Unit/Name/RaynorCommando=American Sniper
 Unit/Name/RaynorLab=American Marine
 Unit/Name/Reaper2=Rioter
-Unit/Name/RefineryPipes=Oil Power Plant
 Unit/Name/Religion=Religion
 Unit/Name/ResearchComplexI=Research Complex I
 Unit/Name/ResearchComplexII=Research Complex II
@@ -6527,7 +6614,7 @@ Unit/Name/VanguardMBT=Vanguard MBT
 Unit/Name/ViperFighter=A110
 Unit/Name/Volgograd=Volgograd
 Unit/Name/WarHoundWeapon2=Warhound Copy
-Unit/Name/WindTurbine=Wind Turbine
+Unit/Name/WindTurbine=Coal Power Plant
 Unit/Name/Zombie=Zombie
 Unit/Name/Zombien=Infected Xen Horde
 UnitKillRank/UEFAurora=Raynor's Raiders Flagship
@@ -6638,7 +6725,7 @@ Upgrade/Name/ResearchArtificalFarming=Research Artifical Farming
 Upgrade/Name/ResearchDeficitManagement=Research Deficit Management
 Upgrade/Name/ResearchEconomicBailouts=Research Economic Bailouts
 Upgrade/Name/ResearchElectricity=Research Electricity
-Upgrade/Name/ResearchNationalUnions=Research National Unions
+Upgrade/Name/ResearchNationalUnions=Research International Unions
 Upgrade/Name/ResearchTradeRegulations=Research Trade Regulations
 Upgrade/Name/RussianSkyscraperDifficulty=Russian Skyscraper Difficulty
 Upgrade/Name/SelfPoweredTanks=Self-Powered Tanks
@@ -6655,6 +6742,7 @@ Upgrade/Name/TotalWar=Total War
 Upgrade/Name/TradeEmbargo=Trade Embargo
 Upgrade/Name/UnconditionalVictory=Unconditional Victory
 Upgrade/Name/UrbanDevelopment=Urban Development
+Upgrade/Name/UrbanPlanning=Urban Planning
 Upgrade/Name/VehicleArmourUP=VehicleArmourUP
 Upgrade/Name/VehicleArmourUP2=VehicleArmourUP Copy
 Upgrade/Name/VehicleArmourUP22=VehicleArmourUP Copy Copy
@@ -6666,6 +6754,7 @@ Upgrade/Name/WeaponizedDiseases=Weaponized Diseases
 Upgrade/Name/ZombieConcept=Zombie Concept
 Variant001/ModeDesc=All settings may be customized.
 Variant001/ModeName=Grand Strategy
+Watch out for centralization. Low centralization decreases yields of all non-resource buildings. Centralization is increased by your capitol, regional capitol, and highways connected to a capitol/regional capitol.=Watch out for centralization. Low centralization decreases yields of all non-resource buildings. Centralization is increased by your capitol, regional capitol, and highways connected to a capitol/regional capitol.
 Weapon/Name/20mmGatling=20mm Gatling
 Weapon/Name/300mmBattleshipCannons=300mm Battleship Cannons
 Weapon/Name/AntiBallisticMissile=Anti-Ballistic Missile
@@ -6732,5 +6821,6 @@ Weapon/Name/WarHound=Hyper-rail
 Weapon/Name/WarHound2=Hyper AI-2150
 Weapon/Name/Zapper=Zapper
 Weapon/Tip/ScorcherBomb=Napalm does 5 damage per 0.5 second for 10 seconds<n/>2x vs bio<n/>6x vs structures<n/>Upgradable
+When paying for resourecs on the market you are also paying for the fuel to transport them. Distance often can decide the corporation offering the lowest price. Securing a cheap source of oil can reduce food and metal prices.=When paying for resourecs on the market you are also paying for the fuel to transport them. Distance often can decide the corporation offering the lowest price. Securing a cheap source of oil can reduce food and metal prices.
 e_unitAttributeBonusAgainstHover=Air
 e_unitAttributeHover=Air

@@ -861,12 +861,16 @@
     <CEffectModifyUnit id="FuelTruckFS">
         <EditorCategories value=""/>
         <ImpactUnit Value="Caster"/>
-        <VitalArray index="Energy" Change="-1"/>
+        <VitalArray index="Energy">
+            <Change value="-1"/>
+        </VitalArray>
     </CEffectModifyUnit>
     <CEffectModifyUnit id="FuelTruckFT">
         <EditorCategories value=""/>
         <Marker Link="Effect/FuelTruckFS"/>
-        <VitalArray index="Energy" Change="1"/>
+        <VitalArray index="Energy">
+            <Change value="1"/>
+        </VitalArray>
     </CEffectModifyUnit>
     <CEffectSet id="FuelTruckRefuel">
         <ValidatorArray value="CasterHasEnergy"/>
@@ -1962,7 +1966,9 @@
         <ValidatorArray value="PointDefenseLaserEnergyTargetFilters"/>
         <EditorCategories value="Race:Terran"/>
         <ImpactUnit Value="Caster"/>
-        <VitalArray index="Energy" Change="-10"/>
+        <VitalArray index="Energy">
+            <Change value="-10"/>
+        </VitalArray>
     </CEffectModifyUnit>
     <CEffectSet id="PointDefenseLaserInitialSet2">
         <ValidatorArray value="PointDefenseDroneUnitFilter"/>
@@ -2030,8 +2036,8 @@
         <EditorCategories value="Race:Terran"/>
         <Marker Link="Effect/PopulationThinnerSpread"/>
         <SearchFilters value="-;Self,Missile,Dead,Resistant"/>
-        <AreaArray Radius="3" Effect="PopulationThinnerApply2"/>
-        <AreaArray Radius="3" Effect="BoNMutatedVirusApply"/>
+        <AreaArray Radius="2" Effect="PopulationThinnerApply2"/>
+        <AreaArray Radius="2" Effect="BoNMutatedVirusApply"/>
     </CEffectEnumArea>
     <CEffectEnumArea id="PopulationThinnerSpread3">
         <EditorCategories value="Race:Terran"/>
@@ -2258,7 +2264,9 @@
     </CEffectApplyBehavior>
     <CEffectModifyUnit id="Refuel">
         <EditorCategories value=""/>
-        <VitalArray index="Energy" Change="5"/>
+        <VitalArray index="Energy">
+            <Change value="5"/>
+        </VitalArray>
     </CEffectModifyUnit>
     <CEffectEnumArea id="RefuelSearch">
         <EditorCategories value=""/>
@@ -2731,7 +2739,9 @@
         <ValidatorArray value="ShieldGEQuarter2"/>
         <EditorCategories value="Race:Zerg"/>
         <Marker Link="Effect/Transfusion2"/>
-        <VitalArray index="Energy" Change="10"/>
+        <VitalArray index="Energy">
+            <Change value="10"/>
+        </VitalArray>
     </CEffectModifyUnit>
     <CEffectCreatePersistent id="TripleATGMP">
         <EditorCategories value="Race:Protoss"/>
@@ -3243,10 +3253,10 @@
         <Flags index="NoVitalAbsorbEnergy" value="1"/>
     </CEffectDamage>
     <CEffectEnumArea id="ThermalLancesE">
-        <AreaArray index="0" Radius="0.1" Effect="ThermalLancesDamageDelay"/>
+        <AreaArray index="0" Radius="0.1"/>
     </CEffectEnumArea>
     <CEffectEnumArea id="ThermalLancesEReverse">
-        <AreaArray index="0" Radius="0.1" Effect="ThermalLancesDamageDelay"/>
+        <AreaArray index="0" Radius="0.1"/>
     </CEffectEnumArea>
     <CEffectLaunchMissile id="UltraDisruptorslm">
         <ValidatorArray index="0" value="StalkerTargetFilters"/>

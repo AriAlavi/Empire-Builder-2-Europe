@@ -82,13 +82,81 @@
         <AbilArray index="0" Link="BuildInProgress"/>
         <AbilArray index="1" Link="DisbandDemolish"/>
         <CardLayouts index="0">
-            <LayoutButtons index="0" Face="CancelBuilding" Type="CancelPlacementMode" AbilCmd="" Row="2" Column="4"/>
-            <LayoutButtons index="1" Face="DisbandDemolish" Type="AbilCmd" AbilCmd="DisbandDemolish,Execute" Row="2" Column="4"/>
+            <LayoutButtons index="0" Face="CancelBuilding" Type="CancelPlacementMode" AbilCmd="" Row="2"/>
+            <LayoutButtons index="1" Face="DisbandDemolish" AbilCmd="DisbandDemolish,Execute" Column="4"/>
             <LayoutButtons index="2" removed="1"/>
         </CardLayouts>
         <Footprint value="Footprint2x2Underground"/>
         <DeadFootprint value=""/>
         <PlacementFootprint value="Footprint2x2"/>
+    </CUnit>
+    <CUnit id="OilPowerPlant">
+        <DeathRevealRadius value="3"/>
+        <ReviveType value="EngineeringBay"/>
+        <Facing value="180"/>
+        <Race value=""/>
+        <Mob value="Multiplayer"/>
+        <FlagArray index="Turnable" value="0"/>
+        <FlagArray index="PreventDefeat" value="1"/>
+        <FlagArray index="PreventDestroy" value="1"/>
+        <FlagArray index="PenaltyRevealed" value="1"/>
+        <FlagArray index="UseLineOfSight" value="1"/>
+        <FlagArray index="TownAlert" value="1"/>
+        <FlagArray index="NoPortraitTalk" value="1"/>
+        <FlagArray index="ArmorDisabledWhileConstructing" value="1"/>
+        <FogVisibility value="Snapshot"/>
+        <PlaneArray index="Ground" value="1"/>
+        <Collide index="Burrow" value="1"/>
+        <Collide index="Ground" value="1"/>
+        <Collide index="Structure" value="1"/>
+        <Collide index="RoachBurrow" value="1"/>
+        <Collide index="ForceField" value="1"/>
+        <Attributes index="Armored" value="1"/>
+        <Attributes index="Mechanical" value="1"/>
+        <Attributes index="Psionic" value="1"/>
+        <Attributes index="Structure" value="1"/>
+        <LifeStart value="5000"/>
+        <LifeMax value="5000"/>
+        <LifeArmor value="4"/>
+        <LifeArmorName value="Unit/LifeArmorName/TerranBuildingPlating"/>
+        <EnergyMax value="100"/>
+        <EnergyArmor value="10"/>
+        <EnergyRegenDelay value="30"/>
+        <EnergyRegenRate value="5"/>
+        <EnergyRegenRateCreep value="0.5"/>
+        <EnergyDamageRatio value="10"/>
+        <StationaryTurningRate value="719.4726"/>
+        <TurningRate value="719.4726"/>
+        <Sight value="9"/>
+        <CostCategory value="Technology"/>
+        <CostResource index="Minerals" value="125000"/>
+        <CostResource index="Terrazine" value="1000"/>
+        <RepairTime value="35"/>
+        <AttackTargetPriority value="11"/>
+        <AbilArray Link="BuildInProgress"/>
+        <AbilArray Link="DisbandDemolish"/>
+        <BehaviorArray Link="PowerUserQueue"/>
+        <CardLayouts>
+            <LayoutButtons Face="CancelBuilding" Type="AbilCmd" AbilCmd="BuildInProgress,Cancel" Row="2" Column="4"/>
+            <LayoutButtons Face="DisbandDemolish" Type="AbilCmd" AbilCmd="DisbandDemolish,Execute" Row="2" Column="4"/>
+            <LayoutButtons Face="Electricity" Type="Passive" Row="1" Column="0"/>
+        </CardLayouts>
+        <Radius value="1.25"/>
+        <SeparationRadius value="1.25"/>
+        <Footprint value="Footprint2x2Underground"/>
+        <PlacementFootprint value="Footprint2x2Underground"/>
+        <ScoreMake value="75"/>
+        <ScoreKill value="225"/>
+        <ScoreResult value="BuildOrder"/>
+        <SubgroupPriority value="3"/>
+        <MinimapRadius value="1.25"/>
+        <EditorCategories value="ObjectType:Structure,ObjectFamily:Melee"/>
+        <LeaderAlias value="EngineeringBay"/>
+        <HotkeyAlias value="EngineeringBay"/>
+        <SubgroupAlias value="EngineeringBay"/>
+        <GlossaryPriority value="20"/>
+        <HotkeyCategory value="Unit/Category/TerranUnits"/>
+        <AIEvaluateAlias value="EngineeringBay"/>
     </CUnit>
     <CUnit id="NewYork">
         <DeathRevealRadius value="3"/>
@@ -1218,35 +1286,6 @@
         <Mover value="PunisherGrenadesWeapon"/>
         <EditorCategories value="ObjectType:Projectile,ObjectFamily:Melee"/>
     </CUnit>
-    <CUnit id="RefineryPipes">
-        <Race value="Neut"/>
-        <ResourceState value="Unknown"/>
-        <ResourceType value="Unknown"/>
-        <Attributes index="Armored" value="0"/>
-        <Attributes index="Mechanical" value="0"/>
-        <Attributes index="Psionic" value="1"/>
-        <LifeStart value="5000"/>
-        <LifeMax value="5000"/>
-        <EnergyMax value="50"/>
-        <EnergyArmor value="10"/>
-        <EnergyRegenDelay value="30"/>
-        <EnergyRegenRate value="5"/>
-        <EnergyDamageRatio value="1"/>
-        <CostResource index="Minerals" value="20000"/>
-        <CostResource index="Terrazine" value="150"/>
-        <AbilArray Link="DisbandDemolish"/>
-        <BehaviorArray index="0" Link="PowerUserQueue"/>
-        <BehaviorArray index="1" removed="1"/>
-        <CardLayouts index="0">
-            <LayoutButtons Face="DisbandDemolish" Type="AbilCmd" AbilCmd="DisbandDemolish,Execute" Row="2" Column="4"/>
-            <LayoutButtons Face="Electricity" Type="Passive" Row="1" Column="0"/>
-        </CardLayouts>
-        <Radius value="1.25"/>
-        <SeparationRadius value="1.25"/>
-        <Footprint value="Footprint1X1Urban"/>
-        <PlacementFootprint value="Footprint1x1Contour"/>
-        <BuiltOn index="0" removed="1"/>
-    </CUnit>
     <CUnit id="Ruins">
         <Facing value="270"/>
         <Race value=""/>
@@ -1377,6 +1416,7 @@
             <LayoutButtons Face="DisbandDemolish" Type="AbilCmd" AbilCmd="DisbandDemolish,Execute" Row="2" Column="4"/>
             <LayoutButtons Face="SelectBuilder" Type="SelectBuilder" Row="1" Column="3"/>
             <LayoutButtons Face="TrainColonialMilitia" Type="AbilCmd" AbilCmd="BarracksTrain2,Train1" Row="2" Column="0"/>
+            <LayoutButtons Face="Attack32" Type="AbilCmd" AbilCmd="AttackRedirect,Execute" Row="0" Column="0"/>
         </CardLayouts>
         <Radius value="1.25"/>
         <SeparationRadius value="1.25"/>
@@ -1441,8 +1481,8 @@
         <BehaviorArray index="0" Link="ShieldGenerator"/>
         <WeaponArray Link="MissileCollide"/>
         <CardLayouts index="0">
-            <LayoutButtons index="0" Face="Cancel4" Type="AbilCmd" AbilCmd="BuildInProgress7,Cancel" Row="2" Column="4"/>
-            <LayoutButtons index="1" Face="DisbandDemolish" Type="AbilCmd" AbilCmd="DisbandDemolish,Execute" Row="2" Column="0"/>
+            <LayoutButtons index="0" Face="Cancel4" AbilCmd="BuildInProgress7,Cancel" Column="4"/>
+            <LayoutButtons index="1" Face="DisbandDemolish" AbilCmd="DisbandDemolish,Execute" Column="0"/>
             <LayoutButtons Face="MothershipCoreAttack" Type="AbilCmd" AbilCmd="attack,Execute" Row="0" Column="0"/>
         </CardLayouts>
         <Sight value="10"/>
@@ -2181,7 +2221,7 @@
         <Collide index="RoachBurrow" value="1"/>
         <Collide index="ForceField" value="1"/>
         <Collide index="Locust" value="1"/>
-        <Collide index="Burrow6" value="1"/>
+        <Collide index="Small" value="1"/>
         <Attributes index="Armored" value="1"/>
         <Attributes index="Mechanical" value="1"/>
         <Attributes index="Massive" value="1"/>
@@ -3148,17 +3188,17 @@
         <AbilArray index="7" Link="FlagshipCloak"/>
         <AbilArray index="8" removed="1"/>
         <CardLayouts index="0">
-            <LayoutButtons index="0" Face="Stop" Type="AbilCmd" AbilCmd="stop,Stop" Row="0" Column="1"/>
-            <LayoutButtons index="1" Face="MoveHoldPosition" Type="AbilCmd" AbilCmd="move,HoldPos" Row="0" Column="2"/>
-            <LayoutButtons index="2" Face="Attack" Type="AbilCmd" AbilCmd="attack,Execute" Row="0" Column="4"/>
-            <LayoutButtons index="3" Face="MovePatrol" Type="AbilCmd" AbilCmd="move,Patrol" Row="0" Column="3"/>
-            <LayoutButtons index="4" Face="Cancel" Type="AbilCmd" AbilCmd="Warpable,Cancel" Row="2" Column="4"/>
-            <LayoutButtons index="5" Face="Rally" Type="AbilCmd" AbilCmd="ProgressRally,Rally1" Row="2" Column="4"/>
-            <LayoutButtons index="6" Face="FlagshipTimeBomb" Type="AbilCmd" AbilCmd="FlagshipTimeBomb,Execute" Row="2" Column="0"/>
-            <LayoutButtons index="7" Face="FlagshipWarpInPhoenix" Type="AbilCmd" AbilCmd="FlagshipWarpInPhoenix,Execute" Row="2" Column="1"/>
-            <LayoutButtons index="8" Face="FlagshipWarpInScout" Type="AbilCmd" AbilCmd="FlagshipWarpInScout,Execute" Row="2" Column="2"/>
-            <LayoutButtons index="9" Face="CloakOnFlagship" Type="AbilCmd" AbilCmd="FlagshipCloak,On" Row="2" Column="3"/>
-            <LayoutButtons index="10" Face="CloakOff" Type="AbilCmd" AbilCmd="FlagshipCloak,Off" Row="1" Column="3"/>
+            <LayoutButtons index="0" Face="Stop" AbilCmd="stop,Stop" Column="1"/>
+            <LayoutButtons index="1" Face="MoveHoldPosition" AbilCmd="move,HoldPos" Column="2"/>
+            <LayoutButtons index="2" Face="Attack" AbilCmd="attack,Execute" Column="4"/>
+            <LayoutButtons index="3" Face="MovePatrol" AbilCmd="move,Patrol" Column="3"/>
+            <LayoutButtons index="4" Face="Cancel" AbilCmd="Warpable,Cancel" Row="2" Column="4"/>
+            <LayoutButtons index="5" Face="Rally" AbilCmd="ProgressRally,Rally1"/>
+            <LayoutButtons index="6" Face="FlagshipTimeBomb" AbilCmd="FlagshipTimeBomb,Execute" Column="0"/>
+            <LayoutButtons index="7" Face="FlagshipWarpInPhoenix" AbilCmd="FlagshipWarpInPhoenix,Execute" Column="1"/>
+            <LayoutButtons index="8" Face="FlagshipWarpInScout" AbilCmd="FlagshipWarpInScout,Execute" Column="2"/>
+            <LayoutButtons index="9" Face="CloakOnFlagship" AbilCmd="FlagshipCloak,On" Column="3"/>
+            <LayoutButtons index="10" Face="CloakOff" AbilCmd="FlagshipCloak,Off" Row="1"/>
             <LayoutButtons index="11" removed="1"/>
         </CardLayouts>
         <FlagArray index="Movable" value="0"/>
@@ -5664,6 +5704,7 @@
         <KillXP value="40"/>
         <AbilArray Link="stop"/>
         <AbilArray Link="attack"/>
+        <AbilArray Link="WarpPrismTransport"/>
         <AbilArray Link="move"/>
         <AbilArray Link="DisbandDemolish"/>
         <AbilArray Link="Donate"/>
@@ -5673,8 +5714,8 @@
             <LayoutButtons Face="Stop" Type="AbilCmd" AbilCmd="stop,Stop" Row="0" Column="1"/>
             <LayoutButtons Face="MoveHoldPosition" Type="AbilCmd" AbilCmd="move,HoldPos" Row="0" Column="2"/>
             <LayoutButtons Face="MovePatrol" Type="AbilCmd" AbilCmd="move,Patrol" Row="0" Column="3"/>
-            <LayoutButtons Face="MedivacLoad" Type="AbilCmd" AbilCmd="SpecOpsDropshipTransport,Load" Row="2" Column="0"/>
-            <LayoutButtons Face="MedivacUnloadAll" Type="AbilCmd" AbilCmd="SpecOpsDropshipTransport,UnloadAt" Row="2" Column="1"/>
+            <LayoutButtons Face="MedivacLoad" Type="AbilCmd" AbilCmd="WarpPrismTransport,Load" Row="2" Column="0"/>
+            <LayoutButtons Face="MedivacUnloadAll" Type="AbilCmd" AbilCmd="WarpPrismTransport,UnloadAt" Row="2" Column="1"/>
             <LayoutButtons Face="Attack" Type="AbilCmd" AbilCmd="attack,Execute" Row="0" Column="4"/>
             <LayoutButtons Face="AcquireMove" Type="AbilCmd" AbilCmd="move,AcquireMove" Row="0" Column="4"/>
             <LayoutButtons Face="DisbandDemolish" Type="AbilCmd" AbilCmd="DisbandDemolish,Execute" Row="2" Column="4"/>
@@ -8505,14 +8546,7 @@
             <LayoutButtons index="3" Face="Attack" AbilCmd="attack,Execute" Column="4"/>
             <LayoutButtons index="4" Face="MovePatrol" AbilCmd="move,Patrol" Column="3"/>
             <LayoutButtons index="5" Face="DisbandDemolish" AbilCmd="DisbandDemolish,Execute" Column="4"/>
-            <LayoutButtons index="6">
-                <Face value="Donate"/>
-                <Type value="AbilCmd"/>
-                <AbilCmd value="Donate,Execute"/>
-                <Requirements value=""/>
-                <Row value="2"/>
-                <Column value="0"/>
-            </LayoutButtons>
+            <LayoutButtons index="6" Face="Donate" Type="AbilCmd" AbilCmd="Donate,Execute" Requirements="" Column="0"/>
             <LayoutButtons index="7" removed="1"/>
             <LayoutButtons index="8" removed="1"/>
             <LayoutButtons index="9" removed="1"/>
@@ -9091,9 +9125,7 @@
             <LayoutButtons Face="Cancel" Type="CancelSubmenu" Row="2" Column="4"/>
             <LayoutButtons Face="BuildMDHousing" Type="AbilCmd" AbilCmd="WorkbotBuild,Build11" Row="0" Column="1"/>
             <LayoutButtons Face="BuildHDHousing" Type="AbilCmd" AbilCmd="WorkbotBuild,Build16" Row="0" Column="2"/>
-            <LayoutButtons Face="BuildSchool" Type="AbilCmd" AbilCmd="WorkbotBuild,Build7" Row="1" Column="0"/>
             <LayoutButtons Face="BuildClinic" Type="AbilCmd" AbilCmd="WorkbotBuild,Build6" Row="1" Column="1"/>
-            <LayoutButtons Face="BuildUniversity" Type="AbilCmd" AbilCmd="WorkbotBuild,Build10" Row="1" Column="2"/>
             <LayoutButtons Face="BuildFarm" Type="AbilCmd" AbilCmd="WorkbotBuild,Build2" Row="2" Column="0"/>
             <LayoutButtons Face="BuildLaboratory" Type="AbilCmd" AbilCmd="WorkbotBuild,Build13" Row="2" Column="1"/>
             <LayoutButtons Face="BuildHydrofarm" Type="AbilCmd" AbilCmd="WorkbotBuild,Build19" Row="2" Column="2"/>
@@ -10649,8 +10681,8 @@
         <AbilArray index="2" Link="BuildCapital"/>
         <BehaviorArray index="0" Link="PermanentlyCloaked"/>
         <CardLayouts index="0">
-            <LayoutButtons index="4" Face="AcquireMove" Type="AbilCmd" AbilCmd="move,AcquireMove" Row="0" Column="4"/>
-            <LayoutButtons index="5" Face="PlaceCapital" Type="AbilCmd" AbilCmd="BuildCapital,Build1" Row="2" Column="0"/>
+            <LayoutButtons index="4" Face="AcquireMove" AbilCmd="move,AcquireMove" Row="0" Column="4"/>
+            <LayoutButtons index="5" Face="PlaceCapital" AbilCmd="BuildCapital,Build1" Column="0"/>
             <LayoutButtons index="6" removed="1"/>
             <LayoutButtons index="7" removed="1"/>
         </CardLayouts>
@@ -12136,7 +12168,7 @@
         <SubgroupAlias value="TruckUtilityUnit"/>
         <AIEvaluateAlias value="TruckUtilityUnit"/>
         <ShieldsMax value="20000"/>
-        <LifeRegenRate value="-200"/>
+        <LifeRegenRate value="-100"/>
         <ShieldArmor value="1"/>
         <CargoSize value="1"/>
     </CUnit>
@@ -12509,9 +12541,9 @@
             <LayoutButtons index="4" Face="AutobuildHDHomes" AbilCmd="AutobuildHDHomes,Execute" Row="0" Column="3"/>
             <LayoutButtons index="5" Face="AutobuildFarms" AbilCmd="AutobuildFarms,Execute" Row="1" Column="1"/>
             <LayoutButtons index="6" Face="AutobuildHydrofarms" AbilCmd="AutobuildHydrofarms,Execute" Row="1" Column="2"/>
-            <LayoutButtons index="7" Face="AutobuildWindmills" Type="AbilCmd" AbilCmd="AutobuildWindmills,Execute" Row="2" Column="1"/>
-            <LayoutButtons index="8" Face="AutobuildFissionPlants" Type="AbilCmd" AbilCmd="AutobuildFission,Execute" Row="2" Column="2"/>
-            <LayoutButtons index="9" Face="AutobuildFussionPlants" Type="AbilCmd" AbilCmd="AutobuildFusion,Execute" Row="2" Column="3"/>
+            <LayoutButtons index="7" Face="AutobuildWindmills" AbilCmd="AutobuildWindmills,Execute" Row="2"/>
+            <LayoutButtons index="8" Face="AutobuildFissionPlants" AbilCmd="AutobuildFission,Execute" Row="2" Column="2"/>
+            <LayoutButtons index="9" Face="AutobuildFussionPlants" AbilCmd="AutobuildFusion,Execute" Row="2"/>
             <LayoutButtons index="10" Face="AutobuildCPG" Type="AbilCmd" AbilCmd="UnknownAbility,Execute" Row="1" Column="4"/>
             <LayoutButtons index="11">
                 <Face value="CancelBuilding"/>
@@ -13010,14 +13042,7 @@
             <LayoutButtons index="3" Face="Attack" AbilCmd="attack,Execute" Column="4"/>
             <LayoutButtons index="4" Face="MovePatrol" AbilCmd="move,Patrol" Column="3"/>
             <LayoutButtons index="5" Face="DisbandDemolish" AbilCmd="DisbandDemolish,Execute" Column="4"/>
-            <LayoutButtons index="6">
-                <Face value="Donate"/>
-                <Type value="AbilCmd"/>
-                <AbilCmd value="Donate,Execute"/>
-                <Requirements value=""/>
-                <Row value="2"/>
-                <Column value="0"/>
-            </LayoutButtons>
+            <LayoutButtons index="6" Face="Donate" Type="AbilCmd" AbilCmd="Donate,Execute" Requirements="" Column="0"/>
             <LayoutButtons index="7" removed="1"/>
             <LayoutButtons index="8" removed="1"/>
             <LayoutButtons index="9" removed="1"/>
@@ -13052,10 +13077,15 @@
         <Attributes index="Mechanical" value="1"/>
         <Attributes index="Psionic" value="1"/>
         <Attributes index="Structure" value="1"/>
-        <LifeStart value="2000"/>
-        <LifeMax value="2000"/>
+        <LifeStart value="3000"/>
+        <LifeMax value="3000"/>
         <LifeArmor value="1"/>
         <LifeArmorName value="Unit/LifeArmorName/TerranBuildingPlating"/>
+        <EnergyMax value="50"/>
+        <EnergyArmor value="10"/>
+        <EnergyRegenDelay value="30"/>
+        <EnergyRegenRate value="0.1015"/>
+        <EnergyDamageRatio value="10"/>
         <StationaryTurningRate value="719.4726"/>
         <TurningRate value="719.4726"/>
         <Sight value="9"/>
@@ -13074,8 +13104,8 @@
         </CardLayouts>
         <Radius value="1.25"/>
         <SeparationRadius value="1.25"/>
-        <Footprint value="Footprint1X1Urban"/>
-        <PlacementFootprint value="Footprint1x1"/>
+        <Footprint value="Footprint2x2Contour"/>
+        <PlacementFootprint value="Footprint2x2"/>
         <ScoreMake value="75"/>
         <ScoreKill value="225"/>
         <ScoreResult value="BuildOrder"/>
@@ -13088,11 +13118,6 @@
         <GlossaryPriority value="20"/>
         <HotkeyCategory value="Unit/Category/TerranUnits"/>
         <AIEvaluateAlias value="EngineeringBay"/>
-        <EnergyMax value="30"/>
-        <EnergyArmor value="10"/>
-        <EnergyDamageRatio value="10"/>
-        <EnergyRegenRate value="0.1015"/>
-        <EnergyRegenDelay value="30"/>
     </CUnit>
     <CUnit id="MilitaryEngineer">
         <DeathRevealRadius value="3"/>

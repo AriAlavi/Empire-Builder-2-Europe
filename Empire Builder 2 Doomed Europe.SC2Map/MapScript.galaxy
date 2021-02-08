@@ -267,6 +267,8 @@ int gv_economicDebtPolicy;
 int[11] gv_economicDebtPolicyDialogItems;
 int gv_manualTradeDialog;
 int[4] gv_manualTradeDialogItems;
+int[8] gv_foodStockpile;
+int gv_foodPrice;
 int[6] gv_metalMineCost;
 int[6] gv_metalMineUpkeep;
 int[6] gv_metalBoreholeCost;
@@ -365,6 +367,8 @@ int[8][4] gv_buildingTypesUrbanized;
 int gv_fOOD_PRODUCTION_BASE;
 int gv_fOOD_PRODUCTION_BAD_TERRAIN;
 fixed[8] gv_urbanScore;
+int[8][8] gv_cheapestFoodArrayPrice;
+int[8][8] gv_cheapestFoodArrayPlayer;
 string gv_sELL_RESOURCE_DEBUG_VARIABLE;
 bool[16] gv_canAffordImports;
 bool[16] gv_canSupplyExports;
@@ -760,6 +764,10 @@ void InitGlobals () {
     for (init_i = 0; init_i <= 3; init_i += 1) {
         gv_manualTradeDialogItems[init_i] = c_invalidDialogControlId;
     }
+    for (init_i = 0; init_i <= 7; init_i += 1) {
+        gv_foodStockpile[init_i] = 10;
+    }
+    gv_foodPrice = 1;
     gv_allResources = UnitGroupEmpty();
     for (init_i = 0; init_i <= 7; init_i += 1) {
         gv_corpResources[init_i] = UnitGroupEmpty();
@@ -1044,6 +1052,9 @@ void gf_UpdateMainTradeScreen ();
 void gf_UpdateExternalTradePolicies ();
 void gf_UpdateTradePolicyUI ();
 void gf_UpdateInternalPolicy ();
+void gf_RotMarketFoodStockpile ();
+void gf_UpdateCheapestFoodArray ();
+int gf_getFoodPricePerThousand (int lp_purchasingPlayer, int lp_sellingPlayer);
 int gf_GetUnitCustomValue (unit lp_unit, int lp_customValue);
 void gf_SetUnitCustomValue (unit lp_unit, int lp_customValue, int lp_setValue);
 void gf_ModifyUnitCustomValue (unit lp_unit, int lp_customValue, int lp_modifyValue);
@@ -1054,7 +1065,7 @@ void gf_RefreshCorpUI (int lp_player);
 void gf_ResourceCollection ();
 void gf_MeetPlayerDemandandCorpExports ();
 int gf_GetPlayerFoodDemand (int lp_player);
-void gf_MeetCivilianDemand ();
+void gf_MeetCivilianMetalOilDemand ();
 void gf_FinalizeVariablesSetDividendsPayDividendsGetBalanceTransfercostsIfNationalizedInterestMilitaryExpense ();
 void gf_CCalculateAssetValue ();
 void gf_CSetStockPricesPlayerStockTargets ();
@@ -1165,6 +1176,10 @@ void gf_TransferCores (unit lp_unit, int lp_coreCount0, int lp_coreCount1, int l
 int gf_GetCoreCount (unit lp_unit, int lp_player);
 void gf_TransferCoresFromGlobal (unit lp_unit);
 void gf_SetGlobalCoreCount (unit lp_unit);
+unit gf_GetRussianNukeLauncher ();
+void gf_DoTheNuke ();
+void gf_RUNuke ();
+void gf_RUNuclearDevelopment ();
 void gf_RussianRazeRebel (unit lp_city);
 void gf_UpdateRussianDomainFrontier ();
 void gf_RussianMultiplierUpdate ();
@@ -1203,10 +1218,6 @@ void gf_USDoTheNuke ();
 void gf_USNuke ();
 void gf_CreateEscorts ();
 void gf_A110Waves ();
-unit gf_GetRussianNukeLauncher ();
-void gf_DoTheNuke ();
-void gf_RUNuke ();
-void gf_RUNuclearDevelopment ();
 void gf_AttackNearHostile (unit lp_unit);
 void gf_UpgradeUnits ();
 void gf_CreateBanner (int lp_player, int lp_bannerID);
@@ -1380,7 +1391,6 @@ trigger gt_ExecuteBuySell;
 trigger gt_RealTimeSliders;
 trigger gt_TradeModes;
 trigger gt_Tabs;
-trigger gt_ColdWarRemoveFunctionality;
 trigger gt_EmbargoButton;
 trigger gt_TradeUI;
 trigger gt_BuySellUI;
@@ -1426,7 +1436,7 @@ trigger gt_SelectAllHomes;
 trigger gt_SelectFarm;
 trigger gt_SelectHydrofarm;
 trigger gt_SelectAllFarms;
-trigger gt_SelectWind;
+trigger gt_SelectCoal;
 trigger gt_SelectMetal;
 trigger gt_SelectMine;
 trigger gt_SelectBore;
@@ -1779,7 +1789,7 @@ void gf_CollectFoodYearly (int lp_dataLine) {
     // Automatic Variable Declarations
     playergroup autoF57647B1_g;
     int autoF57647B1_var;
-    const int autoC9401CB4_ae = 14;
+    const int autoC9401CB4_ae = 7;
     const int autoC9401CB4_ai = 1;
 
     // Variable Initialization
@@ -1792,13 +1802,13 @@ void gf_CollectFoodYearly (int lp_dataLine) {
         if (autoF57647B1_var < 0) { break; }
         lv_demand += gv_cDemand[autoF57647B1_var][lv_rESOURCE_TYPE];
     }
-    lv_incrementor = 2;
+    lv_incrementor = 1;
     for ( ; ( (autoC9401CB4_ai >= 0 && lv_incrementor <= autoC9401CB4_ae) || (autoC9401CB4_ai < 0 && lv_incrementor >= autoC9401CB4_ae) ) ; lv_incrementor += autoC9401CB4_ai ) {
-        lv_supply += gv_globalSupply[lv_rESOURCE_TYPE][lv_incrementor];
-        lv_price += gv_aggregatePrice[lv_rESOURCE_TYPE][lv_incrementor];
+        lv_supply += gv_foodStockpile[lv_incrementor];
+        lv_price += gv_foodPrice;
     }
-    lv_supply /= 12;
-    lv_price /= 12;
+    lv_supply /= 7;
+    lv_price /= 7;
     gv_graphCollectedData[lp_dataLine][0][1] = lv_supply;
     gv_graphCollectedData[lp_dataLine][0][2] = lv_demand;
     gv_graphCollectedData[lp_dataLine][0][2] = lv_price;
@@ -2588,17 +2598,17 @@ void gf_GivePlauge () {
     if ((RandomInt(0, 100) < (90 - (10 * lv_virus)))) {
     }
     else {
-        if ((((TechTreeUpgradeCount(UnitGetOwner(lv_infect), "MassVaccine", c_techCountCompleteOnly) == 1) || (UnitGetOwner(lv_infect) > 7)) || (RandomInt(0, 100) < (90 - (10 * lv_virus))))) {
+        if (((((UnitGetOwner(lv_infect) > 7) || (TechTreeUpgradeCount(UnitGetOwner(lv_infect), "MassVaccine", c_techCountCompleteOnly) == 1)) && (RandomInt(0, 100) < (40 - (10 * lv_virus)))) || ((RandomInt(0, 100) < (30 - (10 * lv_virus)))))) {
             if ((UnitHasBehavior2(lv_infect, "populationThinnerImmunity") == false) && (RandomInt(0, 100) < (150 - (50 * lv_virus)))) {
                 if ((UnitHasBehavior2(lv_infect, "PopulationThinner2") == false) && (RandomInt(0, 100) < (0 + (50 * lv_virus)))) {
                     if ((lv_virus == 1)) {
                         UIDisplayMessage(PlayerGroupAll(), c_messageAreaSubtitle, TextWithColor((StringExternal("Param/Value/06676625") + StringToText(gf_GetCountyName(gf_GetCountyID(lv_infect)))), Color(100.00, 0.00, 0.00)));
-                        UnitBehaviorAdd(lv_infect, "PopulationThinner2", UnitFromId(176), 1);
+                        UnitBehaviorAdd(lv_infect, "PopulationThinner2", lv_infect, 1);
                         MinimapPing(PlayerGroupAll(), UnitGetPosition(lv_infect), 4.0, Color(100.00, 0.00, 0.00));
                     }
                     else {
                         UIDisplayMessage(PlayerGroupAll(), c_messageAreaSubtitle, TextWithColor((StringExternal("Param/Value/C082BF7F") + StringToText(gf_GetCountyName(gf_GetCountyID(lv_infect)))), Color(100.00, 0.00, 0.00)));
-                        UnitBehaviorAdd(lv_infect, "PopulationThinner2", UnitFromId(176), 1);
+                        UnitBehaviorAdd(lv_infect, "PopulationThinner2", lv_infect, 1);
                         MinimapPing(PlayerGroupAll(), UnitGetPosition(lv_infect), 4.0, Color(100.00, 0.00, 0.00));
                     }
                 }
@@ -2713,7 +2723,7 @@ void gf_ResetModifiers (int lp_player) {
 
     if ((TechTreeUpgradeCount(lp_player, "Corporatocracy", c_techCountCompleteOnly) == 1)) {
         gv_creditIncomeModifier[lp_player] -= 180;
-        gv_foodIncomeModifier[lp_player] += 20;
+        gv_foodIncomeModifier[lp_player] += 60;
         gv_electricityIncomeModifier[lp_player] += 10;
         gv_popGrowth[lp_player] += 0.01;
         gv_techIncomeModifier[lp_player] += 10;
@@ -8349,9 +8359,6 @@ void gf_FindGlobalTrackers () {
     int[4] lv_totalPrice;
 
     // Automatic Variable Declarations
-    unitgroup autoFD1CCEDF_g;
-    int autoFD1CCEDF_u;
-    unit autoFD1CCEDF_var;
     unitgroup auto511604E7_g;
     int auto511604E7_u;
     unit auto511604E7_var;
@@ -8359,15 +8366,6 @@ void gf_FindGlobalTrackers () {
     // Variable Initialization
 
     // Implementation
-    autoFD1CCEDF_g = UnitGroup("CorporateHeadquarters", c_playerAny, RegionEntireMap(), UnitFilter(0, 0, (1 << c_targetFilterMissile), (1 << (c_targetFilterDead - 32)) | (1 << (c_targetFilterHidden - 32))), 0);
-    autoFD1CCEDF_u = UnitGroupCount(autoFD1CCEDF_g, c_unitCountAll);
-    for (;; autoFD1CCEDF_u -= 1) {
-        autoFD1CCEDF_var = UnitGroupUnitFromEnd(autoFD1CCEDF_g, autoFD1CCEDF_u);
-        if (autoFD1CCEDF_var == null) { break; }
-        lv_totalResource[1] += 1;
-        lv_totalPrice[1] += FixedToInt(UnitGetCustomValue(autoFD1CCEDF_var, 14));
-        gv_globalSupply[1][0] += gf_GetUnitCustomValue(autoFD1CCEDF_var, 12);
-    }
     auto511604E7_g = gv_allResources;
     auto511604E7_u = UnitGroupCount(auto511604E7_g, c_unitCountAll);
     for (;; auto511604E7_u -= 1) {
@@ -8418,12 +8416,16 @@ void gf_UpdateMainTradeScreen () {
     unit auto4739659E_var;
     playergroup autoCD111D37_g;
     int autoCD111D37_var;
+    const int autoD6752696_ae = 7;
+    int autoD6752696_var;
     playergroup auto0AA3961B_g;
     int auto0AA3961B_var;
     playergroup autoBB1C6B4F_g;
     int autoBB1C6B4F_var;
     playergroup auto114EB3CB_g;
     int auto114EB3CB_var;
+    const int autoFAC4B9B6_ae = 7;
+    int autoFAC4B9B6_var;
 
     // Variable Initialization
     lv_tooltip = StringExternal("Param/Value/C57D4274");
@@ -8439,20 +8441,25 @@ void gf_UpdateMainTradeScreen () {
         if (auto4739659E_var == null) { break; }
         lv_capitals[UnitGetOwner(auto4739659E_var)] = UnitGetPosition(auto4739659E_var);
     }
+    lv_tooltip = StringExternal("Param/Value/983B9D77");
     autoCD111D37_g = gv_users;
     autoCD111D37_var = -1;
     while (true) {
         autoCD111D37_var = PlayerGroupNextPlayer(autoCD111D37_g, autoCD111D37_var);
         if (autoCD111D37_var < 0) { break; }
-        if ((gv_deadCorp[autoCD111D37_var] == false) && (StringLength(gv_corpName[autoCD111D37_var]) != 0)) {
-            lv_tooltip = ((lv_tooltip + StringExternal("Param/Value/BC575448")) + (TextWithColor(StringToText(gv_corpTicker[autoCD111D37_var]), libNtve_gf_ConvertPlayerColorToColor(PlayerGetColorIndex(autoCD111D37_var, false))) + (StringExternal("Param/Value/F348ACBF") + gf_MakeUIPresentable(gv_cSupply[autoCD111D37_var][1]))));
-            lv_guessedSupply[1] += gv_cSupply[autoCD111D37_var][1];
-        }
+        autoD6752696_var = 1;
+        for ( ; autoD6752696_var <= autoD6752696_ae; autoD6752696_var += 1 ) {
+            if ((gv_cheapestFoodArrayPrice[autoCD111D37_var][autoD6752696_var] != 1000000000)) {
+                lv_guessedSupply[1] += gv_foodStockpile[gv_cheapestFoodArrayPlayer[autoCD111D37_var][autoD6752696_var]];
+                lv_tooltip = ((lv_tooltip + StringExternal("Param/Value/BC575448")) + (TextWithColor(IntToText(gv_cheapestFoodArrayPlayer[autoCD111D37_var][autoD6752696_var]), libNtve_gf_ConvertPlayerColorToColor(PlayerGetColorIndex(autoCD111D37_var, false))) + (StringExternal("Param/Value/F348ACBF") + gf_MakeUIPresentable(lv_guessedSupply[autoCD111D37_var]))));
+            }
 
+        }
+        libNtve_gf_SetDialogItemText(gv_tradeDialogItems[1], gf_MakeUIPresentable(lv_guessedSupply[1]), PlayerGroupSingle(autoCD111D37_var));
+        libNtve_gf_SetDialogItemTooltip(gv_tradeDialogItems[1], lv_tooltip, PlayerGroupSingle(autoCD111D37_var));
+        lv_guessedSupply[1] = 0;
     }
-    libNtve_gf_SetDialogItemText(gv_tradeDialogItems[1], gf_MakeUIPresentable(lv_guessedSupply[1]), PlayerGroupAll());
-    libNtve_gf_SetDialogItemTooltip(gv_tradeDialogItems[1], lv_tooltip, PlayerGroupAll());
-    lv_tooltip = StringExternal("Param/Value/FC4A1E82");
+    lv_tooltip = StringExternal("Param/Value/8F78D3F1");
     auto0AA3961B_g = gv_users;
     auto0AA3961B_var = -1;
     while (true) {
@@ -8486,25 +8493,34 @@ void gf_UpdateMainTradeScreen () {
     while (true) {
         auto114EB3CB_var = PlayerGroupNextPlayer(auto114EB3CB_g, auto114EB3CB_var);
         if (auto114EB3CB_var < 0) { break; }
-        lv_cheapestResource = gf_FindCheapestResource(auto114EB3CB_var, 1, lv_capitals[auto114EB3CB_var], 500);
-        lv_expensiveistResources = gf_FindMostExpensiveResourceBuyingPrice(auto114EB3CB_var, 1, lv_capitals[auto114EB3CB_var]);
-        lv_cheapestPrice = gf_CalculateCostWithTariffs(UnitGetOwner(lv_cheapestResource), auto114EB3CB_var, FixedToInt(UnitGetCustomValue(lv_cheapestResource, 14)));
-        lv_expensivePrice = gf_CalculateCostWithTariffs(UnitGetOwner(lv_expensiveistResources), auto114EB3CB_var, FixedToInt(UnitGetCustomValue(lv_expensiveistResources, 14)));
+        lv_cheapestPrice = gv_cheapestFoodArrayPrice[auto114EB3CB_var][0];
+        lv_expensivePrice = 1000000000;
+        autoFAC4B9B6_var = 1;
+        for ( ; autoFAC4B9B6_var <= autoFAC4B9B6_ae; autoFAC4B9B6_var += 1 ) {
+            if ((gv_cheapestFoodArrayPrice[auto114EB3CB_var][autoFAC4B9B6_var] < 1000000000)) {
+                lv_expensivePrice = gv_cheapestFoodArrayPrice[auto114EB3CB_var][autoFAC4B9B6_var];
+            }
+
+        }
         if ((lv_cheapestPrice == 0)) {
-            lv_cheapestPrice = gv_aggregatePrice[1][1];
+            lv_cheapestPrice = 1;
         }
 
-        if ((lv_expensivePrice == 0)) {
-            lv_cheapestPrice = gv_aggregatePrice[1][1];
-        }
-
-        if ((lv_cheapestResource == null)) {
-            libNtve_gf_SetDialogItemText(gv_tradeDialogItems[4], IntToText(gv_aggregatePrice[1][1]), PlayerGroupSingle(auto114EB3CB_var));
+        if ((lv_expensivePrice == 1000000000)) {
+            lv_expensivePrice = 0;
         }
         else {
-            libNtve_gf_SetDialogItemText(gv_tradeDialogItems[4], IntToText(gf_CalculateCostWithTariffs(UnitGetOwner(lv_cheapestResource), auto114EB3CB_var, FixedToInt(UnitGetCustomValue(lv_cheapestResource, 14)))), PlayerGroupSingle(auto114EB3CB_var));
+            lv_cheapestPrice = FixedToInt((IntToFixed(lv_cheapestPrice) / 1000.0));
+            lv_expensivePrice = FixedToInt((IntToFixed(lv_expensivePrice) / 1000.0));
         }
-        libNtve_gf_SetDialogItemTooltip(gv_tradeDialogItems[4], ((StringExternal("Param/Value/14C7DD03") + (IntToText(gf_CalculateCostWithTariffs(UnitGetOwner(lv_cheapestResource), auto114EB3CB_var, FixedToInt(UnitGetCustomValue(lv_cheapestResource, 14)))) + (StringExternal("Param/Value/7C4C47F8") + IntToText(gv_aggregatePrice[1][1])))) + (StringExternal("Param/Value/46DBDC03") + IntToText(gf_CalculateCostWithTariffs(UnitGetOwner(lv_expensiveistResources), auto114EB3CB_var, FixedToInt(UnitGetCustomValue(lv_expensiveistResources, 14)))))), PlayerGroupSingle(auto114EB3CB_var));
+        if ((gv_cheapestFoodArrayPrice[auto114EB3CB_var][0] < 1000000000)) {
+            libNtve_gf_SetDialogItemText(gv_tradeDialogItems[4], IntToText(lv_cheapestPrice), PlayerGroupSingle(auto114EB3CB_var));
+            libNtve_gf_SetDialogItemTooltip(gv_tradeDialogItems[4], ((StringExternal("Param/Value/7BC9BAB8") + (IntToText(lv_cheapestPrice) + (StringToText("") + StringToText("")))) + (StringExternal("Param/Value/35F70270") + IntToText(lv_expensivePrice))), PlayerGroupSingle(auto114EB3CB_var));
+        }
+        else {
+            libNtve_gf_SetDialogItemText(gv_tradeDialogItems[4], IntToText(0), PlayerGroupSingle(auto114EB3CB_var));
+            libNtve_gf_SetDialogItemTooltip(gv_tradeDialogItems[4], ((StringExternal("Param/Value/3DEB0D0E") + (IntToText(0) + (StringToText("") + StringToText("")))) + (StringExternal("Param/Value/548BA500") + IntToText(lv_expensivePrice))), PlayerGroupSingle(0));
+        }
         lv_cheapestResource = gf_FindCheapestResource(auto114EB3CB_var, 2, lv_capitals[auto114EB3CB_var], 500);
         lv_expensiveistResources = gf_FindMostExpensiveResourceBuyingPrice(auto114EB3CB_var, 2, lv_capitals[auto114EB3CB_var]);
         lv_cheapestPrice = gf_CalculateCostWithTariffs(UnitGetOwner(lv_cheapestResource), auto114EB3CB_var, FixedToInt(UnitGetCustomValue(lv_cheapestResource, 14)));
@@ -8523,7 +8539,7 @@ void gf_UpdateMainTradeScreen () {
         else {
             libNtve_gf_SetDialogItemText(gv_tradeDialogItems[5], IntToText(gf_CalculateCostWithTariffs(UnitGetOwner(lv_cheapestResource), auto114EB3CB_var, FixedToInt(UnitGetCustomValue(lv_cheapestResource, 14)))), PlayerGroupSingle(auto114EB3CB_var));
         }
-        libNtve_gf_SetDialogItemTooltip(gv_tradeDialogItems[5], ((StringExternal("Param/Value/7BC9BAB8") + (IntToText(gf_CalculateCostWithTariffs(UnitGetOwner(lv_cheapestResource), auto114EB3CB_var, FixedToInt(UnitGetCustomValue(lv_cheapestResource, 14)))) + (StringExternal("Param/Value/1344F9E5") + IntToText(gv_aggregatePrice[2][1])))) + (StringExternal("Param/Value/35F70270") + IntToText(gf_CalculateCostWithTariffs(UnitGetOwner(lv_expensiveistResources), auto114EB3CB_var, FixedToInt(UnitGetCustomValue(lv_expensiveistResources, 14)))))), PlayerGroupSingle(auto114EB3CB_var));
+        libNtve_gf_SetDialogItemTooltip(gv_tradeDialogItems[5], ((StringExternal("Param/Value/14C7DD03") + (IntToText(gf_CalculateCostWithTariffs(UnitGetOwner(lv_cheapestResource), auto114EB3CB_var, FixedToInt(UnitGetCustomValue(lv_cheapestResource, 14)))) + (StringExternal("Param/Value/7C4C47F8") + IntToText(gv_aggregatePrice[1][1])))) + (StringExternal("Param/Value/46DBDC03") + IntToText(gf_CalculateCostWithTariffs(UnitGetOwner(lv_expensiveistResources), auto114EB3CB_var, FixedToInt(UnitGetCustomValue(lv_expensiveistResources, 14)))))), PlayerGroupSingle(auto114EB3CB_var));
         lv_cheapestResource = gf_FindCheapestResource(auto114EB3CB_var, 3, lv_capitals[auto114EB3CB_var], 500);
         lv_expensiveistResources = gf_FindMostExpensiveResourceBuyingPrice(auto114EB3CB_var, 3, lv_capitals[auto114EB3CB_var]);
         lv_cheapestPrice = gf_CalculateCostWithTariffs(UnitGetOwner(lv_cheapestResource), auto114EB3CB_var, FixedToInt(UnitGetCustomValue(lv_cheapestResource, 14)));
@@ -8994,6 +9010,143 @@ void gf_UpdateInternalPolicy () {
     }
 }
 
+void gf_RotMarketFoodStockpile () {
+    // Variable Declarations
+    const int lv_rOT_RATE = 20;
+
+    // Automatic Variable Declarations
+    const int auto558B8FF3_ae = 7;
+    int auto558B8FF3_var;
+
+    // Variable Initialization
+
+    // Implementation
+    auto558B8FF3_var = 1;
+    for ( ; auto558B8FF3_var <= auto558B8FF3_ae; auto558B8FF3_var += 1 ) {
+        if ((gv_foodStockpile[auto558B8FF3_var] > 50000)) {
+            gv_foodStockpile[auto558B8FF3_var] = ((gv_foodStockpile[auto558B8FF3_var] / 100) * lv_rOT_RATE);
+        }
+        else {
+            if ((gv_foodStockpile[auto558B8FF3_var] < 0)) {
+                gv_foodStockpile[auto558B8FF3_var] = 0;
+            }
+            else {
+                gv_foodStockpile[auto558B8FF3_var] = ((gv_foodStockpile[auto558B8FF3_var] * lv_rOT_RATE) / 100);
+            }
+        }
+    }
+}
+
+void gf_UpdateCheapestFoodArray () {
+    // Variable Declarations
+    int lv_purchasingPlayer;
+    int lv_sellingPlayer;
+    int lv_loop;
+    int lv_tempReassign;
+    int lv_tempReassignPlayer;
+
+    // Automatic Variable Declarations
+    const int auto160A8C39_ae = 7;
+    const int auto160A8C39_ai = 1;
+    const int autoB465C381_ae = 7;
+    const int autoB465C381_ai = 1;
+    playergroup auto70CE124C_g;
+    const int auto43BB751E_ae = 7;
+    const int auto43BB751E_ai = 1;
+    const int auto7508BCD6_ae = 6;
+    const int auto7508BCD6_ai = 1;
+
+    // Variable Initialization
+
+    // Implementation
+    lv_purchasingPlayer = 1;
+    for ( ; ( (auto160A8C39_ai >= 0 && lv_purchasingPlayer <= auto160A8C39_ae) || (auto160A8C39_ai < 0 && lv_purchasingPlayer >= auto160A8C39_ae) ) ; lv_purchasingPlayer += auto160A8C39_ai ) {
+        lv_sellingPlayer = 1;
+        for ( ; ( (autoB465C381_ai >= 0 && lv_sellingPlayer <= autoB465C381_ae) || (autoB465C381_ai < 0 && lv_sellingPlayer >= autoB465C381_ae) ) ; lv_sellingPlayer += autoB465C381_ai ) {
+            gv_cheapestFoodArrayPrice[lv_purchasingPlayer][lv_sellingPlayer] = gf_getFoodPricePerThousand(lv_purchasingPlayer, lv_sellingPlayer);
+            gv_cheapestFoodArrayPlayer[lv_purchasingPlayer][lv_sellingPlayer] = lv_sellingPlayer;
+        }
+    }
+    auto70CE124C_g = gv_users;
+    lv_purchasingPlayer = -1;
+    while (true) {
+        lv_purchasingPlayer = PlayerGroupNextPlayer(auto70CE124C_g, lv_purchasingPlayer);
+        if (lv_purchasingPlayer < 0) { break; }
+        lv_sellingPlayer = 1;
+        for ( ; ( (auto43BB751E_ai >= 0 && lv_sellingPlayer <= auto43BB751E_ae) || (auto43BB751E_ai < 0 && lv_sellingPlayer >= auto43BB751E_ae) ) ; lv_sellingPlayer += auto43BB751E_ai ) {
+            lv_loop = 1;
+            for ( ; ( (auto7508BCD6_ai >= 0 && lv_loop <= auto7508BCD6_ae) || (auto7508BCD6_ai < 0 && lv_loop >= auto7508BCD6_ae) ) ; lv_loop += auto7508BCD6_ai ) {
+                if ((gv_cheapestFoodArrayPrice[lv_purchasingPlayer][lv_loop] > gv_cheapestFoodArrayPrice[lv_purchasingPlayer][(lv_loop + 1)])) {
+                    lv_tempReassign = gv_cheapestFoodArrayPrice[lv_purchasingPlayer][lv_loop];
+                    gv_cheapestFoodArrayPrice[lv_purchasingPlayer][lv_loop] = gv_cheapestFoodArrayPrice[lv_purchasingPlayer][(lv_loop + 1)];
+                    gv_cheapestFoodArrayPrice[lv_purchasingPlayer][(lv_loop + 1)] = lv_tempReassign;
+                    lv_tempReassignPlayer = gv_cheapestFoodArrayPlayer[lv_purchasingPlayer][lv_loop];
+                    gv_cheapestFoodArrayPlayer[lv_purchasingPlayer][lv_loop] = gv_cheapestFoodArrayPlayer[lv_purchasingPlayer][(lv_loop + 1)];
+                    gv_cheapestFoodArrayPlayer[lv_purchasingPlayer][(lv_loop + 1)] = lv_tempReassignPlayer;
+                }
+
+            }
+        }
+    }
+}
+
+int gf_getFoodPricePerThousand (int lp_purchasingPlayer, int lp_sellingPlayer) {
+    // Variable Declarations
+    unitgroup lv_purchaseHeadquarters;
+    unitgroup lv_sellingHeadquarters;
+    point lv_purchasePoint;
+    point lv_sellingPoint;
+    int lv_fuelCosts;
+
+    // Automatic Variable Declarations
+    unitgroup auto407DBB65_g;
+    int auto407DBB65_u;
+    unit auto407DBB65_var;
+    unitgroup autoAFFE2084_g;
+    int autoAFFE2084_u;
+    unit autoAFFE2084_var;
+
+    // Variable Initialization
+    lv_purchaseHeadquarters = UnitGroupFilterRegion(UnitGroup("Capital", lp_purchasingPlayer, RegionEntireMap(), UnitFilter(0, 0, (1 << c_targetFilterMissile), (1 << (c_targetFilterDead - 32)) | (1 << (c_targetFilterHidden - 32))), 0), RegionPlayableMap(), 1);
+    lv_sellingHeadquarters = UnitGroupFilterRegion(UnitGroup("Capital", lp_sellingPlayer, RegionEntireMap(), UnitFilter(0, 0, (1 << c_targetFilterMissile), (1 << (c_targetFilterDead - 32)) | (1 << (c_targetFilterHidden - 32))), 0), RegionPlayableMap(), 1);
+
+    // Implementation
+    if ((UnitGroupCount(lv_purchaseHeadquarters, c_unitCountAlive) == 0)) {
+        gv_foodStockpile[lp_purchasingPlayer] = 0;
+        return 1000000000;
+    }
+
+    if ((UnitGroupCount(lv_sellingHeadquarters, c_unitCountAlive) == 0)) {
+        gv_foodStockpile[lp_sellingPlayer] = 0;
+        return 1000000000;
+    }
+
+    if ((gv_foodStockpile[lp_sellingPlayer] == 0)) {
+        return 1000000000;
+    }
+
+    if (((gv_embargo[lp_sellingPlayer][lp_purchasingPlayer] == true) || (gv_embargo[lp_purchasingPlayer][lp_sellingPlayer] == true) || (gv_embargoed[lp_purchasingPlayer] > 0) || (gv_embargoed[lp_sellingPlayer] > 0))) {
+        return 1000000000;
+    }
+
+    auto407DBB65_g = lv_purchaseHeadquarters;
+    auto407DBB65_u = UnitGroupCount(auto407DBB65_g, c_unitCountAll);
+    for (;; auto407DBB65_u -= 1) {
+        auto407DBB65_var = UnitGroupUnitFromEnd(auto407DBB65_g, auto407DBB65_u);
+        if (auto407DBB65_var == null) { break; }
+        lv_purchasePoint = UnitGetPosition(auto407DBB65_var);
+    }
+    autoAFFE2084_g = lv_sellingHeadquarters;
+    autoAFFE2084_u = UnitGroupCount(autoAFFE2084_g, c_unitCountAll);
+    for (;; autoAFFE2084_u -= 1) {
+        autoAFFE2084_var = UnitGroupUnitFromEnd(autoAFFE2084_g, autoAFFE2084_u);
+        if (autoAFFE2084_var == null) { break; }
+        lv_sellingPoint = UnitGetPosition(autoAFFE2084_var);
+    }
+    lv_fuelCosts = gf_GetFuelCostsMonetary(lp_purchasingPlayer, lv_purchasePoint, lv_sellingPoint, false);
+    return (gf_CalculateCostWithTariffs(lp_sellingPlayer, lp_purchasingPlayer, (gv_foodPrice * 1000)) + lv_fuelCosts);
+}
+
 int gf_GetUnitCustomValue (unit lp_unit, int lp_customValue) {
     // Variable Declarations
     fixed lv_theReal;
@@ -9097,178 +9250,84 @@ void gf_ModifyUnitCustomValue (unit lp_unit, int lp_customValue, int lp_modifyVa
 
 void gf_UpdateResourceUnitGroup () {
     // Automatic Variable Declarations
-    unitgroup autoCC37B905_g;
-    int autoCC37B905_u;
-    unit autoCC37B905_var;
-    unitgroup auto0DE81BC9_g;
-    int auto0DE81BC9_u;
-    unit auto0DE81BC9_var;
-    unitgroup autoAB6AAAE1_g;
-    int autoAB6AAAE1_u;
-    unit autoAB6AAAE1_var;
-    unitgroup autoF4597F97_g;
-    int autoF4597F97_u;
-    unit autoF4597F97_var;
-    unitgroup auto673AAA2F_g;
-    int auto673AAA2F_u;
-    unit auto673AAA2F_var;
-    unitgroup auto0408F3DF_g;
-    int auto0408F3DF_u;
-    unit auto0408F3DF_var;
-    unitgroup auto8EDDF1E4_g;
-    int auto8EDDF1E4_u;
-    unit auto8EDDF1E4_var;
-    unitgroup autoA45C16BE_g;
-    int autoA45C16BE_u;
-    unit autoA45C16BE_var;
-    unitgroup auto99F75D19_g;
-    int auto99F75D19_u;
-    unit auto99F75D19_var;
-    unitgroup auto4EE8F097_g;
-    int auto4EE8F097_u;
-    unit auto4EE8F097_var;
-    unitgroup autoF9FAC0A0_g;
-    int autoF9FAC0A0_u;
-    unit autoF9FAC0A0_var;
-    unitgroup auto603BEB4D_g;
-    int auto603BEB4D_u;
-    unit auto603BEB4D_var;
-    unitgroup auto5AFC75AD_g;
-    int auto5AFC75AD_u;
-    unit auto5AFC75AD_var;
-    unitgroup autoDD51570B_g;
-    int autoDD51570B_u;
-    unit autoDD51570B_var;
-    unitgroup auto43C012CA_g;
-    int auto43C012CA_u;
-    unit auto43C012CA_var;
+    unitgroup auto4AC7484B_g;
+    int auto4AC7484B_u;
+    unit auto4AC7484B_var;
+    string auto56C6C465_val;
 
     // Implementation
-    autoCC37B905_g = UnitGroup("Metal", c_playerAny, RegionEntireMap(), UnitFilter(0, 0, (1 << c_targetFilterMissile), (1 << (c_targetFilterDead - 32)) | (1 << (c_targetFilterHidden - 32))), 0);
-    autoCC37B905_u = UnitGroupCount(autoCC37B905_g, c_unitCountAll);
-    for (;; autoCC37B905_u -= 1) {
-        autoCC37B905_var = UnitGroupUnitFromEnd(autoCC37B905_g, autoCC37B905_u);
-        if (autoCC37B905_var == null) { break; }
-        UnitGroupAdd(gv_allResources, autoCC37B905_var);
-        gv_cUpkeepExpenses[FixedToInt(UnitGetCustomValue(autoCC37B905_var, 10))][0] += gv_metalMineUpkeep[0];
-    }
-    auto0DE81BC9_g = UnitGroup("MineI", c_playerAny, RegionEntireMap(), UnitFilter(0, 0, (1 << c_targetFilterMissile), (1 << (c_targetFilterDead - 32)) | (1 << (c_targetFilterHidden - 32))), 0);
-    auto0DE81BC9_u = UnitGroupCount(auto0DE81BC9_g, c_unitCountAll);
-    for (;; auto0DE81BC9_u -= 1) {
-        auto0DE81BC9_var = UnitGroupUnitFromEnd(auto0DE81BC9_g, auto0DE81BC9_u);
-        if (auto0DE81BC9_var == null) { break; }
-        UnitGroupAdd(gv_allResources, auto0DE81BC9_var);
-        gv_cUpkeepExpenses[FixedToInt(UnitGetCustomValue(auto0DE81BC9_var, 10))][0] += gv_metalMineUpkeep[1];
-    }
-    autoAB6AAAE1_g = UnitGroup("MineII", c_playerAny, RegionEntireMap(), UnitFilter(0, 0, (1 << c_targetFilterMissile), (1 << (c_targetFilterDead - 32)) | (1 << (c_targetFilterHidden - 32))), 0);
-    autoAB6AAAE1_u = UnitGroupCount(autoAB6AAAE1_g, c_unitCountAll);
-    for (;; autoAB6AAAE1_u -= 1) {
-        autoAB6AAAE1_var = UnitGroupUnitFromEnd(autoAB6AAAE1_g, autoAB6AAAE1_u);
-        if (autoAB6AAAE1_var == null) { break; }
-        UnitGroupAdd(gv_allResources, autoAB6AAAE1_var);
-        gv_cUpkeepExpenses[FixedToInt(UnitGetCustomValue(autoAB6AAAE1_var, 10))][0] += gv_metalMineUpkeep[2];
-    }
-    autoF4597F97_g = UnitGroup("MineIII", c_playerAny, RegionEntireMap(), UnitFilter(0, 0, (1 << c_targetFilterMissile), (1 << (c_targetFilterDead - 32)) | (1 << (c_targetFilterHidden - 32))), 0);
-    autoF4597F97_u = UnitGroupCount(autoF4597F97_g, c_unitCountAll);
-    for (;; autoF4597F97_u -= 1) {
-        autoF4597F97_var = UnitGroupUnitFromEnd(autoF4597F97_g, autoF4597F97_u);
-        if (autoF4597F97_var == null) { break; }
-        UnitGroupAdd(gv_allResources, autoF4597F97_var);
-        gv_cUpkeepExpenses[FixedToInt(UnitGetCustomValue(autoF4597F97_var, 10))][0] += gv_metalMineUpkeep[3];
-    }
-    auto673AAA2F_g = UnitGroup("MineIV", c_playerAny, RegionEntireMap(), UnitFilter(0, 0, (1 << c_targetFilterMissile), (1 << (c_targetFilterDead - 32)) | (1 << (c_targetFilterHidden - 32))), 0);
-    auto673AAA2F_u = UnitGroupCount(auto673AAA2F_g, c_unitCountAll);
-    for (;; auto673AAA2F_u -= 1) {
-        auto673AAA2F_var = UnitGroupUnitFromEnd(auto673AAA2F_g, auto673AAA2F_u);
-        if (auto673AAA2F_var == null) { break; }
-        UnitGroupAdd(gv_allResources, auto673AAA2F_var);
-        gv_cUpkeepExpenses[FixedToInt(UnitGetCustomValue(auto673AAA2F_var, 10))][0] += gv_metalMineUpkeep[4];
-    }
-    auto0408F3DF_g = UnitGroup("MineV", c_playerAny, RegionEntireMap(), UnitFilter(0, 0, (1 << c_targetFilterMissile), (1 << (c_targetFilterDead - 32)) | (1 << (c_targetFilterHidden - 32))), 0);
-    auto0408F3DF_u = UnitGroupCount(auto0408F3DF_g, c_unitCountAll);
-    for (;; auto0408F3DF_u -= 1) {
-        auto0408F3DF_var = UnitGroupUnitFromEnd(auto0408F3DF_g, auto0408F3DF_u);
-        if (auto0408F3DF_var == null) { break; }
-        UnitGroupAdd(gv_allResources, auto0408F3DF_var);
-        gv_cUpkeepExpenses[FixedToInt(UnitGetCustomValue(auto0408F3DF_var, 10))][0] += gv_metalMineUpkeep[5];
-    }
-    auto8EDDF1E4_g = UnitGroup("BoreholeI", c_playerAny, RegionEntireMap(), UnitFilter(0, 0, (1 << c_targetFilterMissile), (1 << (c_targetFilterDead - 32)) | (1 << (c_targetFilterHidden - 32))), 0);
-    auto8EDDF1E4_u = UnitGroupCount(auto8EDDF1E4_g, c_unitCountAll);
-    for (;; auto8EDDF1E4_u -= 1) {
-        auto8EDDF1E4_var = UnitGroupUnitFromEnd(auto8EDDF1E4_g, auto8EDDF1E4_u);
-        if (auto8EDDF1E4_var == null) { break; }
-        UnitGroupAdd(gv_allResources, auto8EDDF1E4_var);
-        gv_cUpkeepExpenses[FixedToInt(UnitGetCustomValue(auto8EDDF1E4_var, 10))][0] += gv_metalBoreholeUpkeep[1];
-    }
-    autoA45C16BE_g = UnitGroup("BoreholeII", c_playerAny, RegionEntireMap(), UnitFilter(0, 0, (1 << c_targetFilterMissile), (1 << (c_targetFilterDead - 32)) | (1 << (c_targetFilterHidden - 32))), 0);
-    autoA45C16BE_u = UnitGroupCount(autoA45C16BE_g, c_unitCountAll);
-    for (;; autoA45C16BE_u -= 1) {
-        autoA45C16BE_var = UnitGroupUnitFromEnd(autoA45C16BE_g, autoA45C16BE_u);
-        if (autoA45C16BE_var == null) { break; }
-        UnitGroupAdd(gv_allResources, autoA45C16BE_var);
-        gv_cUpkeepExpenses[FixedToInt(UnitGetCustomValue(autoA45C16BE_var, 10))][0] += gv_metalBoreholeUpkeep[2];
-    }
-    auto99F75D19_g = UnitGroup("BoreholeIII", c_playerAny, RegionEntireMap(), UnitFilter(0, 0, (1 << c_targetFilterMissile), (1 << (c_targetFilterDead - 32)) | (1 << (c_targetFilterHidden - 32))), 0);
-    auto99F75D19_u = UnitGroupCount(auto99F75D19_g, c_unitCountAll);
-    for (;; auto99F75D19_u -= 1) {
-        auto99F75D19_var = UnitGroupUnitFromEnd(auto99F75D19_g, auto99F75D19_u);
-        if (auto99F75D19_var == null) { break; }
-        UnitGroupAdd(gv_allResources, auto99F75D19_var);
-        gv_cUpkeepExpenses[FixedToInt(UnitGetCustomValue(auto99F75D19_var, 10))][0] += gv_metalBoreholeUpkeep[3];
-    }
-    auto4EE8F097_g = UnitGroup("BoreholeIV", c_playerAny, RegionEntireMap(), UnitFilter(0, 0, (1 << c_targetFilterMissile), (1 << (c_targetFilterDead - 32)) | (1 << (c_targetFilterHidden - 32))), 0);
-    auto4EE8F097_u = UnitGroupCount(auto4EE8F097_g, c_unitCountAll);
-    for (;; auto4EE8F097_u -= 1) {
-        auto4EE8F097_var = UnitGroupUnitFromEnd(auto4EE8F097_g, auto4EE8F097_u);
-        if (auto4EE8F097_var == null) { break; }
-        UnitGroupAdd(gv_allResources, auto4EE8F097_var);
-        gv_cUpkeepExpenses[FixedToInt(UnitGetCustomValue(auto4EE8F097_var, 10))][0] += gv_metalBoreholeUpkeep[4];
-    }
-    autoF9FAC0A0_g = UnitGroup("BoreholeV", c_playerAny, RegionEntireMap(), UnitFilter(0, 0, (1 << c_targetFilterMissile), (1 << (c_targetFilterDead - 32)) | (1 << (c_targetFilterHidden - 32))), 0);
-    autoF9FAC0A0_u = UnitGroupCount(autoF9FAC0A0_g, c_unitCountAll);
-    for (;; autoF9FAC0A0_u -= 1) {
-        autoF9FAC0A0_var = UnitGroupUnitFromEnd(autoF9FAC0A0_g, autoF9FAC0A0_u);
-        if (autoF9FAC0A0_var == null) { break; }
-        UnitGroupAdd(gv_allResources, autoF9FAC0A0_var);
-        gv_cUpkeepExpenses[FixedToInt(UnitGetCustomValue(autoF9FAC0A0_var, 10))][0] += gv_metalBoreholeUpkeep[5];
-    }
-    auto603BEB4D_g = UnitGroup("Oil", c_playerAny, RegionEntireMap(), UnitFilter(0, 0, (1 << c_targetFilterMissile), (1 << (c_targetFilterDead - 32)) | (1 << (c_targetFilterHidden - 32))), 0);
-    auto603BEB4D_u = UnitGroupCount(auto603BEB4D_g, c_unitCountAll);
-    for (;; auto603BEB4D_u -= 1) {
-        auto603BEB4D_var = UnitGroupUnitFromEnd(auto603BEB4D_g, auto603BEB4D_u);
-        if (auto603BEB4D_var == null) { break; }
-        UnitGroupAdd(gv_allResources, auto603BEB4D_var);
-        UnitSetCustomValue(auto603BEB4D_var, 16, 3.0);
-        gv_cUpkeepExpenses[FixedToInt(UnitGetCustomValue(auto603BEB4D_var, 10))][0] += gv_oilWellUpkeep[0];
-    }
-    auto5AFC75AD_g = UnitGroup("OilWellI", c_playerAny, RegionEntireMap(), UnitFilter(0, 0, (1 << c_targetFilterMissile), (1 << (c_targetFilterDead - 32)) | (1 << (c_targetFilterHidden - 32))), 0);
-    auto5AFC75AD_u = UnitGroupCount(auto5AFC75AD_g, c_unitCountAll);
-    for (;; auto5AFC75AD_u -= 1) {
-        auto5AFC75AD_var = UnitGroupUnitFromEnd(auto5AFC75AD_g, auto5AFC75AD_u);
-        if (auto5AFC75AD_var == null) { break; }
-        UnitGroupAdd(gv_allResources, auto5AFC75AD_var);
-        UnitSetCustomValue(auto5AFC75AD_var, 16, 3.0);
-        gv_cUpkeepExpenses[FixedToInt(UnitGetCustomValue(auto5AFC75AD_var, 10))][0] += gv_oilWellUpkeep[1];
-    }
-    autoDD51570B_g = UnitGroup("OilWellII", c_playerAny, RegionEntireMap(), UnitFilter(0, 0, (1 << c_targetFilterMissile), (1 << (c_targetFilterDead - 32)) | (1 << (c_targetFilterHidden - 32))), 0);
-    autoDD51570B_u = UnitGroupCount(autoDD51570B_g, c_unitCountAll);
-    for (;; autoDD51570B_u -= 1) {
-        autoDD51570B_var = UnitGroupUnitFromEnd(autoDD51570B_g, autoDD51570B_u);
-        if (autoDD51570B_var == null) { break; }
-        UnitGroupAdd(gv_allResources, autoDD51570B_var);
-        UnitSetCustomValue(autoDD51570B_var, 16, 3.0);
-        gv_cUpkeepExpenses[FixedToInt(UnitGetCustomValue(autoDD51570B_var, 10))][0] += gv_oilWellUpkeep[2];
-    }
-    auto43C012CA_g = gv_allResources;
-    auto43C012CA_u = UnitGroupCount(auto43C012CA_g, c_unitCountAll);
-    for (;; auto43C012CA_u -= 1) {
-        auto43C012CA_var = UnitGroupUnitFromEnd(auto43C012CA_g, auto43C012CA_u);
-        if (auto43C012CA_var == null) { break; }
-        gf_NoNegativeCustomValues(auto43C012CA_var, 0, 64);
-        if ((UnitGetOwner(auto43C012CA_var) == 12)) {
-            UnitSetOwner(auto43C012CA_var, 0, true);
+    auto4AC7484B_g = UnitGroup(null, c_playerAny, RegionEntireMap(), UnitFilter((1 << c_targetFilterMechanical) | (1 << c_targetFilterStructure), 0, (1 << c_targetFilterMissile), (1 << (c_targetFilterDead - 32)) | (1 << (c_targetFilterHidden - 32))), 0);
+    auto4AC7484B_u = UnitGroupCount(auto4AC7484B_g, c_unitCountAll);
+    for (;; auto4AC7484B_u -= 1) {
+        auto4AC7484B_var = UnitGroupUnitFromEnd(auto4AC7484B_g, auto4AC7484B_u);
+        if (auto4AC7484B_var == null) { break; }
+        auto56C6C465_val = UnitGetType(auto4AC7484B_var);
+        if (auto56C6C465_val == "Metal") {
+            gv_cUpkeepExpenses[FixedToInt(UnitGetCustomValue(auto4AC7484B_var, 10))][0] += gv_metalMineUpkeep[0];
+            UnitGroupAdd(gv_allResources, auto4AC7484B_var);
+        }
+        else if (auto56C6C465_val == "MineI") {
+            gv_cUpkeepExpenses[FixedToInt(UnitGetCustomValue(auto4AC7484B_var, 10))][0] += gv_metalMineUpkeep[1];
+            UnitGroupAdd(gv_allResources, auto4AC7484B_var);
+        }
+        else if (auto56C6C465_val == "MineII") {
+            gv_cUpkeepExpenses[FixedToInt(UnitGetCustomValue(auto4AC7484B_var, 10))][0] += gv_metalMineUpkeep[2];
+            UnitGroupAdd(gv_allResources, auto4AC7484B_var);
+        }
+        else if (auto56C6C465_val == "MineIII") {
+            gv_cUpkeepExpenses[FixedToInt(UnitGetCustomValue(auto4AC7484B_var, 10))][0] += gv_metalMineUpkeep[3];
+            UnitGroupAdd(gv_allResources, auto4AC7484B_var);
+        }
+        else if (auto56C6C465_val == "MineIV") {
+            gv_cUpkeepExpenses[FixedToInt(UnitGetCustomValue(auto4AC7484B_var, 10))][0] += gv_metalMineUpkeep[4];
+            UnitGroupAdd(gv_allResources, auto4AC7484B_var);
+        }
+        else if (auto56C6C465_val == "MineV") {
+            gv_cUpkeepExpenses[FixedToInt(UnitGetCustomValue(auto4AC7484B_var, 10))][0] += gv_metalMineUpkeep[5];
+            UnitGroupAdd(gv_allResources, auto4AC7484B_var);
+        }
+        else if (auto56C6C465_val == "BoreholeI") {
+            gv_cUpkeepExpenses[FixedToInt(UnitGetCustomValue(auto4AC7484B_var, 10))][0] += gv_metalBoreholeUpkeep[1];
+            UnitGroupAdd(gv_allResources, auto4AC7484B_var);
+        }
+        else if (auto56C6C465_val == "BoreholeII") {
+            gv_cUpkeepExpenses[FixedToInt(UnitGetCustomValue(auto4AC7484B_var, 10))][0] += gv_metalBoreholeUpkeep[2];
+            UnitGroupAdd(gv_allResources, auto4AC7484B_var);
+        }
+        else if (auto56C6C465_val == "BoreholeIII") {
+            gv_cUpkeepExpenses[FixedToInt(UnitGetCustomValue(auto4AC7484B_var, 10))][0] += gv_metalBoreholeUpkeep[3];
+            UnitGroupAdd(gv_allResources, auto4AC7484B_var);
+        }
+        else if (auto56C6C465_val == "BoreholeIV") {
+            gv_cUpkeepExpenses[FixedToInt(UnitGetCustomValue(auto4AC7484B_var, 10))][0] += gv_metalBoreholeUpkeep[4];
+            UnitGroupAdd(gv_allResources, auto4AC7484B_var);
+        }
+        else if (auto56C6C465_val == "BoreholeV") {
+            gv_cUpkeepExpenses[FixedToInt(UnitGetCustomValue(auto4AC7484B_var, 10))][0] += gv_metalBoreholeUpkeep[5];
+            UnitGroupAdd(gv_allResources, auto4AC7484B_var);
+        }
+        else if (auto56C6C465_val == "Oil") {
+            gv_cUpkeepExpenses[FixedToInt(UnitGetCustomValue(auto4AC7484B_var, 10))][0] += gv_oilWellUpkeep[0];
+            UnitSetCustomValue(auto4AC7484B_var, 16, 3.0);
+            UnitGroupAdd(gv_allResources, auto4AC7484B_var);
+        }
+        else if (auto56C6C465_val == "OilWellI") {
+            gv_cUpkeepExpenses[FixedToInt(UnitGetCustomValue(auto4AC7484B_var, 10))][0] += gv_oilWellUpkeep[1];
+            UnitSetCustomValue(auto4AC7484B_var, 16, 3.0);
+            UnitGroupAdd(gv_allResources, auto4AC7484B_var);
+        }
+        else if (auto56C6C465_val == "OilWellII") {
+            gv_cUpkeepExpenses[FixedToInt(UnitGetCustomValue(auto4AC7484B_var, 10))][0] += gv_oilWellUpkeep[2];
+            UnitSetCustomValue(auto4AC7484B_var, 16, 3.0);
+            UnitGroupAdd(gv_allResources, auto4AC7484B_var);
+        }
+        else {
+        }
+        if ((UnitGetOwner(auto4AC7484B_var) == 12)) {
+            UnitSetOwner(auto4AC7484B_var, 0, true);
         }
 
+        gf_NoNegativeCustomValues(auto4AC7484B_var, 0, 64);
     }
 }
 
@@ -9294,9 +9353,6 @@ void gf_SetPricesGetSuppliesGetMeanGDPRotFood (int lp_resourceType) {
     unit autoEC9BC642_var;
     playergroup auto518F13FE_g;
     int auto518F13FE_var;
-    unitgroup autoD0834452_g;
-    int autoD0834452_u;
-    unit autoD0834452_var;
     unitgroup autoBA2083E8_g;
     int autoBA2083E8_u;
     unit autoBA2083E8_var;
@@ -9317,18 +9373,6 @@ void gf_SetPricesGetSuppliesGetMeanGDPRotFood (int lp_resourceType) {
             gv_cDemand[auto518F13FE_var][1] = 0;
             gv_cDemand[auto518F13FE_var][2] = 0;
             gv_cDemand[auto518F13FE_var][3] = 0;
-        }
-        autoD0834452_g = UnitGroup("CorporateHeadquarters", c_playerAny, RegionEntireMap(), UnitFilter(0, 0, (1 << c_targetFilterMissile), (1 << (c_targetFilterDead - 32)) | (1 << (c_targetFilterHidden - 32))), 0);
-        autoD0834452_u = UnitGroupCount(autoD0834452_g, c_unitCountAll);
-        for (;; autoD0834452_u -= 1) {
-            autoD0834452_var = UnitGroupUnitFromEnd(autoD0834452_g, autoD0834452_u);
-            if (autoD0834452_var == null) { break; }
-            gf_RotFood(autoD0834452_var);
-            gf_RefreshResourceActualDemand(autoD0834452_var, true);
-            gf_GetMeanGDPofDemanders(autoD0834452_var);
-            gv_cSupply[UnitGetOwner(autoD0834452_var)][1] += gf_GetUnitCustomValue(autoD0834452_var, 12);
-            gv_cDemand[UnitGetOwner(autoD0834452_var)][1] += gf_GetUnitCustomValue(autoD0834452_var, 13);
-            gf_SetLocalResourcePrice(autoD0834452_var);
         }
         autoBA2083E8_g = gv_allResources;
         autoBA2083E8_u = UnitGroupCount(autoBA2083E8_g, c_unitCountAll);
@@ -9485,17 +9529,15 @@ void gf_RefreshCorpUI (int lp_player) {
         for ( ; ( (auto951706A8_ai >= 0 && lv_dialogitem <= auto951706A8_ae) || (auto951706A8_ai < 0 && lv_dialogitem >= auto951706A8_ae) ) ; lv_dialogitem += auto951706A8_ai ) {
             DialogControlSetEnabled(gv_corporationDialogItems[lv_dialogitem], PlayerGroupSingle(lp_player), true);
         }
-        libNtve_gf_SetDialogItemTooltip(gv_corporationDialogItems[1], (((((((StringExternal("Param/Value/EF29BD66") + gf_MakeUIPresentable(gv_cMilitary[lv_selectedCorp][1])) + StringExternal("Param/Value/9A882DF1")) + gf_MakeUIPresentable(gv_cExpansion[lv_selectedCorp][1])) + StringExternal("Param/Value/6FE24BCF")) + gf_MakeUIPresentable(gv_cInfrastructure[lv_selectedCorp][1])) + StringExternal("Param/Value/0EF590E5")) + ((((gf_MakeUIPresentable(gv_cResearch[lv_selectedCorp][1]) + StringExternal("Param/Value/CFD7BFB7")) + gf_MakeUIPresentable(gv_cImports[lv_selectedCorp][1][1])) + ((((StringExternal("Param/Value/595A747E") + gf_MakeUIPresentable(gv_cImports[lv_selectedCorp][2][1])) + StringExternal("Param/Value/423A6316")) + gf_MakeUIPresentable(gv_cImports[lv_selectedCorp][3][1])) + StringExternal("Param/Value/5BFF8F58"))) + (gf_MakeUIPresentable(gv_cSelling[lv_selectedCorp][1]) + ((StringExternal("Param/Value/DEF4BA21") + StringToText(gf_GetMonth(lv_selectedCorp))) + StringToText(""))))), PlayerGroupSingle(lp_player));
+        libNtve_gf_SetDialogItemTooltip(gv_corporationDialogItems[1], (((((((StringExternal("Param/Value/EF29BD66") + gf_MakeUIPresentable(gv_cMilitary[lv_selectedCorp][1])) + StringExternal("Param/Value/9A882DF1")) + gf_MakeUIPresentable(gv_cExpansion[lv_selectedCorp][1])) + StringExternal("Param/Value/6FE24BCF")) + gf_MakeUIPresentable(gv_cInfrastructure[lv_selectedCorp][1])) + StringExternal("Param/Value/0EF590E5")) + ((((gf_MakeUIPresentable(gv_cResearch[lv_selectedCorp][1]) + StringToText("")) + StringToText("")) + ((((StringExternal("Param/Value/595A747E") + gf_MakeUIPresentable(gv_cImports[lv_selectedCorp][2][1])) + StringExternal("Param/Value/423A6316")) + gf_MakeUIPresentable(gv_cImports[lv_selectedCorp][3][1])) + StringExternal("Param/Value/5BFF8F58"))) + (gf_MakeUIPresentable(gv_cSelling[lv_selectedCorp][1]) + ((StringExternal("Param/Value/DEF4BA21") + StringToText(gf_GetMonth(lv_selectedCorp))) + StringToText(""))))), PlayerGroupSingle(lp_player));
         lv_month = 1;
         for ( ; ( (autoB2FBC4DD_ai >= 0 && lv_month <= autoB2FBC4DD_ae) || (autoB2FBC4DD_ai < 0 && lv_month >= autoB2FBC4DD_ae) ) ; lv_month += autoB2FBC4DD_ai ) {
-            lv_aExportIncome[1] += gv_cExportIncome[lv_selectedCorp][1][lv_month];
             lv_aExportIncome[2] += gv_cExportIncome[lv_selectedCorp][2][lv_month];
             lv_aExportIncome[3] += gv_cExportIncome[lv_selectedCorp][3][lv_month];
             lv_aGrantsIncome += gv_cGrantsIncome[lv_selectedCorp][lv_month];
             lv_aTotalIncome += gv_cTotalIncome[lv_selectedCorp][lv_month];
             lv_aUpkeepExpenses += gv_cUpkeepExpenses[lv_selectedCorp][lv_month];
             lv_aMilitaryExpenses += gv_cMilitaryUpkeepExpenses[lv_selectedCorp][lv_month];
-            lv_aImportExpenses[1] += gv_cImportExpenses[lv_selectedCorp][1][lv_month];
             lv_aImportExpenses[2] += gv_cImportExpenses[lv_selectedCorp][2][lv_month];
             lv_aImportExpenses[3] += gv_cImportExpenses[lv_selectedCorp][3][lv_month];
             lv_aInterestExpenses += gv_cInterestExpenses[lv_selectedCorp][lv_month];
@@ -9532,14 +9574,12 @@ void gf_RefreshCorpUI (int lp_player) {
     lv_foreignShares -= gv_stockOwned[lp_player][lv_selectedCorp];
     libNtve_gf_SetDialogItemText(gv_corporationDialogItems[1], StringToText(gv_corpName[lv_selectedCorp]), PlayerGroupSingle(lp_player));
     libNtve_gf_SetDialogItemColor(gv_corporationDialogItems[1], libNtve_gf_ConvertPlayerColorToColor(PlayerGetColorIndex(lv_selectedCorp, false)), PlayerGroupSingle(lp_player));
-    libNtve_gf_SetDialogItemText(gv_corporationDialogItems[2], gf_MakeUIPresentable(lv_aExportIncome[1]), PlayerGroupSingle(lp_player));
     libNtve_gf_SetDialogItemText(gv_corporationDialogItems[3], gf_MakeUIPresentable(lv_aExportIncome[2]), PlayerGroupSingle(lp_player));
     libNtve_gf_SetDialogItemText(gv_corporationDialogItems[4], gf_MakeUIPresentable(lv_aExportIncome[3]), PlayerGroupSingle(lp_player));
     libNtve_gf_SetDialogItemText(gv_corporationDialogItems[5], gf_MakeUIPresentable(lv_aGrantsIncome), PlayerGroupSingle(lp_player));
     libNtve_gf_SetDialogItemText(gv_corporationDialogItems[6], gf_MakeUIPresentable(lv_aTotalIncome), PlayerGroupSingle(lp_player));
     libNtve_gf_SetDialogItemText(gv_corporationDialogItems[7], gf_MakeUIPresentable((lv_aUpkeepExpenses + lv_aMilitaryExpenses)), PlayerGroupSingle(lp_player));
     libNtve_gf_SetDialogItemTooltip(gv_corporationDialogItems[7], ((StringExternal("Param/Value/A80DA7B8") + gf_MakeUIPresentable(lv_aUpkeepExpenses)) + (StringExternal("Param/Value/67DE7761") + gf_MakeUIPresentable(lv_aMilitaryExpenses))), PlayerGroupSingle(lp_player));
-    libNtve_gf_SetDialogItemText(gv_corporationDialogItems[8], gf_MakeUIPresentable(lv_aImportExpenses[1]), PlayerGroupSingle(lp_player));
     libNtve_gf_SetDialogItemText(gv_corporationDialogItems[9], gf_MakeUIPresentable(lv_aImportExpenses[2]), PlayerGroupSingle(lp_player));
     libNtve_gf_SetDialogItemText(gv_corporationDialogItems[10], gf_MakeUIPresentable(lv_aImportExpenses[3]), PlayerGroupSingle(lp_player));
     libNtve_gf_SetDialogItemText(gv_corporationDialogItems[11], gf_MakeUIPresentable(lv_aInterestExpenses), PlayerGroupSingle(lp_player));
@@ -9547,13 +9587,10 @@ void gf_RefreshCorpUI (int lp_player) {
     libNtve_gf_SetDialogItemText(gv_corporationDialogItems[13], gf_MakeUIPresentable(lv_aDividendExpenses), PlayerGroupSingle(lp_player));
     libNtve_gf_SetDialogItemText(gv_corporationDialogItems[14], gf_MakeUIPresentable(lv_aTotalExpenses), PlayerGroupSingle(lp_player));
     libNtve_gf_SetDialogItemText(gv_corporationDialogItems[15], gf_MakeUIPresentable(lv_aRevenue), PlayerGroupSingle(lp_player));
-    libNtve_gf_SetDialogItemText(gv_corporationDialogItems[16], gf_MakeUIPresentable(gv_aggregateResourcePrice[lv_selectedCorp][1]), PlayerGroupSingle(lp_player));
     libNtve_gf_SetDialogItemText(gv_corporationDialogItems[17], gf_MakeUIPresentable(gv_aggregateResourcePrice[lv_selectedCorp][2]), PlayerGroupSingle(lp_player));
     libNtve_gf_SetDialogItemText(gv_corporationDialogItems[18], gf_MakeUIPresentable(gv_aggregateResourcePrice[lv_selectedCorp][3]), PlayerGroupSingle(lp_player));
-    libNtve_gf_SetDialogItemText(gv_corporationDialogItems[19], gf_MakeUIPresentable(gv_cSupply[lv_selectedCorp][1]), PlayerGroupSingle(lp_player));
     libNtve_gf_SetDialogItemText(gv_corporationDialogItems[20], gf_MakeUIPresentable(gv_cSupply[lv_selectedCorp][2]), PlayerGroupSingle(lp_player));
     libNtve_gf_SetDialogItemText(gv_corporationDialogItems[21], gf_MakeUIPresentable(gv_cSupply[lv_selectedCorp][3]), PlayerGroupSingle(lp_player));
-    libNtve_gf_SetDialogItemText(gv_corporationDialogItems[22], gf_MakeUIPresentable(gv_cDemand[lv_selectedCorp][1]), PlayerGroupSingle(lp_player));
     libNtve_gf_SetDialogItemText(gv_corporationDialogItems[23], gf_MakeUIPresentable(gv_cDemand[lv_selectedCorp][2]), PlayerGroupSingle(lp_player));
     libNtve_gf_SetDialogItemText(gv_corporationDialogItems[24], gf_MakeUIPresentable(gv_cDemand[lv_selectedCorp][3]), PlayerGroupSingle(lp_player));
     libNtve_gf_SetDialogItemTooltip(gv_corporationDialogItems[25], (StringExternal("Param/Value/DE6004D6") + gf_MakeUIPresentable(lv_foreignShares)), PlayerGroupSingle(lp_player));
@@ -9620,6 +9657,7 @@ void gf_ResourceCollection () {
     unitgroup auto9F9A1D3F_g;
     int auto9F9A1D3F_u;
     unit auto9F9A1D3F_var;
+    string auto3533EBED_val;
 
     // Variable Initialization
     lv_como = 2;
@@ -9641,92 +9679,102 @@ void gf_ResourceCollection () {
         auto9F9A1D3F_var = UnitGroupUnitFromEnd(auto9F9A1D3F_g, auto9F9A1D3F_u);
         if (auto9F9A1D3F_var == null) { break; }
         if ((UnitGetOwner(auto9F9A1D3F_var) < 8) && (UnitGetOwner(auto9F9A1D3F_var) != 0)) {
-            if ((UnitGetCustomValue(auto9F9A1D3F_var, 10) > 0.0)) {
-                UnitGroupAdd(gv_corpResources[FixedToInt(UnitGetCustomValue(auto9F9A1D3F_var, 10))], auto9F9A1D3F_var);
-                lv_resourceCollected = 0;
-                lv_como = 2;
-                lv_corporation = FixedToInt(UnitGetCustomValue(auto9F9A1D3F_var, 10));
-                if (((UnitGetType(auto9F9A1D3F_var) == "MineI") || (UnitGetType(auto9F9A1D3F_var) == "MineII") || (UnitGetType(auto9F9A1D3F_var) == "MineIII") || (UnitGetType(auto9F9A1D3F_var) == "MineIV") || (UnitGetType(auto9F9A1D3F_var) == "MineV"))) {
-                    if ((UnitGetType(auto9F9A1D3F_var) == "MineI")) {
-                        lv_resourceCollected = 10;
-                    }
+            UnitGroupAdd(gv_corpResources[FixedToInt(UnitGetCustomValue(auto9F9A1D3F_var, 10))], auto9F9A1D3F_var);
+            lv_resourceCollected = 0;
+            lv_como = 2;
+            lv_corporation = FixedToInt(UnitGetCustomValue(auto9F9A1D3F_var, 10));
+            auto3533EBED_val = UnitGetType(auto9F9A1D3F_var);
+            if (auto3533EBED_val == "MineI") {
+                lv_resourceCollected = 10;
+            }
+            else if (auto3533EBED_val == "MineII") {
+                lv_resourceCollected = 20;
+            }
+            else if (auto3533EBED_val == "MineIII") {
+                lv_resourceCollected = 30;
+            }
+            else if (auto3533EBED_val == "MineIV") {
+                lv_resourceCollected = 40;
+            }
+            else if (auto3533EBED_val == "MineV") {
+                lv_resourceCollected = 50;
+            }
+            else if (auto3533EBED_val == "BoreholeI") {
+                lv_resourceCollected = 100;
+            }
+            else if (auto3533EBED_val == "BoreholeII") {
+                lv_resourceCollected = 200;
+            }
+            else if (auto3533EBED_val == "BoreholeIII") {
+                lv_resourceCollected = 300;
+            }
+            else if (auto3533EBED_val == "BoreholeIV") {
+                lv_resourceCollected = 400;
+            }
+            else if (auto3533EBED_val == "BoreholeV") {
+                lv_resourceCollected = 500;
+            }
+            else if (auto3533EBED_val == "Oil") {
+            }
+            else if (auto3533EBED_val == "OilWellI") {
+            }
+            else if (auto3533EBED_val == "OilWellII") {
+            }
+            else {
+            }
+            if ((RegionContainsPoint(RegionFromId(67), UnitGetPosition(auto9F9A1D3F_var)) == true)) {
+                lv_resourceCollected *= 2;
+            }
 
-                    if ((UnitGetType(auto9F9A1D3F_var) == "MineII")) {
-                        lv_resourceCollected = 20;
-                    }
-
-                    if ((UnitGetType(auto9F9A1D3F_var) == "MineIII")) {
-                        lv_resourceCollected = 30;
-                    }
-
-                    if ((UnitGetType(auto9F9A1D3F_var) == "MineIV")) {
-                        lv_resourceCollected = 40;
-                    }
-
-                    if ((UnitGetType(auto9F9A1D3F_var) == "MineV")) {
-                        lv_resourceCollected = 50;
-                    }
-
+            lv_resourceCollected *= gv_metalIncomeModifier[UnitGetOwner(auto9F9A1D3F_var)];
+            if ((UnitGetType(auto9F9A1D3F_var) == "OilWellI")) {
+                lv_resourceCollected = 30;
+                lv_como = 3;
+                lv_resourceCollected *= gv_oilIncomeModifier[UnitGetOwner(auto9F9A1D3F_var)];
+                if ((RegionContainsPoint(RegionFromId(66), UnitGetPosition(auto9F9A1D3F_var)) == true)) {
+                    lv_resourceCollected *= 5;
                 }
 
-                if (((UnitGetType(auto9F9A1D3F_var) == "BoreholeI") || (UnitGetType(auto9F9A1D3F_var) == "BoreholeII") || (UnitGetType(auto9F9A1D3F_var) == "BoreholeIII") || (UnitGetType(auto9F9A1D3F_var) == "BoreholeIV") || (UnitGetType(auto9F9A1D3F_var) == "BoreholeV"))) {
-                    if ((UnitGetType(auto9F9A1D3F_var) == "BoreholeI")) {
-                        lv_resourceCollected = 100;
-                    }
+            }
 
-                    if ((UnitGetType(auto9F9A1D3F_var) == "BoreholeII")) {
-                        lv_resourceCollected = 200;
-                    }
-
-                    if ((UnitGetType(auto9F9A1D3F_var) == "BoreholeIII")) {
-                        lv_resourceCollected = 300;
-                    }
-
-                    if ((UnitGetType(auto9F9A1D3F_var) == "BoreholeIV")) {
-                        lv_resourceCollected = 400;
-                    }
-
-                    if ((UnitGetType(auto9F9A1D3F_var) == "BoreholeV")) {
-                        lv_resourceCollected = 500;
-                    }
-
+            if ((UnitGetType(auto9F9A1D3F_var) == "OilWellII")) {
+                lv_resourceCollected = 60;
+                lv_como = 3;
+                lv_resourceCollected *= gv_oilIncomeModifier[UnitGetOwner(auto9F9A1D3F_var)];
+                if ((RegionContainsPoint(RegionFromId(66), UnitGetPosition(auto9F9A1D3F_var)) == true)) {
+                    lv_resourceCollected *= 5;
                 }
 
-                if ((RegionContainsPoint(RegionFromId(67), UnitGetPosition(auto9F9A1D3F_var)) == true)) {
-                    lv_resourceCollected *= 2;
+            }
+
+            lv_resourceCollected /= 100;
+            lv_resourceCollected += ((lv_resourceCollected * gv_cUpgradeLevels[FixedToInt(lv_corporation)]) / 100);
+            if ((UnitGetType(auto9F9A1D3F_var) != "Metal") && (UnitGetType(auto9F9A1D3F_var) != "Oil") && (lv_toOverlord < 3)) {
+                lv_toOverlord = 2;
+            }
+
+            if ((gv_nationalized[lv_corporation] == true) && (UnitGetCustomValue(auto9F9A1D3F_var, 10) > 0.0) && (UnitGetOwner(auto9F9A1D3F_var) == lv_corporation)) {
+                lv_toOverlord = libNtve_gf_ArithmeticIntClamp(FixedToInt((lv_resourceCollected * gv_resourceShare[UnitGetOwner(auto9F9A1D3F_var)])), 0, 999999);
+                lv_toOverlord /= 100;
+                if ((gv_deadCorp[UnitGetOwner(auto9F9A1D3F_var)] == true)) {
+                    gf_CreateConvoy(UnitGetPosition(auto9F9A1D3F_var), UnitGetOwner(auto9F9A1D3F_var), lv_como, (lv_toOverlord * 1), UnitGetOwner(auto9F9A1D3F_var), UnitGetOwner(auto9F9A1D3F_var));
                 }
-
-                lv_resourceCollected *= gv_metalIncomeModifier[UnitGetOwner(auto9F9A1D3F_var)];
-                if ((UnitGetType(auto9F9A1D3F_var) == "OilWellI")) {
-                    lv_resourceCollected = 30;
-                    lv_como = 3;
-                    lv_resourceCollected *= gv_oilIncomeModifier[UnitGetOwner(auto9F9A1D3F_var)];
-                    if ((RegionContainsPoint(RegionFromId(66), UnitGetPosition(auto9F9A1D3F_var)) == true)) {
-                        lv_resourceCollected *= 5;
-                    }
-
-                }
-
-                if ((UnitGetType(auto9F9A1D3F_var) == "OilWellII")) {
-                    lv_resourceCollected = 60;
-                    lv_como = 3;
-                    lv_resourceCollected *= gv_oilIncomeModifier[UnitGetOwner(auto9F9A1D3F_var)];
-                    if ((RegionContainsPoint(RegionFromId(66), UnitGetPosition(auto9F9A1D3F_var)) == true)) {
-                        lv_resourceCollected *= 5;
-                    }
-
-                }
-
-                lv_resourceCollected /= 100;
-                lv_resourceCollected += ((lv_resourceCollected * gv_cUpgradeLevels[FixedToInt(lv_corporation)]) / 100);
-                if ((gv_nationalized[lv_corporation] == true) && (UnitGetOwner(auto9F9A1D3F_var) == lv_corporation)) {
-                    lv_toOverlord = libNtve_gf_ArithmeticIntClamp(FixedToInt((lv_resourceCollected * gv_resourceShare[UnitGetOwner(auto9F9A1D3F_var)])), 0, 999999);
-                    lv_toOverlord /= 100;
-                    if ((!((UnitGetType(auto9F9A1D3F_var) == "Metal") || (UnitGetType(auto9F9A1D3F_var) == "Oil"))) && (lv_toOverlord < 3)) {
-                        lv_toOverlord = 2;
-                    }
-
+                else {
                     gf_CreateConvoy(UnitGetPosition(auto9F9A1D3F_var), lv_corporation, lv_como, (lv_toOverlord * 1), (lv_corporation + 7), UnitGetOwner(auto9F9A1D3F_var));
+                }
+                if ((gf_GetFuelCostsOil(UnitGetOwner(auto9F9A1D3F_var), UnitGetPosition(auto9F9A1D3F_var), gf_GetCapitolLocation(UnitGetOwner(auto9F9A1D3F_var))) > gv_oil[UnitGetOwner(auto9F9A1D3F_var)])) {
+                    gv_importExpenses[UnitGetOwner(auto9F9A1D3F_var)][0][3] += gf_GetFuelCostsMonetary(UnitGetOwner(auto9F9A1D3F_var), UnitGetPosition(auto9F9A1D3F_var), gf_GetCapitolLocation(UnitGetOwner(auto9F9A1D3F_var)), true);
+                }
+                else {
+                    gv_oilConsumption[UnitGetOwner(auto9F9A1D3F_var)][0] += gf_GetFuelCostsOil(UnitGetOwner(auto9F9A1D3F_var), gf_GetCapitolLocation(UnitGetOwner(auto9F9A1D3F_var)), UnitGetPosition(auto9F9A1D3F_var));
+                }
+            }
+            else {
+                lv_toOverlord = (lv_resourceCollected / 10);
+                gf_CreateConvoy(UnitGetPosition(auto9F9A1D3F_var), UnitGetOwner(auto9F9A1D3F_var), lv_como, (lv_toOverlord * 1), (lv_corporation + 7), UnitGetOwner(auto9F9A1D3F_var));
+                if ((lv_como == 3)) {
+                }
+                else {
                     if ((gf_GetFuelCostsOil(UnitGetOwner(auto9F9A1D3F_var), UnitGetPosition(auto9F9A1D3F_var), gf_GetCapitolLocation(UnitGetOwner(auto9F9A1D3F_var))) > gv_oil[UnitGetOwner(auto9F9A1D3F_var)])) {
                         gv_importExpenses[UnitGetOwner(auto9F9A1D3F_var)][0][3] += gf_GetFuelCostsMonetary(UnitGetOwner(auto9F9A1D3F_var), UnitGetPosition(auto9F9A1D3F_var), gf_GetCapitolLocation(UnitGetOwner(auto9F9A1D3F_var)), true);
                     }
@@ -9734,123 +9782,24 @@ void gf_ResourceCollection () {
                         gv_oilConsumption[UnitGetOwner(auto9F9A1D3F_var)][0] += gf_GetFuelCostsOil(UnitGetOwner(auto9F9A1D3F_var), gf_GetCapitolLocation(UnitGetOwner(auto9F9A1D3F_var)), UnitGetPosition(auto9F9A1D3F_var));
                     }
                 }
-                else {
-                    lv_toOverlord = (lv_resourceCollected / 10);
-                    if ((UnitGetType(auto9F9A1D3F_var) != "Metal") && (UnitGetType(auto9F9A1D3F_var) != "Oil") && (lv_toOverlord < 3)) {
-                        lv_toOverlord = 2;
-                    }
-
-                    gf_CreateConvoy(UnitGetPosition(auto9F9A1D3F_var), UnitGetOwner(auto9F9A1D3F_var), lv_como, (lv_toOverlord * 1), (lv_corporation + 7), UnitGetOwner(auto9F9A1D3F_var));
-                    if ((lv_como == 3)) {
-                    }
-                    else {
-                        if ((gf_GetFuelCostsOil(UnitGetOwner(auto9F9A1D3F_var), UnitGetPosition(auto9F9A1D3F_var), gf_GetCapitolLocation(UnitGetOwner(auto9F9A1D3F_var))) > gv_oil[UnitGetOwner(auto9F9A1D3F_var)])) {
-                            gv_importExpenses[UnitGetOwner(auto9F9A1D3F_var)][0][3] += gf_GetFuelCostsMonetary(UnitGetOwner(auto9F9A1D3F_var), UnitGetPosition(auto9F9A1D3F_var), gf_GetCapitolLocation(UnitGetOwner(auto9F9A1D3F_var)), true);
-                        }
-                        else {
-                            gv_oilConsumption[UnitGetOwner(auto9F9A1D3F_var)][0] += gf_GetFuelCostsOil(UnitGetOwner(auto9F9A1D3F_var), gf_GetCapitolLocation(UnitGetOwner(auto9F9A1D3F_var)), UnitGetPosition(auto9F9A1D3F_var));
-                        }
-                    }
-                }
-                lv_resourceCollected -= lv_toOverlord;
-                lv_resourceCollected = libNtve_gf_ArithmeticIntClamp(lv_resourceCollected, 1, 500000);
-                UnitSetCustomValue(auto9F9A1D3F_var, 11, (0.0 + IntToFixed(lv_resourceCollected)));
+            }
+            lv_resourceCollected -= lv_toOverlord;
+            lv_resourceCollected = libNtve_gf_ArithmeticIntClamp(lv_resourceCollected, 1, 500000);
+            UnitSetCustomValue(auto9F9A1D3F_var, 11, (0.0 + IntToFixed(lv_resourceCollected)));
+            TextTagDestroy(libHots_gf_TextTagForUnit(auto9F9A1D3F_var, 1));
+            if ((gv_deadCorp[UnitGetOwner(auto9F9A1D3F_var)] == false)) {
+                UnitSetCustomValue(auto9F9A1D3F_var, 10, IntToFixed(UnitGetOwner(auto9F9A1D3F_var)));
                 gf_ModifyUnitCustomValue(auto9F9A1D3F_var, 12, lv_resourceCollected);
-                TextTagDestroy(libHots_gf_TextTagForUnit(auto9F9A1D3F_var, 1));
                 TextTagCreate((StringToText(gv_corpTicker[lv_corporation]) + ((StringExternal("Param/Value/3BCB83DF") + gf_MakeUIPresentable((lv_resourceCollected + lv_toOverlord))) + StringExternal("Param/Value/4CE1B6A5"))), 18, UnitGetPosition(auto9F9A1D3F_var), 3.0, true, false, PlayerGroupAll());
-                TextTagSetColor(TextTagLastCreated(), c_textTagColorText, libNtve_gf_ConvertPlayerColorToColor(PlayerGetColorIndex(lv_corporation, false)));
-                TextTagSetTime(TextTagLastCreated(), c_textTagTimeDuration, 60.0);
-                libHots_gf_StoreTextTagForUnit(auto9F9A1D3F_var, 1, TextTagLastCreated());
             }
             else {
-                lv_resourceCollected = 0;
-                lv_como = 2;
-                if (((UnitGetType(auto9F9A1D3F_var) == "MineI") || (UnitGetType(auto9F9A1D3F_var) == "MineII") || (UnitGetType(auto9F9A1D3F_var) == "MineIII") || (UnitGetType(auto9F9A1D3F_var) == "MineIV") || (UnitGetType(auto9F9A1D3F_var) == "MineV"))) {
-                    if ((UnitGetType(auto9F9A1D3F_var) == "MineI")) {
-                        lv_resourceCollected = 10;
-                    }
-
-                    if ((UnitGetType(auto9F9A1D3F_var) == "MineII")) {
-                        lv_resourceCollected = 20;
-                    }
-
-                    if ((UnitGetType(auto9F9A1D3F_var) == "MineIII")) {
-                        lv_resourceCollected = 30;
-                    }
-
-                    if ((UnitGetType(auto9F9A1D3F_var) == "MineIV")) {
-                        lv_resourceCollected = 40;
-                    }
-
-                    if ((UnitGetType(auto9F9A1D3F_var) == "MineV")) {
-                        lv_resourceCollected = 50;
-                    }
-
-                }
-
-                if (((UnitGetType(auto9F9A1D3F_var) == "BoreholeI") || (UnitGetType(auto9F9A1D3F_var) == "BoreholeII") || (UnitGetType(auto9F9A1D3F_var) == "BoreholeIII") || (UnitGetType(auto9F9A1D3F_var) == "BoreholeIV") || (UnitGetType(auto9F9A1D3F_var) == "BoreholeV"))) {
-                    if ((UnitGetType(auto9F9A1D3F_var) == "BoreholeI")) {
-                        lv_resourceCollected = 100;
-                    }
-
-                    if ((UnitGetType(auto9F9A1D3F_var) == "BoreholeII")) {
-                        lv_resourceCollected = 200;
-                    }
-
-                    if ((UnitGetType(auto9F9A1D3F_var) == "BoreholeIII")) {
-                        lv_resourceCollected = 300;
-                    }
-
-                    if ((UnitGetType(auto9F9A1D3F_var) == "BoreholeIV")) {
-                        lv_resourceCollected = 400;
-                    }
-
-                    if ((UnitGetType(auto9F9A1D3F_var) == "BoreholeV")) {
-                        lv_resourceCollected = 500;
-                    }
-
-                }
-
-                if ((RegionContainsPoint(RegionFromId(67), UnitGetPosition(auto9F9A1D3F_var)) == true)) {
-                    lv_resourceCollected *= 2;
-                }
-
-                lv_resourceCollected *= gv_metalIncomeModifier[UnitGetOwner(auto9F9A1D3F_var)];
-                if ((UnitGetType(auto9F9A1D3F_var) == "OilWellI")) {
-                    lv_resourceCollected = 20;
-                    lv_como = 3;
-                    lv_resourceCollected *= gv_oilIncomeModifier[UnitGetOwner(auto9F9A1D3F_var)];
-                    if ((RegionContainsPoint(RegionFromId(66), UnitGetPosition(auto9F9A1D3F_var)) == true)) {
-                        lv_resourceCollected *= 5;
-                    }
-
-                }
-
-                if ((UnitGetType(auto9F9A1D3F_var) == "OilWellII")) {
-                    lv_resourceCollected = 40;
-                    lv_como = 3;
-                    lv_resourceCollected *= gv_oilIncomeModifier[UnitGetOwner(auto9F9A1D3F_var)];
-                    if ((RegionContainsPoint(RegionFromId(66), UnitGetPosition(auto9F9A1D3F_var)) == true)) {
-                        lv_resourceCollected *= 5;
-                    }
-
-                }
-
-                lv_resourceCollected /= 100;
-                lv_toOverlord = (lv_resourceCollected / 10);
-                if ((UnitGetType(auto9F9A1D3F_var) != "Metal") && (UnitGetType(auto9F9A1D3F_var) != "Oil") && (lv_toOverlord < 3)) {
-                    lv_toOverlord = 2;
-                }
-
-                gf_CreateConvoy(UnitGetPosition(auto9F9A1D3F_var), UnitGetOwner(auto9F9A1D3F_var), lv_como, (lv_toOverlord * 1), UnitGetOwner(auto9F9A1D3F_var), UnitGetOwner(auto9F9A1D3F_var));
                 UnitSetCustomValue(auto9F9A1D3F_var, 11, 0.0);
                 UnitSetCustomValue(auto9F9A1D3F_var, 12, 0.0);
-                TextTagDestroy(libHots_gf_TextTagForUnit(auto9F9A1D3F_var, 1));
-                if ((gv_deadCorp[UnitGetOwner(auto9F9A1D3F_var)] == false)) {
-                    UnitSetCustomValue(auto9F9A1D3F_var, 10, IntToFixed(UnitGetOwner(auto9F9A1D3F_var)));
-                }
-
+                TextTagCreate((StringToText("") + ((StringExternal("Param/Value/B15C01DD") + gf_MakeUIPresentable((0 + lv_toOverlord))) + StringExternal("Param/Value/0A575143"))), 18, UnitGetPosition(auto9F9A1D3F_var), 3.0, true, false, PlayerGroupAll());
             }
+            TextTagSetColor(TextTagLastCreated(), c_textTagColorText, libNtve_gf_ConvertPlayerColorToColor(PlayerGetColorIndex(lv_corporation, false)));
+            TextTagSetTime(TextTagLastCreated(), c_textTagTimeDuration, 60.0);
+            libHots_gf_StoreTextTagForUnit(auto9F9A1D3F_var, 1, TextTagLastCreated());
         }
 
     }
@@ -10038,7 +9987,7 @@ int gf_GetPlayerFoodDemand (int lp_player) {
     return libNtve_gf_ArithmeticIntClamp((((lv_averageFoodDemand - gv_foodIncome[lp_player][1]) - (gv_foodFromMarkert[lp_player] / 2)) + 10), 10, 1000000000);
 }
 
-void gf_MeetCivilianDemand () {
+void gf_MeetCivilianMetalOilDemand () {
     // Variable Declarations
     unit lv_pickedSuppliedUnit;
     int lv_inventory;
@@ -10059,13 +10008,6 @@ void gf_MeetCivilianDemand () {
     int autoB4B19E67_i;
     const int auto81DCD70D_ae = 2;
     const int auto81DCD70D_ai = -1;
-    unitgroup auto6BEEEE36_g;
-    int auto6BEEEE36_u;
-    unit auto6BEEEE36_var;
-    int auto40333EAD_ae;
-    const int auto40333EAD_ai = 1;
-    const int auto615CF39B_n = 999;
-    int auto615CF39B_i;
     unitgroup auto420512EC_g;
     int auto420512EC_u;
     unit auto420512EC_var;
@@ -10094,64 +10036,6 @@ void gf_MeetCivilianDemand () {
         }
         if ((lv_hadToFix == false)) {
             break;
-        }
-
-    }
-    auto6BEEEE36_g = UnitGroup("CorporateHeadquarters", c_playerAny, RegionEntireMap(), UnitFilter(0, 0, (1 << c_targetFilterMissile), (1 << (c_targetFilterDead - 32)) | (1 << (c_targetFilterHidden - 32))), 0);
-    auto6BEEEE36_u = UnitGroupCount(auto6BEEEE36_g, c_unitCountAll);
-    for (;; auto6BEEEE36_u -= 1) {
-        auto6BEEEE36_var = UnitGroupUnitFromEnd(auto6BEEEE36_g, auto6BEEEE36_u);
-        if (auto6BEEEE36_var == null) { break; }
-        if ((UnitGetOwner(auto6BEEEE36_var) < 8) && (UnitGetOwner(auto6BEEEE36_var) != 0) && (gf_GetUnitCustomValue(auto6BEEEE36_var, 12) > 9)) {
-            lv_resourceType = gf_GetResourceType(auto6BEEEE36_var);
-            auto40333EAD_ae = PlayerGroupCount(gv_users);
-            lv_civilianGDP = 1;
-            for ( ; ( (auto40333EAD_ai >= 0 && lv_civilianGDP <= auto40333EAD_ae) || (auto40333EAD_ai < 0 && lv_civilianGDP >= auto40333EAD_ae) ) ; lv_civilianGDP += auto40333EAD_ai ) {
-                lv_playerSelected = lv_orderOfCivilianByGDP[lv_civilianGDP];
-                lv_quantitySupplied = libNtve_gf_ArithmeticIntClamp(gf_GetUnitCustomValue(auto6BEEEE36_var, (lv_playerSelected + 20)), 0, gf_GetUnitCustomValue(auto6BEEEE36_var, 12));
-                lv_quantitySupplied /= 3;
-                lv_resourceCost = gf_CalculateCostWithTariffs(UnitGetOwner(auto6BEEEE36_var), lv_playerSelected, FixedToInt(UnitGetCustomValue(auto6BEEEE36_var, 14)));
-                lv_resourceCost *= 5;
-                lv_resourceCost /= 3;
-                lv_resourceCost = libNtve_gf_ArithmeticIntClamp(lv_resourceCost, 1, 9999);
-                if ((lv_resourceCost < 0)) {
-                    lv_resourceCost *= -1;
-                    if ((lv_quantitySupplied < 0)) {
-                        lv_quantitySupplied *= -1;
-                        if ((lv_resourceCost < 0)) {
-                            lv_resourceCost = FixedToInt(UnitGetCustomValue(auto6BEEEE36_var, 14));
-                            if ((lv_resourceCost < 0)) {
-                                lv_resourceCost = FixedToInt(UnitGetCustomValue(auto6BEEEE36_var, 14));
-                                if ((lv_resourceCost < 0)) {
-                                    lv_resourceCost = gv_aggregateResourcePrice[FixedToInt(UnitGetCustomValue(auto6BEEEE36_var, 10))][lv_resourceType];
-                                }
-
-                            }
-
-                        }
-
-                    }
-
-                }
-
-                gv_cExportIncome[FixedToInt(UnitGetOwner(auto6BEEEE36_var))][1][1] += (lv_quantitySupplied * lv_resourceCost);
-                gv_cExportIncome[FixedToInt(UnitGetOwner(auto6BEEEE36_var))][1][1] -= gf_CollectTariffs(UnitGetOwner(auto6BEEEE36_var), lv_playerSelected, FixedToInt(UnitGetCustomValue(auto6BEEEE36_var, 14)), lv_quantitySupplied);
-                gf_ModifyUnitCustomValue(auto6BEEEE36_var, 12, (lv_quantitySupplied * -1));
-                lv_inventory = lv_quantitySupplied;
-                for (auto615CF39B_i = 1; auto615CF39B_i <= auto615CF39B_n; auto615CF39B_i += 1) {
-                    lv_pickedSuppliedUnit = gf_GetCivilianDemandingFood(lv_playerSelected);
-                    UnitBehaviorAdd(lv_pickedSuppliedUnit, "WellFeds", lv_pickedSuppliedUnit, 1);
-                    if ((lv_pickedSuppliedUnit == null)) {
-                        break;
-                    }
-
-                    lv_inventory -= FixedToInt(UnitGetPropertyFixed(lv_pickedSuppliedUnit, c_unitPropEnergy, c_unitPropCurrent));
-                    if ((lv_inventory <= 10)) {
-                        break;
-                    }
-
-                }
-            }
         }
 
     }
@@ -10711,6 +10595,9 @@ void gf_CreateCorporation (int lp_player) {
     lv_namePart2 = (lv_namePart2 + " ");
     lv_ticker = ((StringSub(lv_namePart1, 1, 1) + StringSub(lv_namePart2, 1, 1)) + StringSub(lv_namePart3, 1, 1));
     gv_corpName[lp_player] = ((lv_namePart1 + lv_namePart2) + lv_namePart3);
+    while ((StringSub(gv_corpName[lp_player], (StringLength(gv_corpName[lp_player]) - 1), StringLength(gv_corpName[lp_player])) == " ")) {
+        gv_corpName[lp_player] = StringSub(gv_corpName[lp_player], 1, (StringLength(gv_corpName[lp_player]) - 1));
+    }
     gv_corpTicker[lp_player] = lv_ticker;
     if ((gv_year < 2310)) {
         gv_cCredits[lp_player] = 40000;
@@ -10760,7 +10647,7 @@ void gf_HeadquartersFortheHeadquarterless () {
         auto1B7DBFA9_var = PlayerGroupNextPlayer(auto1B7DBFA9_g, auto1B7DBFA9_var);
         if (auto1B7DBFA9_var < 0) { break; }
         if ((StringLength(gv_corpName[auto1B7DBFA9_var]) > 0) && (gv_deadCorp[auto1B7DBFA9_var] == false)) {
-            if ((UnitGroupCount(UnitGroup("CorporateHeadquarters", auto1B7DBFA9_var, RegionEntireMap(), UnitFilter(0, 0, (1 << c_targetFilterMissile), (1 << (c_targetFilterDead - 32)) | (1 << (c_targetFilterHidden - 32))), 0), c_unitCountAlive) == 0) && (RandomInt(0, 100) < 20) && (UnitGroupCount(UnitGroup(null, auto1B7DBFA9_var, RegionEntireMap(), UnitFilter((1 << c_targetFilterPsionic), 0, (1 << c_targetFilterMissile), (1 << (c_targetFilterDead - 32)) | (1 << (c_targetFilterHidden - 32))), 0), c_unitCountAlive) > 0)) {
+            if ((UnitGroupCount(UnitGroup("CorporateHeadquarters", auto1B7DBFA9_var, RegionEntireMap(), UnitFilter(0, 0, (1 << c_targetFilterMissile), (1 << (c_targetFilterDead - 32)) | (1 << (c_targetFilterHidden - 32))), 0), c_unitCountAlive) == 0) && (RandomInt(0, 100) < 50) && (UnitGroupCount(UnitGroup(null, auto1B7DBFA9_var, RegionEntireMap(), UnitFilter((1 << c_targetFilterPsionic), 0, (1 << c_targetFilterMissile), (1 << (c_targetFilterDead - 32)) | (1 << (c_targetFilterHidden - 32))), 0), c_unitCountAlive) > 0)) {
                 lv_possibleLocation = UnitGetPosition(UnitGroupRandomUnit(UnitGroup(null, auto1B7DBFA9_var, RegionEntireMap(), UnitFilter((1 << c_targetFilterPsionic), 0, (1 << c_targetFilterMissile), (1 << (c_targetFilterDead - 32)) | (1 << (c_targetFilterHidden - 32))), 0), c_unitCountAlive));
                 if ((lv_possibleLocation != null)) {
                     libNtve_gf_CreateUnitsWithDefaultFacing(1, "CorporateHeadquarters", 0, auto1B7DBFA9_var, lv_possibleLocation);
@@ -11075,6 +10962,7 @@ void gf_CorporationAIBudgetAllocation () {
 
 void gf_CorporationYearlyReport (int lp_corp, unitgroup lp_coolAndGoodResources) {
     // Variable Declarations
+    unit lv_closestUnit;
     int lv_como;
     int lv_completeAIValue;
     unit lv_forOtherResource;
@@ -11122,7 +11010,6 @@ void gf_CorporationYearlyReport (int lp_corp, unitgroup lp_coolAndGoodResources)
         }
 
     }
-    gv_cImports[lp_corp][1][0] += 10;
     gv_cImports[lp_corp][2][0] += 15;
     gv_cImports[lp_corp][3][0] += 5;
     lv_monthRAM = 1;
@@ -11144,27 +11031,32 @@ void gf_CorporationYearlyReport (int lp_corp, unitgroup lp_coolAndGoodResources)
         }
 
         if ((UnitGroupHasUnit(lp_coolAndGoodResources, auto811950E8_var) == false)) {
+            lv_closestUnit = UnitGroupClosestToPoint(lp_coolAndGoodResources, UnitGetPosition(auto811950E8_var));
             UnitSetCustomValue(auto811950E8_var, (lp_corp + 30), gf_ValueMineInThousands(auto811950E8_var, lp_corp));
-            if ((UnitGetCustomValue(auto811950E8_var, 10) == 0.0) && (DistanceBetweenPoints(UnitGetPosition(auto811950E8_var), UnitGetPosition(UnitGroupClosestToPoint(lp_coolAndGoodResources, UnitGetPosition(auto811950E8_var)))) < 150.0)) {
-                lv_expansion += libNtve_gf_ArithmeticIntClamp((FixedToInt(gf_ValueMineInThousands(auto811950E8_var, lp_corp)) * libNtve_gf_ArithmeticIntClamp((150 - FixedToInt(DistanceBetweenPoints(UnitGetPosition(auto811950E8_var), UnitGetPosition(UnitGroupClosestToPoint(lp_coolAndGoodResources, UnitGetPosition(auto811950E8_var)))))), 40, 90)), 100, 100000000);
-                lv_infrastructurte -= libNtve_gf_ArithmeticIntClamp((FixedToInt(gf_ValueMineInThousands(auto811950E8_var, lp_corp)) * libNtve_gf_ArithmeticIntClamp((100 - FixedToInt(DistanceBetweenPoints(UnitGetPosition(auto811950E8_var), UnitGetPosition(UnitGroupClosestToPoint(lp_coolAndGoodResources, UnitGetPosition(auto811950E8_var)))))), 40, 90)), 100, 100000000);
-                if ((UnitGroupCount(lp_coolAndGoodResources, c_unitCountAlive) < (UnitGroupCount(gv_allResources, c_unitCountAlive) / PlayerGroupCount(gv_users)))) {
-                    lv_expansion += libNtve_gf_ArithmeticIntClamp((FixedToInt(gf_ValueMineInThousands(auto811950E8_var, lp_corp)) * libNtve_gf_ArithmeticIntClamp((150 - FixedToInt(DistanceBetweenPoints(UnitGetPosition(auto811950E8_var), UnitGetPosition(UnitGroupClosestToPoint(lp_coolAndGoodResources, UnitGetPosition(auto811950E8_var)))))), 50, 100)), 100, 100000000);
-                    lv_infrastructurte -= libNtve_gf_ArithmeticIntClamp((FixedToInt(gf_ValueMineInThousands(auto811950E8_var, lp_corp)) * libNtve_gf_ArithmeticIntClamp((100 - FixedToInt(DistanceBetweenPoints(UnitGetPosition(auto811950E8_var), UnitGetPosition(UnitGroupClosestToPoint(lp_coolAndGoodResources, UnitGetPosition(auto811950E8_var)))))), 50, 100)), 100, 100000000);
-                }
-
+            if ((lv_closestUnit == null)) {
             }
             else {
-                if ((UnitGroupCount(lp_coolAndGoodResources, c_unitCountAlive) < (UnitGroupCount(gv_allResources, c_unitCountAlive) / PlayerGroupCount(gv_users))) && (UnitGetCustomValue(auto811950E8_var, 10) == 0.0)) {
-                    lv_expansion += libNtve_gf_ArithmeticIntClamp((FixedToInt(gf_ValueMineInThousands(auto811950E8_var, lp_corp)) * libNtve_gf_ArithmeticIntClamp((300 - FixedToInt(DistanceBetweenPoints(UnitGetPosition(auto811950E8_var), UnitGetPosition(UnitGroupClosestToPoint(lp_coolAndGoodResources, UnitGetPosition(auto811950E8_var)))))), 20, 45)), 100, 100000000);
-                    lv_infrastructurte -= libNtve_gf_ArithmeticIntClamp((FixedToInt(gf_ValueMineInThousands(auto811950E8_var, lp_corp)) * libNtve_gf_ArithmeticIntClamp((150 - FixedToInt(DistanceBetweenPoints(UnitGetPosition(auto811950E8_var), UnitGetPosition(UnitGroupClosestToPoint(lp_coolAndGoodResources, UnitGetPosition(auto811950E8_var)))))), 20, 45)), 100, 100000000);
-                }
-                else {
-                    if ((UnitGetCustomValue(auto811950E8_var, 43) == 1.0)) {
-                        lv_expansion += libNtve_gf_ArithmeticIntClamp((FixedToInt(gf_ValueMineInThousands(auto811950E8_var, lp_corp)) * libNtve_gf_ArithmeticIntClamp((150 - FixedToInt(DistanceBetweenPoints(UnitGetPosition(auto811950E8_var), UnitGetPosition(UnitGroupClosestToPoint(lp_coolAndGoodResources, UnitGetPosition(auto811950E8_var)))))), 40, 90)), 100, 100000000);
-                        lv_infrastructurte -= libNtve_gf_ArithmeticIntClamp((FixedToInt(gf_ValueMineInThousands(auto811950E8_var, lp_corp)) * libNtve_gf_ArithmeticIntClamp((100 - FixedToInt(DistanceBetweenPoints(UnitGetPosition(auto811950E8_var), UnitGetPosition(UnitGroupClosestToPoint(lp_coolAndGoodResources, UnitGetPosition(auto811950E8_var)))))), 40, 90)), 100, 100000000);
+                if ((UnitGetCustomValue(auto811950E8_var, 10) == 0.0) && (DistanceBetweenPoints(UnitGetPosition(auto811950E8_var), UnitGetPosition(UnitGroupClosestToPoint(lp_coolAndGoodResources, UnitGetPosition(auto811950E8_var)))) < 150.0)) {
+                    lv_expansion += libNtve_gf_ArithmeticIntClamp((FixedToInt(gf_ValueMineInThousands(auto811950E8_var, lp_corp)) * libNtve_gf_ArithmeticIntClamp((150 - FixedToInt(DistanceBetweenPoints(UnitGetPosition(auto811950E8_var), UnitGetPosition(lv_closestUnit)))), 40, 90)), 100, 100000000);
+                    lv_infrastructurte -= libNtve_gf_ArithmeticIntClamp((FixedToInt(gf_ValueMineInThousands(auto811950E8_var, lp_corp)) * libNtve_gf_ArithmeticIntClamp((100 - FixedToInt(DistanceBetweenPoints(UnitGetPosition(auto811950E8_var), UnitGetPosition(lv_closestUnit)))), 40, 90)), 100, 100000000);
+                    if ((UnitGroupCount(lp_coolAndGoodResources, c_unitCountAlive) < (UnitGroupCount(gv_allResources, c_unitCountAlive) / PlayerGroupCount(gv_users)))) {
+                        lv_expansion += libNtve_gf_ArithmeticIntClamp((FixedToInt(gf_ValueMineInThousands(auto811950E8_var, lp_corp)) * libNtve_gf_ArithmeticIntClamp((150 - FixedToInt(DistanceBetweenPoints(UnitGetPosition(auto811950E8_var), UnitGetPosition(lv_closestUnit)))), 50, 100)), 100, 100000000);
+                        lv_infrastructurte -= libNtve_gf_ArithmeticIntClamp((FixedToInt(gf_ValueMineInThousands(auto811950E8_var, lp_corp)) * libNtve_gf_ArithmeticIntClamp((100 - FixedToInt(DistanceBetweenPoints(UnitGetPosition(auto811950E8_var), UnitGetPosition(lv_closestUnit)))), 50, 100)), 100, 100000000);
                     }
 
+                }
+                else {
+                    if ((UnitGroupCount(lp_coolAndGoodResources, c_unitCountAlive) < (UnitGroupCount(gv_allResources, c_unitCountAlive) / PlayerGroupCount(gv_users))) && (UnitGetCustomValue(auto811950E8_var, 10) == 0.0)) {
+                        lv_expansion += libNtve_gf_ArithmeticIntClamp((FixedToInt(gf_ValueMineInThousands(auto811950E8_var, lp_corp)) * libNtve_gf_ArithmeticIntClamp((300 - FixedToInt(DistanceBetweenPoints(UnitGetPosition(auto811950E8_var), UnitGetPosition(lv_closestUnit)))), 20, 45)), 100, 100000000);
+                        lv_infrastructurte -= libNtve_gf_ArithmeticIntClamp((FixedToInt(gf_ValueMineInThousands(auto811950E8_var, lp_corp)) * libNtve_gf_ArithmeticIntClamp((150 - FixedToInt(DistanceBetweenPoints(UnitGetPosition(auto811950E8_var), UnitGetPosition(lv_closestUnit)))), 20, 45)), 100, 100000000);
+                    }
+                    else {
+                        if ((UnitGetCustomValue(auto811950E8_var, 43) == 1.0)) {
+                            lv_expansion += libNtve_gf_ArithmeticIntClamp((FixedToInt(gf_ValueMineInThousands(auto811950E8_var, lp_corp)) * libNtve_gf_ArithmeticIntClamp((150 - FixedToInt(DistanceBetweenPoints(UnitGetPosition(auto811950E8_var), UnitGetPosition(lv_closestUnit)))), 40, 90)), 100, 100000000);
+                            lv_infrastructurte -= libNtve_gf_ArithmeticIntClamp((FixedToInt(gf_ValueMineInThousands(auto811950E8_var, lp_corp)) * libNtve_gf_ArithmeticIntClamp((100 - FixedToInt(DistanceBetweenPoints(UnitGetPosition(auto811950E8_var), UnitGetPosition(lv_closestUnit)))), 40, 90)), 100, 100000000);
+                        }
+
+                    }
                 }
             }
         }
@@ -11187,11 +11079,6 @@ void gf_CorporationYearlyReport (int lp_corp, unitgroup lp_coolAndGoodResources)
     lv_military *= 20;
     if ((lv_infrastructurte < 10)) {
         lv_infrastructurte = 10;
-    }
-
-    if ((gv_cSupply[lp_corp][1] < (gv_globalSupply[1][4] / PlayerGroupCount(gv_users)))) {
-        lv_infrastructurte *= 3;
-        lv_infrastructurte /= 2;
     }
 
     if ((gv_cSupply[lp_corp][2] < (gv_globalSupply[2][4] / PlayerGroupCount(gv_users)))) {
@@ -11393,7 +11280,6 @@ void gf_CorporationYearlyReport (int lp_corp, unitgroup lp_coolAndGoodResources)
     }
     gv_cMilitary[lp_corp][0] = ((gv_cMilitary[lp_corp][0] + lv_military) / 2);
     gv_cExpansion[lp_corp][0] = ((gv_cExpansion[lp_corp][0] + lv_expansion) / 2);
-    gv_cImports[lp_corp][1][0] = ((gv_cImports[lp_corp][1][0] + lv_imports[1]) / 2);
     gv_cImports[lp_corp][2][0] = ((gv_cImports[lp_corp][2][0] + lv_imports[2]) / 2);
     gv_cImports[lp_corp][3][0] = ((gv_cImports[lp_corp][3][0] + lv_imports[3]) / 2);
     gv_cInfrastructure[lp_corp][0] = ((gv_cInfrastructure[lp_corp][0] + lv_infrastructurte) / 2);
@@ -11447,7 +11333,6 @@ void gf_CorporationYearlyReport (int lp_corp, unitgroup lp_coolAndGoodResources)
 
     gv_cMilitary[lp_corp][1] /= 100;
     gv_cExpansion[lp_corp][1] /= 100;
-    gv_cImports[lp_corp][1][1] /= 100;
     gv_cImports[lp_corp][2][1] /= 100;
     gv_cImports[lp_corp][3][1] /= 100;
     gv_cInfrastructure[lp_corp][1] /= 100;
@@ -11456,7 +11341,6 @@ void gf_CorporationYearlyReport (int lp_corp, unitgroup lp_coolAndGoodResources)
     gv_cSelling[lp_corp][1] = libNtve_gf_ArithmeticIntClamp(gv_cSelling[lp_corp][1], 0, gv_cAssetValue[lp_corp]);
     gv_cMilitary[lp_corp][1] += (gv_cMilitary[lp_corp][0] * lv_totalBudget);
     gv_cExpansion[lp_corp][1] += (gv_cExpansion[lp_corp][0] * lv_totalBudget);
-    gv_cImports[lp_corp][1][1] += (gv_cImports[lp_corp][1][0] * lv_totalBudget);
     gv_cImports[lp_corp][2][1] += (gv_cImports[lp_corp][2][0] * lv_totalBudget);
     gv_cImports[lp_corp][3][1] += (gv_cImports[lp_corp][3][0] * lv_totalBudget);
     gv_cInfrastructure[lp_corp][1] += (gv_cInfrastructure[lp_corp][0] * lv_totalBudget);
@@ -12862,7 +12746,7 @@ string gf_ResourceNoun (int lp_player) {
 bool gf_CTakeLoan (int lp_corp, int lp_ammount) {
     // Automatic Variable Declarations
     // Implementation
-    if (((gv_cDebt[lp_corp] + lp_ammount) < (gv_stockPrice[lp_corp] * 1000))) {
+    if (((gv_cDebt[lp_corp] + lp_ammount) >= (gv_cAssetValue[lp_corp] / 2))) {
         gv_cDebt[lp_corp] += lp_ammount;
         if ((RandomInt(0, 100) < 20) && (gv_deadCorp[lp_corp] == false)) {
             UIDisplayMessage(PlayerGroupSingle(lp_corp), c_messageAreaSubtitle, StringExternal("Param/Value/0F60FEE9"));
@@ -13658,16 +13542,6 @@ void gf_UpgradeHome (unit lp_upgradeUnit) {
     bool[16] lv_hasUni;
 
     // Automatic Variable Declarations
-    unitgroup auto6A0E5EC3_g;
-    int auto6A0E5EC3_u;
-    unit auto6A0E5EC3_var;
-    unitgroup auto01B8F549_g;
-    int auto01B8F549_u;
-    unit auto01B8F549_var;
-    unitgroup autoFEF3EB56_g;
-    int autoFEF3EB56_u;
-    unit autoFEF3EB56_var;
-
     // Variable Initialization
 
     // Implementation
@@ -13734,70 +13608,19 @@ void gf_UpgradeHome (unit lp_upgradeUnit) {
                                                 gf_TransferCoresFromGlobal(libNtve_gf_LastReplacedUnit());
                                             }
                                             else {
-                                                auto6A0E5EC3_g = UnitGroup("School", c_playerAny, RegionEntireMap(), UnitFilter(0, 0, (1 << c_targetFilterMissile), (1 << (c_targetFilterDead - 32)) | (1 << (c_targetFilterHidden - 32))), 0);
-                                                auto6A0E5EC3_u = UnitGroupCount(auto6A0E5EC3_g, c_unitCountAll);
-                                                for (;; auto6A0E5EC3_u -= 1) {
-                                                    auto6A0E5EC3_var = UnitGroupUnitFromEnd(auto6A0E5EC3_g, auto6A0E5EC3_u);
-                                                    if (auto6A0E5EC3_var == null) { break; }
-                                                    if ((UnitGetOwner(lp_upgradeUnit) != 0) && (UnitGetOwner(lp_upgradeUnit) < 8)) {
-                                                        if ((libNtve_gf_UnitIsUnderConstruction(auto6A0E5EC3_var) == false)) {
-                                                            lv_hasSchool[UnitGetOwner(auto6A0E5EC3_var)] = true;
-                                                            if ((gv_buildingTechLevel[UnitGetOwner(auto6A0E5EC3_var)] < 1)) {
-                                                                gv_buildingTechLevel[UnitGetOwner(auto6A0E5EC3_var)] = 1;
-                                                            }
-
-                                                        }
-
-                                                    }
-
-                                                }
-                                                auto01B8F549_g = UnitGroup("Clinic", c_playerAny, RegionEntireMap(), UnitFilter(0, 0, (1 << c_targetFilterMissile), (1 << (c_targetFilterDead - 32)) | (1 << (c_targetFilterHidden - 32))), 0);
-                                                auto01B8F549_u = UnitGroupCount(auto01B8F549_g, c_unitCountAll);
-                                                for (;; auto01B8F549_u -= 1) {
-                                                    auto01B8F549_var = UnitGroupUnitFromEnd(auto01B8F549_g, auto01B8F549_u);
-                                                    if (auto01B8F549_var == null) { break; }
-                                                    if ((UnitGetOwner(lp_upgradeUnit) != 0) && (UnitGetOwner(lp_upgradeUnit) < 8)) {
-                                                        if ((libNtve_gf_UnitIsUnderConstruction(auto01B8F549_var) == false)) {
-                                                            lv_hasClinic[UnitGetOwner(auto01B8F549_var)] = true;
-                                                            if ((gv_buildingTechLevel[UnitGetOwner(auto01B8F549_var)] < 2)) {
-                                                                gv_buildingTechLevel[UnitGetOwner(auto01B8F549_var)] = 2;
-                                                            }
-
-                                                        }
-
-                                                    }
-
-                                                }
-                                                autoFEF3EB56_g = UnitGroup("University", c_playerAny, RegionEntireMap(), UnitFilter(0, 0, (1 << c_targetFilterMissile), (1 << (c_targetFilterDead - 32)) | (1 << (c_targetFilterHidden - 32))), 0);
-                                                autoFEF3EB56_u = UnitGroupCount(autoFEF3EB56_g, c_unitCountAll);
-                                                for (;; autoFEF3EB56_u -= 1) {
-                                                    autoFEF3EB56_var = UnitGroupUnitFromEnd(autoFEF3EB56_g, autoFEF3EB56_u);
-                                                    if (autoFEF3EB56_var == null) { break; }
-                                                    if ((UnitGetOwner(lp_upgradeUnit) != 0) && (UnitGetOwner(lp_upgradeUnit) < 8)) {
-                                                        if ((libNtve_gf_UnitIsUnderConstruction(autoFEF3EB56_var) == false)) {
-                                                            lv_hasUni[UnitGetOwner(autoFEF3EB56_var)] = true;
-                                                            if ((gv_buildingTechLevel[UnitGetOwner(autoFEF3EB56_var)] < 3)) {
-                                                                gv_buildingTechLevel[UnitGetOwner(autoFEF3EB56_var)] = 3;
-                                                            }
-
-                                                        }
-
-                                                    }
-
-                                                }
-                                                if ((UnitGetType(lp_upgradeUnit) == "SmallHouse") && (lv_hasSchool[UnitGetOwner(lp_upgradeUnit)] == true)) {
+                                                if ((UnitGetType(lp_upgradeUnit) == "SmallHouse")) {
                                                     gf_SetGlobalCoreCount(lp_upgradeUnit);
                                                     libNtve_gf_ReplaceUnit(lp_upgradeUnit, "MediumHouse", libNtve_ge_ReplaceUnitOptions_OldUnitsRelative);
                                                     gf_TransferCoresFromGlobal(libNtve_gf_LastReplacedUnit());
                                                 }
                                                 else {
-                                                    if ((UnitGetType(lp_upgradeUnit) == "MediumHouse") && (lv_hasClinic[UnitGetOwner(lp_upgradeUnit)] == true)) {
+                                                    if ((UnitGetType(lp_upgradeUnit) == "MediumHouse")) {
                                                         gf_SetGlobalCoreCount(lp_upgradeUnit);
                                                         libNtve_gf_ReplaceUnit(lp_upgradeUnit, "LargeHouse", libNtve_ge_ReplaceUnitOptions_OldUnitsRelative);
                                                         gf_TransferCoresFromGlobal(libNtve_gf_LastReplacedUnit());
                                                     }
                                                     else {
-                                                        if ((UnitGetType(lp_upgradeUnit) == "LargeHouse") && (lv_hasUni[UnitGetOwner(lp_upgradeUnit)] == true)) {
+                                                        if ((UnitGetType(lp_upgradeUnit) == "LargeHouse")) {
                                                             gf_SetGlobalCoreCount(lp_upgradeUnit);
                                                             libNtve_gf_ReplaceUnit(lp_upgradeUnit, "Manor", libNtve_ge_ReplaceUnitOptions_OldUnitsRelative);
                                                             gf_TransferCoresFromGlobal(libNtve_gf_LastReplacedUnit());
@@ -14407,8 +14230,8 @@ void gf_GetElectricityBalanceComputePunish () {
     for (;; auto5B21B7BE_u -= 1) {
         auto5B21B7BE_var = UnitGroupUnitFromEnd(auto5B21B7BE_g, auto5B21B7BE_u);
         if (auto5B21B7BE_var == null) { break; }
-        gv_electricityIncome[UnitGetOwner(auto5B21B7BE_var)][1] += FixedToInt((100.0 * UnitGetCustomValue(auto5B21B7BE_var, 0)));
-        gv_buildingElectricityExpenses[UnitGetOwner(auto5B21B7BE_var)][1] += 25;
+        gv_electricityIncome[UnitGetOwner(auto5B21B7BE_var)][1] += FixedToInt((500.0 * UnitGetCustomValue(auto5B21B7BE_var, 0)));
+        gv_buildingElectricityExpenses[UnitGetOwner(auto5B21B7BE_var)][1] += 500;
     }
     auto105088A9_g = UnitGroup("GeothermalPowerPlant", c_playerAny, RegionEntireMap(), UnitFilter(0, 0, (1 << c_targetFilterMissile), (1 << (c_targetFilterDead - 32)) | (1 << (c_targetFilterHidden - 32))), 0);
     auto105088A9_u = UnitGroupCount(auto105088A9_g, c_unitCountAll);
@@ -14434,7 +14257,7 @@ void gf_GetElectricityBalanceComputePunish () {
         gv_electricityIncome[UnitGetOwner(auto385754A1_var)][1] += FixedToInt((10000.0 * UnitGetCustomValue(auto385754A1_var, 0)));
         gv_buildingElectricityExpenses[UnitGetOwner(auto385754A1_var)][1] += 5000;
     }
-    autoD9CBEE24_g = UnitGroup("RefineryPipes", c_playerAny, RegionEntireMap(), UnitFilter(0, 0, (1 << c_targetFilterMissile), (1 << (c_targetFilterDead - 32)) | (1 << (c_targetFilterHidden - 32))), 0);
+    autoD9CBEE24_g = UnitGroup("OilPowerPlant", c_playerAny, RegionEntireMap(), UnitFilter(0, 0, (1 << c_targetFilterMissile), (1 << (c_targetFilterDead - 32)) | (1 << (c_targetFilterHidden - 32))), 0);
     autoD9CBEE24_u = UnitGroupCount(autoD9CBEE24_g, c_unitCountAll);
     for (;; autoD9CBEE24_u -= 1) {
         autoD9CBEE24_var = UnitGroupUnitFromEnd(autoD9CBEE24_g, autoD9CBEE24_u);
@@ -14845,7 +14668,6 @@ void gf_FoodStuff () {
         lv_averageCentralizationInverse[auto73068352_var] = (lv_averageCentralizationInverse[auto73068352_var] / lv_farmCouunt[auto73068352_var]);
         lv_privateFood[auto73068352_var] = (lv_averageCentralizationInverse[auto73068352_var] * (lv_foodCollected[auto73068352_var] / 100));
         gv_foodIncome[auto73068352_var][1] += lv_foodCollected[auto73068352_var];
-        gf_SellResources((auto73068352_var + 7), lv_privateFood[auto73068352_var], 0, 1, true, false);
     }
 }
 
@@ -16364,6 +16186,7 @@ string gf_MakeUIPresentableString (int lp_integer) {
 
 void gf_BuyResources (int lp_player, int lp_quantity, int lp_maxPerUnit, int lp_como, bool lp_automaticOrder) {
     // Variable Declarations
+    int lv_purchaseFoodFromIndex;
     int lv_debtOwed;
     int lv_totalAbsoluteCost;
     int lv_absoluteCost;
@@ -16380,10 +16203,13 @@ void gf_BuyResources (int lp_player, int lp_quantity, int lp_maxPerUnit, int lp_
     int lv_maximumBudget;
     int lv_moneySpent;
     int lv_actualQuantity;
+    int lv_foodPlayer;
 
     // Automatic Variable Declarations
     const int auto5E997F48_n = 99;
     int auto5E997F48_i;
+    const int auto9D856394_ae = 7;
+    const int auto9D856394_ai = 1;
 
     // Variable Initialization
     lv_absoluteCost = lp_quantity;
@@ -16413,104 +16239,149 @@ void gf_BuyResources (int lp_player, int lp_quantity, int lp_maxPerUnit, int lp_
 
     }
 
-    for (auto5E997F48_i = 1; auto5E997F48_i <= auto5E997F48_n; auto5E997F48_i += 1) {
-        lv_cheapestResource = gf_FindCheapestResource(lp_player, lp_como, lv_capital, lp_quantity);
-        lv_cheapestResourceCost = (gf_CalculateCostWithTariffs(UnitGetOwner(lv_cheapestResource), lp_player, FixedToInt(UnitGetCustomValue(lv_cheapestResource, 14))) + 0);
-        if ((lp_como == 3)) {
-        }
-        else {
-            lv_cheapestResourceFuelCost = gf_GetFuelCostsMonetary(lp_player, UnitGetPosition(lv_cheapestResource), lv_capital, true);
-        }
-        if ((lv_cheapestResourceCost > lp_maxPerUnit)) {
+    if ((lp_como == 1)) {
+        if ((lp_player < 8) && (lp_player != 0)) {
+            lv_totalFilled = 0;
+            lv_purchaseFoodFromIndex = 1;
+            for ( ; ( (auto9D856394_ai >= 0 && lv_purchaseFoodFromIndex <= auto9D856394_ae) || (auto9D856394_ai < 0 && lv_purchaseFoodFromIndex >= auto9D856394_ae) ) ; lv_purchaseFoodFromIndex += auto9D856394_ai ) {
+                lv_foodPlayer = gv_cheapestFoodArrayPlayer[lp_player][lv_purchaseFoodFromIndex];
+                lv_cheapestResourceCost = gv_cheapestFoodArrayPrice[lp_player][lv_purchaseFoodFromIndex];
+                if ((lv_cheapestResourceFuelCost < 1000000000) && (lp_quantity > 0) && (gv_foodStockpile[lv_purchaseFoodFromIndex] > 0) && (lv_absoluteCost <= lv_maximumBudget)) {
+                    lv_quantityToFill = libNtve_gf_ArithmeticIntClamp(lp_quantity, 0, gv_foodStockpile[lv_purchaseFoodFromIndex]);
+                    lv_quantityToFill = libNtve_gf_ArithmeticIntClamp(lp_quantity, 0, FixedToInt(((IntToFixed(lv_quantityToFill) / IntToFixed(lv_cheapestResourceCost)) / 1000.0)));
+                    lp_quantity -= lv_quantityToFill;
+                    gv_foodStockpile[lv_purchaseFoodFromIndex] -= lv_quantityToFill;
+                    lv_totalFilled += lv_quantityToFill;
+                    lv_totalResoureCosts += (lv_quantityToFill * gv_foodPrice);
+                    lv_totalLostToTariffs += gf_CollectTariffs(lv_foodPlayer, lp_player, gv_foodPrice, lv_quantityToFill);
+                    lv_totalFuelCosts += gf_GetFuelCostsMonetary(lp_player, gf_GetCapitolLocation(lp_player), gf_GetCapitolLocation(lv_foodPlayer), true);
+                    gf_CreateConvoy(gf_GetCapitolLocation(lp_player), lp_player, lp_como, lv_quantityToFill, lv_foodPlayer, lp_player);
+                }
+
+            }
+            lv_absoluteCost = (lv_totalResoureCosts + (lv_totalFuelCosts + lv_totalLostToTariffs));
+            gv_importExpenses[lp_player][2][lp_como] += lv_totalAbsoluteCost;
+            gv_fOOD_PURCHASED[lp_player] += lv_totalFilled;
             if ((lp_automaticOrder == true)) {
             }
             else {
-                UIDisplayMessage(PlayerGroupSingle(lp_player), c_messageAreaSubtitle, StringExternal("Param/Value/C9DDFF21"));
+                if (((lv_absoluteCost > 500000) || (lv_totalFilled == 0))) {
+                    UIDisplayMessage(PlayerGroupSingle(lp_player), c_messageAreaSubtitle, (((IntToText(lv_totalFilled) + StringExternal("Param/Value/C115E814")) + IntToText(lp_quantity)) + ((StringExternal("Param/Value/1DFA178F") + gf_MakeUIPresentable(lv_absoluteCost)) + (StringExternal("Param/Value/BA7499BD") + (gf_MakeUIPresentable(lv_totalLostToTariffs) + (StringExternal("Param/Value/9F8E5A7B") + (gf_MakeUIPresentable(lv_totalFuelCosts) + (StringExternal("Param/Value/7C8E78A4") + StringExternal("Param/Value/9E2872F0")))))))));
+                }
+                else {
+                    UIDisplayMessage(PlayerGroupSingle(lp_player), c_messageAreaSubtitle, (((IntToText(lv_totalFilled) + StringExternal("Param/Value/8B22882F")) + IntToText(lp_quantity)) + ((StringExternal("Param/Value/67129EA9") + gf_MakeUIPresentable(lv_absoluteCost)) + (StringExternal("Param/Value/6085F8D4") + (gf_MakeUIPresentable(lv_totalLostToTariffs) + (StringExternal("Param/Value/8FF248CB") + (gf_MakeUIPresentable(lv_totalFuelCosts) + (StringExternal("Param/Value/A72E1853") + (FixedToText((IntToFixed(lv_absoluteCost) / IntToFixed(lv_totalFilled)), 1) + StringExternal("Param/Value/E1F0FE9B"))))))))));
+                }
             }
-            break;
-        }
-
-        if ((UnitGetCustomValue(lv_cheapestResource, 12) == 0.0)) {
-            if ((lp_automaticOrder == true)) {
-            }
-            else {
-                UIDisplayMessage(PlayerGroupSingle(lp_player), c_messageAreaSubtitle, StringExternal("Param/Value/FE86E4F7"));
-            }
-            break;
-        }
-
-        if ((lp_quantity > 350)) {
-            lv_quantityDemanded = (lv_cheapestResourceCost * libNtve_gf_ArithmeticIntClamp(gf_GetUnitCustomValue(lv_cheapestResource, 12), 0, libNtve_gf_ArithmeticIntClamp(lv_quantityToFill, 10, 10000)));
-        }
-        else {
-            lv_quantityDemanded = (lv_cheapestResourceCost * libNtve_gf_ArithmeticIntClamp(gf_GetUnitCustomValue(lv_cheapestResource, 12), 0, libNtve_gf_ArithmeticIntClamp(lv_quantityToFill, 10, 100)));
-        }
-        lv_quantityDemanded = libNtve_gf_ArithmeticIntClamp(lv_quantityDemanded, 0, lv_quantityToFill);
-        lv_quantityDemanded = libNtve_gf_ArithmeticIntClamp(lv_quantityDemanded, 0, gf_GetUnitCustomValue(lv_cheapestResource, 12));
-        if (((lv_maximumBudget - (lv_totalResoureCosts - lv_totalFuelCosts)) < ((lv_quantityDemanded * lv_cheapestResourceCost) + lv_cheapestResourceFuelCost))) {
-            if ((lp_automaticOrder == true)) {
+            if ((PlayerGetPropertyInt(lp_player, c_playerPropMinerals) > lv_totalResoureCosts)) {
+                PlayerModifyPropertyInt(lp_player, c_playerPropMinerals, c_playerPropOperSubtract, lv_totalResoureCosts);
             }
             else {
-                UIDisplayMessage(PlayerGroupSingle(lp_player), c_messageAreaSubtitle, StringExternal("Param/Value/3277F07C"));
+                lv_debtOwed = lv_totalResoureCosts;
+                lv_debtOwed -= PlayerGetPropertyInt(lp_player, c_playerPropMinerals);
+                PlayerModifyPropertyInt(lp_player, c_playerPropMinerals, c_playerPropOperSetTo, 0);
+                if ((gf_TakeLoan(lp_player, lv_debtOwed) == true)) {
+                }
+
             }
-            break;
         }
 
-        lv_totalResoureCosts += (lv_quantityDemanded * FixedToInt(UnitGetCustomValue(lv_cheapestResource, 14)));
-        lv_totalFuelCosts += lv_cheapestResourceFuelCost;
-        lv_totalLostToTariffs += gf_CollectTariffs(UnitGetOwner(lv_cheapestResource), lp_player, FixedToInt(UnitGetCustomValue(lv_cheapestResource, 14)), lv_quantityDemanded);
-        lv_quantityToFill -= lv_quantityDemanded;
-        gf_CreateConvoy(UnitGetPosition(lv_cheapestResource), lp_player, lp_como, lv_quantityDemanded, (FixedToInt(UnitGetCustomValue(lv_cheapestResource, 10)) + 7), lp_player);
-        if ((gv_corpTicksStage == 0)) {
-            gv_cExportIncome[FixedToInt(UnitGetCustomValue(lv_cheapestResource, 10))][lp_como][0] += (lv_quantityDemanded * FixedToInt(UnitGetCustomValue(lv_cheapestResource, 14)));
-        }
-
-        if ((gv_corpTicksStage == 1)) {
-            gv_cExportIncome[FixedToInt(UnitGetCustomValue(lv_cheapestResource, 10))][lp_como][1] += (lv_quantityDemanded * FixedToInt(UnitGetCustomValue(lv_cheapestResource, 14)));
-        }
-
-        if ((gv_corpTicksStage == 2)) {
-            gv_cExportIncome[FixedToInt(UnitGetCustomValue(lv_cheapestResource, 10))][lp_como][2] += (lv_quantityDemanded * FixedToInt(UnitGetCustomValue(lv_cheapestResource, 14)));
-            gv_cCredits[FixedToInt(UnitGetCustomValue(lv_cheapestResource, 10))] += (lv_quantityDemanded * FixedToInt(UnitGetCustomValue(lv_cheapestResource, 14)));
-        }
-
-        lv_totalAbsoluteCost += (lv_quantityDemanded * lv_cheapestResourceCost);
-        lv_totalAbsoluteCost += lv_cheapestResourceFuelCost;
-        gf_ModifyUnitCustomValue(lv_cheapestResource, 12, (lv_quantityDemanded * -1));
-        gf_ModifyUnitCustomValue(lv_cheapestResource, 30, (lv_quantityDemanded * 1));
-        if ((lv_quantityToFill < 10)) {
-            break;
-        }
-
-    }
-    lv_totalFilled = (lp_quantity - lv_quantityToFill);
-    lv_absoluteCost = (lv_totalResoureCosts + (lv_totalFuelCosts + lv_totalLostToTariffs));
-    if ((lp_automaticOrder == true)) {
     }
     else {
-        if (((lv_absoluteCost > 500000) || (lv_totalFilled == 0))) {
-            UIDisplayMessage(PlayerGroupSingle(lp_player), c_messageAreaSubtitle, (((IntToText(lv_totalFilled) + StringExternal("Param/Value/1A2CC4AC")) + IntToText(lp_quantity)) + ((StringExternal("Param/Value/D9A0303D") + gf_MakeUIPresentable(lv_absoluteCost)) + (StringExternal("Param/Value/D29DE6A6") + (gf_MakeUIPresentable(lv_totalLostToTariffs) + (StringExternal("Param/Value/CA899A6D") + (gf_MakeUIPresentable(lv_totalFuelCosts) + (StringExternal("Param/Value/89E2305D") + StringExternal("Param/Value/D3A75E46")))))))));
+        for (auto5E997F48_i = 1; auto5E997F48_i <= auto5E997F48_n; auto5E997F48_i += 1) {
+            lv_cheapestResource = gf_FindCheapestResource(lp_player, lp_como, lv_capital, lp_quantity);
+            lv_cheapestResourceCost = (gf_CalculateCostWithTariffs(UnitGetOwner(lv_cheapestResource), lp_player, FixedToInt(UnitGetCustomValue(lv_cheapestResource, 14))) + 0);
+            if ((lp_como == 3)) {
+            }
+            else {
+                lv_cheapestResourceFuelCost = gf_GetFuelCostsMonetary(lp_player, UnitGetPosition(lv_cheapestResource), lv_capital, true);
+            }
+            if ((lv_cheapestResourceCost > lp_maxPerUnit)) {
+                if ((lp_automaticOrder == true)) {
+                }
+                else {
+                    UIDisplayMessage(PlayerGroupSingle(lp_player), c_messageAreaSubtitle, StringExternal("Param/Value/C9DDFF21"));
+                }
+                break;
+            }
+
+            if ((UnitGetCustomValue(lv_cheapestResource, 12) == 0.0)) {
+                if ((lp_automaticOrder == true)) {
+                }
+                else {
+                    UIDisplayMessage(PlayerGroupSingle(lp_player), c_messageAreaSubtitle, StringExternal("Param/Value/FE86E4F7"));
+                }
+                break;
+            }
+
+            if ((lp_quantity > 350)) {
+                lv_quantityDemanded = (lv_cheapestResourceCost * libNtve_gf_ArithmeticIntClamp(gf_GetUnitCustomValue(lv_cheapestResource, 12), 0, libNtve_gf_ArithmeticIntClamp(lv_quantityToFill, 10, 10000)));
+            }
+            else {
+                lv_quantityDemanded = (lv_cheapestResourceCost * libNtve_gf_ArithmeticIntClamp(gf_GetUnitCustomValue(lv_cheapestResource, 12), 0, libNtve_gf_ArithmeticIntClamp(lv_quantityToFill, 10, 100)));
+            }
+            lv_quantityDemanded = libNtve_gf_ArithmeticIntClamp(lv_quantityDemanded, 0, lv_quantityToFill);
+            lv_quantityDemanded = libNtve_gf_ArithmeticIntClamp(lv_quantityDemanded, 0, gf_GetUnitCustomValue(lv_cheapestResource, 12));
+            if (((lv_maximumBudget - (lv_totalResoureCosts - lv_totalFuelCosts)) < ((lv_quantityDemanded * lv_cheapestResourceCost) + lv_cheapestResourceFuelCost))) {
+                if ((lp_automaticOrder == true)) {
+                }
+                else {
+                    UIDisplayMessage(PlayerGroupSingle(lp_player), c_messageAreaSubtitle, StringExternal("Param/Value/3277F07C"));
+                }
+                break;
+            }
+
+            lv_totalResoureCosts += (lv_quantityDemanded * FixedToInt(UnitGetCustomValue(lv_cheapestResource, 14)));
+            lv_totalFuelCosts += lv_cheapestResourceFuelCost;
+            lv_totalLostToTariffs += gf_CollectTariffs(UnitGetOwner(lv_cheapestResource), lp_player, FixedToInt(UnitGetCustomValue(lv_cheapestResource, 14)), lv_quantityDemanded);
+            lv_quantityToFill -= lv_quantityDemanded;
+            gf_CreateConvoy(UnitGetPosition(lv_cheapestResource), lp_player, lp_como, lv_quantityDemanded, (FixedToInt(UnitGetCustomValue(lv_cheapestResource, 10)) + 7), lp_player);
+            if ((gv_corpTicksStage == 0)) {
+                gv_cExportIncome[FixedToInt(UnitGetCustomValue(lv_cheapestResource, 10))][lp_como][0] += (lv_quantityDemanded * FixedToInt(UnitGetCustomValue(lv_cheapestResource, 14)));
+            }
+
+            if ((gv_corpTicksStage == 1)) {
+                gv_cExportIncome[FixedToInt(UnitGetCustomValue(lv_cheapestResource, 10))][lp_como][1] += (lv_quantityDemanded * FixedToInt(UnitGetCustomValue(lv_cheapestResource, 14)));
+            }
+
+            if ((gv_corpTicksStage == 2)) {
+                gv_cExportIncome[FixedToInt(UnitGetCustomValue(lv_cheapestResource, 10))][lp_como][2] += (lv_quantityDemanded * FixedToInt(UnitGetCustomValue(lv_cheapestResource, 14)));
+                gv_cCredits[FixedToInt(UnitGetCustomValue(lv_cheapestResource, 10))] += (lv_quantityDemanded * FixedToInt(UnitGetCustomValue(lv_cheapestResource, 14)));
+            }
+
+            lv_totalAbsoluteCost += (lv_quantityDemanded * lv_cheapestResourceCost);
+            lv_totalAbsoluteCost += lv_cheapestResourceFuelCost;
+            gf_ModifyUnitCustomValue(lv_cheapestResource, 12, (lv_quantityDemanded * -1));
+            gf_ModifyUnitCustomValue(lv_cheapestResource, 30, (lv_quantityDemanded * 1));
+            if ((lv_quantityToFill < 10)) {
+                break;
+            }
+
+        }
+        lv_totalFilled = (lp_quantity - lv_quantityToFill);
+        lv_absoluteCost = (lv_totalResoureCosts + (lv_totalFuelCosts + lv_totalLostToTariffs));
+        if ((lp_automaticOrder == true)) {
         }
         else {
-            UIDisplayMessage(PlayerGroupSingle(lp_player), c_messageAreaSubtitle, (((IntToText(lv_totalFilled) + StringExternal("Param/Value/9F4BF79D")) + IntToText(lp_quantity)) + ((StringExternal("Param/Value/66352008") + gf_MakeUIPresentable(lv_absoluteCost)) + (StringExternal("Param/Value/843FFFB4") + (gf_MakeUIPresentable(lv_totalLostToTariffs) + (StringExternal("Param/Value/D096EB45") + (gf_MakeUIPresentable(lv_totalFuelCosts) + (StringExternal("Param/Value/95D8C671") + (FixedToText((IntToFixed(lv_absoluteCost) / IntToFixed(lv_totalFilled)), 1) + StringExternal("Param/Value/D33FB9D3"))))))))));
+            if (((lv_absoluteCost > 500000) || (lv_totalFilled == 0))) {
+                UIDisplayMessage(PlayerGroupSingle(lp_player), c_messageAreaSubtitle, (((IntToText(lv_totalFilled) + StringExternal("Param/Value/1A2CC4AC")) + IntToText(lp_quantity)) + ((StringExternal("Param/Value/D9A0303D") + gf_MakeUIPresentable(lv_absoluteCost)) + (StringExternal("Param/Value/D29DE6A6") + (gf_MakeUIPresentable(lv_totalLostToTariffs) + (StringExternal("Param/Value/CA899A6D") + (gf_MakeUIPresentable(lv_totalFuelCosts) + (StringExternal("Param/Value/89E2305D") + StringExternal("Param/Value/D3A75E46")))))))));
+            }
+            else {
+                UIDisplayMessage(PlayerGroupSingle(lp_player), c_messageAreaSubtitle, (((IntToText(lv_totalFilled) + StringExternal("Param/Value/9F4BF79D")) + IntToText(lp_quantity)) + ((StringExternal("Param/Value/66352008") + gf_MakeUIPresentable(lv_absoluteCost)) + (StringExternal("Param/Value/843FFFB4") + (gf_MakeUIPresentable(lv_totalLostToTariffs) + (StringExternal("Param/Value/D096EB45") + (gf_MakeUIPresentable(lv_totalFuelCosts) + (StringExternal("Param/Value/95D8C671") + (FixedToText((IntToFixed(lv_absoluteCost) / IntToFixed(lv_totalFilled)), 1) + StringExternal("Param/Value/D33FB9D3"))))))))));
+            }
+            gv_importExpenses[lp_player][2][lp_como] += lv_totalAbsoluteCost;
+            if ((PlayerGetPropertyInt(lp_player, c_playerPropMinerals) > lv_totalAbsoluteCost)) {
+                PlayerModifyPropertyInt(lp_player, c_playerPropMinerals, c_playerPropOperSubtract, lv_totalAbsoluteCost);
+            }
+            else {
+                lv_debtOwed = lv_totalAbsoluteCost;
+                lv_debtOwed -= PlayerGetPropertyInt(lp_player, c_playerPropMinerals);
+                PlayerModifyPropertyInt(lp_player, c_playerPropMinerals, c_playerPropOperSetTo, 0);
+                if ((gf_TakeLoan(lp_player, lv_debtOwed) == true)) {
+                }
+
+            }
         }
     }
-    gv_importExpenses[lp_player][2][lp_como] += lv_totalAbsoluteCost;
-    if ((PlayerGetPropertyInt(lp_player, c_playerPropMinerals) > lv_totalAbsoluteCost)) {
-        PlayerModifyPropertyInt(lp_player, c_playerPropMinerals, c_playerPropOperSubtract, lv_totalAbsoluteCost);
-    }
-    else {
-        lv_debtOwed = lv_totalAbsoluteCost;
-        lv_debtOwed -= PlayerGetPropertyInt(lp_player, c_playerPropMinerals);
-        PlayerModifyPropertyInt(lp_player, c_playerPropMinerals, c_playerPropOperSetTo, 0);
-        if ((gf_TakeLoan(lp_player, lv_debtOwed) == true)) {
-        }
-
-    }
-    if ((lp_como == 1) && (lp_player < 8) && (lp_player != 0)) {
-        gv_fOOD_PURCHASED[lp_player] += lv_totalFilled;
-    }
-
 }
 
 void gf_SellResources (int lp_player, int lp_quantity, int lp_minPerUnit, int lp_como, bool lp_automaticOrder, bool lp_displayItems) {
@@ -16590,158 +16461,187 @@ void gf_SellResources (int lp_player, int lp_quantity, int lp_minPerUnit, int lp
 
     lv_leftToExport = lv_actualQuantity;
     gv_sELL_RESOURCE_DEBUG_VARIABLE = "Purchasing individually";
-    for (auto8F24C7E5_i = 1; auto8F24C7E5_i <= auto8F24C7E5_n; auto8F24C7E5_i += 1) {
-        lv_bestOfferPrice = 0;
-        lv_bestTariffCost = 0;
-        lv_bestOfferCorp = 0;
-        lv_bestOfferQuantity = 0;
-        lv_tariffCost = 0;
-        auto816885DD_g = gv_users;
-        auto816885DD_var = -1;
-        while (true) {
-            auto816885DD_var = PlayerGroupNextPlayer(auto816885DD_g, auto816885DD_var);
-            if (auto816885DD_var < 0) { break; }
-            if ((gv_deadCorp[auto816885DD_var] == false)) {
-                lv_offerPrice[auto816885DD_var] = gv_aggregateResourcePrice[auto816885DD_var][lp_como];
-                lv_tariffCost = 0;
-                lv_tariffCost += gf_CalculateTariffsSellResources(lv_thePlayer, auto816885DD_var, lv_offerPrice[auto816885DD_var]);
-                lv_offerPrice[auto816885DD_var] += lv_tariffCost;
-                if ((gv_cImportsPot[auto816885DD_var][lp_como][0] > (lv_offerPrice[auto816885DD_var] * 10)) && (lv_offerPrice[auto816885DD_var] > 0)) {
-                    lv_offerPrice[auto816885DD_var] -= lv_tariffCost;
-                    lv_offerPrice[auto816885DD_var] -= lv_tariffCost;
-                    if ((lv_offerPrice[auto816885DD_var] < 1)) {
-                        lv_offerPrice[auto816885DD_var] = 1;
-                    }
-
-                    if ((lv_bestOfferPrice < lv_offerPrice[auto816885DD_var])) {
-                        lv_bestOfferPrice = lv_offerPrice[auto816885DD_var];
-                        lv_bestTariffCost = lv_tariffCost;
-                        lv_bestOfferCorp = auto816885DD_var;
-                        lv_offerPrice[auto816885DD_var] += lv_tariffCost;
-                        lv_offerPrice[auto816885DD_var] += lv_tariffCost;
-                        lv_bestOfferQuantity = (gv_cImportsPot[auto816885DD_var][lp_como][0] / lv_offerPrice[auto816885DD_var]);
-                        lv_bestOfferQuantity = libNtve_gf_ArithmeticIntClamp(lv_bestOfferQuantity, 10, lv_leftToExport);
-                        if ((lp_quantity > 10000)) {
-                        }
-                        else {
-                            lv_bestOfferQuantity = libNtve_gf_ArithmeticIntClamp(lv_bestOfferQuantity, 10, 120);
-                        }
-                    }
-
-                }
-                else {
-                    lv_offerPrice[auto816885DD_var] = 0;
-                }
+    if ((lp_como == 1)) {
+        if ((lp_minPerUnit > gv_foodPrice)) {
+            if ((lp_displayItems == true)) {
+                UIDisplayMessage(PlayerGroupSingle(lp_player), c_messageAreaSubtitle, (((gf_MakeUIPresentable(0) + StringExternal("Param/Value/DF3187EB")) + IntToText(lp_quantity)) + ((StringExternal("Param/Value/F5107D23") + gf_MakeUIPresentable(lv_totalIncome)) + (StringExternal("Param/Value/6D1E2C1C") + StringExternal("Param/Value/A7EE9042")))));
             }
 
-        }
-        if ((lv_bestOfferQuantity <= 0)) {
-            if ((lp_displayItems == false)) {
-            }
-            else {
-                if ((lv_totalSold > 0)) {
-                    UIDisplayMessage(PlayerGroupSingle(lv_thePlayer), c_messageAreaSubtitle, StringExternal("Param/Value/4754A1EE"));
-                }
-                else {
-                    if ((lp_como == 1)) {
-                        UIDisplayMessage(PlayerGroupSingle(lv_thePlayer), c_messageAreaSubtitle, StringExternal("Param/Value/F5EF5CA0"));
-                    }
-                    else {
-                        if ((lp_como == 2)) {
-                            UIDisplayMessage(PlayerGroupSingle(lv_thePlayer), c_messageAreaSubtitle, StringExternal("Param/Value/319A6A43"));
-                        }
-                        else {
-                            if ((lp_como == 3)) {
-                                UIDisplayMessage(PlayerGroupSingle(lv_thePlayer), c_messageAreaSubtitle, StringExternal("Param/Value/3C3A893D"));
-                            }
-
-                        }
-                    }
-                }
-            }
-            break;
-        }
-
-        if ((lv_bestOfferPrice >= lp_minPerUnit)) {
-            lv_totalIncome += (lv_bestOfferQuantity * lv_bestOfferPrice);
-            lv_totalSold += (lv_bestOfferQuantity * 1);
-            lv_leftToExport -= (lv_bestOfferQuantity * 1);
-            gv_cImportsPot[lv_bestOfferCorp][lp_como][0] -= (lv_bestOfferQuantity * lv_bestOfferPrice);
-            gv_cUnrealizedSupplyImports[lv_bestOfferCorp][lp_como] += (lv_bestOfferQuantity * 1);
-            if ((gv_corpTicksStage == 0)) {
-                gv_cImportExpenses[lv_bestOfferCorp][lp_como][0] += (lv_bestOfferQuantity * lv_bestOfferPrice);
-                gv_cImportExpenses[lv_bestOfferCorp][lp_como][0] += (lv_bestTariffCost * 1);
-            }
-
-            if ((gv_corpTicksStage == 1)) {
-                gv_cImportExpenses[lv_bestOfferCorp][lp_como][1] += (lv_bestOfferQuantity * lv_bestOfferPrice);
-                gv_cImportExpenses[lv_bestOfferCorp][lp_como][1] += (lv_bestTariffCost * 1);
-            }
-
-            if ((gv_corpTicksStage == 2)) {
-                gv_cImportExpenses[lv_bestOfferCorp][lp_como][2] += (lv_bestOfferQuantity * lv_bestOfferPrice);
-                gv_cImportExpenses[lv_bestOfferCorp][lp_como][2] += (lv_bestTariffCost * 1);
-                gv_cCredits[lv_bestOfferCorp] -= (lv_bestOfferQuantity * lv_bestOfferPrice);
-                gv_cCredits[lv_bestOfferCorp] -= (lv_bestTariffCost * 1);
-            }
-
-            if ((lp_como == 3)) {
-            }
-            else {
-                gv_cImportExpenses[lv_bestOfferCorp][3][0] += gf_GetFuelCostsMonetary(lv_bestOfferCorp, gf_GetCorporateHeadquartersLocationMineOil(lv_thePlayer, lp_como, gf_GetCapitolLocation(lv_thePlayer)), gf_GetCapitolLocation(lv_thePlayer), true);
-            }
-            gf_CollectTariffSell(lp_player, lv_bestOfferCorp, lv_bestOfferPrice, lv_bestOfferQuantity);
-            lv_totalExportQuantity[lv_bestOfferCorp] += (lv_bestOfferQuantity * 1);
         }
         else {
-            if ((lp_displayItems == false)) {
+            gv_foodStockpile[lv_thePlayer] += lv_leftToExport;
+            if ((lv_givemoney == true)) {
+                lv_totalIncome = (lv_leftToExport * gv_foodPrice);
+                gv_exportIncome[lp_player][1] += lv_totalIncome;
+                PlayerModifyPropertyInt(lp_player, c_playerPropMinerals, c_playerPropOperAdd, lv_totalIncome);
+                gv_food[lp_player] -= lv_leftToExport;
+                if ((lp_displayItems == true)) {
+                    if (((lv_totalIncome > 500000))) {
+                        UIDisplayMessage(PlayerGroupSingle(lp_player), c_messageAreaSubtitle, (((gf_MakeUIPresentable(lv_leftToExport) + StringExternal("Param/Value/1971AC87")) + IntToText(lp_quantity)) + ((StringExternal("Param/Value/656A5167") + gf_MakeUIPresentable(lv_totalIncome)) + (StringExternal("Param/Value/CE9A5BF8") + StringExternal("Param/Value/E1C51B04")))));
+                    }
+                    else {
+                        UIDisplayMessage(PlayerGroupSingle(lp_player), c_messageAreaSubtitle, (((gf_MakeUIPresentable(lv_leftToExport) + StringExternal("Param/Value/E4B1742D")) + IntToText(lp_quantity)) + ((StringExternal("Param/Value/A79E5F10") + gf_MakeUIPresentable(lv_totalIncome)) + (StringExternal("Param/Value/6B282587") + (StringToText("") + (StringToText("") + (StringToText("") + (StringExternal("Param/Value/A57B6E80") + (IntToText(gv_foodPrice) + StringExternal("Param/Value/2423E2C4"))))))))));
+                    }
+                }
+
+            }
+
+        }
+    }
+    else {
+        for (auto8F24C7E5_i = 1; auto8F24C7E5_i <= auto8F24C7E5_n; auto8F24C7E5_i += 1) {
+            lv_bestOfferPrice = 0;
+            lv_bestTariffCost = 0;
+            lv_bestOfferCorp = 0;
+            lv_bestOfferQuantity = 0;
+            lv_tariffCost = 0;
+            auto816885DD_g = gv_users;
+            auto816885DD_var = -1;
+            while (true) {
+                auto816885DD_var = PlayerGroupNextPlayer(auto816885DD_g, auto816885DD_var);
+                if (auto816885DD_var < 0) { break; }
+                if ((gv_deadCorp[auto816885DD_var] == false)) {
+                    lv_offerPrice[auto816885DD_var] = gv_aggregateResourcePrice[auto816885DD_var][lp_como];
+                    lv_tariffCost = 0;
+                    lv_tariffCost += gf_CalculateTariffsSellResources(lv_thePlayer, auto816885DD_var, lv_offerPrice[auto816885DD_var]);
+                    lv_offerPrice[auto816885DD_var] += lv_tariffCost;
+                    if ((gv_cImportsPot[auto816885DD_var][lp_como][0] > (lv_offerPrice[auto816885DD_var] * 10)) && (lv_offerPrice[auto816885DD_var] > 0)) {
+                        lv_offerPrice[auto816885DD_var] -= lv_tariffCost;
+                        lv_offerPrice[auto816885DD_var] -= lv_tariffCost;
+                        if ((lv_offerPrice[auto816885DD_var] < 1)) {
+                            lv_offerPrice[auto816885DD_var] = 1;
+                        }
+
+                        if ((lv_bestOfferPrice < lv_offerPrice[auto816885DD_var])) {
+                            lv_bestOfferPrice = lv_offerPrice[auto816885DD_var];
+                            lv_bestTariffCost = lv_tariffCost;
+                            lv_bestOfferCorp = auto816885DD_var;
+                            lv_offerPrice[auto816885DD_var] += lv_tariffCost;
+                            lv_offerPrice[auto816885DD_var] += lv_tariffCost;
+                            lv_bestOfferQuantity = (gv_cImportsPot[auto816885DD_var][lp_como][0] / lv_offerPrice[auto816885DD_var]);
+                            lv_bestOfferQuantity = libNtve_gf_ArithmeticIntClamp(lv_bestOfferQuantity, 10, lv_leftToExport);
+                            if ((lp_quantity > 10000)) {
+                            }
+                            else {
+                                lv_bestOfferQuantity = libNtve_gf_ArithmeticIntClamp(lv_bestOfferQuantity, 10, 120);
+                            }
+                        }
+
+                    }
+                    else {
+                        lv_offerPrice[auto816885DD_var] = 0;
+                    }
+                }
+
+            }
+            if ((lv_bestOfferQuantity <= 0)) {
+                if ((lp_displayItems == false)) {
+                }
+                else {
+                    if ((lv_totalSold > 0)) {
+                        UIDisplayMessage(PlayerGroupSingle(lv_thePlayer), c_messageAreaSubtitle, StringExternal("Param/Value/4754A1EE"));
+                    }
+                    else {
+                        if ((lp_como == 1)) {
+                            UIDisplayMessage(PlayerGroupSingle(lv_thePlayer), c_messageAreaSubtitle, StringExternal("Param/Value/F5EF5CA0"));
+                        }
+                        else {
+                            if ((lp_como == 2)) {
+                                UIDisplayMessage(PlayerGroupSingle(lv_thePlayer), c_messageAreaSubtitle, StringExternal("Param/Value/319A6A43"));
+                            }
+                            else {
+                                if ((lp_como == 3)) {
+                                    UIDisplayMessage(PlayerGroupSingle(lv_thePlayer), c_messageAreaSubtitle, StringExternal("Param/Value/3C3A893D"));
+                                }
+
+                            }
+                        }
+                    }
+                }
+                break;
+            }
+
+            if ((lv_bestOfferPrice >= lp_minPerUnit)) {
+                lv_totalIncome += (lv_bestOfferQuantity * lv_bestOfferPrice);
+                lv_totalSold += (lv_bestOfferQuantity * 1);
+                lv_leftToExport -= (lv_bestOfferQuantity * 1);
+                gv_cImportsPot[lv_bestOfferCorp][lp_como][0] -= (lv_bestOfferQuantity * lv_bestOfferPrice);
+                gv_cUnrealizedSupplyImports[lv_bestOfferCorp][lp_como] += (lv_bestOfferQuantity * 1);
+                if ((gv_corpTicksStage == 0)) {
+                    gv_cImportExpenses[lv_bestOfferCorp][lp_como][0] += (lv_bestOfferQuantity * lv_bestOfferPrice);
+                    gv_cImportExpenses[lv_bestOfferCorp][lp_como][0] += (lv_bestTariffCost * 1);
+                }
+
+                if ((gv_corpTicksStage == 1)) {
+                    gv_cImportExpenses[lv_bestOfferCorp][lp_como][1] += (lv_bestOfferQuantity * lv_bestOfferPrice);
+                    gv_cImportExpenses[lv_bestOfferCorp][lp_como][1] += (lv_bestTariffCost * 1);
+                }
+
+                if ((gv_corpTicksStage == 2)) {
+                    gv_cImportExpenses[lv_bestOfferCorp][lp_como][2] += (lv_bestOfferQuantity * lv_bestOfferPrice);
+                    gv_cImportExpenses[lv_bestOfferCorp][lp_como][2] += (lv_bestTariffCost * 1);
+                    gv_cCredits[lv_bestOfferCorp] -= (lv_bestOfferQuantity * lv_bestOfferPrice);
+                    gv_cCredits[lv_bestOfferCorp] -= (lv_bestTariffCost * 1);
+                }
+
+                if ((lp_como == 3)) {
+                }
+                else {
+                    gv_cImportExpenses[lv_bestOfferCorp][3][0] += gf_GetFuelCostsMonetary(lv_bestOfferCorp, gf_GetCorporateHeadquartersLocationMineOil(lv_thePlayer, lp_como, gf_GetCapitolLocation(lv_thePlayer)), gf_GetCapitolLocation(lv_thePlayer), true);
+                }
+                gf_CollectTariffSell(lp_player, lv_bestOfferCorp, lv_bestOfferPrice, lv_bestOfferQuantity);
+                lv_totalExportQuantity[lv_bestOfferCorp] += (lv_bestOfferQuantity * 1);
             }
             else {
-                UIDisplayMessage(PlayerGroupSingle(lv_thePlayer), c_messageAreaSubtitle, StringExternal("Param/Value/ECAAC389"));
+                if ((lp_displayItems == false)) {
+                }
+                else {
+                    UIDisplayMessage(PlayerGroupSingle(lv_thePlayer), c_messageAreaSubtitle, StringExternal("Param/Value/ECAAC389"));
+                }
+                break;
             }
-            break;
+            if ((lv_leftToExport < 10)) {
+                break;
+            }
+
         }
-        if ((lv_leftToExport < 10)) {
-            break;
+        gv_sELL_RESOURCE_DEBUG_VARIABLE = "Creating convoys";
+        lv_corp = 1;
+        for ( ; ( (auto8068B78F_ai >= 0 && lv_corp <= auto8068B78F_ae) || (auto8068B78F_ai < 0 && lv_corp >= auto8068B78F_ae) ) ; lv_corp += auto8068B78F_ai ) {
+            if ((lv_totalExportQuantity[lv_corp] > 0)) {
+                gf_CreateConvoy(lv_capital, lv_corp, lp_como, lv_totalExportQuantity[lv_corp], lp_player, (lv_corp + 7));
+            }
+
+        }
+        gv_sELL_RESOURCE_DEBUG_VARIABLE = "Setting costs and text";
+        if ((lv_givemoney == true)) {
+            gv_exportIncome[lp_player][1] += lv_totalIncome;
+            PlayerModifyPropertyInt(lp_player, c_playerPropMinerals, c_playerPropOperAdd, lv_totalIncome);
+            if ((lp_displayItems == true)) {
+                if (((lv_totalIncome > 500000))) {
+                    UIDisplayMessage(PlayerGroupSingle(lp_player), c_messageAreaSubtitle, (((gf_MakeUIPresentable(lv_totalSold) + StringExternal("Param/Value/0CB09CD9")) + IntToText(lp_quantity)) + ((StringExternal("Param/Value/13177913") + gf_MakeUIPresentable(lv_totalIncome)) + (StringExternal("Param/Value/106BE344") + StringExternal("Param/Value/34E376CE")))));
+                }
+                else {
+                    UIDisplayMessage(PlayerGroupSingle(lp_player), c_messageAreaSubtitle, (((gf_MakeUIPresentable(lv_totalSold) + StringExternal("Param/Value/7A97ED6F")) + IntToText(lp_quantity)) + ((StringExternal("Param/Value/82A0A573") + gf_MakeUIPresentable(lv_totalIncome)) + (StringExternal("Param/Value/01302CE1") + (StringToText("") + (StringToText("") + (StringToText("") + (StringExternal("Param/Value/2E4A9797") + (FixedToText((IntToFixed(lv_totalIncome) / IntToFixed(lv_totalSold)), 1) + StringExternal("Param/Value/5008754F"))))))))));
+                }
+                if ((lp_como == 1)) {
+                    gv_food[lp_player] -= lv_totalSold;
+                }
+
+                if ((lp_como == 2)) {
+                    PlayerModifyPropertyInt(lp_player, c_playerPropTerrazine, c_playerPropOperSubtract, lv_totalSold);
+                }
+
+                if ((lp_como == 3)) {
+                    gv_oil[lp_player] -= lv_totalSold;
+                }
+
+            }
+
         }
 
+        gv_sELL_RESOURCE_DEBUG_VARIABLE = "Finished selling resources";
     }
-    gv_sELL_RESOURCE_DEBUG_VARIABLE = "Creating convoys";
-    lv_corp = 1;
-    for ( ; ( (auto8068B78F_ai >= 0 && lv_corp <= auto8068B78F_ae) || (auto8068B78F_ai < 0 && lv_corp >= auto8068B78F_ae) ) ; lv_corp += auto8068B78F_ai ) {
-        if ((lv_totalExportQuantity[lv_corp] > 0)) {
-            gf_CreateConvoy(lv_capital, lv_corp, lp_como, lv_totalExportQuantity[lv_corp], lp_player, (lv_corp + 7));
-        }
-
-    }
-    gv_sELL_RESOURCE_DEBUG_VARIABLE = "Setting costs and text";
-    if ((lv_givemoney == true)) {
-        gv_exportIncome[lp_player][1] += lv_totalIncome;
-        PlayerModifyPropertyInt(lp_player, c_playerPropMinerals, c_playerPropOperAdd, lv_totalIncome);
-        if ((lp_displayItems == true)) {
-            if (((lv_totalIncome > 500000))) {
-                UIDisplayMessage(PlayerGroupSingle(lp_player), c_messageAreaSubtitle, (((gf_MakeUIPresentable(lv_totalSold) + StringExternal("Param/Value/0CB09CD9")) + IntToText(lp_quantity)) + ((StringExternal("Param/Value/13177913") + gf_MakeUIPresentable(lv_totalIncome)) + (StringExternal("Param/Value/106BE344") + StringExternal("Param/Value/34E376CE")))));
-            }
-            else {
-                UIDisplayMessage(PlayerGroupSingle(lp_player), c_messageAreaSubtitle, (((gf_MakeUIPresentable(lv_totalSold) + StringExternal("Param/Value/7A97ED6F")) + IntToText(lp_quantity)) + ((StringExternal("Param/Value/82A0A573") + gf_MakeUIPresentable(lv_totalIncome)) + (StringExternal("Param/Value/01302CE1") + (StringToText("") + (StringToText("") + (StringToText("") + (StringExternal("Param/Value/2E4A9797") + (FixedToText((IntToFixed(lv_totalIncome) / IntToFixed(lv_totalSold)), 1) + StringExternal("Param/Value/5008754F"))))))))));
-            }
-            if ((lp_como == 1)) {
-                gv_food[lp_player] -= lv_totalSold;
-            }
-
-            if ((lp_como == 2)) {
-                PlayerModifyPropertyInt(lp_player, c_playerPropTerrazine, c_playerPropOperSubtract, lv_totalSold);
-            }
-
-            if ((lp_como == 3)) {
-                gv_oil[lp_player] -= lv_totalSold;
-            }
-
-        }
-
-    }
-
-    gv_sELL_RESOURCE_DEBUG_VARIABLE = "Finished selling resources";
 }
 
 int gf_GetFuelCostsMonetary (int lp_player, point lp_start, point lp_end, bool lp_execute) {
@@ -17715,6 +17615,225 @@ void gf_SetGlobalCoreCount (unit lp_unit) {
     gv_coreTerritoryCount[10] = UnitTechTreeBehaviorCount(lp_unit, "Separatists", c_techCountCompleteOnly);
 }
 
+unit gf_GetRussianNukeLauncher () {
+    // Automatic Variable Declarations
+    // Implementation
+    return UnitGroupRandomUnit(UnitGroup("SupplyDepot234223", 11, RegionEntireMap(), UnitFilter(0, 0, (1 << c_targetFilterMissile), (1 << (c_targetFilterDead - 32)) | (1 << (c_targetFilterHidden - 32))), 0), c_unitCountAlive);
+}
+
+void gf_DoTheNuke () {
+    // Automatic Variable Declarations
+    // Implementation
+    if ((gv_rUNukes > 1) && (((RandomInt(0, (gv_russianDanger + (gv_arisAIDifficulty * 2))) > 1250) && (RandomInt(gv_rUNukes, 100) > 50)) || ((RandomInt(gv_rUNukes, 100) > 98)))) {
+        gf_RUNuke();
+    }
+
+}
+
+void gf_RUNuke () {
+    // Variable Declarations
+    playergroup lv_radarPlayerGroup;
+    int lv_highestAppealNumber;
+    int lv_highestAppealVariable;
+    int lv_nukeVariable;
+    int lv_nukeFindAppeal;
+    point[1000] lv_nukeLocations;
+    int[gv_numberOfRegions + 1] lv_nukeAppeal;
+
+    // Automatic Variable Declarations
+    playergroup auto2008A0F8_g;
+    int auto2008A0F8_var;
+    const int auto2D142624_ae = gv_numberOfRegions;
+    const int auto2D142624_ai = 1;
+    int auto4C4892FF_ae;
+    const int auto4C4892FF_ai = 1;
+    const int autoE4C469AD_ae = gv_numberOfRegions;
+    const int autoE4C469AD_ai = 1;
+    int autoD727C9E8_ae;
+    const int autoD727C9E8_ai = 1;
+    playergroup auto62D1094D_g;
+    int auto62D1094D_var;
+    int auto08EED76C_ae;
+    const int auto08EED76C_ai = 1;
+    playergroup auto9C70D1DD_g;
+    int auto9C70D1DD_var;
+    int auto83C3D815_ae;
+    const int auto83C3D815_ai = 1;
+    playergroup auto8D338EDB_g;
+    int auto8D338EDB_var;
+
+    // Variable Initialization
+    lv_radarPlayerGroup = PlayerGroupEmpty();
+
+    // Implementation
+    if ((UnitGroupCount(UnitGroup("SupplyDepot234223", 11, RegionEntireMap(), UnitFilter(0, 0, (1 << c_targetFilterMissile), (1 << (c_targetFilterDead - 32)) | (1 << (c_targetFilterHidden - 32))), 0), c_unitCountAlive) == 0)) {
+        gv_rUNuclearProgress = -10;
+    }
+    else {
+        if ((gv_rUNukes < 1)) {
+            gv_rUNukes = 1;
+        }
+
+        auto2008A0F8_g = gv_users;
+        auto2008A0F8_var = -1;
+        while (true) {
+            auto2008A0F8_var = PlayerGroupNextPlayer(auto2008A0F8_g, auto2008A0F8_var);
+            if (auto2008A0F8_var < 0) { break; }
+            if ((TechTreeUpgradeCount(auto2008A0F8_var, "AdvancedRadarStation", c_techCountCompleteOnly) == 1)) {
+                PlayerGroupAdd(lv_radarPlayerGroup, auto2008A0F8_var);
+            }
+
+        }
+        lv_nukeVariable = 1;
+        for ( ; ( (auto2D142624_ai >= 0 && lv_nukeVariable <= auto2D142624_ae) || (auto2D142624_ai < 0 && lv_nukeVariable >= auto2D142624_ae) ) ; lv_nukeVariable += auto2D142624_ai ) {
+            lv_nukeAppeal[lv_nukeVariable] = gf_GetCountyPopulation(lv_nukeVariable);
+            if ((UnitGroupCount(UnitGroup(null, 10, gv_countRegions[lv_nukeFindAppeal], UnitFilter((1 << c_targetFilterStructure), 0, (1 << c_targetFilterMissile), (1 << (c_targetFilterDead - 32)) | (1 << (c_targetFilterHidden - 32))), 0), c_unitCountAlive) > 0)) {
+                lv_nukeAppeal[lv_nukeVariable] /= 4;
+            }
+
+        }
+        lv_nukeAppeal[181] = 0;
+        if ((gv_arisAIDifficulty > 70)) {
+            lv_nukeAppeal[1] = 0;
+            lv_nukeAppeal[2] = 0;
+            lv_nukeAppeal[3] = 0;
+            lv_nukeAppeal[4] = 0;
+            lv_nukeAppeal[5] = 0;
+            lv_nukeAppeal[6] = 0;
+        }
+
+        auto4C4892FF_ae = lv_nukeVariable;
+        lv_nukeVariable = 1;
+        for ( ; ( (auto4C4892FF_ai >= 0 && lv_nukeVariable <= auto4C4892FF_ae) || (auto4C4892FF_ai < 0 && lv_nukeVariable >= auto4C4892FF_ae) ) ; lv_nukeVariable += auto4C4892FF_ai ) {
+            lv_highestAppealNumber = 0;
+            lv_highestAppealVariable = 0;
+            lv_nukeFindAppeal = 1;
+            for ( ; ( (autoE4C469AD_ai >= 0 && lv_nukeFindAppeal <= autoE4C469AD_ae) || (autoE4C469AD_ai < 0 && lv_nukeFindAppeal >= autoE4C469AD_ae) ) ; lv_nukeFindAppeal += autoE4C469AD_ai ) {
+                if ((lv_nukeAppeal[lv_nukeFindAppeal] > lv_highestAppealNumber) && ((UnitGroupCount(UnitGroup(null, 11, gv_countRegions[lv_nukeFindAppeal], UnitFilter((1 << c_targetFilterStructure), 0, (1 << c_targetFilterMissile), (1 << (c_targetFilterDead - 32)) | (1 << (c_targetFilterHidden - 32))), 0), c_unitCountAlive) == 0) || (gv_arisAIDifficulty < 71))) {
+                    lv_highestAppealNumber = lv_nukeAppeal[lv_nukeFindAppeal];
+                    lv_highestAppealVariable = lv_nukeFindAppeal;
+                }
+
+            }
+            lv_nukeAppeal[lv_highestAppealVariable] = (lv_nukeAppeal[lv_highestAppealVariable] / 2);
+            lv_nukeLocations[lv_nukeVariable] = RegionRandomPoint(gv_countRegions[lv_highestAppealVariable]);
+        }
+        if ((gv_rUNuclearProgress < 9) && (gv_rUNuclearProgress > 2)) {
+            SoundPlay(SoundLink("Tychus04BriefingAlarm", -1), PlayerGroupAll(), 100.0, 0.0);
+            UIDisplayMessage(PlayerGroupAll(), c_messageAreaSubtitle, TextWithColor(((StringExternal("Param/Value/6829A372") + IntToText(libNtve_gf_ArithmeticIntClamp(FixedToInt((RandomFixed(0.9, 1.1) * IntToFixed(gv_rUNukes))), 1, 10000))) + StringExternal("Param/Value/B9749240")), Color(100.00, 0.00, 0.00)));
+            autoD727C9E8_ae = gv_rUNukes;
+            lv_nukeVariable = 1;
+            for ( ; ( (autoD727C9E8_ai >= 0 && lv_nukeVariable <= autoD727C9E8_ae) || (autoD727C9E8_ai < 0 && lv_nukeVariable >= autoD727C9E8_ae) ) ; lv_nukeVariable += autoD727C9E8_ai ) {
+                UnitCreateEffectPoint(UnitFromId(1711017736), "LaunchICBMSet2", lv_nukeLocations[lv_nukeVariable]);
+                auto62D1094D_g = lv_radarPlayerGroup;
+                auto62D1094D_var = -1;
+                while (true) {
+                    auto62D1094D_var = PlayerGroupNextPlayer(auto62D1094D_g, auto62D1094D_var);
+                    if (auto62D1094D_var < 0) { break; }
+                    MinimapPing(PlayerGroupSingle(auto62D1094D_var), lv_nukeLocations[lv_nukeVariable], 4.0, Color(100.00, 0.00, 0.00));
+                }
+            }
+        }
+        else {
+            if ((gv_rUNuclearProgress < 15)) {
+                SoundPlay(SoundLink("Tychus04BriefingAlarm", -1), PlayerGroupAll(), 100.0, 0.0);
+                UIDisplayMessage(PlayerGroupAll(), c_messageAreaSubtitle, TextWithColor(((StringExternal("Param/Value/9C7C2316") + IntToText(libNtve_gf_ArithmeticIntClamp(FixedToInt((RandomFixed(0.9, 1.1) * IntToFixed(gv_rUNukes))), 1, 10000))) + StringExternal("Param/Value/CF76F8F3")), Color(100.00, 0.00, 0.00)));
+                auto08EED76C_ae = gv_rUNukes;
+                lv_nukeVariable = 1;
+                for ( ; ( (auto08EED76C_ai >= 0 && lv_nukeVariable <= auto08EED76C_ae) || (auto08EED76C_ai < 0 && lv_nukeVariable >= auto08EED76C_ae) ) ; lv_nukeVariable += auto08EED76C_ai ) {
+                    UnitCreateEffectPoint(UnitFromId(1711017736), "LaunchICBMSet22", lv_nukeLocations[lv_nukeVariable]);
+                    auto9C70D1DD_g = lv_radarPlayerGroup;
+                    auto9C70D1DD_var = -1;
+                    while (true) {
+                        auto9C70D1DD_var = PlayerGroupNextPlayer(auto9C70D1DD_g, auto9C70D1DD_var);
+                        if (auto9C70D1DD_var < 0) { break; }
+                        MinimapPing(PlayerGroupSingle(auto9C70D1DD_var), lv_nukeLocations[lv_nukeVariable], 4.0, Color(100.00, 0.00, 0.00));
+                    }
+                }
+            }
+            else {
+                if ((gv_rUNuclearProgress > 15)) {
+                    SoundPlay(SoundLink("Tychus04BriefingAlarm", -1), PlayerGroupAll(), 100.0, 0.0);
+                    UIDisplayMessage(PlayerGroupAll(), c_messageAreaSubtitle, TextWithColor(((StringExternal("Param/Value/3E20E43C") + IntToText(libNtve_gf_ArithmeticIntClamp(FixedToInt((RandomFixed(0.9, 1.1) * IntToFixed(gv_rUNukes))), 1, 10000))) + StringExternal("Param/Value/1814C809")), Color(100.00, 0.00, 0.00)));
+                    auto83C3D815_ae = gv_rUNukes;
+                    lv_nukeVariable = 1;
+                    for ( ; ( (auto83C3D815_ai >= 0 && lv_nukeVariable <= auto83C3D815_ae) || (auto83C3D815_ai < 0 && lv_nukeVariable >= auto83C3D815_ae) ) ; lv_nukeVariable += auto83C3D815_ai ) {
+                        UnitCreateEffectPoint(UnitFromId(1711017736), "LaunchICBMSet23", lv_nukeLocations[lv_nukeVariable]);
+                        auto8D338EDB_g = lv_radarPlayerGroup;
+                        auto8D338EDB_var = -1;
+                        while (true) {
+                            auto8D338EDB_var = PlayerGroupNextPlayer(auto8D338EDB_g, auto8D338EDB_var);
+                            if (auto8D338EDB_var < 0) { break; }
+                            MinimapPing(PlayerGroupSingle(auto8D338EDB_var), lv_nukeLocations[lv_nukeVariable], 20.0, Color(100.00, 0.00, 0.00));
+                        }
+                    }
+                }
+                else {
+                    TriggerStop(TriggerGetCurrent());
+                }
+            }
+        }
+    }
+    gv_rUNukes = 0;
+}
+
+void gf_RUNuclearDevelopment () {
+    // Variable Declarations
+    playergroup lv_radarPlayerGroup;
+    int lv_highestAppealNumber;
+    int lv_highestAppealVariable;
+    int lv_nukeVariable;
+    int lv_nukeFindAppeal;
+    point[1000] lv_nukeLocations;
+    int[gv_numberOfRegions + 1] lv_nukeAppeal;
+
+    // Automatic Variable Declarations
+    // Variable Initialization
+    lv_radarPlayerGroup = PlayerGroupEmpty();
+
+    // Implementation
+    if ((UnitGroupCount(UnitGroup("SupplyDepot234223", 11, RegionEntireMap(), UnitFilter(0, 0, (1 << c_targetFilterMissile), (1 << (c_targetFilterDead - 32)) | (1 << (c_targetFilterHidden - 32))), 0), c_unitCountAlive) > 0) && (gv_rTechnology > 30000)) {
+        if ((gv_rUNuclearProgress == -1)) {
+            UIDisplayMessage(PlayerGroupAll(), c_messageAreaSubtitle, StringExternal("Param/Value/5F0B789F"));
+            gv_rUNuclearProgress += 1;
+        }
+        else {
+            if ((gv_rUNuclearProgress == 0)) {
+                gv_rUNuclearProgress += 1;
+                UIDisplayMessage(PlayerGroupAll(), c_messageAreaSubtitle, StringExternal("Param/Value/DCE2BB26"));
+            }
+            else {
+                if ((gv_rUNuclearProgress == 1)) {
+                    gv_rUNuclearProgress += 1;
+                    UIDisplayMessage(PlayerGroupAll(), c_messageAreaSubtitle, StringExternal("Param/Value/441BF2B3"));
+                }
+                else {
+                    if ((gv_rUNuclearProgress == 2)) {
+                        gv_rUNuclearProgress += 1;
+                        UIDisplayMessage(PlayerGroupAll(), c_messageAreaSubtitle, StringExternal("Param/Value/B7EBE0F4"));
+                        UnitCreateEffectPoint(gf_GetRussianNukeLauncher(), "LaunchICBMSet2", RegionRandomPoint(RegionFromId(195)));
+                    }
+                    else {
+                        gv_rUNuclearProgress += 1;
+                        if ((gv_rUNuclearProgress == 8)) {
+                            UIDisplayMessage(PlayerGroupAll(), c_messageAreaSubtitle, StringExternal("Param/Value/02AD58E9"));
+                            UnitCreateEffectPoint(gf_GetRussianNukeLauncher(), "LaunchICBMSet22", RegionRandomPoint(RegionFromId(139)));
+                        }
+                        else {
+                            if ((gv_rUNuclearProgress == 15) && (gv_russianDifficulty > 250)) {
+                                UIDisplayMessage(PlayerGroupAll(), c_messageAreaSubtitle, StringExternal("Param/Value/EEBF572A"));
+                                UnitCreateEffectPoint(gf_GetRussianNukeLauncher(), "LaunchICBMSet22", RegionRandomPoint(RegionFromId(122)));
+                            }
+
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+}
+
 void gf_RussianRazeRebel (unit lp_city) {
     // Automatic Variable Declarations
     // Implementation
@@ -17763,21 +17882,21 @@ void gf_RussianMultiplierUpdate () {
     unit autoF7908A05_var;
 
     // Implementation
-    gv_rProductionMultiplier = 10;
-    gv_rTechnologyMultiplier = 10;
+    gv_rProductionMultiplier = 5;
+    gv_rTechnologyMultiplier = 5;
     autoB1023E79_g = UnitGroup("RussianResearchCenter", c_playerAny, RegionEntireMap(), UnitFilter(0, 0, (1 << c_targetFilterMissile), (1 << (c_targetFilterDead - 32)) | (1 << (c_targetFilterHidden - 32))), 0);
     autoB1023E79_u = UnitGroupCount(autoB1023E79_g, c_unitCountAll);
     for (;; autoB1023E79_u -= 1) {
         autoB1023E79_var = UnitGroupUnitFromEnd(autoB1023E79_g, autoB1023E79_u);
         if (autoB1023E79_var == null) { break; }
-        gv_rTechnologyMultiplier += 25;
+        gv_rTechnologyMultiplier += 20;
     }
     autoCEAED05A_g = UnitGroup("RussianFactory", c_playerAny, RegionEntireMap(), UnitFilter(0, 0, (1 << c_targetFilterMissile), (1 << (c_targetFilterDead - 32)) | (1 << (c_targetFilterHidden - 32))), 0);
     autoCEAED05A_u = UnitGroupCount(autoCEAED05A_g, c_unitCountAll);
     for (;; autoCEAED05A_u -= 1) {
         autoCEAED05A_var = UnitGroupUnitFromEnd(autoCEAED05A_g, autoCEAED05A_u);
         if (autoCEAED05A_var == null) { break; }
-        gv_rProductionMultiplier += 25;
+        gv_rProductionMultiplier += 20;
     }
     autoF7908A05_g = UnitGroup("RussianBarracks", c_playerAny, RegionEntireMap(), UnitFilter(0, 0, (1 << c_targetFilterMissile), (1 << (c_targetFilterDead - 32)) | (1 << (c_targetFilterHidden - 32))), 0);
     autoF7908A05_u = UnitGroupCount(autoF7908A05_g, c_unitCountAll);
@@ -17790,10 +17909,10 @@ void gf_RussianMultiplierUpdate () {
         gv_rTechnologyMultiplier = 0;
     }
     else {
-        gv_rTechnologyMultiplier += 25;
+        gv_rTechnologyMultiplier += 20;
     }
-    gv_rProductionMultiplier = ((gv_rProductionMultiplier * gv_arisAIDifficulty) / 50);
-    gv_rTechnologyMultiplier = ((gv_rTechnologyMultiplier * gv_arisAIDifficulty) / 50);
+    gv_rProductionMultiplier = FixedToInt((((libNtve_gf_Log(IntToFixed(gv_rProductionMultiplier), 4.0) * IntToFixed(gv_arisAIDifficulty)) - Log2(IntToFixed(gv_rProductionMultiplier))) / 2.0));
+    gv_rTechnologyMultiplier = FixedToInt((((libNtve_gf_Log(IntToFixed(gv_rTechnologyMultiplier), 4.0) * IntToFixed(gv_arisAIDifficulty)) - Log2(IntToFixed(gv_rTechnologyMultiplier))) / 2.0));
 }
 
 void gf_RussianResourceCalculate () {
@@ -17824,7 +17943,7 @@ void gf_RussianResourceCalculate () {
     for (;; auto8F824776_u -= 1) {
         auto8F824776_var = UnitGroupUnitFromEnd(auto8F824776_g, auto8F824776_u);
         if (auto8F824776_var == null) { break; }
-        lv_pop += 500;
+        lv_pop += FixedToInt(UnitGetPropertyFixed(auto8F824776_var, c_unitPropEnergy, c_unitPropCurrent));
     }
     gv_rTechnology += ((lv_pop / 10000) * gv_rTechnologyMultiplier);
     gv_rProduction += ((lv_pop / 250) * gv_rProductionMultiplier);
@@ -19511,225 +19630,6 @@ void gf_A110Waves () {
     }
 }
 
-unit gf_GetRussianNukeLauncher () {
-    // Automatic Variable Declarations
-    // Implementation
-    return UnitGroupRandomUnit(UnitGroup("SupplyDepot234223", 11, RegionEntireMap(), UnitFilter(0, 0, (1 << c_targetFilterMissile), (1 << (c_targetFilterDead - 32)) | (1 << (c_targetFilterHidden - 32))), 0), c_unitCountAlive);
-}
-
-void gf_DoTheNuke () {
-    // Automatic Variable Declarations
-    // Implementation
-    if ((gv_rUNukes > 1) && (((RandomInt(0, (gv_russianDanger + (gv_arisAIDifficulty * 2))) > 1250) && (RandomInt(gv_rUNukes, 100) > 50)) || ((RandomInt(gv_rUNukes, 100) > 98)))) {
-        gf_RUNuke();
-    }
-
-}
-
-void gf_RUNuke () {
-    // Variable Declarations
-    playergroup lv_radarPlayerGroup;
-    int lv_highestAppealNumber;
-    int lv_highestAppealVariable;
-    int lv_nukeVariable;
-    int lv_nukeFindAppeal;
-    point[1000] lv_nukeLocations;
-    int[gv_numberOfRegions + 1] lv_nukeAppeal;
-
-    // Automatic Variable Declarations
-    playergroup auto2008A0F8_g;
-    int auto2008A0F8_var;
-    const int auto2D142624_ae = gv_numberOfRegions;
-    const int auto2D142624_ai = 1;
-    int auto4C4892FF_ae;
-    const int auto4C4892FF_ai = 1;
-    const int autoE4C469AD_ae = gv_numberOfRegions;
-    const int autoE4C469AD_ai = 1;
-    int autoD727C9E8_ae;
-    const int autoD727C9E8_ai = 1;
-    playergroup auto62D1094D_g;
-    int auto62D1094D_var;
-    int auto08EED76C_ae;
-    const int auto08EED76C_ai = 1;
-    playergroup auto9C70D1DD_g;
-    int auto9C70D1DD_var;
-    int auto83C3D815_ae;
-    const int auto83C3D815_ai = 1;
-    playergroup auto8D338EDB_g;
-    int auto8D338EDB_var;
-
-    // Variable Initialization
-    lv_radarPlayerGroup = PlayerGroupEmpty();
-
-    // Implementation
-    if ((UnitGroupCount(UnitGroup("SupplyDepot234223", 11, RegionEntireMap(), UnitFilter(0, 0, (1 << c_targetFilterMissile), (1 << (c_targetFilterDead - 32)) | (1 << (c_targetFilterHidden - 32))), 0), c_unitCountAlive) == 0)) {
-        gv_rUNuclearProgress = -10;
-    }
-    else {
-        if ((gv_rUNukes < 1)) {
-            gv_rUNukes = 1;
-        }
-
-        auto2008A0F8_g = gv_users;
-        auto2008A0F8_var = -1;
-        while (true) {
-            auto2008A0F8_var = PlayerGroupNextPlayer(auto2008A0F8_g, auto2008A0F8_var);
-            if (auto2008A0F8_var < 0) { break; }
-            if ((TechTreeUpgradeCount(auto2008A0F8_var, "AdvancedRadarStation", c_techCountCompleteOnly) == 1)) {
-                PlayerGroupAdd(lv_radarPlayerGroup, auto2008A0F8_var);
-            }
-
-        }
-        lv_nukeVariable = 1;
-        for ( ; ( (auto2D142624_ai >= 0 && lv_nukeVariable <= auto2D142624_ae) || (auto2D142624_ai < 0 && lv_nukeVariable >= auto2D142624_ae) ) ; lv_nukeVariable += auto2D142624_ai ) {
-            lv_nukeAppeal[lv_nukeVariable] = gf_GetCountyPopulation(lv_nukeVariable);
-            if ((UnitGroupCount(UnitGroup(null, 10, gv_countRegions[lv_nukeFindAppeal], UnitFilter((1 << c_targetFilterStructure), 0, (1 << c_targetFilterMissile), (1 << (c_targetFilterDead - 32)) | (1 << (c_targetFilterHidden - 32))), 0), c_unitCountAlive) > 0)) {
-                lv_nukeAppeal[lv_nukeVariable] /= 4;
-            }
-
-        }
-        lv_nukeAppeal[181] = 0;
-        if ((gv_arisAIDifficulty > 70)) {
-            lv_nukeAppeal[1] = 0;
-            lv_nukeAppeal[2] = 0;
-            lv_nukeAppeal[3] = 0;
-            lv_nukeAppeal[4] = 0;
-            lv_nukeAppeal[5] = 0;
-            lv_nukeAppeal[6] = 0;
-        }
-
-        auto4C4892FF_ae = lv_nukeVariable;
-        lv_nukeVariable = 1;
-        for ( ; ( (auto4C4892FF_ai >= 0 && lv_nukeVariable <= auto4C4892FF_ae) || (auto4C4892FF_ai < 0 && lv_nukeVariable >= auto4C4892FF_ae) ) ; lv_nukeVariable += auto4C4892FF_ai ) {
-            lv_highestAppealNumber = 0;
-            lv_highestAppealVariable = 0;
-            lv_nukeFindAppeal = 1;
-            for ( ; ( (autoE4C469AD_ai >= 0 && lv_nukeFindAppeal <= autoE4C469AD_ae) || (autoE4C469AD_ai < 0 && lv_nukeFindAppeal >= autoE4C469AD_ae) ) ; lv_nukeFindAppeal += autoE4C469AD_ai ) {
-                if ((lv_nukeAppeal[lv_nukeFindAppeal] > lv_highestAppealNumber) && ((UnitGroupCount(UnitGroup(null, 11, gv_countRegions[lv_nukeFindAppeal], UnitFilter((1 << c_targetFilterStructure), 0, (1 << c_targetFilterMissile), (1 << (c_targetFilterDead - 32)) | (1 << (c_targetFilterHidden - 32))), 0), c_unitCountAlive) == 0) || (gv_arisAIDifficulty < 71))) {
-                    lv_highestAppealNumber = lv_nukeAppeal[lv_nukeFindAppeal];
-                    lv_highestAppealVariable = lv_nukeFindAppeal;
-                }
-
-            }
-            lv_nukeAppeal[lv_highestAppealVariable] = (lv_nukeAppeal[lv_highestAppealVariable] / 2);
-            lv_nukeLocations[lv_nukeVariable] = RegionRandomPoint(gv_countRegions[lv_highestAppealVariable]);
-        }
-        if ((gv_rUNuclearProgress < 9) && (gv_rUNuclearProgress > 2)) {
-            SoundPlay(SoundLink("Tychus04BriefingAlarm", -1), PlayerGroupAll(), 100.0, 0.0);
-            UIDisplayMessage(PlayerGroupAll(), c_messageAreaSubtitle, TextWithColor(((StringExternal("Param/Value/6829A372") + IntToText(libNtve_gf_ArithmeticIntClamp(FixedToInt((RandomFixed(0.9, 1.1) * IntToFixed(gv_rUNukes))), 1, 10000))) + StringExternal("Param/Value/B9749240")), Color(100.00, 0.00, 0.00)));
-            autoD727C9E8_ae = gv_rUNukes;
-            lv_nukeVariable = 1;
-            for ( ; ( (autoD727C9E8_ai >= 0 && lv_nukeVariable <= autoD727C9E8_ae) || (autoD727C9E8_ai < 0 && lv_nukeVariable >= autoD727C9E8_ae) ) ; lv_nukeVariable += autoD727C9E8_ai ) {
-                UnitCreateEffectPoint(UnitFromId(1711017736), "LaunchICBMSet2", lv_nukeLocations[lv_nukeVariable]);
-                auto62D1094D_g = lv_radarPlayerGroup;
-                auto62D1094D_var = -1;
-                while (true) {
-                    auto62D1094D_var = PlayerGroupNextPlayer(auto62D1094D_g, auto62D1094D_var);
-                    if (auto62D1094D_var < 0) { break; }
-                    MinimapPing(PlayerGroupSingle(auto62D1094D_var), lv_nukeLocations[lv_nukeVariable], 4.0, Color(100.00, 0.00, 0.00));
-                }
-            }
-        }
-        else {
-            if ((gv_rUNuclearProgress < 15)) {
-                SoundPlay(SoundLink("Tychus04BriefingAlarm", -1), PlayerGroupAll(), 100.0, 0.0);
-                UIDisplayMessage(PlayerGroupAll(), c_messageAreaSubtitle, TextWithColor(((StringExternal("Param/Value/9C7C2316") + IntToText(libNtve_gf_ArithmeticIntClamp(FixedToInt((RandomFixed(0.9, 1.1) * IntToFixed(gv_rUNukes))), 1, 10000))) + StringExternal("Param/Value/CF76F8F3")), Color(100.00, 0.00, 0.00)));
-                auto08EED76C_ae = gv_rUNukes;
-                lv_nukeVariable = 1;
-                for ( ; ( (auto08EED76C_ai >= 0 && lv_nukeVariable <= auto08EED76C_ae) || (auto08EED76C_ai < 0 && lv_nukeVariable >= auto08EED76C_ae) ) ; lv_nukeVariable += auto08EED76C_ai ) {
-                    UnitCreateEffectPoint(UnitFromId(1711017736), "LaunchICBMSet22", lv_nukeLocations[lv_nukeVariable]);
-                    auto9C70D1DD_g = lv_radarPlayerGroup;
-                    auto9C70D1DD_var = -1;
-                    while (true) {
-                        auto9C70D1DD_var = PlayerGroupNextPlayer(auto9C70D1DD_g, auto9C70D1DD_var);
-                        if (auto9C70D1DD_var < 0) { break; }
-                        MinimapPing(PlayerGroupSingle(auto9C70D1DD_var), lv_nukeLocations[lv_nukeVariable], 4.0, Color(100.00, 0.00, 0.00));
-                    }
-                }
-            }
-            else {
-                if ((gv_rUNuclearProgress > 15)) {
-                    SoundPlay(SoundLink("Tychus04BriefingAlarm", -1), PlayerGroupAll(), 100.0, 0.0);
-                    UIDisplayMessage(PlayerGroupAll(), c_messageAreaSubtitle, TextWithColor(((StringExternal("Param/Value/3E20E43C") + IntToText(libNtve_gf_ArithmeticIntClamp(FixedToInt((RandomFixed(0.9, 1.1) * IntToFixed(gv_rUNukes))), 1, 10000))) + StringExternal("Param/Value/1814C809")), Color(100.00, 0.00, 0.00)));
-                    auto83C3D815_ae = gv_rUNukes;
-                    lv_nukeVariable = 1;
-                    for ( ; ( (auto83C3D815_ai >= 0 && lv_nukeVariable <= auto83C3D815_ae) || (auto83C3D815_ai < 0 && lv_nukeVariable >= auto83C3D815_ae) ) ; lv_nukeVariable += auto83C3D815_ai ) {
-                        UnitCreateEffectPoint(UnitFromId(1711017736), "LaunchICBMSet23", lv_nukeLocations[lv_nukeVariable]);
-                        auto8D338EDB_g = lv_radarPlayerGroup;
-                        auto8D338EDB_var = -1;
-                        while (true) {
-                            auto8D338EDB_var = PlayerGroupNextPlayer(auto8D338EDB_g, auto8D338EDB_var);
-                            if (auto8D338EDB_var < 0) { break; }
-                            MinimapPing(PlayerGroupSingle(auto8D338EDB_var), lv_nukeLocations[lv_nukeVariable], 20.0, Color(100.00, 0.00, 0.00));
-                        }
-                    }
-                }
-                else {
-                    TriggerStop(TriggerGetCurrent());
-                }
-            }
-        }
-    }
-    gv_rUNukes = 0;
-}
-
-void gf_RUNuclearDevelopment () {
-    // Variable Declarations
-    playergroup lv_radarPlayerGroup;
-    int lv_highestAppealNumber;
-    int lv_highestAppealVariable;
-    int lv_nukeVariable;
-    int lv_nukeFindAppeal;
-    point[1000] lv_nukeLocations;
-    int[gv_numberOfRegions + 1] lv_nukeAppeal;
-
-    // Automatic Variable Declarations
-    // Variable Initialization
-    lv_radarPlayerGroup = PlayerGroupEmpty();
-
-    // Implementation
-    if ((UnitGroupCount(UnitGroup("SupplyDepot234223", 11, RegionEntireMap(), UnitFilter(0, 0, (1 << c_targetFilterMissile), (1 << (c_targetFilterDead - 32)) | (1 << (c_targetFilterHidden - 32))), 0), c_unitCountAlive) > 0) && (gv_rTechnology > 30000)) {
-        if ((gv_rUNuclearProgress == -1)) {
-            UIDisplayMessage(PlayerGroupAll(), c_messageAreaSubtitle, StringExternal("Param/Value/5F0B789F"));
-            gv_rUNuclearProgress += 1;
-        }
-        else {
-            if ((gv_rUNuclearProgress == 0)) {
-                gv_rUNuclearProgress += 1;
-                UIDisplayMessage(PlayerGroupAll(), c_messageAreaSubtitle, StringExternal("Param/Value/DCE2BB26"));
-            }
-            else {
-                if ((gv_rUNuclearProgress == 1)) {
-                    gv_rUNuclearProgress += 1;
-                    UIDisplayMessage(PlayerGroupAll(), c_messageAreaSubtitle, StringExternal("Param/Value/441BF2B3"));
-                }
-                else {
-                    if ((gv_rUNuclearProgress == 2)) {
-                        gv_rUNuclearProgress += 1;
-                        UIDisplayMessage(PlayerGroupAll(), c_messageAreaSubtitle, StringExternal("Param/Value/B7EBE0F4"));
-                        UnitCreateEffectPoint(gf_GetRussianNukeLauncher(), "LaunchICBMSet2", RegionRandomPoint(RegionFromId(195)));
-                    }
-                    else {
-                        gv_rUNuclearProgress += 1;
-                        if ((gv_rUNuclearProgress == 8)) {
-                            UIDisplayMessage(PlayerGroupAll(), c_messageAreaSubtitle, StringExternal("Param/Value/02AD58E9"));
-                            UnitCreateEffectPoint(gf_GetRussianNukeLauncher(), "LaunchICBMSet22", RegionRandomPoint(RegionFromId(139)));
-                        }
-                        else {
-                            if ((gv_rUNuclearProgress == 15) && (gv_russianDifficulty > 250)) {
-                                UIDisplayMessage(PlayerGroupAll(), c_messageAreaSubtitle, StringExternal("Param/Value/EEBF572A"));
-                                UnitCreateEffectPoint(gf_GetRussianNukeLauncher(), "LaunchICBMSet22", RegionRandomPoint(RegionFromId(122)));
-                            }
-
-                        }
-                    }
-                }
-            }
-        }
-    }
-
-}
-
 void gf_AttackNearHostile (unit lp_unit) {
     // Automatic Variable Declarations
     // Implementation
@@ -20005,15 +19905,15 @@ bool gt_UnitSelected_Func (bool testConds, bool runActions) {
             }
         }
         else {
-            if (((UnitGetType(lv_topUnit) == "WindTurbine") || (UnitGetType(lv_topUnit) == "RefineryPipes") || (UnitGetType(lv_topUnit) == "FusionReactor2") || (UnitGetType(lv_topUnit) == "FissionPowerPlant") || (UnitGetType(lv_topUnit) == "GeothermalPowerPlant"))) {
+            if (((UnitGetType(lv_topUnit) == "WindTurbine") || (UnitGetType(lv_topUnit) == "OilPowerPlant") || (UnitGetType(lv_topUnit) == "FusionReactor2") || (UnitGetType(lv_topUnit) == "FissionPowerPlant") || (UnitGetType(lv_topUnit) == "GeothermalPowerPlant"))) {
                 lv_givenBase = -1;
                 if ((UnitGetType(lv_topUnit) == "WindTurbine")) {
-                    lv_givenBase = 100;
+                    lv_givenBase = 500;
                     lv_centralisationModifier = FixedToInt((100.0 - (UnitGetCustomValue(lv_topUnit, 0) * 100.0)));
                 }
                 else {
-                    if ((UnitGetType(lv_topUnit) == "RefineryPipes")) {
-                        lv_givenBase = 1200;
+                    if ((UnitGetType(lv_topUnit) == "OilPowerPlant")) {
+                        lv_givenBase = 3000;
                         lv_centralisationModifier = FixedToInt((100.0 - (UnitGetCustomValue(lv_topUnit, 0) * 100.0)));
                     }
                     else {
@@ -20023,7 +19923,7 @@ bool gt_UnitSelected_Func (bool testConds, bool runActions) {
                         }
                         else {
                             if ((UnitGetType(lv_topUnit) == "FusionReactor2")) {
-                                lv_givenBase = 10000;
+                                lv_givenBase = 8000;
                                 lv_centralisationModifier = FixedToInt((100.0 - (UnitGetCustomValue(lv_topUnit, 0) * 100.0)));
                             }
                             else {
@@ -20202,24 +20102,29 @@ bool gt_SettlerWarnings_Func (bool testConds, bool runActions) {
         for (;; autoCE1122D3_u -= 1) {
             autoCE1122D3_var = UnitGroupUnitFromEnd(autoCE1122D3_g, autoCE1122D3_u);
             if (autoCE1122D3_var == null) { break; }
-            if ((gv_aIDifficulty > 0) && (DistanceBetweenPoints(UnitGetPosition(autoCE1122D3_var), UnitGetPosition(UnitGroupClosestToPoint(UnitGroup(null, 11, RegionEntireMap(), UnitFilter((1 << c_targetFilterStructure), 0, (1 << c_targetFilterMissile), (1 << (c_targetFilterDead - 32)) | (1 << (c_targetFilterHidden - 32))), 0), UnitGetPosition(autoCE1122D3_var)))) <= 50.0)) {
-                UIDisplayMessage(PlayerGroupSingle(UnitGetOwner(autoCE1122D3_var)), c_messageAreaSubtitle, StringExternal("Param/Value/0F14E9DE"));
+            if (((libNtve_gf_UnitInRegion(autoCE1122D3_var, RegionFromId(123)) == true) || (libNtve_gf_UnitInRegion(autoCE1122D3_var, RegionFromId(117)) == true) || (libNtve_gf_UnitInRegion(autoCE1122D3_var, RegionFromId(198)) == true) || (libNtve_gf_UnitInRegion(autoCE1122D3_var, RegionFromId(122)) == true))) {
+                UIDisplayMessage(PlayerGroupSingle(UnitGetOwner(autoCE1122D3_var)), c_messageAreaSubtitle, StringExternal("Param/Value/7291C2E2"));
             }
             else {
-                if ((gv_aIDifficulty > 0) && (DistanceBetweenPoints(UnitGetPosition(autoCE1122D3_var), UnitGetPosition(UnitGroupClosestToPoint(UnitGroup(null, 10, RegionEntireMap(), UnitFilter((1 << c_targetFilterStructure), 0, (1 << c_targetFilterMissile), (1 << (c_targetFilterDead - 32)) | (1 << (c_targetFilterHidden - 32))), 0), UnitGetPosition(autoCE1122D3_var)))) <= 75.0)) {
-                    UIDisplayMessage(PlayerGroupSingle(UnitGetOwner(autoCE1122D3_var)), c_messageAreaSubtitle, StringExternal("Param/Value/ED77BCB0"));
+                if ((gv_aIDifficulty > 0) && (DistanceBetweenPoints(UnitGetPosition(autoCE1122D3_var), UnitGetPosition(UnitGroupClosestToPoint(UnitGroup(null, 11, RegionEntireMap(), UnitFilter((1 << c_targetFilterStructure), 0, (1 << c_targetFilterMissile), (1 << (c_targetFilterDead - 32)) | (1 << (c_targetFilterHidden - 32))), 0), UnitGetPosition(autoCE1122D3_var)))) <= 50.0)) {
+                    UIDisplayMessage(PlayerGroupSingle(UnitGetOwner(autoCE1122D3_var)), c_messageAreaSubtitle, StringExternal("Param/Value/0F14E9DE"));
                 }
                 else {
-                    if ((gf_HasBadFarmingTerrain(autoCE1122D3_var) == true)) {
-                        UIDisplayMessage(PlayerGroupSingle(UnitGetOwner(autoCE1122D3_var)), c_messageAreaSubtitle, StringExternal("Param/Value/969C2626"));
+                    if ((gv_aIDifficulty > 0) && (DistanceBetweenPoints(UnitGetPosition(autoCE1122D3_var), UnitGetPosition(UnitGroupClosestToPoint(UnitGroup(null, 10, RegionEntireMap(), UnitFilter((1 << c_targetFilterStructure), 0, (1 << c_targetFilterMissile), (1 << (c_targetFilterDead - 32)) | (1 << (c_targetFilterHidden - 32))), 0), UnitGetPosition(autoCE1122D3_var)))) <= 75.0)) {
+                        UIDisplayMessage(PlayerGroupSingle(UnitGetOwner(autoCE1122D3_var)), c_messageAreaSubtitle, StringExternal("Param/Value/ED77BCB0"));
                     }
                     else {
-                        UIDisplayMessage(PlayerGroupSingle(UnitGetOwner(autoCE1122D3_var)), c_messageAreaSubtitle, StringExternal("Param/Value/3DA10E26"));
+                        if ((gf_HasBadFarmingTerrain(autoCE1122D3_var) == true)) {
+                            UIDisplayMessage(PlayerGroupSingle(UnitGetOwner(autoCE1122D3_var)), c_messageAreaSubtitle, StringExternal("Param/Value/969C2626"));
+                        }
+                        else {
+                            UIDisplayMessage(PlayerGroupSingle(UnitGetOwner(autoCE1122D3_var)), c_messageAreaSubtitle, StringExternal("Param/Value/3DA10E26"));
+                        }
                     }
                 }
             }
         }
-        Wait(4.0, c_timeGame);
+        Wait(9.0, c_timeGame);
     }
     return true;
 }
@@ -20445,17 +20350,11 @@ void gt_ManageUnitLimit_Init () {
 bool gt_ManageUnitLimit2_Func (bool testConds, bool runActions) {
     // Variable Declarations
     int lv_unitsAtPlay;
-    int[16] lv_windmills;
 
     // Automatic Variable Declarations
     unitgroup auto2C525FE9_g;
     int auto2C525FE9_u;
     unit auto2C525FE9_var;
-    unitgroup auto97758AE2_g;
-    int auto97758AE2_u;
-    unit auto97758AE2_var;
-    playergroup autoAFDD629A_g;
-    int autoAFDD629A_var;
 
     // Variable Initialization
 
@@ -20472,28 +20371,10 @@ bool gt_ManageUnitLimit2_Func (bool testConds, bool runActions) {
         if (auto2C525FE9_var == null) { break; }
         lv_unitsAtPlay += 1;
     }
-    auto97758AE2_g = UnitGroup("WindTurbine", c_playerAny, RegionEntireMap(), UnitFilter(0, 0, (1 << c_targetFilterMissile), (1 << (c_targetFilterDead - 32)) | (1 << (c_targetFilterHidden - 32))), 0);
-    auto97758AE2_u = UnitGroupCount(auto97758AE2_g, c_unitCountAll);
-    for (;; auto97758AE2_u -= 1) {
-        auto97758AE2_var = UnitGroupUnitFromEnd(auto97758AE2_g, auto97758AE2_u);
-        if (auto97758AE2_var == null) { break; }
-        lv_windmills[UnitGetOwner(auto97758AE2_var)] += 1;
-    }
     if ((lv_unitsAtPlay > 2500)) {
         UIDisplayMessage(PlayerGroupAll(), c_messageAreaSubtitle, StringExternal("Param/Value/B71F5F56"));
     }
-    else {
-        autoAFDD629A_g = gv_users;
-        autoAFDD629A_var = -1;
-        while (true) {
-            autoAFDD629A_var = PlayerGroupNextPlayer(autoAFDD629A_g, autoAFDD629A_var);
-            if (autoAFDD629A_var < 0) { break; }
-            if ((lv_windmills[autoAFDD629A_var] > 150)) {
-                UIDisplayMessage(PlayerGroupAll(), c_messageAreaSubtitle, StringExternal("Param/Value/C06E89D2"));
-            }
 
-        }
-    }
     return true;
 }
 
@@ -20988,6 +20869,7 @@ bool gt_MainUI_Func (bool testConds, bool runActions) {
     gv_mainUI[0] = DialogLastCreated();
     DialogSetImage(DialogLastCreated(), "Assets\\Declare War, Neutral, Peace\\Transparent Box.tga");
     libNtve_gf_CreateDialogItemImage(DialogLastCreated(), 200, 200, c_anchorTopLeft, 5, 5, StringToText(""), "Assets\\Nations\\NonNation.dds", c_triggerImageTypeNormal, true, Color(100,100,100), c_triggerBlendModeNormal);
+    libNtve_gf_SetDialogItemTooltip(DialogControlLastCreated(), StringExternal("Param/Value/DC6A8F6B"), PlayerGroupAll());
     gv_mainDialogItemsUI[0] = DialogControlLastCreated();
     DialogSetVisible(DialogLastCreated(), PlayerGroupAll(), true);
     DialogCreate(688, 200, c_anchorTopLeft, -12, -12, true);
@@ -21559,7 +21441,7 @@ bool gt_Player9AIRebellionAI_Func (bool testConds, bool runActions) {
     for (;; autoF85EA5DF_u -= 1) {
         autoF85EA5DF_var = UnitGroupUnitFromEnd(autoF85EA5DF_g, autoF85EA5DF_u);
         if (autoF85EA5DF_var == null) { break; }
-        lv_electricity += 100;
+        lv_electricity += 500;
         UnitGroupAdd(lv_groundStructures, autoF85EA5DF_var);
     }
     auto08F71B9E_g = UnitGroup("MineI", 9, RegionEntireMap(), UnitFilter(0, 0, (1 << c_targetFilterMissile), (1 << (c_targetFilterDead - 32)) | (1 << (c_targetFilterHidden - 32))), 0);
@@ -22814,13 +22696,6 @@ void gt_WorldeaterNotification_Init () {
 //--------------------------------------------------------------------------------------------------
 bool gt_ReformGovernment_Func (bool testConds, bool runActions) {
     // Automatic Variable Declarations
-    // Conditions
-    if (testConds) {
-        if (!((GameAttributeGameValue("1") == "0002"))) {
-            return false;
-        }
-    }
-
     // Actions
     if (!runActions) {
         return true;
@@ -22888,13 +22763,6 @@ bool gt_AssignNationalName_Func (bool testConds, bool runActions) {
     lv_canHaveNation = PlayerGroupEmpty();
     for (init_i = 0; init_i <= 15; init_i += 1) {
         lv_nationIDModifier[init_i] = "";
-    }
-
-    // Conditions
-    if (testConds) {
-        if (!((GameAttributeGameValue("1") == "0002"))) {
-            return false;
-        }
     }
 
     // Actions
@@ -29931,7 +29799,7 @@ bool gt_Policies_Func (bool testConds, bool runActions) {
 
     if ((EventUnitAbility() == AbilityCommand("Corporatocracy", 0))) {
         gv_creditIncomeModifier[UnitGetOwner(EventUnit())] += 180;
-        gv_foodIncomeModifier[UnitGetOwner(EventUnit())] -= 20;
+        gv_foodIncomeModifier[UnitGetOwner(EventUnit())] -= 60;
         gv_electricityIncomeModifier[UnitGetOwner(EventUnit())] -= 10;
         gv_popGrowth[UnitGetOwner(EventUnit())] -= 0.01;
         gv_techIncomeModifier[UnitGetOwner(EventUnit())] -= 10;
@@ -31475,27 +31343,6 @@ void gt_Tabs_Init () {
 }
 
 //--------------------------------------------------------------------------------------------------
-// Trigger: ColdWarRemoveFunctionality
-//--------------------------------------------------------------------------------------------------
-bool gt_ColdWarRemoveFunctionality_Func (bool testConds, bool runActions) {
-    // Automatic Variable Declarations
-    // Actions
-    if (!runActions) {
-        return true;
-    }
-
-    DialogControlSetEnabled(gv_economicTabsDialogItems[2], PlayerGroupAll(), false);
-    DialogControlSetEnabled(gv_economicTabsDialogItems[3], PlayerGroupAll(), false);
-    return true;
-}
-
-//--------------------------------------------------------------------------------------------------
-void gt_ColdWarRemoveFunctionality_Init () {
-    gt_ColdWarRemoveFunctionality = TriggerCreate("gt_ColdWarRemoveFunctionality_Func");
-    TriggerAddEventTimeElapsed(gt_ColdWarRemoveFunctionality, 2.0, c_timeGame);
-}
-
-//--------------------------------------------------------------------------------------------------
 // Trigger: EmbargoButton
 //--------------------------------------------------------------------------------------------------
 bool gt_EmbargoButton_Func (bool testConds, bool runActions) {
@@ -31746,14 +31593,12 @@ bool gt_TradeUI_Func (bool testConds, bool runActions) {
     libNtve_gf_CreateDialogItemLabel(DialogLastCreated(), 260, 40, c_anchorTopLeft, 40, 60, StringExternal("Param/Value/F896D8D7"), ColorWithAlpha(0,0,0,0), false, 2.0);
     libNtve_gf_SetDialogItemStyle(DialogControlLastCreated(), "Void_BoldExtendedMedium1", PlayerGroupAll());
     libNtve_gf_CreateDialogItemLabel(DialogLastCreated(), 80, 40, c_anchorTopLeft, 80, 100, StringExternal("Param/Value/5A83ADC5"), ColorWithAlpha(0,0,0,0), false, 2.0);
-    libNtve_gf_CreateDialogItemLabel(DialogLastCreated(), 80, 40, c_anchorTopLeft, 40, 130, StringExternal("Param/Value/7ADE6B88"), ColorWithAlpha(0,0,0,0), false, 2.0);
     libNtve_gf_CreateDialogItemLabel(DialogLastCreated(), 80, 40, c_anchorTopLeft, 40, 160, StringExternal("Param/Value/5D3AAAE6"), ColorWithAlpha(0,0,0,0), false, 2.0);
     libNtve_gf_CreateDialogItemLabel(DialogLastCreated(), 80, 40, c_anchorTopLeft, 40, 190, StringExternal("Param/Value/394D5033"), ColorWithAlpha(0,0,0,0), false, 2.0);
     libNtve_gf_CreateDialogItemLabel(DialogLastCreated(), 95, 40, c_anchorTopLeft, 40, 220, StringExternal("Param/Value/984616CE"), ColorWithAlpha(0,0,0,0), false, 2.0);
     libNtve_gf_CreateDialogItemLabel(DialogLastCreated(), 200, 40, c_anchorTopLeft, 50, 250, StringExternal("Param/Value/D98C8950"), ColorWithAlpha(0,0,0,0), false, 2.0);
     libNtve_gf_CreateDialogItemLabel(DialogLastCreated(), 120, 40, c_anchorTopLeft, 80, 290, StringExternal("Param/Value/86B9F3A8"), ColorWithAlpha(0,0,0,0), false, 2.0);
     libNtve_gf_CreateDialogItemLabel(DialogLastCreated(), 100, 40, c_anchorTopLeft, 40, 320, StringExternal("Param/Value/21231823"), ColorWithAlpha(0,0,0,0), false, 2.0);
-    libNtve_gf_CreateDialogItemLabel(DialogLastCreated(), 80, 40, c_anchorTopLeft, 40, 350, StringExternal("Param/Value/3BB0AD39"), ColorWithAlpha(0,0,0,0), false, 2.0);
     libNtve_gf_CreateDialogItemLabel(DialogLastCreated(), 80, 40, c_anchorTopLeft, 40, 380, StringExternal("Param/Value/AE88DEF5"), ColorWithAlpha(0,0,0,0), false, 2.0);
     libNtve_gf_CreateDialogItemLabel(DialogLastCreated(), 80, 40, c_anchorTopLeft, 40, 410, StringExternal("Param/Value/8BAE9E7B"), ColorWithAlpha(0,0,0,0), false, 2.0);
     libNtve_gf_CreateDialogItemLabel(DialogLastCreated(), 100, 40, c_anchorTopLeft, 40, 440, StringExternal("Param/Value/1A07B017"), ColorWithAlpha(0,0,0,0), false, 2.0);
@@ -31763,8 +31608,6 @@ bool gt_TradeUI_Func (bool testConds, bool runActions) {
     libNtve_gf_SetDialogItemTooltip(DialogControlLastCreated(), StringExternal("Param/Value/4582FF5E"), PlayerGroupAll());
     libNtve_gf_CreateDialogItemLabel(DialogLastCreated(), 200, 40, c_anchorTopLeft, 50, 530, StringExternal("Param/Value/712F24F2"), ColorWithAlpha(0,0,0,0), false, 2.0);
     libNtve_gf_CreateDialogItemLabel(DialogLastCreated(), 200, 40, c_anchorTopLeft, 70, 570, StringExternal("Param/Value/4637A6FE"), ColorWithAlpha(0,0,0,0), false, 2.0);
-    libNtve_gf_CreateDialogItemLabel(DialogLastCreated(), 120, 40, c_anchorTopLeft, 151, 130, StringExternal("Param/Value/52DE9D1B"), ColorWithAlpha(0,0,0,0), false, 2.0);
-    gv_corporationDialogItems[2] = DialogControlLastCreated();
     libNtve_gf_CreateDialogItemLabel(DialogLastCreated(), 120, 40, c_anchorTopLeft, 151, 160, StringExternal("Param/Value/BDB0B412"), ColorWithAlpha(0,0,0,0), false, 2.0);
     gv_corporationDialogItems[3] = DialogControlLastCreated();
     libNtve_gf_CreateDialogItemLabel(DialogLastCreated(), 120, 40, c_anchorTopLeft, 151, 190, StringExternal("Param/Value/B0C82785"), ColorWithAlpha(0,0,0,0), false, 2.0);
@@ -31776,7 +31619,6 @@ bool gt_TradeUI_Func (bool testConds, bool runActions) {
     libNtve_gf_CreateDialogItemImage(DialogLastCreated(), 70, 1, c_anchorTopLeft, 218, 268, StringToText(""), "Assets\\EU\\ArisBlackBox.tga", c_triggerImageTypeNormal, true, Color(100.00, 0.00, 0.00), c_triggerBlendModeNormal);
     libNtve_gf_CreateDialogItemLabel(DialogLastCreated(), 120, 40, c_anchorTopLeft, 151, 320, StringExternal("Param/Value/68D484F6"), ColorWithAlpha(0,0,0,0), false, 2.0);
     gv_corporationDialogItems[7] = DialogControlLastCreated();
-    libNtve_gf_CreateDialogItemLabel(DialogLastCreated(), 120, 40, c_anchorTopLeft, 151, 350, StringExternal("Param/Value/AD2043DF"), ColorWithAlpha(0,0,0,0), false, 2.0);
     gv_corporationDialogItems[8] = DialogControlLastCreated();
     libNtve_gf_CreateDialogItemLabel(DialogLastCreated(), 120, 40, c_anchorTopLeft, 151, 380, StringExternal("Param/Value/11608D05"), ColorWithAlpha(0,0,0,0), false, 2.0);
     gv_corporationDialogItems[9] = DialogControlLastCreated();
@@ -31803,22 +31645,18 @@ bool gt_TradeUI_Func (bool testConds, bool runActions) {
     libNtve_gf_SetDialogItemTooltip(DialogControlLastCreated(), StringExternal("Param/Value/A3D58E5B"), PlayerGroupAll());
     libNtve_gf_CreateDialogItemLabel(DialogLastCreated(), 120, 40, c_anchorTopLeft, 570, 120, StringExternal("Param/Value/90E9E604"), ColorWithAlpha(0,0,0,0), false, 2.0);
     libNtve_gf_SetDialogItemTooltip(DialogControlLastCreated(), StringExternal("Param/Value/5B568EE6"), PlayerGroupAll());
-    libNtve_gf_CreateDialogItemLabel(DialogLastCreated(), 120, 40, c_anchorTopLeft, 340, 160, StringExternal("Param/Value/C3320459"), ColorWithAlpha(0,0,0,0), false, 2.0);
     libNtve_gf_CreateDialogItemLabel(DialogLastCreated(), 120, 40, c_anchorTopLeft, 340, 200, StringExternal("Param/Value/12B0B61A"), ColorWithAlpha(0,0,0,0), false, 2.0);
     libNtve_gf_CreateDialogItemLabel(DialogLastCreated(), 120, 40, c_anchorTopLeft, 340, 240, StringExternal("Param/Value/89440124"), ColorWithAlpha(0,0,0,0), false, 2.0);
-    libNtve_gf_CreateDialogItemLabel(DialogLastCreated(), 80, 40, c_anchorTopLeft, 413, 160, StringExternal("Param/Value/5F1A8C5A"), ColorWithAlpha(0,0,0,0), false, 2.0);
     gv_corporationDialogItems[16] = DialogControlLastCreated();
     libNtve_gf_CreateDialogItemLabel(DialogLastCreated(), 80, 40, c_anchorTopLeft, 413, 200, StringExternal("Param/Value/CEB3C66B"), ColorWithAlpha(0,0,0,0), false, 2.0);
     gv_corporationDialogItems[17] = DialogControlLastCreated();
     libNtve_gf_CreateDialogItemLabel(DialogLastCreated(), 80, 40, c_anchorTopLeft, 413, 240, StringExternal("Param/Value/F6E7062F"), ColorWithAlpha(0,0,0,0), false, 2.0);
     gv_corporationDialogItems[18] = DialogControlLastCreated();
-    libNtve_gf_CreateDialogItemLabel(DialogLastCreated(), 80, 40, c_anchorTopLeft, 482, 160, StringExternal("Param/Value/A3CCE4F4"), ColorWithAlpha(0,0,0,0), false, 2.0);
     gv_corporationDialogItems[19] = DialogControlLastCreated();
     libNtve_gf_CreateDialogItemLabel(DialogLastCreated(), 80, 40, c_anchorTopLeft, 482, 200, StringExternal("Param/Value/D1A35A5F"), ColorWithAlpha(0,0,0,0), false, 2.0);
     gv_corporationDialogItems[20] = DialogControlLastCreated();
     libNtve_gf_CreateDialogItemLabel(DialogLastCreated(), 80, 40, c_anchorTopLeft, 482, 240, StringExternal("Param/Value/4032D37A"), ColorWithAlpha(0,0,0,0), false, 2.0);
     gv_corporationDialogItems[21] = DialogControlLastCreated();
-    libNtve_gf_CreateDialogItemLabel(DialogLastCreated(), 80, 40, c_anchorTopLeft, 575, 160, StringExternal("Param/Value/177312EE"), ColorWithAlpha(0,0,0,0), false, 2.0);
     gv_corporationDialogItems[22] = DialogControlLastCreated();
     libNtve_gf_CreateDialogItemLabel(DialogLastCreated(), 80, 40, c_anchorTopLeft, 575, 200, StringExternal("Param/Value/45391E12"), ColorWithAlpha(0,0,0,0), false, 2.0);
     gv_corporationDialogItems[23] = DialogControlLastCreated();
@@ -32576,9 +32414,6 @@ bool gt_CorpTicksv10_Func (bool testConds, bool runActions) {
     const int auto169DD325_ai = 1;
     playergroup autoEBA4D0C2_g;
     int autoEBA4D0C2_var;
-    unitgroup auto9E2FDA19_g;
-    int auto9E2FDA19_u;
-    unit auto9E2FDA19_var;
     unitgroup auto2E0886E4_g;
     int auto2E0886E4_u;
     unit auto2E0886E4_var;
@@ -32590,7 +32425,6 @@ bool gt_CorpTicksv10_Func (bool testConds, bool runActions) {
         return true;
     }
 
-    gf_FreeFoodToFixBug();
     auto35B6F434_g = gv_users;
     auto35B6F434_var = -1;
     while (true) {
@@ -32599,8 +32433,11 @@ bool gt_CorpTicksv10_Func (bool testConds, bool runActions) {
         gv_fOOD_PURCHASED[auto35B6F434_var] = 0;
     }
     Wait(0.5, c_timeGame);
-    gv_linesGotThrough += 1;
     gf_UpdateResourceUnitGroup();
+    gv_linesGotThrough += 1;
+    gf_RotMarketFoodStockpile();
+    gv_linesGotThrough += 1;
+    gf_UpdateCheapestFoodArray();
     gv_linesGotThrough += 1;
     gf_ResourceCollection();
     gv_linesGotThrough += 1;
@@ -32621,7 +32458,7 @@ bool gt_CorpTicksv10_Func (bool testConds, bool runActions) {
     }
     Wait(0.5, c_timeGame);
     gv_linesGotThrough += 1;
-    gf_MeetCivilianDemand();
+    gf_MeetCivilianMetalOilDemand();
     gv_linesGotThrough += 1;
     Wait(0.5, c_timeGame);
     gf_SetPricesGetSuppliesGetMeanGDPRotFood(0);
@@ -32658,13 +32495,6 @@ bool gt_CorpTicksv10_Func (bool testConds, bool runActions) {
     gf_PushDownCVariables(false);
     gv_corpTicksStage = 0;
     gv_linesGotThrough += 1;
-    auto9E2FDA19_g = UnitGroup("CorporateHeadquarters", c_playerAny, RegionEntireMap(), UnitFilter(0, 0, (1 << c_targetFilterMissile), (1 << (c_targetFilterDead - 32)) | (1 << (c_targetFilterHidden - 32))), 0);
-    auto9E2FDA19_u = UnitGroupCount(auto9E2FDA19_g, c_unitCountAll);
-    for (;; auto9E2FDA19_u -= 1) {
-        auto9E2FDA19_var = UnitGroupUnitFromEnd(auto9E2FDA19_g, auto9E2FDA19_u);
-        if (auto9E2FDA19_var == null) { break; }
-        gf_WipeResourceAdditionalDemand(auto9E2FDA19_var);
-    }
     gv_linesGotThrough += 1;
     auto2E0886E4_g = gv_allResources;
     auto2E0886E4_u = UnitGroupCount(auto2E0886E4_g, c_unitCountAll);
@@ -34389,9 +34219,9 @@ void gt_SelectAllFarms_Init () {
 }
 
 //--------------------------------------------------------------------------------------------------
-// Trigger: Select Wind
+// Trigger: Select Coal
 //--------------------------------------------------------------------------------------------------
-bool gt_SelectWind_Func (bool testConds, bool runActions) {
+bool gt_SelectCoal_Func (bool testConds, bool runActions) {
     // Variable Declarations
     unitgroup lv_select;
 
@@ -34424,9 +34254,9 @@ bool gt_SelectWind_Func (bool testConds, bool runActions) {
 }
 
 //--------------------------------------------------------------------------------------------------
-void gt_SelectWind_Init () {
-    gt_SelectWind = TriggerCreate("gt_SelectWind_Func");
-    TriggerAddEventChatMessage(gt_SelectWind, c_playerAny, "-select wind", false);
+void gt_SelectCoal_Init () {
+    gt_SelectCoal = TriggerCreate("gt_SelectCoal_Func");
+    TriggerAddEventChatMessage(gt_SelectCoal, c_playerAny, "-select coal", false);
 }
 
 //--------------------------------------------------------------------------------------------------
@@ -34893,15 +34723,14 @@ bool gt_ResearchCompleted_Func (bool testConds, bool runActions) {
 
     lv_plsNoCounting += 1;
     if ((lv_theCompletedResearc == lv_plsNoCounting)) {
-        gv_taxUpgrade[lv_zePlayer] += 15;
-        gv_creditIncomeModifier[lv_zePlayer] += 15;
-        DialogControlSetEnabled(gv_techTreeDialogItems[5][0], PlayerGroupSingle(lv_zePlayer), true);
+        libNtve_gf_SetUpgradeLevelForPlayer(lv_zePlayer, "UrbanPlanning", 1);
+        DialogControlSetEnabled(gv_techTreeDialogItems[4][0], PlayerGroupSingle(lv_zePlayer), true);
     }
 
     lv_plsNoCounting += 1;
     if ((lv_theCompletedResearc == lv_plsNoCounting)) {
         libNtve_gf_SetUpgradeLevelForPlayer(lv_zePlayer, "NationalHighway", 1);
-        DialogControlSetEnabled(gv_techTreeDialogItems[4][0], PlayerGroupSingle(lv_zePlayer), true);
+        DialogControlSetEnabled(gv_techTreeDialogItems[5][0], PlayerGroupSingle(lv_zePlayer), true);
     }
 
     lv_plsNoCounting += 1;
@@ -34909,14 +34738,12 @@ bool gt_ResearchCompleted_Func (bool testConds, bool runActions) {
         gv_centralization[lv_zePlayer] += 5;
         gv_centralizationUpgrade[lv_zePlayer] += 5;
         DialogControlSetEnabled(gv_techTreeDialogItems[13][0], PlayerGroupSingle(lv_zePlayer), true);
-        DialogControlSetEnabled(gv_techTreeDialogItems[6][0], PlayerGroupSingle(lv_zePlayer), true);
     }
 
     lv_plsNoCounting += 1;
     if ((lv_theCompletedResearc == lv_plsNoCounting)) {
         gv_taxUpgrade[lv_zePlayer] += 45;
         gv_creditIncomeModifier[lv_zePlayer] += 45;
-        DialogControlSetEnabled(gv_techTreeDialogItems[13][0], PlayerGroupSingle(lv_zePlayer), true);
         DialogControlSetEnabled(gv_techTreeDialogItems[6][0], PlayerGroupSingle(lv_zePlayer), true);
     }
 
@@ -35740,26 +35567,26 @@ bool gt_ResearchMenuFrame_Func (bool testConds, bool runActions) {
     libNtve_gf_SetDialogItemImageType2(DialogControlLastCreated(), true, PlayerGroupAll());
     libNtve_gf_CreateDialogItemImage(DialogLastCreated(), 60, 60, c_anchorTopLeft, 90, 10, StringToText(""), "Assets\\Declare War, Neutral, Peace\\003.tga", c_triggerImageTypeNormal, true, Color(100,100,100), c_triggerBlendModeNormal);
     gv_techTreeDialogItems[3][1] = DialogControlLastCreated();
-    libNtve_gf_CreateDialogItemButton(DialogLastCreated(), 60, 60, c_anchorTopLeft, 160, 10, StringExternal("Param/Value/BBBFB2ED"), StringToText(""), "");
+    libNtve_gf_CreateDialogItemButton(DialogLastCreated(), 60, 60, c_anchorTopLeft, 160, 90, StringExternal("Param/Value/BBBFB2ED"), StringToText(""), "");
     gv_techTreeDialogItems[4][0] = DialogControlLastCreated();
     DialogControlFadeTransparency(DialogControlLastCreated(), PlayerGroupAll(), 0.0, 0.0);
     libNtve_gf_SetDialogItemImage(DialogControlLastCreated(), "Assets\\Declare War, Neutral, Peace\\Transparent Box.tga", PlayerGroupAll());
     libNtve_gf_SetDialogItemImageType2(DialogControlLastCreated(), true, PlayerGroupAll());
-    libNtve_gf_CreateDialogItemImage(DialogLastCreated(), 60, 60, c_anchorTopLeft, 160, 10, StringToText(""), "Assets\\Declare War, Neutral, Peace\\005.tga", c_triggerImageTypeNormal, true, Color(100,100,100), c_triggerBlendModeNormal);
+    libNtve_gf_CreateDialogItemImage(DialogLastCreated(), 60, 60, c_anchorTopLeft, 160, 90, StringToText(""), "Assets\\Declare War, Neutral, Peace\\005.tga", c_triggerImageTypeNormal, true, Color(100,100,100), c_triggerBlendModeNormal);
     gv_techTreeDialogItems[4][1] = DialogControlLastCreated();
-    libNtve_gf_CreateDialogItemButton(DialogLastCreated(), 60, 60, c_anchorTopLeft, 160, 90, StringExternal("Param/Value/1B64BB38"), StringToText(""), "");
+    libNtve_gf_CreateDialogItemButton(DialogLastCreated(), 60, 60, c_anchorTopLeft, 160, 10, StringExternal("Param/Value/1B64BB38"), StringToText(""), "");
     gv_techTreeDialogItems[5][0] = DialogControlLastCreated();
     DialogControlFadeTransparency(DialogControlLastCreated(), PlayerGroupAll(), 0.0, 0.0);
     libNtve_gf_SetDialogItemImage(DialogControlLastCreated(), "Assets\\Declare War, Neutral, Peace\\Transparent Box.tga", PlayerGroupAll());
     libNtve_gf_SetDialogItemImageType2(DialogControlLastCreated(), true, PlayerGroupAll());
-    libNtve_gf_CreateDialogItemImage(DialogLastCreated(), 60, 60, c_anchorTopLeft, 160, 90, StringToText(""), "Assets\\Declare War, Neutral, Peace\\004.tga", c_triggerImageTypeNormal, true, Color(100,100,100), c_triggerBlendModeNormal);
+    libNtve_gf_CreateDialogItemImage(DialogLastCreated(), 60, 60, c_anchorTopLeft, 160, 10, StringToText(""), "Assets\\Declare War, Neutral, Peace\\004.tga", c_triggerImageTypeNormal, true, Color(100,100,100), c_triggerBlendModeNormal);
     gv_techTreeDialogItems[5][1] = DialogControlLastCreated();
-    libNtve_gf_CreateDialogItemButton(DialogLastCreated(), 60, 60, c_anchorTopLeft, 230, 80, StringExternal("Param/Value/547432F5"), StringToText(""), "");
+    libNtve_gf_CreateDialogItemButton(DialogLastCreated(), 60, 60, c_anchorTopLeft, 230, 10, StringExternal("Param/Value/547432F5"), StringToText(""), "");
     gv_techTreeDialogItems[6][0] = DialogControlLastCreated();
     DialogControlFadeTransparency(DialogControlLastCreated(), PlayerGroupAll(), 0.0, 0.0);
     libNtve_gf_SetDialogItemImage(DialogControlLastCreated(), "Assets\\Declare War, Neutral, Peace\\Transparent Box.tga", PlayerGroupAll());
     libNtve_gf_SetDialogItemImageType2(DialogControlLastCreated(), true, PlayerGroupAll());
-    libNtve_gf_CreateDialogItemImage(DialogLastCreated(), 60, 60, c_anchorTopLeft, 230, 80, StringToText(""), "Assets\\Declare War, Neutral, Peace\\006.tga", c_triggerImageTypeNormal, true, Color(100,100,100), c_triggerBlendModeNormal);
+    libNtve_gf_CreateDialogItemImage(DialogLastCreated(), 60, 60, c_anchorTopLeft, 230, 10, StringToText(""), "Assets\\Declare War, Neutral, Peace\\006.tga", c_triggerImageTypeNormal, true, Color(100,100,100), c_triggerBlendModeNormal);
     gv_techTreeDialogItems[6][1] = DialogControlLastCreated();
     libNtve_gf_CreateDialogItemButton(DialogLastCreated(), 60, 60, c_anchorTopLeft, 20, 190, StringExternal("Param/Value/8567DDC9"), StringToText(""), "");
     gv_techTreeDialogItems[7][0] = DialogControlLastCreated();
@@ -35810,12 +35637,12 @@ bool gt_ResearchMenuFrame_Func (bool testConds, bool runActions) {
     libNtve_gf_SetDialogItemImageType2(DialogControlLastCreated(), true, PlayerGroupAll());
     libNtve_gf_CreateDialogItemImage(DialogLastCreated(), 60, 60, c_anchorTopLeft, 160, 290, StringToText(""), "Military\\Research\\Government\\080.tga", c_triggerImageTypeNormal, true, Color(100,100,100), c_triggerBlendModeNormal);
     gv_techTreeDialogItems[80][1] = DialogControlLastCreated();
-    libNtve_gf_CreateDialogItemButton(DialogLastCreated(), 60, 60, c_anchorTopLeft, 230, 20, StringExternal("Param/Value/F728C208"), StringToText(""), "");
+    libNtve_gf_CreateDialogItemButton(DialogLastCreated(), 60, 60, c_anchorTopLeft, 230, 90, StringExternal("Param/Value/F728C208"), StringToText(""), "");
     gv_techTreeDialogItems[13][0] = DialogControlLastCreated();
     DialogControlFadeTransparency(DialogControlLastCreated(), PlayerGroupAll(), 0.0, 0.0);
     libNtve_gf_SetDialogItemImage(DialogControlLastCreated(), "Assets\\Declare War, Neutral, Peace\\Transparent Box.tga", PlayerGroupAll());
     libNtve_gf_SetDialogItemImageType2(DialogControlLastCreated(), true, PlayerGroupAll());
-    libNtve_gf_CreateDialogItemImage(DialogLastCreated(), 60, 60, c_anchorTopLeft, 230, 20, StringToText(""), "Assets\\Declare War, Neutral, Peace\\Government\\Government\\013.tga", c_triggerImageTypeNormal, true, Color(100,100,100), c_triggerBlendModeNormal);
+    libNtve_gf_CreateDialogItemImage(DialogLastCreated(), 60, 60, c_anchorTopLeft, 230, 90, StringToText(""), "Assets\\Declare War, Neutral, Peace\\Government\\Government\\013.tga", c_triggerImageTypeNormal, true, Color(100,100,100), c_triggerBlendModeNormal);
     gv_techTreeDialogItems[13][1] = DialogControlLastCreated();
     libNtve_gf_CreateDialogItemButton(DialogLastCreated(), 60, 60, c_anchorTopLeft, 20, 390, StringExternal("Param/Value/BE5105CC"), StringToText(""), "");
     gv_techTreeDialogItems[14][0] = DialogControlLastCreated();
@@ -35863,14 +35690,14 @@ bool gt_ResearchMenuFrame_Func (bool testConds, bool runActions) {
     DialogControlFadeTransparency(DialogControlLastCreated(), PlayerGroupAll(), 0.0, 0.0);
     libNtve_gf_SetDialogItemImage(DialogControlLastCreated(), "Assets\\Declare War, Neutral, Peace\\Transparent Box.tga", PlayerGroupAll());
     libNtve_gf_SetDialogItemImageType2(DialogControlLastCreated(), true, PlayerGroupAll());
-    libNtve_gf_CreateDialogItemImage(DialogLastCreated(), 60, 60, c_anchorTopLeft, 20, 190, StringToText(""), "Assets\\Economy\\019.tga", c_triggerImageTypeNormal, true, Color(100,100,100), c_triggerBlendModeNormal);
+    libNtve_gf_CreateDialogItemImage(DialogLastCreated(), 60, 60, c_anchorTopLeft, 20, 190, StringToText(""), "Assets\\Economy\\020.tga", c_triggerImageTypeNormal, true, Color(100,100,100), c_triggerBlendModeNormal);
     gv_techTreeDialogItems[19][1] = DialogControlLastCreated();
     libNtve_gf_CreateDialogItemButton(DialogLastCreated(), 60, 60, c_anchorTopLeft, 90, 160, StringExternal("Param/Value/994CFB37"), StringToText(""), "");
     gv_techTreeDialogItems[20][0] = DialogControlLastCreated();
     DialogControlFadeTransparency(DialogControlLastCreated(), PlayerGroupAll(), 0.0, 0.0);
     libNtve_gf_SetDialogItemImage(DialogControlLastCreated(), "Assets\\Declare War, Neutral, Peace\\Transparent Box.tga", PlayerGroupAll());
     libNtve_gf_SetDialogItemImageType2(DialogControlLastCreated(), true, PlayerGroupAll());
-    libNtve_gf_CreateDialogItemImage(DialogLastCreated(), 60, 60, c_anchorTopLeft, 90, 160, StringToText(""), "Assets\\Economy\\020.tga", c_triggerImageTypeNormal, true, Color(100,100,100), c_triggerBlendModeNormal);
+    libNtve_gf_CreateDialogItemImage(DialogLastCreated(), 60, 60, c_anchorTopLeft, 90, 160, StringToText(""), "Assets\\Economy\\019.tga", c_triggerImageTypeNormal, true, Color(100,100,100), c_triggerBlendModeNormal);
     gv_techTreeDialogItems[20][1] = DialogControlLastCreated();
     libNtve_gf_CreateDialogItemButton(DialogLastCreated(), 60, 60, c_anchorTopLeft, 160, 190, StringExternal("Param/Value/D3956B65"), StringToText(""), "");
     gv_techTreeDialogItems[21][0] = DialogControlLastCreated();
@@ -36627,7 +36454,7 @@ bool gt_SetResearchCostsResearchList_Func (bool testConds, bool runActions) {
     lv_iDontWantToCountToday += 1;
     gv_researchCost[lv_iDontWantToCountToday] = 300;
     gv_researchTime[lv_iDontWantToCountToday] = 6;
-    gv_researchName[lv_iDontWantToCountToday] = "Standardized Administration";
+    gv_researchName[lv_iDontWantToCountToday] = "Urban Planning";
     lv_iDontWantToCountToday += 1;
     gv_researchCost[lv_iDontWantToCountToday] = 300;
     gv_researchTime[lv_iDontWantToCountToday] = 6;
@@ -36671,7 +36498,7 @@ bool gt_SetResearchCostsResearchList_Func (bool testConds, bool runActions) {
     lv_iDontWantToCountToday += 1;
     gv_researchCost[lv_iDontWantToCountToday] = 750;
     gv_researchTime[lv_iDontWantToCountToday] = 12;
-    gv_researchName[lv_iDontWantToCountToday] = "National Union";
+    gv_researchName[lv_iDontWantToCountToday] = "International Union";
     lv_iDontWantToCountToday += 1;
     gv_researchCost[lv_iDontWantToCountToday] = 100;
     gv_researchTime[lv_iDontWantToCountToday] = 24;
@@ -36699,7 +36526,7 @@ bool gt_SetResearchCostsResearchList_Func (bool testConds, bool runActions) {
     lv_iDontWantToCountToday += 1;
     gv_researchCost[lv_iDontWantToCountToday] = 1500;
     gv_researchTime[lv_iDontWantToCountToday] = 32;
-    gv_researchName[lv_iDontWantToCountToday] = "Alternate Electricity";
+    gv_researchName[lv_iDontWantToCountToday] = "Oil Power";
     lv_iDontWantToCountToday += 1;
     gv_researchCost[lv_iDontWantToCountToday] = 5000;
     gv_researchTime[lv_iDontWantToCountToday] = 64;
@@ -40530,7 +40357,10 @@ bool gt_EndVote_Func (bool testConds, bool runActions) {
             }
         }
     }
-    gv_aIDifficulty += 1;
+    if ((gv_aIDifficulty != 0)) {
+        gv_aIDifficulty += 1;
+    }
+
     return true;
 }
 
@@ -40950,7 +40780,6 @@ void InitTriggers () {
     gt_RealTimeSliders_Init();
     gt_TradeModes_Init();
     gt_Tabs_Init();
-    gt_ColdWarRemoveFunctionality_Init();
     gt_EmbargoButton_Init();
     gt_TradeUI_Init();
     gt_BuySellUI_Init();
@@ -40996,7 +40825,7 @@ void InitTriggers () {
     gt_SelectFarm_Init();
     gt_SelectHydrofarm_Init();
     gt_SelectAllFarms_Init();
-    gt_SelectWind_Init();
+    gt_SelectCoal_Init();
     gt_SelectMetal_Init();
     gt_SelectMine_Init();
     gt_SelectBore_Init();

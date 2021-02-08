@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="us-ascii"?>
+<?xml version="1.0" encoding="utf-8"?>
 <Catalog>
     <CRequirement id="1HaveResearch">
         <NodeArray index="Use" Link="NotOrCountUnitLaboratoryIInProgressOrBetter2310102397CountUnitLaboratoryIIInProgressOrBetterCountUnitLaboratoryIIIInProgressOrBetterCountUnitLaboratoryIVInProgressOrBetterCountUnitLaboratoryVInProgres1599170725"/>
@@ -348,6 +348,9 @@
     </CRequirement>
     <CRequirement id="AtWar">
         <NodeArray index="Use" Link="CountUpgradeSJHyperionHangerCheckQueuedOnly"/>
+    </CRequirement>
+    <CRequirement id="UrbanPlanning">
+        <NodeArray index="Use" Link="CountUpgradeUrbanPlanningCompleteOnly"/>
     </CRequirement>
     <CRequirement id="UseScorcher">
         <NodeArray index="Use" Link="OrCountUpgradeTotalWarInProgressOrBetterCountUpgradeInhumaneWarInProgressOrBetter"/>

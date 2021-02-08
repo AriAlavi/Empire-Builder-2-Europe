@@ -247,10 +247,7 @@
         <RemoveValidatorArray value="SourceAliveandTank"/>
         <RemoveValidatorArray value="UrbanCombatRange"/>
         <RemoveValidatorArray value="UrbanCombatAuraCheck"/>
-        <Modification>
-            <SightBonus value="-2"/>
-            <MoveSpeedMultiplier value="0.5"/>
-            <AccelerationMultiplier value="0.5"/>
+        <Modification SightBonus="-2" MoveSpeedMultiplier="0.5" AccelerationMultiplier="0.5">
             <LifeArmorBonus value="10"/>
         </Modification>
         <DamageResponse>
@@ -396,7 +393,9 @@
                 <Cooldown Link="Behavior/Starving"/>
             </Cost>
         </DamageResponse>
-        <Modification AttackSpeedMultiplier="2" LifeArmorBonus="5"/>
+        <Modification AttackSpeedMultiplier="2">
+            <LifeArmorBonus value="5"/>
+        </Modification>
         <InfoFlags index="Hidden" value="1"/>
     </CBehaviorBuff>
     <CBehaviorBuff id="CapitalAura2">
@@ -439,7 +438,8 @@
         </Cost>
         <EditorCategories value="AbilityorEffectType:Units"/>
         <Duration value="5"/>
-        <Modification AttackSpeedMultiplier="2" LifeArmorBonus="4">
+        <Modification AttackSpeedMultiplier="2">
+            <LifeArmorBonus value="4"/>
             <VitalRegenArray index="Energy" value="0.0703"/>
             <DeathResponse>
                 <Cost>
@@ -506,7 +506,9 @@
     <CBehaviorBuff id="CapitalistDemocracy">
         <InfoFlags index="Hidden" value="1"/>
         <EditorCategories value="AbilityorEffectType:Units"/>
-        <Modification LifeArmorBonus="5"/>
+        <Modification>
+            <LifeArmorBonus value="5"/>
+        </Modification>
     </CBehaviorBuff>
     <CBehaviorBuff id="CarrierRadar">
         <Alignment value="Positive"/>
@@ -531,9 +533,9 @@
             <SightBonus value="-2"/>
             <MoveSpeedMultiplier value="0.5"/>
             <AttackSpeedMultiplier value="0.66"/>
-            <LifeArmorBonus value="-2"/>
             <DetectArc value="0"/>
             <RadarArc value="0"/>
+            <LifeArmorBonus value="-2"/>
             <VitalRegenArray index="Life" value="-0.6484"/>
         </Modification>
     </CBehaviorBuff>
@@ -543,7 +545,9 @@
         <EditorCategories value="AbilityorEffectType:Units"/>
         <TimeScaleSource Value="Global"/>
         <Duration value="0.5417"/>
-        <Modification LifeArmorBonus="1"/>
+        <Modification>
+            <LifeArmorBonus value="1"/>
+        </Modification>
     </CBehaviorBuff>
     <CBehaviorBuff id="CityArmorBuff2">
         <Alignment value="Positive"/>
@@ -555,7 +559,8 @@
         <EditorCategories value="AbilityorEffectType:Units"/>
         <TimeScaleSource Value="Global"/>
         <Duration value="0.5417"/>
-        <DamageResponse Chance="0.25" ModifyFraction="0" ModifyMinimumDamage="1">
+        <DamageResponse ModifyFraction="0" ModifyMinimumDamage="1">
+            <Chance value="0.25"/>
             <Cost>
                 <Charge Link="Behavior/CloakDistortionField"/>
                 <Cooldown Link="Behavior/CloakDistortionField"/>
@@ -573,7 +578,8 @@
         <TimeScaleSource Value="Global"/>
         <Duration value="0.5417"/>
         <Modification MoveSpeedBonus="0.1015"/>
-        <DamageResponse Chance="0.05" ModifyFraction="0" ModifyMinimumDamage="1">
+        <DamageResponse ModifyFraction="0" ModifyMinimumDamage="1">
+            <Chance value="0.05"/>
             <Cost>
                 <Charge Link="Behavior/CloakDistortionField"/>
                 <Cooldown Link="Behavior/CloakDistortionField"/>
@@ -586,7 +592,9 @@
         <EditorCategories value="AbilityorEffectType:Units"/>
         <TimeScaleSource Value="Global"/>
         <Duration value="4"/>
-        <Modification MoveSpeedMultiplier="0.8" LifeArmorBonus="-1"/>
+        <Modification MoveSpeedMultiplier="0.8">
+            <LifeArmorBonus value="-1"/>
+        </Modification>
     </CBehaviorBuff>
     <CBehaviorBuff id="CityArmorBuff2222">
         <Alignment value="Negative"/>
@@ -621,7 +629,8 @@
                 </Cost>
             </DeathResponse>
         </Modification>
-        <DamageResponse Chance="0.25" ModifyFraction="0" ModifyMinimumDamage="1">
+        <DamageResponse ModifyFraction="0" ModifyMinimumDamage="1">
+            <Chance value="0.25"/>
             <Cost>
                 <Charge Link="Behavior/CloakDistortionField"/>
                 <Cooldown Link="Behavior/CloakDistortionField"/>
@@ -646,7 +655,8 @@
                 </Cost>
             </DeathResponse>
         </Modification>
-        <DamageResponse Chance="0.2" ModifyFraction="0" ModifyMinimumDamage="1">
+        <DamageResponse ModifyFraction="0" ModifyMinimumDamage="1">
+            <Chance value="0.2"/>
             <Cost>
                 <Charge Link="Behavior/CloakDistortionField"/>
                 <Cooldown Link="Behavior/CloakDistortionField"/>
@@ -671,7 +681,8 @@
                 </Cost>
             </DeathResponse>
         </Modification>
-        <DamageResponse Chance="0.15" ModifyFraction="0" ModifyMinimumDamage="1">
+        <DamageResponse ModifyFraction="0" ModifyMinimumDamage="1">
+            <Chance value="0.15"/>
             <Cost>
                 <Charge Link="Behavior/CloakDistortionField"/>
                 <Cooldown Link="Behavior/CloakDistortionField"/>
@@ -713,7 +724,8 @@
         <EditorCategories value="AbilityorEffectType:Units"/>
         <TimeScaleSource Value="Global"/>
         <Duration value="0.5417"/>
-        <Modification MoveSpeedBonus="0.1484" LifeArmorBonus="1">
+        <Modification MoveSpeedBonus="0.1484">
+            <LifeArmorBonus value="1"/>
             <DeathResponse>
                 <Cost>
                     <Charge Link="Behavior/CityArmorBuff"/>
@@ -773,7 +785,9 @@
         <Requirements value="LearnNeosteelFrame2174426"/>
         <TimeScaleSource Value="Global"/>
         <Duration value="-1"/>
-        <Modification MoveSpeedMultiplier="1.05" AttackSpeedMultiplier="1.05" LifeArmorBonus="1"/>
+        <Modification MoveSpeedMultiplier="1.05" AttackSpeedMultiplier="1.05">
+            <LifeArmorBonus value="1"/>
+        </Modification>
     </CBehaviorBuff>
     <CBehaviorBuff id="CityArmorBuff423">
         <Alignment value="Positive"/>
@@ -799,9 +813,10 @@
         <Requirements value="LearnNeosteelFrame21744212"/>
         <TimeScaleSource Value="Global"/>
         <Duration value="-1"/>
-        <Modification AttackSpeedMultiplier="1.15" LifeArmorBonus="1">
+        <Modification AttackSpeedMultiplier="1.15">
             <DamageDealtFraction index="Melee" value="0.2"/>
             <DamageDealtFraction index="Ranged" value="0.2"/>
+            <LifeArmorBonus value="1"/>
         </Modification>
     </CBehaviorBuff>
     <CBehaviorBuff id="CityArmorBuff425">
@@ -1304,7 +1319,9 @@
     <CBehaviorBuff id="DefensiveWar">
         <InfoFlags index="Hidden" value="1"/>
         <EditorCategories value="AbilityorEffectType:Units"/>
-        <Modification LifeArmorBonus="10"/>
+        <Modification>
+            <LifeArmorBonus value="10"/>
+        </Modification>
     </CBehaviorBuff>
     <CBehaviorBuff id="DesertTerrain">
         <EditorCategories value="AbilityorEffectType:Units"/>
@@ -1312,8 +1329,8 @@
             <SightBonus value="1"/>
             <MoveSpeedMultiplier value="0.8"/>
             <RangedWeaponRange value="0.5"/>
-            <LifeArmorBonus value="-1"/>
             <DetectFilters value="-;Air"/>
+            <LifeArmorBonus value="-1"/>
             <VitalRegenMultiplier index="Energy" value="-0.01"/>
         </Modification>
         <Alignment value="Negative"/>
@@ -1365,11 +1382,11 @@
         <Modification>
             <MoveSpeedBonus value="0.1015"/>
             <AttackSpeedMultiplier value="1.2"/>
-            <LifeArmorBonus value="2"/>
             <DetectArc value="0"/>
             <RadarArc value="0"/>
             <DamageDealtFraction index="Melee" value="0.2"/>
             <DamageDealtFraction index="Ranged" value="0.2"/>
+            <LifeArmorBonus value="2"/>
             <VitalRegenArray index="Life" value="0.5"/>
         </Modification>
     </CBehaviorBuff>
@@ -1431,11 +1448,8 @@
         <EditorCategories value="Race:Terran,AbilityorEffectType:Units"/>
         <Requirements value="CampaignNeoSteelFramePurchased242273322"/>
         <DisableValidatorArray value="CasterShieldsGE1"/>
-        <DamageResponse>
+        <DamageResponse ClampMaximum="452607" Minimum="250" ModifyFraction="0.8">
             <Chance value="1"/>
-            <ClampMaximum value="452607"/>
-            <Minimum value="250"/>
-            <ModifyFraction value="0.8"/>
         </DamageResponse>
     </CBehaviorBuff>
     <CBehaviorBuff id="EmitterAura">
@@ -1511,9 +1525,9 @@
         <Modification>
             <MoveSpeedMultiplier value="1.3"/>
             <AttackSpeedMultiplier value="1.2"/>
-            <LifeArmorBonus value="2"/>
             <DetectFilters value="-;Enemy"/>
             <RadarFilters value="-;Missile,Dead"/>
+            <LifeArmorBonus value="2"/>
         </Modification>
     </CBehaviorBuff>
     <CBehaviorBuff id="EmperorPeriodic">
@@ -1526,7 +1540,9 @@
     </CBehaviorBuff>
     <CBehaviorBuff id="Evasion25">
         <EditorCategories value="AbilityorEffectType:Units"/>
-        <DamageResponse Chance="0.25" ModifyFraction="0"/>
+        <DamageResponse ModifyFraction="0">
+            <Chance value="0.25"/>
+        </DamageResponse>
     </CBehaviorBuff>
     <CBehaviorBuff id="Evasion45">
         <Cost>
@@ -1542,7 +1558,8 @@
                 </Cost>
             </DeathResponse>
         </Modification>
-        <DamageResponse Chance="0.45" ModifyFraction="0">
+        <DamageResponse ModifyFraction="0">
+            <Chance value="0.45"/>
             <Cost>
                 <Charge Link="Behavior/Evasion15"/>
                 <Cooldown Link="Behavior/Evasion15"/>
@@ -1563,7 +1580,8 @@
                 </Cost>
             </DeathResponse>
         </Modification>
-        <DamageResponse Chance="0.55" ModifyFraction="0">
+        <DamageResponse ModifyFraction="0">
+            <Chance value="0.55"/>
             <Cost>
                 <Charge Link="Behavior/Evasion15"/>
                 <Cooldown Link="Behavior/Evasion15"/>
@@ -1584,7 +1602,8 @@
                 </Cost>
             </DeathResponse>
         </Modification>
-        <DamageResponse Chance="0.75" ModifyFraction="0">
+        <DamageResponse ModifyFraction="0">
+            <Chance value="0.75"/>
             <Cost>
                 <Charge Link="Behavior/Evasion15"/>
                 <Cooldown Link="Behavior/Evasion15"/>
@@ -1821,7 +1840,8 @@
                 </Cost>
             </DeathResponse>
         </Modification>
-        <DamageResponse Chance="0.6" ModifyFraction="0" ModifyMinimumDamage="1">
+        <DamageResponse ModifyFraction="0" ModifyMinimumDamage="1">
+            <Chance value="0.6"/>
             <Cost>
                 <Charge Link="Behavior/CloakDistortionField"/>
                 <Cooldown Link="Behavior/CloakDistortionField"/>
@@ -1937,7 +1957,9 @@
     <CBehaviorBuff id="MengskWraithCloak">
         <RemoveValidatorArray index="0" removed="1"/>
         <RemoveValidatorArray index="1" removed="1"/>
-        <DamageResponse Chance="1" Handled="AttackDecloak" Location="Attacker"/>
+        <DamageResponse Handled="AttackDecloak" Location="Attacker">
+            <Chance value="1"/>
+        </DamageResponse>
     </CBehaviorBuff>
     <CBehaviorAttribute id="Metal">
         <BehaviorFlags index="Permanent" value="1"/>
@@ -2099,7 +2121,9 @@
     </CBehaviorBuff>
     <CBehaviorBuff id="MountainTerrain">
         <EditorCategories value="AbilityorEffectType:Units"/>
-        <Modification MoveSpeedMultiplier="0.7" LifeArmorBonus="3" DetectFilters="-;Air"/>
+        <Modification MoveSpeedMultiplier="0.7" DetectFilters="-;Air">
+            <LifeArmorBonus value="3"/>
+        </Modification>
         <Alignment value="Negative"/>
     </CBehaviorBuff>
     <CBehaviorBuff id="MutatedVirus">
@@ -2161,7 +2185,9 @@
     <CBehaviorBuff id="NeoFascism">
         <InfoFlags index="Hidden" value="1"/>
         <EditorCategories value="AbilityorEffectType:Units"/>
-        <Modification AccelerationMultiplier="1.2" AttackSpeedMultiplier="1.3" LifeArmorBonus="10"/>
+        <Modification AccelerationMultiplier="1.2" AttackSpeedMultiplier="1.3">
+            <LifeArmorBonus value="10"/>
+        </Modification>
     </CBehaviorBuff>
     <CBehaviorBuff id="NoSupplyLines">
         <Alignment value="Negative"/>
@@ -2270,7 +2296,7 @@
         <Modification MoveSpeedMultiplier="0.9" AttackSpeedMultiplier="0.9">
             <StateFlags index="Resistant" value="1"/>
             <VitalRegenArray index="Life" value="-1"/>
-            <VitalRegenArray index="Energy" value="-0.75"/>
+            <VitalRegenArray index="Energy" value="-0.8515"/>
             <DeathResponse Chance="1" Effect="PopulationThinnerSpread">
                 <Cost>
                     <Charge Link="Behavior/PopulationThinnerCarrier"/>
@@ -2291,7 +2317,7 @@
         <Modification MoveSpeedMultiplier="0.9" AttackSpeedMultiplier="0.8">
             <StateFlags index="Resistant" value="1"/>
             <VitalRegenArray index="Life" value="-2"/>
-            <VitalRegenArray index="Energy" value="-1.5"/>
+            <VitalRegenArray index="Energy" value="-2"/>
             <DeathResponse Chance="1" Effect="PopulationThinnerSpread2">
                 <Cost>
                     <Charge Link="Behavior/PopulationThinnerCarrier"/>
@@ -2411,7 +2437,9 @@
                 </Cost>
             </DeathResponse>
         </Modification>
-        <DamageResponse Chance="0.05" ModifyFraction="0" ModifyMinimumDamage="1"/>
+        <DamageResponse ModifyFraction="0" ModifyMinimumDamage="1">
+            <Chance value="0.05"/>
+        </DamageResponse>
     </CBehaviorBuff>
     <CBehaviorBuff id="RC3XArtificialIntelligence22">
         <Alignment value="Positive"/>
@@ -2437,7 +2465,8 @@
                 </Cost>
             </DeathResponse>
         </Modification>
-        <DamageResponse Chance="0.1" ModifyFraction="0" ModifyMinimumDamage="1">
+        <DamageResponse ModifyFraction="0" ModifyMinimumDamage="1">
+            <Chance value="0.1"/>
             <Cost>
                 <Charge Link="Behavior/RC3XArtificialIntelligence2"/>
                 <Cooldown Link="Behavior/RC3XArtificialIntelligence2"/>
@@ -2505,11 +2534,11 @@
         <Modification>
             <MoveSpeedBonus value="0.25"/>
             <AttackSpeedMultiplier value="1.5"/>
-            <LifeArmorBonus value="4"/>
             <DetectArc value="0"/>
             <RadarArc value="0"/>
             <DamageDealtFraction index="Melee" value="0.5"/>
             <DamageDealtFraction index="Ranged" value="0.5"/>
+            <LifeArmorBonus value="4"/>
             <VitalRegenArray index="Life" value="2"/>
         </Modification>
     </CBehaviorBuff>
@@ -2607,7 +2636,8 @@
     <CBehaviorBuff id="Separatists">
         <Alignment value="Negative"/>
         <EditorCategories value="AbilityorEffectType:Units"/>
-        <Modification LifeArmorBonus="-3">
+        <Modification>
+            <LifeArmorBonus value="-3"/>
             <VitalMaxAdditiveMultiplierArray index="Energy" value="-0.01"/>
         </Modification>
     </CBehaviorBuff>
@@ -2617,7 +2647,8 @@
     <CBehaviorBuff id="Occupation">
         <Alignment value="Negative"/>
         <EditorCategories value="AbilityorEffectType:Units"/>
-        <Modification LifeArmorBonus="-5">
+        <Modification>
+            <LifeArmorBonus value="-5"/>
             <VitalRegenArray index="Energy" value="-0.0195"/>
         </Modification>
     </CBehaviorBuff>
@@ -3179,7 +3210,8 @@
         <BuffFlags index="Channeling" value="1"/>
         <Duration value="12"/>
         <Modification MoveSpeedMultiplier="3"/>
-        <DamageResponse Chance="0.6" ModifyFraction="0" ModifyMinimumDamage="1">
+        <DamageResponse ModifyFraction="0" ModifyMinimumDamage="1">
+            <Chance value="0.6"/>
             <Cost>
                 <Charge Link="Behavior/CloakDistortionField"/>
                 <Cooldown Link="Behavior/CloakDistortionField"/>

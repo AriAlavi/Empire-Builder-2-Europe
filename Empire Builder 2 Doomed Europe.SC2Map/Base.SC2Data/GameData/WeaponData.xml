@@ -886,7 +886,7 @@
         <Cost>
             <Cooldown Link="Weapon/PulseRifle"/>
         </Cost>
-        <Period value="3"/>
+        <Period value="6"/>
         <DamagePoint value="0.05"/>
         <Backswing value="0.7"/>
         <LoiterInnerRadius value="3"/>

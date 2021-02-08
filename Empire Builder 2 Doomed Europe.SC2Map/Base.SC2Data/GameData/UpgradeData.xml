@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="us-ascii"?>
+<?xml version="1.0" encoding="utf-8"?>
 <Catalog>
     <CUpgrade id="5MinutesPassed"/>
     <CUpgrade id="AITargetingSystems"/>
@@ -609,6 +609,7 @@
     </CUpgrade>
     <CUpgrade id="UnconditionalVictory"/>
     <CUpgrade id="UrbanDevelopment"/>
+    <CUpgrade id="UrbanPlanning"/>
     <CUpgrade id="VehicleArmourUP">
         <EffectArray Operation="Multiply" Reference="Abil,ArmouryResearch,InfoArray[Research6].Resource[Custom]" Value="10"/>
         <EffectArray Reference="Unit,BasiliskSPA,LifeArmorLevel" Value="1"/>

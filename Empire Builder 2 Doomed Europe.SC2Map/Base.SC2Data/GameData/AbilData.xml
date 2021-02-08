@@ -2502,7 +2502,7 @@
         <CmdButtonArray index="Execute" DefaultButtonFace="SummonDemon2" Requirements="MindScramblerPurchased22"/>
     </CAbilEffectInstant>
     <CAbilMorph id="SupplyDepotRaise">
-        <InfoArray index="0" Unit="SupplyDepot" CollideRange="0">
+        <InfoArray index="0">
             <SectionArray index="Abils">
                 <EffectArray index="Start" value=""/>
             </SectionArray>
@@ -3064,7 +3064,7 @@
         <InfoArray index="Build7" Unit="Radar" Time="25">
             <Charge Link="Abil/WorkybotBuild"/>
             <Cooldown Link="Abil/WorkybotBuild"/>
-            <Button DefaultButtonFace="Radar" Requirements="HaveUniversity"/>
+            <Button DefaultButtonFace="Radar"/>
         </InfoArray>
         <InfoArray index="Build8" Unit="Bastion" Time="30">
             <Charge Link="Abil/WorkybotBuild"/>
@@ -3313,7 +3313,7 @@
         <InfoArray index="Train5" Time="13">
             <Charge Link="Abil/BarracksTrain2"/>
             <Cooldown Link="Abil/BarracksTrain2"/>
-            <Button DefaultButtonFace="Medic" Requirements="HaveSchool"/>
+            <Button DefaultButtonFace="Medic"/>
             <Unit value="Medic2"/>
         </InfoArray>
         <InfoArray index="Train6" Time="34">
@@ -3498,7 +3498,7 @@
         </Cost>
         <Marker Link="Abil/DisbandDemolish"/>
         <AINotifyEffect value="DisbandDemolish"/>
-        <CmdButtonArray index="Execute" DefaultButtonFace="Upgrade" Requirements="HaveSchool"/>
+        <CmdButtonArray index="Execute" DefaultButtonFace="Upgrade"/>
     </CAbilEffectInstant>
     <CAbilEffectInstant id="Novotaoism">
         <EditorCategories value="AbilityorEffectType:Units"/>
@@ -3550,7 +3550,7 @@
         <InfoArray index="Train5" Time="13">
             <Charge Link="Abil/BarracksTrain2"/>
             <Cooldown Link="Abil/BarracksTrain2"/>
-            <Button State="Available" Requirements="HaveSchool"/>
+            <Button State="Available" Requirements=""/>
             <Unit index="0" value="Medic2"/>
             <Unit index="1" removed="1"/>
         </InfoArray>
@@ -3707,7 +3707,7 @@
         <InfoArray index="Train5" Time="13">
             <Charge Link="Abil/BarracksTrain2"/>
             <Cooldown Link="Abil/BarracksTrain2"/>
-            <Button State="Available" Requirements="HaveSchool"/>
+            <Button State="Available" Requirements=""/>
             <Unit index="0" value="Medic2"/>
             <Unit index="1" removed="1"/>
         </InfoArray>
@@ -3859,7 +3859,7 @@
         <InfoArray index="Train5" Time="13">
             <Charge Link="Abil/BarracksTrain2"/>
             <Cooldown Link="Abil/BarracksTrain2"/>
-            <Button State="Available" Requirements="HaveSchool"/>
+            <Button State="Available" Requirements=""/>
             <Unit index="0" value="Medic2"/>
             <Unit index="1" removed="1"/>
         </InfoArray>
@@ -4260,7 +4260,7 @@
         </Cost>
         <Marker Link="Abil/DisbandDemolish"/>
         <AINotifyEffect value="DisbandDemolish"/>
-        <CmdButtonArray index="Execute" DefaultButtonFace="Upgrade"/>
+        <CmdButtonArray index="Execute" DefaultButtonFace="Upgrade" Requirements="UrbanPlanning"/>
     </CAbilEffectInstant>
     <CAbilEffectInstant id="HydrofarmIII">
         <EditorCategories value="AbilityorEffectType:Units"/>
@@ -4275,7 +4275,7 @@
         </Cost>
         <Marker Link="Abil/DisbandDemolish"/>
         <AINotifyEffect value="DisbandDemolish"/>
-        <CmdButtonArray index="Execute" DefaultButtonFace="Upgrade"/>
+        <CmdButtonArray index="Execute" DefaultButtonFace="Upgrade" Requirements="UrbanPlanning"/>
     </CAbilEffectInstant>
     <CAbilEffectInstant id="HydrofarmIV">
         <EditorCategories value="AbilityorEffectType:Units"/>
@@ -4318,7 +4318,7 @@
         </Cost>
         <Marker Link="Abil/DisbandDemolish"/>
         <AINotifyEffect value="DisbandDemolish"/>
-        <CmdButtonArray index="Execute" DefaultButtonFace="Upgrade" Requirements="HaveUniversity"/>
+        <CmdButtonArray index="Execute" DefaultButtonFace="Upgrade"/>
     </CAbilEffectInstant>
     <CAbilEffectInstant id="LaboratoryV">
         <EditorCategories value="AbilityorEffectType:Units"/>
@@ -4331,7 +4331,7 @@
         </Cost>
         <Marker Link="Abil/DisbandDemolish"/>
         <AINotifyEffect value="DisbandDemolish"/>
-        <CmdButtonArray index="Execute" DefaultButtonFace="Upgrade" Requirements="HaveUniversity"/>
+        <CmdButtonArray index="Execute" DefaultButtonFace="Upgrade"/>
     </CAbilEffectInstant>
     <CAbilEffectInstant id="ResearchComplexIII">
         <EditorCategories value="AbilityorEffectType:Units"/>
@@ -4344,7 +4344,7 @@
         </Cost>
         <Marker Link="Abil/DisbandDemolish"/>
         <AINotifyEffect value="DisbandDemolish"/>
-        <CmdButtonArray index="Execute" DefaultButtonFace="Upgrade" Requirements="HaveSchool"/>
+        <CmdButtonArray index="Execute" DefaultButtonFace="Upgrade"/>
     </CAbilEffectInstant>
     <CAbilEffectInstant id="ResearchComplexIV">
         <EditorCategories value="AbilityorEffectType:Units"/>
@@ -4357,7 +4357,7 @@
         </Cost>
         <Marker Link="Abil/DisbandDemolish"/>
         <AINotifyEffect value="DisbandDemolish"/>
-        <CmdButtonArray index="Execute" DefaultButtonFace="Upgrade" Requirements="HaveSchool"/>
+        <CmdButtonArray index="Execute" DefaultButtonFace="Upgrade"/>
     </CAbilEffectInstant>
     <CAbilEffectInstant id="ResearchComplexV">
         <EditorCategories value="AbilityorEffectType:Units"/>
@@ -4370,7 +4370,7 @@
         </Cost>
         <Marker Link="Abil/DisbandDemolish"/>
         <AINotifyEffect value="DisbandDemolish"/>
-        <CmdButtonArray index="Execute" DefaultButtonFace="Upgrade" Requirements="HaveSchool"/>
+        <CmdButtonArray index="Execute" DefaultButtonFace="Upgrade"/>
     </CAbilEffectInstant>
     <CAbilEffectInstant id="ResetAlliances">
         <EditorCategories value="AbilityorEffectType:Units"/>
@@ -5236,7 +5236,7 @@
         </Cost>
         <Marker Link="Abil/DisbandDemolish"/>
         <AINotifyEffect value="DisbandDemolish"/>
-        <CmdButtonArray index="Execute" DefaultButtonFace="Upgrade" Requirements="HaveUniversity"/>
+        <CmdButtonArray index="Execute" DefaultButtonFace="Upgrade"/>
     </CAbilEffectInstant>
     <CAbilEffectInstant id="MineV">
         <EditorCategories value="AbilityorEffectType:Units"/>
@@ -5249,7 +5249,7 @@
         </Cost>
         <Marker Link="Abil/DisbandDemolish"/>
         <AINotifyEffect value="DisbandDemolish"/>
-        <CmdButtonArray index="Execute" DefaultButtonFace="Upgrade" Requirements="HaveUniversity"/>
+        <CmdButtonArray index="Execute" DefaultButtonFace="Upgrade"/>
     </CAbilEffectInstant>
     <CAbilEffectInstant id="Donaffinz">
         <EditorCategories value="AbilityorEffectType:Units"/>
@@ -5442,7 +5442,7 @@
         </Cost>
         <Marker Link="Abil/DisbandDemolish"/>
         <AINotifyEffect value="DisbandDemolish"/>
-        <CmdButtonArray index="Execute" DefaultButtonFace="Upgrade" Requirements="HaveSchool"/>
+        <CmdButtonArray index="Execute" DefaultButtonFace="Upgrade"/>
     </CAbilEffectInstant>
     <CAbilEffectInstant id="FarmIII">
         <EditorCategories value="AbilityorEffectType:Units"/>
@@ -5456,7 +5456,7 @@
         </Cost>
         <Marker Link="Abil/DisbandDemolish"/>
         <AINotifyEffect value="DisbandDemolish"/>
-        <CmdButtonArray index="Execute" DefaultButtonFace="Upgrade" Requirements="HaveUniversity"/>
+        <CmdButtonArray index="Execute" DefaultButtonFace="Upgrade" Requirements="UrbanPlanning"/>
     </CAbilEffectInstant>
     <CAbilEffectInstant id="FarmIV">
         <EditorCategories value="AbilityorEffectType:Units"/>
@@ -5470,7 +5470,7 @@
         </Cost>
         <Marker Link="Abil/DisbandDemolish"/>
         <AINotifyEffect value="DisbandDemolish"/>
-        <CmdButtonArray index="Execute" DefaultButtonFace="Upgrade" Requirements="HaveUniversity"/>
+        <CmdButtonArray index="Execute" DefaultButtonFace="Upgrade" Requirements="UrbanPlanning"/>
     </CAbilEffectInstant>
     <CAbilEffectInstant id="FarmV">
         <EditorCategories value="AbilityorEffectType:Units"/>
@@ -5484,7 +5484,7 @@
         </Cost>
         <Marker Link="Abil/DisbandDemolish"/>
         <AINotifyEffect value="DisbandDemolish"/>
-        <CmdButtonArray index="Execute" DefaultButtonFace="Upgrade" Requirements="HaveUniversity"/>
+        <CmdButtonArray index="Execute" DefaultButtonFace="Upgrade" Requirements="UrbanPlanning"/>
     </CAbilEffectInstant>
     <CAbilBuild id="FreeHouse">
         <EditorCategories value="AbilityorEffectType:Units"/>
@@ -5649,7 +5649,7 @@
         </Cost>
         <Marker Link="Abil/DisbandDemolish"/>
         <AINotifyEffect value="DisbandDemolish"/>
-        <CmdButtonArray index="Execute" DefaultButtonFace="Upgrade" Requirements="HaveUniversity"/>
+        <CmdButtonArray index="Execute" DefaultButtonFace="Upgrade"/>
     </CAbilEffectInstant>
     <CAbilEffectInstant id="Communism">
         <EditorCategories value="AbilityorEffectType:Units"/>
@@ -5675,7 +5675,7 @@
         </Cost>
         <Marker Link="Abil/DisbandDemolish"/>
         <AINotifyEffect value="DisbandDemolish"/>
-        <CmdButtonArray index="Execute" DefaultButtonFace="Upgrade" Requirements="HaveSchool"/>
+        <CmdButtonArray index="Execute" DefaultButtonFace="Upgrade"/>
     </CAbilEffectInstant>
     <CAbilEffectInstant id="MineIII">
         <EditorCategories value="AbilityorEffectType:Units"/>
@@ -5689,7 +5689,7 @@
         </Cost>
         <Marker Link="Abil/DisbandDemolish"/>
         <AINotifyEffect value="DisbandDemolish"/>
-        <CmdButtonArray index="Execute" DefaultButtonFace="Upgrade" Requirements="HaveUniversity"/>
+        <CmdButtonArray index="Execute" DefaultButtonFace="Upgrade"/>
     </CAbilEffectInstant>
     <CAbilEffectInstant id="MixedEconomy">
         <EditorCategories value="AbilityorEffectType:Units"/>
@@ -5970,7 +5970,7 @@
         <Effect index="0" value="DisbandDemolish"/>
         <Marker Link="Abil/DisbandDemolish"/>
         <AINotifyEffect value="DisbandDemolish"/>
-        <CmdButtonArray index="Execute" DefaultButtonFace="UpgradetoMDHousing" Requirements="HaveUniversity"/>
+        <CmdButtonArray index="Execute" DefaultButtonFace="UpgradetoMDHousing" Requirements="UrbanPlanning"/>
         <Cost>
             <Resource index="Minerals" value="800"/>
             <Resource index="Terrazine" value="10"/>
@@ -6066,6 +6066,10 @@
         <AINotifyEffect value="VultureSpiderMines2"/>
         <CmdButtonArray index="Execute" DefaultButtonFace="DefenseIndoctrination2234432222"/>
     </CAbilEffectTarget>
+    <CAbilTransport id="WarpPrismTransport">
+        <MaxCargoCount value="16"/>
+        <TotalCargoSpace value="16"/>
+    </CAbilTransport>
     <CAbilBuild id="WorkbotBuild">
         <EditorCategories value="AbilityorEffectType:Units"/>
         <FlagArray index="Interruptible" value="1"/>
@@ -6099,7 +6103,7 @@
         <InfoArray index="Build6" Unit="Clinic" Time="60">
             <Charge Link="Abil/BuildCapital"/>
             <Cooldown Link="Abil/BuildCapital"/>
-            <Button DefaultButtonFace="BuildClinic" Requirements="Clinic"/>
+            <Button DefaultButtonFace="BuildClinic"/>
         </InfoArray>
         <InfoArray index="Build7" Unit="School" Time="60">
             <Charge Link="Abil/BuildCapital"/>
@@ -6124,7 +6128,7 @@
         <InfoArray index="Build11" Unit="Flats" Time="45">
             <Charge Link="Abil/BuildCapital"/>
             <Cooldown Link="Abil/BuildCapital"/>
-            <Button DefaultButtonFace="BuildMDHousing" Requirements="HaveUniversity"/>
+            <Button DefaultButtonFace="BuildMDHousing" Requirements="UrbanPlanning"/>
         </InfoArray>
         <InfoArray index="Build12" Unit="GroundFactory" Time="70">
             <Charge Link="Abil/BuildCapital"/>
@@ -6154,7 +6158,7 @@
         <InfoArray index="Build17" Unit="WindTurbine" Time="30">
             <Charge Link="Abil/BuildCapital"/>
             <Cooldown Link="Abil/BuildCapital"/>
-            <Button DefaultButtonFace="BuildWindTurbine" Requirements="ResearchAlternateElectricity"/>
+            <Button DefaultButtonFace="BuildWindTurbine" Requirements="ResearchElectricity"/>
         </InfoArray>
         <InfoArray index="Build18" Unit="BaPulseCannon" Time="45">
             <Charge Link="Abil/BuildCapital"/>
@@ -6209,8 +6213,8 @@
         <InfoArray index="Build28" Unit="EuropeanParliment" Time="0.2">
             <Button DefaultButtonFace="ReviveEuropeanUnion" Requirements="EUNotalreadyBuilt"/>
         </InfoArray>
-        <InfoArray index="Build29" Unit="RefineryPipes" Time="40">
-            <Button DefaultButtonFace="BuildWindTurbine2" Requirements="ResearchElectricity"/>
+        <InfoArray index="Build29" Unit="OilPowerPlant" Time="40">
+            <Button DefaultButtonFace="BuildWindTurbine2" Requirements="ResearchAlternateElectricity"/>
         </InfoArray>
         <InfoArray index="Build30">
             <Charge Link="Abil/BuildCapital"/>
@@ -6254,7 +6258,7 @@
         <InfoArray index="Build7" Unit="Radar" Time="25">
             <Charge Link="Abil/WorkybotBuild"/>
             <Cooldown Link="Abil/WorkybotBuild"/>
-            <Button DefaultButtonFace="Radar" State="Available" Requirements="HaveUniversity"/>
+            <Button DefaultButtonFace="Radar" State="Available" Requirements=""/>
         </InfoArray>
         <InfoArray index="Build8" Unit="Bastion" Time="60">
             <Charge Link="Abil/WorkybotBuild"/>

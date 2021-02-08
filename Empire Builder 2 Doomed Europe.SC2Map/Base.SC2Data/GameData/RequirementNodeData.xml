@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="us-ascii"?>
+<?xml version="1.0" encoding="utf-8"?>
 <Catalog>
     <CRequirementAnd id="And"/>
     <CRequirementAnd id="And3897983982OrCountUnitWindTurbineCompleteOnlyCountUnitFissionPowerPlantCompleteOnlyCountUnitFusionReactor2CompleteOnlyCountUnitGeothermalPowerPlantCompleteOnlyCountUnitRefineryPipesCompleteOnly">
@@ -597,7 +597,6 @@
     </CRequirementCountUpgrade>
     <CRequirementCountUpgrade id="CountUpgradeNationalHighwayCompleteOnly">
         <Flags index="TechTreeCheat" value="0"/>
-        <Tooltip value="RequirementNode/Tooltip/##id##"/>
         <Count Link="NationalHighway" State="CompleteOnly"/>
     </CRequirementCountUpgrade>
     <CRequirementCountUpgrade id="CountUpgradeNationalismCompleteOnly">
@@ -784,6 +783,11 @@
         <Flags index="TechTreeCheat" value="0"/>
         <Tooltip value=""/>
         <Count Link="UrbanDevelopment" State="QueuedOrBetter"/>
+    </CRequirementCountUpgrade>
+    <CRequirementCountUpgrade id="CountUpgradeUrbanPlanningCompleteOnly">
+        <Flags index="TechTreeCheat" value="0"/>
+        <Tooltip value="RequirementNode/Tooltip/##id##"/>
+        <Count Link="UrbanPlanning" State="CompleteOnly"/>
     </CRequirementCountUpgrade>
     <CRequirementCountUpgrade id="CountUpgradeVehicleArmourUPInProgressOnly">
         <Flags index="TechTreeCheat" value="0"/>

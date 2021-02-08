@@ -226,6 +226,7 @@
         <On index="86" removed="1"/>
         <On index="87" removed="1"/>
         <On index="88" removed="1"/>
+        <On index="89" removed="1"/>
         <Scale value="0.500000"/>
         <HighlightTooltip value="Unit/Name/AssaultCore"/>
     </CActorUnit>
@@ -1357,6 +1358,15 @@
             <Image value="Assets\Textures\Wireframe-general-logisticsheadquarters.dds"/>
         </Wireframe>
         <Scale value="1.000000,1.000000,2.000000"/>
+    </CActorUnit>
+    <CActorUnit id="FixedOilPower" parent="GenericUnitStandard" unitName="OilPowerPlant">
+        <EditorCategories value=""/>
+        <Model value="Refinery"/>
+        <Scale value="0.500000,0.500000,0.800000"/>
+        <BuildModel value="FusionCoreBuild"/>
+        <PlacementModel value="PlacementMedium"/>
+        <HighlightTooltip value="Unit/Name/Bogus"/>
+        <MinimapIconScale value="3.000000"/>
     </CActorUnit>
     <CActorModel id="GenericAttackDamageModel9" parent="GenericAttackModel"/>
     <CActorSound id="GenericAttackDamageSound9" parent="GenericAttackSound"/>
@@ -3138,7 +3148,7 @@
         <On index="4" Terms="ModelEvent; ModelEventName SoundStart" Send="Create GuardianShieldSoundBirth"/>
         <On index="5" Terms="ModelEvent; ModelEventName SoundLoopStart" Send="Create GuardianShieldSoundLoop"/>
         <On index="6" Terms="ModelEvent; ModelEventName SoundLoopEnd" Target="GuardianShieldSoundLoop" Send="Destroy"/>
-        <On index="7" Terms="ModelEvent; ModelEventName SoundLoopEnd" Target="" Send="Create GuardianShieldSoundDeath"/>
+        <On index="7" Target="" Send="Create GuardianShieldSoundDeath"/>
         <On index="8" Terms="ActionDamage" Send="ActionDamagePhysics"/>
         <Scale value="1.800000,1.800000,2.000000"/>
     </CActorModel>
@@ -6289,12 +6299,6 @@
             <Image value="Assets\Textures\Wireframe-Terran-Reaper.dds"/>
         </Wireframe>
     </CActorMissile>
-    <CActorUnit id="Refinery" unitName="RefineryPipes">
-        <Scale value="0.300000,0.300000,0.450000"/>
-        <PlacementModel value="PlacementSmall"/>
-        <PlacementActorModel value=""/>
-    </CActorUnit>
-    <CActorModel id="RefineryBuild"/>
     <CActorUnit id="ReligiousCenter" parent="TerranBuilding" unitName="Church">
         <Macros value="QueueAnim"/>
         <On Terms="Behavior.ColonyInfestation.On" Send="Create InfestationMercCompound"/>
@@ -6406,6 +6410,7 @@
         <On index="96" removed="1"/>
         <On index="97" removed="1"/>
         <On index="98" removed="1"/>
+        <On index="99" removed="1"/>
         <DeathCustoms index="6" removed="1"/>
         <DeathCustoms index="7" removed="1"/>
         <BarOffset value="10"/>
@@ -6457,7 +6462,7 @@
         <DeathCustoms index="2" ModelLink="TerranSmallUnitDeathLow11"/>
         <DeathCustoms index="3" ModelLink="ZergSmallUnitDeathLow11"/>
         <DeathCustoms index="4" ModelLink="Invisible11"/>
-        <DeathCustoms index="5" ModelLink="MissileTurretTitaniumHousingDeath2" Name="Upgrade"/>
+        <DeathCustoms index="5" ModelLink="MissileTurretTitaniumHousingDeath2"/>
         <DeathCustoms index="6" ModelLink="MissileTurretTitaniumHousingDeath2" Name="Upgrade"/>
         <PlacementModel value="MissileTurretPlacement2"/>
         <PlacementSound value="Terran_BuildingPlacementSmall2"/>
@@ -7148,7 +7153,7 @@
     </CActorAction>
     <CActorTurret id="SiegeTankSiegedTurret2" parent="SiegeTankSiegedTurret">
         <On index="0" Terms="TurretEnable.ArtilleryTurret"/>
-        <On index="3" Terms="AbilMorph.*.Start; MorphFrom SiegeBreakerSieged" Send="Destroy"/>
+        <On index="3" Terms="AbilMorph.*.Start; MorphFrom SiegeBreakerSieged"/>
         <On index="4" removed="1"/>
     </CActorTurret>
     <CActorUnit id="Skyscraper2" parent="TerranBuilding" unitName="RussianSkyscraper">
@@ -8163,6 +8168,7 @@
         <On index="92" removed="1"/>
         <On index="93" removed="1"/>
         <On index="94" removed="1"/>
+        <On index="95" removed="1"/>
         <Scale value="0.300000"/>
         <HighlightTooltip value="Unit/Name/TemplarArchive2"/>
     </CActorUnit>
@@ -11425,8 +11431,8 @@
         <On index="99" Terms="WeaponStart.*.AttackStart; IsStatus WeaponEnhanced 1" Send="Create VoidRaySound2"/>
         <On index="100" Terms="WeaponStop.*.AttackStop" Target="VoidRaySound1" Send="Destroy"/>
         <On index="101" Terms="WeaponStop.*.AttackStop" Target="VoidRaySound2" Send="Destroy"/>
-        <On index="102" Terms="WeaponStart.*.AttackStart" Send="Create VoidRayVoidCenterBeam"/>
-        <On index="103" Terms="WeaponStop.*.AttackStop" Target="VoidRayVoidCenterBeam" Send="Destroy"/>
+        <On index="102" Send="Create VoidRayVoidCenterBeam"/>
+        <On index="103" Target="VoidRayVoidCenterBeam" Send="Destroy"/>
         <On index="104" removed="1"/>
         <On index="105" removed="1"/>
         <On index="106" removed="1"/>
@@ -13488,6 +13494,7 @@
         <On index="130" removed="1"/>
         <On index="131" removed="1"/>
         <On index="132" removed="1"/>
+        <On index="133" removed="1"/>
         <BuildModel value="Barracks"/>
         <DeathArray index="Timeout" AnimProps="" ModelLink=""/>
         <DeathCustoms index="6" removed="1"/>
@@ -13868,7 +13875,7 @@
         <On index="1" Terms="Effect.PlasmaRocketD.Start; FromEffectTreeDescendant"/>
         <On index="2" Terms="Effect.PlasmaRocketD.Stop; FromEffectTreeDescendant"/>
         <On index="3" Terms="Effect.PlasmaRocketLM.Start; At Caster; !ValidateEffect HALORocketsResearched"/>
-        <On index="5" Terms="Effect.PlasmaRocketLM.Start; At Caster; !ValidateEffect HALORocketsResearched" Send="Create"/>
+        <On index="5" Terms="Effect.PlasmaRocketLM.Start; At Caster; !ValidateEffect HALORocketsResearched"/>
         <LaunchAttachQuery Methods="AMFilterWeapon"/>
         <Beam value="PlasmaRocketAttackBeam"/>
         <Missile value="PlasmaRocket2"/>
@@ -14808,6 +14815,8 @@
         <On index="77" removed="1"/>
         <On index="78" removed="1"/>
         <On index="79" removed="1"/>
+        <Model value="AutomatedRefinery"/>
+        <Scale value="0.500000,0.700000,0.500000"/>
         <CreepHeightClass value="Medium"/>
         <DeathArray index="Normal" ModelLink="EngineeringBayDeath" SoundLink=""/>
         <DeathArray index="UnderConstruction" ModelLink="TerranBuildingDeath" SoundLink="EngineeringBay_Explode"/>
@@ -14830,6 +14839,7 @@
         <Wireframe>
             <Image value="Assets\Textures\Wireframe-Terran-EngineeringBay.dds"/>
         </Wireframe>
+        <BuildModel value="FusionCoreBuild"/>
     </CActorUnit>
     <CActorUnit id="Workbot" parent="SCV" unitName="MilitaryEngineer">
         <On index="0" Terms="UnitBirth.MilitaryEngineer" Send="Create SoundEmitter Workbot_Ambience"/>
