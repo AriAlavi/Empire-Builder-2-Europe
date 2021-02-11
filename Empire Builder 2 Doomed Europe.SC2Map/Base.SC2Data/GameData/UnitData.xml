@@ -129,8 +129,8 @@
         <TurningRate value="719.4726"/>
         <Sight value="9"/>
         <CostCategory value="Technology"/>
-        <CostResource index="Minerals" value="125000"/>
-        <CostResource index="Terrazine" value="1000"/>
+        <CostResource index="Minerals" value="25000"/>
+        <CostResource index="Terrazine" value="200"/>
         <RepairTime value="35"/>
         <AttackTargetPriority value="11"/>
         <AbilArray Link="BuildInProgress"/>
@@ -12531,7 +12531,7 @@
         <ShieldRegenRate value="0"/>
         <Sight value="4"/>
         <Food value="0"/>
-        <CostResource index="Minerals" value="25000"/>
+        <CostResource index="Minerals" value="10000"/>
         <BehaviorArray index="2" Link="PowerSource"/>
         <CardLayouts index="0">
             <LayoutButtons index="0" Face="Donate" AbilCmd="Donate,Execute" Row="0" Column="0"/>

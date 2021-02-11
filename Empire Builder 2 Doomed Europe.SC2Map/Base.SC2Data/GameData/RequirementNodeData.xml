@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Catalog>
     <CRequirementAnd id="And"/>
-    <CRequirementAnd id="And3897983982OrCountUnitWindTurbineCompleteOnlyCountUnitFissionPowerPlantCompleteOnlyCountUnitFusionReactor2CompleteOnlyCountUnitGeothermalPowerPlantCompleteOnlyCountUnitRefineryPipesCompleteOnly">
-        <OperandArray value="OrCountUnitWindTurbineCompleteOnlyCountUnitFissionPowerPlantCompleteOnlyCountUnitFusionReactor2CompleteOnlyCountUnitGeothermalPowerPlantCompleteOnlyCountUnitRefineryPipesCompleteOnly"/>
+    <CRequirementAnd id="And3897983982OrCountUnitWindTurbineCompleteOnlyCountUnitFissionPowerPlantCompleteOnlyCountUnitFusionReactor2CompleteOnlyCountUnitGeothermalPowerPlantCompleteOnlyCountUnitOilPowerPlantCompleteOnly">
+        <OperandArray value="OrCountUnitWindTurbineCompleteOnlyCountUnitFissionPowerPlantCompleteOnlyCountUnitFusionReactor2CompleteOnlyCountUnitGeothermalPowerPlantCompleteOnlyCountUnitOilPowerPlantCompleteOnly"/>
     </CRequirementAnd>
     <CRequirementAnd id="AndAnd">
         <OperandArray value="And"/>
@@ -161,9 +161,10 @@
         <Flags index="TechTreeCheat" value="0"/>
         <Count Link="LaboratoryV" State="InProgressOrBetter"/>
     </CRequirementCountUnit>
-    <CRequirementCountUnit id="CountUnitRefineryPipesCompleteOnly">
+    <CRequirementCountUnit id="CountUnitOilPowerPlantCompleteOnly">
         <Flags index="TechTreeCheat" value="0"/>
-        <Count Link="RefineryPipes" State="CompleteOnly"/>
+        <Tooltip value="RequirementNode/Tooltip/##id##"/>
+        <Count Link="OilPowerPlant" State="CompleteOnly"/>
     </CRequirementCountUnit>
     <CRequirementCountUnit id="CountUnitResearchComplexIIIInProgressOrBetter">
         <Flags index="TechTreeCheat" value="0"/>
@@ -786,7 +787,6 @@
     </CRequirementCountUpgrade>
     <CRequirementCountUpgrade id="CountUpgradeUrbanPlanningCompleteOnly">
         <Flags index="TechTreeCheat" value="0"/>
-        <Tooltip value="RequirementNode/Tooltip/##id##"/>
         <Count Link="UrbanPlanning" State="CompleteOnly"/>
     </CRequirementCountUpgrade>
     <CRequirementCountUpgrade id="CountUpgradeVehicleArmourUPInProgressOnly">
@@ -1203,12 +1203,13 @@
         <Tooltip value=""/>
         <OperandArray index="0" value="CountUpgradeVehiclesQueuedOrBetter"/>
     </CRequirementNot>
-    <CRequirementOr id="OrCountUnitWindTurbineCompleteOnlyCountUnitFissionPowerPlantCompleteOnlyCountUnitFusionReactor2CompleteOnlyCountUnitGeothermalPowerPlantCompleteOnlyCountUnitRefineryPipesCompleteOnly">
+    <CRequirementOr id="OrCountUnitWindTurbineCompleteOnlyCountUnitFissionPowerPlantCompleteOnlyCountUnitFusionReactor2CompleteOnlyCountUnitGeothermalPowerPlantCompleteOnlyCountUnitOilPowerPlantCompleteOnly">
+        <Tooltip value="RequirementNode/Tooltip/##id##"/>
         <OperandArray value="CountUnitWindTurbineCompleteOnly"/>
         <OperandArray value="CountUnitFissionPowerPlantCompleteOnly"/>
         <OperandArray value="CountUnitFusionReactor2CompleteOnly"/>
         <OperandArray value="CountUnitGeothermalPowerPlantCompleteOnly"/>
-        <OperandArray value="CountUnitRefineryPipesCompleteOnly"/>
+        <OperandArray value="CountUnitOilPowerPlantCompleteOnly"/>
     </CRequirementOr>
     <CRequirementOr id="OrCountUpgradeChangeWarPolicyInProgressOrBetter">
         <OperandArray value="CountUpgradeChangeWarPolicyInProgressOrBetter"/>

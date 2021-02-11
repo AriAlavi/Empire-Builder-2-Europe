@@ -366,6 +366,8 @@ int[8] gv_concurrentBankruptMonths;
 int[8][4] gv_buildingTypesUrbanized;
 int gv_fOOD_PRODUCTION_BASE;
 int gv_fOOD_PRODUCTION_BAD_TERRAIN;
+int[8] gv_farmIncome;
+int[8] gv_toEu;
 fixed[8] gv_urbanScore;
 int[8][8] gv_cheapestFoodArrayPrice;
 int[8][8] gv_cheapestFoodArrayPlayer;
@@ -763,9 +765,6 @@ void InitGlobals () {
     gv_manualTradeDialog = c_invalidDialogId;
     for (init_i = 0; init_i <= 3; init_i += 1) {
         gv_manualTradeDialogItems[init_i] = c_invalidDialogControlId;
-    }
-    for (init_i = 0; init_i <= 7; init_i += 1) {
-        gv_foodStockpile[init_i] = 10;
     }
     gv_foodPrice = 1;
     gv_allResources = UnitGroupEmpty();
@@ -1499,7 +1498,6 @@ trigger gt_LaboratoryUpgradesNotHighEnough;
 trigger gt_ResearchingDangerousTech;
 trigger gt_YouShouldMechanizeyourCountry;
 trigger gt_Youhavetakenoutloans;
-trigger gt_LowCentralization;
 trigger gt_YouareatwarFoundEUIncreaseWarStatusDecreaseWarStatus;
 trigger gt_BannerApplication;
 trigger gt_BannerCreation;
@@ -5187,16 +5185,11 @@ string gf_GetNation (int lp_cultureGroupID, int lp_player) {
     }
 
     if ((lp_cultureGroupID == 12)) {
-        if ((gf_CheckForNationByID(9, lp_player) == false)) {
+        if ((gf_CheckForNationByID(17, lp_player) == false) && (gf_GetGovernmentType(lp_player) == 3)) {
             return "Germany";
         }
         else {
-            if ((gf_CheckForNationByID(17, lp_player) == false) && (gf_GetGovernmentType(lp_player) == 3)) {
-                return "Prussia";
-            }
-            else {
-                return "Germany";
-            }
+            return "Prussia";
         }
     }
 
@@ -8450,8 +8443,8 @@ void gf_UpdateMainTradeScreen () {
         autoD6752696_var = 1;
         for ( ; autoD6752696_var <= autoD6752696_ae; autoD6752696_var += 1 ) {
             if ((gv_cheapestFoodArrayPrice[autoCD111D37_var][autoD6752696_var] != 1000000000)) {
-                lv_guessedSupply[1] += gv_foodStockpile[gv_cheapestFoodArrayPlayer[autoCD111D37_var][autoD6752696_var]];
-                lv_tooltip = ((lv_tooltip + StringExternal("Param/Value/BC575448")) + (TextWithColor(IntToText(gv_cheapestFoodArrayPlayer[autoCD111D37_var][autoD6752696_var]), libNtve_gf_ConvertPlayerColorToColor(PlayerGetColorIndex(autoCD111D37_var, false))) + (StringExternal("Param/Value/F348ACBF") + gf_MakeUIPresentable(lv_guessedSupply[autoCD111D37_var]))));
+                lv_guessedSupply[1] += gv_foodStockpile[autoD6752696_var];
+                lv_tooltip = ((lv_tooltip + StringExternal("Param/Value/0F288F81")) + (TextWithColor(PlayerName(autoCD111D37_var), libNtve_gf_ConvertPlayerColorToColor(PlayerGetColorIndex(autoCD111D37_var, false))) + (StringExternal("Param/Value/0BB0FE15") + gf_MakeUIPresentable(gv_foodStockpile[autoCD111D37_var]))));
             }
 
         }
@@ -8650,10 +8643,6 @@ void gf_UpdateExternalTradePolicies () {
                     }
 
                 }
-                if ((gv_automaticRetaliatoryTariffs[(lv_dialogNumber - 28)] == true) && (gv_importTariff[autoA3C752A3_var][PlayerGroupPlayer(gv_users, (lv_dialogNumber - 28))] >= 0)) {
-                    libNtve_gf_SetDialogItemCurrentValue(gv_economicExternalPolicyDialogItems[PlayerGroupPlayer(gv_users, (lv_dialogNumber - 28))], IntToFixed(gv_importTariff[autoA3C752A3_var][PlayerGroupPlayer(gv_users, (lv_dialogNumber - 28))]), PlayerGroupSingle(PlayerGroupPlayer(gv_users, (lv_dialogNumber - 28))));
-                }
-
             }
 
         }
@@ -9012,7 +9001,7 @@ void gf_UpdateInternalPolicy () {
 
 void gf_RotMarketFoodStockpile () {
     // Variable Declarations
-    const int lv_rOT_RATE = 20;
+    const int lv_rOT_RATE = 95;
 
     // Automatic Variable Declarations
     const int auto558B8FF3_ae = 7;
@@ -9322,12 +9311,14 @@ void gf_UpdateResourceUnitGroup () {
             UnitGroupAdd(gv_allResources, auto4AC7484B_var);
         }
         else {
+            continue;
         }
         if ((UnitGetOwner(auto4AC7484B_var) == 12)) {
             UnitSetOwner(auto4AC7484B_var, 0, true);
         }
-
-        gf_NoNegativeCustomValues(auto4AC7484B_var, 0, 64);
+        else {
+            gf_NoNegativeCustomValues(auto4AC7484B_var, 0, 64);
+        }
     }
 }
 
@@ -9336,8 +9327,6 @@ void gf_SetPricesGetSuppliesGetMeanGDPRotFood (int lp_resourceType) {
     bool lv_theBIGTIK;
 
     // Automatic Variable Declarations
-    playergroup autoA20B4FA9_g;
-    int autoA20B4FA9_var;
     playergroup auto8760BB51_g;
     int auto8760BB51_var;
     unitgroup auto6CE95EF7_g;
@@ -9348,9 +9337,6 @@ void gf_SetPricesGetSuppliesGetMeanGDPRotFood (int lp_resourceType) {
     unitgroup autoB7875E21_g;
     int autoB7875E21_u;
     unit autoB7875E21_var;
-    unitgroup autoEC9BC642_g;
-    int autoEC9BC642_u;
-    unit autoEC9BC642_var;
     playergroup auto518F13FE_g;
     int auto518F13FE_var;
     unitgroup autoBA2083E8_g;
@@ -9400,25 +9386,6 @@ void gf_SetPricesGetSuppliesGetMeanGDPRotFood (int lp_resourceType) {
     }
     else {
         if ((lp_resourceType == 1)) {
-            autoA20B4FA9_g = gv_users;
-            autoA20B4FA9_var = -1;
-            while (true) {
-                autoA20B4FA9_var = PlayerGroupNextPlayer(autoA20B4FA9_g, autoA20B4FA9_var);
-                if (autoA20B4FA9_var < 0) { break; }
-                gv_cSupply[autoA20B4FA9_var][1] = gv_cUnrealizedSupplyImports[autoA20B4FA9_var][1];
-                gv_cDemand[autoA20B4FA9_var][1] = 0;
-            }
-            autoEC9BC642_g = UnitGroup("CorporateHeadquarters", c_playerAny, RegionEntireMap(), UnitFilter(0, 0, (1 << c_targetFilterMissile), (1 << (c_targetFilterDead - 32)) | (1 << (c_targetFilterHidden - 32))), 0);
-            autoEC9BC642_u = UnitGroupCount(autoEC9BC642_g, c_unitCountAll);
-            for (;; autoEC9BC642_u -= 1) {
-                autoEC9BC642_var = UnitGroupUnitFromEnd(autoEC9BC642_g, autoEC9BC642_u);
-                if (autoEC9BC642_var == null) { break; }
-                gf_RefreshResourceActualDemand(autoEC9BC642_var, false);
-                gf_GetMeanGDPofDemanders(autoEC9BC642_var);
-                gv_cSupply[UnitGetOwner(autoEC9BC642_var)][1] += gf_GetUnitCustomValue(autoEC9BC642_var, 12);
-                gv_cDemand[UnitGetOwner(autoEC9BC642_var)][1] += gf_GetUnitCustomValue(autoEC9BC642_var, 13);
-                gf_SetLocalResourcePrice(autoEC9BC642_var);
-            }
         }
         else {
             if ((lp_resourceType == 2)) {
@@ -9479,7 +9446,7 @@ void gf_SetPricesGetSuppliesGetMeanGDPRotFood (int lp_resourceType) {
 
 void gf_RotFood (unit lp_headquarter) {
     // Variable Declarations
-    const fixed lv_decayRate = 0.8;
+    const fixed lv_decayRate = 0.9;
     fixed lv_food;
 
     // Automatic Variable Declarations
@@ -9984,7 +9951,13 @@ int gf_GetPlayerFoodDemand (int lp_player) {
     lv_currentFoodDemand /= 2;
     lv_averageFoodDemand += lv_maximumFoodDemand;
     lv_averageFoodDemand += lv_currentFoodDemand;
-    return libNtve_gf_ArithmeticIntClamp((((lv_averageFoodDemand - gv_foodIncome[lp_player][1]) - (gv_foodFromMarkert[lp_player] / 2)) + 10), 10, 1000000000);
+    lv_averageFoodDemand = (lv_maximumFoodDemand + lv_currentFoodDemand);
+    if ((PlayerGroupHasPlayer(gv_theEuroCrew, lp_player) == true)) {
+        return libNtve_gf_ArithmeticIntClamp((((lv_averageFoodDemand - gv_farmIncome[lp_player]) - (gv_eURedistributeFoodStockpile / PlayerGroupCount(gv_theEuroCrew))) + 10), 10, 1000000000);
+    }
+    else {
+        return libNtve_gf_ArithmeticIntClamp((((lv_averageFoodDemand - gv_farmIncome[lp_player]) - 0) + 10), 10, 1000000000);
+    }
 }
 
 void gf_MeetCivilianMetalOilDemand () {
@@ -13666,140 +13639,10 @@ void gf_GetMilitaryCompleteUpkeep () {
     // Automatic Variable Declarations
     playergroup auto5FEF7568_g;
     int auto5FEF7568_var;
-    unitgroup autoF70E602F_g;
-    int autoF70E602F_u;
-    unit autoF70E602F_var;
-    unitgroup autoD43594CD_g;
-    int autoD43594CD_u;
-    unit autoD43594CD_var;
-    unitgroup auto01741FC3_g;
-    int auto01741FC3_u;
-    unit auto01741FC3_var;
-    unitgroup auto29E2A8BF_g;
-    int auto29E2A8BF_u;
-    unit auto29E2A8BF_var;
-    unitgroup auto7AFD823C_g;
-    int auto7AFD823C_u;
-    unit auto7AFD823C_var;
-    unitgroup auto29475A10_g;
-    int auto29475A10_u;
-    unit auto29475A10_var;
-    unitgroup autoF370C9E5_g;
-    int autoF370C9E5_u;
-    unit autoF370C9E5_var;
-    unitgroup auto935EDF52_g;
-    int auto935EDF52_u;
-    unit auto935EDF52_var;
-    unitgroup auto4884A833_g;
-    int auto4884A833_u;
-    unit auto4884A833_var;
-    unitgroup autoA52CCB53_g;
-    int autoA52CCB53_u;
-    unit autoA52CCB53_var;
-    unitgroup autoCD5ADD55_g;
-    int autoCD5ADD55_u;
-    unit autoCD5ADD55_var;
-    unitgroup auto855CEA3B_g;
-    int auto855CEA3B_u;
-    unit auto855CEA3B_var;
-    unitgroup auto89BC95F0_g;
-    int auto89BC95F0_u;
-    unit auto89BC95F0_var;
-    unitgroup autoC57D2F9E_g;
-    int autoC57D2F9E_u;
-    unit autoC57D2F9E_var;
-    unitgroup autoE6FF475C_g;
-    int autoE6FF475C_u;
-    unit autoE6FF475C_var;
-    unitgroup auto38DBE233_g;
-    int auto38DBE233_u;
-    unit auto38DBE233_var;
-    unitgroup auto7894E6A9_g;
-    int auto7894E6A9_u;
-    unit auto7894E6A9_var;
-    unitgroup auto2EB4A593_g;
-    int auto2EB4A593_u;
-    unit auto2EB4A593_var;
-    unitgroup auto58AA3289_g;
-    int auto58AA3289_u;
-    unit auto58AA3289_var;
-    unitgroup auto3B16074D_g;
-    int auto3B16074D_u;
-    unit auto3B16074D_var;
-    unitgroup auto0679E136_g;
-    int auto0679E136_u;
-    unit auto0679E136_var;
-    unitgroup auto0BD4A161_g;
-    int auto0BD4A161_u;
-    unit auto0BD4A161_var;
-    unitgroup auto7E3634DE_g;
-    int auto7E3634DE_u;
-    unit auto7E3634DE_var;
-    unitgroup auto54171FD0_g;
-    int auto54171FD0_u;
-    unit auto54171FD0_var;
-    unitgroup auto0D057DC9_g;
-    int auto0D057DC9_u;
-    unit auto0D057DC9_var;
-    unitgroup autoFED69778_g;
-    int autoFED69778_u;
-    unit autoFED69778_var;
-    unitgroup auto9D320E64_g;
-    int auto9D320E64_u;
-    unit auto9D320E64_var;
-    unitgroup auto6525B6EC_g;
-    int auto6525B6EC_u;
-    unit auto6525B6EC_var;
-    unitgroup auto9962D6C2_g;
-    int auto9962D6C2_u;
-    unit auto9962D6C2_var;
-    unitgroup auto9C94355A_g;
-    int auto9C94355A_u;
-    unit auto9C94355A_var;
-    unitgroup autoAB3BD328_g;
-    int autoAB3BD328_u;
-    unit autoAB3BD328_var;
-    unitgroup autoC4C646B7_g;
-    int autoC4C646B7_u;
-    unit autoC4C646B7_var;
-    unitgroup auto3DF1C4BC_g;
-    int auto3DF1C4BC_u;
-    unit auto3DF1C4BC_var;
-    unitgroup auto10EB00AD_g;
-    int auto10EB00AD_u;
-    unit auto10EB00AD_var;
-    unitgroup autoD4A46D41_g;
-    int autoD4A46D41_u;
-    unit autoD4A46D41_var;
-    unitgroup auto9D27A86F_g;
-    int auto9D27A86F_u;
-    unit auto9D27A86F_var;
-    unitgroup auto72BC0173_g;
-    int auto72BC0173_u;
-    unit auto72BC0173_var;
-    unitgroup autoEA7ADDDA_g;
-    int autoEA7ADDDA_u;
-    unit autoEA7ADDDA_var;
-    unitgroup auto12855494_g;
-    int auto12855494_u;
-    unit auto12855494_var;
-    unitgroup autoA434ED7E_g;
-    int autoA434ED7E_u;
-    unit autoA434ED7E_var;
-    unitgroup auto3A556D26_g;
-    int auto3A556D26_u;
-    unit auto3A556D26_var;
-    unitgroup auto486B21D6_g;
-    int auto486B21D6_u;
-    unit auto486B21D6_var;
-    unitgroup auto725F8144_g;
-    int auto725F8144_u;
-    unit auto725F8144_var;
-    unitgroup autoA4B5FBC4_g;
-    int autoA4B5FBC4_u;
-    unit autoA4B5FBC4_var;
-    playergroup auto7427E780_g;
-    int auto7427E780_var;
+    unitgroup auto3B2AD050_g;
+    int auto3B2AD050_u;
+    unit auto3B2AD050_var;
+    string autoCA71EFC5_val;
 
     // Variable Initialization
 
@@ -13810,344 +13653,172 @@ void gf_GetMilitaryCompleteUpkeep () {
         auto5FEF7568_var = PlayerGroupNextPlayer(auto5FEF7568_g, auto5FEF7568_var);
         if (auto5FEF7568_var < 0) { break; }
         lv_beforeOil[auto5FEF7568_var] = gv_oilConsumption[auto5FEF7568_var][1];
-    }
-    autoF70E602F_g = UnitGroup("IgniterTurret", c_playerAny, RegionEntireMap(), UnitFilter(0, 0, (1 << c_targetFilterMissile), (1 << (c_targetFilterDead - 32)) | (1 << (c_targetFilterHidden - 32))), 0);
-    autoF70E602F_u = UnitGroupCount(autoF70E602F_g, c_unitCountAll);
-    for (;; autoF70E602F_u -= 1) {
-        autoF70E602F_var = UnitGroupUnitFromEnd(autoF70E602F_g, autoF70E602F_u);
-        if (autoF70E602F_var == null) { break; }
-        gv_militaryExpenses[UnitGetOwner(autoF70E602F_var)][1] += 25;
-    }
-    autoD43594CD_g = UnitGroup("Lasturret", c_playerAny, RegionEntireMap(), UnitFilter(0, 0, (1 << c_targetFilterMissile), (1 << (c_targetFilterDead - 32)) | (1 << (c_targetFilterHidden - 32))), 0);
-    autoD43594CD_u = UnitGroupCount(autoD43594CD_g, c_unitCountAll);
-    for (;; autoD43594CD_u -= 1) {
-        autoD43594CD_var = UnitGroupUnitFromEnd(autoD43594CD_g, autoD43594CD_u);
-        if (autoD43594CD_var == null) { break; }
-        gv_militaryExpenses[UnitGetOwner(autoD43594CD_var)][1] += 50;
-    }
-    auto01741FC3_g = UnitGroup("IgniterTurret", c_playerAny, RegionEntireMap(), UnitFilter(0, 0, (1 << c_targetFilterMissile), (1 << (c_targetFilterDead - 32)) | (1 << (c_targetFilterHidden - 32))), 0);
-    auto01741FC3_u = UnitGroupCount(auto01741FC3_g, c_unitCountAll);
-    for (;; auto01741FC3_u -= 1) {
-        auto01741FC3_var = UnitGroupUnitFromEnd(auto01741FC3_g, auto01741FC3_u);
-        if (auto01741FC3_var == null) { break; }
-        gv_militaryExpenses[UnitGetOwner(auto01741FC3_var)][1] += 100;
-    }
-    auto29E2A8BF_g = UnitGroup("Flakker", c_playerAny, RegionEntireMap(), UnitFilter(0, 0, (1 << c_targetFilterMissile), (1 << (c_targetFilterDead - 32)) | (1 << (c_targetFilterHidden - 32))), 0);
-    auto29E2A8BF_u = UnitGroupCount(auto29E2A8BF_g, c_unitCountAll);
-    for (;; auto29E2A8BF_u -= 1) {
-        auto29E2A8BF_var = UnitGroupUnitFromEnd(auto29E2A8BF_g, auto29E2A8BF_u);
-        if (auto29E2A8BF_var == null) { break; }
-        gv_militaryExpenses[UnitGetOwner(auto29E2A8BF_var)][1] += 50;
-    }
-    auto7AFD823C_g = UnitGroup("BaPulseCannon", c_playerAny, RegionEntireMap(), UnitFilter(0, 0, (1 << c_targetFilterMissile), (1 << (c_targetFilterDead - 32)) | (1 << (c_targetFilterHidden - 32))), 0);
-    auto7AFD823C_u = UnitGroupCount(auto7AFD823C_g, c_unitCountAll);
-    for (;; auto7AFD823C_u -= 1) {
-        auto7AFD823C_var = UnitGroupUnitFromEnd(auto7AFD823C_g, auto7AFD823C_u);
-        if (auto7AFD823C_var == null) { break; }
-        gv_militaryExpenses[UnitGetOwner(auto7AFD823C_var)][1] += 250;
-    }
-    auto29475A10_g = UnitGroup("Hypercannon", c_playerAny, RegionEntireMap(), UnitFilter(0, 0, (1 << c_targetFilterMissile), (1 << (c_targetFilterDead - 32)) | (1 << (c_targetFilterHidden - 32))), 0);
-    auto29475A10_u = UnitGroupCount(auto29475A10_g, c_unitCountAll);
-    for (;; auto29475A10_u -= 1) {
-        auto29475A10_var = UnitGroupUnitFromEnd(auto29475A10_g, auto29475A10_u);
-        if (auto29475A10_var == null) { break; }
-        gv_militaryExpenses[UnitGetOwner(auto29475A10_var)][1] += 500;
-    }
-    autoF370C9E5_g = UnitGroup("Expounder", c_playerAny, RegionEntireMap(), UnitFilter(0, 0, (1 << c_targetFilterMissile), (1 << (c_targetFilterDead - 32)) | (1 << (c_targetFilterHidden - 32))), 0);
-    autoF370C9E5_u = UnitGroupCount(autoF370C9E5_g, c_unitCountAll);
-    for (;; autoF370C9E5_u -= 1) {
-        autoF370C9E5_var = UnitGroupUnitFromEnd(autoF370C9E5_g, autoF370C9E5_u);
-        if (autoF370C9E5_var == null) { break; }
-        gv_militaryExpenses[UnitGetOwner(autoF370C9E5_var)][1] += 1000;
-    }
-    auto935EDF52_g = UnitGroup("SAM", c_playerAny, RegionEntireMap(), UnitFilter(0, 0, (1 << c_targetFilterMissile), (1 << (c_targetFilterDead - 32)) | (1 << (c_targetFilterHidden - 32))), 0);
-    auto935EDF52_u = UnitGroupCount(auto935EDF52_g, c_unitCountAll);
-    for (;; auto935EDF52_u -= 1) {
-        auto935EDF52_var = UnitGroupUnitFromEnd(auto935EDF52_g, auto935EDF52_u);
-        if (auto935EDF52_var == null) { break; }
-        gv_militaryExpenses[UnitGetOwner(auto935EDF52_var)][1] += 100;
-    }
-    auto4884A833_g = UnitGroup("NaniteTower", c_playerAny, RegionEntireMap(), UnitFilter(0, 0, (1 << c_targetFilterMissile), (1 << (c_targetFilterDead - 32)) | (1 << (c_targetFilterHidden - 32))), 0);
-    auto4884A833_u = UnitGroupCount(auto4884A833_g, c_unitCountAll);
-    for (;; auto4884A833_u -= 1) {
-        auto4884A833_var = UnitGroupUnitFromEnd(auto4884A833_g, auto4884A833_u);
-        if (auto4884A833_var == null) { break; }
-        gv_militaryExpenses[UnitGetOwner(auto4884A833_var)][1] += 250;
-    }
-    autoA52CCB53_g = UnitGroup("SupplyDepot2343", c_playerAny, RegionEntireMap(), UnitFilter(0, 0, (1 << c_targetFilterMissile), (1 << (c_targetFilterDead - 32)) | (1 << (c_targetFilterHidden - 32))), 0);
-    autoA52CCB53_u = UnitGroupCount(autoA52CCB53_g, c_unitCountAll);
-    for (;; autoA52CCB53_u -= 1) {
-        autoA52CCB53_var = UnitGroupUnitFromEnd(autoA52CCB53_g, autoA52CCB53_u);
-        if (autoA52CCB53_var == null) { break; }
-        gv_militaryExpenses[UnitGetOwner(autoA52CCB53_var)][1] += 2000;
-    }
-    autoCD5ADD55_g = UnitGroup("SupplyDepot234223", c_playerAny, RegionEntireMap(), UnitFilter(0, 0, (1 << c_targetFilterMissile), (1 << (c_targetFilterDead - 32)) | (1 << (c_targetFilterHidden - 32))), 0);
-    autoCD5ADD55_u = UnitGroupCount(autoCD5ADD55_g, c_unitCountAll);
-    for (;; autoCD5ADD55_u -= 1) {
-        autoCD5ADD55_var = UnitGroupUnitFromEnd(autoCD5ADD55_g, autoCD5ADD55_u);
-        if (autoCD5ADD55_var == null) { break; }
-        gv_militaryExpenses[UnitGetOwner(autoCD5ADD55_var)][1] += 2500;
-    }
-    auto855CEA3B_g = UnitGroup("MissileTurret22", c_playerAny, RegionEntireMap(), UnitFilter(0, 0, (1 << c_targetFilterMissile), (1 << (c_targetFilterDead - 32)) | (1 << (c_targetFilterHidden - 32))), 0);
-    auto855CEA3B_u = UnitGroupCount(auto855CEA3B_g, c_unitCountAll);
-    for (;; auto855CEA3B_u -= 1) {
-        auto855CEA3B_var = UnitGroupUnitFromEnd(auto855CEA3B_g, auto855CEA3B_u);
-        if (auto855CEA3B_var == null) { break; }
-        gv_militaryExpenses[UnitGetOwner(auto855CEA3B_var)][1] += 500;
-    }
-    auto89BC95F0_g = UnitGroup("Bastion", c_playerAny, RegionEntireMap(), UnitFilter(0, 0, (1 << c_targetFilterMissile), (1 << (c_targetFilterDead - 32)) | (1 << (c_targetFilterHidden - 32))), 0);
-    auto89BC95F0_u = UnitGroupCount(auto89BC95F0_g, c_unitCountAll);
-    for (;; auto89BC95F0_u -= 1) {
-        auto89BC95F0_var = UnitGroupUnitFromEnd(auto89BC95F0_g, auto89BC95F0_u);
-        if (auto89BC95F0_var == null) { break; }
-        gv_militaryExpenses[UnitGetOwner(auto89BC95F0_var)][1] += 1000;
-    }
-    autoC57D2F9E_g = UnitGroup("Bunker", c_playerAny, RegionEntireMap(), UnitFilter(0, 0, (1 << c_targetFilterMissile), (1 << (c_targetFilterDead - 32)) | (1 << (c_targetFilterHidden - 32))), 0);
-    autoC57D2F9E_u = UnitGroupCount(autoC57D2F9E_g, c_unitCountAll);
-    for (;; autoC57D2F9E_u -= 1) {
-        autoC57D2F9E_var = UnitGroupUnitFromEnd(autoC57D2F9E_g, autoC57D2F9E_u);
-        if (autoC57D2F9E_var == null) { break; }
-        gv_militaryExpenses[UnitGetOwner(autoC57D2F9E_var)][1] += 50;
-    }
-    autoE6FF475C_g = UnitGroup("SupplyDepot", c_playerAny, RegionEntireMap(), UnitFilter(0, 0, (1 << c_targetFilterMissile), (1 << (c_targetFilterDead - 32)) | (1 << (c_targetFilterHidden - 32))), 0);
-    autoE6FF475C_u = UnitGroupCount(autoE6FF475C_g, c_unitCountAll);
-    for (;; autoE6FF475C_u -= 1) {
-        autoE6FF475C_var = UnitGroupUnitFromEnd(autoE6FF475C_g, autoE6FF475C_u);
-        if (autoE6FF475C_var == null) { break; }
-        gv_militaryExpenses[UnitGetOwner(autoE6FF475C_var)][1] += 5;
-    }
-    auto38DBE233_g = UnitGroup("SensorTower2", c_playerAny, RegionEntireMap(), UnitFilter(0, 0, (1 << c_targetFilterMissile), (1 << (c_targetFilterDead - 32)) | (1 << (c_targetFilterHidden - 32))), 0);
-    auto38DBE233_u = UnitGroupCount(auto38DBE233_g, c_unitCountAll);
-    for (;; auto38DBE233_u -= 1) {
-        auto38DBE233_var = UnitGroupUnitFromEnd(auto38DBE233_g, auto38DBE233_u);
-        if (auto38DBE233_var == null) { break; }
-        gv_militaryExpenses[UnitGetOwner(auto38DBE233_var)][1] += 150;
-    }
-    auto7894E6A9_g = UnitGroup("SensorTower22", c_playerAny, RegionEntireMap(), UnitFilter(0, 0, (1 << c_targetFilterMissile), (1 << (c_targetFilterDead - 32)) | (1 << (c_targetFilterHidden - 32))), 0);
-    auto7894E6A9_u = UnitGroupCount(auto7894E6A9_g, c_unitCountAll);
-    for (;; auto7894E6A9_u -= 1) {
-        auto7894E6A9_var = UnitGroupUnitFromEnd(auto7894E6A9_g, auto7894E6A9_u);
-        if (auto7894E6A9_var == null) { break; }
-        gv_militaryExpenses[UnitGetOwner(auto7894E6A9_var)][1] += 1000;
-    }
-    auto2EB4A593_g = UnitGroup("TrainingGround", c_playerAny, RegionEntireMap(), UnitFilter(0, 0, (1 << c_targetFilterMissile), (1 << (c_targetFilterDead - 32)) | (1 << (c_targetFilterHidden - 32))), 0);
-    auto2EB4A593_u = UnitGroupCount(auto2EB4A593_g, c_unitCountAll);
-    for (;; auto2EB4A593_u -= 1) {
-        auto2EB4A593_var = UnitGroupUnitFromEnd(auto2EB4A593_g, auto2EB4A593_u);
-        if (auto2EB4A593_var == null) { break; }
-        gv_militaryExpenses[UnitGetOwner(auto2EB4A593_var)][1] += 500;
-    }
-    auto58AA3289_g = UnitGroup("GroundFactory", c_playerAny, RegionEntireMap(), UnitFilter(0, 0, (1 << c_targetFilterMissile), (1 << (c_targetFilterDead - 32)) | (1 << (c_targetFilterHidden - 32))), 0);
-    auto58AA3289_u = UnitGroupCount(auto58AA3289_g, c_unitCountAll);
-    for (;; auto58AA3289_u -= 1) {
-        auto58AA3289_var = UnitGroupUnitFromEnd(auto58AA3289_g, auto58AA3289_u);
-        if (auto58AA3289_var == null) { break; }
-        gv_militaryExpenses[UnitGetOwner(auto58AA3289_var)][1] += 2000;
-    }
-    auto3B16074D_g = UnitGroup("AircraftFactory", c_playerAny, RegionEntireMap(), UnitFilter(0, 0, (1 << c_targetFilterMissile), (1 << (c_targetFilterDead - 32)) | (1 << (c_targetFilterHidden - 32))), 0);
-    auto3B16074D_u = UnitGroupCount(auto3B16074D_g, c_unitCountAll);
-    for (;; auto3B16074D_u -= 1) {
-        auto3B16074D_var = UnitGroupUnitFromEnd(auto3B16074D_g, auto3B16074D_u);
-        if (auto3B16074D_var == null) { break; }
-        gv_militaryExpenses[UnitGetOwner(auto3B16074D_var)][1] += 2500;
-    }
-    auto0679E136_g = UnitGroup("Conscript", c_playerAny, RegionEntireMap(), UnitFilter(0, 0, (1 << c_targetFilterMissile), (1 << (c_targetFilterDead - 32)) | (1 << (c_targetFilterHidden - 32))), 0);
-    auto0679E136_u = UnitGroupCount(auto0679E136_g, c_unitCountAll);
-    for (;; auto0679E136_u -= 1) {
-        auto0679E136_var = UnitGroupUnitFromEnd(auto0679E136_g, auto0679E136_u);
-        if (auto0679E136_var == null) { break; }
-        gv_militaryExpenses[UnitGetOwner(auto0679E136_var)][1] += 10;
-    }
-    auto0BD4A161_g = UnitGroup("Rifleman", c_playerAny, RegionEntireMap(), UnitFilter(0, 0, (1 << c_targetFilterMissile), (1 << (c_targetFilterDead - 32)) | (1 << (c_targetFilterHidden - 32))), 0);
-    auto0BD4A161_u = UnitGroupCount(auto0BD4A161_g, c_unitCountAll);
-    for (;; auto0BD4A161_u -= 1) {
-        auto0BD4A161_var = UnitGroupUnitFromEnd(auto0BD4A161_g, auto0BD4A161_u);
-        if (auto0BD4A161_var == null) { break; }
-        gv_militaryExpenses[UnitGetOwner(auto0BD4A161_var)][1] += 20;
-    }
-    auto7E3634DE_g = UnitGroup("Immolator", c_playerAny, RegionEntireMap(), UnitFilter(0, 0, (1 << c_targetFilterMissile), (1 << (c_targetFilterDead - 32)) | (1 << (c_targetFilterHidden - 32))), 0);
-    auto7E3634DE_u = UnitGroupCount(auto7E3634DE_g, c_unitCountAll);
-    for (;; auto7E3634DE_u -= 1) {
-        auto7E3634DE_var = UnitGroupUnitFromEnd(auto7E3634DE_g, auto7E3634DE_u);
-        if (auto7E3634DE_var == null) { break; }
-        gv_militaryExpenses[UnitGetOwner(auto7E3634DE_var)][1] += 30;
-    }
-    auto54171FD0_g = UnitGroup("Mortaliser", c_playerAny, RegionEntireMap(), UnitFilter(0, 0, (1 << c_targetFilterMissile), (1 << (c_targetFilterDead - 32)) | (1 << (c_targetFilterHidden - 32))), 0);
-    auto54171FD0_u = UnitGroupCount(auto54171FD0_g, c_unitCountAll);
-    for (;; auto54171FD0_u -= 1) {
-        auto54171FD0_var = UnitGroupUnitFromEnd(auto54171FD0_g, auto54171FD0_u);
-        if (auto54171FD0_var == null) { break; }
-        gv_militaryExpenses[UnitGetOwner(auto54171FD0_var)][1] += 30;
-    }
-    auto0D057DC9_g = UnitGroup("AlphaMarine", c_playerAny, RegionEntireMap(), UnitFilter(0, 0, (1 << c_targetFilterMissile), (1 << (c_targetFilterDead - 32)) | (1 << (c_targetFilterHidden - 32))), 0);
-    auto0D057DC9_u = UnitGroupCount(auto0D057DC9_g, c_unitCountAll);
-    for (;; auto0D057DC9_u -= 1) {
-        auto0D057DC9_var = UnitGroupUnitFromEnd(auto0D057DC9_g, auto0D057DC9_u);
-        if (auto0D057DC9_var == null) { break; }
-        gv_militaryExpenses[UnitGetOwner(auto0D057DC9_var)][1] += 100;
-    }
-    autoFED69778_g = UnitGroup("Knight", c_playerAny, RegionEntireMap(), UnitFilter(0, 0, (1 << c_targetFilterMissile), (1 << (c_targetFilterDead - 32)) | (1 << (c_targetFilterHidden - 32))), 0);
-    autoFED69778_u = UnitGroupCount(autoFED69778_g, c_unitCountAll);
-    for (;; autoFED69778_u -= 1) {
-        autoFED69778_var = UnitGroupUnitFromEnd(autoFED69778_g, autoFED69778_u);
-        if (autoFED69778_var == null) { break; }
-        gv_militaryExpenses[UnitGetOwner(autoFED69778_var)][1] += 150;
-    }
-    auto9D320E64_g = UnitGroup("StrikeTrooper", c_playerAny, RegionEntireMap(), UnitFilter(0, 0, (1 << c_targetFilterMissile), (1 << (c_targetFilterDead - 32)) | (1 << (c_targetFilterHidden - 32))), 0);
-    auto9D320E64_u = UnitGroupCount(auto9D320E64_g, c_unitCountAll);
-    for (;; auto9D320E64_u -= 1) {
-        auto9D320E64_var = UnitGroupUnitFromEnd(auto9D320E64_g, auto9D320E64_u);
-        if (auto9D320E64_var == null) { break; }
-        gv_militaryExpenses[UnitGetOwner(auto9D320E64_var)][1] += 150;
-    }
-    auto6525B6EC_g = UnitGroup("Stormtrooper", c_playerAny, RegionEntireMap(), UnitFilter(0, 0, (1 << c_targetFilterMissile), (1 << (c_targetFilterDead - 32)) | (1 << (c_targetFilterHidden - 32))), 0);
-    auto6525B6EC_u = UnitGroupCount(auto6525B6EC_g, c_unitCountAll);
-    for (;; auto6525B6EC_u -= 1) {
-        auto6525B6EC_var = UnitGroupUnitFromEnd(auto6525B6EC_g, auto6525B6EC_u);
-        if (auto6525B6EC_var == null) { break; }
-        gv_militaryExpenses[UnitGetOwner(auto6525B6EC_var)][1] += 300;
-    }
-    auto9962D6C2_g = UnitGroup("Equaliser", c_playerAny, RegionEntireMap(), UnitFilter(0, 0, (1 << c_targetFilterMissile), (1 << (c_targetFilterDead - 32)) | (1 << (c_targetFilterHidden - 32))), 0);
-    auto9962D6C2_u = UnitGroupCount(auto9962D6C2_g, c_unitCountAll);
-    for (;; auto9962D6C2_u -= 1) {
-        auto9962D6C2_var = UnitGroupUnitFromEnd(auto9962D6C2_g, auto9962D6C2_u);
-        if (auto9962D6C2_var == null) { break; }
-        gv_militaryExpenses[UnitGetOwner(auto9962D6C2_var)][1] += 500;
-    }
-    auto9C94355A_g = UnitGroup("Dart", c_playerAny, RegionEntireMap(), UnitFilter(0, 0, (1 << c_targetFilterMissile), (1 << (c_targetFilterDead - 32)) | (1 << (c_targetFilterHidden - 32))), 0);
-    auto9C94355A_u = UnitGroupCount(auto9C94355A_g, c_unitCountAll);
-    for (;; auto9C94355A_u -= 1) {
-        auto9C94355A_var = UnitGroupUnitFromEnd(auto9C94355A_g, auto9C94355A_u);
-        if (auto9C94355A_var == null) { break; }
-        gv_oilConsumption[UnitGetOwner(auto9C94355A_var)][1] += 1;
-        gv_militaryExpenses[UnitGetOwner(auto9C94355A_var)][1] += 50;
-    }
-    autoAB3BD328_g = UnitGroup("ArmadilloAPC", c_playerAny, RegionEntireMap(), UnitFilter(0, 0, (1 << c_targetFilterMissile), (1 << (c_targetFilterDead - 32)) | (1 << (c_targetFilterHidden - 32))), 0);
-    autoAB3BD328_u = UnitGroupCount(autoAB3BD328_g, c_unitCountAll);
-    for (;; autoAB3BD328_u -= 1) {
-        autoAB3BD328_var = UnitGroupUnitFromEnd(autoAB3BD328_g, autoAB3BD328_u);
-        if (autoAB3BD328_var == null) { break; }
-        gv_oilConsumption[UnitGetOwner(autoAB3BD328_var)][1] += 5;
-        gv_militaryExpenses[UnitGetOwner(autoAB3BD328_var)][1] += 70;
-    }
-    autoC4C646B7_g = UnitGroup("BasiliskSPA2", c_playerAny, RegionEntireMap(), UnitFilter(0, 0, (1 << c_targetFilterMissile), (1 << (c_targetFilterDead - 32)) | (1 << (c_targetFilterHidden - 32))), 0);
-    autoC4C646B7_u = UnitGroupCount(autoC4C646B7_g, c_unitCountAll);
-    for (;; autoC4C646B7_u -= 1) {
-        autoC4C646B7_var = UnitGroupUnitFromEnd(autoC4C646B7_g, autoC4C646B7_u);
-        if (autoC4C646B7_var == null) { break; }
-        gv_oilConsumption[UnitGetOwner(autoC4C646B7_var)][1] += 5;
-        gv_militaryExpenses[UnitGetOwner(autoC4C646B7_var)][1] += 100;
-    }
-    auto3DF1C4BC_g = UnitGroup("StormIFV", c_playerAny, RegionEntireMap(), UnitFilter(0, 0, (1 << c_targetFilterMissile), (1 << (c_targetFilterDead - 32)) | (1 << (c_targetFilterHidden - 32))), 0);
-    auto3DF1C4BC_u = UnitGroupCount(auto3DF1C4BC_g, c_unitCountAll);
-    for (;; auto3DF1C4BC_u -= 1) {
-        auto3DF1C4BC_var = UnitGroupUnitFromEnd(auto3DF1C4BC_g, auto3DF1C4BC_u);
-        if (auto3DF1C4BC_var == null) { break; }
-        gv_oilConsumption[UnitGetOwner(auto3DF1C4BC_var)][1] += 4;
-        gv_militaryExpenses[UnitGetOwner(auto3DF1C4BC_var)][1] += 150;
-    }
-    auto10EB00AD_g = UnitGroup("LancerMBT", c_playerAny, RegionEntireMap(), UnitFilter(0, 0, (1 << c_targetFilterMissile), (1 << (c_targetFilterDead - 32)) | (1 << (c_targetFilterHidden - 32))), 0);
-    auto10EB00AD_u = UnitGroupCount(auto10EB00AD_g, c_unitCountAll);
-    for (;; auto10EB00AD_u -= 1) {
-        auto10EB00AD_var = UnitGroupUnitFromEnd(auto10EB00AD_g, auto10EB00AD_u);
-        if (auto10EB00AD_var == null) { break; }
-        gv_oilConsumption[UnitGetOwner(auto10EB00AD_var)][1] += 8;
-        gv_militaryExpenses[UnitGetOwner(auto10EB00AD_var)][1] += 300;
-    }
-    autoD4A46D41_g = UnitGroup("VanguardMBT", c_playerAny, RegionEntireMap(), UnitFilter(0, 0, (1 << c_targetFilterMissile), (1 << (c_targetFilterDead - 32)) | (1 << (c_targetFilterHidden - 32))), 0);
-    autoD4A46D41_u = UnitGroupCount(autoD4A46D41_g, c_unitCountAll);
-    for (;; autoD4A46D41_u -= 1) {
-        autoD4A46D41_var = UnitGroupUnitFromEnd(autoD4A46D41_g, autoD4A46D41_u);
-        if (autoD4A46D41_var == null) { break; }
-        gv_oilConsumption[UnitGetOwner(autoD4A46D41_var)][1] += 14;
-        gv_militaryExpenses[UnitGetOwner(autoD4A46D41_var)][1] += 1000;
-    }
-    auto9D27A86F_g = UnitGroup("Phenom", c_playerAny, RegionEntireMap(), UnitFilter(0, 0, (1 << c_targetFilterMissile), (1 << (c_targetFilterDead - 32)) | (1 << (c_targetFilterHidden - 32))), 0);
-    auto9D27A86F_u = UnitGroupCount(auto9D27A86F_g, c_unitCountAll);
-    for (;; auto9D27A86F_u -= 1) {
-        auto9D27A86F_var = UnitGroupUnitFromEnd(auto9D27A86F_g, auto9D27A86F_u);
-        if (auto9D27A86F_var == null) { break; }
-        gv_oilConsumption[UnitGetOwner(auto9D27A86F_var)][1] += 10;
-        gv_militaryExpenses[UnitGetOwner(auto9D27A86F_var)][1] += 400;
-    }
-    auto72BC0173_g = UnitGroup("CrusaderMBT", c_playerAny, RegionEntireMap(), UnitFilter(0, 0, (1 << c_targetFilterMissile), (1 << (c_targetFilterDead - 32)) | (1 << (c_targetFilterHidden - 32))), 0);
-    auto72BC0173_u = UnitGroupCount(auto72BC0173_g, c_unitCountAll);
-    for (;; auto72BC0173_u -= 1) {
-        auto72BC0173_var = UnitGroupUnitFromEnd(auto72BC0173_g, auto72BC0173_u);
-        if (auto72BC0173_var == null) { break; }
-        gv_oilConsumption[UnitGetOwner(auto72BC0173_var)][1] += 30;
-        gv_militaryExpenses[UnitGetOwner(auto72BC0173_var)][1] += 5000;
-    }
-    autoEA7ADDDA_g = UnitGroup("StrikerAH", c_playerAny, RegionEntireMap(), UnitFilter(0, 0, (1 << c_targetFilterMissile), (1 << (c_targetFilterDead - 32)) | (1 << (c_targetFilterHidden - 32))), 0);
-    autoEA7ADDDA_u = UnitGroupCount(autoEA7ADDDA_g, c_unitCountAll);
-    for (;; autoEA7ADDDA_u -= 1) {
-        autoEA7ADDDA_var = UnitGroupUnitFromEnd(autoEA7ADDDA_g, autoEA7ADDDA_u);
-        if (autoEA7ADDDA_var == null) { break; }
-        gv_oilConsumption[UnitGetOwner(autoEA7ADDDA_var)][1] += 8;
-        gv_militaryExpenses[UnitGetOwner(autoEA7ADDDA_var)][1] += 150;
-    }
-    auto12855494_g = UnitGroup("CourierTH", c_playerAny, RegionEntireMap(), UnitFilter(0, 0, (1 << c_targetFilterMissile), (1 << (c_targetFilterDead - 32)) | (1 << (c_targetFilterHidden - 32))), 0);
-    auto12855494_u = UnitGroupCount(auto12855494_g, c_unitCountAll);
-    for (;; auto12855494_u -= 1) {
-        auto12855494_var = UnitGroupUnitFromEnd(auto12855494_g, auto12855494_u);
-        if (auto12855494_var == null) { break; }
-        gv_oilConsumption[UnitGetOwner(auto12855494_var)][1] += 7;
-        gv_militaryExpenses[UnitGetOwner(auto12855494_var)][1] += 100;
-    }
-    autoA434ED7E_g = UnitGroup("AstrosInterceptor", c_playerAny, RegionEntireMap(), UnitFilter(0, 0, (1 << c_targetFilterMissile), (1 << (c_targetFilterDead - 32)) | (1 << (c_targetFilterHidden - 32))), 0);
-    autoA434ED7E_u = UnitGroupCount(autoA434ED7E_g, c_unitCountAll);
-    for (;; autoA434ED7E_u -= 1) {
-        autoA434ED7E_var = UnitGroupUnitFromEnd(autoA434ED7E_g, autoA434ED7E_u);
-        if (autoA434ED7E_var == null) { break; }
-        gv_oilConsumption[UnitGetOwner(autoA434ED7E_var)][1] += 16;
-        gv_militaryExpenses[UnitGetOwner(autoA434ED7E_var)][1] += 250;
-    }
-    auto3A556D26_g = UnitGroup("ApolloBomber", c_playerAny, RegionEntireMap(), UnitFilter(0, 0, (1 << c_targetFilterMissile), (1 << (c_targetFilterDead - 32)) | (1 << (c_targetFilterHidden - 32))), 0);
-    auto3A556D26_u = UnitGroupCount(auto3A556D26_g, c_unitCountAll);
-    for (;; auto3A556D26_u -= 1) {
-        auto3A556D26_var = UnitGroupUnitFromEnd(auto3A556D26_g, auto3A556D26_u);
-        if (auto3A556D26_var == null) { break; }
-        gv_oilConsumption[UnitGetOwner(auto3A556D26_var)][1] += 16;
-        gv_militaryExpenses[UnitGetOwner(auto3A556D26_var)][1] += 300;
-    }
-    auto486B21D6_g = UnitGroup("JavelinAH", c_playerAny, RegionEntireMap(), UnitFilter(0, 0, (1 << c_targetFilterMissile), (1 << (c_targetFilterDead - 32)) | (1 << (c_targetFilterHidden - 32))), 0);
-    auto486B21D6_u = UnitGroupCount(auto486B21D6_g, c_unitCountAll);
-    for (;; auto486B21D6_u -= 1) {
-        auto486B21D6_var = UnitGroupUnitFromEnd(auto486B21D6_g, auto486B21D6_u);
-        if (auto486B21D6_var == null) { break; }
-        gv_oilConsumption[UnitGetOwner(auto486B21D6_var)][1] += 20;
-        gv_militaryExpenses[UnitGetOwner(auto486B21D6_var)][1] += 500;
-    }
-    auto725F8144_g = UnitGroup("ScorcherBomber", c_playerAny, RegionEntireMap(), UnitFilter(0, 0, (1 << c_targetFilterMissile), (1 << (c_targetFilterDead - 32)) | (1 << (c_targetFilterHidden - 32))), 0);
-    auto725F8144_u = UnitGroupCount(auto725F8144_g, c_unitCountAll);
-    for (;; auto725F8144_u -= 1) {
-        auto725F8144_var = UnitGroupUnitFromEnd(auto725F8144_g, auto725F8144_u);
-        if (auto725F8144_var == null) { break; }
-        gv_oilConsumption[UnitGetOwner(auto725F8144_var)][1] += 20;
-        gv_militaryExpenses[UnitGetOwner(auto725F8144_var)][1] += 500;
-    }
-    autoA4B5FBC4_g = UnitGroup("ViperFighter", c_playerAny, RegionEntireMap(), UnitFilter(0, 0, (1 << c_targetFilterMissile), (1 << (c_targetFilterDead - 32)) | (1 << (c_targetFilterHidden - 32))), 0);
-    autoA4B5FBC4_u = UnitGroupCount(autoA4B5FBC4_g, c_unitCountAll);
-    for (;; autoA4B5FBC4_u -= 1) {
-        autoA4B5FBC4_var = UnitGroupUnitFromEnd(autoA4B5FBC4_g, autoA4B5FBC4_u);
-        if (autoA4B5FBC4_var == null) { break; }
-        gv_oilConsumption[UnitGetOwner(autoA4B5FBC4_var)][1] += 30;
-        gv_militaryExpenses[UnitGetOwner(autoA4B5FBC4_var)][1] += 1000;
-    }
-    auto7427E780_g = gv_users;
-    auto7427E780_var = -1;
-    while (true) {
-        auto7427E780_var = PlayerGroupNextPlayer(auto7427E780_g, auto7427E780_var);
-        if (auto7427E780_var < 0) { break; }
-        gv_militaryExpenses[auto7427E780_var][1] /= 10;
-        gv_oilConsumption[auto7427E780_var][1] /= 12;
-        if ((TechTreeUpgradeCount(auto7427E780_var, "ElectricTanks", c_techCountCompleteOnly) == 1)) {
-            if ((TechTreeUpgradeCount(auto7427E780_var, "SelfPoweredTanks", c_techCountCompleteOnly) == 1)) {
-                gv_oilConsumption[auto7427E780_var][1] = lv_beforeOil[auto7427E780_var];
+        auto3B2AD050_g = UnitGroup(null, auto5FEF7568_var, RegionEntireMap(), UnitFilter(0, 0, (1 << c_targetFilterMissile), (1 << (c_targetFilterDead - 32)) | (1 << (c_targetFilterHidden - 32))), 0);
+        auto3B2AD050_u = UnitGroupCount(auto3B2AD050_g, c_unitCountAll);
+        for (;; auto3B2AD050_u -= 1) {
+            auto3B2AD050_var = UnitGroupUnitFromEnd(auto3B2AD050_g, auto3B2AD050_u);
+            if (auto3B2AD050_var == null) { break; }
+            autoCA71EFC5_val = UnitGetType(auto3B2AD050_var);
+            if (autoCA71EFC5_val == "IgniterTurret") {
+                gv_militaryExpenses[auto5FEF7568_var][1] += 25;
+            }
+            else if (autoCA71EFC5_val == "Lasturret") {
+                gv_militaryExpenses[auto5FEF7568_var][1] += 50;
+            }
+            else if (autoCA71EFC5_val == "Flakker") {
+                gv_militaryExpenses[auto5FEF7568_var][1] += 50;
+            }
+            else if (autoCA71EFC5_val == "BaPulseCannon") {
+                gv_militaryExpenses[auto5FEF7568_var][1] += 250;
+            }
+            else if (autoCA71EFC5_val == "Hypercannon") {
+                gv_militaryExpenses[auto5FEF7568_var][1] += 500;
+            }
+            else if (autoCA71EFC5_val == "Expounder") {
+                gv_militaryExpenses[auto5FEF7568_var][1] += 1000;
+            }
+            else if (autoCA71EFC5_val == "SAM") {
+                gv_militaryExpenses[auto5FEF7568_var][1] += 100;
+            }
+            else if (autoCA71EFC5_val == "NaniteTower") {
+                gv_militaryExpenses[auto5FEF7568_var][1] += 250;
+            }
+            else if (autoCA71EFC5_val == "SupplyDepot2343") {
+                gv_militaryExpenses[auto5FEF7568_var][1] += 2000;
+            }
+            else if (autoCA71EFC5_val == "SupplyDepot234223") {
+                gv_militaryExpenses[auto5FEF7568_var][1] += 2500;
+            }
+            else if (autoCA71EFC5_val == "MissileTurret22") {
+                gv_militaryExpenses[auto5FEF7568_var][1] += 500;
+            }
+            else if (autoCA71EFC5_val == "Bastion") {
+                gv_militaryExpenses[auto5FEF7568_var][1] += 1000;
+            }
+            else if (autoCA71EFC5_val == "Bunker") {
+                gv_militaryExpenses[auto5FEF7568_var][1] += 50;
+            }
+            else if (autoCA71EFC5_val == "SupplyDepot") {
+                gv_militaryExpenses[auto5FEF7568_var][1] += 5;
+            }
+            else if (autoCA71EFC5_val == "SensorTower") {
+                gv_militaryExpenses[auto5FEF7568_var][1] += 150;
+            }
+            else if (autoCA71EFC5_val == "SensorTower22") {
+                gv_militaryExpenses[auto5FEF7568_var][1] += 1000;
+            }
+            else if (autoCA71EFC5_val == "TrainingGround") {
+                gv_militaryExpenses[auto5FEF7568_var][1] += 500;
+            }
+            else if (autoCA71EFC5_val == "GroundFactory") {
+                gv_militaryExpenses[auto5FEF7568_var][1] += 2000;
+            }
+            else if (autoCA71EFC5_val == "AircraftFactory") {
+                gv_militaryExpenses[auto5FEF7568_var][1] += 2500;
+            }
+            else if (autoCA71EFC5_val == "Conscript") {
+                gv_militaryExpenses[auto5FEF7568_var][1] += 10;
+            }
+            else if (autoCA71EFC5_val == "Rifleman") {
+                gv_militaryExpenses[auto5FEF7568_var][1] += 20;
+            }
+            else if (autoCA71EFC5_val == "Immolator") {
+                gv_militaryExpenses[auto5FEF7568_var][1] += 30;
+            }
+            else if (autoCA71EFC5_val == "Mortaliser") {
+                gv_militaryExpenses[auto5FEF7568_var][1] += 30;
+            }
+            else if (autoCA71EFC5_val == "AlphaMarine") {
+                gv_militaryExpenses[auto5FEF7568_var][1] += 100;
+            }
+            else if (autoCA71EFC5_val == "Knight") {
+                gv_militaryExpenses[auto5FEF7568_var][1] += 150;
+            }
+            else if (autoCA71EFC5_val == "StrikeTrooper") {
+                gv_militaryExpenses[auto5FEF7568_var][1] += 150;
+            }
+            else if (autoCA71EFC5_val == "Stormtrooper") {
+                gv_militaryExpenses[auto5FEF7568_var][1] += 300;
+            }
+            else if (autoCA71EFC5_val == "Equaliser") {
+                gv_militaryExpenses[auto5FEF7568_var][1] += 500;
+            }
+            else if (autoCA71EFC5_val == "Dart") {
+                gv_oilConsumption[auto5FEF7568_var][1] += 1;
+                gv_militaryExpenses[auto5FEF7568_var][1] += 50;
+            }
+            else if (autoCA71EFC5_val == "ArmadilloAPC") {
+                gv_oilConsumption[auto5FEF7568_var][1] += 5;
+                gv_militaryExpenses[auto5FEF7568_var][1] += 70;
+            }
+            else if (autoCA71EFC5_val == "BasiliskSPA2") {
+                gv_oilConsumption[auto5FEF7568_var][1] += 5;
+                gv_militaryExpenses[auto5FEF7568_var][1] += 100;
+            }
+            else if (autoCA71EFC5_val == "BasiliskSPA") {
+                gv_oilConsumption[auto5FEF7568_var][1] += 5;
+                gv_militaryExpenses[auto5FEF7568_var][1] += 100;
+            }
+            else if (autoCA71EFC5_val == "StormIFV") {
+                gv_oilConsumption[auto5FEF7568_var][1] += 4;
+                gv_militaryExpenses[auto5FEF7568_var][1] += 150;
+            }
+            else if (autoCA71EFC5_val == "LancerMBT") {
+                gv_oilConsumption[auto5FEF7568_var][1] += 8;
+                gv_militaryExpenses[auto5FEF7568_var][1] += 300;
+            }
+            else if (autoCA71EFC5_val == "VanguardMBT") {
+                gv_oilConsumption[auto5FEF7568_var][1] += 14;
+                gv_militaryExpenses[auto5FEF7568_var][1] += 1000;
+            }
+            else if (autoCA71EFC5_val == "Phenom") {
+                gv_oilConsumption[auto5FEF7568_var][1] += 10;
+                gv_militaryExpenses[auto5FEF7568_var][1] += 400;
+            }
+            else if (autoCA71EFC5_val == "CrusaderMBT") {
+                gv_oilConsumption[auto5FEF7568_var][1] += 30;
+                gv_militaryExpenses[auto5FEF7568_var][1] += 5000;
+            }
+            else if (autoCA71EFC5_val == "StrikerAH") {
+                gv_oilConsumption[auto5FEF7568_var][1] += 8;
+                gv_militaryExpenses[auto5FEF7568_var][1] += 150;
+            }
+            else if (autoCA71EFC5_val == "CourierTH") {
+                gv_oilConsumption[auto5FEF7568_var][1] += 7;
+                gv_militaryExpenses[auto5FEF7568_var][1] += 100;
+            }
+            else if (autoCA71EFC5_val == "AstrosInterceptor") {
+                gv_oilConsumption[auto5FEF7568_var][1] += 16;
+                gv_militaryExpenses[auto5FEF7568_var][1] += 250;
+            }
+            else if (autoCA71EFC5_val == "ApolloBomber") {
+                gv_oilConsumption[auto5FEF7568_var][1] += 16;
+                gv_militaryExpenses[auto5FEF7568_var][1] += 300;
+            }
+            else if (autoCA71EFC5_val == "JavelinAH") {
+                gv_oilConsumption[auto5FEF7568_var][1] += 20;
+                gv_militaryExpenses[auto5FEF7568_var][1] += 500;
+            }
+            else if (autoCA71EFC5_val == "ScorcherBomber") {
+                gv_oilConsumption[auto5FEF7568_var][1] += 20;
+                gv_militaryExpenses[auto5FEF7568_var][1] += 500;
+            }
+            else if (autoCA71EFC5_val == "ViperFighter") {
+                gv_oilConsumption[auto5FEF7568_var][1] += 30;
+                gv_militaryExpenses[auto5FEF7568_var][1] += 1000;
             }
             else {
-                gv_electricityConsumption[auto7427E780_var][1] += (gv_oilConsumption[auto7427E780_var][1] * 4);
-                gv_oilConsumption[auto7427E780_var][1] = lv_beforeOil[auto7427E780_var];
+            }
+        }
+        gv_militaryExpenses[auto5FEF7568_var][1] /= 10;
+        gv_oilConsumption[auto5FEF7568_var][1] /= 12;
+        if ((TechTreeUpgradeCount(auto5FEF7568_var, "ElectricTanks", c_techCountCompleteOnly) == 1)) {
+            if ((TechTreeUpgradeCount(auto5FEF7568_var, "SelfPoweredTanks", c_techCountCompleteOnly) == 1)) {
+                gv_oilConsumption[auto5FEF7568_var][1] = lv_beforeOil[auto5FEF7568_var];
+            }
+            else {
+                gv_electricityConsumption[auto5FEF7568_var][1] += (gv_oilConsumption[auto5FEF7568_var][1] * 4);
+                gv_oilConsumption[auto5FEF7568_var][1] = lv_beforeOil[auto5FEF7568_var];
             }
         }
 
@@ -14156,6 +13827,8 @@ void gf_GetMilitaryCompleteUpkeep () {
 
 void gf_GetElectricityBalanceComputePunish () {
     // Automatic Variable Declarations
+    playergroup auto26CE04F2_g;
+    int auto26CE04F2_var;
     unitgroup auto5B21B7BE_g;
     int auto5B21B7BE_u;
     unit auto5B21B7BE_var;
@@ -14204,8 +13877,6 @@ void gf_GetElectricityBalanceComputePunish () {
     unitgroup auto293030D1_g;
     int auto293030D1_u;
     unit auto293030D1_var;
-    playergroup auto26CE04F2_g;
-    int auto26CE04F2_var;
     playergroup autoDBC93B26_g;
     int autoDBC93B26_var;
     unitgroup autoCD209BAF_g;
@@ -14225,132 +13896,132 @@ void gf_GetElectricityBalanceComputePunish () {
     unit auto817D5C6D_var;
 
     // Implementation
-    auto5B21B7BE_g = UnitGroup("WindTurbine", c_playerAny, RegionEntireMap(), UnitFilter(0, 0, (1 << c_targetFilterMissile), (1 << (c_targetFilterDead - 32)) | (1 << (c_targetFilterHidden - 32))), 0);
-    auto5B21B7BE_u = UnitGroupCount(auto5B21B7BE_g, c_unitCountAll);
-    for (;; auto5B21B7BE_u -= 1) {
-        auto5B21B7BE_var = UnitGroupUnitFromEnd(auto5B21B7BE_g, auto5B21B7BE_u);
-        if (auto5B21B7BE_var == null) { break; }
-        gv_electricityIncome[UnitGetOwner(auto5B21B7BE_var)][1] += FixedToInt((500.0 * UnitGetCustomValue(auto5B21B7BE_var, 0)));
-        gv_buildingElectricityExpenses[UnitGetOwner(auto5B21B7BE_var)][1] += 500;
-    }
-    auto105088A9_g = UnitGroup("GeothermalPowerPlant", c_playerAny, RegionEntireMap(), UnitFilter(0, 0, (1 << c_targetFilterMissile), (1 << (c_targetFilterDead - 32)) | (1 << (c_targetFilterHidden - 32))), 0);
-    auto105088A9_u = UnitGroupCount(auto105088A9_g, c_unitCountAll);
-    for (;; auto105088A9_u -= 1) {
-        auto105088A9_var = UnitGroupUnitFromEnd(auto105088A9_g, auto105088A9_u);
-        if (auto105088A9_var == null) { break; }
-        gv_electricityIncome[UnitGetOwner(auto105088A9_var)][1] += FixedToInt((1000.0 * UnitGetCustomValue(auto105088A9_var, 0)));
-        gv_buildingElectricityExpenses[UnitGetOwner(auto105088A9_var)][1] += 200;
-    }
-    auto57931FE6_g = UnitGroup("FissionPowerPlant", c_playerAny, RegionEntireMap(), UnitFilter(0, 0, (1 << c_targetFilterMissile), (1 << (c_targetFilterDead - 32)) | (1 << (c_targetFilterHidden - 32))), 0);
-    auto57931FE6_u = UnitGroupCount(auto57931FE6_g, c_unitCountAll);
-    for (;; auto57931FE6_u -= 1) {
-        auto57931FE6_var = UnitGroupUnitFromEnd(auto57931FE6_g, auto57931FE6_u);
-        if (auto57931FE6_var == null) { break; }
-        gv_electricityIncome[UnitGetOwner(auto57931FE6_var)][1] += FixedToInt((2000.0 * UnitGetCustomValue(auto57931FE6_var, 0)));
-        gv_buildingElectricityExpenses[UnitGetOwner(auto57931FE6_var)][1] += 1000;
-    }
-    auto385754A1_g = UnitGroup("FusionReactor2", c_playerAny, RegionEntireMap(), UnitFilter(0, 0, (1 << c_targetFilterMissile), (1 << (c_targetFilterDead - 32)) | (1 << (c_targetFilterHidden - 32))), 0);
-    auto385754A1_u = UnitGroupCount(auto385754A1_g, c_unitCountAll);
-    for (;; auto385754A1_u -= 1) {
-        auto385754A1_var = UnitGroupUnitFromEnd(auto385754A1_g, auto385754A1_u);
-        if (auto385754A1_var == null) { break; }
-        gv_electricityIncome[UnitGetOwner(auto385754A1_var)][1] += FixedToInt((10000.0 * UnitGetCustomValue(auto385754A1_var, 0)));
-        gv_buildingElectricityExpenses[UnitGetOwner(auto385754A1_var)][1] += 5000;
-    }
-    autoD9CBEE24_g = UnitGroup("OilPowerPlant", c_playerAny, RegionEntireMap(), UnitFilter(0, 0, (1 << c_targetFilterMissile), (1 << (c_targetFilterDead - 32)) | (1 << (c_targetFilterHidden - 32))), 0);
-    autoD9CBEE24_u = UnitGroupCount(autoD9CBEE24_g, c_unitCountAll);
-    for (;; autoD9CBEE24_u -= 1) {
-        autoD9CBEE24_var = UnitGroupUnitFromEnd(autoD9CBEE24_g, autoD9CBEE24_u);
-        if (autoD9CBEE24_var == null) { break; }
-        gv_buildingElectricityExpenses[UnitGetOwner(autoD9CBEE24_var)][1] += 300;
-        gv_oilConsumption[UnitGetOwner(autoD9CBEE24_var)][1] += (100 / 12);
-        if ((gv_oilConsumption[UnitGetOwner(autoD9CBEE24_var)][1] <= gv_oil[UnitGetOwner(autoD9CBEE24_var)])) {
-            gv_electricityIncome[UnitGetOwner(autoD9CBEE24_var)][1] += FixedToInt((1200.0 * UnitGetCustomValue(autoD9CBEE24_var, 0)));
-        }
-
-    }
-    auto1B211FA7_g = UnitGroup("HydrofarmI", c_playerAny, RegionEntireMap(), UnitFilter(0, 0, (1 << c_targetFilterMissile), (1 << (c_targetFilterDead - 32)) | (1 << (c_targetFilterHidden - 32))), 0);
-    auto1B211FA7_u = UnitGroupCount(auto1B211FA7_g, c_unitCountAll);
-    for (;; auto1B211FA7_u -= 1) {
-        auto1B211FA7_var = UnitGroupUnitFromEnd(auto1B211FA7_g, auto1B211FA7_u);
-        if (auto1B211FA7_var == null) { break; }
-        gv_electricityConsumption[UnitGetOwner(auto1B211FA7_var)][1] += 100;
-    }
-    auto92461138_g = UnitGroup("HydrofarmII", c_playerAny, RegionEntireMap(), UnitFilter(0, 0, (1 << c_targetFilterMissile), (1 << (c_targetFilterDead - 32)) | (1 << (c_targetFilterHidden - 32))), 0);
-    auto92461138_u = UnitGroupCount(auto92461138_g, c_unitCountAll);
-    for (;; auto92461138_u -= 1) {
-        auto92461138_var = UnitGroupUnitFromEnd(auto92461138_g, auto92461138_u);
-        if (auto92461138_var == null) { break; }
-        gv_electricityConsumption[UnitGetOwner(auto92461138_var)][1] += 200;
-    }
-    auto8909AFB6_g = UnitGroup("HydrofarmIII", c_playerAny, RegionEntireMap(), UnitFilter(0, 0, (1 << c_targetFilterMissile), (1 << (c_targetFilterDead - 32)) | (1 << (c_targetFilterHidden - 32))), 0);
-    auto8909AFB6_u = UnitGroupCount(auto8909AFB6_g, c_unitCountAll);
-    for (;; auto8909AFB6_u -= 1) {
-        auto8909AFB6_var = UnitGroupUnitFromEnd(auto8909AFB6_g, auto8909AFB6_u);
-        if (auto8909AFB6_var == null) { break; }
-        gv_electricityConsumption[UnitGetOwner(auto8909AFB6_var)][1] += 300;
-    }
-    autoD9704D77_g = UnitGroup("HydrofarmIV", c_playerAny, RegionEntireMap(), UnitFilter(0, 0, (1 << c_targetFilterMissile), (1 << (c_targetFilterDead - 32)) | (1 << (c_targetFilterHidden - 32))), 0);
-    autoD9704D77_u = UnitGroupCount(autoD9704D77_g, c_unitCountAll);
-    for (;; autoD9704D77_u -= 1) {
-        autoD9704D77_var = UnitGroupUnitFromEnd(autoD9704D77_g, autoD9704D77_u);
-        if (autoD9704D77_var == null) { break; }
-        gv_electricityConsumption[UnitGetOwner(autoD9704D77_var)][1] += 400;
-    }
-    auto754406CD_g = UnitGroup("HydrofarmV", c_playerAny, RegionEntireMap(), UnitFilter(0, 0, (1 << c_targetFilterMissile), (1 << (c_targetFilterDead - 32)) | (1 << (c_targetFilterHidden - 32))), 0);
-    auto754406CD_u = UnitGroupCount(auto754406CD_g, c_unitCountAll);
-    for (;; auto754406CD_u -= 1) {
-        auto754406CD_var = UnitGroupUnitFromEnd(auto754406CD_g, auto754406CD_u);
-        if (auto754406CD_var == null) { break; }
-        gv_electricityConsumption[UnitGetOwner(auto754406CD_var)][1] += 500;
-    }
-    auto3B6E8A16_g = UnitGroup("ShieldBatteryNerazim2", c_playerAny, RegionEntireMap(), UnitFilter(0, 0, (1 << c_targetFilterMissile), (1 << (c_targetFilterDead - 32)) | (1 << (c_targetFilterHidden - 32))), 0);
-    auto3B6E8A16_u = UnitGroupCount(auto3B6E8A16_g, c_unitCountAll);
-    for (;; auto3B6E8A16_u -= 1) {
-        auto3B6E8A16_var = UnitGroupUnitFromEnd(auto3B6E8A16_g, auto3B6E8A16_u);
-        if (auto3B6E8A16_var == null) { break; }
-        gv_electricityConsumption[UnitGetOwner(auto3B6E8A16_var)][1] += 12000;
-    }
-    auto53051E2C_g = UnitGroup("ResearchComplexI", c_playerAny, RegionEntireMap(), UnitFilter(0, 0, (1 << c_targetFilterMissile), (1 << (c_targetFilterDead - 32)) | (1 << (c_targetFilterHidden - 32))), 0);
-    auto53051E2C_u = UnitGroupCount(auto53051E2C_g, c_unitCountAll);
-    for (;; auto53051E2C_u -= 1) {
-        auto53051E2C_var = UnitGroupUnitFromEnd(auto53051E2C_g, auto53051E2C_u);
-        if (auto53051E2C_var == null) { break; }
-        gv_electricityConsumption[UnitGetOwner(auto53051E2C_var)][1] += 500;
-    }
-    autoC37FA1B2_g = UnitGroup("ResearchComplexII", c_playerAny, RegionEntireMap(), UnitFilter(0, 0, (1 << c_targetFilterMissile), (1 << (c_targetFilterDead - 32)) | (1 << (c_targetFilterHidden - 32))), 0);
-    autoC37FA1B2_u = UnitGroupCount(autoC37FA1B2_g, c_unitCountAll);
-    for (;; autoC37FA1B2_u -= 1) {
-        autoC37FA1B2_var = UnitGroupUnitFromEnd(autoC37FA1B2_g, autoC37FA1B2_u);
-        if (autoC37FA1B2_var == null) { break; }
-        gv_electricityConsumption[UnitGetOwner(autoC37FA1B2_var)][1] += 1000;
-    }
-    autoC9676E7C_g = UnitGroup("ResearchComplexIII", c_playerAny, RegionEntireMap(), UnitFilter(0, 0, (1 << c_targetFilterMissile), (1 << (c_targetFilterDead - 32)) | (1 << (c_targetFilterHidden - 32))), 0);
-    autoC9676E7C_u = UnitGroupCount(autoC9676E7C_g, c_unitCountAll);
-    for (;; autoC9676E7C_u -= 1) {
-        autoC9676E7C_var = UnitGroupUnitFromEnd(autoC9676E7C_g, autoC9676E7C_u);
-        if (autoC9676E7C_var == null) { break; }
-        gv_electricityConsumption[UnitGetOwner(autoC9676E7C_var)][1] += 1500;
-    }
-    auto843913BE_g = UnitGroup("ResearchComplexIV", c_playerAny, RegionEntireMap(), UnitFilter(0, 0, (1 << c_targetFilterMissile), (1 << (c_targetFilterDead - 32)) | (1 << (c_targetFilterHidden - 32))), 0);
-    auto843913BE_u = UnitGroupCount(auto843913BE_g, c_unitCountAll);
-    for (;; auto843913BE_u -= 1) {
-        auto843913BE_var = UnitGroupUnitFromEnd(auto843913BE_g, auto843913BE_u);
-        if (auto843913BE_var == null) { break; }
-        gv_electricityConsumption[UnitGetOwner(auto843913BE_var)][1] += 2000;
-    }
-    auto293030D1_g = UnitGroup("ResearchComplexV", c_playerAny, RegionEntireMap(), UnitFilter(0, 0, (1 << c_targetFilterMissile), (1 << (c_targetFilterDead - 32)) | (1 << (c_targetFilterHidden - 32))), 0);
-    auto293030D1_u = UnitGroupCount(auto293030D1_g, c_unitCountAll);
-    for (;; auto293030D1_u -= 1) {
-        auto293030D1_var = UnitGroupUnitFromEnd(auto293030D1_g, auto293030D1_u);
-        if (auto293030D1_var == null) { break; }
-        gv_electricityConsumption[UnitGetOwner(auto293030D1_var)][1] += 2500;
-    }
     auto26CE04F2_g = gv_users;
     auto26CE04F2_var = -1;
     while (true) {
         auto26CE04F2_var = PlayerGroupNextPlayer(auto26CE04F2_g, auto26CE04F2_var);
         if (auto26CE04F2_var < 0) { break; }
+        auto5B21B7BE_g = UnitGroup("WindTurbine", auto26CE04F2_var, RegionEntireMap(), UnitFilter(0, 0, (1 << c_targetFilterMissile), (1 << (c_targetFilterDead - 32)) | (1 << (c_targetFilterHidden - 32))), 0);
+        auto5B21B7BE_u = UnitGroupCount(auto5B21B7BE_g, c_unitCountAll);
+        for (;; auto5B21B7BE_u -= 1) {
+            auto5B21B7BE_var = UnitGroupUnitFromEnd(auto5B21B7BE_g, auto5B21B7BE_u);
+            if (auto5B21B7BE_var == null) { break; }
+            gv_electricityIncome[UnitGetOwner(auto5B21B7BE_var)][1] += FixedToInt((500.0 * UnitGetCustomValue(auto5B21B7BE_var, 0)));
+            gv_buildingElectricityExpenses[UnitGetOwner(auto5B21B7BE_var)][1] += 500;
+        }
+        auto105088A9_g = UnitGroup("GeothermalPowerPlant", auto26CE04F2_var, RegionEntireMap(), UnitFilter(0, 0, (1 << c_targetFilterMissile), (1 << (c_targetFilterDead - 32)) | (1 << (c_targetFilterHidden - 32))), 0);
+        auto105088A9_u = UnitGroupCount(auto105088A9_g, c_unitCountAll);
+        for (;; auto105088A9_u -= 1) {
+            auto105088A9_var = UnitGroupUnitFromEnd(auto105088A9_g, auto105088A9_u);
+            if (auto105088A9_var == null) { break; }
+            gv_electricityIncome[UnitGetOwner(auto105088A9_var)][1] += FixedToInt((1000.0 * UnitGetCustomValue(auto105088A9_var, 0)));
+            gv_buildingElectricityExpenses[UnitGetOwner(auto105088A9_var)][1] += 200;
+        }
+        auto57931FE6_g = UnitGroup("FissionPowerPlant", auto26CE04F2_var, RegionEntireMap(), UnitFilter(0, 0, (1 << c_targetFilterMissile), (1 << (c_targetFilterDead - 32)) | (1 << (c_targetFilterHidden - 32))), 0);
+        auto57931FE6_u = UnitGroupCount(auto57931FE6_g, c_unitCountAll);
+        for (;; auto57931FE6_u -= 1) {
+            auto57931FE6_var = UnitGroupUnitFromEnd(auto57931FE6_g, auto57931FE6_u);
+            if (auto57931FE6_var == null) { break; }
+            gv_electricityIncome[UnitGetOwner(auto57931FE6_var)][1] += FixedToInt((2000.0 * UnitGetCustomValue(auto57931FE6_var, 0)));
+            gv_buildingElectricityExpenses[UnitGetOwner(auto57931FE6_var)][1] += 1000;
+        }
+        auto385754A1_g = UnitGroup("FusionReactor2", auto26CE04F2_var, RegionEntireMap(), UnitFilter(0, 0, (1 << c_targetFilterMissile), (1 << (c_targetFilterDead - 32)) | (1 << (c_targetFilterHidden - 32))), 0);
+        auto385754A1_u = UnitGroupCount(auto385754A1_g, c_unitCountAll);
+        for (;; auto385754A1_u -= 1) {
+            auto385754A1_var = UnitGroupUnitFromEnd(auto385754A1_g, auto385754A1_u);
+            if (auto385754A1_var == null) { break; }
+            gv_electricityIncome[UnitGetOwner(auto385754A1_var)][1] += FixedToInt((10000.0 * UnitGetCustomValue(auto385754A1_var, 0)));
+            gv_buildingElectricityExpenses[UnitGetOwner(auto385754A1_var)][1] += 5000;
+        }
+        autoD9CBEE24_g = UnitGroup("OilPowerPlant", auto26CE04F2_var, RegionEntireMap(), UnitFilter(0, 0, (1 << c_targetFilterMissile), (1 << (c_targetFilterDead - 32)) | (1 << (c_targetFilterHidden - 32))), 0);
+        autoD9CBEE24_u = UnitGroupCount(autoD9CBEE24_g, c_unitCountAll);
+        for (;; autoD9CBEE24_u -= 1) {
+            autoD9CBEE24_var = UnitGroupUnitFromEnd(autoD9CBEE24_g, autoD9CBEE24_u);
+            if (autoD9CBEE24_var == null) { break; }
+            gv_buildingElectricityExpenses[UnitGetOwner(autoD9CBEE24_var)][1] += 300;
+            gv_oilConsumption[UnitGetOwner(autoD9CBEE24_var)][1] += (100 / 12);
+            if ((gv_oilConsumption[UnitGetOwner(autoD9CBEE24_var)][1] <= gv_oil[UnitGetOwner(autoD9CBEE24_var)])) {
+                gv_electricityIncome[UnitGetOwner(autoD9CBEE24_var)][1] += FixedToInt((3000.0 * UnitGetCustomValue(autoD9CBEE24_var, 0)));
+            }
+
+        }
+        auto1B211FA7_g = UnitGroup("HydrofarmI", auto26CE04F2_var, RegionEntireMap(), UnitFilter(0, 0, (1 << c_targetFilterMissile), (1 << (c_targetFilterDead - 32)) | (1 << (c_targetFilterHidden - 32))), 0);
+        auto1B211FA7_u = UnitGroupCount(auto1B211FA7_g, c_unitCountAll);
+        for (;; auto1B211FA7_u -= 1) {
+            auto1B211FA7_var = UnitGroupUnitFromEnd(auto1B211FA7_g, auto1B211FA7_u);
+            if (auto1B211FA7_var == null) { break; }
+            gv_electricityConsumption[UnitGetOwner(auto1B211FA7_var)][1] += 100;
+        }
+        auto92461138_g = UnitGroup("HydrofarmII", auto26CE04F2_var, RegionEntireMap(), UnitFilter(0, 0, (1 << c_targetFilterMissile), (1 << (c_targetFilterDead - 32)) | (1 << (c_targetFilterHidden - 32))), 0);
+        auto92461138_u = UnitGroupCount(auto92461138_g, c_unitCountAll);
+        for (;; auto92461138_u -= 1) {
+            auto92461138_var = UnitGroupUnitFromEnd(auto92461138_g, auto92461138_u);
+            if (auto92461138_var == null) { break; }
+            gv_electricityConsumption[UnitGetOwner(auto92461138_var)][1] += 200;
+        }
+        auto8909AFB6_g = UnitGroup("HydrofarmIII", auto26CE04F2_var, RegionEntireMap(), UnitFilter(0, 0, (1 << c_targetFilterMissile), (1 << (c_targetFilterDead - 32)) | (1 << (c_targetFilterHidden - 32))), 0);
+        auto8909AFB6_u = UnitGroupCount(auto8909AFB6_g, c_unitCountAll);
+        for (;; auto8909AFB6_u -= 1) {
+            auto8909AFB6_var = UnitGroupUnitFromEnd(auto8909AFB6_g, auto8909AFB6_u);
+            if (auto8909AFB6_var == null) { break; }
+            gv_electricityConsumption[UnitGetOwner(auto8909AFB6_var)][1] += 300;
+        }
+        autoD9704D77_g = UnitGroup("HydrofarmIV", auto26CE04F2_var, RegionEntireMap(), UnitFilter(0, 0, (1 << c_targetFilterMissile), (1 << (c_targetFilterDead - 32)) | (1 << (c_targetFilterHidden - 32))), 0);
+        autoD9704D77_u = UnitGroupCount(autoD9704D77_g, c_unitCountAll);
+        for (;; autoD9704D77_u -= 1) {
+            autoD9704D77_var = UnitGroupUnitFromEnd(autoD9704D77_g, autoD9704D77_u);
+            if (autoD9704D77_var == null) { break; }
+            gv_electricityConsumption[UnitGetOwner(autoD9704D77_var)][1] += 400;
+        }
+        auto754406CD_g = UnitGroup("HydrofarmV", auto26CE04F2_var, RegionEntireMap(), UnitFilter(0, 0, (1 << c_targetFilterMissile), (1 << (c_targetFilterDead - 32)) | (1 << (c_targetFilterHidden - 32))), 0);
+        auto754406CD_u = UnitGroupCount(auto754406CD_g, c_unitCountAll);
+        for (;; auto754406CD_u -= 1) {
+            auto754406CD_var = UnitGroupUnitFromEnd(auto754406CD_g, auto754406CD_u);
+            if (auto754406CD_var == null) { break; }
+            gv_electricityConsumption[UnitGetOwner(auto754406CD_var)][1] += 500;
+        }
+        auto3B6E8A16_g = UnitGroup("ShieldBatteryNerazim2", auto26CE04F2_var, RegionEntireMap(), UnitFilter(0, 0, (1 << c_targetFilterMissile), (1 << (c_targetFilterDead - 32)) | (1 << (c_targetFilterHidden - 32))), 0);
+        auto3B6E8A16_u = UnitGroupCount(auto3B6E8A16_g, c_unitCountAll);
+        for (;; auto3B6E8A16_u -= 1) {
+            auto3B6E8A16_var = UnitGroupUnitFromEnd(auto3B6E8A16_g, auto3B6E8A16_u);
+            if (auto3B6E8A16_var == null) { break; }
+            gv_electricityConsumption[UnitGetOwner(auto3B6E8A16_var)][1] += 12000;
+        }
+        auto53051E2C_g = UnitGroup("ResearchComplexI", auto26CE04F2_var, RegionEntireMap(), UnitFilter(0, 0, (1 << c_targetFilterMissile), (1 << (c_targetFilterDead - 32)) | (1 << (c_targetFilterHidden - 32))), 0);
+        auto53051E2C_u = UnitGroupCount(auto53051E2C_g, c_unitCountAll);
+        for (;; auto53051E2C_u -= 1) {
+            auto53051E2C_var = UnitGroupUnitFromEnd(auto53051E2C_g, auto53051E2C_u);
+            if (auto53051E2C_var == null) { break; }
+            gv_electricityConsumption[UnitGetOwner(auto53051E2C_var)][1] += 500;
+        }
+        autoC37FA1B2_g = UnitGroup("ResearchComplexII", auto26CE04F2_var, RegionEntireMap(), UnitFilter(0, 0, (1 << c_targetFilterMissile), (1 << (c_targetFilterDead - 32)) | (1 << (c_targetFilterHidden - 32))), 0);
+        autoC37FA1B2_u = UnitGroupCount(autoC37FA1B2_g, c_unitCountAll);
+        for (;; autoC37FA1B2_u -= 1) {
+            autoC37FA1B2_var = UnitGroupUnitFromEnd(autoC37FA1B2_g, autoC37FA1B2_u);
+            if (autoC37FA1B2_var == null) { break; }
+            gv_electricityConsumption[UnitGetOwner(autoC37FA1B2_var)][1] += 1000;
+        }
+        autoC9676E7C_g = UnitGroup("ResearchComplexIII", auto26CE04F2_var, RegionEntireMap(), UnitFilter(0, 0, (1 << c_targetFilterMissile), (1 << (c_targetFilterDead - 32)) | (1 << (c_targetFilterHidden - 32))), 0);
+        autoC9676E7C_u = UnitGroupCount(autoC9676E7C_g, c_unitCountAll);
+        for (;; autoC9676E7C_u -= 1) {
+            autoC9676E7C_var = UnitGroupUnitFromEnd(autoC9676E7C_g, autoC9676E7C_u);
+            if (autoC9676E7C_var == null) { break; }
+            gv_electricityConsumption[UnitGetOwner(autoC9676E7C_var)][1] += 1500;
+        }
+        auto843913BE_g = UnitGroup("ResearchComplexIV", auto26CE04F2_var, RegionEntireMap(), UnitFilter(0, 0, (1 << c_targetFilterMissile), (1 << (c_targetFilterDead - 32)) | (1 << (c_targetFilterHidden - 32))), 0);
+        auto843913BE_u = UnitGroupCount(auto843913BE_g, c_unitCountAll);
+        for (;; auto843913BE_u -= 1) {
+            auto843913BE_var = UnitGroupUnitFromEnd(auto843913BE_g, auto843913BE_u);
+            if (auto843913BE_var == null) { break; }
+            gv_electricityConsumption[UnitGetOwner(auto843913BE_var)][1] += 2000;
+        }
+        auto293030D1_g = UnitGroup("ResearchComplexV", auto26CE04F2_var, RegionEntireMap(), UnitFilter(0, 0, (1 << c_targetFilterMissile), (1 << (c_targetFilterDead - 32)) | (1 << (c_targetFilterHidden - 32))), 0);
+        auto293030D1_u = UnitGroupCount(auto293030D1_g, c_unitCountAll);
+        for (;; auto293030D1_u -= 1) {
+            auto293030D1_var = UnitGroupUnitFromEnd(auto293030D1_g, auto293030D1_u);
+            if (auto293030D1_var == null) { break; }
+            gv_electricityConsumption[UnitGetOwner(auto293030D1_var)][1] += 2500;
+        }
         gv_electricityIncome[auto26CE04F2_var][1] = ((gv_electricityIncome[auto26CE04F2_var][1] / 100) * gv_electricityIncomeModifier[auto26CE04F2_var]);
     }
     autoDBC93B26_g = gv_users;
@@ -14403,271 +14074,102 @@ void gf_GetElectricityBalanceComputePunish () {
 }
 
 void gf_FoodStuff () {
-    int init_i;
-
     // Variable Declarations
-    int lv_farmType;
-    int[8] lv_privateFood;
-    int[8] lv_farmCouunt;
-    int[8] lv_averageCentralizationInverse;
-    int lv_eUFood;
-    int lv_corporateFood;
-    region[10] lv_farmRegions;
-    unitgroup[10] lv_farms;
-    unitgroup lv_localFarms;
-    int[10] lv_foodCollected;
+    int lv_farmIncome;
+    int lv_totalFoodCollected;
 
     // Automatic Variable Declarations
-    unitgroup auto7678CAF1_g;
-    int auto7678CAF1_u;
-    unit auto7678CAF1_var;
-    unitgroup auto4ADD181F_g;
-    int auto4ADD181F_u;
-    unit auto4ADD181F_var;
-    unitgroup autoC4473300_g;
-    int autoC4473300_u;
-    unit autoC4473300_var;
-    unitgroup auto063BA793_g;
-    int auto063BA793_u;
-    unit auto063BA793_var;
-    unitgroup autoCAE8D918_g;
-    int autoCAE8D918_u;
-    unit autoCAE8D918_var;
-    unitgroup auto757018FC_g;
-    int auto757018FC_u;
-    unit auto757018FC_var;
-    unitgroup auto3EEE4705_g;
-    int auto3EEE4705_u;
-    unit auto3EEE4705_var;
-    unitgroup auto66505B83_g;
-    int auto66505B83_u;
-    unit auto66505B83_var;
-    unitgroup autoBC9BF20C_g;
-    int autoBC9BF20C_u;
-    unit autoBC9BF20C_var;
-    unitgroup auto1C7006A9_g;
-    int auto1C7006A9_u;
-    unit auto1C7006A9_var;
-    playergroup auto73068352_g;
-    int auto73068352_var;
-    unitgroup auto8DE92844_g;
-    int auto8DE92844_u;
-    unit auto8DE92844_var;
+    playergroup autoC1BEB8FC_g;
+    int autoC1BEB8FC_var;
+    unitgroup autoEFE2CB6A_g;
+    int autoEFE2CB6A_u;
+    unit autoEFE2CB6A_var;
+    string auto32341A62_val;
 
     // Variable Initialization
-    for (init_i = 0; init_i <= 9; init_i += 1) {
-        lv_farms[init_i] = UnitGroupEmpty();
-    }
-    lv_localFarms = UnitGroupEmpty();
 
     // Implementation
-    auto7678CAF1_g = UnitGroup("FarmI", c_playerAny, RegionEntireMap(), UnitFilter(0, 0, (1 << c_targetFilterMissile), (1 << (c_targetFilterDead - 32)) | (1 << (c_targetFilterHidden - 32))), 0);
-    auto7678CAF1_u = UnitGroupCount(auto7678CAF1_g, c_unitCountAll);
-    for (;; auto7678CAF1_u -= 1) {
-        auto7678CAF1_var = UnitGroupUnitFromEnd(auto7678CAF1_g, auto7678CAF1_u);
-        if (auto7678CAF1_var == null) { break; }
-        if ((UnitGetOwner(auto7678CAF1_var) < 8)) {
-            UnitGroupAdd(lv_farms[UnitGetOwner(auto7678CAF1_var)], auto7678CAF1_var);
-            gv_buildingFoodExpenses[UnitGetOwner(auto7678CAF1_var)][1] += 60;
-        }
-
-    }
-    auto4ADD181F_g = UnitGroup("FarmII", c_playerAny, RegionEntireMap(), UnitFilter(0, 0, (1 << c_targetFilterMissile), (1 << (c_targetFilterDead - 32)) | (1 << (c_targetFilterHidden - 32))), 0);
-    auto4ADD181F_u = UnitGroupCount(auto4ADD181F_g, c_unitCountAll);
-    for (;; auto4ADD181F_u -= 1) {
-        auto4ADD181F_var = UnitGroupUnitFromEnd(auto4ADD181F_g, auto4ADD181F_u);
-        if (auto4ADD181F_var == null) { break; }
-        if ((UnitGetOwner(auto4ADD181F_var) < 8)) {
-            UnitGroupAdd(lv_farms[UnitGetOwner(auto4ADD181F_var)], auto4ADD181F_var);
-            gv_buildingFoodExpenses[UnitGetOwner(auto4ADD181F_var)][1] += 120;
-        }
-
-    }
-    autoC4473300_g = UnitGroup("FarmIII", c_playerAny, RegionEntireMap(), UnitFilter(0, 0, (1 << c_targetFilterMissile), (1 << (c_targetFilterDead - 32)) | (1 << (c_targetFilterHidden - 32))), 0);
-    autoC4473300_u = UnitGroupCount(autoC4473300_g, c_unitCountAll);
-    for (;; autoC4473300_u -= 1) {
-        autoC4473300_var = UnitGroupUnitFromEnd(autoC4473300_g, autoC4473300_u);
-        if (autoC4473300_var == null) { break; }
-        if ((UnitGetOwner(autoC4473300_var) < 8)) {
-            UnitGroupAdd(lv_farms[UnitGetOwner(autoC4473300_var)], autoC4473300_var);
-            gv_buildingFoodExpenses[UnitGetOwner(autoC4473300_var)][1] += 180;
-        }
-
-    }
-    auto063BA793_g = UnitGroup("FarmIV", c_playerAny, RegionEntireMap(), UnitFilter(0, 0, (1 << c_targetFilterMissile), (1 << (c_targetFilterDead - 32)) | (1 << (c_targetFilterHidden - 32))), 0);
-    auto063BA793_u = UnitGroupCount(auto063BA793_g, c_unitCountAll);
-    for (;; auto063BA793_u -= 1) {
-        auto063BA793_var = UnitGroupUnitFromEnd(auto063BA793_g, auto063BA793_u);
-        if (auto063BA793_var == null) { break; }
-        if ((UnitGetOwner(auto063BA793_var) < 8)) {
-            UnitGroupAdd(lv_farms[UnitGetOwner(auto063BA793_var)], auto063BA793_var);
-            gv_buildingFoodExpenses[UnitGetOwner(auto063BA793_var)][1] += 240;
-        }
-
-    }
-    autoCAE8D918_g = UnitGroup("FarmV", c_playerAny, RegionEntireMap(), UnitFilter(0, 0, (1 << c_targetFilterMissile), (1 << (c_targetFilterDead - 32)) | (1 << (c_targetFilterHidden - 32))), 0);
-    autoCAE8D918_u = UnitGroupCount(autoCAE8D918_g, c_unitCountAll);
-    for (;; autoCAE8D918_u -= 1) {
-        autoCAE8D918_var = UnitGroupUnitFromEnd(autoCAE8D918_g, autoCAE8D918_u);
-        if (autoCAE8D918_var == null) { break; }
-        if ((UnitGetOwner(autoCAE8D918_var) < 8)) {
-            UnitGroupAdd(lv_farms[UnitGetOwner(autoCAE8D918_var)], autoCAE8D918_var);
-            gv_buildingFoodExpenses[UnitGetOwner(autoCAE8D918_var)][1] += 300;
-        }
-
-    }
-    auto757018FC_g = UnitGroup("HydrofarmI", c_playerAny, RegionEntireMap(), UnitFilter(0, 0, (1 << c_targetFilterMissile), (1 << (c_targetFilterDead - 32)) | (1 << (c_targetFilterHidden - 32))), 0);
-    auto757018FC_u = UnitGroupCount(auto757018FC_g, c_unitCountAll);
-    for (;; auto757018FC_u -= 1) {
-        auto757018FC_var = UnitGroupUnitFromEnd(auto757018FC_g, auto757018FC_u);
-        if (auto757018FC_var == null) { break; }
-        if ((UnitGetOwner(auto757018FC_var) < 8)) {
-            UnitGroupAdd(lv_farms[UnitGetOwner(auto757018FC_var)], auto757018FC_var);
-            gv_buildingFoodExpenses[UnitGetOwner(auto757018FC_var)][1] += 600;
-        }
-
-    }
-    auto3EEE4705_g = UnitGroup("HydrofarmII", c_playerAny, RegionEntireMap(), UnitFilter(0, 0, (1 << c_targetFilterMissile), (1 << (c_targetFilterDead - 32)) | (1 << (c_targetFilterHidden - 32))), 0);
-    auto3EEE4705_u = UnitGroupCount(auto3EEE4705_g, c_unitCountAll);
-    for (;; auto3EEE4705_u -= 1) {
-        auto3EEE4705_var = UnitGroupUnitFromEnd(auto3EEE4705_g, auto3EEE4705_u);
-        if (auto3EEE4705_var == null) { break; }
-        if ((UnitGetOwner(auto3EEE4705_var) < 8)) {
-            UnitGroupAdd(lv_farms[UnitGetOwner(auto3EEE4705_var)], auto3EEE4705_var);
-            gv_buildingFoodExpenses[UnitGetOwner(auto3EEE4705_var)][1] += 1200;
-        }
-
-    }
-    auto66505B83_g = UnitGroup("HydrofarmIII", c_playerAny, RegionEntireMap(), UnitFilter(0, 0, (1 << c_targetFilterMissile), (1 << (c_targetFilterDead - 32)) | (1 << (c_targetFilterHidden - 32))), 0);
-    auto66505B83_u = UnitGroupCount(auto66505B83_g, c_unitCountAll);
-    for (;; auto66505B83_u -= 1) {
-        auto66505B83_var = UnitGroupUnitFromEnd(auto66505B83_g, auto66505B83_u);
-        if (auto66505B83_var == null) { break; }
-        if ((UnitGetOwner(auto66505B83_var) < 8)) {
-            UnitGroupAdd(lv_farms[UnitGetOwner(auto66505B83_var)], auto66505B83_var);
-            gv_buildingFoodExpenses[UnitGetOwner(auto66505B83_var)][1] += 1800;
-        }
-
-    }
-    autoBC9BF20C_g = UnitGroup("HydrofarmIV", c_playerAny, RegionEntireMap(), UnitFilter(0, 0, (1 << c_targetFilterMissile), (1 << (c_targetFilterDead - 32)) | (1 << (c_targetFilterHidden - 32))), 0);
-    autoBC9BF20C_u = UnitGroupCount(autoBC9BF20C_g, c_unitCountAll);
-    for (;; autoBC9BF20C_u -= 1) {
-        autoBC9BF20C_var = UnitGroupUnitFromEnd(autoBC9BF20C_g, autoBC9BF20C_u);
-        if (autoBC9BF20C_var == null) { break; }
-        if ((UnitGetOwner(autoBC9BF20C_var) < 8)) {
-            UnitGroupAdd(lv_farms[UnitGetOwner(autoBC9BF20C_var)], autoBC9BF20C_var);
-            gv_buildingFoodExpenses[UnitGetOwner(autoBC9BF20C_var)][1] += 2400;
-        }
-
-    }
-    auto1C7006A9_g = UnitGroup("HydrofarmV", c_playerAny, RegionEntireMap(), UnitFilter(0, 0, (1 << c_targetFilterMissile), (1 << (c_targetFilterDead - 32)) | (1 << (c_targetFilterHidden - 32))), 0);
-    auto1C7006A9_u = UnitGroupCount(auto1C7006A9_g, c_unitCountAll);
-    for (;; auto1C7006A9_u -= 1) {
-        auto1C7006A9_var = UnitGroupUnitFromEnd(auto1C7006A9_g, auto1C7006A9_u);
-        if (auto1C7006A9_var == null) { break; }
-        if ((UnitGetOwner(auto1C7006A9_var) < 8)) {
-            UnitGroupAdd(lv_farms[UnitGetOwner(auto1C7006A9_var)], auto1C7006A9_var);
-            gv_buildingFoodExpenses[UnitGetOwner(auto1C7006A9_var)][1] += 3000;
-        }
-
-    }
-    auto73068352_g = gv_users;
-    auto73068352_var = -1;
+    autoC1BEB8FC_g = gv_users;
+    autoC1BEB8FC_var = -1;
     while (true) {
-        auto73068352_var = PlayerGroupNextPlayer(auto73068352_g, auto73068352_var);
-        if (auto73068352_var < 0) { break; }
-        auto8DE92844_g = lv_farms[auto73068352_var];
-        auto8DE92844_u = UnitGroupCount(auto8DE92844_g, c_unitCountAll);
-        for (;; auto8DE92844_u -= 1) {
-            auto8DE92844_var = UnitGroupUnitFromEnd(auto8DE92844_g, auto8DE92844_u);
-            if (auto8DE92844_var == null) { break; }
-            lv_farmCouunt[UnitGetOwner(auto8DE92844_var)] += 1;
-            gv_population[UnitGetOwner(auto8DE92844_var)] += (FixedToInt(UnitGetPropertyFixed(auto8DE92844_var, c_unitPropEnergy, c_unitPropCurrent)) / 2);
-            lv_averageCentralizationInverse[UnitGetOwner(auto8DE92844_var)] += FixedToInt(((1.0 - UnitGetCustomValue(auto8DE92844_var, 0)) * 100.0));
-            if ((UnitGetType(auto8DE92844_var) == "FarmV")) {
-                lv_farmType = 5;
+        autoC1BEB8FC_var = PlayerGroupNextPlayer(autoC1BEB8FC_g, autoC1BEB8FC_var);
+        if (autoC1BEB8FC_var < 0) { break; }
+        lv_totalFoodCollected = 0;
+        autoEFE2CB6A_g = UnitGroup(null, autoC1BEB8FC_var, RegionEntireMap(), UnitFilter((1 << c_targetFilterArmored) | (1 << c_targetFilterMechanical) | (1 << c_targetFilterPsionic) | (1 << c_targetFilterStructure), 0, (1 << c_targetFilterUser1) | (1 << c_targetFilterMissile), (1 << (c_targetFilterDead - 32)) | (1 << (c_targetFilterHidden - 32))), 0);
+        autoEFE2CB6A_u = UnitGroupCount(autoEFE2CB6A_g, c_unitCountAll);
+        for (;; autoEFE2CB6A_u -= 1) {
+            autoEFE2CB6A_var = UnitGroupUnitFromEnd(autoEFE2CB6A_g, autoEFE2CB6A_u);
+            if (autoEFE2CB6A_var == null) { break; }
+            auto32341A62_val = UnitGetType(autoEFE2CB6A_var);
+            if (auto32341A62_val == "FarmI") {
+                gv_buildingFoodExpenses[autoC1BEB8FC_var][1] += 60;
+                lv_farmIncome = 60;
+            }
+            else if (auto32341A62_val == "FarmII") {
+                gv_buildingFoodExpenses[autoC1BEB8FC_var][1] += 120;
+                lv_farmIncome = 120;
+            }
+            else if (auto32341A62_val == "FarmIII") {
+                gv_buildingFoodExpenses[autoC1BEB8FC_var][1] += 180;
+                lv_farmIncome = 180;
+            }
+            else if (auto32341A62_val == "FarmIV") {
+                gv_buildingFoodExpenses[autoC1BEB8FC_var][1] += 240;
+                lv_farmIncome = 240;
+            }
+            else if (auto32341A62_val == "FarmV") {
+                gv_buildingFoodExpenses[autoC1BEB8FC_var][1] += 300;
+                lv_farmIncome = 300;
+            }
+            else if (auto32341A62_val == "HydrofarmI") {
+                gv_buildingFoodExpenses[autoC1BEB8FC_var][1] += 600;
+                lv_farmIncome = 600;
+            }
+            else if (auto32341A62_val == "HydrofarmII") {
+                gv_buildingFoodExpenses[autoC1BEB8FC_var][1] += 1200;
+                lv_farmIncome = 1200;
+            }
+            else if (auto32341A62_val == "HydrofarmIII") {
+                gv_buildingFoodExpenses[autoC1BEB8FC_var][1] += 1800;
+                lv_farmIncome = 1800;
+            }
+            else if (auto32341A62_val == "HydrofarmIV") {
+                gv_buildingFoodExpenses[autoC1BEB8FC_var][1] += 2400;
+                lv_farmIncome = 2400;
+            }
+            else if (auto32341A62_val == "HydrofarmV") {
+                gv_buildingFoodExpenses[autoC1BEB8FC_var][1] += 3000;
+                lv_farmIncome = 3000;
             }
             else {
-                if ((UnitGetType(auto8DE92844_var) == "FarmIV")) {
-                    lv_farmType = 4;
-                }
-                else {
-                    if ((UnitGetType(auto8DE92844_var) == "FarmIII")) {
-                        lv_farmType = 3;
-                    }
-                    else {
-                        if ((UnitGetType(auto8DE92844_var) == "FarmII")) {
-                            lv_farmType = 2;
-                        }
-                        else {
-                            if ((UnitGetType(auto8DE92844_var) == "FarmI")) {
-                                lv_farmType = 1;
-                            }
-                            else {
-                                if ((gv_electricityConsumption[auto73068352_var][1] < gv_electricityIncome[auto73068352_var][1])) {
-                                    if ((UnitGetType(auto8DE92844_var) == "HydrofarmI")) {
-                                        lv_farmType = 10;
-                                    }
-                                    else {
-                                        if ((UnitGetType(auto8DE92844_var) == "HydrofarmII")) {
-                                            lv_farmType = 20;
-                                        }
-                                        else {
-                                            if ((UnitGetType(auto8DE92844_var) == "HydrofarmIII")) {
-                                                lv_farmType = 30;
-                                            }
-                                            else {
-                                                if ((UnitGetType(auto8DE92844_var) == "HydrofarmIV")) {
-                                                    lv_farmType = 40;
-                                                }
-                                                else {
-                                                    if ((UnitGetType(auto8DE92844_var) == "HydrofarmV")) {
-                                                        lv_farmType = 50;
-                                                    }
-                                                    else {
-                                                        UnitGroupRemove(lv_localFarms, auto8DE92844_var);
-                                                        UnitGroupRemove(lv_farms[auto73068352_var], auto8DE92844_var);
-                                                    }
-                                                }
-                                            }
-                                        }
-                                    }
-                                }
-                                else {
-                                    UnitGroupRemove(lv_localFarms, auto8DE92844_var);
-                                    UnitGroupRemove(lv_farms[auto73068352_var], auto8DE92844_var);
-                                }
-                            }
-                        }
-                    }
-                }
+                lv_farmIncome = 0;
             }
-            if ((gf_HasBadFarmingTerrain(auto8DE92844_var) == true)) {
-                lv_foodCollected[UnitGetOwner(auto8DE92844_var)] += FixedToInt(((gv_fOOD_PRODUCTION_BAD_TERRAIN * lv_farmType) * UnitGetCustomValue(auto8DE92844_var, 0)));
-            }
-            else {
-                lv_foodCollected[UnitGetOwner(auto8DE92844_var)] += FixedToInt(((gv_fOOD_PRODUCTION_BASE * lv_farmType) * UnitGetCustomValue(auto8DE92844_var, 0)));
-            }
-        }
-        if ((lv_foodCollected[auto73068352_var] < 20000)) {
-            if ((lv_foodCollected[auto73068352_var] < 10)) {
-                lv_foodCollected[auto73068352_var] = 10;
+            if ((lv_farmIncome == 0)) {
+                continue;
             }
 
-            lv_foodCollected[auto73068352_var] *= gv_foodIncomeModifier[auto73068352_var];
-            lv_foodCollected[auto73068352_var] /= 100;
+            if ((gf_HasBadFarmingTerrain(autoEFE2CB6A_var) == true)) {
+                lv_farmIncome = FixedToInt(((UnitGetCustomValue(autoEFE2CB6A_var, 0) * lv_farmIncome) * 0.75));
+            }
+            else {
+                lv_farmIncome = FixedToInt((UnitGetCustomValue(autoEFE2CB6A_var, 0) * lv_farmIncome));
+            }
+            lv_totalFoodCollected += lv_farmIncome;
+        }
+        if ((lv_totalFoodCollected < 20000)) {
+            if ((lv_totalFoodCollected < 10)) {
+                lv_totalFoodCollected = 10;
+            }
+
+            lv_totalFoodCollected *= gv_foodIncomeModifier[autoC1BEB8FC_var];
+            lv_totalFoodCollected /= 100;
         }
         else {
-            lv_foodCollected[auto73068352_var] /= 100;
-            lv_foodCollected[auto73068352_var] *= gv_foodIncomeModifier[auto73068352_var];
+            lv_totalFoodCollected /= 100;
+            lv_totalFoodCollected *= gv_foodIncomeModifier[autoC1BEB8FC_var];
         }
-        if ((lv_farmCouunt[auto73068352_var] < 1)) {
-            lv_farmCouunt[auto73068352_var] = 1;
-        }
-
-        lv_averageCentralizationInverse[auto73068352_var] = (lv_averageCentralizationInverse[auto73068352_var] / lv_farmCouunt[auto73068352_var]);
-        lv_privateFood[auto73068352_var] = (lv_averageCentralizationInverse[auto73068352_var] * (lv_foodCollected[auto73068352_var] / 100));
-        gv_foodIncome[auto73068352_var][1] += lv_foodCollected[auto73068352_var];
+        gv_foodIncome[autoC1BEB8FC_var][1] += lv_totalFoodCollected;
+        gv_farmIncome[autoC1BEB8FC_var] = lv_farmIncome;
     }
 }
 
@@ -14762,7 +14264,7 @@ void gf_GetCivilianDemand () {
         lv_demandMultiplier -= 30;
         while ((UnitGroupCount(lv_homes[auto9ADD5ECC_var], c_unitCountAlive) > 0)) {
             lv_civilianGoodsDemand = 0;
-            UnitGroupAddUnitGroup(lv_localHomes, UnitGroup(null, auto9ADD5ECC_var, RegionCircle(UnitGetPosition(UnitGroupRandomUnit(lv_homes[auto9ADD5ECC_var], c_unitCountAlive)), 2.0), UnitFilter(0, 0, (1 << c_targetFilterMissile), (1 << (c_targetFilterDead - 32)) | (1 << (c_targetFilterHidden - 32))), 0));
+            UnitGroupAddUnitGroup(lv_localHomes, UnitGroup(null, auto9ADD5ECC_var, RegionCircle(UnitGetPosition(UnitGroupRandomUnit(lv_homes[auto9ADD5ECC_var], c_unitCountAlive)), 3.0), UnitFilter(0, 0, (1 << c_targetFilterMissile), (1 << (c_targetFilterDead - 32)) | (1 << (c_targetFilterHidden - 32))), 0));
             auto1D126954_g = lv_localHomes;
             auto1D126954_u = UnitGroupCount(auto1D126954_g, c_unitCountAll);
             for (;; auto1D126954_u -= 1) {
@@ -14777,13 +14279,6 @@ void gf_GetCivilianDemand () {
             else {
                 lv_civilianGoodsDemand /= 100;
                 lv_civilianGoodsDemand *= lv_demandMultiplier;
-            }
-            lv_pickedResourcePlace = gf_FindCheapestResource(UnitGetOwner(UnitGroupRandomUnit(lv_localHomes, c_unitCountAlive)), 1, UnitGetPosition(UnitGroupRandomUnit(lv_localHomes, c_unitCountAlive)), 500);
-            if ((lv_pickedResourcePlace == null)) {
-            }
-            else {
-                gf_ModifyUnitCustomValue(lv_pickedResourcePlace, (20 + auto9ADD5ECC_var), gf_GetEquilibriumQuantity(lv_civilianGoodsDemand, gf_GetUnitCustomValue(lv_pickedResourcePlace, 12), gv_gDPPerCapita[auto9ADD5ECC_var], 1));
-                lv_pickedResourcePlace = null;
             }
             lv_pickedResourcePlace = gf_FindCheapestResource(UnitGetOwner(UnitGroupRandomUnit(lv_localHomes, c_unitCountAlive)), 2, UnitGetPosition(UnitGroupRandomUnit(lv_localHomes, c_unitCountAlive)), 500);
             if ((lv_pickedResourcePlace == null)) {
@@ -14806,53 +14301,13 @@ void gf_GetCivilianDemand () {
 }
 
 void gf_GetResearchSpeedUpkeep () {
-    // Variable Declarations
-    bool[16] lv_uNI;
-    bool[16] lv_sCHOOL;
-
     // Automatic Variable Declarations
     playergroup auto264A8A7C_g;
     int auto264A8A7C_var;
-    unitgroup autoAD7EDDCB_g;
-    int autoAD7EDDCB_u;
-    unit autoAD7EDDCB_var;
-    unitgroup auto9B1F08CF_g;
-    int auto9B1F08CF_u;
-    unit auto9B1F08CF_var;
-    unitgroup auto82BA502B_g;
-    int auto82BA502B_u;
-    unit auto82BA502B_var;
-    unitgroup autoD122EAC6_g;
-    int autoD122EAC6_u;
-    unit autoD122EAC6_var;
-    unitgroup auto271AF792_g;
-    int auto271AF792_u;
-    unit auto271AF792_var;
-    unitgroup autoA44191E1_g;
-    int autoA44191E1_u;
-    unit autoA44191E1_var;
-    unitgroup auto1BFA6064_g;
-    int auto1BFA6064_u;
-    unit auto1BFA6064_var;
-    unitgroup autoA03C87FC_g;
-    int autoA03C87FC_u;
-    unit autoA03C87FC_var;
-    unitgroup autoAAEAAE30_g;
-    int autoAAEAAE30_u;
-    unit autoAAEAAE30_var;
-    unitgroup auto05715523_g;
-    int auto05715523_u;
-    unit auto05715523_var;
-    unitgroup autoFE4EE1EF_g;
-    int autoFE4EE1EF_u;
-    unit autoFE4EE1EF_var;
-    unitgroup auto5B61D2A1_g;
-    int auto5B61D2A1_u;
-    unit auto5B61D2A1_var;
-    playergroup auto332EFE5F_g;
-    int auto332EFE5F_var;
-
-    // Variable Initialization
+    unitgroup auto2CA1EB7A_g;
+    int auto2CA1EB7A_u;
+    unit auto2CA1EB7A_var;
+    string auto933A7E1F_val;
 
     // Implementation
     auto264A8A7C_g = gv_users;
@@ -14860,143 +14315,81 @@ void gf_GetResearchSpeedUpkeep () {
     while (true) {
         auto264A8A7C_var = PlayerGroupNextPlayer(auto264A8A7C_g, auto264A8A7C_var);
         if (auto264A8A7C_var < 0) { break; }
-        gv_researchSpeed[auto264A8A7C_var] = 0;
-    }
-    autoAD7EDDCB_g = UnitGroup("School", c_playerAny, RegionEntireMap(), UnitFilter(0, 0, (1 << c_targetFilterMissile), (1 << (c_targetFilterDead - 32)) | (1 << (c_targetFilterHidden - 32))), 0);
-    autoAD7EDDCB_u = UnitGroupCount(autoAD7EDDCB_g, c_unitCountAll);
-    for (;; autoAD7EDDCB_u -= 1) {
-        autoAD7EDDCB_var = UnitGroupUnitFromEnd(autoAD7EDDCB_g, autoAD7EDDCB_u);
-        if (autoAD7EDDCB_var == null) { break; }
-        lv_sCHOOL[UnitGetOwner(autoAD7EDDCB_var)] = true;
-    }
-    auto9B1F08CF_g = UnitGroup("University", c_playerAny, RegionEntireMap(), UnitFilter(0, 0, (1 << c_targetFilterMissile), (1 << (c_targetFilterDead - 32)) | (1 << (c_targetFilterHidden - 32))), 0);
-    auto9B1F08CF_u = UnitGroupCount(auto9B1F08CF_g, c_unitCountAll);
-    for (;; auto9B1F08CF_u -= 1) {
-        auto9B1F08CF_var = UnitGroupUnitFromEnd(auto9B1F08CF_g, auto9B1F08CF_u);
-        if (auto9B1F08CF_var == null) { break; }
-        lv_uNI[UnitGetOwner(auto9B1F08CF_var)] = true;
-    }
-    auto82BA502B_g = UnitGroup("LaboratoryI", c_playerAny, RegionEntireMap(), UnitFilter(0, 0, (1 << c_targetFilterMissile), (1 << (c_targetFilterDead - 32)) | (1 << (c_targetFilterHidden - 32))), 0);
-    auto82BA502B_u = UnitGroupCount(auto82BA502B_g, c_unitCountAll);
-    for (;; auto82BA502B_u -= 1) {
-        auto82BA502B_var = UnitGroupUnitFromEnd(auto82BA502B_g, auto82BA502B_u);
-        if (auto82BA502B_var == null) { break; }
-        gv_researchSpeed[UnitGetOwner(auto82BA502B_var)] = 20;
-        gv_buildingOtherExpenses[UnitGetOwner(auto82BA502B_var)][1] += 150;
-    }
-    autoD122EAC6_g = UnitGroup("LaboratoryII", c_playerAny, RegionEntireMap(), UnitFilter(0, 0, (1 << c_targetFilterMissile), (1 << (c_targetFilterDead - 32)) | (1 << (c_targetFilterHidden - 32))), 0);
-    autoD122EAC6_u = UnitGroupCount(autoD122EAC6_g, c_unitCountAll);
-    for (;; autoD122EAC6_u -= 1) {
-        autoD122EAC6_var = UnitGroupUnitFromEnd(autoD122EAC6_g, autoD122EAC6_u);
-        if (autoD122EAC6_var == null) { break; }
-        gv_researchSpeed[UnitGetOwner(autoD122EAC6_var)] = 40;
-        gv_buildingOtherExpenses[UnitGetOwner(autoD122EAC6_var)][1] += 300;
-    }
-    auto271AF792_g = UnitGroup("LaboratoryIII", c_playerAny, RegionEntireMap(), UnitFilter(0, 0, (1 << c_targetFilterMissile), (1 << (c_targetFilterDead - 32)) | (1 << (c_targetFilterHidden - 32))), 0);
-    auto271AF792_u = UnitGroupCount(auto271AF792_g, c_unitCountAll);
-    for (;; auto271AF792_u -= 1) {
-        auto271AF792_var = UnitGroupUnitFromEnd(auto271AF792_g, auto271AF792_u);
-        if (auto271AF792_var == null) { break; }
-        gv_researchSpeed[UnitGetOwner(auto271AF792_var)] = 60;
-        gv_buildingOtherExpenses[UnitGetOwner(auto271AF792_var)][1] += 450;
-    }
-    autoA44191E1_g = UnitGroup("LaboratoryIV", c_playerAny, RegionEntireMap(), UnitFilter(0, 0, (1 << c_targetFilterMissile), (1 << (c_targetFilterDead - 32)) | (1 << (c_targetFilterHidden - 32))), 0);
-    autoA44191E1_u = UnitGroupCount(autoA44191E1_g, c_unitCountAll);
-    for (;; autoA44191E1_u -= 1) {
-        autoA44191E1_var = UnitGroupUnitFromEnd(autoA44191E1_g, autoA44191E1_u);
-        if (autoA44191E1_var == null) { break; }
-        gv_researchSpeed[UnitGetOwner(autoA44191E1_var)] = 80;
-        gv_buildingOtherExpenses[UnitGetOwner(autoA44191E1_var)][1] += 600;
-    }
-    auto1BFA6064_g = UnitGroup("LaboratoryV", c_playerAny, RegionEntireMap(), UnitFilter(0, 0, (1 << c_targetFilterMissile), (1 << (c_targetFilterDead - 32)) | (1 << (c_targetFilterHidden - 32))), 0);
-    auto1BFA6064_u = UnitGroupCount(auto1BFA6064_g, c_unitCountAll);
-    for (;; auto1BFA6064_u -= 1) {
-        auto1BFA6064_var = UnitGroupUnitFromEnd(auto1BFA6064_g, auto1BFA6064_u);
-        if (auto1BFA6064_var == null) { break; }
-        gv_researchSpeed[UnitGetOwner(auto1BFA6064_var)] = 100;
-        gv_buildingOtherExpenses[UnitGetOwner(auto1BFA6064_var)][1] += 750;
-    }
-    autoA03C87FC_g = UnitGroup("ResearchComplexI", c_playerAny, RegionEntireMap(), UnitFilter(0, 0, (1 << c_targetFilterMissile), (1 << (c_targetFilterDead - 32)) | (1 << (c_targetFilterHidden - 32))), 0);
-    autoA03C87FC_u = UnitGroupCount(autoA03C87FC_g, c_unitCountAll);
-    for (;; autoA03C87FC_u -= 1) {
-        autoA03C87FC_var = UnitGroupUnitFromEnd(autoA03C87FC_g, autoA03C87FC_u);
-        if (autoA03C87FC_var == null) { break; }
-        gv_buildingOtherExpenses[UnitGetOwner(autoA03C87FC_var)][1] += 1000;
-        if ((gv_electricityConsumption[UnitGetOwner(autoA03C87FC_var)][1] < gv_electricityIncome[UnitGetOwner(autoA03C87FC_var)][1])) {
-            gv_researchSpeed[UnitGetOwner(autoA03C87FC_var)] = 115;
+        gv_researchSpeed[auto264A8A7C_var] = 5;
+        auto2CA1EB7A_g = UnitGroup(null, auto264A8A7C_var, RegionEntireMap(), UnitFilter((1 << c_targetFilterArmored) | (1 << c_targetFilterMechanical) | (1 << c_targetFilterStructure), 0, (1 << c_targetFilterPsionic) | (1 << c_targetFilterMissile), (1 << (c_targetFilterDead - 32)) | (1 << (c_targetFilterHidden - 32))), 0);
+        auto2CA1EB7A_u = UnitGroupCount(auto2CA1EB7A_g, c_unitCountAll);
+        for (;; auto2CA1EB7A_u -= 1) {
+            auto2CA1EB7A_var = UnitGroupUnitFromEnd(auto2CA1EB7A_g, auto2CA1EB7A_u);
+            if (auto2CA1EB7A_var == null) { break; }
+            auto933A7E1F_val = UnitGetType(auto2CA1EB7A_var);
+            if (auto933A7E1F_val == "LaboratoryI") {
+                gv_researchSpeed[auto264A8A7C_var] = 20;
+                gv_buildingOtherExpenses[auto264A8A7C_var][1] += 150;
+            }
+            else if (auto933A7E1F_val == "LaboratoryII") {
+                gv_researchSpeed[auto264A8A7C_var] = 40;
+                gv_buildingOtherExpenses[auto264A8A7C_var][1] += 300;
+            }
+            else if (auto933A7E1F_val == "LaboratoryIII") {
+                gv_researchSpeed[auto264A8A7C_var] = 60;
+                gv_buildingOtherExpenses[auto264A8A7C_var][1] += 450;
+            }
+            else if (auto933A7E1F_val == "LaboratoryIV") {
+                gv_researchSpeed[auto264A8A7C_var] = 80;
+                gv_buildingOtherExpenses[auto264A8A7C_var][1] += 600;
+            }
+            else if (auto933A7E1F_val == "LaboratoryV") {
+                gv_researchSpeed[auto264A8A7C_var] = 100;
+                gv_buildingOtherExpenses[auto264A8A7C_var][1] += 750;
+            }
+            else if (auto933A7E1F_val == "ResearchComplexI") {
+                gv_buildingOtherExpenses[auto264A8A7C_var][1] += 1000;
+                if ((gv_electricityConsumption[auto264A8A7C_var][1] < gv_electricityIncome[auto264A8A7C_var][1])) {
+                    gv_researchSpeed[auto264A8A7C_var] = 115;
+                }
+                else {
+                    gv_researchSpeed[auto264A8A7C_var] = 100;
+                }
+            }
+            else if (auto933A7E1F_val == "ResearchComplexII") {
+                gv_buildingOtherExpenses[auto264A8A7C_var][1] += 2000;
+                if ((gv_electricityConsumption[auto264A8A7C_var][1] < gv_electricityIncome[auto264A8A7C_var][1])) {
+                    gv_researchSpeed[auto264A8A7C_var] = 130;
+                }
+                else {
+                    gv_researchSpeed[auto264A8A7C_var] = 100;
+                }
+            }
+            else if (auto933A7E1F_val == "ResearchComplexIII") {
+                gv_buildingOtherExpenses[auto264A8A7C_var][1] += 3000;
+                if ((gv_electricityConsumption[auto264A8A7C_var][1] < gv_electricityIncome[auto264A8A7C_var][1])) {
+                    gv_researchSpeed[auto264A8A7C_var] = 145;
+                }
+                else {
+                    gv_researchSpeed[auto264A8A7C_var] = 100;
+                }
+            }
+            else if (auto933A7E1F_val == "ResearchComplexIV") {
+                gv_buildingOtherExpenses[auto264A8A7C_var][1] += 4000;
+                if ((gv_electricityConsumption[auto264A8A7C_var][1] < gv_electricityIncome[auto264A8A7C_var][1])) {
+                    gv_researchSpeed[auto264A8A7C_var] = 160;
+                }
+                else {
+                    gv_researchSpeed[auto264A8A7C_var] = 100;
+                }
+            }
+            else if (auto933A7E1F_val == "ResearchComplexV") {
+                gv_buildingOtherExpenses[auto264A8A7C_var][1] += 5000;
+                if ((gv_electricityConsumption[auto264A8A7C_var][1] < gv_electricityIncome[auto264A8A7C_var][1])) {
+                    gv_researchSpeed[auto264A8A7C_var] = 175;
+                }
+                else {
+                    gv_researchSpeed[auto264A8A7C_var] = 100;
+                }
+            }
+            else {
+            }
         }
-        else {
-            gv_researchSpeed[UnitGetOwner(autoA03C87FC_var)] = 100;
-        }
-    }
-    autoAAEAAE30_g = UnitGroup("ResearchComplexII", c_playerAny, RegionEntireMap(), UnitFilter(0, 0, (1 << c_targetFilterMissile), (1 << (c_targetFilterDead - 32)) | (1 << (c_targetFilterHidden - 32))), 0);
-    autoAAEAAE30_u = UnitGroupCount(autoAAEAAE30_g, c_unitCountAll);
-    for (;; autoAAEAAE30_u -= 1) {
-        autoAAEAAE30_var = UnitGroupUnitFromEnd(autoAAEAAE30_g, autoAAEAAE30_u);
-        if (autoAAEAAE30_var == null) { break; }
-        gv_buildingOtherExpenses[UnitGetOwner(autoAAEAAE30_var)][1] += 2000;
-        if ((gv_electricityConsumption[UnitGetOwner(autoAAEAAE30_var)][1] < gv_electricityIncome[UnitGetOwner(autoAAEAAE30_var)][1])) {
-            gv_researchSpeed[UnitGetOwner(autoAAEAAE30_var)] = 130;
-        }
-        else {
-            gv_researchSpeed[UnitGetOwner(autoAAEAAE30_var)] = 100;
-        }
-    }
-    auto05715523_g = UnitGroup("ResearchComplexIII", c_playerAny, RegionEntireMap(), UnitFilter(0, 0, (1 << c_targetFilterMissile), (1 << (c_targetFilterDead - 32)) | (1 << (c_targetFilterHidden - 32))), 0);
-    auto05715523_u = UnitGroupCount(auto05715523_g, c_unitCountAll);
-    for (;; auto05715523_u -= 1) {
-        auto05715523_var = UnitGroupUnitFromEnd(auto05715523_g, auto05715523_u);
-        if (auto05715523_var == null) { break; }
-        gv_buildingOtherExpenses[UnitGetOwner(auto05715523_var)][1] += 3000;
-        if ((gv_electricityConsumption[UnitGetOwner(auto05715523_var)][1] < gv_electricityIncome[UnitGetOwner(auto05715523_var)][1])) {
-            gv_researchSpeed[UnitGetOwner(auto05715523_var)] = 145;
-        }
-        else {
-            gv_researchSpeed[UnitGetOwner(auto05715523_var)] = 100;
-        }
-    }
-    autoFE4EE1EF_g = UnitGroup("ResearchComplexIV", c_playerAny, RegionEntireMap(), UnitFilter(0, 0, (1 << c_targetFilterMissile), (1 << (c_targetFilterDead - 32)) | (1 << (c_targetFilterHidden - 32))), 0);
-    autoFE4EE1EF_u = UnitGroupCount(autoFE4EE1EF_g, c_unitCountAll);
-    for (;; autoFE4EE1EF_u -= 1) {
-        autoFE4EE1EF_var = UnitGroupUnitFromEnd(autoFE4EE1EF_g, autoFE4EE1EF_u);
-        if (autoFE4EE1EF_var == null) { break; }
-        gv_buildingOtherExpenses[UnitGetOwner(autoFE4EE1EF_var)][1] += 4000;
-        if ((gv_electricityConsumption[UnitGetOwner(autoFE4EE1EF_var)][1] < gv_electricityIncome[UnitGetOwner(autoFE4EE1EF_var)][1])) {
-            gv_researchSpeed[UnitGetOwner(autoFE4EE1EF_var)] = 160;
-        }
-        else {
-            gv_researchSpeed[UnitGetOwner(autoFE4EE1EF_var)] = 100;
-        }
-    }
-    auto5B61D2A1_g = UnitGroup("ResearchComplexV", c_playerAny, RegionEntireMap(), UnitFilter(0, 0, (1 << c_targetFilterMissile), (1 << (c_targetFilterDead - 32)) | (1 << (c_targetFilterHidden - 32))), 0);
-    auto5B61D2A1_u = UnitGroupCount(auto5B61D2A1_g, c_unitCountAll);
-    for (;; auto5B61D2A1_u -= 1) {
-        auto5B61D2A1_var = UnitGroupUnitFromEnd(auto5B61D2A1_g, auto5B61D2A1_u);
-        if (auto5B61D2A1_var == null) { break; }
-        gv_buildingOtherExpenses[UnitGetOwner(auto5B61D2A1_var)][1] += 5000;
-        if ((gv_electricityConsumption[UnitGetOwner(auto5B61D2A1_var)][1] < gv_electricityIncome[UnitGetOwner(auto5B61D2A1_var)][1])) {
-            gv_researchSpeed[UnitGetOwner(auto5B61D2A1_var)] = 175;
-        }
-        else {
-            gv_researchSpeed[UnitGetOwner(auto5B61D2A1_var)] = 100;
-        }
-    }
-    auto332EFE5F_g = gv_users;
-    auto332EFE5F_var = -1;
-    while (true) {
-        auto332EFE5F_var = PlayerGroupNextPlayer(auto332EFE5F_g, auto332EFE5F_var);
-        if (auto332EFE5F_var < 0) { break; }
-        if ((lv_sCHOOL[auto332EFE5F_var] == true)) {
-            gv_researchSpeed[auto332EFE5F_var] += 5;
-            gv_buildingOtherExpenses[auto332EFE5F_var][1] += 25;
-        }
-
-        if ((lv_uNI[auto332EFE5F_var] == true)) {
-            gv_researchSpeed[auto332EFE5F_var] += 20;
-            gv_buildingOtherExpenses[auto332EFE5F_var][1] += 50;
-        }
-
-        gv_researchSpeed[auto332EFE5F_var] += 15;
     }
 }
 
@@ -15645,6 +15038,7 @@ void gf_FinalizeResourceValuesEUFoodRedistribution () {
             lv_redistribute = ((gv_foodIncome[auto718DE0D4_var][1] / 100) * gv_redistribution);
             gv_foodIncome[auto718DE0D4_var][1] -= lv_redistribute;
             gv_eURedistributeFoodStockpile += lv_redistribute;
+            gv_toEu[auto718DE0D4_var] = lv_redistribute;
         }
     }
 
@@ -15701,10 +15095,7 @@ void gf_FoodConsumptionStarvationPopulationCountNoOilMaxSupplyFoodDecay () {
             for (;; autoFF219ECF_u -= 1) {
                 autoFF219ECF_var = UnitGroupUnitFromEnd(autoFF219ECF_g, autoFF219ECF_u);
                 if (autoFF219ECF_var == null) { break; }
-                if ((PlayerGroupHasPlayer(gv_users, UnitGetOwner(autoFF219ECF_var)) == true)) {
-                    UnitBehaviorAdd(autoFF219ECF_var, "NoOil", autoFF219ECF_var, 1);
-                }
-
+                UnitBehaviorAdd(autoFF219ECF_var, "NoOil", autoFF219ECF_var, 1);
             }
         }
     }
@@ -15887,6 +15278,7 @@ void gf_SetAllowedDebtCreditRating () {
 
 void gf_UpdateUIGetMonthlyAveragesLedgerFigures () {
     // Variable Declarations
+    int lv_foodIncome;
     int lv_averageCivilianIncome;
     int lv_averageCorporateIncome;
     int lv_averageExportIncome;
@@ -15960,13 +15352,26 @@ void gf_UpdateUIGetMonthlyAveragesLedgerFigures () {
         auto7F25BD85_var = PlayerGroupNextPlayer(auto7F25BD85_g, auto7F25BD85_var);
         if (auto7F25BD85_var < 0) { break; }
         libNtve_gf_SetDialogItemText(gv_dialolgItems[0], (StringExternal("Param/Value/3E403834") + gf_MakeUIPresentable((gv_population[auto7F25BD85_var] * 100))), PlayerGroupSingle(auto7F25BD85_var));
+        lv_foodIncome = gv_farmIncome[auto7F25BD85_var];
+        lv_foodIncome += gv_fOOD_PURCHASED[auto7F25BD85_var];
+        lv_foodIncome += gv_foodFromMarkert[auto7F25BD85_var];
+        lv_foodIncome -= gv_foodConsumption[auto7F25BD85_var][1];
+        lv_foodIncome -= gv_foodDecayed[auto7F25BD85_var];
         if ((PlayerGroupHasPlayer(gv_theEuroCrew, auto7F25BD85_var) == true)) {
-            libNtve_gf_SetDialogItemText(gv_dialolgItems[1], (StringExternal("Param/Value/BC456D94") + gf_MakeUIPresentable((((gv_eURedistributeFoodStockpile / PlayerGroupCount(gv_theEuroCrew)) + (gv_foodIncome[auto7F25BD85_var][1] + gv_fOOD_PURCHASED[auto7F25BD85_var])) - (gv_foodConsumption[auto7F25BD85_var][1] + (0 + gv_foodDecayed[auto7F25BD85_var]))))), PlayerGroupSingle(auto7F25BD85_var));
-            libNtve_gf_SetDialogItemTooltip(gv_dialolgItems[1], (((StringExternal("Param/Value/B66CFC73") + gf_MakeUIPresentable(gv_foodIncome[auto7F25BD85_var][1])) + (StringExternal("Param/Value/8E93E5C4") + gf_MakeUIPresentable(gv_foodFromMarkert[auto7F25BD85_var]))) + (((StringExternal("Param/Value/CF12085E") + gf_MakeUIPresentable(gv_fOOD_PURCHASED[auto7F25BD85_var])) + StringExternal("Param/Value/CDAB86DF")) + (gf_MakeUIPresentable((gv_eURedistributeFoodStockpile / PlayerGroupCount(gv_theEuroCrew))) + (StringExternal("Param/Value/C7D637E2") + (gf_MakeUIPresentable((gv_foodConsumption[auto7F25BD85_var][1] + gv_foodFromMarkert[auto7F25BD85_var])) + (StringExternal("Param/Value/72D74931") + gf_MakeUIPresentable(gv_foodDecayed[auto7F25BD85_var]))))))), PlayerGroupSingle(auto7F25BD85_var));
+            lv_foodIncome -= gv_toEu[auto7F25BD85_var];
+            lv_foodIncome += (gv_eURedistributeFoodStockpile / PlayerGroupCount(gv_theEuroCrew));
+            libNtve_gf_SetDialogItemTooltip(gv_dialolgItems[1], (((StringExternal("Param/Value/C8006996") + gf_MakeUIPresentable(gv_farmIncome[auto7F25BD85_var])) + (StringExternal("Param/Value/82059651") + gf_MakeUIPresentable(gv_foodFromMarkert[auto7F25BD85_var]))) + (((StringExternal("Param/Value/7C89403E") + gf_MakeUIPresentable(gv_fOOD_PURCHASED[auto7F25BD85_var])) + StringExternal("Param/Value/EA0B8B43")) + (gf_MakeUIPresentable((gv_eURedistributeFoodStockpile / PlayerGroupCount(gv_theEuroCrew))) + (StringExternal("Param/Value/91ACBCE2") + (gf_MakeUIPresentable((gv_foodConsumption[auto7F25BD85_var][1] + gv_foodFromMarkert[auto7F25BD85_var])) + ((StringExternal("Param/Value/9E723F51") + gf_MakeUIPresentable(gv_toEu[auto7F25BD85_var])) + (StringExternal("Param/Value/9731E620") + gf_MakeUIPresentable(0)))))))), PlayerGroupSingle(auto7F25BD85_var));
         }
         else {
-            libNtve_gf_SetDialogItemText(gv_dialolgItems[1], (StringExternal("Param/Value/8DDE72B3") + gf_MakeUIPresentable(((0 + (gv_foodIncome[auto7F25BD85_var][1] + gv_fOOD_PURCHASED[auto7F25BD85_var])) - (gv_foodConsumption[auto7F25BD85_var][1] + (0 + gv_foodDecayed[auto7F25BD85_var]))))), PlayerGroupSingle(auto7F25BD85_var));
-            libNtve_gf_SetDialogItemTooltip(gv_dialolgItems[1], (((StringExternal("Param/Value/73ADBDAE") + gf_MakeUIPresentable(gv_foodIncome[auto7F25BD85_var][1])) + (StringExternal("Param/Value/26D715F2") + gf_MakeUIPresentable(gv_foodFromMarkert[auto7F25BD85_var]))) + (((StringExternal("Param/Value/F1835544") + gf_MakeUIPresentable(gv_fOOD_PURCHASED[auto7F25BD85_var])) + StringToText("")) + (StringToText("") + (StringExternal("Param/Value/DD637E68") + (gf_MakeUIPresentable((gv_foodConsumption[auto7F25BD85_var][1] + gv_foodFromMarkert[auto7F25BD85_var])) + (StringExternal("Param/Value/B6FAEDCE") + gf_MakeUIPresentable(gv_foodDecayed[auto7F25BD85_var]))))))), PlayerGroupSingle(auto7F25BD85_var));
+            libNtve_gf_SetDialogItemTooltip(gv_dialolgItems[1], (((StringExternal("Param/Value/73ADBDAE") + gf_MakeUIPresentable(gv_farmIncome[auto7F25BD85_var])) + (StringExternal("Param/Value/26D715F2") + gf_MakeUIPresentable(gv_foodFromMarkert[auto7F25BD85_var]))) + (((StringExternal("Param/Value/F1835544") + gf_MakeUIPresentable(gv_fOOD_PURCHASED[auto7F25BD85_var])) + StringToText("")) + (StringToText("") + (StringExternal("Param/Value/DD637E68") + (gf_MakeUIPresentable((gv_foodConsumption[auto7F25BD85_var][1] + gv_foodFromMarkert[auto7F25BD85_var])) + (StringExternal("Param/Value/B6FAEDCE") + gf_MakeUIPresentable(gv_foodDecayed[auto7F25BD85_var]))))))), PlayerGroupSingle(auto7F25BD85_var));
+        }
+        libNtve_gf_SetDialogItemText(gv_dialolgItems[1], (StringExternal("Param/Value/B31D6D50") + gf_MakeUIPresentable(lv_foodIncome)), PlayerGroupSingle(auto7F25BD85_var));
+        lv_foodIncome += gv_foodDecayed[auto7F25BD85_var];
+        if ((lv_foodIncome >= 0)) {
+            libNtve_gf_SetDialogItemColor(gv_dialolgItems[1], Color(83.53, 83.53, 0.00), PlayerGroupSingle(auto7F25BD85_var));
+        }
+        else {
+            libNtve_gf_SetDialogItemColor(gv_dialolgItems[1], Color(81.96, 47.84, 1.18), PlayerGroupSingle(auto7F25BD85_var));
         }
         libNtve_gf_SetDialogItemText(gv_dialolgItems[2], (StringExternal("Param/Value/5EAB1783") + gf_MakeUIPresentable(gv_food[auto7F25BD85_var])), PlayerGroupSingle(auto7F25BD85_var));
         libNtve_gf_SetDialogItemText(gv_dialolgItems[3], (StringExternal("Param/Value/ABFB3DCA") + gf_MakeUIPresentable(gv_totalBalance[auto7F25BD85_var][1])), PlayerGroupSingle(auto7F25BD85_var));
@@ -16246,20 +15651,20 @@ void gf_BuyResources (int lp_player, int lp_quantity, int lp_maxPerUnit, int lp_
             for ( ; ( (auto9D856394_ai >= 0 && lv_purchaseFoodFromIndex <= auto9D856394_ae) || (auto9D856394_ai < 0 && lv_purchaseFoodFromIndex >= auto9D856394_ae) ) ; lv_purchaseFoodFromIndex += auto9D856394_ai ) {
                 lv_foodPlayer = gv_cheapestFoodArrayPlayer[lp_player][lv_purchaseFoodFromIndex];
                 lv_cheapestResourceCost = gv_cheapestFoodArrayPrice[lp_player][lv_purchaseFoodFromIndex];
-                if ((lv_cheapestResourceFuelCost < 1000000000) && (lp_quantity > 0) && (gv_foodStockpile[lv_purchaseFoodFromIndex] > 0) && (lv_absoluteCost <= lv_maximumBudget)) {
+                if ((lv_cheapestResourceCost < 1000000000) && ((lv_cheapestResourceCost / 1000) <= lp_maxPerUnit) && (lp_quantity > 0) && (gv_foodStockpile[lv_purchaseFoodFromIndex] > 0) && (lv_absoluteCost <= lv_maximumBudget)) {
                     lv_quantityToFill = libNtve_gf_ArithmeticIntClamp(lp_quantity, 0, gv_foodStockpile[lv_purchaseFoodFromIndex]);
-                    lv_quantityToFill = libNtve_gf_ArithmeticIntClamp(lp_quantity, 0, FixedToInt(((IntToFixed(lv_quantityToFill) / IntToFixed(lv_cheapestResourceCost)) / 1000.0)));
+                    lv_quantityToFill = libNtve_gf_ArithmeticIntClamp(lp_quantity, 0, ((lv_maximumBudget - lv_absoluteCost) / (lv_cheapestResourceCost / 1000)));
                     lp_quantity -= lv_quantityToFill;
                     gv_foodStockpile[lv_purchaseFoodFromIndex] -= lv_quantityToFill;
                     lv_totalFilled += lv_quantityToFill;
                     lv_totalResoureCosts += (lv_quantityToFill * gv_foodPrice);
                     lv_totalLostToTariffs += gf_CollectTariffs(lv_foodPlayer, lp_player, gv_foodPrice, lv_quantityToFill);
                     lv_totalFuelCosts += gf_GetFuelCostsMonetary(lp_player, gf_GetCapitolLocation(lp_player), gf_GetCapitolLocation(lv_foodPlayer), true);
+                    lv_absoluteCost = (lv_totalResoureCosts + (lv_totalFuelCosts + (lv_totalLostToTariffs + lv_absoluteCost)));
                     gf_CreateConvoy(gf_GetCapitolLocation(lp_player), lp_player, lp_como, lv_quantityToFill, lv_foodPlayer, lp_player);
                 }
 
             }
-            lv_absoluteCost = (lv_totalResoureCosts + (lv_totalFuelCosts + lv_totalLostToTariffs));
             gv_importExpenses[lp_player][2][lp_como] += lv_totalAbsoluteCost;
             gv_fOOD_PURCHASED[lp_player] += lv_totalFilled;
             if ((lp_automaticOrder == true)) {
@@ -16691,7 +16096,7 @@ int gf_GetFuelCostsOil (int lp_player, point lp_start, point lp_end) {
     // Variable Initialization
 
     // Implementation
-    lv_fuelRequired = (FixedToInt(DistanceBetweenPoints(lp_start, lp_end)) / 15);
+    lv_fuelRequired = (FixedToInt(DistanceBetweenPoints(lp_start, lp_end)) / 30);
     if ((TechTreeUpgradeCount(lp_player, "SelfPoweredTanks", c_techCountCompleteOnly) == 1)) {
         lv_fuelRequired /= 2;
     }
@@ -17911,8 +17316,10 @@ void gf_RussianMultiplierUpdate () {
     else {
         gv_rTechnologyMultiplier += 20;
     }
-    gv_rProductionMultiplier = FixedToInt((((libNtve_gf_Log(IntToFixed(gv_rProductionMultiplier), 4.0) * IntToFixed(gv_arisAIDifficulty)) - Log2(IntToFixed(gv_rProductionMultiplier))) / 2.0));
-    gv_rTechnologyMultiplier = FixedToInt((((libNtve_gf_Log(IntToFixed(gv_rTechnologyMultiplier), 4.0) * IntToFixed(gv_arisAIDifficulty)) - Log2(IntToFixed(gv_rTechnologyMultiplier))) / 2.0));
+    gv_rProductionMultiplier = FixedToInt((gv_arisAIDifficulty + (libNtve_gf_Log(gv_rProductionMultiplier, 4.0) - (libNtve_gf_Log(gv_rProductionMultiplier, 10.0) / 2.0))));
+    gv_rTechnologyMultiplier = FixedToInt((gv_arisAIDifficulty + (libNtve_gf_Log(gv_rTechnologyMultiplier, 4.0) - (libNtve_gf_Log(gv_rProductionMultiplier, 10.0) / 2.0))));
+    gv_rTechnologyMultiplier -= 5;
+    gv_rProductionMultiplier -= 5;
 }
 
 void gf_RussianResourceCalculate () {
@@ -36449,11 +35856,11 @@ bool gt_SetResearchCostsResearchList_Func (bool testConds, bool runActions) {
     gv_researchName[lv_iDontWantToCountToday] = "Settlers";
     lv_iDontWantToCountToday += 1;
     gv_researchCost[lv_iDontWantToCountToday] = 200;
-    gv_researchTime[lv_iDontWantToCountToday] = 6;
+    gv_researchTime[lv_iDontWantToCountToday] = 3;
     gv_researchName[lv_iDontWantToCountToday] = "Administrative Hierarchy";
     lv_iDontWantToCountToday += 1;
     gv_researchCost[lv_iDontWantToCountToday] = 300;
-    gv_researchTime[lv_iDontWantToCountToday] = 6;
+    gv_researchTime[lv_iDontWantToCountToday] = 3;
     gv_researchName[lv_iDontWantToCountToday] = "Urban Planning";
     lv_iDontWantToCountToday += 1;
     gv_researchCost[lv_iDontWantToCountToday] = 300;
@@ -38058,7 +37465,7 @@ bool gt_SetHostiles_Func (bool testConds, bool runActions) {
     for (;; autoE436C3CB_u -= 1) {
         autoE436C3CB_var = UnitGroupUnitFromEnd(autoE436C3CB_g, autoE436C3CB_u);
         if (autoE436C3CB_var == null) { break; }
-        if (((libNtve_gf_PlayerIsEnemy(11, UnitGetOwner(autoE436C3CB_var), libNtve_ge_PlayerRelation_Enemy) == true) || (libNtve_gf_PlayerIsEnemy(10, UnitGetOwner(autoE436C3CB_var), libNtve_ge_PlayerRelation_Enemy) == true)) && (libNtve_gf_UnitInRegion(autoE436C3CB_var, RegionFromId(47)) == false) && (libNtve_gf_UnitInRegion(autoE436C3CB_var, RegionFromId(39)) == false) && (libNtve_gf_UnitInRegion(autoE436C3CB_var, RegionFromId(34)) == false) && (UnitGetType(autoE436C3CB_var) != "ViperFighter") && (UnitGetType(autoE436C3CB_var) != "ApolloBomber") && (UnitGetType(autoE436C3CB_var) != "AstrosInterceptor") && (UnitGetType(autoE436C3CB_var) != "CourierTH") && (UnitGetType(autoE436C3CB_var) != "JavelinAH") && (UnitGetType(autoE436C3CB_var) != "ScorcherBomber") && (UnitGetType(autoE436C3CB_var) != "StrikerAH")) {
+        if (((libNtve_gf_PlayerIsEnemy(11, UnitGetOwner(autoE436C3CB_var), libNtve_ge_PlayerRelation_Enemy) == true) || (libNtve_gf_PlayerIsEnemy(10, UnitGetOwner(autoE436C3CB_var), libNtve_ge_PlayerRelation_Enemy) == true)) && (libNtve_gf_UnitInRegion(autoE436C3CB_var, RegionFromId(201)) == false) && (libNtve_gf_UnitInRegion(autoE436C3CB_var, RegionFromId(47)) == false) && (libNtve_gf_UnitInRegion(autoE436C3CB_var, RegionFromId(39)) == false) && (libNtve_gf_UnitInRegion(autoE436C3CB_var, RegionFromId(34)) == false) && (UnitGetType(autoE436C3CB_var) != "ViperFighter") && (UnitGetType(autoE436C3CB_var) != "ApolloBomber") && (UnitGetType(autoE436C3CB_var) != "AstrosInterceptor") && (UnitGetType(autoE436C3CB_var) != "CourierTH") && (UnitGetType(autoE436C3CB_var) != "JavelinAH") && (UnitGetType(autoE436C3CB_var) != "ScorcherBomber") && (UnitGetType(autoE436C3CB_var) != "StrikerAH")) {
             if ((libNtve_gf_PlayerIsEnemy(11, UnitGetOwner(autoE436C3CB_var), libNtve_ge_PlayerRelation_Enemy) == true)) {
                 UnitGroupAdd(gv_hOSTILES[0], autoE436C3CB_var);
             }
@@ -38076,7 +37483,7 @@ bool gt_SetHostiles_Func (bool testConds, bool runActions) {
 //--------------------------------------------------------------------------------------------------
 void gt_SetHostiles_Init () {
     gt_SetHostiles = TriggerCreate("gt_SetHostiles_Func");
-    TriggerAddEventTimePeriodic(gt_SetHostiles, 20.0, c_timeGame);
+    TriggerAddEventTimePeriodic(gt_SetHostiles, 60.0, c_timeGame);
 }
 
 //--------------------------------------------------------------------------------------------------
@@ -38798,49 +38205,6 @@ void gt_Youhavetakenoutloans_Init () {
 }
 
 //--------------------------------------------------------------------------------------------------
-// Trigger: Low Centralization
-//--------------------------------------------------------------------------------------------------
-bool gt_LowCentralization_Func (bool testConds, bool runActions) {
-    // Automatic Variable Declarations
-    playergroup auto1CA0BA79_g;
-    int auto1CA0BA79_var;
-    unitgroup auto7BAA13D8_g;
-    int auto7BAA13D8_u;
-    unit auto7BAA13D8_var;
-
-    // Actions
-    if (!runActions) {
-        return true;
-    }
-
-    auto1CA0BA79_g = gv_users;
-    auto1CA0BA79_var = -1;
-    while (true) {
-        auto1CA0BA79_var = PlayerGroupNextPlayer(auto1CA0BA79_g, auto1CA0BA79_var);
-        if (auto1CA0BA79_var < 0) { break; }
-        gf_RemoveBanner(auto1CA0BA79_var, 20);
-    }
-    auto7BAA13D8_g = UnitGroup(null, c_playerAny, RegionEntireMap(), UnitFilter((1 << c_targetFilterStructure), 0, (1 << c_targetFilterMissile), (1 << (c_targetFilterDead - 32)) | (1 << (c_targetFilterHidden - 32))), 0);
-    auto7BAA13D8_u = UnitGroupCount(auto7BAA13D8_g, c_unitCountAll);
-    for (;; auto7BAA13D8_u -= 1) {
-        auto7BAA13D8_var = UnitGroupUnitFromEnd(auto7BAA13D8_g, auto7BAA13D8_u);
-        if (auto7BAA13D8_var == null) { break; }
-        if ((UnitGetCustomValue(auto7BAA13D8_var, 0) < 0.4) && (UnitGetCustomValue(auto7BAA13D8_var, 0) > 0.0)) {
-            gf_CreateBanner(UnitGetOwner(auto7BAA13D8_var), 20);
-        }
-
-        Wait(0.02, c_timeGame);
-    }
-    return true;
-}
-
-//--------------------------------------------------------------------------------------------------
-void gt_LowCentralization_Init () {
-    gt_LowCentralization = TriggerCreate("gt_LowCentralization_Func");
-    TriggerAddEventTimePeriodic(gt_LowCentralization, 65.0, c_timeGame);
-}
-
-//--------------------------------------------------------------------------------------------------
 // Trigger: You are at war/FoundEU/IncreaseWarStatus/DecreaseWarStatus
 //--------------------------------------------------------------------------------------------------
 bool gt_YouareatwarFoundEUIncreaseWarStatusDecreaseWarStatus_Func (bool testConds, bool runActions) {
@@ -39507,6 +38871,10 @@ bool gt_BannerUse_Func (bool testConds, bool runActions) {
     }
 
     if (((lv_usedBannerID == 31))) {
+    }
+
+    if ((gv_foodStockpile[UnitGetOwner(EventUnit())] < 250)) {
+        gv_foodStockpile[UnitGetOwner(EventUnit())] = 250;
     }
 
     return true;
@@ -40888,7 +40256,6 @@ void InitTriggers () {
     gt_ResearchingDangerousTech_Init();
     gt_YouShouldMechanizeyourCountry_Init();
     gt_Youhavetakenoutloans_Init();
-    gt_LowCentralization_Init();
     gt_YouareatwarFoundEUIncreaseWarStatusDecreaseWarStatus_Init();
     gt_BannerApplication_Init();
     gt_BannerCreation_Init();

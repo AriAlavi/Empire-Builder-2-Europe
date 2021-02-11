@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <DocInfo>
     <Icon>
-        <Value>Military\Music\GameScreens\v2\GameScreens\DoomedEuropeIcon.jpg</Value>
+        <Value>Military\DoomedEurope3.jpg</Value>
     </Icon>
     <Dependencies>
         <Value>bnet:Swarm (Mod)/0.0/999,file:Mods/Swarm.SC2Mod</Value>
@@ -395,6 +395,10 @@
             <Value>3.33</Value>
             <Value>3.34</Value>
             <Value>3.35</Value>
+            <Value>3.36</Value>
+            <Value>3.37</Value>
+            <Value>3.39</Value>
+            <Value>3.40</Value>
         </Version>
         <Date>
             <Value>7/18/2016</Value>
@@ -755,6 +759,10 @@
             <Value>9/14/2019</Value>
             <Value>9/20/2019</Value>
             <Value>2/7/2021</Value>
+            <Value>2/7/2021</Value>
+            <Value>2/10/2021</Value>
+            <Value>2/10/2021</Value>
+            <Value>2/10/2021</Value>
         </Date>
         <Notes>
             <Value>1,52</Value>
@@ -1115,6 +1123,10 @@
             <Value>2041,2042,2043,2044,2045</Value>
             <Value>2046,2047,2048,2049,2050,2051,2052,2053,2054,2055,2056,2057,2058,2059,2060,2061,2062,2063,2064,2065,2066,2067,2068,2069,2070</Value>
             <Value>2071,2072,2073,2074,2075,2076,2077,2078,2079,2080,2081,2082,2083,2084,2085,2086,2087,2088,2089,2090,2091,2092</Value>
+            <Value>2093</Value>
+            <Value>2094</Value>
+            <Value>2095</Value>
+            <Value>2096,2097,2098,2099,2100,2101,2102,2103,2104,2105,2106,2107</Value>
         </Notes>
     </PatchNote>
 </DocInfo>

@@ -214,7 +214,7 @@
         <NodeArray index="Use" Link="CountUnitArmouryCompleteOnly"/>
     </CRequirement>
     <CRequirement id="HaveElectricity">
-        <NodeArray index="Use" Link="And3897983982OrCountUnitWindTurbineCompleteOnlyCountUnitFissionPowerPlantCompleteOnlyCountUnitFusionReactor2CompleteOnlyCountUnitGeothermalPowerPlantCompleteOnlyCountUnitRefineryPipesCompleteOnly"/>
+        <NodeArray index="Use" Link="And3897983982OrCountUnitWindTurbineCompleteOnlyCountUnitFissionPowerPlantCompleteOnlyCountUnitFusionReactor2CompleteOnlyCountUnitGeothermalPowerPlantCompleteOnlyCountUnitOilPowerPlantCompleteOnly"/>
     </CRequirement>
     <CRequirement id="HaveSchool">
         <NodeArray index="Use" Link="CountUnitSchoolCompleteOnly"/>
