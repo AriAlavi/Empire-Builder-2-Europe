@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="us-ascii"?>
+<Catalog>
+    <CTurret id="AutoTurret2" parent="FreeRotate">
+        <Idle value="Spin"/>
+        <YawIdleRate value="-45"/>
+    </CTurret>
+    <CTurret id="Goliath">
+        <YawArc value="360"/>
+        <YawRate value="90"/>
+    </CTurret>
+    <CTurret id="Hellion">
+        <Idle value="FollowMovement"/>
+        <YawRate value="249.961"/>
+    </CTurret>
+    <CTurret id="MissileTurret2" parent="FreeRotate">
+        <Idle value="Spin"/>
+        <YawIdleRate value="45"/>
+    </CTurret>
+    <CTurret id="SiegeTank">
+        <Idle value="FollowMovement"/>
+        <YawRate value="90"/>
+    </CTurret>
+    <CTurret id="SiegeTank2" parent="FreeRotate">
+        <Idle value="FollowMovement"/>
+        <YawRate value="90"/>
+    </CTurret>
+    <CTurret id="SiegeTankSieged">
+        <YawRate value="180"/>
+    </CTurret>
+    <CTurret id="SiegeTankSieged2" parent="FreeRotate">
+        <YawStart value="-180"/>
+        <YawRate value="180"/>
+    </CTurret>
+    <CTurret id="UASAATurret">
+        <Idle value="Spin"/>
+        <YawArc value="360"/>
+        <YawRate value="360"/>
+        <YawIdleRate value="45"/>
+    </CTurret>
+    <CTurret id="VLTurret">
+        <Idle value="FollowMovement"/>
+        <YawArc value="360"/>
+        <YawRate value="180"/>
+    </CTurret>
+    <CTurret id="VLTurret2">
+        <Idle value="FollowMovement"/>
+        <YawArc value="360"/>
+        <YawRate value="180"/>
+    </CTurret>
+</Catalog>

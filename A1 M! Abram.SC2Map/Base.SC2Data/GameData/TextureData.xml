@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="us-ascii"?>
+<Catalog>
+    <CTexture id="EUBackground">
+        <File value="Assets\Textures\EU.tga"/>
+    </CTexture>
+    <CTexture id="agria_crops_low">
+        <Slot value="main.diffuse"/>
+    </CTexture>
+    <CTexture id="armory_diffuse">
+        <Slot value="main.diffuse"/>
+    </CTexture>
+    <CTexture id="armory_diffuse2">
+        <File value="Assets\Textures\aiurex1_cliff1_diffuse.dds"/>
+        <Slot value="main.diffuse"/>
+    </CTexture>
+    <CTexture id="armory_emissive">
+        <Slot value="main.emissive"/>
+    </CTexture>
+    <CTexture id="autoturret_diffuse">
+        <Slot value="main.diffuse"/>
+    </CTexture>
+    <CTexture id="battlecruiser_emissive">
+        <Slot value="main.emissive"/>
+    </CTexture>
+    <CTexture id="battlecruiser_emissive2">
+        <File value="Assets\Textures\aiurchefmeatrack_emissive.dds"/>
+        <Slot value="main.emissive"/>
+    </CTexture>
+    <CTexture id="bunker_diffuse">
+        <Slot value="main.diffuse"/>
+    </CTexture>
+    <CTexture id="cybercat_diffuse">
+        <Slot value="main.diffuse"/>
+    </CTexture>
+    <CTexture id="carrierhero_diffuse">
+        <Slot value="main.diffuse"/>
+    </CTexture>
+    <CTexture id="carrier_diffuse">
+        <Slot value="main.diffuse"/>
+    </CTexture>
+    <CTexture id="commandcenter_emissive">
+        <Slot value="main.emissive"/>
+    </CTexture>
+    <CTexture id="diamondback_diffuse">
+        <Slot value="main.diffuse"/>
+    </CTexture>
+    <CTexture id="firebat_diffuse">
+        <Slot value="main.diffuse"/>
+    </CTexture>
+    <CTexture id="marine_diffuse">
+        <Slot value="main.diffuse"/>
+    </CTexture>
+    <CTexture id="probe_diffuse">
+        <Slot value="main.diffuse"/>
+    </CTexture>
+    <CTexture id="refinery_diffuse">
+        <Slot value="main.diffuse"/>
+    </CTexture>
+    <CTexture id="refinery_emissive">
+        <Slot value="main.emissive"/>
+    </CTexture>
+    <CTexture id="sentry_emissive">
+        <Slot value="main.emissive"/>
+    </CTexture>
+    <CTexture id="carrier_emissive">
+        <Slot value="main.emissive"/>
+    </CTexture>
+    <CTexture id="urunportrait_emissive">
+        <Slot value="main.emissive"/>
+    </CTexture>
+    <CTexture id="voidray_emissive">
+        <Slot value="main.emissive"/>
+    </CTexture>
+</Catalog>

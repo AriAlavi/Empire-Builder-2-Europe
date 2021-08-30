@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="us-ascii"?>
+<Catalog>
+    <CTerrain id="BelShir">
+        <Lighting value="Day"/>
+        <BlendTextures index="1" value="BelShirGrassLight"/>
+        <BlendTextures index="2" value="BelShirSmallTiles"/>
+        <BlendTextures index="3" value="BelShirBricksSmall"/>
+        <BlendTextures index="4" value="BelShirBricksLarge"/>
+        <BlendTextures index="5" value="HavenGrassRocky"/>
+        <BlendTextures index="6" value="MeinhoffSandDunes"/>
+        <BlendTextures index="7" value="TarsonisGrass"/>
+    </CTerrain>
+    <CTerrain id="Endion">
+        <BlendTextures index="2" value="Endion5"/>
+        <BlendTextures index="3" value="Endion8"/>
+        <BlendTextures index="4" value="MarSaraDirt"/>
+        <BlendTextures index="5" value="IceWorld1"/>
+        <BlendTextures index="6" value="AgriaGrassYellow"/>
+        <BlendTextures index="7" value="DesertWorld7"/>
+    </CTerrain>
+    <CTerrain id="IceWorld">
+        <Lighting value="AgriaSunset"/>
+        <BlendTextures index="1" value="IceWorld3"/>
+        <BlendTextures index="2" value="IceWorld4"/>
+        <BlendTextures index="3" value="IceWorld5"/>
+        <BlendTextures index="4" value="IceWorld6"/>
+        <BlendTextures index="5" value="IceWorld7"/>
+        <BlendTextures index="6" value="HavenGrassDark"/>
+        <BlendTextures index="7" value="HavenRockRough"/>
+    </CTerrain>
+</Catalog>

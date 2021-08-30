@@ -1,0 +1,1346 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Catalog>
+    <CRequirementAnd id="And"/>
+    <CRequirementAnd id="And3897983982OrCountUnitWindTurbineCompleteOnlyCountUnitFissionPowerPlantCompleteOnlyCountUnitFusionReactor2CompleteOnlyCountUnitGeothermalPowerPlantCompleteOnlyCountUnitOilPowerPlantCompleteOnly">
+        <OperandArray value="OrCountUnitWindTurbineCompleteOnlyCountUnitFissionPowerPlantCompleteOnlyCountUnitFusionReactor2CompleteOnlyCountUnitGeothermalPowerPlantCompleteOnlyCountUnitOilPowerPlantCompleteOnly"/>
+    </CRequirementAnd>
+    <CRequirementAnd id="AndAnd">
+        <OperandArray value="And"/>
+    </CRequirementAnd>
+    <CRequirementAnd id="AndCountUnitClinicCompleteOnlyNotCountUnitUniversityQueuedOrBetter">
+        <Tooltip value=""/>
+        <OperandArray value="CountUnitClinicCompleteOnly"/>
+        <OperandArray value="NotCountUnitUniversityQueuedOrBetter"/>
+    </CRequirementAnd>
+    <CRequirementAnd id="AndCountUpgradeSubjugatedCompleteOnly">
+        <OperandArray value="CountUpgradeSubjugatedCompleteOnly"/>
+    </CRequirementAnd>
+    <CRequirementAnd id="AndEqCountUpgradeAircraftArmourUPQueuedOnly0EqCountUpgradeAircraftArmourUPInProgressOnly0">
+        <Tooltip value=""/>
+        <OperandArray value="EqCountUpgradeAircraftArmourUPQueuedOnly0"/>
+        <OperandArray value="EqCountUpgradeAircraftArmourUPInProgressOnly0"/>
+    </CRequirementAnd>
+    <CRequirementAnd id="AndEqCountUpgradeAircraftDamageUPQueuedOnly0EqCountUpgradeAircraftDamageUPInProgressOnly0">
+        <Tooltip value=""/>
+        <OperandArray value="EqCountUpgradeAircraftDamageUPQueuedOnly0"/>
+        <OperandArray value="EqCountUpgradeAircraftDamageUPInProgressOnly0"/>
+    </CRequirementAnd>
+    <CRequirementAnd id="AndEqCountUpgradeAppliedScienceQueuedOnly0EqCountUpgradeAppliedScienceInProgressOnly0">
+        <Tooltip value=""/>
+        <OperandArray value="EqCountUpgradeAppliedScienceQueuedOnly0"/>
+        <OperandArray value="EqCountUpgradeAppliedScienceInProgressOnly0"/>
+    </CRequirementAnd>
+    <CRequirementAnd id="AndEqCountUpgradeImprovedFarmingQueuedOnly0EqCountUpgradeImprovedFarmingInProgressOnly0">
+        <Tooltip value=""/>
+        <OperandArray value="EqCountUpgradeImprovedFarmingQueuedOnly0"/>
+        <OperandArray value="EqCountUpgradeImprovedFarmingInProgressOnly0"/>
+    </CRequirementAnd>
+    <CRequirementAnd id="AndEqCountUpgradeImprovedMiningQueuedOnly0EqCountUpgradeImprovedMiningInProgressOnly0">
+        <Tooltip value=""/>
+        <OperandArray value="EqCountUpgradeImprovedMiningQueuedOnly0"/>
+        <OperandArray value="EqCountUpgradeImprovedMiningInProgressOnly0"/>
+    </CRequirementAnd>
+    <CRequirementAnd id="AndEqCountUpgradeImprovedRefiningQueuedOnly0EqCountUpgradeImprovedRefiningInProgressOnly0">
+        <Tooltip value=""/>
+        <OperandArray value="EqCountUpgradeImprovedRefiningQueuedOnly0"/>
+        <OperandArray value="EqCountUpgradeImprovedRefiningInProgressOnly0"/>
+    </CRequirementAnd>
+    <CRequirementAnd id="AndEqCountUpgradeImprovedTurbinesQueuedOnly0EqCountUpgradeImprovedTurbinesInProgressOnly0">
+        <Tooltip value=""/>
+        <OperandArray value="EqCountUpgradeImprovedTurbinesQueuedOnly0"/>
+        <OperandArray value="EqCountUpgradeImprovedTurbinesInProgressOnly0"/>
+    </CRequirementAnd>
+    <CRequirementAnd id="AndEqCountUpgradeInfantryArmourUPQueuedOnly0EqCountUpgradeInfantryArmourUPInProgressOnly0">
+        <Tooltip value=""/>
+        <OperandArray value="EqCountUpgradeInfantryArmourUPQueuedOnly0"/>
+        <OperandArray value="EqCountUpgradeInfantryArmourUPInProgressOnly0"/>
+    </CRequirementAnd>
+    <CRequirementAnd id="AndEqCountUpgradeInfantryDamageUPQueuedOnly0EqCountUpgradeInfantryDamageUPInProgressOnly0">
+        <Tooltip value=""/>
+        <OperandArray value="EqCountUpgradeInfantryDamageUPQueuedOnly0"/>
+        <OperandArray value="EqCountUpgradeInfantryDamageUPInProgressOnly0"/>
+    </CRequirementAnd>
+    <CRequirementAnd id="AndEqCountUpgradeProductionSpeedQueuedOnly0EqCountUpgradeProductionSpeedInProgressOnly0">
+        <Tooltip value=""/>
+        <OperandArray value="EqCountUpgradeProductionSpeedQueuedOnly0"/>
+        <OperandArray value="EqCountUpgradeProductionSpeedInProgressOnly0"/>
+    </CRequirementAnd>
+    <CRequirementAnd id="AndEqCountUpgradeProtossUnitAttackSpeedQueuedOnly0EqCountUpgradeProtossUnitAttackSpeedInProgressOnly0">
+        <Tooltip value=""/>
+        <OperandArray value="EqCountUpgradeProtossUnitAttackSpeedQueuedOnly0"/>
+        <OperandArray value="EqCountUpgradeProtossUnitAttackSpeedInProgressOnly0"/>
+    </CRequirementAnd>
+    <CRequirementAnd id="AndEqCountUpgradeProtossUnitHPQueuedOnly0EqCountUpgradeProtossUnitHPInProgressOnly0">
+        <Tooltip value=""/>
+        <OperandArray value="EqCountUpgradeProtossUnitHPQueuedOnly0"/>
+        <OperandArray value="EqCountUpgradeProtossUnitHPInProgressOnly0"/>
+    </CRequirementAnd>
+    <CRequirementAnd id="AndEqCountUpgradeProtossUnitSpeedQueuedOnly0EqCountUpgradeProtossUnitSpeedInProgressOnly0">
+        <Tooltip value=""/>
+        <OperandArray value="EqCountUpgradeProtossUnitSpeedQueuedOnly0"/>
+        <OperandArray value="EqCountUpgradeProtossUnitSpeedInProgressOnly0"/>
+    </CRequirementAnd>
+    <CRequirementAnd id="AndEqCountUpgradeVehicleArmourUPQueuedOnly0EqCountUpgradeVehicleArmourUPInProgressOnly0">
+        <Tooltip value=""/>
+        <OperandArray value="EqCountUpgradeVehicleArmourUPQueuedOnly0"/>
+        <OperandArray value="EqCountUpgradeVehicleArmourUPInProgressOnly0"/>
+    </CRequirementAnd>
+    <CRequirementAnd id="AndEqCountUpgradeVehicleAttackSpeedQueuedOnly0EqCountUpgradeVehicleAttackSpeedInProgressOnly0">
+        <Tooltip value=""/>
+        <OperandArray value="EqCountUpgradeVehicleAttackSpeedQueuedOnly0"/>
+        <OperandArray value="EqCountUpgradeVehicleAttackSpeedInProgressOnly0"/>
+    </CRequirementAnd>
+    <CRequirementAnd id="AndEqCountUpgradeVehicleDamageUPQueuedOnly0EqCountUpgradeVehicleDamageUPInProgressOnly0">
+        <Tooltip value=""/>
+        <OperandArray value="EqCountUpgradeVehicleDamageUPQueuedOnly0"/>
+        <OperandArray value="EqCountUpgradeVehicleDamageUPInProgressOnly0"/>
+    </CRequirementAnd>
+    <CRequirementAnd id="AndEqCountUpgradeVehicleHPQueuedOnly0EqCountUpgradeVehicleHPInProgressOnly0">
+        <Tooltip value=""/>
+        <OperandArray value="EqCountUpgradeVehicleHPQueuedOnly0"/>
+        <OperandArray value="EqCountUpgradeVehicleHPInProgressOnly0"/>
+    </CRequirementAnd>
+    <CRequirementAnd id="AndEqCountUpgradeVehicleSpeedQueuedOnly0EqCountUpgradeVehicleSpeedInProgressOnly0">
+        <Tooltip value=""/>
+        <OperandArray value="EqCountUpgradeVehicleSpeedQueuedOnly0"/>
+        <OperandArray value="EqCountUpgradeVehicleSpeedInProgressOnly0"/>
+    </CRequirementAnd>
+    <CRequirementAnd id="AndNotCountUnitEnvoyQueuedOrBetter1391228021">
+        <OperandArray value="NotCountUnitEnvoyQueuedOrBetter1391228021"/>
+    </CRequirementAnd>
+    <CRequirementCountUnit id="CountUnitArmouryCompleteOnly">
+        <Flags index="TechTreeCheat" value="0"/>
+        <Tooltip value=""/>
+        <Count Link="Armoury" State="CompleteOnly"/>
+    </CRequirementCountUnit>
+    <CRequirementCountUnit id="CountUnitClinicCompleteOnly">
+        <Flags index="TechTreeCheat" value="0"/>
+        <Tooltip value=""/>
+        <Count Link="Clinic" State="CompleteOnly"/>
+    </CRequirementCountUnit>
+    <CRequirementCountUnit id="CountUnitDataCoreQueuedOrBetter1667244463">
+        <Flags index="TechTreeCheat" value="0"/>
+        <Count Link="DataCore" State="QueuedOrBetter"/>
+    </CRequirementCountUnit>
+    <CRequirementCountUnit id="CountUnitEnvoyQueuedOrBetter1391228021">
+        <Flags index="TechTreeCheat" value="0"/>
+        <Count Link="Envoy" State="QueuedOrBetter"/>
+    </CRequirementCountUnit>
+    <CRequirementCountUnit id="CountUnitFissionPowerPlantCompleteOnly">
+        <Flags index="TechTreeCheat" value="0"/>
+        <Tooltip value=""/>
+        <Count Link="FissionPowerPlant" State="CompleteOnly"/>
+    </CRequirementCountUnit>
+    <CRequirementCountUnit id="CountUnitFusionReactor2CompleteOnly">
+        <Flags index="TechTreeCheat" value="0"/>
+        <Tooltip value=""/>
+        <Count Link="FusionReactor2" State="CompleteOnly"/>
+    </CRequirementCountUnit>
+    <CRequirementCountUnit id="CountUnitGeothermalPowerPlantCompleteOnly">
+        <Flags index="TechTreeCheat" value="0"/>
+        <Tooltip value=""/>
+        <Count Link="GeothermalPowerPlant" State="CompleteOnly"/>
+    </CRequirementCountUnit>
+    <CRequirementCountUnit id="CountUnitLaboratoryIIIInProgressOrBetter">
+        <Flags index="TechTreeCheat" value="0"/>
+        <Count Link="LaboratoryIII" State="InProgressOrBetter"/>
+    </CRequirementCountUnit>
+    <CRequirementCountUnit id="CountUnitLaboratoryIIInProgressOrBetter">
+        <Flags index="TechTreeCheat" value="0"/>
+        <Count Link="LaboratoryII" State="InProgressOrBetter"/>
+    </CRequirementCountUnit>
+    <CRequirementCountUnit id="CountUnitLaboratoryIInProgressOrBetter2310102397">
+        <Flags index="TechTreeCheat" value="0"/>
+        <Count Link="LaboratoryI" State="InProgressOrBetter"/>
+    </CRequirementCountUnit>
+    <CRequirementCountUnit id="CountUnitLaboratoryIVInProgressOrBetter">
+        <Flags index="TechTreeCheat" value="0"/>
+        <Count Link="LaboratoryIV" State="InProgressOrBetter"/>
+    </CRequirementCountUnit>
+    <CRequirementCountUnit id="CountUnitLaboratoryVInProgressOrBetter">
+        <Flags index="TechTreeCheat" value="0"/>
+        <Count Link="LaboratoryV" State="InProgressOrBetter"/>
+    </CRequirementCountUnit>
+    <CRequirementCountUnit id="CountUnitOilPowerPlantCompleteOnly">
+        <Flags index="TechTreeCheat" value="0"/>
+        <Count Link="OilPowerPlant" State="CompleteOnly"/>
+    </CRequirementCountUnit>
+    <CRequirementCountUnit id="CountUnitResearchComplexIIIInProgressOrBetter">
+        <Flags index="TechTreeCheat" value="0"/>
+        <Count Link="ResearchComplexIII" State="InProgressOrBetter"/>
+    </CRequirementCountUnit>
+    <CRequirementCountUnit id="CountUnitResearchComplexIIInProgressOrBetter">
+        <Flags index="TechTreeCheat" value="0"/>
+        <Count Link="ResearchComplexII" State="InProgressOrBetter"/>
+    </CRequirementCountUnit>
+    <CRequirementCountUnit id="CountUnitResearchComplexIInProgressOrBetter2310102397">
+        <Flags index="TechTreeCheat" value="0"/>
+        <Count Link="ResearchComplexI" State="InProgressOrBetter"/>
+    </CRequirementCountUnit>
+    <CRequirementCountUnit id="CountUnitResearchComplexIVInProgressOrBetter">
+        <Flags index="TechTreeCheat" value="0"/>
+        <Count Link="ResearchComplexIV" State="InProgressOrBetter"/>
+    </CRequirementCountUnit>
+    <CRequirementCountUnit id="CountUnitResearchComplexVInProgressOrBetter">
+        <Flags index="TechTreeCheat" value="0"/>
+        <Count Link="ResearchComplexV" State="InProgressOrBetter"/>
+    </CRequirementCountUnit>
+    <CRequirementCountUnit id="CountUnitSchoolCompleteOnly">
+        <Flags index="TechTreeCheat" value="0"/>
+        <Tooltip value=""/>
+        <Count Link="School" State="CompleteOnly"/>
+    </CRequirementCountUnit>
+    <CRequirementCountUnit id="CountUnitSchoolQueuedOrBetter1892629350">
+        <Flags index="TechTreeCheat" value="0"/>
+        <Count Link="School" State="QueuedOrBetter"/>
+    </CRequirementCountUnit>
+    <CRequirementCountUnit id="CountUnitSmallHouseCompleteOnly">
+        <Flags index="TechTreeCheat" value="0"/>
+        <Tooltip value=""/>
+        <Count Link="SmallHouse" State="CompleteOnly"/>
+    </CRequirementCountUnit>
+    <CRequirementCountUnit id="CountUnitUniversityCompleteOnly">
+        <Flags index="TechTreeCheat" value="0"/>
+        <Tooltip value=""/>
+        <Count Link="University" State="CompleteOnly"/>
+    </CRequirementCountUnit>
+    <CRequirementCountUnit id="CountUnitUniversityQueuedOrBetter">
+        <Flags index="TechTreeCheat" value="0"/>
+        <Tooltip value=""/>
+        <Count Link="University" State="QueuedOrBetter"/>
+    </CRequirementCountUnit>
+    <CRequirementCountUnit id="CountUnitWindTurbineCompleteOnly">
+        <Flags index="TechTreeCheat" value="0"/>
+        <Tooltip value=""/>
+        <Count Link="WindTurbine" State="CompleteOnly"/>
+    </CRequirementCountUnit>
+    <CRequirementCountUpgrade id="CountUpgrade5MinutesPassedInProgressOrBetter">
+        <Flags index="TechTreeCheat" value="0"/>
+        <Count Link="5MinutesPassed" State="InProgressOrBetter"/>
+    </CRequirementCountUpgrade>
+    <CRequirementCountUpgrade id="CountUpgradeAdministrativeHierarchyResearchedCompleteOnly">
+        <Flags index="TechTreeCheat" value="0"/>
+        <Count Link="AdministrativeHierarchyResearched" State="CompleteOnly"/>
+    </CRequirementCountUpgrade>
+    <CRequirementCountUpgrade id="CountUpgradeAdvancedAircraftCompleteOnly">
+        <Flags index="TechTreeCheat" value="0"/>
+        <Tooltip value=""/>
+        <Count Link="AdvancedAircraft" State="CompleteOnly"/>
+    </CRequirementCountUpgrade>
+    <CRequirementCountUpgrade id="CountUpgradeAdvancedAircraftQueuedOrBetter">
+        <Flags index="TechTreeCheat" value="0"/>
+        <Tooltip value=""/>
+        <Count Link="AdvancedAircraft" State="QueuedOrBetter"/>
+    </CRequirementCountUpgrade>
+    <CRequirementCountUpgrade id="CountUpgradeAdvancedGasificationCompleteOnly">
+        <Flags index="TechTreeCheat" value="0"/>
+        <Tooltip value=""/>
+        <Count Link="AdvancedGasification" State="CompleteOnly"/>
+    </CRequirementCountUpgrade>
+    <CRequirementCountUpgrade id="CountUpgradeAdvancedGasificationQueuedOrBetter">
+        <Flags index="TechTreeCheat" value="0"/>
+        <Tooltip value=""/>
+        <Count Link="AdvancedGasification" State="QueuedOrBetter"/>
+    </CRequirementCountUpgrade>
+    <CRequirementCountUpgrade id="CountUpgradeAdvancedKineticsCompleteOnly">
+        <Flags index="TechTreeCheat" value="0"/>
+        <Count Link="AdvancedKinetics" State="CompleteOnly"/>
+    </CRequirementCountUpgrade>
+    <CRequirementCountUpgrade id="CountUpgradeAdvancedPowerArmourCompleteOnly">
+        <Flags index="TechTreeCheat" value="0"/>
+        <Tooltip value=""/>
+        <Count Link="AdvancedPowerArmour" State="CompleteOnly"/>
+    </CRequirementCountUpgrade>
+    <CRequirementCountUpgrade id="CountUpgradeAdvancedPowerArmourQueuedOrBetter">
+        <Flags index="TechTreeCheat" value="0"/>
+        <Tooltip value=""/>
+        <Count Link="AdvancedPowerArmour" State="QueuedOrBetter"/>
+    </CRequirementCountUpgrade>
+    <CRequirementCountUpgrade id="CountUpgradeAdvancedRadarStationCompleteOnly">
+        <Flags index="TechTreeCheat" value="0"/>
+        <Count Link="AdvancedRadarStation" State="CompleteOnly"/>
+    </CRequirementCountUpgrade>
+    <CRequirementCountUpgrade id="CountUpgradeAdvancedVehiclesCompleteOnly">
+        <Flags index="TechTreeCheat" value="0"/>
+        <Tooltip value=""/>
+        <Count Link="AdvancedVehicles" State="CompleteOnly"/>
+    </CRequirementCountUpgrade>
+    <CRequirementCountUpgrade id="CountUpgradeAdvancedVehiclesQueuedOrBetter">
+        <Flags index="TechTreeCheat" value="0"/>
+        <Tooltip value=""/>
+        <Count Link="AdvancedVehicles" State="QueuedOrBetter"/>
+    </CRequirementCountUpgrade>
+    <CRequirementCountUpgrade id="CountUpgradeAircraftArmourUPInProgressOnly">
+        <Flags index="TechTreeCheat" value="0"/>
+        <Tooltip value=""/>
+        <Count Link="AircraftArmourUP" State="InProgressOnly"/>
+    </CRequirementCountUpgrade>
+    <CRequirementCountUpgrade id="CountUpgradeAircraftArmourUPQueuedOnly">
+        <Flags index="TechTreeCheat" value="0"/>
+        <Tooltip value=""/>
+        <Count Link="AircraftArmourUP"/>
+    </CRequirementCountUpgrade>
+    <CRequirementCountUpgrade id="CountUpgradeAircraftDamageUPInProgressOnly">
+        <Flags index="TechTreeCheat" value="0"/>
+        <Tooltip value=""/>
+        <Count Link="AircraftDamageUP" State="InProgressOnly"/>
+    </CRequirementCountUpgrade>
+    <CRequirementCountUpgrade id="CountUpgradeAircraftDamageUPQueuedOnly">
+        <Flags index="TechTreeCheat" value="0"/>
+        <Tooltip value=""/>
+        <Count Link="AircraftDamageUP"/>
+    </CRequirementCountUpgrade>
+    <CRequirementCountUpgrade id="CountUpgradeAppliedScienceInProgressOnly">
+        <Flags index="TechTreeCheat" value="0"/>
+        <Tooltip value=""/>
+        <Count Link="AppliedScience" State="InProgressOnly"/>
+    </CRequirementCountUpgrade>
+    <CRequirementCountUpgrade id="CountUpgradeAppliedScienceQueuedOnly">
+        <Flags index="TechTreeCheat" value="0"/>
+        <Tooltip value=""/>
+        <Count Link="AppliedScience"/>
+    </CRequirementCountUpgrade>
+    <CRequirementCountUpgrade id="CountUpgradeAutonomousZombiesCompleteOnly">
+        <Flags index="TechTreeCheat" value="0"/>
+        <Count Link="AutonomousZombies" State="CompleteOnly"/>
+    </CRequirementCountUpgrade>
+    <CRequirementCountUpgrade id="CountUpgradeBasicAircraftCompleteOnly">
+        <Flags index="TechTreeCheat" value="0"/>
+        <Tooltip value=""/>
+        <Count Link="BasicAircraft" State="CompleteOnly"/>
+    </CRequirementCountUpgrade>
+    <CRequirementCountUpgrade id="CountUpgradeBasicAircraftQueuedOrBetter">
+        <Flags index="TechTreeCheat" value="0"/>
+        <Tooltip value=""/>
+        <Count Link="BasicAircraft" State="QueuedOrBetter"/>
+    </CRequirementCountUpgrade>
+    <CRequirementCountUpgrade id="CountUpgradeBasicEngineCompleteOnly">
+        <Flags index="TechTreeCheat" value="0"/>
+        <Count Link="BasicEngine" State="CompleteOnly"/>
+    </CRequirementCountUpgrade>
+    <CRequirementCountUpgrade id="CountUpgradeBiologicalResearchCompleteOnly">
+        <Flags index="TechTreeCheat" value="0"/>
+        <Count Link="BiologicalResearch" State="CompleteOnly"/>
+    </CRequirementCountUpgrade>
+    <CRequirementCountUpgrade id="CountUpgradeCanBuildScoutbotsCompleteOnly">
+        <Flags index="TechTreeCheat" value="0"/>
+        <Count Link="CanBuildScoutbots" State="CompleteOnly"/>
+    </CRequirementCountUpgrade>
+    <CRequirementCountUpgrade id="CountUpgradeChangeWarPolicyInProgressOrBetter">
+        <Flags index="TechTreeCheat" value="0"/>
+        <Count Link="ChangeWarPolicy" State="InProgressOrBetter"/>
+    </CRequirementCountUpgrade>
+    <CRequirementCountUpgrade id="CountUpgradeCloningQueuedOrBetter">
+        <Flags index="TechTreeCheat" value="0"/>
+        <Tooltip value=""/>
+        <Count Link="Cloning" State="QueuedOrBetter"/>
+    </CRequirementCountUpgrade>
+    <CRequirementCountUpgrade id="CountUpgradeCoalGasificationCompleteOnly">
+        <Flags index="TechTreeCheat" value="0"/>
+        <Tooltip value=""/>
+        <Count Link="CoalGasification" State="CompleteOnly"/>
+    </CRequirementCountUpgrade>
+    <CRequirementCountUpgrade id="CountUpgradeCoalGasificationQueuedOrBetter">
+        <Flags index="TechTreeCheat" value="0"/>
+        <Tooltip value=""/>
+        <Count Link="CoalGasification" State="QueuedOrBetter"/>
+    </CRequirementCountUpgrade>
+    <CRequirementCountUpgrade id="CountUpgradeCommunismInProgressOrBetter">
+        <Flags index="TechTreeCheat" value="0"/>
+        <Count Link="Communism" State="InProgressOrBetter"/>
+    </CRequirementCountUpgrade>
+    <CRequirementCountUpgrade id="CountUpgradeCorporatocracyInProgressOrBetter">
+        <Flags index="TechTreeCheat" value="0"/>
+        <Count Link="Corporatocracy" State="InProgressOrBetter"/>
+    </CRequirementCountUpgrade>
+    <CRequirementCountUpgrade id="CountUpgradeDeadManHandOffCompleteOnly">
+        <Flags index="TechTreeCheat" value="0"/>
+        <Count Link="DeadManHandOff" State="CompleteOnly"/>
+    </CRequirementCountUpgrade>
+    <CRequirementCountUpgrade id="CountUpgradeDeadManHandOnCompleteOnly">
+        <Flags index="TechTreeCheat" value="0"/>
+        <Count Link="DeadManHandOn" State="CompleteOnly"/>
+    </CRequirementCountUpgrade>
+    <CRequirementCountUpgrade id="CountUpgradeDefensiveWarInProgressOrBetter">
+        <Flags index="TechTreeCheat" value="0"/>
+        <Count Link="Pacifist" State="InProgressOrBetter"/>
+    </CRequirementCountUpgrade>
+    <CRequirementCountUpgrade id="CountUpgradeDiplomaticPolicyChangeInProgressOrBetter">
+        <Flags index="TechTreeCheat" value="0"/>
+        <Count Link="DiplomaticPolicyChange" State="InProgressOrBetter"/>
+    </CRequirementCountUpgrade>
+    <CRequirementCountUpgrade id="CountUpgradeDirectDemocracyInProgressOrBetter">
+        <Flags index="TechTreeCheat" value="0"/>
+        <Count Link="DirectDemocracy" State="InProgressOrBetter"/>
+    </CRequirementCountUpgrade>
+    <CRequirementCountUpgrade id="CountUpgradeEUBuiltInProgressOrBetter">
+        <Flags index="TechTreeCheat" value="0"/>
+        <Count Link="EUBuilt" State="InProgressOrBetter"/>
+    </CRequirementCountUpgrade>
+    <CRequirementCountUpgrade id="CountUpgradeEuropeanUnionInProgressOrBetter">
+        <Flags index="TechTreeCheat" value="0"/>
+        <Count Link="EuropeanUnion" State="InProgressOrBetter"/>
+    </CRequirementCountUpgrade>
+    <CRequirementCountUpgrade id="CountUpgradeExtensiveReservesTrainingCompleteOnly">
+        <Flags index="TechTreeCheat" value="0"/>
+        <Count Link="ExtensiveReservesTraining" State="CompleteOnly"/>
+    </CRequirementCountUpgrade>
+    <CRequirementCountUpgrade id="CountUpgradeFauxDemocracyInProgressOrBetter">
+        <Flags index="TechTreeCheat" value="0"/>
+        <Count Link="FauxDemocracy" State="InProgressOrBetter"/>
+    </CRequirementCountUpgrade>
+    <CRequirementCountUpgrade id="CountUpgradeFenixWhirlwindInProgressOrBetter">
+        <Flags index="TechTreeCheat" value="0"/>
+        <Count Link="FenixWhirlwind" State="InProgressOrBetter"/>
+    </CRequirementCountUpgrade>
+    <CRequirementCountUpgrade id="CountUpgradeFlyingLocustsInProgressOrBetter">
+        <Flags index="TechTreeCheat" value="0"/>
+        <Count Link="FlyingLocusts" State="InProgressOrBetter"/>
+    </CRequirementCountUpgrade>
+    <CRequirementCountUpgrade id="CountUpgradeFocusedKineticsCompleteOnly">
+        <Flags index="TechTreeCheat" value="0"/>
+        <Count Link="FocusedKinetics" State="CompleteOnly"/>
+    </CRequirementCountUpgrade>
+    <CRequirementCountUpgrade id="CountUpgradeFocusedLaserCompleteOnly">
+        <Flags index="TechTreeCheat" value="0"/>
+        <Count Link="FocusedLaser" State="CompleteOnly"/>
+    </CRequirementCountUpgrade>
+    <CRequirementCountUpgrade id="CountUpgradeFortificationsCompleteOnly">
+        <Flags index="TechTreeCheat" value="0"/>
+        <Tooltip value=""/>
+        <Count Link="Fortifications" State="CompleteOnly"/>
+    </CRequirementCountUpgrade>
+    <CRequirementCountUpgrade id="CountUpgradeFortificationsQueuedOrBetter">
+        <Flags index="TechTreeCheat" value="0"/>
+        <Tooltip value=""/>
+        <Count Link="Fortifications" State="QueuedOrBetter"/>
+    </CRequirementCountUpgrade>
+    <CRequirementCountUpgrade id="CountUpgradeFuturisticEngineCompleteOnly">
+        <Flags index="TechTreeCheat" value="0"/>
+        <Count Link="FuturisticEngine" State="CompleteOnly"/>
+    </CRequirementCountUpgrade>
+    <CRequirementCountUpgrade id="CountUpgradeGeneticScreeningQueuedOrBetter">
+        <Flags index="TechTreeCheat" value="0"/>
+        <Tooltip value=""/>
+        <Count Link="GeneticScreening" State="QueuedOrBetter"/>
+    </CRequirementCountUpgrade>
+    <CRequirementCountUpgrade id="CountUpgradeGrandEmpireInProgressOrBetter">
+        <Flags index="TechTreeCheat" value="0"/>
+        <Count Link="GrandEmpire" State="InProgressOrBetter"/>
+    </CRequirementCountUpgrade>
+    <CRequirementCountUpgrade id="CountUpgradeGraviticThrustersInProgressOrBetter">
+        <Flags index="TechTreeCheat" value="0"/>
+        <Count Link="GraviticThrusters" State="InProgressOrBetter"/>
+    </CRequirementCountUpgrade>
+    <CRequirementCountUpgrade id="CountUpgradeGreaterDemonsCompleteOnly">
+        <Flags index="TechTreeCheat" value="0"/>
+        <Tooltip value="RequirementNode/Tooltip/##id##"/>
+        <Count Link="GreaterDemons" State="CompleteOnly"/>
+    </CRequirementCountUpgrade>
+    <CRequirementCountUpgrade id="CountUpgradeHalcyonBasedMissilesCompleteOnly">
+        <Flags index="TechTreeCheat" value="0"/>
+        <Count Link="HalcyonBasedMissiles" State="CompleteOnly"/>
+    </CRequirementCountUpgrade>
+    <CRequirementCountUpgrade id="CountUpgradeHalcyonBasedMissilesCompleteOnly4225243259">
+        <Flags index="TechTreeCheat" value="0"/>
+        <Count Link="HalcyonBasedMissiles" State="CompleteOnly"/>
+    </CRequirementCountUpgrade>
+    <CRequirementCountUpgrade id="CountUpgradeHeavyTanksCompleteOnly">
+        <Flags index="TechTreeCheat" value="0"/>
+        <Tooltip value=""/>
+        <Count Link="HeavyTanks" State="CompleteOnly"/>
+    </CRequirementCountUpgrade>
+    <CRequirementCountUpgrade id="CountUpgradeHeavyTanksQueuedOrBetter">
+        <Flags index="TechTreeCheat" value="0"/>
+        <Tooltip value=""/>
+        <Count Link="HeavyTanks" State="QueuedOrBetter"/>
+    </CRequirementCountUpgrade>
+    <CRequirementCountUpgrade id="CountUpgradeHighVelocityMissilesCompleteOnly">
+        <Flags index="TechTreeCheat" value="0"/>
+        <Count Link="HighVelocityMissiles" State="CompleteOnly"/>
+    </CRequirementCountUpgrade>
+    <CRequirementCountUpgrade id="CountUpgradeHydrogenBasedMissilesCompleteOnly">
+        <Flags index="TechTreeCheat" value="0"/>
+        <Count Link="HydrogenBasedMissiles" State="CompleteOnly"/>
+    </CRequirementCountUpgrade>
+    <CRequirementCountUpgrade id="CountUpgradeImperialisimInProgressOrBetter">
+        <Flags index="TechTreeCheat" value="0"/>
+        <Count Link="Imperialisim" State="InProgressOrBetter"/>
+    </CRequirementCountUpgrade>
+    <CRequirementCountUpgrade id="CountUpgradeImprovedFarmingInProgressOnly">
+        <Flags index="TechTreeCheat" value="0"/>
+        <Tooltip value=""/>
+        <Count Link="ImprovedFarming" State="InProgressOnly"/>
+    </CRequirementCountUpgrade>
+    <CRequirementCountUpgrade id="CountUpgradeImprovedGasificationCompleteOnly">
+        <Flags index="TechTreeCheat" value="0"/>
+        <Tooltip value=""/>
+        <Count Link="ImprovedGasification" State="CompleteOnly"/>
+    </CRequirementCountUpgrade>
+    <CRequirementCountUpgrade id="CountUpgradeImprovedFarmingQueuedOnly">
+        <Flags index="TechTreeCheat" value="0"/>
+        <Tooltip value=""/>
+        <Count Link="ImprovedFarming"/>
+    </CRequirementCountUpgrade>
+    <CRequirementCountUpgrade id="CountUpgradeImprovedGasificationQueuedOrBetter">
+        <Flags index="TechTreeCheat" value="0"/>
+        <Tooltip value=""/>
+        <Count Link="ImprovedGasification" State="QueuedOrBetter"/>
+    </CRequirementCountUpgrade>
+    <CRequirementCountUpgrade id="CountUpgradeImprovedMiningInProgressOnly">
+        <Flags index="TechTreeCheat" value="0"/>
+        <Tooltip value=""/>
+        <Count Link="ImprovedMining" State="InProgressOnly"/>
+    </CRequirementCountUpgrade>
+    <CRequirementCountUpgrade id="CountUpgradeImprovedMiningQueuedOnly">
+        <Flags index="TechTreeCheat" value="0"/>
+        <Tooltip value=""/>
+        <Count Link="ImprovedMining"/>
+    </CRequirementCountUpgrade>
+    <CRequirementCountUpgrade id="CountUpgradeImprovedRefiningInProgressOnly">
+        <Flags index="TechTreeCheat" value="0"/>
+        <Tooltip value=""/>
+        <Count Link="ImprovedRefining" State="InProgressOnly"/>
+    </CRequirementCountUpgrade>
+    <CRequirementCountUpgrade id="CountUpgradeImprovedRefiningQueuedOnly">
+        <Flags index="TechTreeCheat" value="0"/>
+        <Tooltip value=""/>
+        <Count Link="ImprovedRefining"/>
+    </CRequirementCountUpgrade>
+    <CRequirementCountUpgrade id="CountUpgradeImprovedTurbinesInProgressOnly">
+        <Flags index="TechTreeCheat" value="0"/>
+        <Tooltip value=""/>
+        <Count Link="ImprovedTurbines" State="InProgressOnly"/>
+    </CRequirementCountUpgrade>
+    <CRequirementCountUpgrade id="CountUpgradeImprovedTurbinesQueuedOnly">
+        <Flags index="TechTreeCheat" value="0"/>
+        <Tooltip value=""/>
+        <Count Link="ImprovedTurbines"/>
+    </CRequirementCountUpgrade>
+    <CRequirementCountUpgrade id="CountUpgradeInfantryArmourUPInProgressOnly">
+        <Flags index="TechTreeCheat" value="0"/>
+        <Tooltip value=""/>
+        <Count Link="InfantryArmourUP" State="InProgressOnly"/>
+    </CRequirementCountUpgrade>
+    <CRequirementCountUpgrade id="CountUpgradeInfantryArmourUPQueuedOnly">
+        <Flags index="TechTreeCheat" value="0"/>
+        <Tooltip value=""/>
+        <Count Link="InfantryArmourUP"/>
+    </CRequirementCountUpgrade>
+    <CRequirementCountUpgrade id="CountUpgradeInfantryDamageUPInProgressOnly">
+        <Flags index="TechTreeCheat" value="0"/>
+        <Tooltip value=""/>
+        <Count Link="InfantryDamageUP" State="InProgressOnly"/>
+    </CRequirementCountUpgrade>
+    <CRequirementCountUpgrade id="CountUpgradeInfantryDamageUPQueuedOnly">
+        <Flags index="TechTreeCheat" value="0"/>
+        <Tooltip value=""/>
+        <Count Link="InfantryDamageUP"/>
+    </CRequirementCountUpgrade>
+    <CRequirementCountUpgrade id="CountUpgradeInhumaneWarInProgressOrBetter">
+        <Flags index="TechTreeCheat" value="0"/>
+        <Count Link="InhumaneWar" State="InProgressOrBetter"/>
+    </CRequirementCountUpgrade>
+    <CRequirementCountUpgrade id="CountUpgradeInterventionalisimInProgressOrBetter">
+        <Flags index="TechTreeCheat" value="0"/>
+        <Count Link="Interventionalisim" State="InProgressOrBetter"/>
+    </CRequirementCountUpgrade>
+    <CRequirementCountUpgrade id="CountUpgradeIntoTheOccultCompleteOnly">
+        <Flags index="TechTreeCheat" value="0"/>
+        <Tooltip value="RequirementNode/Tooltip/##id##"/>
+        <Count Link="IntoTheOccult" State="CompleteOnly"/>
+    </CRequirementCountUpgrade>
+    <CRequirementCountUpgrade id="CountUpgradeIsolationisimInProgressOrBetter">
+        <Flags index="TechTreeCheat" value="0"/>
+        <Count Link="Isolationisim" State="InProgressOrBetter"/>
+    </CRequirementCountUpgrade>
+    <CRequirementCountUpgrade id="CountUpgradeJingoisimInProgressOrBetter">
+        <Flags index="TechTreeCheat" value="0"/>
+        <Count Link="Jingoisim" State="InProgressOrBetter"/>
+    </CRequirementCountUpgrade>
+    <CRequirementCountUpgrade id="CountUpgradeLaserConceptCompleteOnly">
+        <Flags index="TechTreeCheat" value="0"/>
+        <Count Link="LaserConcept" State="CompleteOnly"/>
+    </CRequirementCountUpgrade>
+    <CRequirementCountUpgrade id="CountUpgradeLaserInterceptionCompleteOnly">
+        <Flags index="TechTreeCheat" value="0"/>
+        <Count Link="LaserInterception" State="CompleteOnly"/>
+    </CRequirementCountUpgrade>
+    <CRequirementCountUpgrade id="CountUpgradeLimitedWarInProgressOrBetter">
+        <Flags index="TechTreeCheat" value="0"/>
+        <Count Link="LimitedWar" State="InProgressOrBetter"/>
+    </CRequirementCountUpgrade>
+    <CRequirementCountUpgrade id="CountUpgradeLocustLifetimeIncreaseInProgressOrBetter">
+        <Flags index="TechTreeCheat" value="0"/>
+        <Count Link="LocustLifetimeIncrease" State="InProgressOrBetter"/>
+    </CRequirementCountUpgrade>
+    <CRequirementCountUpgrade id="CountUpgradeMagrailMunitionsMarineInProgressOrBetter">
+        <Flags index="TechTreeCheat" value="0"/>
+        <Count Link="MagrailMunitionsMarine" State="InProgressOrBetter"/>
+    </CRequirementCountUpgrade>
+    <CRequirementCountUpgrade id="CountUpgradeMassSacrificesCompleteOnly">
+        <Flags index="TechTreeCheat" value="0"/>
+        <Tooltip value="RequirementNode/Tooltip/##id##"/>
+        <Count Link="MassSacrifices" State="CompleteOnly"/>
+    </CRequirementCountUpgrade>
+    <CRequirementCountUpgrade id="CountUpgradeMilitaryCompleteOnly">
+        <Flags index="TechTreeCheat" value="0"/>
+        <Tooltip value=""/>
+        <Count Link="DiplomaticPolicy" State="CompleteOnly"/>
+    </CRequirementCountUpgrade>
+    <CRequirementCountUpgrade id="CountUpgradeMissileTechnologyCompleteOnly">
+        <Flags index="TechTreeCheat" value="0"/>
+        <Count Link="MissileTechnology" State="CompleteOnly"/>
+    </CRequirementCountUpgrade>
+    <CRequirementCountUpgrade id="CountUpgradeModernVehiclesCompleteOnly">
+        <Flags index="TechTreeCheat" value="0"/>
+        <Tooltip value=""/>
+        <Count Link="ModernVehicles" State="CompleteOnly"/>
+    </CRequirementCountUpgrade>
+    <CRequirementCountUpgrade id="CountUpgradeModernVehiclesQueuedOrBetter">
+        <Flags index="TechTreeCheat" value="0"/>
+        <Tooltip value=""/>
+        <Count Link="ModernVehicles" State="QueuedOrBetter"/>
+    </CRequirementCountUpgrade>
+    <CRequirementCountUpgrade id="CountUpgradeModifiedDiseasesCompleteOnly">
+        <Flags index="TechTreeCheat" value="0"/>
+        <Count Link="ModifiedDiseases" State="CompleteOnly"/>
+    </CRequirementCountUpgrade>
+    <CRequirementCountUpgrade id="CountUpgradeNanorepairTechnologyCompleteOnly">
+        <Flags index="TechTreeCheat" value="0"/>
+        <Count Link="NanorepairTechnology" State="CompleteOnly"/>
+    </CRequirementCountUpgrade>
+    <CRequirementCountUpgrade id="CountUpgradeNationalHighwayCompleteOnly">
+        <Flags index="TechTreeCheat" value="0"/>
+        <Count Link="NationalHighway" State="CompleteOnly"/>
+    </CRequirementCountUpgrade>
+    <CRequirementCountUpgrade id="CountUpgradeNationalismCompleteOnly">
+        <Flags index="TechTreeCheat" value="0"/>
+        <Count Link="Nationalism" State="CompleteOnly"/>
+    </CRequirementCountUpgrade>
+    <CRequirementCountUpgrade id="CountUpgradeNeofascismInProgressOrBetter">
+        <Flags index="TechTreeCheat" value="0"/>
+        <Count Link="Neofascism" State="InProgressOrBetter"/>
+    </CRequirementCountUpgrade>
+    <CRequirementCountUpgrade id="CountUpgradeNovaArmorStealthSuitCompleteOnly"/>
+    <CRequirementCountUpgrade id="CountUpgradeNuclearFissionCompleteOnly">
+        <Flags index="TechTreeCheat" value="0"/>
+        <Tooltip value=""/>
+        <Count Link="NuclearFission" State="CompleteOnly"/>
+    </CRequirementCountUpgrade>
+    <CRequirementCountUpgrade id="CountUpgradeNuclearFissionQueuedOrBetter">
+        <Flags index="TechTreeCheat" value="0"/>
+        <Tooltip value=""/>
+        <Count Link="NuclearFission" State="QueuedOrBetter"/>
+    </CRequirementCountUpgrade>
+    <CRequirementCountUpgrade id="CountUpgradeNuclearFusionCompleteOnly">
+        <Flags index="TechTreeCheat" value="0"/>
+        <Tooltip value=""/>
+        <Count Link="NuclearFusion" State="CompleteOnly"/>
+    </CRequirementCountUpgrade>
+    <CRequirementCountUpgrade id="CountUpgradeNuclearFusionQueuedOrBetter">
+        <Flags index="TechTreeCheat" value="0"/>
+        <Tooltip value=""/>
+        <Count Link="NuclearFusion" State="QueuedOrBetter"/>
+    </CRequirementCountUpgrade>
+    <CRequirementCountUpgrade id="CountUpgradeNuclearTippedPayloadsCompleteOnly">
+        <Flags index="TechTreeCheat" value="0"/>
+        <Count Link="NuclearTippedPayloads" State="CompleteOnly"/>
+    </CRequirementCountUpgrade>
+    <CRequirementCountUpgrade id="CountUpgradeOilWellResearchCompleteOnly">
+        <Flags index="TechTreeCheat" value="0"/>
+        <Count Link="OilWellResearch" State="CompleteOnly"/>
+    </CRequirementCountUpgrade>
+    <CRequirementCountUpgrade id="CountUpgradeOilWellResearchInProgressOrBetter">
+        <Flags index="TechTreeCheat" value="0"/>
+        <Count Link="OilWellResearch" State="InProgressOrBetter"/>
+    </CRequirementCountUpgrade>
+    <CRequirementCountUpgrade id="CountUpgradeOmegaZombiesCompleteOnly">
+        <Flags index="TechTreeCheat" value="0"/>
+        <Count Link="OmegaZombies" State="CompleteOnly"/>
+    </CRequirementCountUpgrade>
+    <CRequirementCountUpgrade id="CountUpgradePacifisimInProgressOrBetter">
+        <Flags index="TechTreeCheat" value="0"/>
+        <Count Link="Pacifisim" State="InProgressOrBetter"/>
+    </CRequirementCountUpgrade>
+    <CRequirementCountUpgrade id="CountUpgradePlascreteCompleteOnly">
+        <Flags index="TechTreeCheat" value="0"/>
+        <Tooltip value=""/>
+        <Count Link="Plascrete" State="CompleteOnly"/>
+    </CRequirementCountUpgrade>
+    <CRequirementCountUpgrade id="CountUpgradePlascreteQueuedOrBetter">
+        <Flags index="TechTreeCheat" value="0"/>
+        <Tooltip value=""/>
+        <Count Link="Plascrete" State="QueuedOrBetter"/>
+    </CRequirementCountUpgrade>
+    <CRequirementCountUpgrade id="CountUpgradePowerArmourCompleteOnly">
+        <Flags index="TechTreeCheat" value="0"/>
+        <Tooltip value=""/>
+        <Count Link="PowerArmour" State="CompleteOnly"/>
+    </CRequirementCountUpgrade>
+    <CRequirementCountUpgrade id="CountUpgradePowerArmourQueuedOrBetter">
+        <Flags index="TechTreeCheat" value="0"/>
+        <Tooltip value=""/>
+        <Count Link="PowerArmour" State="QueuedOrBetter"/>
+    </CRequirementCountUpgrade>
+    <CRequirementCountUpgrade id="CountUpgradeProductionSpeedInProgressOnly">
+        <Flags index="TechTreeCheat" value="0"/>
+        <Tooltip value=""/>
+        <Count Link="ProductionSpeed" State="InProgressOnly"/>
+    </CRequirementCountUpgrade>
+    <CRequirementCountUpgrade id="CountUpgradeProductionSpeedQueuedOnly">
+        <Flags index="TechTreeCheat" value="0"/>
+        <Tooltip value=""/>
+        <Count Link="ProductionSpeed"/>
+    </CRequirementCountUpgrade>
+    <CRequirementCountUpgrade id="CountUpgradeProtossUnitAttackSpeedInProgressOnly">
+        <Flags index="TechTreeCheat" value="0"/>
+        <Tooltip value=""/>
+        <Count Link="ProtossUnitAttackSpeed" State="InProgressOnly"/>
+    </CRequirementCountUpgrade>
+    <CRequirementCountUpgrade id="CountUpgradeProtossUnitAttackSpeedQueuedOnly">
+        <Flags index="TechTreeCheat" value="0"/>
+        <Tooltip value=""/>
+        <Count Link="ProtossUnitAttackSpeed"/>
+    </CRequirementCountUpgrade>
+    <CRequirementCountUpgrade id="CountUpgradeProtossUnitHPInProgressOnly">
+        <Flags index="TechTreeCheat" value="0"/>
+        <Tooltip value=""/>
+        <Count Link="ProtossUnitHP" State="InProgressOnly"/>
+    </CRequirementCountUpgrade>
+    <CRequirementCountUpgrade id="CountUpgradeProtossUnitHPQueuedOnly">
+        <Flags index="TechTreeCheat" value="0"/>
+        <Tooltip value=""/>
+        <Count Link="ProtossUnitHP"/>
+    </CRequirementCountUpgrade>
+    <CRequirementCountUpgrade id="CountUpgradeProtossUnitSpeedInProgressOnly">
+        <Flags index="TechTreeCheat" value="0"/>
+        <Tooltip value=""/>
+        <Count Link="ProtossUnitSpeed" State="InProgressOnly"/>
+    </CRequirementCountUpgrade>
+    <CRequirementCountUpgrade id="CountUpgradeProtossUnitSpeedQueuedOnly">
+        <Flags index="TechTreeCheat" value="0"/>
+        <Tooltip value=""/>
+        <Count Link="ProtossUnitSpeed"/>
+    </CRequirementCountUpgrade>
+    <CRequirementCountUpgrade id="CountUpgradeReinforcedFortificationsCompleteOnly">
+        <Flags index="TechTreeCheat" value="0"/>
+        <Count Link="ReinforcedFortifications" State="CompleteOnly"/>
+    </CRequirementCountUpgrade>
+    <CRequirementCountUpgrade id="CountUpgradeResearchAlternateElectricityCompleteOnly">
+        <Flags index="TechTreeCheat" value="0"/>
+        <Count Link="ResearchAlternateElectricity" State="CompleteOnly"/>
+    </CRequirementCountUpgrade>
+    <CRequirementCountUpgrade id="CountUpgradeResearchArtificalFarmingCompleteOnly">
+        <Flags index="TechTreeCheat" value="0"/>
+        <Count Link="ResearchArtificalFarming" State="CompleteOnly"/>
+    </CRequirementCountUpgrade>
+    <CRequirementCountUpgrade id="CountUpgradeResearchElectricityCompleteOnly">
+        <Flags index="TechTreeCheat" value="0"/>
+        <Count Link="ResearchElectricity" State="CompleteOnly"/>
+    </CRequirementCountUpgrade>
+    <CRequirementCountUpgrade id="CountUpgradeResearchNationalUnionsCompleteOnly">
+        <Flags index="TechTreeCheat" value="0"/>
+        <Count Link="ResearchNationalUnions" State="CompleteOnly"/>
+    </CRequirementCountUpgrade>
+    <CRequirementCountUpgrade id="CountUpgradeSJHyperionHangerCheckQueuedOnly">
+        <Flags index="TechTreeCheat" value="0"/>
+        <Count Link="SJHyperionHangerCheck"/>
+    </CRequirementCountUpgrade>
+    <CRequirementCountUpgrade id="CountUpgradeShieldGenerationCompleteOnly">
+        <Flags index="TechTreeCheat" value="0"/>
+        <Count Link="ShieldGeneration" State="CompleteOnly"/>
+    </CRequirementCountUpgrade>
+    <CRequirementCountUpgrade id="CountUpgradeSkirmishInProgressOrBetter">
+        <Flags index="TechTreeCheat" value="0"/>
+        <Count Link="DefensiveWar" State="InProgressOrBetter"/>
+    </CRequirementCountUpgrade>
+    <CRequirementCountUpgrade id="CountUpgradeSocialistRepublicInProgressOrBetter">
+        <Flags index="TechTreeCheat" value="0"/>
+        <Count Link="SocialistRepublic" State="InProgressOrBetter"/>
+    </CRequirementCountUpgrade>
+    <CRequirementCountUpgrade id="CountUpgradeSubjugatedCompleteOnly">
+        <Flags index="TechTreeCheat" value="0"/>
+        <Tooltip value=""/>
+        <Count Link="Subjugated" State="CompleteOnly"/>
+    </CRequirementCountUpgrade>
+    <CRequirementCountUpgrade id="CountUpgradeSubjugatorCompleteOnly">
+        <Flags index="TechTreeCheat" value="0"/>
+        <Tooltip value=""/>
+        <Count Link="Subjugator" State="CompleteOnly"/>
+    </CRequirementCountUpgrade>
+    <CRequirementCountUpgrade id="CountUpgradeTheA110ProjectCompleteOnly">
+        <Flags index="TechTreeCheat" value="0"/>
+        <Count Link="TheA110Project" State="CompleteOnly"/>
+    </CRequirementCountUpgrade>
+    <CRequirementCountUpgrade id="CountUpgradeTheGatesOfHellCompleteOnly">
+        <Flags index="TechTreeCheat" value="0"/>
+        <Tooltip value="RequirementNode/Tooltip/##id##"/>
+        <Count Link="TheGatesOfHell" State="CompleteOnly"/>
+    </CRequirementCountUpgrade>
+    <CRequirementCountUpgrade id="CountUpgradeTheWorldeaterProjectCompleteOnly">
+        <Flags index="TechTreeCheat" value="0"/>
+        <Count Link="TheWorldeaterProject" State="CompleteOnly"/>
+    </CRequirementCountUpgrade>
+    <CRequirementCountUpgrade id="CountUpgradeTotalWarInProgressOrBetter">
+        <Flags index="TechTreeCheat" value="0"/>
+        <Count Link="TotalWar" State="InProgressOrBetter"/>
+    </CRequirementCountUpgrade>
+    <CRequirementCountUpgrade id="CountUpgradeTradeEmbargoCompleteOnly">
+        <Flags index="TechTreeCheat" value="0"/>
+        <Count Link="TradeEmbargo" State="CompleteOnly"/>
+    </CRequirementCountUpgrade>
+    <CRequirementCountUpgrade id="CountUpgradeUnconditionalVictoryCompleteOnly">
+        <Flags index="TechTreeCheat" value="0"/>
+        <Count Link="UnconditionalVictory" State="CompleteOnly"/>
+    </CRequirementCountUpgrade>
+    <CRequirementCountUpgrade id="CountUpgradeUrbanDevelopmentCompleteOnly">
+        <Flags index="TechTreeCheat" value="0"/>
+        <Tooltip value=""/>
+        <Count Link="UrbanDevelopment" State="CompleteOnly"/>
+    </CRequirementCountUpgrade>
+    <CRequirementCountUpgrade id="CountUpgradeUrbanDevelopmentQueuedOrBetter">
+        <Flags index="TechTreeCheat" value="0"/>
+        <Tooltip value=""/>
+        <Count Link="UrbanDevelopment" State="QueuedOrBetter"/>
+    </CRequirementCountUpgrade>
+    <CRequirementCountUpgrade id="CountUpgradeUrbanPlanningCompleteOnly">
+        <Flags index="TechTreeCheat" value="0"/>
+        <Count Link="UrbanPlanning" State="CompleteOnly"/>
+    </CRequirementCountUpgrade>
+    <CRequirementCountUpgrade id="CountUpgradeVehicleArmourUPInProgressOnly">
+        <Flags index="TechTreeCheat" value="0"/>
+        <Tooltip value=""/>
+        <Count Link="VehicleArmourUP" State="InProgressOnly"/>
+    </CRequirementCountUpgrade>
+    <CRequirementCountUpgrade id="CountUpgradeVehicleArmourUPQueuedOnly">
+        <Flags index="TechTreeCheat" value="0"/>
+        <Tooltip value=""/>
+        <Count Link="VehicleArmourUP"/>
+    </CRequirementCountUpgrade>
+    <CRequirementCountUpgrade id="CountUpgradeVehicleAttackSpeedInProgressOnly">
+        <Flags index="TechTreeCheat" value="0"/>
+        <Tooltip value=""/>
+        <Count Link="VehicleAttackSpeed" State="InProgressOnly"/>
+    </CRequirementCountUpgrade>
+    <CRequirementCountUpgrade id="CountUpgradeVehicleAttackSpeedQueuedOnly">
+        <Flags index="TechTreeCheat" value="0"/>
+        <Tooltip value=""/>
+        <Count Link="VehicleAttackSpeed"/>
+    </CRequirementCountUpgrade>
+    <CRequirementCountUpgrade id="CountUpgradeVehicleDamageUPInProgressOnly">
+        <Flags index="TechTreeCheat" value="0"/>
+        <Tooltip value=""/>
+        <Count Link="VehicleDamageUP" State="InProgressOnly"/>
+    </CRequirementCountUpgrade>
+    <CRequirementCountUpgrade id="CountUpgradeVehicleDamageUPQueuedOnly">
+        <Flags index="TechTreeCheat" value="0"/>
+        <Tooltip value=""/>
+        <Count Link="VehicleDamageUP"/>
+    </CRequirementCountUpgrade>
+    <CRequirementCountUpgrade id="CountUpgradeVehicleHPInProgressOnly">
+        <Flags index="TechTreeCheat" value="0"/>
+        <Tooltip value=""/>
+        <Count Link="VehicleHP" State="InProgressOnly"/>
+    </CRequirementCountUpgrade>
+    <CRequirementCountUpgrade id="CountUpgradeVehicleHPQueuedOnly">
+        <Flags index="TechTreeCheat" value="0"/>
+        <Tooltip value=""/>
+        <Count Link="VehicleHP"/>
+    </CRequirementCountUpgrade>
+    <CRequirementCountUpgrade id="CountUpgradeWeaponizedDiseasesCompleteOnly">
+        <Flags index="TechTreeCheat" value="0"/>
+        <Count Link="WeaponizedDiseases" State="CompleteOnly"/>
+    </CRequirementCountUpgrade>
+    <CRequirementCountUpgrade id="CountUpgradeZombieConceptCompleteOnly">
+        <Flags index="TechTreeCheat" value="0"/>
+        <Count Link="ZombieConcept" State="CompleteOnly"/>
+    </CRequirementCountUpgrade>
+    <CRequirementEq id="EqCountUpgradeAircraftArmourUPInProgressOnly0">
+        <Tooltip value=""/>
+        <OperandArray index="0" value="CountUpgradeAircraftArmourUPInProgressOnly"/>
+        <OperandArray index="1" value="0"/>
+    </CRequirementEq>
+    <CRequirementEq id="EqCountUpgradeAircraftArmourUPQueuedOnly0">
+        <Tooltip value=""/>
+        <OperandArray index="0" value="CountUpgradeAircraftArmourUPQueuedOnly"/>
+        <OperandArray index="1" value="0"/>
+    </CRequirementEq>
+    <CRequirementCountUpgrade id="CountUpgradeVehicleSpeedInProgressOnly">
+        <Flags index="TechTreeCheat" value="0"/>
+        <Tooltip value=""/>
+        <Count Link="VehicleSpeed" State="InProgressOnly"/>
+    </CRequirementCountUpgrade>
+    <CRequirementCountUpgrade id="CountUpgradeVehicleSpeedQueuedOnly">
+        <Flags index="TechTreeCheat" value="0"/>
+        <Tooltip value=""/>
+        <Count Link="VehicleSpeed"/>
+    </CRequirementCountUpgrade>
+    <CRequirementEq id="EqCountUpgradeAircraftDamageUPInProgressOnly0">
+        <Tooltip value=""/>
+        <OperandArray index="0" value="CountUpgradeAircraftDamageUPInProgressOnly"/>
+        <OperandArray index="1" value="0"/>
+    </CRequirementEq>
+    <CRequirementEq id="EqCountUpgradeAircraftDamageUPQueuedOnly0">
+        <Tooltip value=""/>
+        <OperandArray index="0" value="CountUpgradeAircraftDamageUPQueuedOnly"/>
+        <OperandArray index="1" value="0"/>
+    </CRequirementEq>
+    <CRequirementCountUpgrade id="CountUpgradeVehiclesCompleteOnly">
+        <Flags index="TechTreeCheat" value="0"/>
+        <Tooltip value=""/>
+        <Count Link="Vehicles" State="CompleteOnly"/>
+    </CRequirementCountUpgrade>
+    <CRequirementCountUpgrade id="CountUpgradeVehiclesQueuedOrBetter">
+        <Flags index="TechTreeCheat" value="0"/>
+        <Tooltip value=""/>
+        <Count Link="Vehicles" State="QueuedOrBetter"/>
+    </CRequirementCountUpgrade>
+    <CRequirementEq id="EqCountUpgradeAppliedScienceInProgressOnly0">
+        <Tooltip value=""/>
+        <OperandArray index="0" value="CountUpgradeAppliedScienceInProgressOnly"/>
+        <OperandArray index="1" value="0"/>
+    </CRequirementEq>
+    <CRequirementEq id="EqCountUpgradeAppliedScienceQueuedOnly0">
+        <Tooltip value=""/>
+        <OperandArray index="0" value="CountUpgradeAppliedScienceQueuedOnly"/>
+        <OperandArray index="1" value="0"/>
+    </CRequirementEq>
+    <CRequirementEq id="EqCountUpgradeImprovedFarmingInProgressOnly0">
+        <Tooltip value=""/>
+        <OperandArray index="0" value="CountUpgradeImprovedFarmingInProgressOnly"/>
+        <OperandArray index="1" value="0"/>
+    </CRequirementEq>
+    <CRequirementEq id="EqCountUpgradeImprovedFarmingQueuedOnly0">
+        <Tooltip value=""/>
+        <OperandArray index="0" value="CountUpgradeImprovedFarmingQueuedOnly"/>
+        <OperandArray index="1" value="0"/>
+    </CRequirementEq>
+    <CRequirementEq id="EqCountUpgradeImprovedRefiningInProgressOnly0">
+        <Tooltip value=""/>
+        <OperandArray index="0" value="CountUpgradeImprovedRefiningInProgressOnly"/>
+        <OperandArray index="1" value="0"/>
+    </CRequirementEq>
+    <CRequirementEq id="EqCountUpgradeImprovedRefiningQueuedOnly0">
+        <Tooltip value=""/>
+        <OperandArray index="0" value="CountUpgradeImprovedRefiningQueuedOnly"/>
+        <OperandArray index="1" value="0"/>
+    </CRequirementEq>
+    <CRequirementEq id="EqCountUpgradeInfantryArmourUPInProgressOnly0">
+        <Tooltip value=""/>
+        <OperandArray index="0" value="CountUpgradeInfantryArmourUPInProgressOnly"/>
+        <OperandArray index="1" value="0"/>
+    </CRequirementEq>
+    <CRequirementEq id="EqCountUpgradeInfantryArmourUPQueuedOnly0">
+        <Tooltip value=""/>
+        <OperandArray index="0" value="CountUpgradeInfantryArmourUPQueuedOnly"/>
+        <OperandArray index="1" value="0"/>
+    </CRequirementEq>
+    <CRequirementEq id="EqCountUpgradeImprovedMiningInProgressOnly0">
+        <Tooltip value=""/>
+        <OperandArray index="0" value="CountUpgradeImprovedMiningInProgressOnly"/>
+        <OperandArray index="1" value="0"/>
+    </CRequirementEq>
+    <CRequirementEq id="EqCountUpgradeImprovedMiningQueuedOnly0">
+        <Tooltip value=""/>
+        <OperandArray index="0" value="CountUpgradeImprovedMiningQueuedOnly"/>
+        <OperandArray index="1" value="0"/>
+    </CRequirementEq>
+    <CRequirementEq id="EqCountUpgradeInfantryDamageUPInProgressOnly0">
+        <Tooltip value=""/>
+        <OperandArray index="0" value="CountUpgradeInfantryDamageUPInProgressOnly"/>
+        <OperandArray index="1" value="0"/>
+    </CRequirementEq>
+    <CRequirementEq id="EqCountUpgradeInfantryDamageUPQueuedOnly0">
+        <Tooltip value=""/>
+        <OperandArray index="0" value="CountUpgradeInfantryDamageUPQueuedOnly"/>
+        <OperandArray index="1" value="0"/>
+    </CRequirementEq>
+    <CRequirementEq id="EqCountUpgradeImprovedTurbinesInProgressOnly0">
+        <Tooltip value=""/>
+        <OperandArray index="0" value="CountUpgradeImprovedTurbinesInProgressOnly"/>
+        <OperandArray index="1" value="0"/>
+    </CRequirementEq>
+    <CRequirementEq id="EqCountUpgradeImprovedTurbinesQueuedOnly0">
+        <Tooltip value=""/>
+        <OperandArray index="0" value="CountUpgradeImprovedTurbinesQueuedOnly"/>
+        <OperandArray index="1" value="0"/>
+    </CRequirementEq>
+    <CRequirementEq id="EqCountUpgradeProductionSpeedInProgressOnly0">
+        <Tooltip value=""/>
+        <OperandArray index="0" value="CountUpgradeProductionSpeedInProgressOnly"/>
+        <OperandArray index="1" value="0"/>
+    </CRequirementEq>
+    <CRequirementEq id="EqCountUpgradeProductionSpeedQueuedOnly0">
+        <Tooltip value=""/>
+        <OperandArray index="0" value="CountUpgradeProductionSpeedQueuedOnly"/>
+        <OperandArray index="1" value="0"/>
+    </CRequirementEq>
+    <CRequirementEq id="EqCountUpgradeProtossUnitAttackSpeedInProgressOnly0">
+        <Tooltip value=""/>
+        <OperandArray index="0" value="CountUpgradeProtossUnitAttackSpeedInProgressOnly"/>
+        <OperandArray index="1" value="0"/>
+    </CRequirementEq>
+    <CRequirementEq id="EqCountUpgradeProtossUnitAttackSpeedQueuedOnly0">
+        <Tooltip value=""/>
+        <OperandArray index="0" value="CountUpgradeProtossUnitAttackSpeedQueuedOnly"/>
+        <OperandArray index="1" value="0"/>
+    </CRequirementEq>
+    <CRequirementEq id="EqCountUpgradeProtossUnitHPInProgressOnly0">
+        <Tooltip value=""/>
+        <OperandArray index="0" value="CountUpgradeProtossUnitHPInProgressOnly"/>
+        <OperandArray index="1" value="0"/>
+    </CRequirementEq>
+    <CRequirementEq id="EqCountUpgradeProtossUnitHPQueuedOnly0">
+        <Tooltip value=""/>
+        <OperandArray index="0" value="CountUpgradeProtossUnitHPQueuedOnly"/>
+        <OperandArray index="1" value="0"/>
+    </CRequirementEq>
+    <CRequirementEq id="EqCountUpgradeProtossUnitSpeedInProgressOnly0">
+        <Tooltip value=""/>
+        <OperandArray index="0" value="CountUpgradeProtossUnitSpeedInProgressOnly"/>
+        <OperandArray index="1" value="0"/>
+    </CRequirementEq>
+    <CRequirementEq id="EqCountUpgradeProtossUnitSpeedQueuedOnly0">
+        <Tooltip value=""/>
+        <OperandArray index="0" value="CountUpgradeProtossUnitSpeedQueuedOnly"/>
+        <OperandArray index="1" value="0"/>
+    </CRequirementEq>
+    <CRequirementEq id="EqCountUpgradeVehicleArmourUPInProgressOnly0">
+        <Tooltip value=""/>
+        <OperandArray index="0" value="CountUpgradeVehicleArmourUPInProgressOnly"/>
+        <OperandArray index="1" value="0"/>
+    </CRequirementEq>
+    <CRequirementEq id="EqCountUpgradeVehicleArmourUPQueuedOnly0">
+        <Tooltip value=""/>
+        <OperandArray index="0" value="CountUpgradeVehicleArmourUPQueuedOnly"/>
+        <OperandArray index="1" value="0"/>
+    </CRequirementEq>
+    <CRequirementEq id="EqCountUpgradeVehicleAttackSpeedInProgressOnly0">
+        <Tooltip value=""/>
+        <OperandArray index="0" value="CountUpgradeVehicleAttackSpeedInProgressOnly"/>
+        <OperandArray index="1" value="0"/>
+    </CRequirementEq>
+    <CRequirementEq id="EqCountUpgradeVehicleAttackSpeedQueuedOnly0">
+        <Tooltip value=""/>
+        <OperandArray index="0" value="CountUpgradeVehicleAttackSpeedQueuedOnly"/>
+        <OperandArray index="1" value="0"/>
+    </CRequirementEq>
+    <CRequirementEq id="EqCountUpgradeVehicleDamageUPInProgressOnly0">
+        <Tooltip value=""/>
+        <OperandArray index="0" value="CountUpgradeVehicleDamageUPInProgressOnly"/>
+        <OperandArray index="1" value="0"/>
+    </CRequirementEq>
+    <CRequirementEq id="EqCountUpgradeVehicleDamageUPQueuedOnly0">
+        <Tooltip value=""/>
+        <OperandArray index="0" value="CountUpgradeVehicleDamageUPQueuedOnly"/>
+        <OperandArray index="1" value="0"/>
+    </CRequirementEq>
+    <CRequirementEq id="EqCountUpgradeVehicleHPInProgressOnly0">
+        <Tooltip value=""/>
+        <OperandArray index="0" value="CountUpgradeVehicleHPInProgressOnly"/>
+        <OperandArray index="1" value="0"/>
+    </CRequirementEq>
+    <CRequirementEq id="EqCountUpgradeVehicleHPQueuedOnly0">
+        <Tooltip value=""/>
+        <OperandArray index="0" value="CountUpgradeVehicleHPQueuedOnly"/>
+        <OperandArray index="1" value="0"/>
+    </CRequirementEq>
+    <CRequirementNot id="NotCountUnitDataCoreQueuedOrBetter1667244463">
+        <OperandArray index="0" value="CountUnitDataCoreQueuedOrBetter1667244463"/>
+    </CRequirementNot>
+    <CRequirementNot id="NotCountUnitEnvoyQueuedOrBetter1391228021">
+        <OperandArray index="0" value="CountUnitEnvoyQueuedOrBetter1391228021"/>
+    </CRequirementNot>
+    <CRequirementNot id="NotCountUpgradeAdvancedAircraftQueuedOrBetter">
+        <Tooltip value=""/>
+        <OperandArray index="0" value="CountUpgradeAdvancedAircraftQueuedOrBetter"/>
+    </CRequirementNot>
+    <CRequirementEq id="EqCountUpgradeVehicleSpeedInProgressOnly0">
+        <Tooltip value=""/>
+        <OperandArray index="0" value="CountUpgradeVehicleSpeedInProgressOnly"/>
+        <OperandArray index="1" value="0"/>
+    </CRequirementEq>
+    <CRequirementNot id="NotCountUpgradeAdvancedGasificationQueuedOrBetter">
+        <Tooltip value=""/>
+        <OperandArray index="0" value="CountUpgradeAdvancedGasificationQueuedOrBetter"/>
+    </CRequirementNot>
+    <CRequirementEq id="EqCountUpgradeVehicleSpeedQueuedOnly0">
+        <Tooltip value=""/>
+        <OperandArray index="0" value="CountUpgradeVehicleSpeedQueuedOnly"/>
+        <OperandArray index="1" value="0"/>
+    </CRequirementEq>
+    <CRequirementNot id="Not3443563348CountUpgradeMilitaryCompleteOnly">
+        <OperandArray index="0" value="CountUpgradeMilitaryCompleteOnly"/>
+    </CRequirementNot>
+    <CRequirementNot id="NotCountUpgradeAdvancedPowerArmourQueuedOrBetter">
+        <Tooltip value=""/>
+        <OperandArray index="0" value="CountUpgradeAdvancedPowerArmourQueuedOrBetter"/>
+    </CRequirementNot>
+    <CRequirementNot id="NotCountUpgradeBasicAircraftQueuedOrBetter">
+        <Tooltip value=""/>
+        <OperandArray index="0" value="CountUpgradeBasicAircraftQueuedOrBetter"/>
+    </CRequirementNot>
+    <CRequirementNot id="Not1892629350CountUnitSchoolQueuedOrBetter1892629350">
+        <OperandArray index="0" value="CountUnitSchoolQueuedOrBetter1892629350"/>
+    </CRequirementNot>
+    <CRequirementNot id="NotCountUpgradeChangeWarPolicyInProgressOrBetter">
+        <OperandArray index="0" value="CountUpgradeChangeWarPolicyInProgressOrBetter"/>
+    </CRequirementNot>
+    <CRequirementNot id="NotCountUpgradeCoalGasificationQueuedOrBetter">
+        <Tooltip value=""/>
+        <OperandArray index="0" value="CountUpgradeCoalGasificationQueuedOrBetter"/>
+    </CRequirementNot>
+    <CRequirementNot id="NotCountUpgradeFortificationsQueuedOrBetter">
+        <Tooltip value=""/>
+        <OperandArray index="0" value="CountUpgradeFortificationsQueuedOrBetter"/>
+    </CRequirementNot>
+    <CRequirementNot id="NotCountUpgradeAdvancedVehiclesQueuedOrBetter">
+        <Tooltip value=""/>
+        <OperandArray index="0" value="CountUpgradeAdvancedVehiclesQueuedOrBetter"/>
+    </CRequirementNot>
+    <CRequirementNot id="NotCountUpgradeGeneticScreeningQueuedOrBetter">
+        <Tooltip value=""/>
+        <OperandArray index="0" value="CountUpgradeGeneticScreeningQueuedOrBetter"/>
+    </CRequirementNot>
+    <CRequirementNot id="NotCountUpgradeImprovedGasificationQueuedOrBetter">
+        <Tooltip value=""/>
+        <OperandArray index="0" value="CountUpgradeImprovedGasificationQueuedOrBetter"/>
+    </CRequirementNot>
+    <CRequirementNot id="NotCountUpgradeCloningQueuedOrBetter">
+        <Tooltip value=""/>
+        <OperandArray index="0" value="CountUpgradeCloningQueuedOrBetter"/>
+    </CRequirementNot>
+    <CRequirementNot id="NotCountUpgradeModernVehiclesQueuedOrBetter">
+        <Tooltip value=""/>
+        <OperandArray index="0" value="CountUpgradeModernVehiclesQueuedOrBetter"/>
+    </CRequirementNot>
+    <CRequirementNot id="NotCountUpgradeHeavyTanksQueuedOrBetter">
+        <Tooltip value=""/>
+        <OperandArray index="0" value="CountUpgradeHeavyTanksQueuedOrBetter"/>
+    </CRequirementNot>
+    <CRequirementNot id="NotCountUpgradeNationalismCompleteOnly">
+        <OperandArray index="0" value="CountUpgradeNationalismCompleteOnly"/>
+    </CRequirementNot>
+    <CRequirementNot id="NotCountUpgradeNuclearFusionQueuedOrBetter">
+        <Tooltip value=""/>
+        <OperandArray index="0" value="CountUpgradeNuclearFusionQueuedOrBetter"/>
+    </CRequirementNot>
+    <CRequirementNot id="NotCountUpgradeNuclearFissionQueuedOrBetter">
+        <Tooltip value=""/>
+        <OperandArray index="0" value="CountUpgradeNuclearFissionQueuedOrBetter"/>
+    </CRequirementNot>
+    <CRequirementNot id="NotCountUpgradeOilWellResearchInProgressOrBetter">
+        <OperandArray index="0" value="CountUpgradeOilWellResearchInProgressOrBetter"/>
+    </CRequirementNot>
+    <CRequirementNot id="NotCountUpgradePlascreteQueuedOrBetter">
+        <Tooltip value=""/>
+        <OperandArray index="0" value="CountUpgradePlascreteQueuedOrBetter"/>
+    </CRequirementNot>
+    <CRequirementNot id="NotCountUnitUniversityQueuedOrBetter">
+        <Tooltip value=""/>
+        <OperandArray index="0" value="CountUnitUniversityQueuedOrBetter"/>
+    </CRequirementNot>
+    <CRequirementNot id="NotCountUpgradePowerArmourQueuedOrBetter">
+        <Tooltip value=""/>
+        <OperandArray index="0" value="CountUpgradePowerArmourQueuedOrBetter"/>
+    </CRequirementNot>
+    <CRequirementNot id="NotCountUpgradeSubjugatedCompleteOnly">
+        <OperandArray index="0" value="CountUpgradeSubjugatedCompleteOnly"/>
+    </CRequirementNot>
+    <CRequirementNot id="NotCountUpgradeTradeEmbargoCompleteOnly">
+        <OperandArray index="0" value="CountUpgradeTradeEmbargoCompleteOnly"/>
+    </CRequirementNot>
+    <CRequirementNot id="NotCountUpgradeUnconditionalVictoryCompleteOnly">
+        <OperandArray index="0" value="CountUpgradeUnconditionalVictoryCompleteOnly"/>
+    </CRequirementNot>
+    <CRequirementNot id="NotCountUpgradeUrbanDevelopmentQueuedOrBetter">
+        <Tooltip value=""/>
+        <OperandArray index="0" value="CountUpgradeUrbanDevelopmentQueuedOrBetter"/>
+    </CRequirementNot>
+    <CRequirementNot id="NotOrCountUnitLaboratoryIInProgressOrBetter2310102397CountUnitLaboratoryIIInProgressOrBetterCountUnitLaboratoryIIIInProgressOrBetterCountUnitLaboratoryIVInProgressOrBetterCountUnitLaboratoryVInProgres1599170725">
+        <OperandArray index="0" value="OrCountUnitLaboratoryIInProgressOrBetter2310102397CountUnitLaboratoryIIInProgressOrBetterCountUnitLaboratoryIIIInProgressOrBetterCountUnitLaboratoryIVInProgressOrBetterCountUnitLaboratoryVInProgressOr3990106404"/>
+    </CRequirementNot>
+    <CRequirementNot id="NotOrCountUpgradeChangeWarPolicyInProgressOrBetter">
+        <OperandArray index="0" value="OrCountUpgradeChangeWarPolicyInProgressOrBetter"/>
+    </CRequirementNot>
+    <CRequirementNot id="NotOrCountUpgradeChangeWarPolicyInProgressOrBetterCountUpgradeMagrailMunitionsMarineInProgressOrBetter">
+        <OperandArray index="0" value="OrCountUpgradeChangeWarPolicyInProgressOrBetterCountUpgradeMagrailMunitionsMarineInProgressOrBetter"/>
+    </CRequirementNot>
+    <CRequirementNot id="NotOrCountUpgradeChangeWarPolicyInProgressOrBetterCountUpgradePacifisimInProgressOrBetter">
+        <OperandArray index="0" value="OrCountUpgradeChangeWarPolicyInProgressOrBetterCountUpgradePacifisimInProgressOrBetter"/>
+    </CRequirementNot>
+    <CRequirementNot id="NotOrCountUpgradeChangeWarPolicyInProgressOrBetterNotCountUpgradeNationalismCompleteOnly">
+        <OperandArray index="0" value="OrCountUpgradeChangeWarPolicyInProgressOrBetterNotCountUpgradeNationalismCompleteOnly"/>
+    </CRequirementNot>
+    <CRequirementNot id="NotOrCountUpgradeChangeWarPolicyInProgressOrBetterNotCountUpgradeUnconditionalVictoryCompleteOnly">
+        <OperandArray index="0" value="OrCountUpgradeChangeWarPolicyInProgressOrBetterNotCountUpgradeUnconditionalVictoryCompleteOnly"/>
+    </CRequirementNot>
+    <CRequirementNot id="NotOrCountUpgradeCommunismInProgressOrBetterCountUpgradeDirectDemocracyInProgressOrBetterCountUpgradePacifisimInProgressOrBetterCountUpgradeIsolationisimInProgressOrBetterCountUpgradeDiplomaticPolicyChangeInProgressOrBetter">
+        <OperandArray index="0" value="OrCountUpgradeCommunismInProgressOrBetterCountUpgradeDirectDemocracyInProgressOrBetterCountUpgradePacifisimInProgressOrBetterCountUpgradeIsolationisimInProgressOrBetterCountUpgradeDiplomaticPolicyChangeInProgressOrBetter"/>
+    </CRequirementNot>
+    <CRequirementNot id="NotOrCountUpgradeCommunismInProgressOrBetterCountUpgradeDirectDemocracyInProgressOrBetterCountUpgradeSocialistRepublicInProgressOrBetterCountUpgradePacifisimInProgressOrBetterCountUpgradeIsolationisim2412661587">
+        <OperandArray index="0" value="OrCountUpgradeCommunismInProgressOrBetterCountUpgradeDirectDemocracyInProgressOrBetterCountUpgradeSocialistRepublicInProgressOrBetterCountUpgradePacifisimInProgressOrBetterCountUpgradeIsolationisimInP1009418928"/>
+    </CRequirementNot>
+    <CRequirementNot id="NotOrCountUpgradeCorporatocracyInProgressOrBetterCountUpgradeNeofascismInProgressOrBetterCountUpgradeGrandEmpireInProgressOrBetterCountUpgradeImperialisimInProgressOrBetterCountUpgradeJingoisimInProgr3469606872">
+        <OperandArray index="0" value="OrCountUpgradeCorporatocracyInProgressOrBetterCountUpgradeNeofascismInProgressOrBetterCountUpgradeGrandEmpireInProgressOrBetterCountUpgradeImperialisimInProgressOrBetterCountUpgradeJingoisimInProgress1130452588"/>
+    </CRequirementNot>
+    <CRequirementNot id="NotOrCountUpgradeCorporatocracyInProgressOrBetterCountUpgradeNeofascismInProgressOrBetterCountUpgradeGrandEmpireInProgressOrBetterCountUpgradeInterventionalisimInProgressOrBetterCountUpgradeImperialis4019043411">
+        <OperandArray index="0" value="OrCountUpgradeCorporatocracyInProgressOrBetterCountUpgradeNeofascismInProgressOrBetterCountUpgradeGrandEmpireInProgressOrBetterCountUpgradeInterventionalisimInProgressOrBetterCountUpgradeImperialisimI4283969098"/>
+    </CRequirementNot>
+    <CRequirementNot id="NotOrCountUpgradeCorporatocracyInProgressOrBetterCountUpgradeNeofascismInProgressOrBetterCountUpgradeGrandEmpireInProgressOrBetterCountUpgradePacifisimInProgressOrBetterCountUpgradeJingoisimInProgress544116613">
+        <OperandArray index="0" value="OrCountUpgradeCorporatocracyInProgressOrBetterCountUpgradeNeofascismInProgressOrBetterCountUpgradeGrandEmpireInProgressOrBetterCountUpgradePacifisimInProgressOrBetterCountUpgradeJingoisimInProgressOrB3485431111"/>
+    </CRequirementNot>
+    <CRequirementNot id="NotOrCountUpgradeEUBuiltInProgressOrBetterCountUpgradeGraviticThrustersInProgressOrBetter">
+        <OperandArray index="0" value="OrCountUpgradeEUBuiltInProgressOrBetterCountUpgradeGraviticThrustersInProgressOrBetter"/>
+    </CRequirementNot>
+    <CRequirementNot id="NotOrCountUpgradeNeofascismInProgressOrBetterCountUpgradeFlyingLocustsInProgressOrBetterCountUpgradeFlyingLocustsInProgressOrBetterCountUpgradePacifisimInProgressOrBetterCountUpgradeChangeWarPolicyInP1168028308">
+        <OperandArray index="0" value="OrCountUpgradeNeofascismInProgressOrBetterCountUpgradeFlyingLocustsInProgressOrBetterCountUpgradeFlyingLocustsInProgressOrBetterCountUpgradePacifisimInProgressOrBetterCountUpgradeChangeWarPolicyInProg1334653229"/>
+    </CRequirementNot>
+    <CRequirementNot id="NotOrCountUpgradeNeofascismInProgressOrBetterCountUpgradeLocustLifetimeIncreaseInProgressOrBetterCountUpgradeLocustLifetimeIncreaseInProgressOrBetterCountUpgradePacifisimInProgressOrBetterCountUpgrade1815957957">
+        <OperandArray index="0" value="OrCountUpgradeNeofascismInProgressOrBetterCountUpgradeLocustLifetimeIncreaseInProgressOrBetterCountUpgradeLocustLifetimeIncreaseInProgressOrBetterCountUpgradePacifisimInProgressOrBetterCountUpgradeCha138816663"/>
+    </CRequirementNot>
+    <CRequirementNot id="NotOrCountUpgradeSocialistRepublicInProgressOrBetterCountUpgradeFauxDemocracyInProgressOrBetterCountUpgradeDirectDemocracyInProgressOrBetterCountUpgradePacifisimInProgressOrBetterCountUpgradeChangeWar2943013564">
+        <OperandArray index="0" value="OrCountUpgradeSocialistRepublicInProgressOrBetterCountUpgradeFauxDemocracyInProgressOrBetterCountUpgradeDirectDemocracyInProgressOrBetterCountUpgradePacifisimInProgressOrBetterCountUpgradeChangeWarPol1495492433"/>
+    </CRequirementNot>
+    <CRequirementNot id="NotOrCountUpgradeSocialistRepublicInProgressOrBetterCountUpgradeFenixWhirlwindInProgressOrBetterCountUpgradeDirectDemocracyInProgressOrBetterCountUpgradePacifisimInProgressOrBetterCountUpgradeChangeWa3060390959">
+        <OperandArray index="0" value="OrCountUpgradeSocialistRepublicInProgressOrBetterCountUpgradeFenixWhirlwindInProgressOrBetterCountUpgradeDirectDemocracyInProgressOrBetterCountUpgradePacifisimInProgressOrBetterCountUpgradeChangeWarPo1002796443"/>
+    </CRequirementNot>
+    <CRequirementOr id="OrCountUnitLaboratoryIInProgressOrBetter2310102397CountUnitLaboratoryIIInProgressOrBetterCountUnitLaboratoryIIIInProgressOrBetterCountUnitLaboratoryIVInProgressOrBetterCountUnitLaboratoryVInProgressOr3990106404">
+        <OperandArray value="CountUnitLaboratoryIInProgressOrBetter2310102397"/>
+        <OperandArray value="CountUnitLaboratoryIIInProgressOrBetter"/>
+        <OperandArray value="CountUnitLaboratoryIIIInProgressOrBetter"/>
+        <OperandArray value="CountUnitLaboratoryIVInProgressOrBetter"/>
+        <OperandArray value="CountUnitLaboratoryVInProgressOrBetter"/>
+        <OperandArray value="CountUnitResearchComplexIInProgressOrBetter2310102397"/>
+        <OperandArray value="CountUnitResearchComplexIIInProgressOrBetter"/>
+        <OperandArray value="CountUnitResearchComplexIIIInProgressOrBetter"/>
+        <OperandArray value="CountUnitResearchComplexIVInProgressOrBetter"/>
+        <OperandArray value="CountUnitResearchComplexVInProgressOrBetter"/>
+    </CRequirementOr>
+    <CRequirementNot id="NotCountUpgradeVehiclesQueuedOrBetter">
+        <Tooltip value=""/>
+        <OperandArray index="0" value="CountUpgradeVehiclesQueuedOrBetter"/>
+    </CRequirementNot>
+    <CRequirementOr id="OrCountUnitWindTurbineCompleteOnlyCountUnitFissionPowerPlantCompleteOnlyCountUnitFusionReactor2CompleteOnlyCountUnitGeothermalPowerPlantCompleteOnlyCountUnitOilPowerPlantCompleteOnly">
+        <OperandArray value="CountUnitWindTurbineCompleteOnly"/>
+        <OperandArray value="CountUnitFissionPowerPlantCompleteOnly"/>
+        <OperandArray value="CountUnitFusionReactor2CompleteOnly"/>
+        <OperandArray value="CountUnitGeothermalPowerPlantCompleteOnly"/>
+        <OperandArray value="CountUnitOilPowerPlantCompleteOnly"/>
+    </CRequirementOr>
+    <CRequirementOr id="OrCountUpgradeChangeWarPolicyInProgressOrBetter">
+        <OperandArray value="CountUpgradeChangeWarPolicyInProgressOrBetter"/>
+    </CRequirementOr>
+    <CRequirementOr id="OrCountUpgradeChangeWarPolicyInProgressOrBetterCountUpgradeMagrailMunitionsMarineInProgressOrBetter">
+        <OperandArray value="CountUpgradeChangeWarPolicyInProgressOrBetter"/>
+        <OperandArray value="CountUpgradeMagrailMunitionsMarineInProgressOrBetter"/>
+    </CRequirementOr>
+    <CRequirementOr id="OrCountUpgradeChangeWarPolicyInProgressOrBetterCountUpgradePacifisimInProgressOrBetter">
+        <OperandArray value="CountUpgradeChangeWarPolicyInProgressOrBetter"/>
+        <OperandArray value="CountUpgradePacifisimInProgressOrBetter"/>
+    </CRequirementOr>
+    <CRequirementOr id="OrCountUpgradeChangeWarPolicyInProgressOrBetterNotCountUpgradeNationalismCompleteOnly">
+        <OperandArray value="CountUpgradeChangeWarPolicyInProgressOrBetter"/>
+        <OperandArray value="NotCountUpgradeNationalismCompleteOnly"/>
+    </CRequirementOr>
+    <CRequirementOr id="OrCountUpgradeChangeWarPolicyInProgressOrBetterNotCountUpgradeUnconditionalVictoryCompleteOnly">
+        <OperandArray value="CountUpgradeChangeWarPolicyInProgressOrBetter"/>
+        <OperandArray value="NotCountUpgradeUnconditionalVictoryCompleteOnly"/>
+    </CRequirementOr>
+    <CRequirementOr id="OrCountUpgradeCommunismInProgressOrBetterCountUpgradeDirectDemocracyInProgressOrBetterCountUpgradePacifisimInProgressOrBetterCountUpgradeIsolationisimInProgressOrBetterCountUpgradeDiplomaticPolicyChangeInProgressOrBetter">
+        <OperandArray value="CountUpgradeCommunismInProgressOrBetter"/>
+        <OperandArray value="CountUpgradeDirectDemocracyInProgressOrBetter"/>
+        <OperandArray value="CountUpgradePacifisimInProgressOrBetter"/>
+        <OperandArray value="CountUpgradeIsolationisimInProgressOrBetter"/>
+        <OperandArray value="CountUpgradeDiplomaticPolicyChangeInProgressOrBetter"/>
+    </CRequirementOr>
+    <CRequirementOr id="OrCountUpgradeCommunismInProgressOrBetterCountUpgradeDirectDemocracyInProgressOrBetterCountUpgradeSocialistRepublicInProgressOrBetterCountUpgradePacifisimInProgressOrBetterCountUpgradeIsolationisimInP1009418928">
+        <OperandArray value="CountUpgradeCommunismInProgressOrBetter"/>
+        <OperandArray value="CountUpgradeDirectDemocracyInProgressOrBetter"/>
+        <OperandArray value="CountUpgradeSocialistRepublicInProgressOrBetter"/>
+        <OperandArray value="CountUpgradePacifisimInProgressOrBetter"/>
+        <OperandArray value="CountUpgradeIsolationisimInProgressOrBetter"/>
+        <OperandArray value="CountUpgradeInterventionalisimInProgressOrBetter"/>
+        <OperandArray value="CountUpgradeDiplomaticPolicyChangeInProgressOrBetter"/>
+    </CRequirementOr>
+    <CRequirementOr id="OrCountUpgradeCorporatocracyInProgressOrBetterCountUpgradeNeofascismInProgressOrBetterCountUpgradeGrandEmpireInProgressOrBetterCountUpgradeImperialisimInProgressOrBetterCountUpgradeJingoisimInProgress1130452588">
+        <OperandArray value="CountUpgradeCorporatocracyInProgressOrBetter"/>
+        <OperandArray value="CountUpgradeNeofascismInProgressOrBetter"/>
+        <OperandArray value="CountUpgradeGrandEmpireInProgressOrBetter"/>
+        <OperandArray value="CountUpgradeImperialisimInProgressOrBetter"/>
+        <OperandArray value="CountUpgradeJingoisimInProgressOrBetter"/>
+        <OperandArray value="CountUpgradeDiplomaticPolicyChangeInProgressOrBetter"/>
+    </CRequirementOr>
+    <CRequirementOr id="OrCountUpgradeCorporatocracyInProgressOrBetterCountUpgradeNeofascismInProgressOrBetterCountUpgradeGrandEmpireInProgressOrBetterCountUpgradeInterventionalisimInProgressOrBetterCountUpgradeImperialisimI4283969098">
+        <OperandArray value="CountUpgradeCorporatocracyInProgressOrBetter"/>
+        <OperandArray value="CountUpgradeNeofascismInProgressOrBetter"/>
+        <OperandArray value="CountUpgradeGrandEmpireInProgressOrBetter"/>
+        <OperandArray value="CountUpgradeInterventionalisimInProgressOrBetter"/>
+        <OperandArray value="CountUpgradeImperialisimInProgressOrBetter"/>
+        <OperandArray value="CountUpgradeJingoisimInProgressOrBetter"/>
+        <OperandArray value="CountUpgradeDiplomaticPolicyChangeInProgressOrBetter"/>
+    </CRequirementOr>
+    <CRequirementOr id="OrCountUpgradeCorporatocracyInProgressOrBetterCountUpgradeNeofascismInProgressOrBetterCountUpgradeGrandEmpireInProgressOrBetterCountUpgradePacifisimInProgressOrBetterCountUpgradeJingoisimInProgressOrB3485431111">
+        <OperandArray value="CountUpgradeCorporatocracyInProgressOrBetter"/>
+        <OperandArray value="CountUpgradeNeofascismInProgressOrBetter"/>
+        <OperandArray value="CountUpgradeGrandEmpireInProgressOrBetter"/>
+        <OperandArray value="CountUpgradePacifisimInProgressOrBetter"/>
+        <OperandArray value="CountUpgradeJingoisimInProgressOrBetter"/>
+        <OperandArray value="CountUpgradeDiplomaticPolicyChangeInProgressOrBetter"/>
+    </CRequirementOr>
+    <CRequirementOr id="OrCountUpgradeEUBuiltInProgressOrBetterCountUpgradeGraviticThrustersInProgressOrBetter">
+        <OperandArray value="CountUpgradeEUBuiltInProgressOrBetter"/>
+        <OperandArray value="CountUpgradeGraviticThrustersInProgressOrBetter"/>
+    </CRequirementOr>
+    <CRequirementOr id="OrCountUpgradeNeofascismInProgressOrBetterCountUpgradeFlyingLocustsInProgressOrBetterCountUpgradeFlyingLocustsInProgressOrBetterCountUpgradePacifisimInProgressOrBetterCountUpgradeChangeWarPolicyInProg1334653229">
+        <OperandArray value="CountUpgradeNeofascismInProgressOrBetter"/>
+        <OperandArray value="CountUpgradeFlyingLocustsInProgressOrBetter"/>
+        <OperandArray value="CountUpgradeFlyingLocustsInProgressOrBetter"/>
+        <OperandArray value="CountUpgradePacifisimInProgressOrBetter"/>
+        <OperandArray value="CountUpgradeChangeWarPolicyInProgressOrBetter"/>
+        <OperandArray value="CountUpgradeInhumaneWarInProgressOrBetter"/>
+        <OperandArray value="CountUpgradeTotalWarInProgressOrBetter"/>
+    </CRequirementOr>
+    <CRequirementOr id="OrCountUpgradeNeofascismInProgressOrBetterCountUpgradeLocustLifetimeIncreaseInProgressOrBetterCountUpgradeLocustLifetimeIncreaseInProgressOrBetterCountUpgradePacifisimInProgressOrBetterCountUpgradeCha138816663">
+        <OperandArray value="CountUpgradeNeofascismInProgressOrBetter"/>
+        <OperandArray value="CountUpgradeLocustLifetimeIncreaseInProgressOrBetter"/>
+        <OperandArray value="CountUpgradeLocustLifetimeIncreaseInProgressOrBetter"/>
+        <OperandArray value="CountUpgradePacifisimInProgressOrBetter"/>
+        <OperandArray value="CountUpgradeChangeWarPolicyInProgressOrBetter"/>
+        <OperandArray value="CountUpgradeTotalWarInProgressOrBetter"/>
+        <OperandArray value="CountUpgradeInhumaneWarInProgressOrBetter"/>
+    </CRequirementOr>
+    <CRequirementOr id="OrCountUpgradeSocialistRepublicInProgressOrBetterCountUpgradeFauxDemocracyInProgressOrBetterCountUpgradeDirectDemocracyInProgressOrBetterCountUpgradePacifisimInProgressOrBetterCountUpgradeChangeWarPol1495492433">
+        <OperandArray value="CountUpgradeSocialistRepublicInProgressOrBetter"/>
+        <OperandArray value="CountUpgradeFauxDemocracyInProgressOrBetter"/>
+        <OperandArray value="CountUpgradeDirectDemocracyInProgressOrBetter"/>
+        <OperandArray value="CountUpgradePacifisimInProgressOrBetter"/>
+        <OperandArray value="CountUpgradeChangeWarPolicyInProgressOrBetter"/>
+        <OperandArray value="CountUpgradeDefensiveWarInProgressOrBetter"/>
+        <OperandArray value="CountUpgradeSkirmishInProgressOrBetter"/>
+        <OperandArray value="CountUpgradeLimitedWarInProgressOrBetter"/>
+    </CRequirementOr>
+    <CRequirementOr id="OrCountUpgradeSocialistRepublicInProgressOrBetterCountUpgradeFenixWhirlwindInProgressOrBetterCountUpgradeDirectDemocracyInProgressOrBetterCountUpgradePacifisimInProgressOrBetterCountUpgradeChangeWarPo1002796443">
+        <OperandArray value="CountUpgradeSocialistRepublicInProgressOrBetter"/>
+        <OperandArray value="CountUpgradeFenixWhirlwindInProgressOrBetter"/>
+        <OperandArray value="CountUpgradeDirectDemocracyInProgressOrBetter"/>
+        <OperandArray value="CountUpgradePacifisimInProgressOrBetter"/>
+        <OperandArray value="CountUpgradeChangeWarPolicyInProgressOrBetter"/>
+        <OperandArray value="CountUpgradeSkirmishInProgressOrBetter"/>
+    </CRequirementOr>
+    <CRequirementOr id="OrCountUpgradeTotalWarInProgressOrBetterCountUpgradeInhumaneWarInProgressOrBetter">
+        <OperandArray value="CountUpgradeTotalWarInProgressOrBetter"/>
+        <OperandArray value="CountUpgradeInhumaneWarInProgressOrBetter"/>
+    </CRequirementOr>
+    <CRequirementOr id="OrSum">
+        <OperandArray value="Sum"/>
+    </CRequirementOr>
+    <CRequirementSum id="Sum"/>
+    <CRequirementCountUpgrade id="UpgradeOverlord2CompleteOnly">
+        <Count Link="Shiverpus"/>
+    </CRequirementCountUpgrade>
+    <CRequirementCountUpgrade id="UpgradeOverlord2QueuedOrBetter">
+        <Count Link="Shiverpus"/>
+    </CRequirementCountUpgrade>
+</Catalog>

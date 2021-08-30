@@ -1,0 +1,296 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Preload>
+<Asset path="btn-fauxdemocracy.dds" Type="Image"/>
+<Asset path="btn-hammersickle.dds" Type="Image"/>
+<Asset path="military\050.tga" Type="Image"/>
+<Asset path="diplomatic policies\progress bar\bluebox.tga" Type="Image"/>
+<Asset path="military\mainui\bigtealbox.tga" Type="Image"/>
+<Asset path="diplomatic policies\research\special\068.tga" Type="Image"/>
+<Asset path="assets\declare war, neutral, peace\009.tga" Type="Image"/>
+<Asset path="assets\textures\ui_scrollbar_frame.dds" Type="Image"/>
+<Asset path="assets\declare war, neutral, peace\004.tga" Type="Image"/>
+<Asset path="diplomatic policies\research\special\066.tga" Type="Image"/>
+<Asset path="assets\textures\075.lvl0" Type="Image"/>
+<Asset path="diplomatic policies\research\special\064.tga" Type="Image"/>
+<Asset path="assets\eu\arisblackbox.tga" Type="Image"/>
+<Asset path="assets\economy\017.tga" Type="Image"/>
+<Asset path="military\037.tga" Type="Image"/>
+<Asset path="assets\nations\nonnation.dds" Type="Image"/>
+<Asset path="military\045.tga" Type="Image"/>
+<Asset path="assets\declare war, neutral, peace\008.tga" Type="Image"/>
+<Asset path="military\048.tga" Type="Image"/>
+<Asset path="assets\diplomatic policies\pacifisim.dds" Type="Image"/>
+<Asset path="assets\declare war, neutral, peace\003.tga" Type="Image"/>
+<Asset path="assets\declare war, neutral, peace\red box.tga" Type="Image"/>
+<Asset path="military\054.tga" Type="Image"/>
+<Asset path="military\screenshots\possiblescreenshots\yes\yes\research\special\research\special\symbols\research\special\082.tga" Type="Image"/>
+<Asset path="military\057.tga" Type="Image"/>
+<Asset path="military\screenshots\possiblescreenshots\yes\yes\research\special\research\special\076.tga" Type="Image"/>
+<Asset path="diplomatic policies\research\special\063.tga" Type="Image"/>
+<Asset path="military\music\gamescreens\v2\mainui\3rdcomp.tga" Type="Image"/>
+<Asset path="diplomatic policies\research\special\071.tga" Type="Image"/>
+<Asset path="assets\declare war, neutral, peace\government\government\013.tga" Type="Image"/>
+<Asset path="assets\textures\ui_trial_frame_blackbox.dds" Type="Image"/>
+<Asset path="assets\economy\023.tga" Type="Image"/>
+<Asset path="assets\declare war, neutral, peace\010.tga" Type="Image"/>
+<Asset path="military\047.tga" Type="Image"/>
+<Asset path="diplomatic policies\research\special\059.tga" Type="Image"/>
+<Asset path="diplomatic policies\research\special\065.tga" Type="Image"/>
+<Asset path="military\058.tga" Type="Image"/>
+<Asset path="assets\economy\022.tga" Type="Image"/>
+<Asset path="diplomatic policies\progress bar\red box.tga" Type="Image"/>
+<Asset path="assets\millitary policies\limited war.dds" Type="Image"/>
+<Asset path="diplomatic policies\research\special\072.tga" Type="Image"/>
+<Asset path="diplomatic policies\research\special\062.tga" Type="Image"/>
+<Asset path="btn-fascism.dds" Type="Image"/>
+<Asset path="military\036.tga" Type="Image"/>
+<Asset path="military\041.tga" Type="Image"/>
+<Asset path="assets\economy\028.tga" Type="Image"/>
+<Asset path="military\screenshots\possiblescreenshots\yes\yes\research\special\research\special\symbols\research\special\081.tga" Type="Image"/>
+<Asset path="assets\millitary policies\total war.dds" Type="Image"/>
+<Asset path="military\052.tga" Type="Image"/>
+<Asset path="military\035.tga" Type="Image"/>
+<Asset path="assets\economy\025.tga" Type="Image"/>
+<Asset path="military\040.tga" Type="Image"/>
+<Asset path="military\screenshots\possiblescreenshots\yes\yes\research\special\research\special\symbols\smallcheck.tga" Type="Image"/>
+<Asset path="diplomatic policies\research\special\070.tga" Type="Image"/>
+<Asset path="assets\declare war, neutral, peace\005.tga" Type="Image"/>
+<Asset path="diplomatic policies\research\special\073.tga" Type="Image"/>
+<Asset path="military\038.tga" Type="Image"/>
+<Asset path="diplomatic policies\research\special\067.tga" Type="Image"/>
+<Asset path="assets\declare war, neutral, peace\government\014.tga" Type="Image"/>
+<Asset path="military\screenshots\possiblescreenshots\yes\yes\research\special\research\special\075.tga" Type="Image"/>
+<Asset path="assets\economy\031.tga" Type="Image"/>
+<Asset path="assets\declare war, neutral, peace\greenbox.tga" Type="Image"/>
+<Asset path="assets\declare war, neutral, peace\012.tga" Type="Image"/>
+<Asset path="assets\millitary policies\inhumane war.dds" Type="Image"/>
+<Asset path="military\044.tga" Type="Image"/>
+<Asset path="assets\millitary policies\defensive war.dds" Type="Image"/>
+<Asset path="diplomatic policies\xmarksthespot.tga" Type="Image"/>
+<Asset path="direct democracy.dds" Type="Image"/>
+<Asset path="military\research\government\080.tga" Type="Image"/>
+<Asset path="assets\economy\019.tga" Type="Image"/>
+<Asset path="military\screenshots\possiblescreenshots\yes\yes\research\special\research\special\078.tga" Type="Image"/>
+<Asset path="assets\economy\026.tga" Type="Image"/>
+<Asset path="btn-corporatocracy.dds" Type="Image"/>
+<Asset path="btn-neofederation.dds" Type="Image"/>
+<Asset path="military\screenshots\possiblescreenshots\yes\yes\research\special\research\special\symbols\research\special\084.tga" Type="Image"/>
+<Asset path="military\055.tga" Type="Image"/>
+<Asset path="assets\economy\016.tga" Type="Image"/>
+<Asset path="military\056.tga" Type="Image"/>
+<Asset path="assets\economy\029.tga" Type="Image"/>
+<Asset path="assets\declare war, neutral, peace\government\015.tga" Type="Image"/>
+<Asset path="military\screenshots\possiblescreenshots\yes\yes\research\special\research\special\077.tga" Type="Image"/>
+<Asset path="military\053.tga" Type="Image"/>
+<Asset path="assets\declare war, neutral, peace\011.tga" Type="Image"/>
+<Asset path="military\screenshots\possiblescreenshots\yes\yes\research\special\research\special\symbols\research\special\083.tga" Type="Image"/>
+<Asset path="assets\eu\euicon.tga" Type="Image"/>
+<Asset path="assets\textures\075.dds" Type="Image"/>
+<Asset path="military\screenshots\possiblescreenshots\yes\yes\research\special\research\special\079.tga" Type="Image"/>
+<Asset path="assets\economy\024.tga" Type="Image"/>
+<Asset path="military\042.tga" Type="Image"/>
+<Asset path="assets\declare war, neutral, peace\greybox.tga" Type="Image"/>
+<Asset path="military\music\gamescreens\v2\mainui\3rdcompnoneu.tga" Type="Image"/>
+<Asset path="assets\textures\green.dds" Type="Image"/>
+<Asset path="diplomatic policies\research\special\069.tga" Type="Image"/>
+<Asset path="military\music\gamescreens\v2\mainui\mainui\bigorangebox.tga" Type="Image"/>
+<Asset path="assets\textures\progress bar\yellowbox.tga" Type="Image"/>
+<Asset path="assets\economy\020.tga" Type="Image"/>
+<Asset path="assets\declare war, neutral, peace\001.tga" Type="Image"/>
+<Asset path="military\screenshots\possiblescreenshots\yes\yes\research\special\research\special\symbols\smallredx.tga" Type="Image"/>
+<Asset path="grand empire.dds" Type="Image"/>
+<Asset path="research\special\074.tga" Type="Image"/>
+<Asset path="assets\declare war, neutral, peace\006.tga" Type="Image"/>
+<Asset path="assets\economy\030.tga" Type="Image"/>
+<Asset path="military\034.tga" Type="Image"/>
+<Asset path="assets\declare war, neutral, peace\002.tga" Type="Image"/>
+<Asset path="assets\economy\018.tga" Type="Image"/>
+<Asset path="diplomatic policies\research\special\061.tga" Type="Image"/>
+<Asset path="btn-socialism.dds" Type="Image"/>
+<Asset path="assets\textures\ui_glues_helpmenu_commandcardicon.dds" Type="Image"/>
+<Asset path="diplomatic policies\uparrow.tga" Type="Image"/>
+<Asset path="assets\declare war, neutral, peace\007.tga" Type="Image"/>
+<Asset path="assets\economy\027.tga" Type="Image"/>
+<Asset path="military\043.tga" Type="Image"/>
+<Asset path="assets\economy\021.tga" Type="Image"/>
+<Asset path="military\051.tga" Type="Image"/>
+<Asset path="diplomatic policies\research\special\060.tga" Type="Image"/>
+<Asset path="military\049.tga" Type="Image"/>
+<Asset path="assets\declare war, neutral, peace\transparent box.tga" Type="Image"/>
+<Asset path="military\039.tga" Type="Image"/>
+<Asset path="assets\economy\032.tga" Type="Image"/>
+<Asset path="military\046.tga" Type="Image"/>
+<Actor id="SYSTEM_ActorConfig"/>
+<Actor id="Shakuras_City_Debris_Splat"/>
+<Behavior id="AITargettingSystems"/>
+<Behavior id="AdministrativeHighway"/>
+<Behavior id="CapitalistDemocracy"/>
+<Behavior id="CollaborativeAINetwork"/>
+<Behavior id="Core1"/>
+<Behavior id="Core2"/>
+<Behavior id="CoreTerritoryPlayer13"/>
+<Behavior id="CoreTerritoryPlayer14"/>
+<Behavior id="CoreTerritoryPlayer15"/>
+<Behavior id="CoreTerritoryPlayer16"/>
+<Behavior id="CoreTerritoryPlayer17"/>
+<Behavior id="CoreTerritoryPlayer18"/>
+<Behavior id="CoreTerritoryPlayer19"/>
+<Behavior id="Corporatocracy"/>
+<Behavior id="Creep"/>
+<Behavior id="DefensiveWar"/>
+<Behavior id="DesertTerrain"/>
+<Behavior id="Disarmed"/>
+<Behavior id="GrandEmpire"/>
+<Behavior id="InhumaneWar"/>
+<Behavior id="LimitedWar"/>
+<Behavior id="LocallySupplied"/>
+<Behavior id="LocallySuppliedHealth"/>
+<Behavior id="MountainTerrain"/>
+<Behavior id="PopulationThinner"/>
+<Behavior id="PopulationThinner2"/>
+<Behavior id="NeoFascism"/>
+<Behavior id="Pacifist"/>
+<Behavior id="PredictiveAISystems"/>
+<Behavior id="Razing"/>
+<Behavior id="RussianCity"/>
+<Behavior id="RussianDivision"/>
+<Behavior id="Separatists"/>
+<Behavior id="NegotiatedTerritory"/>
+<Behavior id="Occupation"/>
+<Behavior id="ResourceInvulnerability"/>
+<Behavior id="Bankrupt"/>
+<Behavior id="SnowTerrain"/>
+<Behavior id="HarshSnow"/>
+<Behavior id="Starving"/>
+<Behavior id="NoOil"/>
+<Behavior id="SyndaclistCommune"/>
+<Behavior id="TempHealthFixBug"/>
+<Behavior id="TotalWar"/>
+<Behavior id="TotalistCommune"/>
+<Behavior id="WelfareDemocracy"/>
+<Behavior id="WellFeds"/>
+<Behavior id="WellSupplied"/>
+<Behavior id="populationThinnerImmunity"/>
+<Behavior id="populationThinnerImmunity2"/>
+<Effect id="LaunchICBMSet2"/>
+<Effect id="LaunchICBMSet22"/>
+<Effect id="LaunchICBMSet23"/>
+<Effect id="HalcyonEMP"/>
+<Effect id="HydrogenEMP"/>
+<Effect id="NukeEMP"/>
+<Effect id="PulsegunD"/>
+<Model id="PingObjective"/>
+<Model id="Elsecaro_Ash_Wind"/>
+<Sound id="Ghost_NukeExplode"/>
+<Sound id="Alert_TerranResearchComplete" Variations="0"/>
+<Sound id="AICommunication_TerranAICommand_125"/>
+<Sound id="Battlecruiser_MissilePodUpgrade"/>
+<Sound id="HansonABChoiceAlarm" Variations="0"/>
+<Sound id="Tychus04BriefingAlarm"/>
+<Sound id="Stukov_Ready"/>
+<Sound id="Stukov_Attack"/>
+<Sound id="zLab01_alarm_scripted"/>
+<Sound id="UI_alarm_BattlecruiserHangar_stereo"/>
+<Sound id="MarSaraidlesTychusTychus00002"/>
+<Sound id="BridgeFidgetsCadeCade00003"/>
+<Sound id="TScene16Valerian016" Variations="0"/>
+<Sound id="BridgeHornerHorner00015"/>
+<Sound id="CommuneSelection" Variations="0,1"/>
+<Sound id="EarthDestruction"/>
+<Sound id="FreeSelection" Variations="0,1,2,3,4,5,6"/>
+<Sound id="Victory_Russia"/>
+<Soundtrack id="Music_TerrLow"/>
+<Terrain id="Endion"/>
+<Unit id="SupplyDepotLowered"/>
+<Unit id="Marine"/>
+<Unit id="Zergling"/>
+<Unit id="HerculesLanderFlying"/>
+<Unit id="RaynorCommando"/>
+<Unit id="Caboose"/>
+<Unit id="RaynorLab"/>
+<Unit id="SupplyDepot234223"/>
+<Unit id="MissileTurret22" Variations="0,1"/>
+<Unit id="ShieldBatteryNerazim2"/>
+<Unit id="InfestedCivilian2"/>
+<Unit id="InfestorTerran2"/>
+<Unit id="InfestedCivilian22"/>
+<Unit id="InfestorTerran22"/>
+<Unit id="NaniteTower"/>
+<Unit id="Expounder"/>
+<Unit id="Conscript"/>
+<Unit id="Rifleman"/>
+<Unit id="Mortaliser"/>
+<Unit id="Medic2"/>
+<Unit id="Equaliser"/>
+<Unit id="StrikeTrooper"/>
+<Unit id="AlphaMarine"/>
+<Unit id="Knight"/>
+<Unit id="Stormtrooper"/>
+<Unit id="ViperFighter"/>
+<Unit id="ApolloBomber"/>
+<Unit id="AstrosInterceptor"/>
+<Unit id="ScorcherBomber"/>
+<Unit id="JavelinAH"/>
+<Unit id="Hypercannon"/>
+<Unit id="LancerMBT"/>
+<Unit id="VanguardMBT"/>
+<Unit id="ArmadilloAPC"/>
+<Unit id="Phenom"/>
+<Unit id="CrusaderMBT"/>
+<Unit id="SmallHouse"/>
+<Unit id="Clinic"/>
+<Unit id="School"/>
+<Unit id="MineI"/>
+<Unit id="University"/>
+<Unit id="Flats" Variations="0,1"/>
+<Unit id="GroundFactory"/>
+<Unit id="BoreholeI"/>
+<Unit id="FissionPowerPlant"/>
+<Unit id="CPGI"/>
+<Unit id="AircraftFactory"/>
+<Unit id="AmericanBarracks"/>
+<Unit id="GateToHell"/>
+<Unit id="HunterSeekerWeapon2"/>
+<Unit id="HunterSeekerWeapon222"/>
+<Unit id="HunterSeekerWeapon23"/>
+<Unit id="NewYork"/>
+<Unit id="Nizhnevartovsk"/>
+<Unit id="ParamilitaryForces"/>
+<Unit id="CorporateHeadquarters"/>
+<Unit id="RussianGuerrilla"/>
+<Unit id="AmericanGuard"/>
+<Unit id="Leader"/>
+<Unit id="Moscow"/>
+<Unit id="Nimbuspillar" Variations="0,1"/>
+<Unit id="SMGenericMaleOfficer022"/>
+<Unit id="NewRussianFederationPeacekeeper"/>
+<Unit id="Gold"/>
+<Unit id="Silver"/>
+<Unit id="GeothermalFissure"/>
+<Unit id="Platinum"/>
+<Unit id="CPGII"/>
+<Unit id="CPGIII"/>
+<Unit id="UASKenedyIV"/>
+<Unit id="OilWellII"/>
+<Unit id="CerulianMarine"/>
+<Unit id="Metal" Variations="1"/>
+<Unit id="OilWellI"/>
+<Unit id="Oil"/>
+<Unit id="BoreholeII"/>
+<Unit id="BoreholeIII"/>
+<Unit id="BoreholeIV"/>
+<Unit id="BoreholeV"/>
+<Unit id="VanguardMBT2"/>
+<Unit id="Volgograd"/>
+<Unit id="RussianBunker"/>
+<Unit id="Capital"/>
+<Unit id="MineIV"/>
+<Unit id="MineV"/>
+<Unit id="RussianRod"/>
+<Unit id="Founder"/>
+<Unit id="LargeHouse" Variations="0,1"/>
+<Unit id="MineII"/>
+<Unit id="MineIII"/>
+<Unit id="Settler"/>
+<Unit id="Skyscraper" Variations="0,1"/>
+</Preload>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="us-ascii"?>
+<Catalog>
+    <CRace id="Terr">
+        <StartingResource index="Minerals" value="5000"/>
+        <StartingResource index="Terrazine" value="100"/>
+        <ShowResource index="Vespene" value="0"/>
+        <ShowResource index="Terrazine" value="1"/>
+        <ShowResource index="Custom" value="1"/>
+        <FoodCeiling value="150"/>
+        <MiniMapBorderColor value="100,99,134,254"/>
+        <PlacementGridColorBlindColor value="255,249,0,0"/>
+    </CRace>
+</Catalog>
