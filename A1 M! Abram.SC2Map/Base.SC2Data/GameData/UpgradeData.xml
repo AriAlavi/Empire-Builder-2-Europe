@@ -1,0 +1,890 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Catalog>
+    <CUpgrade id="5MinutesPassed"/>
+    <CUpgrade id="AITargetingSystems"/>
+    <CUpgrade id="AdvancedAircraft">
+        <LeaderAlias value="Vehicles"/>
+    </CUpgrade>
+    <CUpgrade id="AdvancedKinetics"/>
+    <CUpgrade id="AdvancedRadarRefraction">
+        <EffectArray Operation="Set" Reference="Behavior,SensorTowerRadar2,Modification.Radar" Value="96"/>
+    </CUpgrade>
+    <CUpgrade id="AdvancedRadarStation"/>
+    <CUpgrade id="Agitate">
+        <MaxLevel value="232"/>
+    </CUpgrade>
+    <CUpgrade id="Anarchy"/>
+    <CUpgrade id="AutonomousZombies"/>
+    <CUpgrade id="BasicEngine"/>
+    <CUpgrade id="BeenSubjugated">
+        <Flags index="UpgradeCheat" value="0"/>
+        <ScoreAmount value="4294967295"/>
+        <LeaderAlias value=""/>
+    </CUpgrade>
+    <CUpgrade id="BiologicalResearch"/>
+    <CUpgrade id="BonusVision">
+        <EffectArray Reference="Unit,Oil,Sight" Value="10"/>
+        <EffectArray Reference="Unit,Platinum,Sight" Value="10"/>
+        <EffectArray Reference="Unit,Silver,Sight" Value="10"/>
+        <EffectArray Reference="Unit,Uranium,Sight" Value="10"/>
+        <EffectArray Reference="Unit,Metal,Sight" Value="10"/>
+        <EffectArray Reference="Unit,Gold,Sight" Value="10"/>
+        <EffectArray Reference="Unit,GeothermalFissure,Sight" Value="10"/>
+        <MaxLevel value="2"/>
+    </CUpgrade>
+    <CUpgrade id="CollaborativeAINetwork"/>
+    <CUpgrade id="GreaterDemons"/>
+    <CUpgrade id="IntoTheOccult"/>
+    <CUpgrade id="MassSacrifices"/>
+    <CUpgrade id="NationalHighway"/>
+    <CUpgrade id="AdministrativeHierarchyResearched"/>
+    <CUpgrade id="CanBuildScoutbots"/>
+    <CUpgrade id="ChangeWarPolicy"/>
+    <CUpgrade id="Communism">
+        <LeaderAlias value="Military"/>
+        <EffectArray Reference="Behavior,ProductionSpeed,Modification.RateMultiplierArray[Queueable]" Value="0.6"/>
+    </CUpgrade>
+    <CUpgrade id="Corporatocracy">
+        <LeaderAlias value="Military"/>
+    </CUpgrade>
+    <CUpgrade id="DeadManHandOff"/>
+    <CUpgrade id="DeadManHandOn"/>
+    <CUpgrade id="ExtensiveReservesTraining"/>
+    <CUpgrade id="Pacifist">
+        <EffectArray Operation="Subtract" Reference="Behavior,ProductionSpeed,Modification.RateMultiplierArray[Queueable]" Value="0.5"/>
+    </CUpgrade>
+    <CUpgrade id="DiplomaticPolicyChange"/>
+    <CUpgrade id="DirectDemocracy">
+        <LeaderAlias value="Military"/>
+        <EffectArray Reference="Behavior,ProductionSpeed,Modification.RateMultiplierArray[Queueable]" Value="0.2"/>
+    </CUpgrade>
+    <CUpgrade id="EUBuilt"/>
+    <CUpgrade id="ElectricTanks"/>
+    <CUpgrade id="EnablePointDefense">
+        <EffectArray Operation="Set" Reference="Weapon,PointDefenseBeam,Options[Disabled]" Value="0"/>
+    </CUpgrade>
+    <CUpgrade id="EuropeanUnion"/>
+    <CUpgrade id="FocusedKinetics"/>
+    <CUpgrade id="FocusedLaser"/>
+    <CUpgrade id="FullyAutomatedEconomyProject"/>
+    <CUpgrade id="FuturisticEngine"/>
+    <CUpgrade id="FuturisticWeapons">
+        <EffectArray Operation="Multiply" Reference="Effect,PulseRifleD,Amount" Value="1.5"/>
+        <EffectArray Operation="Multiply" Reference="Effect,PulsegunD,Amount" Value="1.5"/>
+    </CUpgrade>
+    <CUpgrade id="HalcyonBasedMissiles"/>
+    <CUpgrade id="HighVelocityMissiles"/>
+    <CUpgrade id="HydrogenBasedMissiles"/>
+    <CUpgrade id="Imperialisim">
+        <LeaderAlias value="Military"/>
+        <EffectArray Operation="Set" Reference="Abil,DeclareWar,Range[0]" Value="500"/>
+    </CUpgrade>
+    <CUpgrade id="ImprovedGasification">
+        <MaxLevel value="100"/>
+        <LeaderAlias value="ProtossUnitArmour"/>
+    </CUpgrade>
+    <CUpgrade id="AdvancedGasification">
+        <MaxLevel value="100"/>
+        <LeaderAlias value="ProtossUnitArmour"/>
+    </CUpgrade>
+    <CUpgrade id="ImprovedPowerWeapons">
+        <EffectArray Operation="Multiply" Reference="Weapon,BoltAction,Period" Value="0.500000"/>
+        <EffectArray Operation="Multiply" Reference="Weapon,ImprovedBoltAction,Period" Value="0.500000"/>
+    </CUpgrade>
+    <CUpgrade id="InfantryArmourUP2">
+        <EffectArray Operation="Multiply" Reference="Abil,ArmouryResearch,InfoArray[Research1].Resource[Custom]" Value="10"/>
+        <EffectArray Reference="Unit,AlphaMarine2,LifeArmor" Value="2"/>
+        <EffectArray Reference="Unit,AlphaMarine2,LifeArmorLevel" Value="1"/>
+        <EffectArray Reference="Unit,Captain,LifeArmorLevel" Value="1"/>
+        <EffectArray Reference="Unit,Captain,LifeArmor" Value="2.5"/>
+        <EffectArray Reference="Unit,CerulianMarine,LifeArmor" Value="1.5"/>
+        <EffectArray Reference="Unit,CerulianMarine,LifeArmorLevel" Value="1"/>
+        <EffectArray Reference="Unit,Conscript,LifeArmorLevel" Value="1"/>
+        <EffectArray Reference="Unit,Conscript,LifeArmor" Value="1"/>
+        <EffectArray Reference="Unit,Immolator,LifeArmor" Value="1.5"/>
+        <EffectArray Reference="Unit,Immolator,LifeArmorLevel" Value="1"/>
+        <EffectArray Reference="Unit,Mortaliser,LifeArmor" Value="1"/>
+        <EffectArray Reference="Unit,Mortaliser,LifeArmorLevel" Value="1"/>
+        <EffectArray Reference="Unit,Rifleman,LifeArmorLevel" Value="1"/>
+        <EffectArray Reference="Unit,Rifleman,LifeArmor" Value="1"/>
+        <EffectArray Reference="Unit,StrikeTrooper,LifeArmor" Value="2"/>
+        <EffectArray Reference="Unit,StrikeTrooper,LifeArmorLevel" Value="1"/>
+        <EffectArray Reference="Unit,MilitaryEngineer,LifeArmorLevel" Value="1"/>
+        <EffectArray Reference="Unit,MilitaryEngineer,LifeArmor" Value="1"/>
+        <EffectArray Reference="Unit,Medic2,LifeArmorLevel" Value="1"/>
+        <EffectArray Reference="Unit,Medic2,LifeArmor" Value="1"/>
+        <EffectArray Reference="Unit,Knight,LifeArmor" Value="2.5"/>
+        <EffectArray Reference="Unit,Knight,LifeArmorLevel" Value="1"/>
+        <EffectArray Operation="Divide" Reference="Abil,ArmouryResearch,InfoArray[Research1].Resource[Custom]" Value="7"/>
+        <EffectArray Reference="Abil,ArmouryResearch,InfoArray[Research1].Resource[Custom]" Value="75"/>
+        <EffectArray Reference="Unit,Stormtrooper,LifeArmor" Value="2"/>
+        <EffectArray Reference="Unit,Stormtrooper,LifeArmorLevel" Value="1"/>
+        <EffectArray Reference="Unit,Equaliser,LifeArmor" Value="2.2"/>
+        <EffectArray Reference="Unit,Equaliser,LifeArmorLevel" Value="1"/>
+        <EffectArray Reference="Unit,Smasher,LifeArmor" Value="1.5"/>
+        <EffectArray Reference="Unit,Smasher,LifeArmorLevel" Value="1"/>
+        <EffectArray Reference="Unit,Scoutbot,LifeArmor" Value="1"/>
+        <EffectArray Reference="Unit,Scoutbot,LifeArmorLevel" Value="1"/>
+        <MaxLevel value="100"/>
+        <LeaderAlias value="ProtossUnitArmour"/>
+    </CUpgrade>
+    <CUpgrade id="GeneticallyModifiedHumans">
+        <EffectArray Reference="Unit,AlphaMarine,Sight" Value="1"/>
+        <EffectArray Reference="Unit,Captain,Sight" Value="1"/>
+        <EffectArray Reference="Unit,CerulianMarine,Sight" Value="1"/>
+        <EffectArray Reference="Unit,Conscript,Sight" Value="1"/>
+        <EffectArray Reference="Unit,Immolator,Sight" Value="1"/>
+        <EffectArray Reference="Unit,Mortaliser,Sight" Value="1"/>
+        <EffectArray Reference="Unit,Rifleman,Sight" Value="1"/>
+        <EffectArray Reference="Unit,StrikeTrooper,Sight" Value="1"/>
+        <EffectArray Reference="Unit,MilitaryEngineer,Sight" Value="1"/>
+        <EffectArray Reference="Unit,Medic2,Sight" Value="1"/>
+        <EffectArray Reference="Unit,Knight,Sight" Value="1"/>
+        <EffectArray Reference="Unit,Stormtrooper,Sight" Value="1"/>
+        <EffectArray Reference="Unit,Equaliser,Sight" Value="1"/>
+        <EffectArray Reference="Unit,Smasher,Sight" Value="1"/>
+        <EffectArray Reference="Unit,Scoutbot,Sight" Value="1"/>
+        <EffectArray Reference="Unit,Scoutbot,Sight" Value="1"/>
+        <LeaderAlias value="ProtossUnitArmour"/>
+    </CUpgrade>
+    <CUpgrade id="LaserInterception">
+        <EffectArray Operation="Set" Reference="Unit,MissileTurret22,Acceleration" Value="1000.000000"/>
+        <EffectArray Operation="Set" Reference="Weapon,PointDefenseBeam,Range" Value="12"/>
+    </CUpgrade>
+    <CUpgrade id="MassVaccine"/>
+    <CUpgrade id="MissileTechnology"/>
+    <CUpgrade id="ModifiedDiseases"/>
+    <CUpgrade id="NuclearTippedPayloads"/>
+    <CUpgrade id="OmegaZombies"/>
+    <CUpgrade id="PowerBasedWeapons">
+        <EffectArray Operation="Multiply" Reference="Weapon,BoltAction,Period" Value="0.250000"/>
+        <EffectArray Operation="Multiply" Reference="Weapon,ImprovedBoltAction,Period" Value="0.250000"/>
+        <EffectArray Operation="Set" Reference="Sound,ScoutGroundAttackLaunch,Pitch" Value="16.200001,19.200001"/>
+        <EffectArray Operation="Set" Reference="Sound,ScoutGroundAttackLaunch,Pitch" Value="16.889999,19.889999"/>
+        <EffectArray Operation="Multiply" Reference="Effect,PulseRifleD,Amount" Value="0.5"/>
+        <EffectArray Operation="Multiply" Reference="Effect,PulsegunD,Amount" Value="0.5"/>
+        <EffectArray Operation="Set" Reference="Effect,PulseRifleD,AttributeFactor[Armored]" Value="0"/>
+        <EffectArray Operation="Set" Reference="Effect,PulsegunD,AttributeFactor[Armored]" Value="0"/>
+        <EffectArray Reference="Weapon,ImprovedBoltAction,Range" Value="1"/>
+        <EffectArray Reference="Weapon,BoltAction,Range" Value="1"/>
+        <LeaderAlias value="ProtossUnitArmour"/>
+    </CUpgrade>
+    <CUpgrade id="Interventionalisim">
+        <LeaderAlias value="Military"/>
+        <EffectArray Operation="Set" Reference="Abil,DeclareWar,Range[0]" Value="500"/>
+    </CUpgrade>
+    <CUpgrade id="Jingoisim">
+        <LeaderAlias value="Military"/>
+        <EffectArray Operation="Set" Reference="Abil,DeclareWar,Range[0]" Value="500"/>
+    </CUpgrade>
+    <CUpgrade id="LaserConcept"/>
+    <CUpgrade id="LimitedWar">
+        <EffectArray Reference="Behavior,ProductionSpeed,Modification.RateMultiplierArray[Queueable]" Value="0.2"/>
+    </CUpgrade>
+    <CUpgrade id="MiddleEastConfederationCanWalk">
+        <EffectArray Operation="Set" Reference="Unit,Marine,Speed" Value="2.000000"/>
+    </CUpgrade>
+    <CUpgrade id="ModernVehicles">
+        <LeaderAlias value="Vehicles"/>
+    </CUpgrade>
+    <CUpgrade id="AircraftArmourUP">
+        <EffectArray Reference="Unit,StrikerAH,LifeArmor" Value="1.8"/>
+        <EffectArray Reference="Unit,StrikerAH,LifeArmorLevel" Value="1"/>
+        <EffectArray Reference="Unit,ViperFighter,LifeArmorLevel" Value="1"/>
+        <EffectArray Reference="Unit,ViperFighter,LifeArmor" Value="1.5"/>
+        <EffectArray Operation="Multiply" Reference="Abil,ArmouryResearch,InfoArray[Research2].Resource[Custom]" Value="10"/>
+        <EffectArray Operation="Divide" Reference="Abil,ArmouryResearch,InfoArray[Research2].Resource[Custom]" Value="7"/>
+        <EffectArray Reference="Abil,ArmouryResearch,InfoArray[Research2].Resource[Custom]" Value="150"/>
+        <EffectArray Reference="Unit,ApolloBomber,LifeArmor" Value="2.2"/>
+        <EffectArray Reference="Unit,ApolloBomber,LifeArmorLevel" Value="1"/>
+        <EffectArray Reference="Unit,CourierTH,LifeArmor" Value="2"/>
+        <EffectArray Reference="Unit,CourierTH,LifeArmorLevel" Value="1"/>
+        <EffectArray Reference="Unit,AstrosInterceptor,LifeArmor" Value="1.75"/>
+        <EffectArray Reference="Unit,AstrosInterceptor,LifeArmorLevel" Value="1"/>
+        <EffectArray Reference="Unit,ScorcherBomber,LifeArmorLevel" Value="1"/>
+        <EffectArray Reference="Unit,ScorcherBomber,LifeArmor" Value="2.5"/>
+        <EffectArray Reference="Unit,JavelinAH,LifeArmor" Value="1.3"/>
+        <EffectArray Reference="Unit,JavelinAH,LifeArmorLevel" Value="1"/>
+        <MaxLevel value="100"/>
+        <LeaderAlias value="ProtossUnitArmour"/>
+    </CUpgrade>
+    <CUpgrade id="BasicAircraft">
+        <LeaderAlias value="Vehicles"/>
+    </CUpgrade>
+    <CUpgrade id="NanorepairTechnology"/>
+    <CUpgrade id="Nationalism"/>
+    <CUpgrade id="NeoFederation">
+        <MaxLevel value="100"/>
+        <LeaderAlias value="ProductionSpeed"/>
+        <EffectArray Operation="Subtract" Reference="Behavior,ProductionSpeed,Modification.RateMultiplierArray[Queueable]" Value="0.2"/>
+    </CUpgrade>
+    <CUpgrade id="NuclearFusion">
+        <MaxLevel value="100"/>
+        <LeaderAlias value="ProtossUnitArmour"/>
+    </CUpgrade>
+    <CUpgrade id="OilWellResearch"/>
+    <CUpgrade id="OptionalConscription">
+        <EffectArray Reference="Behavior,ProductionSpeed,Modification.RateMultiplierArray[Queueable]" Value="0.25"/>
+    </CUpgrade>
+    <CUpgrade id="CompulsoryConscriptionRegistration">
+        <EffectArray Reference="Behavior,ProductionSpeed6,Modification.RateMultiplierArray[Queueable]" Value="0.75"/>
+    </CUpgrade>
+    <CUpgrade id="Plascrete">
+        <EffectArray Reference="Unit,SupplyDepot,LifeMax" Value="5000"/>
+        <EffectArray Reference="Unit,SupplyDepot,LifeStart" Value="5000"/>
+        <EffectArray Reference="Unit,SupplyDepotLowered,LifeStart" Value="5000"/>
+        <EffectArray Reference="Unit,SupplyDepotLowered,LifeMax" Value="5000"/>
+        <EffectArray Reference="Unit,Capital,LifeMax" Value="5000"/>
+        <EffectArray Reference="Unit,Capital,LifeStart" Value="5000"/>
+        <EffectArray Reference="Unit,Bunker,LifeMax" Value="5000"/>
+        <EffectArray Reference="Unit,Lasturret,LifeStart" Value="200"/>
+        <EffectArray Reference="Unit,Lasturret,LifeMax" Value="200"/>
+        <EffectArray Reference="Unit,BaPulseCannon,LifeMax" Value="300"/>
+        <EffectArray Reference="Unit,BaPulseCannon,LifeStart" Value="300"/>
+        <EffectArray Reference="Unit,IgniterTurret,LifeStart" Value="1500"/>
+        <EffectArray Reference="Unit,IgniterTurret,LifeMax" Value="1500"/>
+        <EffectArray Reference="Unit,ImprovedLasturret,LifeMax" Value="200"/>
+        <EffectArray Reference="Unit,ImprovedLasturret,LifeStart" Value="200"/>
+        <EffectArray Operation="Set" Reference="Unit,SupplyDepot,Acceleration" Value="0"/>
+        <EffectArray Reference="Unit,Bunker,LifeMax" Value="5000"/>
+        <LeaderAlias value="Vehicles"/>
+    </CUpgrade>
+    <CUpgrade id="EVILUPGRADES">
+        <EffectArray Reference="Unit,Zombie,LifeMax" Value="20"/>
+        <EffectArray Reference="Effect,InfestedClawsDamage,Amount" Value="3"/>
+        <EffectArray Reference="Unit,Necromancer,LifeMax" Value="300"/>
+        <EffectArray Reference="Unit,Shiverpus,LifeMax" Value="500"/>
+        <EffectArray Reference="Effect,LurkerU,Amount" Value="4"/>
+        <EffectArray Reference="Unit,Zergling,LifeMax" Value="20"/>
+        <EffectArray Reference="Unit,Zergling,LifeArmor" Value="0.5"/>
+        <EffectArray Reference="Effect,Claws,Amount" Value="2"/>
+        <MaxLevel value="100"/>
+        <LeaderAlias value="BOSSUPGRADE"/>
+    </CUpgrade>
+    <CUpgrade id="Cloning">
+        <EffectArray Reference="Behavior,ClinicBuff,Modification[0].VitalRegenArray[Energy]" Value="0.078100"/>
+        <MaxLevel value="100"/>
+        <LeaderAlias value="ProtossUnitArmour"/>
+    </CUpgrade>
+    <CUpgrade id="ImprovedRefining">
+        <EffectArray Operation="Multiply" Reference="Abil,SchoolResearch,InfoArray[Research10].Resource[Custom]" Value="2"/>
+        <MaxLevel value="100"/>
+        <LeaderAlias value="ImprovedMining"/>
+    </CUpgrade>
+    <CUpgrade id="InfantryDamageUP">
+        <EffectArray Reference="Weapon,Immolator,Level" Value="1"/>
+        <EffectArray Reference="Weapon,BoltAction,Level" Value="1"/>
+        <EffectArray Reference="Weapon,ImprovedBoltAction,Level" Value="1"/>
+        <EffectArray Reference="Weapon,VorpalMissile,Level" Value="1"/>
+        <EffectArray Reference="Weapon,IGRifle,Level" Value="1"/>
+        <EffectArray Reference="Weapon,PlasmaMortar,Level" Value="1"/>
+        <EffectArray Reference="Weapon,PlasmaPistols,Level" Value="1"/>
+        <EffectArray Reference="Weapon,PhaseRifle,Level" Value="1"/>
+        <EffectArray Reference="Effect,PlasmaPistolsd,Amount" Value="1"/>
+        <EffectArray Reference="Effect,PlasmaMortarD,Amount" Value="1.5"/>
+        <EffectArray Reference="Effect,PhaseRifle,Amount" Value="2.5"/>
+        <EffectArray Reference="Effect,PulseRifleD,Amount" Value="1"/>
+        <EffectArray Reference="Effect,PulsegunD,Amount" Value="1"/>
+        <EffectArray Reference="Effect,IGRifled,Amount" Value="1"/>
+        <EffectArray Reference="Effect,ImmoD,Amount" Value="1.6"/>
+        <EffectArray Reference="Effect,TankHunterD,Amount" Value="2"/>
+        <EffectArray Reference="Effect,GoliathG,Amount" Value="2"/>
+        <EffectArray Reference="Weapon,GoliathGUpgraded,Level" Value="1"/>
+        <EffectArray Reference="Effect,PowerClawsD,Amount" Value="3"/>
+        <EffectArray Reference="Weapon,PowerClaws,Level" Value="1"/>
+        <EffectArray Operation="Multiply" Reference="Abil,ArmouryResearch,InfoArray[Research3].Resource[Custom]" Value="10"/>
+        <EffectArray Operation="Divide" Reference="Abil,ArmouryResearch,InfoArray[Research3].Resource[Custom]" Value="7"/>
+        <EffectArray Reference="Effect,FusionCutter,Amount" Value="1"/>
+        <EffectArray Reference="Abil,ArmouryResearch,InfoArray[Research3].Resource[Custom]" Value="75"/>
+        <EffectArray Reference="Effect,LAR1D,Amount" Value="4"/>
+        <EffectArray Reference="Weapon,LAR1,Level" Value="1"/>
+        <EffectArray Reference="Effect,SmasherCannonD,Amount" Value="2"/>
+        <EffectArray Reference="Weapon,SmasherCannon,Level" Value="1"/>
+        <MaxLevel value="100"/>
+        <LeaderAlias value="ProtossUnitArmour"/>
+    </CUpgrade>
+    <CUpgrade id="AircraftDamageUP">
+        <EffectArray Reference="Effect,SM1D,Amount" Value="8"/>
+        <EffectArray Reference="Weapon,SM1,Level" Value="1"/>
+        <EffectArray Reference="Effect,ViperCannon,Amount" Value="1.1"/>
+        <EffectArray Reference="Weapon,ViperCannon,Level" Value="1"/>
+        <EffectArray Operation="Multiply" Reference="Abil,ArmouryResearch,InfoArray[Research4].Resource[Custom]" Value="10"/>
+        <EffectArray Operation="Divide" Reference="Abil,ArmouryResearch,InfoArray[Research4].Resource[Custom]" Value="7"/>
+        <EffectArray Reference="Abil,ArmouryResearch,InfoArray[Research4].Resource[Custom]" Value="150"/>
+        <EffectArray Reference="Weapon,ApolloBomb,Level" Value="1"/>
+        <EffectArray Reference="Effect,ApolloD,Amount" Value="7"/>
+        <EffectArray Reference="Weapon,ScorcherBomb,Level" Value="1"/>
+        <EffectArray Reference="Weapon,AstrosMissile,Level" Value="1"/>
+        <EffectArray Reference="Effect,ScorcherD,Amount" Value="5"/>
+        <EffectArray Reference="Effect,NapalmD,Amount" Value="1"/>
+        <EffectArray Reference="Effect,AstrosMissileD,Amount" Value="10"/>
+        <EffectArray Reference="Effect,TripleATGM,Amount" Value="5"/>
+        <EffectArray Reference="Weapon,TripleATGM,Level" Value="1"/>
+        <MaxLevel value="100"/>
+        <LeaderAlias value="ProtossUnitArmour"/>
+    </CUpgrade>
+    <CUpgrade id="NuclearFission">
+        <MaxLevel value="100"/>
+        <LeaderAlias value="ProtossUnitArmour"/>
+    </CUpgrade>
+    <CUpgrade id="HeavyTanks">
+        <LeaderAlias value="Vehicles"/>
+    </CUpgrade>
+    <CUpgrade id="AppliedScience">
+        <EffectArray Operation="Multiply" Reference="Abil,SchoolResearch,InfoArray[Research5].Resource[Custom]" Value="2"/>
+        <MaxLevel value="100"/>
+    </CUpgrade>
+    <CUpgrade id="BOSSUPGRADE">
+        <EffectArray Reference="Unit,ProtossCommander,LifeMax[0]" Value="8000"/>
+        <EffectArray Reference="Unit,ProtossCommander,ShieldsMax[0]" Value="20000"/>
+        <EffectArray Reference="Effect,ShockDDamage,Amount[0]" Value="20"/>
+        <MaxLevel value="100"/>
+    </CUpgrade>
+    <CUpgrade id="Bonus">
+        <EffectArray Reference="Behavior,Bonus,Modification[0].MoveSpeedMultiplier[0]" Value="0.07"/>
+        <EffectArray Reference="Behavior,Bonus,Modification[0].AttackSpeedMultiplier[0]" Value="0.07"/>
+        <MaxLevel value="100"/>
+    </CUpgrade>
+    <CUpgrade id="GeneticScreening">
+        <EffectArray Reference="Behavior,ClinicBuff,Modification[0].VitalRegenArray[Energy]" Value="0.054600"/>
+        <MaxLevel value="100"/>
+        <LeaderAlias value="ProtossUnitArmour"/>
+    </CUpgrade>
+    <CUpgrade id="PowerArmour">
+        <LeaderAlias value="ProtossUnitArmour"/>
+    </CUpgrade>
+    <CUpgrade id="CoalGasification">
+        <MaxLevel value="100"/>
+        <LeaderAlias value="ProtossUnitArmour"/>
+    </CUpgrade>
+    <CUpgrade id="InfantryArmourUP">
+        <EffectArray Operation="Multiply" Reference="Abil,ArmouryResearch,InfoArray[Research1].Resource[Custom]" Value="10"/>
+        <EffectArray Reference="Unit,AlphaMarine,LifeArmor" Value="1"/>
+        <EffectArray Reference="Unit,AlphaMarine,LifeArmorLevel" Value="1"/>
+        <EffectArray Reference="Unit,Captain,LifeArmorLevel" Value="1"/>
+        <EffectArray Reference="Unit,Captain,LifeArmor" Value="1"/>
+        <EffectArray Reference="Unit,CerulianMarine,LifeArmor" Value="1"/>
+        <EffectArray Reference="Unit,CerulianMarine,LifeArmorLevel" Value="1"/>
+        <EffectArray Reference="Unit,Conscript,LifeArmorLevel" Value="1"/>
+        <EffectArray Reference="Unit,Conscript,LifeArmor" Value="1"/>
+        <EffectArray Reference="Unit,Immolator,LifeArmor" Value="1"/>
+        <EffectArray Reference="Unit,Immolator,LifeArmorLevel" Value="1"/>
+        <EffectArray Reference="Unit,Mortaliser,LifeArmor" Value="1"/>
+        <EffectArray Reference="Unit,Mortaliser,LifeArmorLevel" Value="1"/>
+        <EffectArray Reference="Unit,Rifleman,LifeArmorLevel" Value="1"/>
+        <EffectArray Reference="Unit,Rifleman,LifeArmor" Value="1"/>
+        <EffectArray Reference="Unit,StrikeTrooper,LifeArmor" Value="1"/>
+        <EffectArray Reference="Unit,StrikeTrooper,LifeArmorLevel" Value="1"/>
+        <EffectArray Reference="Unit,MilitaryEngineer,LifeArmorLevel" Value="1"/>
+        <EffectArray Reference="Unit,MilitaryEngineer,LifeArmor" Value="1"/>
+        <EffectArray Reference="Unit,Medic2,LifeArmorLevel" Value="1"/>
+        <EffectArray Reference="Unit,Medic2,LifeArmor" Value="1"/>
+        <EffectArray Reference="Unit,Knight,LifeArmor" Value="1"/>
+        <EffectArray Reference="Unit,Knight,LifeArmorLevel" Value="1"/>
+        <EffectArray Operation="Divide" Reference="Abil,ArmouryResearch,InfoArray[Research1].Resource[Custom]" Value="7"/>
+        <EffectArray Reference="Abil,ArmouryResearch,InfoArray[Research1].Resource[Custom]" Value="75"/>
+        <EffectArray Reference="Unit,Stormtrooper,LifeArmor" Value="1"/>
+        <EffectArray Reference="Unit,Stormtrooper,LifeArmorLevel" Value="1"/>
+        <EffectArray Reference="Unit,Equaliser,LifeArmor" Value="1"/>
+        <EffectArray Reference="Unit,Equaliser,LifeArmorLevel" Value="1"/>
+        <EffectArray Reference="Unit,Smasher,LifeArmor" Value="1"/>
+        <EffectArray Reference="Unit,Smasher,LifeArmorLevel" Value="1"/>
+        <EffectArray Reference="Unit,Scoutbot,LifeArmor" Value="1"/>
+        <EffectArray Reference="Unit,Scoutbot,LifeArmorLevel" Value="1"/>
+        <MaxLevel value="100"/>
+        <LeaderAlias value="ProtossUnitArmour"/>
+    </CUpgrade>
+    <CUpgrade id="AdvancedPowerArmour">
+        <LeaderAlias value="ProtossUnitArmour"/>
+    </CUpgrade>
+    <CUpgrade id="PredictiveAISystems"/>
+    <CUpgrade id="ReinforcedFortifications">
+        <EffectArray Reference="Unit,SupplyDepot,LifeMax" Value="2500"/>
+        <EffectArray Reference="Unit,SupplyDepot,LifeStart" Value="2500"/>
+        <EffectArray Reference="Unit,SupplyDepotLowered,LifeMax" Value="2500"/>
+        <EffectArray Reference="Unit,SupplyDepotLowered,LifeStart" Value="2500"/>
+    </CUpgrade>
+    <CUpgrade id="ResearchAlternateElectricity"/>
+    <CUpgrade id="ResearchArtificalFarming"/>
+    <CUpgrade id="ResearchDeficitManagement"/>
+    <CUpgrade id="ResearchEconomicBailouts"/>
+    <CUpgrade id="ResearchElectricity"/>
+    <CUpgrade id="ResearchNationalUnions"/>
+    <CUpgrade id="ResearchTradeRegulations"/>
+    <CUpgrade id="RussianSkyscraperDifficulty">
+        <EffectArray Reference="Unit,RussianSkyscraper,EnergyRegenRate" Value="0.019500"/>
+        <EffectArray Reference="Unit,RussianSkyscraper,EnergyMax" Value="50"/>
+        <MaxLevel value="10"/>
+    </CUpgrade>
+    <CUpgrade id="SelfPoweredTanks"/>
+    <CUpgrade id="ShieldGeneration"/>
+    <CUpgrade id="DefensiveWar"/>
+    <CUpgrade id="SocialistRepublic">
+        <LeaderAlias value="Military"/>
+    </CUpgrade>
+    <CUpgrade id="DeBonus">
+        <EffectArray Operation="Set" Reference="Behavior,Bonus,Modification[0].MoveSpeedMultiplier[0]" Value="0.85"/>
+        <EffectArray Operation="Set" Reference="Behavior,Bonus,Modification[0].AttackSpeedMultiplier[0]" Value="0.8"/>
+        <MaxLevel value="100"/>
+    </CUpgrade>
+    <CUpgrade id="ImprovedFarming">
+        <EffectArray Operation="Multiply" Reference="Abil,SchoolResearch,InfoArray[Research2].Resource[Custom]" Value="2"/>
+        <MaxLevel value="100"/>
+    </CUpgrade>
+    <CUpgrade id="ImprovedMining">
+        <EffectArray Operation="Multiply" Reference="Abil,SchoolResearch,InfoArray[Research3].Resource[Custom]" Value="2"/>
+        <MaxLevel value="100"/>
+    </CUpgrade>
+    <CUpgrade id="ImprovedTurbines">
+        <EffectArray Operation="Multiply" Reference="Abil,SchoolResearch,InfoArray[Research6].Resource[Custom]" Value="2"/>
+        <MaxLevel value="100"/>
+    </CUpgrade>
+    <CUpgrade id="Military">
+        <EffectArray Operation="Subtract" Reference="Unit,TrainingGround,CostResource[Terrazine]" Value="25"/>
+        <EffectArray Operation="Subtract" Reference="Unit,TrainingGround,CostResource[Minerals]" Value="300"/>
+        <EffectArray Operation="Subtract" Reference="Unit,Bunker,CostResource[Minerals]" Value="200"/>
+        <EffectArray Operation="Subtract" Reference="Unit,GroundFactory,CostResource[Minerals]" Value="250"/>
+        <EffectArray Operation="Subtract" Reference="Unit,GroundFactory,CostResource[Terrazine]" Value="75"/>
+        <EffectArray Operation="Subtract" Reference="Unit,Armoury,CostResource[Terrazine]" Value="50"/>
+    </CUpgrade>
+    <CUpgrade id="ProDamage">
+        <EffectArray Reference="Effect,ParticleDisruptorsU,Amount[0]" Value="1.5"/>
+        <EffectArray Reference="Effect,UltraDisruptorsd,Amount[0]" Value="1.7"/>
+        <EffectArray Reference="Effect,PsiBlades,Amount[0]" Value="0.8"/>
+        <EffectArray Reference="Effect,PhaseDisruptors,Amount[0]" Value="2"/>
+        <EffectArray Reference="Effect,SuperPhaseDisrupters,Amount[0]" Value="4"/>
+        <EffectArray Reference="Effect,ParticleBeam,Amount[0]" Value="1"/>
+        <EffectArray Reference="Effect,PsionicShockwaveDamage,Amount[0]" Value="1.5"/>
+        <EffectArray Reference="Effect,PhotonCannonU,Amount[0]" Value="2.5"/>
+        <EffectArray Reference="Effect,PotatonCannonD,Amount[0]" Value="3"/>
+        <EffectArray Reference="Effect,ThermalLancesMU,Amount[0]" Value="1.5"/>
+        <EffectArray Reference="Effect,PsionicShockwaveDamage2,Amount[0]" Value="2"/>
+        <EffectArray Reference="Effect,WarpBlades,Amount[0]" Value="4"/>
+        <EffectArray Reference="Effect,VoidSeekerU,Amount[0]" Value="2.5"/>
+        <EffectArray Reference="Effect,DragoonDamage,Amount" Value="2"/>
+        <EffectArray Reference="Effect,IonCannonsU,Amount" Value="1"/>
+        <EffectArray Reference="Effect,VoidRayChargeBeamBaseDamageCharge1,Amount" Value="2.5"/>
+        <EffectArray Reference="Effect,VoidRayChargeBeamBaseDamageCharge2,Amount" Value="2.5"/>
+        <EffectArray Reference="Effect,VoidRayChargeBeamBaseDamageCharge3,Amount" Value="2.5"/>
+        <EffectArray Reference="Effect,IonCannonsULeft,Amount" Value="1"/>
+        <EffectArray Reference="Effect,IonCannonsURight,Amount" Value="1"/>
+        <MaxLevel value="100"/>
+        <LeaderAlias value="ProtossUnitDamage"/>
+    </CUpgrade>
+    <CUpgrade id="ProHealth">
+        <EffectArray Reference="Unit,Archon,LifeMax[0]" Value="5"/>
+        <EffectArray Reference="Unit,Archon,ShieldsMax[0]" Value="50"/>
+        <EffectArray Reference="Unit,AttackProbe,ShieldsMax[0]" Value="3"/>
+        <EffectArray Reference="Unit,BattleProbe,LifeMax[0]" Value="8"/>
+        <EffectArray Reference="Unit,AttackProbe,LifeMax[0]" Value="2"/>
+        <EffectArray Reference="Unit,BattleProbe,ShieldsMax[0]" Value="16"/>
+        <EffectArray Reference="Unit,PhotonCannon,LifeMax[0]" Value="75"/>
+        <EffectArray Reference="Unit,PhotonCannon,ShieldsMax[0]" Value="50"/>
+        <EffectArray Reference="Unit,PotatonCannon,ShieldsMax[0]" Value="600"/>
+        <EffectArray Reference="Unit,PotatonCannon,LifeMax[0]" Value="750"/>
+        <EffectArray Reference="Unit,Gateway,LifeMax[0]" Value="1000"/>
+        <EffectArray Reference="Unit,Gateway,ShieldsMax[0]" Value="250"/>
+        <EffectArray Reference="Unit,ProtossArchive,LifeMax[0]" Value="1000"/>
+        <EffectArray Reference="Unit,ProtossLibrary,LifeMax[0]" Value="1000"/>
+        <EffectArray Reference="Unit,Chargelot,LifeMax[0]" Value="24"/>
+        <EffectArray Reference="Unit,Chargelot,ShieldsMax[0]" Value="15"/>
+        <EffectArray Reference="Unit,GhostStalker,ShieldsMax[0]" Value="7"/>
+        <EffectArray Reference="Unit,Immortal2,LifeMax[0]" Value="55"/>
+        <EffectArray Reference="Unit,GhostStalker,LifeMax[0]" Value="9"/>
+        <EffectArray Reference="Unit,Immortal2,ShieldsMax[0]" Value="15"/>
+        <EffectArray Reference="Unit,MiniColossus,ShieldsMax[0]" Value="10"/>
+        <EffectArray Reference="Unit,MiniColossus,LifeMax[0]" Value="12.5"/>
+        <EffectArray Reference="Unit,SuperImmortal,LifeMax[0]" Value="50"/>
+        <EffectArray Reference="Unit,SuperImmortal,ShieldsMax[0]" Value="20"/>
+        <EffectArray Reference="Unit,Ultrastalker,ShieldsMax[0]" Value="19"/>
+        <EffectArray Reference="Unit,Ultrastalker,LifeMax[0]" Value="24"/>
+        <EffectArray Reference="Unit,Zealot2,LifeMax[0]" Value="7.5"/>
+        <EffectArray Reference="Unit,Zealot2,ShieldsMax[0]" Value="6"/>
+        <EffectArray Reference="Unit,Colossus,LifeMax[0]" Value="25"/>
+        <EffectArray Reference="Unit,Colossus,ShieldsMax[0]" Value="30"/>
+        <EffectArray Reference="Unit,RussianRod,LifeMax[0]" Value="125"/>
+        <EffectArray Reference="Unit,RussianRod,ShieldsMax[0]" Value="200"/>
+        <EffectArray Reference="Unit,WarTemplar,ShieldsMax[0]" Value="25"/>
+        <EffectArray Reference="Unit,WarTemplar,LifeMax[0]" Value="45"/>
+        <EffectArray Reference="Unit,Sentinel,LifeMax[0]" Value="40"/>
+        <EffectArray Reference="Unit,Sentinel,ShieldsMax[0]" Value="22.5"/>
+        <EffectArray Reference="Unit,PhotonCannon,LifeArmor" Value="0.5"/>
+        <EffectArray Reference="Unit,PotatonCannon,LifeArmor" Value="2"/>
+        <EffectArray Reference="Unit,RussianRod,LifeArmor" Value="0.5"/>
+        <EffectArray Reference="Unit,Gateway,LifeArmor" Value="0.5"/>
+        <EffectArray Reference="Unit,ProtossArchive,LifeArmor" Value="0.5"/>
+        <EffectArray Reference="Unit,ProtossLibrary,LifeArmor" Value="0.5"/>
+        <EffectArray Reference="Unit,Cybercore,LifeArmor" Value="0.5"/>
+        <EffectArray Reference="Unit,Cybercore,LifeArmorLevel" Value="1"/>
+        <EffectArray Reference="Unit,Forge2,LifeArmor" Value="0.5"/>
+        <EffectArray Reference="Unit,Forge2,LifeArmorLevel" Value="1"/>
+        <EffectArray Reference="Unit,Nexon,LifeArmor" Value="0.5"/>
+        <EffectArray Reference="Unit,Nexon,LifeArmorLevel" Value="1"/>
+        <EffectArray Reference="Unit,Warpway,LifeArmor" Value="0.5"/>
+        <EffectArray Reference="Unit,Warpway,LifeArmorLevel" Value="1"/>
+        <EffectArray Reference="Unit,Warpway,LifeMax" Value="250"/>
+        <EffectArray Reference="Unit,Warpway,LifeStart" Value="250"/>
+        <EffectArray Reference="Unit,Cybercore,LifeMax" Value="250"/>
+        <EffectArray Reference="Unit,Cybercore,LifeStart" Value="250"/>
+        <EffectArray Reference="Unit,Forge2,LifeMax" Value="250"/>
+        <EffectArray Reference="Unit,Forge2,LifeStart" Value="250"/>
+        <EffectArray Reference="Unit,Nexon,LifeStart" Value="250"/>
+        <EffectArray Reference="Unit,Nexon,LifeMax" Value="250"/>
+        <EffectArray Reference="Unit,Dragoon,ShieldsMax" Value="19"/>
+        <EffectArray Reference="Unit,Dragoon,LifeMax" Value="24"/>
+        <EffectArray Reference="Unit,Voidray,LifeMax" Value="40"/>
+        <EffectArray Reference="Unit,Voidray,ShieldsMax" Value="30"/>
+        <EffectArray Reference="Unit,LightPhoenix,ShieldsMax" Value="10"/>
+        <EffectArray Reference="Unit,LightPhoenix,LifeMax" Value="20"/>
+        <EffectArray Reference="Unit,Stargate,LifeMax" Value="1000"/>
+        <EffectArray Reference="Unit,Stargate,ShieldsMax" Value="250"/>
+        <EffectArray Reference="Unit,Stargate,LifeArmor" Value="0.5"/>
+        <EffectArray Reference="Unit,FighterForge,LifeArmor" Value="0.5"/>
+        <EffectArray Reference="Unit,FighterForge,LifeMax" Value="250"/>
+        <EffectArray Reference="Unit,AssaultCore,LifeStart" Value="250"/>
+        <EffectArray Reference="Unit,AssaultCore,LifeArmor" Value="0.5"/>
+        <MaxLevel value="100"/>
+        <LeaderAlias value="ProtossUnitDamage"/>
+    </CUpgrade>
+    <CUpgrade id="Subjugator">
+        <LeaderAlias value=""/>
+        <Flags index="UpgradeCheat" value="0"/>
+    </CUpgrade>
+    <CUpgrade id="SubstationsBuilt"/>
+    <CUpgrade id="Suppress">
+        <MaxLevel value="232"/>
+        <LeaderAlias value="Agitate"/>
+    </CUpgrade>
+    <CUpgrade id="GrandEmpire">
+        <LeaderAlias value="Military"/>
+        <EffectArray Reference="Behavior,ProductionSpeed,Modification.RateMultiplierArray[Queueable]" Value="0.2"/>
+    </CUpgrade>
+    <CUpgrade id="ProductionSpeed">
+        <EffectArray Reference="Behavior,ProductionSpeed,Modification[0].RateMultiplierArray[Progress]" Value="0.25"/>
+        <EffectArray Operation="Multiply" Reference="Abil,SchoolResearch,InfoArray[Research1].Resource[Custom]" Value="2"/>
+        <EffectArray Reference="Behavior,ProductionSpeed,Modification[0].RateMultiplierArray[Queueable]" Value="0.25"/>
+        <MaxLevel value="100"/>
+    </CUpgrade>
+    <CUpgrade id="Neofascism">
+        <MaxLevel value="100"/>
+        <LeaderAlias value="ProductionSpeed"/>
+        <EffectArray Reference="Behavior,ProductionSpeed,Modification.RateMultiplierArray[Queueable]" Value="0.2"/>
+    </CUpgrade>
+    <CUpgrade id="ProtossUnitDamage">
+        <EffectArray Reference="Behavior,ProtossUnitHP,Modification[0].DamageDealtFraction[Ranged]" Value="0.1"/>
+        <EffectArray Reference="Behavior,ProtossUnitHP,Modification[0].DamageDealtFraction[Melee]" Value="0.1"/>
+        <EffectArray Reference="Behavior,ProtossUnitHP,Modification[0].DamageDealtFraction[Spell]" Value="0.1"/>
+        <EffectArray Reference="Behavior,ProtossUnitHP,Modification[0].DamageDealtFraction[Splash]" Value="0.1"/>
+        <EffectArray Operation="Multiply" Reference="Abil,ArmouryResearch,InfoArray[Research3].Resource[Custom]" Value="2"/>
+        <MaxLevel value="100"/>
+    </CUpgrade>
+    <CUpgrade id="TheA110Project"/>
+    <CUpgrade id="TheGatesOfHell"/>
+    <CUpgrade id="TheWallProject">
+        <EffectArray Reference="Unit,SupplyDepot,LifeMax" Value="5000"/>
+        <EffectArray Reference="Unit,SupplyDepot,LifeStart" Value="5000"/>
+        <EffectArray Reference="Unit,SupplyDepotLowered,LifeMax" Value="5000"/>
+        <EffectArray Reference="Unit,SupplyDepotLowered,LifeStart" Value="5000"/>
+        <EffectArray Reference="Unit,Bastion,LifeMax" Value="5000"/>
+        <EffectArray Operation="Set" Reference="Unit,Bastion,LifeStart" Value="20000"/>
+        <EffectArray Reference="Unit,Bastion,LifeArmor" Value="20"/>
+        <EffectArray Reference="Unit,SupplyDepot,LifeArmor" Value="20"/>
+        <EffectArray Reference="Unit,SupplyDepotLowered,LifeArmor" Value="20"/>
+        <LeaderAlias value="ReinforcedFortifications"/>
+    </CUpgrade>
+    <CUpgrade id="TheWorldeaterProject"/>
+    <CUpgrade id="TotalWar">
+        <EffectArray Reference="Behavior,ProductionSpeed,Modification.RateMultiplierArray[Queueable]" Value="0.3"/>
+    </CUpgrade>
+    <CUpgrade id="TradeEmbargo">
+        <Flags index="UpgradeCheat" value="0"/>
+        <ScoreAmount value="4294967295"/>
+        <LeaderAlias value=""/>
+    </CUpgrade>
+    <CUpgrade id="FauxDemocracy">
+        <LeaderAlias value="Military"/>
+    </CUpgrade>
+    <CUpgrade id="Isolationisim">
+        <LeaderAlias value="Military"/>
+        <EffectArray Operation="Set" Reference="Abil,DeclareWar,Range[0]" Value="50"/>
+    </CUpgrade>
+    <CUpgrade id="InhumaneWar">
+        <EffectArray Reference="Behavior,ProductionSpeed,Modification.RateMultiplierArray[Queueable]" Value="0.5"/>
+    </CUpgrade>
+    <CUpgrade id="UnconditionalVictory"/>
+    <CUpgrade id="UrbanDevelopment"/>
+    <CUpgrade id="UrbanPlanning"/>
+    <CUpgrade id="VehicleArmourUP">
+        <EffectArray Operation="Multiply" Reference="Abil,ArmouryResearch,InfoArray[Research6].Resource[Custom]" Value="10"/>
+        <EffectArray Reference="Unit,BasiliskSPA,LifeArmorLevel" Value="1"/>
+        <EffectArray Reference="Unit,BasiliskSPA,LifeArmor" Value="2.5"/>
+        <EffectArray Reference="Unit,Dart,LifeArmor" Value="1.5"/>
+        <EffectArray Reference="Unit,Dart,LifeArmorLevel" Value="1"/>
+        <EffectArray Reference="Unit,LancerMBT,LifeArmor" Value="3.4"/>
+        <EffectArray Reference="Unit,LancerMBT,LifeArmorLevel" Value="1"/>
+        <EffectArray Reference="Unit,StormIFV,LifeArmorLevel" Value="1"/>
+        <EffectArray Reference="Unit,StormIFV,LifeArmor" Value="2.5"/>
+        <EffectArray Reference="Unit,VanguardMBT,LifeArmor" Value="5"/>
+        <EffectArray Reference="Unit,VanguardMBT,LifeArmorLevel" Value="1"/>
+        <EffectArray Reference="Unit,SupplyDepot,LifeArmorLevel" Value="1"/>
+        <EffectArray Reference="Unit,SupplyDepot,LifeArmor" Value="4"/>
+        <EffectArray Reference="Unit,SupplyDepotLowered,LifeArmor" Value="2"/>
+        <EffectArray Reference="Unit,SupplyDepotLowered,LifeArmorLevel" Value="1"/>
+        <EffectArray Reference="Unit,IgniterTurret,LifeArmor" Value="2"/>
+        <EffectArray Reference="Unit,IgniterTurret,LifeArmorLevel" Value="1"/>
+        <EffectArray Reference="Unit,BaPulseCannon,LifeArmor" Value="2"/>
+        <EffectArray Reference="Unit,BaPulseCannon,LifeArmorLevel" Value="1"/>
+        <EffectArray Reference="Unit,Lasturret,LifeArmorLevel" Value="1"/>
+        <EffectArray Reference="Unit,Lasturret,LifeArmor" Value="2"/>
+        <EffectArray Operation="Divide" Reference="Abil,ArmouryResearch,InfoArray[Research6].Resource[Custom]" Value="7"/>
+        <EffectArray Reference="Abil,ArmouryResearch,InfoArray[Research6].Resource[Custom]" Value="100"/>
+        <EffectArray Reference="Unit,Bastion,LifeArmor" Value="5"/>
+        <EffectArray Reference="Unit,Bastion,LifeArmorLevel" Value="1"/>
+        <EffectArray Reference="Unit,Flakker,LifeArmor" Value="2"/>
+        <EffectArray Reference="Unit,Flakker,LifeArmorLevel" Value="1"/>
+        <EffectArray Reference="Unit,Expounder,LifeArmor" Value="3"/>
+        <EffectArray Reference="Unit,Expounder,LifeArmorLevel" Value="1"/>
+        <EffectArray Reference="Unit,NaniteTower,LifeArmor" Value="2"/>
+        <EffectArray Reference="Unit,NaniteTower,LifeArmorLevel" Value="1"/>
+        <EffectArray Reference="Unit,ArmadilloAPC,LifeArmor" Value="2.5"/>
+        <EffectArray Reference="Unit,ArmadilloAPC,LifeArmorLevel" Value="1"/>
+        <EffectArray Reference="Unit,CrusaderMBT,LifeArmor" Value="7"/>
+        <EffectArray Reference="Unit,Phenom,LifeArmor" Value="3.5"/>
+        <EffectArray Reference="Unit,ThorsonsVanguard,LifeArmorLevel" Value="1"/>
+        <EffectArray Reference="Unit,ThorsonsVanguard,LifeArmor" Value="6"/>
+        <EffectArray Reference="Unit,Phenom,LifeArmorLevel" Value="1"/>
+        <EffectArray Reference="Unit,CrusaderMBT,LifeArmorLevel" Value="1"/>
+        <EffectArray Reference="Unit,SAM,LifeArmor" Value="3"/>
+        <EffectArray Reference="Unit,SAM,LifeArmorLevel" Value="1"/>
+        <EffectArray Reference="Unit,Hypercannon,LifeArmor" Value="4"/>
+        <EffectArray Reference="Unit,Hypercannon,LifeArmorLevel" Value="1"/>
+        <EffectArray Reference="Unit,LinerMech,LifeArmor" Value="4"/>
+        <EffectArray Reference="Unit,LinerMech,LifeArmorLevel" Value="1"/>
+        <EffectArray Reference="Unit,ImprovedLasturret,LifeArmorLevel" Value="1"/>
+        <EffectArray Reference="Unit,ImprovedLasturret,LifeArmor" Value="1.5"/>
+        <MaxLevel value="100"/>
+        <LeaderAlias value="VehicleArmour"/>
+    </CUpgrade>
+    <CUpgrade id="VehicleArmourUP2">
+        <EffectArray Operation="Multiply" Reference="Abil,ArmouryResearch,InfoArray[Research6].Resource[Custom]" Value="10"/>
+        <EffectArray Reference="Unit,BasiliskSPA2,LifeArmorLevel" Value="1"/>
+        <EffectArray Reference="Unit,BasiliskSPA2,LifeArmor" Value="2.5"/>
+        <EffectArray Reference="Unit,Dart,LifeArmor" Value="1.5"/>
+        <EffectArray Reference="Unit,Dart,LifeArmorLevel" Value="1"/>
+        <EffectArray Reference="Unit,LancerMBT,LifeArmor" Value="3.4"/>
+        <EffectArray Reference="Unit,LancerMBT,LifeArmorLevel" Value="1"/>
+        <EffectArray Reference="Unit,StormIFV,LifeArmorLevel" Value="1"/>
+        <EffectArray Reference="Unit,StormIFV,LifeArmor" Value="2.5"/>
+        <EffectArray Reference="Unit,VanguardMBT,LifeArmor" Value="5"/>
+        <EffectArray Reference="Unit,VanguardMBT,LifeArmorLevel" Value="1"/>
+        <EffectArray Reference="Unit,SupplyDepot,LifeArmorLevel" Value="1"/>
+        <EffectArray Reference="Unit,SupplyDepot,LifeArmor" Value="4"/>
+        <EffectArray Reference="Unit,SupplyDepotLowered,LifeArmor" Value="2"/>
+        <EffectArray Reference="Unit,SupplyDepotLowered,LifeArmorLevel" Value="1"/>
+        <EffectArray Reference="Unit,IgniterTurret,LifeArmor" Value="2"/>
+        <EffectArray Reference="Unit,IgniterTurret,LifeArmorLevel" Value="1"/>
+        <EffectArray Reference="Unit,BaPulseCannon,LifeArmor" Value="2"/>
+        <EffectArray Reference="Unit,BaPulseCannon,LifeArmorLevel" Value="1"/>
+        <EffectArray Reference="Unit,Lasturret,LifeArmorLevel" Value="1"/>
+        <EffectArray Reference="Unit,Lasturret,LifeArmor" Value="2"/>
+        <EffectArray Operation="Divide" Reference="Abil,ArmouryResearch,InfoArray[Research6].Resource[Custom]" Value="7"/>
+        <EffectArray Reference="Abil,ArmouryResearch,InfoArray[Research6].Resource[Custom]" Value="100"/>
+        <EffectArray Reference="Unit,Bastion,LifeArmor" Value="5"/>
+        <EffectArray Reference="Unit,Bastion,LifeArmorLevel" Value="1"/>
+        <EffectArray Reference="Unit,Flakker,LifeArmor" Value="2"/>
+        <EffectArray Reference="Unit,Flakker,LifeArmorLevel" Value="1"/>
+        <EffectArray Reference="Unit,Expounder,LifeArmor" Value="3"/>
+        <EffectArray Reference="Unit,Expounder,LifeArmorLevel" Value="1"/>
+        <EffectArray Reference="Unit,NaniteTower,LifeArmor" Value="2"/>
+        <EffectArray Reference="Unit,NaniteTower,LifeArmorLevel" Value="1"/>
+        <EffectArray Reference="Unit,ArmadilloAPC,LifeArmor" Value="2.5"/>
+        <EffectArray Reference="Unit,ArmadilloAPC,LifeArmorLevel" Value="1"/>
+        <EffectArray Reference="Unit,CrusaderMBT,LifeArmor" Value="7"/>
+        <EffectArray Reference="Unit,Phenom,LifeArmor" Value="3.5"/>
+        <EffectArray Reference="Unit,ThorsonsVanguard,LifeArmorLevel" Value="1"/>
+        <EffectArray Reference="Unit,ThorsonsVanguard,LifeArmor" Value="6"/>
+        <EffectArray Reference="Unit,Phenom,LifeArmorLevel" Value="1"/>
+        <EffectArray Reference="Unit,CrusaderMBT,LifeArmorLevel" Value="1"/>
+        <EffectArray Reference="Unit,SAM,LifeArmor" Value="3"/>
+        <EffectArray Reference="Unit,SAM,LifeArmorLevel" Value="1"/>
+        <EffectArray Reference="Unit,Hypercannon,LifeArmor" Value="4"/>
+        <EffectArray Reference="Unit,Hypercannon,LifeArmorLevel" Value="1"/>
+        <EffectArray Reference="Unit,LinerMech,LifeArmor" Value="4"/>
+        <EffectArray Reference="Unit,LinerMech,LifeArmorLevel" Value="1"/>
+        <EffectArray Reference="Unit,ImprovedLasturret,LifeArmorLevel" Value="1"/>
+        <EffectArray Reference="Unit,ImprovedLasturret,LifeArmor" Value="1.5"/>
+        <MaxLevel value="100"/>
+        <LeaderAlias value="VehicleArmour"/>
+    </CUpgrade>
+    <CUpgrade id="VehicleArmourUP22">
+        <EffectArray Operation="Multiply" Reference="Abil,ArmouryResearch,InfoArray[Research6].Resource[Custom]" Value="10"/>
+        <EffectArray Reference="Unit,BasiliskSPA2,LifeArmorLevel" Value="1"/>
+        <EffectArray Reference="Unit,BasiliskSPA2,LifeArmor" Value="2.5"/>
+        <EffectArray Reference="Unit,Dart,LifeArmor" Value="1.5"/>
+        <EffectArray Reference="Unit,Dart,LifeArmorLevel" Value="1"/>
+        <EffectArray Reference="Unit,LancerMBT,LifeArmor" Value="3.4"/>
+        <EffectArray Reference="Unit,LancerMBT,LifeArmorLevel" Value="1"/>
+        <EffectArray Reference="Unit,StormIFV,LifeArmorLevel" Value="1"/>
+        <EffectArray Reference="Unit,StormIFV,LifeArmor" Value="2.5"/>
+        <EffectArray Reference="Unit,VanguardMBT,LifeArmor" Value="5"/>
+        <EffectArray Reference="Unit,VanguardMBT,LifeArmorLevel" Value="1"/>
+        <EffectArray Reference="Unit,SupplyDepot,LifeArmorLevel" Value="1"/>
+        <EffectArray Reference="Unit,SupplyDepot,LifeArmor" Value="4"/>
+        <EffectArray Reference="Unit,SupplyDepotLowered,LifeArmor" Value="2"/>
+        <EffectArray Reference="Unit,SupplyDepotLowered,LifeArmorLevel" Value="1"/>
+        <EffectArray Reference="Unit,IgniterTurret,LifeArmor" Value="2"/>
+        <EffectArray Reference="Unit,IgniterTurret,LifeArmorLevel" Value="1"/>
+        <EffectArray Reference="Unit,BaPulseCannon,LifeArmor" Value="2"/>
+        <EffectArray Reference="Unit,BaPulseCannon,LifeArmorLevel" Value="1"/>
+        <EffectArray Reference="Unit,Lasturret,LifeArmorLevel" Value="1"/>
+        <EffectArray Reference="Unit,Lasturret,LifeArmor" Value="2"/>
+        <EffectArray Operation="Divide" Reference="Abil,ArmouryResearch,InfoArray[Research6].Resource[Custom]" Value="7"/>
+        <EffectArray Reference="Abil,ArmouryResearch,InfoArray[Research6].Resource[Custom]" Value="100"/>
+        <EffectArray Reference="Unit,Bastion,LifeArmor" Value="5"/>
+        <EffectArray Reference="Unit,Bastion,LifeArmorLevel" Value="1"/>
+        <EffectArray Reference="Unit,Flakker,LifeArmor" Value="2"/>
+        <EffectArray Reference="Unit,Flakker,LifeArmorLevel" Value="1"/>
+        <EffectArray Reference="Unit,Expounder,LifeArmor" Value="3"/>
+        <EffectArray Reference="Unit,Expounder,LifeArmorLevel" Value="1"/>
+        <EffectArray Reference="Unit,NaniteTower,LifeArmor" Value="2"/>
+        <EffectArray Reference="Unit,NaniteTower,LifeArmorLevel" Value="1"/>
+        <EffectArray Reference="Unit,ArmadilloAPC,LifeArmor" Value="2.5"/>
+        <EffectArray Reference="Unit,ArmadilloAPC,LifeArmorLevel" Value="1"/>
+        <EffectArray Reference="Unit,CrusaderMBT,LifeArmor" Value="7"/>
+        <EffectArray Reference="Unit,Phenom,LifeArmor" Value="3.5"/>
+        <EffectArray Reference="Unit,ThorsonsVanguard,LifeArmorLevel" Value="1"/>
+        <EffectArray Reference="Unit,ThorsonsVanguard,LifeArmor" Value="6"/>
+        <EffectArray Reference="Unit,Phenom,LifeArmorLevel" Value="1"/>
+        <EffectArray Reference="Unit,CrusaderMBT,LifeArmorLevel" Value="1"/>
+        <EffectArray Reference="Unit,SAM,LifeArmor" Value="3"/>
+        <EffectArray Reference="Unit,SAM,LifeArmorLevel" Value="1"/>
+        <EffectArray Reference="Unit,RussianHypercannon,LifeArmor" Value="4"/>
+        <EffectArray Reference="Unit,RussianHypercannon,LifeArmorLevel" Value="1"/>
+        <EffectArray Reference="Unit,LinerMech,LifeArmor" Value="4"/>
+        <EffectArray Reference="Unit,LinerMech,LifeArmorLevel" Value="1"/>
+        <EffectArray Reference="Unit,ImprovedLasturret,LifeArmorLevel" Value="1"/>
+        <EffectArray Reference="Unit,ImprovedLasturret,LifeArmor" Value="1.5"/>
+        <MaxLevel value="100"/>
+        <LeaderAlias value="VehicleArmour"/>
+    </CUpgrade>
+    <CUpgrade id="VehicleSpeedUP">
+        <EffectArray Operation="Multiply" Reference="Unit,BasiliskSPA2,Speed" Value="1.199200"/>
+        <EffectArray Operation="Multiply" Reference="Unit,Dart,Speed" Value="1.199200"/>
+        <EffectArray Operation="Multiply" Reference="Unit,LancerMBT,Speed" Value="1.199200"/>
+        <EffectArray Operation="Multiply" Reference="Unit,StormIFV,Speed" Value="1.199200"/>
+        <EffectArray Operation="Multiply" Reference="Unit,VanguardMBT,Speed" Value="1.199200"/>
+        <EffectArray Operation="Multiply" Reference="Unit,ArmadilloAPC,Speed" Value="1.199200"/>
+        <EffectArray Operation="Multiply" Reference="Unit,CrusaderMBT,Speed" Value="1.199200"/>
+        <EffectArray Operation="Multiply" Reference="Unit,Phenom,Speed" Value="1.199200"/>
+        <MaxLevel value="100"/>
+        <LeaderAlias value="VehicleArmour"/>
+    </CUpgrade>
+    <CUpgrade id="VehicleArmourUP3">
+        <EffectArray Operation="Multiply" Reference="Abil,ArmouryResearch,InfoArray[Research6].Resource[Custom]" Value="10"/>
+        <EffectArray Reference="Unit,BasiliskSPA,LifeArmorLevel" Value="1"/>
+        <EffectArray Reference="Unit,BasiliskSPA,LifeArmor" Value="2.5"/>
+        <EffectArray Reference="Unit,Dart,LifeArmor" Value="1.5"/>
+        <EffectArray Reference="Unit,Dart,LifeArmorLevel" Value="1"/>
+        <EffectArray Reference="Unit,LancerMBT,LifeArmor" Value="3.4"/>
+        <EffectArray Reference="Unit,LancerMBT,LifeArmorLevel" Value="1"/>
+        <EffectArray Reference="Unit,StormIFV,LifeArmorLevel" Value="1"/>
+        <EffectArray Reference="Unit,StormIFV,LifeArmor" Value="2.5"/>
+        <EffectArray Reference="Unit,VanguardMBT,LifeArmor" Value="5"/>
+        <EffectArray Reference="Unit,VanguardMBT,LifeArmorLevel" Value="1"/>
+        <EffectArray Reference="Unit,SupplyDepot,LifeArmorLevel" Value="1"/>
+        <EffectArray Reference="Unit,SupplyDepot,LifeArmor" Value="4"/>
+        <EffectArray Reference="Unit,SupplyDepotLowered,LifeArmor" Value="2"/>
+        <EffectArray Reference="Unit,SupplyDepotLowered,LifeArmorLevel" Value="1"/>
+        <EffectArray Reference="Unit,IgniterTurret,LifeArmor" Value="2"/>
+        <EffectArray Reference="Unit,IgniterTurret,LifeArmorLevel" Value="1"/>
+        <EffectArray Reference="Unit,BaPulseCannon,LifeArmor" Value="2"/>
+        <EffectArray Reference="Unit,BaPulseCannon,LifeArmorLevel" Value="1"/>
+        <EffectArray Reference="Unit,Lasturret,LifeArmorLevel" Value="1"/>
+        <EffectArray Reference="Unit,Lasturret,LifeArmor" Value="2"/>
+        <EffectArray Operation="Divide" Reference="Abil,ArmouryResearch,InfoArray[Research6].Resource[Custom]" Value="7"/>
+        <EffectArray Reference="Abil,ArmouryResearch,InfoArray[Research6].Resource[Custom]" Value="100"/>
+        <EffectArray Reference="Unit,Bastion,LifeArmor" Value="5"/>
+        <EffectArray Reference="Unit,Bastion,LifeArmorLevel" Value="1"/>
+        <EffectArray Reference="Unit,Flakker,LifeArmor" Value="2"/>
+        <EffectArray Reference="Unit,Flakker,LifeArmorLevel" Value="1"/>
+        <EffectArray Reference="Unit,Expounder,LifeArmor" Value="3"/>
+        <EffectArray Reference="Unit,Expounder,LifeArmorLevel" Value="1"/>
+        <EffectArray Reference="Unit,NaniteTower,LifeArmor" Value="2"/>
+        <EffectArray Reference="Unit,NaniteTower,LifeArmorLevel" Value="1"/>
+        <EffectArray Reference="Unit,ArmadilloAPC,LifeArmor" Value="2.5"/>
+        <EffectArray Reference="Unit,ArmadilloAPC,LifeArmorLevel" Value="1"/>
+        <EffectArray Reference="Unit,CrusaderMBT,LifeArmor" Value="7"/>
+        <EffectArray Reference="Unit,Phenom,LifeArmor" Value="3.5"/>
+        <EffectArray Reference="Unit,ThorsonsVanguard,LifeArmorLevel" Value="1"/>
+        <EffectArray Reference="Unit,ThorsonsVanguard,LifeArmor" Value="6"/>
+        <EffectArray Reference="Unit,Phenom,LifeArmorLevel" Value="1"/>
+        <EffectArray Reference="Unit,CrusaderMBT,LifeArmorLevel" Value="1"/>
+        <EffectArray Reference="Unit,SAM,LifeArmor" Value="3"/>
+        <EffectArray Reference="Unit,SAM,LifeArmorLevel" Value="1"/>
+        <EffectArray Reference="Unit,RussianHypercannon,LifeArmor" Value="4"/>
+        <EffectArray Reference="Unit,RussianHypercannon,LifeArmorLevel" Value="1"/>
+        <EffectArray Reference="Unit,LinerMech,LifeArmor" Value="4"/>
+        <EffectArray Reference="Unit,LinerMech,LifeArmorLevel" Value="1"/>
+        <EffectArray Reference="Unit,ImprovedLasturret,LifeArmorLevel" Value="1"/>
+        <EffectArray Reference="Unit,ImprovedLasturret,LifeArmor" Value="1.5"/>
+        <MaxLevel value="100"/>
+        <LeaderAlias value="VehicleArmour"/>
+    </CUpgrade>
+    <CUpgrade id="VehicleDamageUP">
+        <EffectArray Operation="Multiply" Reference="Abil,ArmouryResearch,InfoArray[Research8].Resource[Custom]" Value="10"/>
+        <EffectArray Reference="Weapon,PulseCannon2,Level" Value="1"/>
+        <EffectArray Reference="Effect,PulseCannonD2,Amount" Value="5"/>
+        <EffectArray Reference="Weapon,Igniter,Level" Value="1"/>
+        <EffectArray Reference="Effect,Igniterd,Amount" Value="1"/>
+        <EffectArray Reference="Effect,BasiliskD,Amount" Value="6"/>
+        <EffectArray Reference="Weapon,Basilisk,Level" Value="1"/>
+        <EffectArray Reference="Weapon,PlasmaCannon,Level" Value="1"/>
+        <EffectArray Reference="Effect,PlasmaCannonD,Amount" Value="5"/>
+        <EffectArray Reference="Effect,150mmCannon,Amount" Value="8"/>
+        <EffectArray Reference="Weapon,RedLaser,Level" Value="1"/>
+        <EffectArray Reference="Weapon,Dual150mmCannons,Level" Value="1"/>
+        <EffectArray Reference="Effect,RLD,Amount" Value="2"/>
+        <EffectArray Reference="Weapon,Diamondback,Level" Value="1"/>
+        <EffectArray Reference="Effect,DiamondbackBeam,Amount" Value="5"/>
+        <EffectArray Reference="Weapon,PlasmaRocket,Level" Value="1"/>
+        <EffectArray Reference="Effect,PlasmaRocketD,Amount" Value="2"/>
+        <EffectArray Reference="Effect,VLD,Amount" Value="2.5"/>
+        <EffectArray Reference="Weapon,VL,Level" Value="1"/>
+        <EffectArray Operation="Divide" Reference="Abil,ArmouryResearch,InfoArray[Research8].Resource[Custom]" Value="7"/>
+        <EffectArray Reference="Abil,ArmouryResearch,InfoArray[Research8].Resource[Custom]" Value="100"/>
+        <EffectArray Reference="Effect,FlakkerD,Amount" Value="1.8"/>
+        <EffectArray Reference="Weapon,Flakker,Level" Value="1"/>
+        <EffectArray Reference="Effect,ExpounderD,Amount" Value="10"/>
+        <EffectArray Reference="Weapon,Expounder,Level" Value="1"/>
+        <EffectArray Reference="Effect,Crusader300mmD,Amount" Value="30"/>
+        <EffectArray Reference="Weapon,Crusader300mm,Level" Value="1"/>
+        <EffectArray Reference="Effect,MengskWraithADamage,Amount" Value="2.5"/>
+        <EffectArray Reference="Weapon,MengskWraithA,Level" Value="1"/>
+        <EffectArray Reference="Effect,LongboltMissileU,Amount" Value="5"/>
+        <EffectArray Reference="Weapon,LongboltMissile,Level" Value="1"/>
+        <EffectArray Reference="Effect,WarHound,Amount" Value="12"/>
+        <EffectArray Reference="Weapon,WarHound,Level" Value="1"/>
+        <EffectArray Reference="Effect,PulseCannonD,Amount" Value="5"/>
+        <EffectArray Reference="Effect,HLD,Amount" Value="25"/>
+        <EffectArray Reference="Weapon,PulseCannon,Level" Value="1"/>
+        <EffectArray Reference="Weapon,HeavyLaser,Level" Value="1"/>
+        <EffectArray Reference="Effect,OL,Amount" Value="3"/>
+        <EffectArray Reference="Weapon,OrangeLaser,Level" Value="1"/>
+        <MaxLevel value="100"/>
+        <LeaderAlias value="VehicleDamage"/>
+    </CUpgrade>
+    <CUpgrade id="Vehicles"/>
+    <CUpgrade id="AdvancedVehicles">
+        <LeaderAlias value="Vehicles"/>
+    </CUpgrade>
+    <CUpgrade id="Subjugated">
+        <LeaderAlias value=""/>
+        <Flags index="UpgradeCheat" value="0"/>
+        <ScoreAmount value="4294967295"/>
+    </CUpgrade>
+    <CUpgrade id="Fortifications">
+        <LeaderAlias value="Vehicles"/>
+    </CUpgrade>
+    <CUpgrade id="WeaponizedDiseases"/>
+    <CUpgrade id="ZombieConcept"/>
+</Catalog>

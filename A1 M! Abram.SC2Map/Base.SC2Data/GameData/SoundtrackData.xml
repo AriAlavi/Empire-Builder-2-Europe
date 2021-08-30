@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="us-ascii"?>
+<Catalog>
+    <CSoundtrack id="Ambience_Aiur">
+        <CueArray index="0">
+            <MasterLayer Sound="AmbEmitter_RockTumbleFissure01"/>
+        </CueArray>
+    </CSoundtrack>
+    <CSoundtrack id="Ambience_Valhalla">
+        <CueArray index="0">
+            <MasterLayer Sound="GameMusicTrollstep"/>
+        </CueArray>
+    </CSoundtrack>
+    <CSoundtrack id="Trollstep">
+        <CueArray>
+            <MasterLayer Sound="GameMusicTrollstep"/>
+            <SlaveLayers/>
+            <SlaveLayers/>
+            <SlaveLayers/>
+            <SlaveLayers/>
+        </CueArray>
+    </CSoundtrack>
+</Catalog>

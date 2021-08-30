@@ -1,0 +1,394 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Catalog>
+    <CRequirement id="1HaveResearch">
+        <NodeArray index="Use" Link="NotOrCountUnitLaboratoryIInProgressOrBetter2310102397CountUnitLaboratoryIIInProgressOrBetterCountUnitLaboratoryIIIInProgressOrBetterCountUnitLaboratoryIVInProgressOrBetterCountUnitLaboratoryVInProgres1599170725"/>
+    </CRequirement>
+    <CRequirement id="5MinutesPassed">
+        <NodeArray index="Show" Link="CountUpgrade5MinutesPassedInProgressOrBetter"/>
+    </CRequirement>
+    <CRequirement id="AdvancedKinetics">
+        <NodeArray index="Use" Link="CountUpgradeAdvancedKineticsCompleteOnly"/>
+    </CRequirement>
+    <CRequirement id="AdvancedRadarStation">
+        <NodeArray index="Use" Link="CountUpgradeAdvancedRadarStationCompleteOnly"/>
+    </CRequirement>
+    <CRequirement id="AircraftArmour">
+        <NodeArray index="Show" Link="AndEqCountUpgradeAircraftArmourUPQueuedOnly0EqCountUpgradeAircraftArmourUPInProgressOnly0"/>
+    </CRequirement>
+    <CRequirement id="AppliedScience">
+        <NodeArray index="Show" Link="AndEqCountUpgradeAppliedScienceQueuedOnly0EqCountUpgradeAppliedScienceInProgressOnly0"/>
+    </CRequirement>
+    <CRequirement id="Armoury">
+        <NodeArray index="Use" Link="CountUnitSchoolCompleteOnly"/>
+    </CRequirement>
+    <CRequirement id="AutonomousZombies">
+        <NodeArray index="Use" Link="CountUpgradeAutonomousZombiesCompleteOnly"/>
+    </CRequirement>
+    <CRequirement id="BasicEngine">
+        <NodeArray index="Use" Link="CountUpgradeBasicEngineCompleteOnly"/>
+    </CRequirement>
+    <CRequirement id="BiologicalResearch">
+        <NodeArray index="Use" Link="CountUpgradeBiologicalResearchCompleteOnly"/>
+    </CRequirement>
+    <CRequirement id="CanBuildScoutbots">
+        <NodeArray index="Show" Link="CountUpgradeCanBuildScoutbotsCompleteOnly"/>
+    </CRequirement>
+    <CRequirement id="NationalHighwayResearched">
+        <NodeArray index="Use" Link="CountUpgradeNationalHighwayCompleteOnly"/>
+    </CRequirement>
+    <CRequirement id="CanBuildOilWells">
+        <NodeArray index="Use" Link="CountUpgradeOilWellResearchCompleteOnly"/>
+    </CRequirement>
+    <CRequirement id="DeadManHandOff">
+        <NodeArray index="Use" Link="CountUpgradeDeadManHandOffCompleteOnly"/>
+    </CRequirement>
+    <CRequirement id="DeadManHandOn">
+        <NodeArray index="Use" Link="CountUpgradeDeadManHandOnCompleteOnly"/>
+    </CRequirement>
+    <CRequirement id="ExtensiveReservesTraining">
+        <NodeArray index="Use" Link="CountUpgradeExtensiveReservesTrainingCompleteOnly"/>
+    </CRequirement>
+    <CRequirement id="FocusedKinetics">
+        <NodeArray index="Use" Link="CountUpgradeFocusedKineticsCompleteOnly"/>
+    </CRequirement>
+    <CRequirement id="FocusedLaser">
+        <NodeArray index="Use" Link="CountUpgradeFocusedLaserCompleteOnly"/>
+    </CRequirement>
+    <CRequirement id="FuturisticEngine">
+        <NodeArray index="Use" Link="CountUpgradeFuturisticEngineCompleteOnly"/>
+    </CRequirement>
+    <CRequirement id="HalycolnBasedMissiles">
+        <NodeArray index="Use" Link="CountUpgradeHalcyonBasedMissilesCompleteOnly"/>
+    </CRequirement>
+    <CRequirement id="HaveAdeptShieldUpgrade">
+        <NodeArray index="Use" Link="CountUpgradeHalcyonBasedMissilesCompleteOnly4225243259"/>
+    </CRequirement>
+    <CRequirement id="HighVelocityMissiles">
+        <NodeArray index="Use" Link="CountUpgradeHighVelocityMissilesCompleteOnly"/>
+    </CRequirement>
+    <CRequirement id="HydrogenBasedMIssiles">
+        <NodeArray index="Use" Link="CountUpgradeHydrogenBasedMissilesCompleteOnly"/>
+    </CRequirement>
+    <CRequirement id="LaserConcept">
+        <NodeArray index="Use" Link="CountUpgradeLaserConceptCompleteOnly"/>
+    </CRequirement>
+    <CRequirement id="LaserInterception">
+        <NodeArray index="Use" Link="CountUpgradeLaserInterceptionCompleteOnly"/>
+    </CRequirement>
+    <CRequirement id="MissileTechnology">
+        <NodeArray index="Use" Link="CountUpgradeMissileTechnologyCompleteOnly"/>
+    </CRequirement>
+    <CRequirement id="ModifiedDiseases">
+        <NodeArray index="Use" Link="CountUpgradeModifiedDiseasesCompleteOnly"/>
+    </CRequirement>
+    <CRequirement id="NanorepairTechnology">
+        <NodeArray index="Use" Link="CountUpgradeNanorepairTechnologyCompleteOnly"/>
+    </CRequirement>
+    <CRequirement id="NuclearTippedPayloads">
+        <NodeArray index="Use" Link="CountUpgradeNuclearTippedPayloadsCompleteOnly"/>
+    </CRequirement>
+    <CRequirement id="OmegaZombies">
+        <NodeArray index="Use" Link="CountUpgradeOmegaZombiesCompleteOnly"/>
+    </CRequirement>
+    <CRequirement id="Onlyonecolony">
+        <NodeArray index="Use" Link="NotCountUnitDataCoreQueuedOrBetter1667244463"/>
+    </CRequirement>
+    <CRequirement id="ReinforcedFortifications">
+        <NodeArray index="Use" Link="CountUpgradeReinforcedFortificationsCompleteOnly"/>
+    </CRequirement>
+    <CRequirement id="ResearchAdministrativeHierarchy">
+        <NodeArray index="Use" Link="CountUpgradeAdministrativeHierarchyResearchedCompleteOnly"/>
+    </CRequirement>
+    <CRequirement id="Clinic">
+        <NodeArray index="Use" Link="CountUnitSchoolCompleteOnly"/>
+    </CRequirement>
+    <CRequirement id="DefensiveWar">
+        <NodeArray index="Use" Link="NotCountUpgradeChangeWarPolicyInProgressOrBetter"/>
+    </CRequirement>
+    <CRequirement id="EUNotalreadyBuilt">
+        <NodeArray index="Use" Link="NotOrCountUpgradeEUBuiltInProgressOrBetterCountUpgradeGraviticThrustersInProgressOrBetter"/>
+    </CRequirement>
+    <CRequirement id="HaveAPA">
+        <NodeArray index="Use" Link="CountUpgradeAdvancedPowerArmourCompleteOnly"/>
+    </CRequirement>
+    <CRequirement id="HaveAdvancedAircraft">
+        <NodeArray index="Use" Link="CountUpgradeAdvancedAircraftCompleteOnly"/>
+    </CRequirement>
+    <CRequirement id="HaveImprovedGasification">
+        <NodeArray index="Use" Link="CountUpgradeImprovedGasificationCompleteOnly"/>
+    </CRequirement>
+    <CRequirement id="HaveAdvancedGasification">
+        <NodeArray index="Use" Link="CountUpgradeAdvancedGasificationCompleteOnly"/>
+    </CRequirement>
+    <CRequirement id="HaveModernVehicles">
+        <NodeArray index="Use" Link="CountUpgradeModernVehiclesCompleteOnly"/>
+    </CRequirement>
+    <CRequirement id="HaveCoalGasification">
+        <NodeArray index="Use" Link="CountUpgradeCoalGasificationCompleteOnly"/>
+    </CRequirement>
+    <CRequirement id="HaveBasicAircraft">
+        <NodeArray index="Use" Link="CountUpgradeBasicAircraftCompleteOnly"/>
+    </CRequirement>
+    <CRequirement id="HaveNuclearFusion">
+        <NodeArray index="Use" Link="CountUpgradeNuclearFusionCompleteOnly"/>
+    </CRequirement>
+    <CRequirement id="FinishedOilResearch">
+        <NodeArray index="Show" Link="NotCountUpgradeOilWellResearchInProgressOrBetter"/>
+    </CRequirement>
+    <CRequirement id="HavePlascrete">
+        <NodeArray index="Use" Link="CountUpgradePlascreteCompleteOnly"/>
+    </CRequirement>
+    <CRequirement id="HaveFortifications">
+        <NodeArray index="Use" Link="CountUpgradeFortificationsCompleteOnly"/>
+    </CRequirement>
+    <CRequirement id="Imperialisim">
+        <NodeArray index="Use" Link="NotOrCountUpgradeCommunismInProgressOrBetterCountUpgradeDirectDemocracyInProgressOrBetterCountUpgradePacifisimInProgressOrBetterCountUpgradeIsolationisimInProgressOrBetterCountUpgradeDiplomaticPolicyChangeInProgressOrBetter"/>
+    </CRequirement>
+    <CRequirement id="InEuropeanUnion">
+        <NodeArray index="Show" Link="CountUpgradeEuropeanUnionInProgressOrBetter"/>
+    </CRequirement>
+    <CRequirement id="InhumaneWar">
+        <NodeArray index="Use" Link="NotOrCountUpgradeChangeWarPolicyInProgressOrBetterNotCountUpgradeUnconditionalVictoryCompleteOnly"/>
+    </CRequirement>
+    <CRequirement id="Interventionalisim">
+        <NodeArray index="Use" Link="NotOrCountUpgradeCorporatocracyInProgressOrBetterCountUpgradeNeofascismInProgressOrBetterCountUpgradeGrandEmpireInProgressOrBetterCountUpgradePacifisimInProgressOrBetterCountUpgradeJingoisimInProgress544116613"/>
+    </CRequirement>
+    <CRequirement id="Isolationisim">
+        <NodeArray index="Use" Link="NotOrCountUpgradeCorporatocracyInProgressOrBetterCountUpgradeNeofascismInProgressOrBetterCountUpgradeGrandEmpireInProgressOrBetterCountUpgradeImperialisimInProgressOrBetterCountUpgradeJingoisimInProgr3469606872"/>
+    </CRequirement>
+    <CRequirement id="Jingoisim">
+        <NodeArray index="Use" Link="NotOrCountUpgradeCommunismInProgressOrBetterCountUpgradeDirectDemocracyInProgressOrBetterCountUpgradeSocialistRepublicInProgressOrBetterCountUpgradePacifisimInProgressOrBetterCountUpgradeIsolationisim2412661587"/>
+    </CRequirement>
+    <CRequirement id="LearnAPA">
+        <NodeArray index="Use" Link="CountUpgradePowerArmourCompleteOnly"/>
+        <NodeArray index="Show" Link="NotCountUpgradeAdvancedPowerArmourQueuedOrBetter"/>
+    </CRequirement>
+    <CRequirement id="LearnAdvancedAircraft">
+        <NodeArray index="Use" Link="CountUpgradeBasicAircraftCompleteOnly"/>
+        <NodeArray index="Show" Link="NotCountUpgradeAdvancedAircraftQueuedOrBetter"/>
+    </CRequirement>
+    <CRequirement id="LearnImprovedGasification">
+        <NodeArray index="Use" Link="CountUpgradeCoalGasificationCompleteOnly"/>
+        <NodeArray index="Show" Link="NotCountUpgradeImprovedGasificationQueuedOrBetter"/>
+    </CRequirement>
+    <CRequirement id="LearnAdvancedGasification">
+        <NodeArray index="Use" Link="CountUpgradeImprovedGasificationCompleteOnly"/>
+        <NodeArray index="Show" Link="NotCountUpgradeAdvancedGasificationQueuedOrBetter"/>
+    </CRequirement>
+    <CRequirement id="LearnModernVehicles">
+        <NodeArray index="Use" Link="CountUpgradeHeavyTanksCompleteOnly"/>
+        <NodeArray index="Show" Link="NotCountUpgradeModernVehiclesQueuedOrBetter"/>
+    </CRequirement>
+    <CRequirement id="LearnCoalGasification">
+        <NodeArray index="Show" Link="NotCountUpgradeCoalGasificationQueuedOrBetter"/>
+    </CRequirement>
+    <CRequirement id="LearnBasicAircraft">
+        <NodeArray index="Show" Link="NotCountUpgradeBasicAircraftQueuedOrBetter"/>
+    </CRequirement>
+    <CRequirement id="LearnNuclearFusion">
+        <NodeArray index="Use" Link="CountUpgradeNuclearFissionCompleteOnly"/>
+        <NodeArray index="Show" Link="NotCountUpgradeNuclearFusionQueuedOrBetter"/>
+    </CRequirement>
+    <CRequirement id="LearnPlascrete">
+        <NodeArray index="Show" Link="NotCountUpgradePlascreteQueuedOrBetter"/>
+    </CRequirement>
+    <CRequirement id="LearnFortifications">
+        <NodeArray index="Show" Link="NotCountUpgradeFortificationsQueuedOrBetter"/>
+    </CRequirement>
+    <CRequirement id="LimitedWar">
+        <NodeArray index="Use" Link="NotOrCountUpgradeChangeWarPolicyInProgressOrBetter"/>
+    </CRequirement>
+    <CRequirement id="MilitaryGov">
+        <NodeArray index="Use" Link="Not3443563348CountUpgradeMilitaryCompleteOnly"/>
+    </CRequirement>
+    <CRequirement id="HavePowerArmour">
+        <NodeArray index="Use" Link="CountUpgradePowerArmourCompleteOnly"/>
+    </CRequirement>
+    <CRequirement id="HaveNuclearFission">
+        <NodeArray index="Use" Link="CountUpgradeNuclearFissionCompleteOnly"/>
+    </CRequirement>
+    <CRequirement id="HaveHeavyTanks">
+        <NodeArray index="Use" Link="CountUpgradeHeavyTanksCompleteOnly"/>
+    </CRequirement>
+    <CRequirement id="HaveArmoury">
+        <NodeArray index="Use" Link="CountUnitArmouryCompleteOnly"/>
+    </CRequirement>
+    <CRequirement id="HaveElectricity">
+        <NodeArray index="Use" Link="And3897983982OrCountUnitWindTurbineCompleteOnlyCountUnitFissionPowerPlantCompleteOnlyCountUnitFusionReactor2CompleteOnlyCountUnitGeothermalPowerPlantCompleteOnlyCountUnitOilPowerPlantCompleteOnly"/>
+    </CRequirement>
+    <CRequirement id="HaveSchool">
+        <NodeArray index="Use" Link="CountUnitSchoolCompleteOnly"/>
+    </CRequirement>
+    <CRequirement id="HaveSmallHouse">
+        <NodeArray index="Use" Link="CountUnitSmallHouseCompleteOnly"/>
+    </CRequirement>
+    <CRequirement id="HaveUniversity">
+        <NodeArray index="Use" Link="CountUnitUniversityCompleteOnly"/>
+    </CRequirement>
+    <CRequirement id="HaveUrbanDevelopment">
+        <NodeArray index="Use" Link="CountUpgradeUrbanDevelopmentCompleteOnly"/>
+    </CRequirement>
+    <CRequirement id="ImprovedRefining">
+        <NodeArray index="Show" Link="AndEqCountUpgradeImprovedRefiningQueuedOnly0EqCountUpgradeImprovedRefiningInProgressOnly0"/>
+    </CRequirement>
+    <CRequirement id="LearnCloning">
+        <NodeArray index="Use" Link="CountUpgradeUrbanDevelopmentCompleteOnly"/>
+        <NodeArray index="Show" Link="NotCountUpgradeCloningQueuedOrBetter"/>
+    </CRequirement>
+    <CRequirement id="HaveVehicles">
+        <NodeArray index="Use" Link="CountUpgradeVehiclesCompleteOnly"/>
+    </CRequirement>
+    <CRequirement id="HaveAdvancedVehicles">
+        <NodeArray index="Use" Link="CountUpgradeAdvancedVehiclesCompleteOnly"/>
+    </CRequirement>
+    <CRequirement id="ImprovedFarming">
+        <NodeArray index="Show" Link="AndEqCountUpgradeImprovedFarmingQueuedOnly0EqCountUpgradeImprovedFarmingInProgressOnly0"/>
+    </CRequirement>
+    <CRequirement id="ImprovedMining">
+        <NodeArray index="Show" Link="AndEqCountUpgradeImprovedMiningQueuedOnly0EqCountUpgradeImprovedMiningInProgressOnly0"/>
+    </CRequirement>
+    <CRequirement id="ImprovedProduction">
+        <NodeArray index="Show" Link="AndEqCountUpgradeProductionSpeedQueuedOnly0EqCountUpgradeProductionSpeedInProgressOnly0"/>
+    </CRequirement>
+    <CRequirement id="ImprovedTurbines">
+        <NodeArray index="Show" Link="AndEqCountUpgradeImprovedTurbinesQueuedOnly0EqCountUpgradeImprovedTurbinesInProgressOnly0"/>
+    </CRequirement>
+    <CRequirement id="InfantryArmour">
+        <NodeArray index="Show" Link="AndEqCountUpgradeInfantryArmourUPQueuedOnly0EqCountUpgradeInfantryArmourUPInProgressOnly0"/>
+    </CRequirement>
+    <CRequirement id="InfantryCooldown">
+        <NodeArray index="Show" Link="AndEqCountUpgradeProtossUnitAttackSpeedQueuedOnly0EqCountUpgradeProtossUnitAttackSpeedInProgressOnly0"/>
+    </CRequirement>
+    <CRequirement id="InfantryDamage">
+        <NodeArray index="Show" Link="AndEqCountUpgradeInfantryDamageUPQueuedOnly0EqCountUpgradeInfantryDamageUPInProgressOnly0"/>
+    </CRequirement>
+    <CRequirement id="InfantryLife">
+        <NodeArray index="Show" Link="AndEqCountUpgradeProtossUnitHPQueuedOnly0EqCountUpgradeProtossUnitHPInProgressOnly0"/>
+    </CRequirement>
+    <CRequirement id="InfantrySpeed">
+        <NodeArray index="Show" Link="AndEqCountUpgradeProtossUnitSpeedQueuedOnly0EqCountUpgradeProtossUnitSpeedInProgressOnly0"/>
+    </CRequirement>
+    <CRequirement id="LearnPowerArmour">
+        <NodeArray index="Show" Link="NotCountUpgradePowerArmourQueuedOrBetter"/>
+    </CRequirement>
+    <CRequirement id="LearnNuclearFission">
+        <NodeArray index="Use" Link="CountUpgradeUrbanDevelopmentCompleteOnly"/>
+        <NodeArray index="Show" Link="NotCountUpgradeNuclearFissionQueuedOrBetter"/>
+    </CRequirement>
+    <CRequirement id="LearnGeneticScreening">
+        <NodeArray index="Show" Link="NotCountUpgradeGeneticScreeningQueuedOrBetter"/>
+    </CRequirement>
+    <CRequirement id="LearnHeavyTanks">
+        <NodeArray index="Use" Link="CountUpgradeAdvancedVehiclesCompleteOnly"/>
+        <NodeArray index="Show" Link="NotCountUpgradeHeavyTanksQueuedOrBetter"/>
+    </CRequirement>
+    <CRequirement id="LearnUrbanDevelopment">
+        <NodeArray index="Show" Link="NotCountUpgradeUrbanDevelopmentQueuedOrBetter"/>
+    </CRequirement>
+    <CRequirement id="LearnVehicles">
+        <NodeArray index="Show" Link="NotCountUpgradeVehiclesQueuedOrBetter"/>
+    </CRequirement>
+    <CRequirement id="LearnAdvancedVehicles">
+        <NodeArray index="Show" Link="NotCountUpgradeAdvancedVehiclesQueuedOrBetter"/>
+    </CRequirement>
+    <CRequirement id="NotUnderConstruction2">
+        <EditorCategories value="Race:Neutral,TechType:Unit"/>
+        <NodeArray index="Use" Link="Not1225867992CountBehaviorUnderConstructionCompleteOnlyAtUnit"/>
+    </CRequirement>
+    <CRequirement id="Pacifisim">
+        <NodeArray index="Use" Link="NotOrCountUpgradeCorporatocracyInProgressOrBetterCountUpgradeNeofascismInProgressOrBetterCountUpgradeGrandEmpireInProgressOrBetterCountUpgradeInterventionalisimInProgressOrBetterCountUpgradeImperialis4019043411"/>
+    </CRequirement>
+    <CRequirement id="ResearchAlternateElectricity">
+        <NodeArray index="Use" Link="CountUpgradeResearchAlternateElectricityCompleteOnly"/>
+    </CRequirement>
+    <CRequirement id="ResearchArtificalFarming">
+        <NodeArray index="Use" Link="CountUpgradeResearchArtificalFarmingCompleteOnly"/>
+    </CRequirement>
+    <CRequirement id="ResearchElectricity">
+        <NodeArray index="Use" Link="CountUpgradeResearchElectricityCompleteOnly"/>
+    </CRequirement>
+    <CRequirement id="ResearchGreaterDemons">
+        <NodeArray index="Use" Link="CountUpgradeGreaterDemonsCompleteOnly"/>
+    </CRequirement>
+    <CRequirement id="ResearchIntoTheOccult">
+        <NodeArray index="Use" Link="CountUpgradeIntoTheOccultCompleteOnly"/>
+    </CRequirement>
+    <CRequirement id="ResearchMassSacrifices">
+        <NodeArray index="Use" Link="CountUpgradeMassSacrificesCompleteOnly"/>
+    </CRequirement>
+    <CRequirement id="ResearchNationalUnions">
+        <NodeArray index="Use" Link="CountUpgradeResearchNationalUnionsCompleteOnly"/>
+    </CRequirement>
+    <CRequirement id="ResearchTheGatesOfHell">
+        <NodeArray index="Use" Link="CountUpgradeTheGatesOfHellCompleteOnly"/>
+    </CRequirement>
+    <CRequirement id="ResearchedShieldGeneration">
+        <NodeArray index="Use" Link="CountUpgradeShieldGenerationCompleteOnly"/>
+    </CRequirement>
+    <CRequirement id="School">
+        <NodeArray index="Use" Link="Not1892629350CountUnitSchoolQueuedOrBetter1892629350"/>
+    </CRequirement>
+    <CRequirement id="Skirmish">
+        <NodeArray index="Use" Link="NotOrCountUpgradeChangeWarPolicyInProgressOrBetterCountUpgradePacifisimInProgressOrBetter"/>
+    </CRequirement>
+    <CRequirement id="Subjugated">
+        <NodeArray index="Show" Link="NotCountUpgradeSubjugatedCompleteOnly"/>
+    </CRequirement>
+    <CRequirement id="HaveSubjugated">
+        <NodeArray index="Show" Link="CountUpgradeSubjugatorCompleteOnly"/>
+    </CRequirement>
+    <CRequirement id="IamSubjugated">
+        <NodeArray index="Show" Link="AndCountUpgradeSubjugatedCompleteOnly"/>
+    </CRequirement>
+    <CRequirement id="TheA110Project">
+        <NodeArray index="Use" Link="CountUpgradeTheA110ProjectCompleteOnly"/>
+    </CRequirement>
+    <CRequirement id="TheWorldeaterProject">
+        <NodeArray index="Use" Link="CountUpgradeTheWorldeaterProjectCompleteOnly"/>
+    </CRequirement>
+    <CRequirement id="TotalWar">
+        <NodeArray index="Use" Link="NotOrCountUpgradeChangeWarPolicyInProgressOrBetterNotCountUpgradeNationalismCompleteOnly"/>
+    </CRequirement>
+    <CRequirement id="TradeEmbargo">
+        <NodeArray index="Show" Link="NotCountUpgradeTradeEmbargoCompleteOnly"/>
+    </CRequirement>
+    <CRequirement id="University">
+        <NodeArray index="Use" Link="AndCountUnitClinicCompleteOnlyNotCountUnitUniversityQueuedOrBetter"/>
+    </CRequirement>
+    <CRequirement id="MaxOneEnvoy">
+        <NodeArray index="Use" Link="AndNotCountUnitEnvoyQueuedOrBetter1391228021"/>
+    </CRequirement>
+    <CRequirement id="AtWar">
+        <NodeArray index="Use" Link="CountUpgradeSJHyperionHangerCheckQueuedOnly"/>
+    </CRequirement>
+    <CRequirement id="UrbanPlanning">
+        <NodeArray index="Use" Link="CountUpgradeUrbanPlanningCompleteOnly"/>
+    </CRequirement>
+    <CRequirement id="UseScorcher">
+        <NodeArray index="Use" Link="OrCountUpgradeTotalWarInProgressOrBetterCountUpgradeInhumaneWarInProgressOrBetter"/>
+    </CRequirement>
+    <CRequirement id="VehicleArmour">
+        <NodeArray index="Show" Link="AndEqCountUpgradeVehicleArmourUPQueuedOnly0EqCountUpgradeVehicleArmourUPInProgressOnly0"/>
+    </CRequirement>
+    <CRequirement id="VehicleCooldown">
+        <NodeArray index="Show" Link="AndEqCountUpgradeVehicleAttackSpeedQueuedOnly0EqCountUpgradeVehicleAttackSpeedInProgressOnly0"/>
+    </CRequirement>
+    <CRequirement id="VehicleDamage">
+        <NodeArray index="Show" Link="AndEqCountUpgradeVehicleDamageUPQueuedOnly0EqCountUpgradeVehicleDamageUPInProgressOnly0"/>
+    </CRequirement>
+    <CRequirement id="AircraftDamage">
+        <NodeArray index="Show" Link="AndEqCountUpgradeAircraftDamageUPQueuedOnly0EqCountUpgradeAircraftDamageUPInProgressOnly0"/>
+    </CRequirement>
+    <CRequirement id="VehicleLife">
+        <NodeArray index="Show" Link="AndEqCountUpgradeVehicleHPQueuedOnly0EqCountUpgradeVehicleHPInProgressOnly0"/>
+    </CRequirement>
+    <CRequirement id="VehicleSpeed">
+        <NodeArray index="Show" Link="AndEqCountUpgradeVehicleSpeedQueuedOnly0EqCountUpgradeVehicleSpeedInProgressOnly0"/>
+    </CRequirement>
+    <CRequirement id="WeaponizedDiseases">
+        <NodeArray index="Use" Link="CountUpgradeWeaponizedDiseasesCompleteOnly"/>
+    </CRequirement>
+    <CRequirement id="ZombieConcept">
+        <NodeArray index="Use" Link="CountUpgradeZombieConceptCompleteOnly"/>
+    </CRequirement>
+</Catalog>

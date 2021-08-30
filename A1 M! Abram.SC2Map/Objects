@@ -1,0 +1,704 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PlacedObjects Version="27">
+    <ObjectDoodad Id="680597327" Position="219.044,54.2136,4.0053" Rotation="0.5463" Scale="0.9213,0.9213,0.9213" Type="Shakuras_City_Debris_Splat">
+        <Flag Index="HeightAbsolute" Value="1"/>
+    </ObjectDoodad>
+    <ObjectDoodad Id="1240849523" Position="219.1083,55.6994,1.7377" Rotation="2.1816" Scale="0.9028,0.9028,0.9028" Type="Shakuras_City_Debris_Splat">
+        <Flag Index="HeightAbsolute" Value="1"/>
+    </ObjectDoodad>
+    <ObjectPoint Id="243271875" Position="228.5056,61.9223,0" Scale="1,1,1" Type="NoFlyZone" Name="No Fly Zone 045" Color="0,0,0,0"/>
+    <ObjectPoint Id="2012997063" Position="225.6066,59.043,0" Scale="1,1,1" Type="NoFlyZone" Name="No Fly Zone 043" Color="0,0,0,0"/>
+    <ObjectPoint Id="1960142641" Position="47.7905,95.5637,0" Scale="1,1,1" Type="NoFlyZone" Name="No Fly Zone 137" Color="0,0,0,0"/>
+    <ObjectPoint Id="938612328" Position="192.3515,81.2788,0" Scale="1,1,1" Type="NoFlyZone" Name="No Fly Zone 104" Color="0,0,0,0"/>
+    <ObjectPoint Id="514335449" Position="213.3244,81.6005,0" Scale="1,1,1" Type="NoFlyZone" Name="No Fly Zone 165" Color="0,0,0,0"/>
+    <ObjectPoint Id="1063412637" Position="229.0666,32.721,0" Scale="1,1,1" Type="NoFlyZone" Name="No Fly Zone 072" Color="0,0,0,0"/>
+    <ObjectPoint Id="1961236213" Position="184.5634,81.2578,0" Scale="1,1,1" Type="NoFlyZone" Name="No Fly Zone 003" Color="0,0,0,0"/>
+    <ObjectPoint Id="505" Position="30.578,200.8422,0" Scale="1,1,1" Type="Normal" Name="Entry5" Color="0,0,0,0"/>
+    <ObjectPoint Id="1207293967" Position="228.7102,40.4013,0" Scale="1,1,1" Type="NoFlyZone" Name="No Fly Zone 069" Color="0,0,0,0"/>
+    <ObjectPoint Id="364690926" Position="222.051,55.5283,0" Scale="1,1,1" Type="NoFlyZone" Name="No Fly Zone 041" Color="0,0,0,0"/>
+    <ObjectPoint Id="665551107" Position="138.1105,95.2021,0" Scale="1,1,1" Type="NoFlyZone" Name="No Fly Zone 091" Color="0,0,0,0"/>
+    <ObjectPoint Id="1984900910" Position="229.1933,35.1791,0" Scale="1,1,1" Type="NoFlyZone" Name="No Fly Zone 071" Color="0,0,0,0"/>
+    <ObjectPoint Id="1176718955" Position="219.2004,50.5363,0" Scale="1,1,1" Type="NoFlyZone" Name="No Fly Zone 170" Color="0,0,0,0"/>
+    <ObjectPoint Id="927225344" Position="60.908,95.4094,0" Scale="1,1,1" Type="NoFlyZone" Name="No Fly Zone 131" Color="0,0,0,0"/>
+    <ObjectPoint Id="278975427" Position="245.9125,18.0578,0" Scale="1,1,1" Type="NoFlyZone" Name="No Fly Zone 083" Color="0,0,0,0"/>
+    <ObjectPoint Id="1361354245" Position="198.711,80.9936,0" Scale="1,1,1" Type="NoFlyZone" Name="No Fly Zone 038" Color="0,0,0,0"/>
+    <ObjectPoint Id="1971574115" Position="229.0131,22.3041,0" Scale="1,1,1" Type="NoFlyZone" Name="No Fly Zone 076" Color="0,0,0,0"/>
+    <ObjectPoint Id="1296220451" Position="228.9545,27.389,0" Scale="1,1,1" Type="NoFlyZone" Name="No Fly Zone 074" Color="0,0,0,0"/>
+    <ObjectPoint Id="1056166157" Position="242.5241,56.4914,0" Scale="1,1,1" Type="NoFlyZone" Name="No Fly Zone 167" Color="0,0,0,0"/>
+    <ObjectPoint Id="1865948242" Position="149.8171,95.2065,0" Scale="1,1,1" Type="NoFlyZone" Name="No Fly Zone 087" Color="0,0,0,0"/>
+    <ObjectPoint Id="1396226073" Position="10.16,77.7573,0" Scale="1,1,1" Type="NoFlyZone" Name="No Fly Zone 160" Color="0,0,0,0"/>
+    <ObjectPoint Id="418482783" Position="95.9304,95.7834,0" Scale="1,1,1" Type="NoFlyZone" Name="No Fly Zone 113" Color="0,0,0,0"/>
+    <ObjectPoint Id="157974635" Position="79.3205,95.4182,0" Scale="1,1,1" Type="NoFlyZone" Name="No Fly Zone 122" Color="0,0,0,0">
+        <Flag Index="ForcePlacement" Value="1"/>
+    </ObjectPoint>
+    <ObjectPoint Id="1188506163" Position="233.4262,61.7167,0" Scale="1,1,1" Type="NoFlyZone" Name="No Fly Zone 047" Color="0,0,0,0"/>
+    <ObjectPoint Id="296072350" Position="110.329,95.182,0" Scale="1,1,1" Type="NoFlyZone" Name="No Fly Zone 100" Color="0,0,0,0"/>
+    <ObjectPoint Id="160" Position="197.145,250.2998,0" Scale="1,1,1" Type="Normal" Name="Entry7" Color="0,0,0,0"/>
+    <ObjectPoint Id="303254132" Position="105.1416,95.486,0" Scale="1,1,1" Type="NoFlyZone" Name="No Fly Zone 109" Color="0,0,0,0"/>
+    <ObjectPoint Id="642355801" Position="235.4323,60.6135,0" Scale="1,1,1" Type="NoFlyZone" Name="No Fly Zone 048" Color="0,0,0,0"/>
+    <ObjectPoint Id="1404657787" Position="180.183,81.3171,0" Scale="1,1,1" Type="NoFlyZone" Name="No Fly Zone 001" Color="0,0,0,0"/>
+    <ObjectPoint Id="1118085892" Position="43.9897,93.9357,0" Scale="1,1,1" Type="NoFlyZone" Name="No Fly Zone 139" Color="0,0,0,0"/>
+    <ObjectPoint Id="1525643992" Position="34.1115,88.9328,0" Scale="1,1,1" Type="NoFlyZone" Name="No Fly Zone 145" Color="0,0,0,0"/>
+    <ObjectPoint Id="1346297155" Position="152.8405,95.1452,0" Scale="1,1,1" Type="NoFlyZone" Name="No Fly Zone 037" Color="0,0,0,0"/>
+    <ObjectPoint Id="1897261716" Position="162.3127,89.4848,0" Scale="1,1,1" Type="NoFlyZone" Name="No Fly Zone 033" Color="0,0,0,0"/>
+    <ObjectPoint Id="570454306" Position="127.7697,95.394,0" Scale="1,1,1" Type="NoFlyZone" Name="No Fly Zone 094" Color="0,0,0,0"/>
+    <ObjectPoint Id="75104573" Position="240.2841,57.779,0" Scale="1,1,1" Type="NoFlyZone" Name="No Fly Zone 166" Color="0,0,0,0"/>
+    <ObjectPoint Id="677644666" Position="172.7106,83.2333,0" Scale="1,1,1" Type="NoFlyZone" Name="No Fly Zone 107" Color="0,0,0,0"/>
+    <ObjectPoint Id="1449142934" Position="107.4482,95.1525,0" Scale="1,1,1" Type="NoFlyZone" Name="No Fly Zone 101" Color="0,0,0,0"/>
+    <ObjectPoint Id="1475641533" Position="223.792,81.3662,0" Scale="1,1,1" Type="NoFlyZone" Name="No Fly Zone 164" Color="0,0,0,0"/>
+    <ObjectPoint Id="503" Position="20.5715,2.6076,0" Scale="1,1,1" Type="Normal" Name="Entry3" Color="0,0,0,0"/>
+    <ObjectPoint Id="483369442" Position="62.4018,95.3916,0" Scale="1,1,1" Type="NoFlyZone" Name="No Fly Zone 130" Color="0,0,0,0"/>
+    <ObjectPoint Id="1290444683" Position="243.1511,18.2846,0" Scale="1,1,1" Type="NoFlyZone" Name="No Fly Zone 082" Color="0,0,0,0"/>
+    <ObjectPoint Id="1919233541" Position="253.7416,44.9255,0" Scale="1,1,1" Type="NoFlyZone" Name="No Fly Zone 057" Color="0,0,0,0"/>
+    <ObjectPoint Id="1190114575" Position="27.8071,85.1018,0" Scale="1,1,1" Type="NoFlyZone" Name="No Fly Zone 149" Color="0,0,0,0"/>
+    <ObjectPoint Id="858559714" Position="157.1691,94.0483,0" Scale="1,1,1" Type="NoFlyZone" Name="No Fly Zone 108" Color="0,0,0,0"/>
+    <ObjectPoint Id="384666821" Position="214.8833,81.4306,0" Scale="1,1,1" Type="NoFlyZone" Name="No Fly Zone 012" Color="0,0,0,0"/>
+    <ObjectPoint Id="556650182" Position="240.093,18.0783,0" Scale="1,1,1" Type="NoFlyZone" Name="No Fly Zone 081" Color="0,0,0,0"/>
+    <ObjectPoint Id="688447069" Position="163.9892,87.7441,0" Scale="1,1,1" Type="NoFlyZone" Name="No Fly Zone 032" Color="0,0,0,0"/>
+    <ObjectPoint Id="843376265" Position="91.641,95.4255,0" Scale="1,1,1" Type="NoFlyZone" Name="No Fly Zone 115" Color="0,0,0,0"/>
+    <ObjectPoint Id="1483832109" Position="75.0644,95.245,0" Scale="1,1,1" Type="NoFlyZone" Name="No Fly Zone 124" Color="0,0,0,0"/>
+    <ObjectPoint Id="1079676592" Position="218.9758,51.924,0" Scale="1,1,1" Type="NoFlyZone" Name="No Fly Zone 039" Color="0,0,0,0"/>
+    <ObjectPoint Id="381656163" Position="226.6633,42.9587,0" Scale="1,1,1" Type="NoFlyZone" Name="No Fly Zone 172" Color="0,0,0,0"/>
+    <ObjectPoint Id="1095369957" Position="211.6911,81.0952,0" Scale="1,1,1" Type="NoFlyZone" Name="No Fly Zone 011" Color="0,0,0,0"/>
+    <ObjectPoint Id="2120330155" Position="220.4765,53.7443,0" Scale="1,1,1" Type="NoFlyZone" Name="No Fly Zone 040" Color="0,0,0,0"/>
+    <ObjectPoint Id="283835821" Position="87.4401,95.4526,0" Scale="1,1,1" Type="NoFlyZone" Name="No Fly Zone 118" Color="0,0,0,0"/>
+    <ObjectPoint Id="1764900023" Position="224.5537,45.0346,0" Scale="1,1,1" Type="NoFlyZone" Name="No Fly Zone 173" Color="0,0,0,0"/>
+    <ObjectPoint Id="324425866" Position="12.2102,79.4206,0" Scale="1,1,1" Type="NoFlyZone" Name="No Fly Zone 159" Color="0,0,0,0"/>
+    <ObjectPoint Id="1653105468" Position="155.9101,95.071,0" Scale="1,1,1" Type="NoFlyZone" Name="No Fly Zone 036" Color="0,0,0,0"/>
+    <ObjectPoint Id="2007353531" Position="237.0295,18.3471,0" Scale="1,1,1" Type="NoFlyZone" Name="No Fly Zone 080" Color="0,0,0,0"/>
+    <ObjectPoint Id="546489673" Position="216.4138,81.6777,0" Scale="1,1,1" Type="NoFlyZone" Name="No Fly Zone 162" Color="0,0,0,0"/>
+    <ObjectPoint Id="1958080389" Position="229.0268,24.7011,0" Scale="1,1,1" Type="NoFlyZone" Name="No Fly Zone 075" Color="0,0,0,0"/>
+    <ObjectPoint Id="502" Position="28.3222,105.1333,0" Scale="1,1,1" Type="Normal" Name="Entry2" Color="0,0,0,0"/>
+    <ObjectPoint Id="2077724803" Position="57.4421,95.4624,0" Scale="1,1,1" Type="NoFlyZone" Name="No Fly Zone 133" Color="0,0,0,0"/>
+    <ObjectPoint Id="2010865945" Position="146.923,95.4787,0" Scale="1,1,1" Type="NoFlyZone" Name="No Fly Zone 088" Color="0,0,0,0"/>
+    <ObjectPoint Id="815363307" Position="251.6103,81.3981,0" Scale="1,1,1" Type="NoFlyZone" Name="No Fly Zone 023" Color="0,0,0,0"/>
+    <ObjectPoint Id="728005340" Position="244.8281,52.2153,0" Scale="1,1,1" Type="NoFlyZone" Name="No Fly Zone 062" Color="0,0,0,0"/>
+    <ObjectPoint Id="1669811559" Position="100.3803,95.5026,0" Scale="1,1,1" Type="NoFlyZone" Name="No Fly Zone 111" Color="0,0,0,0"/>
+    <ObjectPoint Id="926297095" Position="254.5053,81.21,0" Scale="1,1,1" Type="NoFlyZone" Name="No Fly Zone 024" Color="0,0,0,0"/>
+    <ObjectPoint Id="182095768" Position="59.4497,95.4328,0" Scale="1,1,1" Type="NoFlyZone" Name="No Fly Zone 132" Color="0,0,0,0"/>
+    <ObjectPoint Id="1589364293" Position="234.0041,18.3051,0" Scale="1,1,1" Type="NoFlyZone" Name="No Fly Zone 079" Color="0,0,0,0"/>
+    <ObjectPoint Id="1259183308" Position="171.685,83.6108,0" Scale="1,1,1" Type="NoFlyZone" Name="No Fly Zone 028" Color="0,0,0,0"/>
+    <ObjectPoint Id="504" Position="252.3684,249.9055,0" Scale="1,1,1" Type="Normal" Name="Entry4" Color="0,0,0,0"/>
+    <ObjectPoint Id="72315961" Position="85.9895,95.4721,0" Scale="1,1,1" Type="NoFlyZone" Name="No Fly Zone 119" Color="0,0,0,0"/>
+    <ObjectPoint Id="1824772744" Position="205.9768,81.5395,0" Scale="1,1,1" Type="NoFlyZone" Name="No Fly Zone 103" Color="0,0,0,0"/>
+    <ObjectPoint Id="845523966" Position="102.8015,95.5795,0" Scale="1,1,1" Type="NoFlyZone" Name="No Fly Zone 110" Color="0,0,0,0"/>
+    <ObjectPoint Id="480616753" Position="246.793,50.3947,0" Scale="1,1,1" Type="NoFlyZone" Name="No Fly Zone 061" Color="0,0,0,0"/>
+    <ObjectPoint Id="1768577013" Position="77.5336,95.3298,0" Scale="1,1,1" Type="NoFlyZone" Name="No Fly Zone 123" Color="0,0,0,0"/>
+    <ObjectPoint Id="1555788039" Position="203.9943,81.1403,0" Scale="1,1,1" Type="NoFlyZone" Name="No Fly Zone 009" Color="0,0,0,0"/>
+    <ObjectPoint Id="1973139463" Position="188.2966,81.2761,0" Scale="1,1,1" Type="NoFlyZone" Name="No Fly Zone 106" Color="0,0,0,0"/>
+    <ObjectPoint Id="1490179936" Position="169.9633,85.272,0" Scale="1,1,1" Type="NoFlyZone" Name="No Fly Zone 029" Color="0,0,0,0"/>
+    <ObjectPoint Id="143" Position="221.6057,6.24,0" Scale="1,1,1" Type="Normal" Name="Entry9" Color="0,0,0,0"/>
+    <ObjectPoint Id="1603439508" Position="45.6804,94.675,0" Scale="1,1,1" Type="NoFlyZone" Name="No Fly Zone 138" Color="0,0,0,0"/>
+    <ObjectPoint Id="109006164" Position="238.9436,57.8398,0" Scale="1,1,1" Type="NoFlyZone" Name="No Fly Zone 050" Color="0,0,0,0"/>
+    <ObjectPoint Id="1363200688" Position="190.676,81.587,0" Scale="1,1,1" Type="NoFlyZone" Name="No Fly Zone 105" Color="0,0,0,0"/>
+    <ObjectPoint Id="2072004712" Position="201.2475,81.0913,0" Scale="1,1,1" Type="NoFlyZone" Name="No Fly Zone 008" Color="0,0,0,0"/>
+    <ObjectPoint Id="1361465406" Position="124.6003,95.4372,0" Scale="1,1,1" Type="NoFlyZone" Name="No Fly Zone 095" Color="0,0,0,0"/>
+    <ObjectPoint Id="1654558286" Position="223.8632,45.9218,0" Scale="1,1,1" Type="NoFlyZone" Name="No Fly Zone 066" Color="0,0,0,0"/>
+    <ObjectPoint Id="2003543827" Position="218.5134,81.6184,0" Scale="1,1,1" Type="NoFlyZone" Name="No Fly Zone 013" Color="0,0,0,0"/>
+    <ObjectPoint Id="1543781427" Position="232.0957,61.8664,0" Scale="1,1,1" Type="NoFlyZone" Name="No Fly Zone 169" Color="0,0,0,0"/>
+    <ObjectPoint Id="976644804" Position="25.8544,85.0578,0" Scale="1,1,1" Type="NoFlyZone" Name="No Fly Zone 150" Color="0,0,0,0"/>
+    <ObjectPoint Id="161" Position="155,250,0" Scale="1,1,1" Type="Normal" Name="Entry8" Color="0,0,0,0"/>
+    <ObjectPoint Id="1588960703" Position="36.557,89.3847,0" Scale="1,1,1" Type="NoFlyZone" Name="No Fly Zone 144" Color="0,0,0,0"/>
+    <ObjectPoint Id="1616686734" Position="93.6176,95.5505,0" Scale="1,1,1" Type="NoFlyZone" Name="No Fly Zone 114" Color="0,0,0,0"/>
+    <ObjectPoint Id="200911359" Position="243.7211,56.1362,0" Scale="1,1,1" Type="NoFlyZone" Name="No Fly Zone 052" Color="0,0,0,0"/>
+    <ObjectPoint Id="315438687" Position="248.7478,81.55,0" Scale="1,1,1" Type="NoFlyZone" Name="No Fly Zone 022" Color="0,0,0,0"/>
+    <ObjectPoint Id="1588319004" Position="31.2856,86.243,0" Scale="1,1,1" Type="NoFlyZone" Name="No Fly Zone 147" Color="0,0,0,0"/>
+    <ObjectPoint Id="731431720" Position="8.4133,76.999,0" Scale="1,1,1" Type="NoFlyZone" Name="No Fly Zone 161" Color="0,0,0,0"/>
+    <ObjectPoint Id="1501358361" Position="251.8503,18.281,0" Scale="1,1,1" Type="NoFlyZone" Name="No Fly Zone 085" Color="0,0,0,0"/>
+    <ObjectPoint Id="1028637615" Position="88.8593,95.433,0" Scale="1,1,1" Type="NoFlyZone" Name="No Fly Zone 117" Color="0,0,0,0"/>
+    <ObjectPoint Id="1938353552" Position="231.067,61.841,0" Scale="1,1,1" Type="NoFlyZone" Name="No Fly Zone 046" Color="0,0,0,0"/>
+    <ObjectPoint Id="1893870813" Position="10.7211,34.9238,0" Scale="1,1,1" Type="Normal" Name="USSPAWN" Color="0,0,0,0"/>
+    <ObjectPoint Id="1452497374" Position="42.2082,92.9423,0" Scale="1,1,1" Type="NoFlyZone" Name="No Fly Zone 140" Color="0,0,0,0"/>
+    <ObjectPoint Id="439353299" Position="221.9702,81.3395,0" Scale="1,1,1" Type="NoFlyZone" Name="No Fly Zone 014" Color="0,0,0,0"/>
+    <ObjectPoint Id="2" Position="128,128,0" Scale="1,1,1" Type="Normal" Name="exact center" Color="0,0,0,0"/>
+    <ObjectPoint Id="601887785" Position="84.1005,95.5488,0" Scale="1,1,1" Type="NoFlyZone" Name="No Fly Zone 120" Color="0,0,0,0">
+        <Flag Index="ForcePlacement" Value="1"/>
+    </ObjectPoint>
+    <ObjectPoint Id="1558061564" Position="121.8327,95.3171,0" Scale="1,1,1" Type="NoFlyZone" Name="No Fly Zone 096" Color="0,0,0,0"/>
+    <ObjectPoint Id="161821017" Position="242.8654,54.135,0" Scale="1,1,1" Type="NoFlyZone" Name="No Fly Zone 063" Color="0,0,0,0"/>
+    <ObjectPoint Id="630231773" Position="160.6477,91.368,0" Scale="1,1,1" Type="NoFlyZone" Name="No Fly Zone 034" Color="0,0,0,0"/>
+    <ObjectPoint Id="39" Position="180.5,125.5,0" Scale="1,1,1" Type="Normal" Name="Test2" Color="0,0,0,0"/>
+    <ObjectPoint Id="1034075725" Position="175.777,81.4582,0" Scale="1,1,1" Type="NoFlyZone" Name="No Fly Zone 026" Color="0,0,0,0"/>
+    <ObjectPoint Id="528177181" Position="54.8605,95.1052,0" Scale="1,1,1" Type="NoFlyZone" Name="No Fly Zone 134" Color="0,0,0,0"/>
+    <ObjectPoint Id="23826537" Position="38.4035,90.6357,0" Scale="1,1,1" Type="NoFlyZone" Name="No Fly Zone 143" Color="0,0,0,0"/>
+    <ObjectPoint Id="910882324" Position="116.0021,95.4538,0" Scale="1,1,1" Type="NoFlyZone" Name="No Fly Zone 098" Color="0,0,0,0"/>
+    <ObjectPoint Id="898039986" Position="187.0322,81.2358,0" Scale="1,1,1" Type="NoFlyZone" Name="No Fly Zone 004" Color="0,0,0,0"/>
+    <ObjectPoint Id="1285505629" Position="222.1325,47.7968,0" Scale="1,1,1" Type="NoFlyZone" Name="No Fly Zone 065" Color="0,0,0,0"/>
+    <ObjectPoint Id="347968663" Position="20.9782,81.974,0" Scale="1,1,1" Type="NoFlyZone" Name="No Fly Zone 154" Color="0,0,0,0"/>
+    <ObjectPoint Id="1924711264" Position="226.8093,60.5888,0" Scale="1,1,1" Type="NoFlyZone" Name="No Fly Zone 044" Color="0,0,0,0"/>
+    <ObjectPoint Id="1975409933" Position="173.868,82.7492,0" Scale="1,1,1" Type="NoFlyZone" Name="No Fly Zone 027" Color="0,0,0,0"/>
+    <ObjectPoint Id="857071737" Position="228.3071,81.5244,0" Scale="1,1,1" Type="NoFlyZone" Name="No Fly Zone 015" Color="0,0,0,0"/>
+    <ObjectPoint Id="2090728084" Position="220.8393,48.9633,0" Scale="1,1,1" Type="NoFlyZone" Name="No Fly Zone 175" Color="0,0,0,0"/>
+    <ObjectPoint Id="701305054" Position="166.078,87.3557,0" Scale="1,1,1" Type="NoFlyZone" Name="No Fly Zone 031" Color="0,0,0,0"/>
+    <ObjectPoint Id="914704449" Position="13.6542,80.5698,0" Scale="1,1,1" Type="NoFlyZone" Name="No Fly Zone 158" Color="0,0,0,0"/>
+    <ObjectPoint Id="297373718" Position="182.5292,81.3967,0" Scale="1,1,1" Type="NoFlyZone" Name="No Fly Zone 002" Color="0,0,0,0"/>
+    <ObjectPoint Id="1799125906" Position="236.9587,81.0104,0" Scale="1,1,1" Type="NoFlyZone" Name="No Fly Zone 018" Color="0,0,0,0"/>
+    <ObjectPoint Id="337836902" Position="252.737,46.4062,0" Scale="1,1,1" Type="NoFlyZone" Name="No Fly Zone 058" Color="0,0,0,0"/>
+    <ObjectPoint Id="1066095006" Position="222.718,46.832,0" Scale="1,1,1" Type="NoFlyZone" Name="No Fly Zone 174" Color="0,0,0,0"/>
+    <ObjectPoint Id="1210879347" Position="90.0734,95.4133,0" Scale="1,1,1" Type="NoFlyZone" Name="No Fly Zone 116" Color="0,0,0,0"/>
+    <ObjectPoint Id="1346007799" Position="118.871,95.3037,0" Scale="1,1,1" Type="NoFlyZone" Name="No Fly Zone 097" Color="0,0,0,0"/>
+    <ObjectPoint Id="482251507" Position="29.5988,85.45,0" Scale="1,1,1" Type="NoFlyZone" Name="No Fly Zone 148" Color="0,0,0,0"/>
+    <ObjectPoint Id="422199340" Position="63.9826,95.4387,0" Scale="1,1,1" Type="NoFlyZone" Name="No Fly Zone 129" Color="0,0,0,0"/>
+    <ObjectPoint Id="1083493159" Position="140.7312,95.567,0" Scale="1,1,1" Type="NoFlyZone" Name="No Fly Zone 090" Color="0,0,0,0"/>
+    <ObjectPoint Id="1386959719" Position="220.3852,49.5617,0" Scale="1,1,1" Type="NoFlyZone" Name="No Fly Zone 064" Color="0,0,0,0"/>
+    <ObjectPoint Id="1431766874" Position="194.255,81.0651,0" Scale="1,1,1" Type="NoFlyZone" Name="No Fly Zone 006" Color="0,0,0,0"/>
+    <ObjectPoint Id="286059966" Position="68.5341,95.4858,0" Scale="1,1,1" Type="NoFlyZone" Name="No Fly Zone 127" Color="0,0,0,0"/>
+    <ObjectPoint Id="320349715" Position="231.6894,18.4841,0" Scale="1,1,1" Type="NoFlyZone" Name="No Fly Zone 078" Color="0,0,0,0"/>
+    <ObjectPoint Id="333534215" Position="131.3227,95.3652,0" Scale="1,1,1" Type="NoFlyZone" Name="No Fly Zone 093" Color="0,0,0,0"/>
+    <ObjectPoint Id="1062268417" Position="135.0578,95.3557,0" Scale="1,1,1" Type="NoFlyZone" Name="No Fly Zone 092" Color="0,0,0,0"/>
+    <ObjectPoint Id="1859977152" Position="229.0002,30.1057,0" Scale="1,1,1" Type="NoFlyZone" Name="No Fly Zone 073" Color="0,0,0,0"/>
+    <ObjectPoint Id="767590399" Position="240.011,81.047,0" Scale="1,1,1" Type="NoFlyZone" Name="No Fly Zone 019" Color="0,0,0,0"/>
+    <ObjectPoint Id="1159965231" Position="251.3024,56.275,0" Scale="1,1,1" Type="NoFlyZone" Name="No Fly Zone 055" Color="0,0,0,0"/>
+    <ObjectPoint Id="583647204" Position="246.5085,56.1862,0" Scale="1,1,1" Type="NoFlyZone" Name="No Fly Zone 053" Color="0,0,0,0"/>
+    <ObjectPoint Id="2022330792" Position="248.5786,18.141,0" Scale="1,1,1" Type="NoFlyZone" Name="No Fly Zone 084" Color="0,0,0,0"/>
+    <ObjectPoint Id="2031731584" Position="233.8928,81.4877,0" Scale="1,1,1" Type="NoFlyZone" Name="No Fly Zone 017" Color="0,0,0,0"/>
+    <ObjectPoint Id="501" Position="252.5256,106.5922,0" Scale="1,1,1" Type="Normal" Name="Entry1" Color="0,0,0,0"/>
+    <ObjectPoint Id="1407870326" Position="144.1235,95.294,0" Scale="1,1,1" Type="NoFlyZone" Name="No Fly Zone 089" Color="0,0,0,0"/>
+    <ObjectPoint Id="640046465" Position="70.7258,95.2695,0" Scale="1,1,1" Type="NoFlyZone" Name="No Fly Zone 126" Color="0,0,0,0"/>
+    <ObjectPoint Id="805625432" Position="230.658,81.2866,0" Scale="1,1,1" Type="NoFlyZone" Name="No Fly Zone 016" Color="0,0,0,0"/>
+    <ObjectPoint Id="404489696" Position="21.9348,82.915,0" Scale="1,1,1" Type="NoFlyZone" Name="No Fly Zone 153" Color="0,0,0,0"/>
+    <ObjectPoint Id="1880717017" Position="250.4357,47.3955,0" Scale="1,1,1" Type="NoFlyZone" Name="No Fly Zone 059" Color="0,0,0,0"/>
+    <ObjectPoint Id="2077013794" Position="241.256,56.5986,0" Scale="1,1,1" Type="NoFlyZone" Name="No Fly Zone 051" Color="0,0,0,0"/>
+    <ObjectPoint Id="1646848185" Position="158.5336,93.138,0" Scale="1,1,1" Type="NoFlyZone" Name="No Fly Zone 035" Color="0,0,0,0"/>
+    <ObjectPoint Id="1166048551" Position="196.5085,80.871,0" Scale="1,1,1" Type="NoFlyZone" Name="No Fly Zone 007" Color="0,0,0,0"/>
+    <ObjectPoint Id="1258071204" Position="223.7133,57.1601,0" Scale="1,1,1" Type="NoFlyZone" Name="No Fly Zone 042" Color="0,0,0,0"/>
+    <ObjectPoint Id="1729911192" Position="73.2414,95.2282,0" Scale="1,1,1" Type="NoFlyZone" Name="No Fly Zone 125" Color="0,0,0,0"/>
+    <ObjectPoint Id="112874213" Position="254.289,56.3872,0" Scale="1,1,1" Type="NoFlyZone" Name="No Fly Zone 056" Color="0,0,0,0"/>
+    <ObjectPoint Id="710740774" Position="229.3151,62.0993,0" Scale="1,1,1" Type="NoFlyZone" Name="No Fly Zone 168" Color="0,0,0,0"/>
+    <ObjectPoint Id="1931362753" Position="52.3066,95.4987,0" Scale="1,1,1" Type="NoFlyZone" Name="No Fly Zone 135" Color="0,0,0,0"/>
+    <ObjectPoint Id="1519963538" Position="113.5104,95.318,0" Scale="1,1,1" Type="NoFlyZone" Name="No Fly Zone 099" Color="0,0,0,0"/>
+    <ObjectPoint Id="1069228747" Position="225.9228,44.1396,0" Scale="1,1,1" Type="NoFlyZone" Name="No Fly Zone 067" Color="0,0,0,0"/>
+    <ObjectPoint Id="1165200779" Position="229.445,19.2714,0" Scale="1,1,1" Type="NoFlyZone" Name="No Fly Zone 077" Color="0,0,0,0"/>
+    <ObjectPoint Id="1912183753" Position="168.3298,87.0375,0" Scale="1,1,1" Type="NoFlyZone" Name="No Fly Zone 030" Color="0,0,0,0"/>
+    <ObjectPoint Id="899599690" Position="15.6364,80.9768,0" Scale="1,1,1" Type="NoFlyZone" Name="No Fly Zone 157" Color="0,0,0,0"/>
+    <ObjectPoint Id="1012910578" Position="24.0202,84.952,0" Scale="1,1,1" Type="NoFlyZone" Name="No Fly Zone 151" Color="0,0,0,0"/>
+    <ObjectPoint Id="205069842" Position="220.8996,67.962,0" Scale="1,1,1" Type="Normal" Name="Russian Spawn" Color="0,0,0,0"/>
+    <ObjectPoint Id="1338559065" Position="254.8034,17.8886,0" Scale="1,1,1" Type="NoFlyZone" Name="No Fly Zone 086" Color="0,0,0,0"/>
+    <ObjectPoint Id="706994828" Position="219.7473,81.547,0" Scale="1,1,1" Type="NoFlyZone" Name="No Fly Zone 163" Color="0,0,0,0"/>
+    <ObjectPoint Id="1117881577" Position="208.893,81.2314,0" Scale="1,1,1" Type="NoFlyZone" Name="No Fly Zone 010" Color="0,0,0,0"/>
+    <ObjectPoint Id="1732810904" Position="237.2814,59.312,0" Scale="1,1,1" Type="NoFlyZone" Name="No Fly Zone 049" Color="0,0,0,0"/>
+    <ObjectPoint Id="1428688732" Position="20.1564,81.437,0" Scale="1,1,1" Type="NoFlyZone" Name="No Fly Zone 155" Color="0,0,0,0"/>
+    <ObjectPoint Id="473286527" Position="66.0944,95.4436,0" Scale="1,1,1" Type="NoFlyZone" Name="No Fly Zone 128" Color="0,0,0,0"/>
+    <ObjectPoint Id="1044972531" Position="17.674,80.97,0" Scale="1,1,1" Type="NoFlyZone" Name="No Fly Zone 156" Color="0,0,0,0"/>
+    <ObjectPoint Id="546859042" Position="242.982,81.6306,0" Scale="1,1,1" Type="NoFlyZone" Name="No Fly Zone 020" Color="0,0,0,0"/>
+    <ObjectPoint Id="1606476732" Position="50.087,95.5341,0" Scale="1,1,1" Type="NoFlyZone" Name="No Fly Zone 136" Color="0,0,0,0"/>
+    <ObjectPoint Id="2143883314" Position="82.0598,95.259,0" Scale="1,1,1" Type="NoFlyZone" Name="No Fly Zone 121" Color="0,0,0,0">
+        <Flag Index="ForcePlacement" Value="1"/>
+    </ObjectPoint>
+    <ObjectPoint Id="1902045072" Position="177.894,81.178,0" Scale="1,1,1" Type="NoFlyZone" Name="No Fly Zone 025" Color="0,0,0,0"/>
+    <ObjectPoint Id="159" Position="20.8027,2.4812,0" Scale="1,1,1" Type="Normal" Name="Entry6" Color="0,0,0,0"/>
+    <ObjectPoint Id="1545430298" Position="22.8144,83.807,0" Scale="1,1,1" Type="NoFlyZone" Name="No Fly Zone 152" Color="0,0,0,0"/>
+    <ObjectPoint Id="1573785533" Position="39.6586,91.5336,0" Scale="1,1,1" Type="NoFlyZone" Name="No Fly Zone 141" Color="0,0,0,0"/>
+    <ObjectPoint Id="337493133" Position="97.9316,95.8063,0" Scale="1,1,1" Type="NoFlyZone" Name="No Fly Zone 112" Color="0,0,0,0"/>
+    <ObjectPoint Id="1502879587" Position="248.6928,48.7907,0" Scale="1,1,1" Type="NoFlyZone" Name="No Fly Zone 060" Color="0,0,0,0"/>
+    <ObjectPoint Id="1274206488" Position="249.015,56.2248,0" Scale="1,1,1" Type="NoFlyZone" Name="No Fly Zone 054" Color="0,0,0,0"/>
+    <ObjectPoint Id="1349411485" Position="227.8425,42.1376,0" Scale="1,1,1" Type="NoFlyZone" Name="No Fly Zone 068" Color="0,0,0,0"/>
+    <ObjectPoint Id="1868038935" Position="246.0573,81.424,0" Scale="1,1,1" Type="NoFlyZone" Name="No Fly Zone 021" Color="0,0,0,0"/>
+    <ObjectPoint Id="1943013850" Position="32.6213,87.4802,0" Scale="1,1,1" Type="NoFlyZone" Name="No Fly Zone 146" Color="0,0,0,0"/>
+    <ObjectPoint Id="1523729990" Position="40.3872,91.8247,0" Scale="1,1,1" Type="NoFlyZone" Name="No Fly Zone 142" Color="0,0,0,0"/>
+    <ObjectPoint Id="198030837" Position="228.9416,38.3867,0" Scale="1,1,1" Type="NoFlyZone" Name="No Fly Zone 070" Color="0,0,0,0"/>
+    <ObjectPoint Id="861488051" Position="219.0478,53.0517,0" Scale="1,1,1" Type="NoFlyZone" Name="No Fly Zone 171" Color="0,0,0,0"/>
+    <ObjectPoint Id="793595297" Position="225.34,81.632,0" Scale="1,1,1" Type="NoFlyZone" Name="No Fly Zone 102" Color="0,0,0,0"/>
+    <ObjectPoint Id="1265022621" Position="189.718,81.1794,0" Scale="1,1,1" Type="NoFlyZone" Name="No Fly Zone 005" Color="0,0,0,0"/>
+    <ObjectPoint Id="38" Position="167.5,125.5,0" Scale="1,1,1" Type="Normal" Name="Test1" Color="0,0,0,0"/>
+    <ObjectUnit Id="187746139" Variation="1" Position="206.5,75.5,0" Rotation="4.7121" Scale="1,1,1" UnitType="Skyscraper" Player="11"/>
+    <ObjectUnit Id="1173545342" Position="174.4587,55.5354,0" Rotation="5.0981" Scale="1,1,1" UnitType="VanguardMBT2" Player="1"/>
+    <ObjectUnit Id="636312341" Position="19.123,43.5104,0" Rotation="1.5734" Scale="1,1,1" UnitType="AmericanGuard" Player="10"/>
+    <ObjectUnit Id="56700437" Position="253.5,67.5,0" Rotation="6.2253" Scale="1,1,1" UnitType="MissileTurret22" Player="11"/>
+    <ObjectUnit Id="1426015401" Position="27.4777,34.5263,0" Rotation="2.3317" Scale="1,1,1" UnitType="AmericanGuard" Player="10"/>
+    <ObjectUnit Id="1351982916" Variation="1" Position="206.5,68.5,0" Rotation="4.7121" Scale="1,1,1" UnitType="Skyscraper" Player="11"/>
+    <ObjectUnit Id="814019880" Position="1.5,4.5,0" Rotation="1.5705" Scale="1,1,1" UnitType="LargeHouse" Player="10"/>
+    <ObjectUnit Id="752285559" Position="176.5708,45.0656,0" Rotation="2.0402" Scale="1,1,1" UnitType="VanguardMBT2" Player="1"/>
+    <ObjectUnit Id="1495413059" Position="220.0344,60.8281,0" Rotation="2.5856" Scale="1,1,1" UnitType="NewRussianFederationPeacekeeper" Player="11"/>
+    <ObjectUnit Id="1552475650" Position="220,42,0" Rotation="3.1413" Scale="1,1,1" UnitType="OilWellII" Player="11"/>
+    <ObjectUnit Id="479408687" Variation="1" Position="219.5,74.5,0" Rotation="0.1208" Scale="1,1,1" UnitType="MissileTurret22" Player="11"/>
+    <ObjectUnit Id="1178003487" Position="211.5,69.5,0" Rotation="5.6262" Scale="1,1,1" UnitType="MissileTurret22" Player="11"/>
+    <ObjectUnit Id="214904792" Position="247.3664,61.7966,0" Rotation="2.8894" Scale="1,1,1" UnitType="NewRussianFederationPeacekeeper" Player="11"/>
+    <ObjectUnit Id="1032791253" Variation="1" Position="18.5,42.5,0" Rotation="1.5705" Scale="1,1,1" UnitType="LargeHouse" Player="10"/>
+    <ObjectUnit Id="658330063" Position="237.005,63.7651,0" Rotation="5.7177" Scale="1,1,1" UnitType="NewRussianFederationPeacekeeper" Player="11"/>
+    <ObjectUnit Id="298544587" Position="213,61,0" Rotation="4.7121" Scale="1,1,1" UnitType="SupplyDepotLowered" Player="11"/>
+    <ObjectUnit Id="153532887" Variation="1" Position="208.5,69.5,0" Rotation="4.7121" Scale="1,1,1" UnitType="Skyscraper" Player="11"/>
+    <ObjectUnit Id="1575097262" Variation="1" Position="10.5,51.5,0" Rotation="1.5705" Scale="1,1,1" UnitType="LargeHouse" Player="10"/>
+    <ObjectUnit Id="779346923" Variation="1" Position="214.5,54.5,0" Rotation="4.7121" Scale="1,1,1" UnitType="Skyscraper" Player="11"/>
+    <ObjectUnit Id="712004915" Position="226.796,17.1718,0" Rotation="1.9426" Scale="1,1,1" UnitType="Marine" Player="12"/>
+    <ObjectUnit Id="4330174" Position="166.7905,12.5866,0" Rotation="3.2053" Scale="1,1,1" UnitType="Marine" Player="12"/>
+    <ObjectUnit Id="727786677" Position="201,53,0" Rotation="4.7121" Scale="1,1,1" UnitType="SupplyDepotLowered" Player="11"/>
+    <ObjectUnit Id="1307426754" Variation="1" Position="252.5,69.5,0" Rotation="4.7121" Scale="1,1,1" UnitType="Skyscraper" Player="11"/>
+    <ObjectUnit Id="445848407" Position="13.5,22.5,0" Rotation="4.7121" Scale="1,1,1" UnitType="Flats" Player="10"/>
+    <ObjectUnit Id="223470582" Variation="1" Position="3.5,18.5,0" Rotation="4.7121" Scale="1,1,1" UnitType="Flats" Player="10"/>
+    <ObjectUnit Id="1589238484" Variation="1" Position="25.5,31.5,0" Rotation="1.5705" Scale="1,1,1" UnitType="LargeHouse" Player="10"/>
+    <ObjectUnit Id="518097641" Variation="1" Position="8.5,17.5,0" Rotation="4.7121" Scale="1,1,1" UnitType="Skyscraper" Player="10"/>
+    <ObjectUnit Id="147065772" Position="10.6665,29.4777,0" Rotation="0.1042" Scale="1,1,1" UnitType="AmericanGuard" Player="10"/>
+    <ObjectUnit Id="1236864870" Position="240.926,72.9,0" Rotation="3.0727" Scale="1,1,1" UnitType="NewRussianFederationPeacekeeper" Player="11"/>
+    <ObjectUnit Id="15412521" Variation="1" Position="211.5,70.5,0" Rotation="4.7121" Scale="1,1,1" UnitType="Skyscraper" Player="11"/>
+    <ObjectUnit Id="1879385098" Position="9.5,14.5,0" Rotation="4.7121" Scale="1,1,1" UnitType="Flats" Player="10"/>
+    <ObjectUnit Id="2111233939" Position="5.5,12.5,0" Rotation="4.7121" Scale="1,1,1" UnitType="Flats" Player="10"/>
+    <ObjectUnit Id="106234812" Position="217.5,68.5,0" Rotation="4.7121" Scale="1,1,1" UnitType="SupplyDepotLowered" Player="11"/>
+    <ObjectUnit Id="1816684898" Position="15.5,22.5,0" Rotation="4.7121" Scale="1,1,1" UnitType="Flats" Player="10"/>
+    <ObjectUnit Id="1828942685" Position="20.5,27.5,0" Rotation="4.7121" Scale="1,1,1" UnitType="Flats" Player="10"/>
+    <ObjectUnit Id="1600001046" Position="14.5,19.5,0" Rotation="4.7121" Scale="1,1,1" UnitType="Nimbuspillar" Player="10"/>
+    <ObjectUnit Id="1887566596" Variation="1" Position="252.5,72.5,0" Rotation="4.7121" Scale="1,1,1" UnitType="Skyscraper" Player="11"/>
+    <ObjectUnit Id="119528364" Variation="1" Position="215.5,55.5,0" Rotation="4.7121" Scale="1,1,1" UnitType="Skyscraper" Player="11"/>
+    <ObjectUnit Id="13230577" Position="28.65,27.719,0" Rotation="1.9914" Scale="1,1,1" UnitType="AmericanGuard" Player="10"/>
+    <ObjectUnit Id="1755995935" Position="1.5,6.5,0" Rotation="1.5705" Scale="1,1,1" UnitType="LargeHouse" Player="10"/>
+    <ObjectUnit Id="55895304" Variation="1" Position="26.5,31.5,0" Rotation="1.5705" Scale="1,1,1" UnitType="LargeHouse" Player="10"/>
+    <ObjectUnit Id="1468877060" Variation="1" Position="206.5,65.5,0" Rotation="4.7121" Scale="1,1,1" UnitType="Skyscraper" Player="11"/>
+    <ObjectUnit Id="1178547696" Position="9.5,30.5,0" Rotation="1.5705" Scale="1,1,1" UnitType="LargeHouse" Player="10"/>
+    <ObjectUnit Id="1764160757" Position="184.7656,49.811,0" Rotation="2.4758" Scale="1,1,1" UnitType="VanguardMBT2" Player="1"/>
+    <ObjectUnit Id="1432631910" Position="211.8261,66.9201,0" Rotation="2.9304" Scale="1,1,1" UnitType="NewRussianFederationPeacekeeper" Player="11"/>
+    <ObjectUnit Id="28896119" Position="2.5,4.5,0" Rotation="4.7121" Scale="1,1,1" UnitType="Flats" Player="10"/>
+    <ObjectUnit Id="790185814" Variation="1" Position="206.5,66.5,0" Rotation="4.7121" Scale="1,1,1" UnitType="Skyscraper" Player="11"/>
+    <ObjectUnit Id="366538514" Variation="1" Position="2.5,18.5,0" Rotation="4.7121" Scale="1,1,1" UnitType="Flats" Player="10"/>
+    <ObjectUnit Id="1130721786" Position="10.7695,40.787,0" Rotation="5.1813" Scale="1,1,1" UnitType="AmericanGuard" Player="10"/>
+    <ObjectUnit Id="1084209667" Variation="1" Position="3.5,34.5,0" Rotation="1.5705" Scale="1,1,1" UnitType="LargeHouse" Player="10"/>
+    <ObjectUnit Id="900693284" Variation="1" Position="209.5,70.5,0" Rotation="4.7121" Scale="1,1,1" UnitType="Skyscraper" Player="11"/>
+    <ObjectUnit Id="1100915706" Variation="1" Position="6.5,11.5,0" Rotation="4.7121" Scale="1,1,1" UnitType="Flats" Player="10"/>
+    <ObjectUnit Id="881443583" Variation="1" Position="202.5,69.5,0" Rotation="4.7121" Scale="1,1,1" UnitType="Skyscraper" Player="11"/>
+    <ObjectUnit Id="1527154235" Position="246.557,63.2336,0" Rotation="6.212" Scale="1,1,1" UnitType="NewRussianFederationPeacekeeper" Player="11"/>
+    <ObjectUnit Id="894450888" Variation="1" Position="13.5,17.5,0" Rotation="4.7121" Scale="1,1,1" UnitType="Nimbuspillar" Player="10"/>
+    <ObjectUnit Id="1671760570" Variation="1" Position="6.5,12.5,0" Rotation="4.7121" Scale="1,1,1" UnitType="Flats" Player="10"/>
+    <ObjectUnit Id="177908835" Variation="1" Position="206.5,74.5,0" Rotation="4.7121" Scale="1,1,1" UnitType="Skyscraper" Player="11"/>
+    <ObjectUnit Id="1608577647" Position="15.5,20.5,0" Rotation="4.7121" Scale="1,1,1" UnitType="Nimbuspillar" Player="10"/>
+    <ObjectUnit Id="2074187018" Variation="1" Position="204.5,67.5,0" Rotation="4.7121" Scale="1,1,1" UnitType="Skyscraper" Player="11"/>
+    <ObjectUnit Id="1604309624" Position="1.5,3.5,0" Rotation="1.5705" Scale="1,1,1" UnitType="LargeHouse" Player="10"/>
+    <ObjectUnit Id="1981979230" Variation="1" Position="11.5,25.5,0" Rotation="4.7121" Scale="1,1,1" UnitType="Flats" Player="10"/>
+    <ObjectUnit Id="589612358" Position="245.098,71.5234,0" Rotation="3.6745" Scale="1,1,1" UnitType="NewRussianFederationPeacekeeper" Player="11"/>
+    <ObjectUnit Id="1106339962" Variation="1" Position="202.5,71.5,0" Rotation="4.7121" Scale="1,1,1" UnitType="Skyscraper" Player="11"/>
+    <ObjectUnit Id="1929117500" Position="5.5,26.5,0" Rotation="4.7121" Scale="1,1,1" UnitType="Flats" Player="10"/>
+    <ObjectUnit Id="1705647070" Variation="1" Position="29.5,29.5,0" Rotation="4.7121" Scale="1,1,1" UnitType="Flats" Player="10"/>
+    <ObjectUnit Id="873504837" Position="1.4333,2.1545,0" Rotation="3.3903" Scale="1,1,1" UnitType="AmericanGuard" Player="10"/>
+    <ObjectUnit Id="1689489880" Variation="1" Position="118.5,49.5,0" Rotation="3.1413" Scale="1,1,1" UnitType="Metal" Player="15"/>
+    <ObjectUnit Id="1376316912" Variation="1" Position="28.5,31.5,0" Rotation="4.7121" Scale="1,1,1" UnitType="Flats" Player="10"/>
+    <ObjectUnit Id="1113714073" Variation="1" Position="253.5,70.5,0" Rotation="4.7121" Scale="1,1,1" UnitType="Skyscraper" Player="11"/>
+    <ObjectUnit Id="2113125413" Variation="1" Position="202.5,68.5,0" Rotation="4.7121" Scale="1,1,1" UnitType="Skyscraper" Player="11"/>
+    <ObjectUnit Id="700602514" Variation="1" Position="203.5,70.5,0" Rotation="4.7121" Scale="1,1,1" UnitType="Skyscraper" Player="11"/>
+    <ObjectUnit Id="1511222251" Position="18.5,28.5,0" Rotation="4.7121" Scale="1,1,1" UnitType="Flats" Player="10"/>
+    <ObjectUnit Id="1273759348" Position="2.5,33.5,0" Rotation="1.5705" Scale="1,1,1" UnitType="LargeHouse" Player="10"/>
+    <ObjectUnit Id="263318128" Position="196,64,0" Rotation="4.7121" Scale="1,1,1" UnitType="SupplyDepotLowered" Player="11"/>
+    <ObjectUnit Id="978860278" Position="10.5,19.5,0" Rotation="4.7121" Scale="1,1,1" UnitType="Nimbuspillar" Player="10"/>
+    <ObjectUnit Id="720460593" Position="205.0627,62.361,0" Rotation="2.9304" Scale="1,1,1" UnitType="NewRussianFederationPeacekeeper" Player="11"/>
+    <ObjectUnit Id="632186597" Position="30.5,29.5,0" Rotation="4.7121" Scale="1,1,1" UnitType="Flats" Player="10"/>
+    <ObjectUnit Id="364289460" Variation="1" Position="26.5,30.5,0" Rotation="4.7121" Scale="1,1,1" UnitType="Flats" Player="10"/>
+    <ObjectUnit Id="1919631172" Position="26.5,29.5,0" Rotation="4.7121" Scale="1,1,1" UnitType="Flats" Player="10"/>
+    <ObjectUnit Id="1994839275" Variation="1" Position="241.5,76.5,0" Rotation="3.288" Scale="1,1,1" UnitType="MissileTurret22" Player="11"/>
+    <ObjectUnit Id="27939515" Variation="1" Position="201.5,70.5,0" Rotation="4.7121" Scale="1,1,1" UnitType="Skyscraper" Player="11"/>
+    <ObjectUnit Id="673110648" Variation="1" Position="208.5,68.5,0" Rotation="4.7121" Scale="1,1,1" UnitType="Skyscraper" Player="11"/>
+    <ObjectUnit Id="1648408266" Position="185.088,47.319,0" Rotation="1.1997" Scale="1,1,1" UnitType="VanguardMBT2" Player="1"/>
+    <ObjectUnit Id="2135201807" Variation="1" Position="9.5,13.5,0" Rotation="4.7121" Scale="1,1,1" UnitType="Flats" Player="10"/>
+    <ObjectUnit Id="1681519649" Variation="1" Position="8.5,40.5,0" Rotation="1.5705" Scale="1,1,1" UnitType="LargeHouse" Player="10"/>
+    <ObjectUnit Id="117703274" Position="2.5,5.5,0" Rotation="4.7121" Scale="1,1,1" UnitType="Flats" Player="10"/>
+    <ObjectUnit Id="1605946852" Variation="1" Position="202.5,72.5,0" Rotation="4.7121" Scale="1,1,1" UnitType="Skyscraper" Player="11"/>
+    <ObjectUnit Id="732080545" Variation="1" Position="205.5,68.5,0" Rotation="4.7121" Scale="1,1,1" UnitType="Skyscraper" Player="11"/>
+    <ObjectUnit Id="1467139768" Position="168.2583,2.1264,0" Rotation="3.758" Scale="1,1,1" UnitType="Marine" Player="12"/>
+    <ObjectUnit Id="473904028" Position="243.5,76.5,0" Rotation="4.649" Scale="1,1,1" UnitType="MissileTurret22" Player="11"/>
+    <ObjectUnit Id="465434472" Position="177.0493,53.2368,0" Rotation="1.3618" Scale="1,1,1" UnitType="VanguardMBT2" Player="1"/>
+    <ObjectUnit Id="628077393" Variation="1" Position="216.5,54.5,0" Rotation="4.7121" Scale="1,1,1" UnitType="Skyscraper" Player="11"/>
+    <ObjectUnit Id="1664029611" Position="23,15,0" Rotation="0.2185" Scale="1,1,1" UnitType="UASKenedyIV" Player="10"/>
+    <ObjectUnit Id="1181589113" Position="2.5,7.5,0" Rotation="4.7121" Scale="1,1,1" UnitType="Flats" Player="10"/>
+    <ObjectUnit Id="1051237196" Position="12.5,20.5,0" Rotation="4.7121" Scale="1,1,1" UnitType="Nimbuspillar" Player="10"/>
+    <ObjectUnit Id="1637784565" Position="242,69,0" Rotation="4.7121" Scale="1,1,1" UnitType="SupplyDepotLowered" Player="11"/>
+    <ObjectUnit Id="450847621" Position="18.5,22.5,0" Rotation="4.7121" Scale="1,1,1" UnitType="Flats" Player="10"/>
+    <ObjectUnit Id="75377101" Variation="1" Position="6.5,17.5,0" Rotation="4.7121" Scale="1,1,1" UnitType="Skyscraper" Player="10"/>
+    <ObjectUnit Id="803994780" Variation="1" Position="247.5,72.5,0" Rotation="4.7121" Scale="1,1,1" UnitType="Skyscraper" Player="11"/>
+    <ObjectUnit Id="773078183" Position="61.5,3.5,0" Rotation="3.1413" Scale="1,1,1" UnitType="Oil" Player="15"/>
+    <ObjectUnit Id="1095283451" Variation="1" Position="251.5,67.5,0" Rotation="4.7121" Scale="1,1,1" UnitType="Skyscraper" Player="11"/>
+    <ObjectUnit Id="733249505" Position="18.5,24.5,0" Rotation="5.9523" Scale="1,1,1" UnitType="MissileTurret22" Player="10"/>
+    <ObjectUnit Id="1621180602" Variation="1" Position="210.5,50.5,0" Rotation="4.7121" Scale="1,1,1" UnitType="Skyscraper" Player="11"/>
+    <ObjectUnit Id="1351129729" Variation="1" Position="247.5,68.5,0" Rotation="4.7121" Scale="1,1,1" UnitType="Skyscraper" Player="11"/>
+    <ObjectUnit Id="1092430659" Variation="1" Position="246.5,72.5,0" Rotation="0.2968" Scale="1,1,1" UnitType="MissileTurret22" Player="11"/>
+    <ObjectUnit Id="1570934876" Variation="1" Position="30.5,30.5,0" Rotation="4.7121" Scale="1,1,1" UnitType="Flats" Player="10"/>
+    <ObjectUnit Id="1295336180" Variation="1" Position="246.5,69.5,0" Rotation="4.7121" Scale="1,1,1" UnitType="Skyscraper" Player="11"/>
+    <ObjectUnit Id="1643270626" Position="228.582,65.7277,0" Rotation="3.1906" Scale="1,1,1" UnitType="NewRussianFederationPeacekeeper" Player="11"/>
+    <ObjectUnit Id="628544117" Position="15.5,19.5,0" Rotation="4.7121" Scale="1,1,1" UnitType="Nimbuspillar" Player="10"/>
+    <ObjectUnit Id="1635061000" Variation="1" Position="251.5,72.5,0" Rotation="4.7121" Scale="1,1,1" UnitType="Skyscraper" Player="11"/>
+    <ObjectUnit Id="518679456" Variation="1" Position="204.5,75.5,0" Rotation="4.7121" Scale="1,1,1" UnitType="Skyscraper" Player="11"/>
+    <ObjectUnit Id="106965230" Position="221.5317,7.0468,0" Rotation="5.4663" Scale="1,1,1" UnitType="Zergling" Player="15"/>
+    <ObjectUnit Id="1818475218" Variation="1" Position="6.5,14.5,0" Rotation="4.7121" Scale="1,1,1" UnitType="Flats" Player="10"/>
+    <ObjectUnit Id="1798483009" Variation="1" Position="25.5,25.5,0" Rotation="4.7121" Scale="1,1,1" UnitType="Flats" Player="10"/>
+    <ObjectUnit Id="2001787241" Position="207.5,55.5,0" Rotation="4.7121" Scale="1,1,1" UnitType="Skyscraper" Player="11"/>
+    <ObjectUnit Id="568399738" Variation="1" Position="214.5,55.5,0" Rotation="4.7121" Scale="1,1,1" UnitType="Skyscraper" Player="11"/>
+    <ObjectUnit Id="892313827" Position="220.2373,6.8876,0" Rotation="3.7937" Scale="1,1,1" UnitType="Zergling" Player="15"/>
+    <ObjectUnit Id="127584357" Position="209.5,50.5,0" Rotation="4.7121" Scale="1,1,1" UnitType="Skyscraper" Player="11"/>
+    <ObjectUnit Id="1712249118" Position="181.5898,52.479,0" Rotation="0.0461" Scale="1,1,1" UnitType="VanguardMBT2" Player="1"/>
+    <ObjectUnit Id="507006143" Variation="1" Position="246.5,68.5,0" Rotation="4.7121" Scale="1,1,1" UnitType="Skyscraper" Player="11"/>
+    <ObjectUnit Id="1813199809" Position="208.5,52.5,0" Rotation="4.7121" Scale="1,1,1" UnitType="Skyscraper" Player="11"/>
+    <ObjectUnit Id="1754098557" Variation="1" Position="205.5,65.5,0" Rotation="4.7121" Scale="1,1,1" UnitType="Skyscraper" Player="11"/>
+    <ObjectUnit Id="884979176" Position="18.5,41.5,0" Rotation="1.5705" Scale="1,1,1" UnitType="LargeHouse" Player="10"/>
+    <ObjectUnit Id="530054711" Variation="1" Position="209.5,72.5,0" Rotation="4.7121" Scale="1,1,1" UnitType="Skyscraper" Player="11"/>
+    <ObjectUnit Id="1379193119" Variation="1" Position="204.5,73.5,0" Rotation="4.7121" Scale="1,1,1" UnitType="Skyscraper" Player="11"/>
+    <ObjectUnit Id="449582535" Position="6.5,25.5,0" Rotation="4.7121" Scale="1,1,1" UnitType="Flats" Player="10"/>
+    <ObjectUnit Id="1843269687" Position="14.5,20.5,0" Rotation="4.7121" Scale="1,1,1" UnitType="Nimbuspillar" Player="10"/>
+    <ObjectUnit Id="66220592" Position="214,52,0" Rotation="4.7121" Scale="1,1,1" UnitType="SupplyDepotLowered" Player="11"/>
+    <ObjectUnit Id="382070534" Position="201.1667,67.2424,0" Rotation="2.9304" Scale="1,1,1" UnitType="NewRussianFederationPeacekeeper" Player="11"/>
+    <ObjectUnit Id="134963146" Variation="1" Position="212.5,50.5,0" Rotation="1.8222" Scale="1,1,1" UnitType="MissileTurret22" Player="11"/>
+    <ObjectUnit Id="1106552025" Position="12.5,52.5,0" Rotation="4.0551" Scale="1,1,1" UnitType="MissileTurret22" Player="10"/>
+    <ObjectUnit Id="435719072" Variation="1" Position="209.5,71.5,0" Rotation="4.7121" Scale="1,1,1" UnitType="Skyscraper" Player="11"/>
+    <ObjectUnit Id="759675795" Position="207.5,53.5,0" Rotation="4.7121" Scale="1,1,1" UnitType="Skyscraper" Player="11"/>
+    <ObjectUnit Id="392688981" Position="224.2045,5.1857,0" Rotation="4.3603" Scale="1,1,1" UnitType="Zergling" Player="15"/>
+    <ObjectUnit Id="1415791835" Position="9.5,26.5,0" Rotation="4.7121" Scale="1,1,1" UnitType="Flats" Player="10"/>
+    <ObjectUnit Id="607993136" Variation="1" Position="15.5,18.5,0" Rotation="4.7121" Scale="1,1,1" UnitType="Nimbuspillar" Player="10"/>
+    <ObjectUnit Id="318274264" Position="227.0783,10.558,0" Rotation="0.9448" Scale="1,1,1" UnitType="Marine" Player="12"/>
+    <ObjectUnit Id="1401350673" Variation="1" Position="3.5,17.5,0" Rotation="4.7121" Scale="1,1,1" UnitType="Flats" Player="10"/>
+    <ObjectUnit Id="1441638720" Variation="1" Position="205.5,66.5,0" Rotation="4.7121" Scale="1,1,1" UnitType="Skyscraper" Player="11"/>
+    <ObjectUnit Id="2087367994" Variation="1" Position="252.5,70.5,0" Rotation="4.7121" Scale="1,1,1" UnitType="Skyscraper" Player="11"/>
+    <ObjectUnit Id="1690125145" Variation="1" Position="5.5,17.5,0" Rotation="4.7121" Scale="1,1,1" UnitType="Flats" Player="10"/>
+    <ObjectUnit Id="949635091" Position="22.6083,29.701,0" Rotation="5.293" Scale="1,1,1" UnitType="AmericanGuard" Player="10"/>
+    <ObjectUnit Id="1612075461" Position="242.8483,61.6047,0" Rotation="0.6704" Scale="1,1,1" UnitType="NewRussianFederationPeacekeeper" Player="11"/>
+    <ObjectUnit Id="1799144807" Position="7.5,30.5,0" Rotation="1.5705" Scale="1,1,1" UnitType="LargeHouse" Player="10"/>
+    <ObjectUnit Id="1807430625" Position="236.0727,73.059,0" Rotation="0.5297" Scale="1,1,1" UnitType="NewRussianFederationPeacekeeper" Player="11"/>
+    <ObjectUnit Id="1989467961" Position="214.544,59.88,0" Rotation="2.9304" Scale="1,1,1" UnitType="NewRussianFederationPeacekeeper" Player="11"/>
+    <ObjectUnit Id="1267884233" Variation="1" Position="146.5,21.5,0" Rotation="3.1413" Scale="1,1,1" UnitType="Metal" Player="15"/>
+    <ObjectUnit Id="1887992258" Position="25.5,30.5,0" Rotation="4.7121" Scale="1,1,1" UnitType="Flats" Player="10"/>
+    <ObjectUnit Id="616556693" Position="8.5,14.5,0" Rotation="4.7121" Scale="1,1,1" UnitType="Flats" Player="10"/>
+    <ObjectUnit Id="1261273199" Variation="1" Position="8.5,26.5,0" Rotation="4.7121" Scale="1,1,1" UnitType="Flats" Player="10"/>
+    <ObjectUnit Id="1784392980" Variation="1" Position="213.5,53.5,0" Rotation="4.7121" Scale="1,1,1" UnitType="Skyscraper" Player="11"/>
+    <ObjectUnit Id="1390719863" Position="226.627,8.9357,0" Rotation="4.0187" Scale="1,1,1" UnitType="Zergling" Player="15"/>
+    <ObjectUnit Id="684255487" Position="17.3356,23.6013,0" Rotation="4.8256" Scale="1,1,1" UnitType="AmericanGuard" Player="10"/>
+    <ObjectUnit Id="1347438119" Position="183.668,20.4301,0" Rotation="0.6875" Scale="1,1,1" UnitType="Marine" Player="12"/>
+    <ObjectUnit Id="1246065403" Position="212.775,45.6711,0" Rotation="1.593" Scale="1,1,1" UnitType="NewRussianFederationPeacekeeper" Player="11"/>
+    <ObjectUnit Id="2032123922" Variation="1" Position="29.5,30.5,0" Rotation="4.7121" Scale="1,1,1" UnitType="Flats" Player="10"/>
+    <ObjectUnit Id="1334425542" Variation="1" Position="200.5,70.5,0" Rotation="4.7121" Scale="1,1,1" UnitType="Skyscraper" Player="11"/>
+    <ObjectUnit Id="934966644" Position="2.5,34.5,0" Rotation="1.5705" Scale="1,1,1" UnitType="LargeHouse" Player="10"/>
+    <ObjectUnit Id="167721417" Variation="1" Position="240.5,61.5,0" Rotation="2.4016" Scale="1,1,1" UnitType="MissileTurret22" Player="11"/>
+    <ObjectUnit Id="1498534735" Position="172.5737,57.2097,0" Rotation="1.7573" Scale="1,1,1" UnitType="VanguardMBT2" Player="1"/>
+    <ObjectUnit Id="1021649356" Variation="1" Position="205.5,73.5,0" Rotation="4.7121" Scale="1,1,1" UnitType="Skyscraper" Player="11"/>
+    <ObjectUnit Id="1238129766" Position="5.5,14.5,0" Rotation="4.7121" Scale="1,1,1" UnitType="Flats" Player="10"/>
+    <ObjectUnit Id="873734643" Variation="1" Position="16.5,20.5,0" Rotation="4.7121" Scale="1,1,1" UnitType="Nimbuspillar" Player="10"/>
+    <ObjectUnit Id="1909099197" Variation="1" Position="246.5,71.5,0" Rotation="4.7121" Scale="1,1,1" UnitType="Skyscraper" Player="11"/>
+    <ObjectUnit Id="624471185" Position="27.5,31.5,0" Rotation="4.7121" Scale="1,1,1" UnitType="Flats" Player="10"/>
+    <ObjectUnit Id="2081999252" Position="8.5,39.5,0" Rotation="1.5705" Scale="1,1,1" UnitType="LargeHouse" Player="10"/>
+    <ObjectUnit Id="1476684884" Position="13.739,24.168,0" Rotation="3.9206" Scale="1,1,1" UnitType="AmericanGuard" Player="10"/>
+    <ObjectUnit Id="1019486873" Position="213.8845,70.8652,0" Rotation="2.9304" Scale="1,1,1" UnitType="NewRussianFederationPeacekeeper" Player="11"/>
+    <ObjectUnit Id="1919943116" Variation="1" Position="205.5,76.5,0" Rotation="4.7121" Scale="1,1,1" UnitType="Skyscraper" Player="11"/>
+    <ObjectUnit Id="24522287" Variation="1" Position="248.5,72.5,0" Rotation="4.7121" Scale="1,1,1" UnitType="Skyscraper" Player="11"/>
+    <ObjectUnit Id="902003288" Position="211.1215,75.8693,0" Rotation="2.9304" Scale="1,1,1" UnitType="NewRussianFederationPeacekeeper" Player="11"/>
+    <ObjectUnit Id="1465780768" Variation="1" Position="206.5,67.5,0" Rotation="4.7121" Scale="1,1,1" UnitType="Skyscraper" Player="11"/>
+    <ObjectUnit Id="830414674" Variation="1" Position="207.5,73.5,0" Rotation="4.7121" Scale="1,1,1" UnitType="Skyscraper" Player="11"/>
+    <ObjectUnit Id="435447852" Position="222,44,0" Rotation="3.1413" Scale="1,1,1" UnitType="OilWellII" Player="11"/>
+    <ObjectUnit Id="1203355885" Position="242.5,76.5,0" Rotation="5.4975" Scale="1,1,1" UnitType="SupplyDepot234223" Player="11"/>
+    <ObjectUnit Id="722141384" Position="200.5,69.5,0" Rotation="2.6445" Scale="1,1,1" UnitType="MissileTurret22" Player="11"/>
+    <ObjectUnit Id="1451636918" Position="20.5,28.5,0" Rotation="4.7121" Scale="1,1,1" UnitType="Flats" Player="10"/>
+    <ObjectUnit Id="74903274" Variation="1" Position="215.5,54.5,0" Rotation="4.7121" Scale="1,1,1" UnitType="Skyscraper" Player="11"/>
+    <ObjectUnit Id="577104552" Variation="1" Position="247.5,67.5,0" Rotation="4.7121" Scale="1,1,1" UnitType="Skyscraper" Player="11"/>
+    <ObjectUnit Id="176" Position="206,71,0" Scale="1,1,1" UnitType="Moscow" Player="11"/>
+    <ObjectUnit Id="855394953" Position="208,64,0" Rotation="4.7121" Scale="1,1,1" UnitType="SupplyDepotLowered" Player="11"/>
+    <ObjectUnit Id="1983128687" Position="207,49,0" Rotation="4.7121" Scale="1,1,1" UnitType="SupplyDepotLowered" Player="11"/>
+    <ObjectUnit Id="1676673941" Position="9.5,40.5,0" Rotation="1.5705" Scale="1,1,1" UnitType="LargeHouse" Player="10"/>
+    <ObjectUnit Id="2073811641" Position="21.5,28.5,0" Rotation="4.7121" Scale="1,1,1" UnitType="Flats" Player="10"/>
+    <ObjectUnit Id="869577503" Variation="1" Position="206.5,76.5,0" Rotation="4.7121" Scale="1,1,1" UnitType="Skyscraper" Player="11"/>
+    <ObjectUnit Id="2061975827" Variation="1" Position="9.5,39.5,0" Rotation="1.5705" Scale="1,1,1" UnitType="LargeHouse" Player="10"/>
+    <ObjectUnit Id="892650996" Variation="1" Position="13.5,21.5,0" Rotation="4.7121" Scale="1,1,1" UnitType="Skyscraper" Player="10"/>
+    <ObjectUnit Id="1583755047" Variation="1" Position="12.5,26.5,0" Rotation="4.7121" Scale="1,1,1" UnitType="Flats" Player="10"/>
+    <ObjectUnit Id="2083913173" Position="24.5,49.5,0" Rotation="1.5705" Scale="1,1,1" UnitType="LargeHouse" Player="10"/>
+    <ObjectUnit Id="1814373564" Variation="1" Position="208.5,70.5,0" Rotation="4.7121" Scale="1,1,1" UnitType="Skyscraper" Player="11"/>
+    <ObjectUnit Id="846921246" Position="225.1342,8.4504,0" Rotation="2.128" Scale="1,1,1" UnitType="Zergling" Player="15"/>
+    <ObjectUnit Id="699983923" Position="216.9514,6.2817,0" Rotation="2.6821" Scale="1,1,1" UnitType="Marine" Player="12"/>
+    <ObjectUnit Id="1931534110" Variation="1" Position="253.5,68.5,0" Rotation="4.7121" Scale="1,1,1" UnitType="Skyscraper" Player="11"/>
+    <ObjectUnit Id="1978835616" Variation="1" Position="6.5,26.5,0" Rotation="4.7121" Scale="1,1,1" UnitType="Flats" Player="10"/>
+    <ObjectUnit Id="322" Position="181.5671,74.159,0" Rotation="2.9184" Scale="1,1,1" UnitType="Caboose" Player="11"/>
+    <ObjectUnit Id="1373108490" Position="224.7514,9.6896,0" Rotation="4.3171" Scale="1,1,1" UnitType="Zergling" Player="15"/>
+    <ObjectUnit Id="1310044471" Position="208.5,54.5,0" Rotation="4.7121" Scale="1,1,1" UnitType="Skyscraper" Player="11"/>
+    <ObjectUnit Id="130452297" Variation="1" Position="14.5,22.5,0" Rotation="4.7121" Scale="1,1,1" UnitType="Flats" Player="10"/>
+    <ObjectUnit Id="1250091968" Variation="1" Position="203.5,67.5,0" Rotation="4.7121" Scale="1,1,1" UnitType="Skyscraper" Player="11"/>
+    <ObjectUnit Id="984759711" Variation="1" Position="25.5,24.5,0" Rotation="4.7121" Scale="1,1,1" UnitType="Flats" Player="10"/>
+    <ObjectUnit Id="177967175" Position="7.5,31.5,0" Rotation="1.5705" Scale="1,1,1" UnitType="LargeHouse" Player="10"/>
+    <ObjectUnit Id="1475456790" Position="218.8703,8.7348,0" Rotation="2.9714" Scale="1,1,1" UnitType="Marine" Player="12"/>
+    <ObjectUnit Id="1101419847" Position="208.5,51.5,0" Rotation="4.7121" Scale="1,1,1" UnitType="Skyscraper" Player="11"/>
+    <ObjectUnit Id="2042418748" Variation="1" Position="28.5,33.5,0" Rotation="1.5705" Scale="1,1,1" UnitType="LargeHouse" Player="10"/>
+    <ObjectUnit Id="711293600" Variation="1" Position="6.5,13.5,0" Rotation="4.7121" Scale="1,1,1" UnitType="Flats" Player="10"/>
+    <ObjectUnit Id="163788269" Position="249.5,77.5,0" Rotation="1.5705" Scale="1,1,1" UnitType="BoreholeV" Player="11"/>
+    <ObjectUnit Id="430392971" Position="216.5,55.5,0" Rotation="4.7121" Scale="1,1,1" UnitType="Skyscraper" Player="11"/>
+    <ObjectUnit Id="2052094671" Position="4.6394,34.4792,0" Rotation="1.2243" Scale="1,1,1" UnitType="AmericanGuard" Player="10"/>
+    <ObjectUnit Id="757290892" Variation="1" Position="21.5,27.5,0" Rotation="4.7121" Scale="1,1,1" UnitType="Flats" Player="10"/>
+    <ObjectUnit Id="959754742" Position="207.5,51.5,0" Rotation="4.7121" Scale="1,1,1" UnitType="Skyscraper" Player="11"/>
+    <ObjectUnit Id="1549852272" Position="27.5,26.5,0" Rotation="4.7121" Scale="1,1,1" UnitType="Flats" Player="10"/>
+    <ObjectUnit Id="8786276" Position="196.2314,76.9162,0" Rotation="1.2082" Scale="1,1,1" UnitType="NewRussianFederationPeacekeeper" Player="11"/>
+    <ObjectUnit Id="609522495" Position="2.5,2.5,0" Rotation="1.032" Scale="1,1,1" UnitType="MissileTurret22" Player="10"/>
+    <ObjectUnit Id="1541757061" Variation="1" Position="31.5,30.5,0" Rotation="4.7121" Scale="1,1,1" UnitType="Flats" Player="10"/>
+    <ObjectUnit Id="1106353958" Position="218,47,0" Rotation="3.1413" Scale="1,1,1" UnitType="OilWellII" Player="11"/>
+    <ObjectUnit Id="160545090" Position="199.492,73.4843,0" Rotation="2.9304" Scale="1,1,1" UnitType="NewRussianFederationPeacekeeper" Player="11"/>
+    <ObjectUnit Id="863036733" Position="9.5,31.5,0" Rotation="1.5705" Scale="1,1,1" UnitType="LargeHouse" Player="10"/>
+    <ObjectUnit Id="2141304146" Variation="1" Position="19.5,27.5,0" Rotation="4.7121" Scale="1,1,1" UnitType="Flats" Player="10"/>
+    <ObjectUnit Id="129623316" Variation="1" Position="1.5,17.5,0" Rotation="4.7121" Scale="1,1,1" UnitType="Flats" Player="10"/>
+    <ObjectUnit Id="571903882" Variation="1" Position="207.5,66.5,0" Rotation="4.7121" Scale="1,1,1" UnitType="Skyscraper" Player="11"/>
+    <ObjectUnit Id="1189982933" Position="215.1306,3.401,0" Rotation="5.034" Scale="1,1,1" UnitType="SMGenericMaleOfficer022" Player="12"/>
+    <ObjectUnit Id="762538290" Variation="1" Position="15.5,27.5,0" Rotation="1.5705" Scale="1,1,1" UnitType="LargeHouse" Player="10"/>
+    <ObjectUnit Id="823104668" Position="204,51,0" Rotation="4.7121" Scale="1,1,1" UnitType="SupplyDepotLowered" Player="11"/>
+    <ObjectUnit Id="1944717" Variation="1" Position="211.5,71.5,0" Rotation="4.7121" Scale="1,1,1" UnitType="Skyscraper" Player="11"/>
+    <ObjectUnit Id="1341170323" Position="230,69,0" Rotation="4.7121" Scale="1,1,1" UnitType="SupplyDepotLowered" Player="11"/>
+    <ObjectUnit Id="386230946" Variation="1" Position="208.5,71.5,0" Rotation="4.7121" Scale="1,1,1" UnitType="Skyscraper" Player="11"/>
+    <ObjectUnit Id="1732768376" Variation="1" Position="10.5,14.5,0" Rotation="4.7121" Scale="1,1,1" UnitType="Flats" Player="10"/>
+    <ObjectUnit Id="821954950" Position="202.8937,77.3908,0" Rotation="2.9304" Scale="1,1,1" UnitType="NewRussianFederationPeacekeeper" Player="11"/>
+    <ObjectUnit Id="461423917" Position="216.5,53.5,0" Rotation="6.001" Scale="1,1,1" UnitType="MissileTurret22" Player="11"/>
+    <ObjectUnit Id="822818917" Variation="1" Position="207.5,67.5,0" Rotation="4.7121" Scale="1,1,1" UnitType="Skyscraper" Player="11"/>
+    <ObjectUnit Id="1700705150" Variation="1" Position="9.5,25.5,0" Rotation="4.7121" Scale="1,1,1" UnitType="Flats" Player="10"/>
+    <ObjectUnit Id="1216908809" Position="12.5,22.5,0" Rotation="4.7121" Scale="1,1,1" UnitType="Flats" Player="10"/>
+    <ObjectUnit Id="1954291821" Variation="1" Position="207.5,75.5,0" Rotation="4.7121" Scale="1,1,1" UnitType="Skyscraper" Player="11"/>
+    <ObjectUnit Id="1558126036" Position="198,56,0" Rotation="4.7121" Scale="1,1,1" UnitType="SupplyDepotLowered" Player="11"/>
+    <ObjectUnit Id="922639838" Position="224.437,74.0913,0" Rotation="0.072" Scale="1,1,1" UnitType="NewRussianFederationPeacekeeper" Player="11"/>
+    <ObjectUnit Id="1094693409" Variation="1" Position="207.5,76.5,0" Rotation="0.6735" Scale="1,1,1" UnitType="MissileTurret22" Player="11"/>
+    <ObjectUnit Id="2012756758" Position="222.6086,4.2734,0" Rotation="3.1306" Scale="1,1,1" UnitType="Zergling" Player="15"/>
+    <ObjectUnit Id="1092161720" Variation="1" Position="208.5,72.5,0" Rotation="4.7121" Scale="1,1,1" UnitType="Skyscraper" Player="11"/>
+    <ObjectUnit Id="55465500" Position="1.5,7.5,0" Rotation="1.5705" Scale="1,1,1" UnitType="LargeHouse" Player="10"/>
+    <ObjectUnit Id="579175504" Position="217.5903,3.0834,0" Rotation="4.5227" Scale="1,1,1" UnitType="Zergling" Player="15"/>
+    <ObjectUnit Id="1226430060" Variation="1" Position="203.5,68.5,0" Rotation="4.7121" Scale="1,1,1" UnitType="Skyscraper" Player="11"/>
+    <ObjectUnit Id="668523106" Position="200,65,0" Rotation="4.7121" Scale="1,1,1" UnitType="SupplyDepotLowered" Player="11"/>
+    <ObjectUnit Id="290806239" Variation="1" Position="15.5,17.5,0" Rotation="4.7121" Scale="1,1,1" UnitType="Nimbuspillar" Player="10"/>
+    <ObjectUnit Id="1523120949" Position="29.5,39.5,0" Rotation="2.521" Scale="1,1,1" UnitType="MissileTurret22" Player="10"/>
+    <ObjectUnit Id="1761481754" Position="219.3513,5.5981,0" Rotation="1.733" Scale="1,1,1" UnitType="Zergling" Player="15"/>
+    <ObjectUnit Id="1498403706" Variation="1" Position="18.5,23.5,0" Rotation="1.78" Scale="1,1,1" UnitType="MissileTurret22" Player="10"/>
+    <ObjectUnit Id="244618272" Variation="1" Position="7.5,25.5,0" Rotation="4.7121" Scale="1,1,1" UnitType="Flats" Player="10"/>
+    <ObjectUnit Id="988056967" Variation="1" Position="250.5,67.5,0" Rotation="4.7121" Scale="1,1,1" UnitType="Skyscraper" Player="11"/>
+    <ObjectUnit Id="1126627748" Position="14.5,17.5,0" Rotation="4.7121" Scale="1,1,1" UnitType="Nimbuspillar" Player="10"/>
+    <ObjectUnit Id="2066807164" Position="246.5,67.5,0" Rotation="2.7954" Scale="1,1,1" UnitType="MissileTurret22" Player="11"/>
+    <ObjectUnit Id="996043461" Position="211.5,55.5,0" Rotation="4.7121" Scale="1,1,1" UnitType="Skyscraper" Player="11"/>
+    <ObjectUnit Id="1084980096" Variation="1" Position="11.5,13.5,0" Rotation="4.7121" Scale="1,1,1" UnitType="Skyscraper" Player="10"/>
+    <ObjectUnit Id="1051506477" Position="226.5798,5.986,0" Rotation="0.4843" Scale="1,1,1" UnitType="Zergling" Player="15"/>
+    <ObjectUnit Id="1776748266" Position="234,69,0" Rotation="4.7121" Scale="1,1,1" UnitType="SupplyDepotLowered" Player="11"/>
+    <ObjectUnit Id="2019951090" Variation="1" Position="95.5,87.5,0" Rotation="3.1413" Scale="1,1,1" UnitType="Metal" Player="15"/>
+    <ObjectUnit Id="1045608525" Variation="1" Position="11.5,26.5,0" Rotation="4.7121" Scale="1,1,1" UnitType="Flats" Player="10"/>
+    <ObjectUnit Id="2069004171" Position="207.5,54.5,0" Rotation="4.7121" Scale="1,1,1" UnitType="Skyscraper" Player="11"/>
+    <ObjectUnit Id="1056736095" Variation="1" Position="31.5,29.5,0" Rotation="4.7121" Scale="1,1,1" UnitType="Flats" Player="10"/>
+    <ObjectUnit Id="1350925489" Position="10.5,13.5,0" Rotation="4.7121" Scale="1,1,1" UnitType="Flats" Player="10"/>
+    <ObjectUnit Id="1566813775" Variation="1" Position="208.5,50.5,0" Rotation="4.7121" Scale="1,1,1" UnitType="Skyscraper" Player="11"/>
+    <ObjectUnit Id="449469907" Variation="1" Position="204.5,68.5,0" Rotation="4.7121" Scale="1,1,1" UnitType="Skyscraper" Player="11"/>
+    <ObjectUnit Id="1220596597" Position="220.2763,3.062,0" Rotation="4.1145" Scale="1,1,1" UnitType="Zergling" Player="15"/>
+    <ObjectUnit Id="1559788305" Position="28.5,34.5,0" Rotation="0.9777" Scale="1,1,1" UnitType="MissileTurret22" Player="10"/>
+    <ObjectUnit Id="280635926" Position="204.5,76.5,0" Rotation="3.2504" Scale="1,1,1" UnitType="MissileTurret22" Player="11"/>
+    <ObjectUnit Id="1951662492" Position="183.5163,44.7412,0" Rotation="3.1118" Scale="1,1,1" UnitType="VanguardMBT2" Player="1"/>
+    <ObjectUnit Id="966404123" Variation="1" Position="201.5,71.5,0" Rotation="4.7121" Scale="1,1,1" UnitType="Skyscraper" Player="11"/>
+    <ObjectUnit Id="233631231" Position="195,59,0" Rotation="4.7121" Scale="1,1,1" UnitType="SupplyDepotLowered" Player="11"/>
+    <ObjectUnit Id="17246223" Variation="1" Position="208.5,74.5,0" Rotation="4.7121" Scale="1,1,1" UnitType="Skyscraper" Player="11"/>
+    <ObjectUnit Id="5761064" Position="4.1066,9.772,0" Rotation="4.4055" Scale="1,1,1" UnitType="AmericanGuard" Player="10"/>
+    <ObjectUnit Id="422679813" Variation="1" Position="16.5,21.5,0" Rotation="4.7121" Scale="1,1,1" UnitType="Skyscraper" Player="10"/>
+    <ObjectUnit Id="1847332527" Variation="1" Position="206.5,73.5,0" Rotation="4.7121" Scale="1,1,1" UnitType="Skyscraper" Player="11"/>
+    <ObjectUnit Id="858452071" Variation="1" Position="11.5,21.5,0" Rotation="4.7121" Scale="1,1,1" UnitType="Skyscraper" Player="10"/>
+    <ObjectUnit Id="322145222" Position="238,69,0" Rotation="4.7121" Scale="1,1,1" UnitType="SupplyDepotLowered" Player="11"/>
+    <ObjectUnit Id="495872711" Position="204.7263,52.9125,0" Rotation="1.593" Scale="1,1,1" UnitType="NewRussianFederationPeacekeeper" Player="11"/>
+    <ObjectUnit Id="2121279354" Variation="1" Position="203.5,69.5,0" Rotation="4.7121" Scale="1,1,1" UnitType="Skyscraper" Player="11"/>
+    <ObjectUnit Id="1906197242" Position="207.5,50.5,0" Rotation="4.7121" Scale="1,1,1" UnitType="Skyscraper" Player="11"/>
+    <ObjectUnit Id="636910853" Position="238.5,62.5,0" Rotation="2.8435" Scale="1,1,1" UnitType="MissileTurret22" Player="11"/>
+    <ObjectUnit Id="783567868" Variation="1" Position="209.5,68.5,0" Rotation="4.7121" Scale="1,1,1" UnitType="Skyscraper" Player="11"/>
+    <ObjectUnit Id="784497750" Position="180.628,47.575,0" Rotation="2.5395" Scale="1,1,1" UnitType="VanguardMBT2" Player="1"/>
+    <ObjectUnit Id="1234404182" Position="28.5,32.5,0" Rotation="4.7121" Scale="1,1,1" UnitType="Flats" Player="10"/>
+    <ObjectUnit Id="1201213984" Position="24.5,30.5,0" Rotation="1.5705" Scale="1,1,1" UnitType="LargeHouse" Player="10"/>
+    <ObjectUnit Id="184451075" Position="9.5,17.5,0" Rotation="4.7121" Scale="1,1,1" UnitType="Skyscraper" Player="10"/>
+    <ObjectUnit Id="1614767341" Variation="1" Position="249.5,72.5,0" Rotation="4.7121" Scale="1,1,1" UnitType="Skyscraper" Player="11"/>
+    <ObjectUnit Id="1327595162" Position="2.5,3.5,0" Rotation="4.7121" Scale="1,1,1" UnitType="Flats" Player="10"/>
+    <ObjectUnit Id="1989585441" Variation="1" Position="204.5,74.5,0" Rotation="4.7121" Scale="1,1,1" UnitType="Skyscraper" Player="11"/>
+    <ObjectUnit Id="2133791472" Variation="1" Position="3.5,33.5,0" Rotation="1.5705" Scale="1,1,1" UnitType="LargeHouse" Player="10"/>
+    <ObjectUnit Id="641879381" Variation="1" Position="6.5,19.5,0" Rotation="4.7121" Scale="1,1,1" UnitType="Flats" Player="10"/>
+    <ObjectUnit Id="1520751319" Position="214.7272,48.2136,0" Rotation="1.593" Scale="1,1,1" UnitType="NewRussianFederationPeacekeeper" Player="11"/>
+    <ObjectUnit Id="648189140" Position="217,45,0" Rotation="3.1413" Scale="1,1,1" UnitType="OilWellII" Player="11"/>
+    <ObjectUnit Id="1583848090" Position="253.5,72.5,0" Rotation="2.7585" Scale="1,1,1" UnitType="MissileTurret22" Player="11"/>
+    <ObjectUnit Id="1993422789" Variation="1" Position="247.5,69.5,0" Rotation="4.7121" Scale="1,1,1" UnitType="Skyscraper" Player="11"/>
+    <ObjectUnit Id="30541873" Variation="1" Position="11.5,50.5,0" Rotation="1.5705" Scale="1,1,1" UnitType="LargeHouse" Player="10"/>
+    <ObjectUnit Id="1869174276" Position="180.0185,41.415,0" Rotation="6.2807" Scale="1,1,1" UnitType="VanguardMBT2" Player="1"/>
+    <ObjectUnit Id="1385010622" Position="2.2153,8.6892,0" Rotation="5.9006" Scale="1,1,1" UnitType="AmericanGuard" Player="10"/>
+    <ObjectUnit Id="1015683117" Variation="1" Position="64.5,31.5,0" Rotation="3.1413" Scale="1,1,1" UnitType="Metal" Player="15"/>
+    <ObjectUnit Id="1721184662" Position="11.5,20.5,0" Rotation="4.7121" Scale="1,1,1" UnitType="Nimbuspillar" Player="10"/>
+    <ObjectUnit Id="954041181" Position="211,53,0" Scale="1,1,1" UnitType="Volgograd" Player="11"/>
+    <ObjectUnit Id="1651334707" Position="12.5,25.5,0" Rotation="4.7121" Scale="1,1,1" UnitType="Flats" Player="10"/>
+    <ObjectUnit Id="630920388" Variation="1" Position="201.5,69.5,0" Rotation="4.7121" Scale="1,1,1" UnitType="Skyscraper" Player="11"/>
+    <ObjectUnit Id="1548905237" Position="18.5,26.5,0" Rotation="4.7121" Scale="1,1,1" UnitType="Flats" Player="10"/>
+    <ObjectUnit Id="1396681137" Variation="1" Position="213.5,52.5,0" Rotation="1.8964" Scale="1,1,1" UnitType="MissileTurret22" Player="11"/>
+    <ObjectUnit Id="905067243" Position="10.5,17.5,0" Rotation="4.7121" Scale="1,1,1" UnitType="Nimbuspillar" Player="10"/>
+    <ObjectUnit Id="99870262" Position="207.5,52.5,0" Rotation="4.7121" Scale="1,1,1" UnitType="Skyscraper" Player="11"/>
+    <ObjectUnit Id="583158523" Position="226.9638,12.6171,0" Rotation="1.1374" Scale="1,1,1" UnitType="Marine" Player="12"/>
+    <ObjectUnit Id="1430454745" Position="178.4172,46.9357,0" Rotation="0.2487" Scale="1,1,1" UnitType="VanguardMBT2" Player="1"/>
+    <ObjectUnit Id="1230138124" Variation="1" Position="7.5,18.5,0" Rotation="4.7121" Scale="1,1,1" UnitType="Skyscraper" Player="10"/>
+    <ObjectUnit Id="1154574214" Position="250,70,0" Scale="1,1,1" UnitType="Nizhnevartovsk" Player="11"/>
+    <ObjectUnit Id="570067637" Position="25.5,49.5,0" Rotation="1.6865" Scale="1,1,1" UnitType="MissileTurret22" Player="10"/>
+    <ObjectUnit Id="944962504" Position="207.2866,46.397,0" Rotation="0.204" Scale="1,1,1" UnitType="NewRussianFederationPeacekeeper" Player="11"/>
+    <ObjectUnit Id="848115993" Variation="1" Position="201.5,72.5,0" Rotation="4.7121" Scale="1,1,1" UnitType="Skyscraper" Player="11"/>
+    <ObjectUnit Id="1177605483" Position="182.0678,2.2167,0" Rotation="3.3261" Scale="1,1,1" UnitType="Marine" Player="12"/>
+    <ObjectUnit Id="614989836" Variation="1" Position="135.5,87.5,0" Rotation="3.1413" Scale="1,1,1" UnitType="Metal" Player="15"/>
+    <ObjectUnit Id="946327141" Variation="1" Position="9.5,18.5,0" Rotation="4.7121" Scale="1,1,1" UnitType="Skyscraper" Player="10"/>
+    <ObjectUnit Id="1114382774" Position="194.3652,2.177,0" Rotation="3.773" Scale="1,1,1" UnitType="Marine" Player="12"/>
+    <ObjectUnit Id="438468135" Variation="1" Position="202.5,73.5,0" Rotation="4.7121" Scale="1,1,1" UnitType="Skyscraper" Player="11"/>
+    <ObjectUnit Id="1932253801" Position="179.2675,50.0356,0" Rotation="2.732" Scale="1,1,1" UnitType="VanguardMBT2" Player="1"/>
+    <ObjectUnit Id="167544250" Position="202.4265,16.8815,0" Rotation="0.5603" Scale="1,1,1" UnitType="Marine" Player="12"/>
+    <ObjectUnit Id="1778501686" Position="17.5,27.5,0" Rotation="4.7121" Scale="1,1,1" UnitType="Flats" Player="10"/>
+    <ObjectUnit Id="1122093537" Variation="1" Position="200.5,71.5,0" Rotation="4.7121" Scale="1,1,1" UnitType="Skyscraper" Player="11"/>
+    <ObjectUnit Id="766826417" Variation="1" Position="210.5,69.5,0" Rotation="4.7121" Scale="1,1,1" UnitType="Skyscraper" Player="11"/>
+    <ObjectUnit Id="429703133" Variation="1" Position="27.5,29.5,0" Rotation="4.7121" Scale="1,1,1" UnitType="Flats" Player="10"/>
+    <ObjectUnit Id="408791282" Position="202.729,49.2233,0" Rotation="4.456" Scale="1,1,1" UnitType="NewRussianFederationPeacekeeper" Player="11"/>
+    <ObjectUnit Id="1111993471" Position="26.5,24.5,0" Rotation="4.7121" Scale="1,1,1" UnitType="Flats" Player="10"/>
+    <ObjectUnit Id="490697284" Variation="1" Position="17.5,22.5,0" Rotation="4.7121" Scale="1,1,1" UnitType="Flats" Player="10"/>
+    <ObjectUnit Id="608164770" Position="24.672,47.927,0" Rotation="0.9606" Scale="1,1,1" UnitType="AmericanGuard" Player="10"/>
+    <ObjectUnit Id="156587389" Variation="1" Position="203.5,73.5,0" Rotation="4.7121" Scale="1,1,1" UnitType="Skyscraper" Player="11"/>
+    <ObjectUnit Id="897591184" Position="8.407,23.8483,0" Rotation="6.1394" Scale="1,1,1" UnitType="AmericanGuard" Player="10"/>
+    <ObjectUnit Id="1154676867" Position="220.4565,10.318,0" Rotation="2.1181" Scale="1,1,1" UnitType="Marine" Player="12"/>
+    <ObjectUnit Id="1555601548" Variation="1" Position="208.5,67.5,0" Rotation="4.7121" Scale="1,1,1" UnitType="Skyscraper" Player="11"/>
+    <ObjectUnit Id="966707441" Variation="1" Position="209.5,73.5,0" Rotation="4.7121" Scale="1,1,1" UnitType="Skyscraper" Player="11"/>
+    <ObjectUnit Id="708382171" Variation="1" Position="8.5,18.5,0" Rotation="4.7121" Scale="1,1,1" UnitType="Skyscraper" Player="10"/>
+    <ObjectUnit Id="1910775185" Variation="1" Position="14.5,26.5,0" Rotation="4.7121" Scale="1,1,1" UnitType="Flats" Player="10"/>
+    <ObjectUnit Id="215817134" Variation="1" Position="250.5,72.5,0" Rotation="4.7121" Scale="1,1,1" UnitType="Skyscraper" Player="11"/>
+    <ObjectUnit Id="1443421753" Variation="1" Position="212.5,55.5,0" Rotation="4.7121" Scale="1,1,1" UnitType="Skyscraper" Player="11"/>
+    <ObjectUnit Id="1158669715" Variation="1" Position="10.5,20.5,0" Rotation="4.7121" Scale="1,1,1" UnitType="Nimbuspillar" Player="10"/>
+    <ObjectUnit Id="1221141651" Position="210,49,0" Rotation="4.7121" Scale="1,1,1" UnitType="SupplyDepotLowered" Player="11"/>
+    <ObjectUnit Id="1369750192" Position="210.5,55.5,0" Rotation="4.7121" Scale="1,1,1" UnitType="Skyscraper" Player="11"/>
+    <ObjectUnit Id="1764887355" Variation="1" Position="200.5,72.5,0" Rotation="1.475" Scale="1,1,1" UnitType="MissileTurret22" Player="11"/>
+    <ObjectUnit Id="210230304" Position="6.5,20.5,0" Rotation="4.7121" Scale="1,1,1" UnitType="Flats" Player="10"/>
+    <ObjectUnit Id="1864026707" Position="217.5,55.5,0" Rotation="4.7121" Scale="1,1,1" UnitType="Skyscraper" Player="11"/>
+    <ObjectUnit Id="698091438" Variation="1" Position="7.5,14.5,0" Rotation="4.7121" Scale="1,1,1" UnitType="Flats" Player="10"/>
+    <ObjectUnit Id="2080013082" Variation="1" Position="12.5,21.5,0" Rotation="4.7121" Scale="1,1,1" UnitType="Skyscraper" Player="10"/>
+    <ObjectUnit Id="2090469050" Position="217.5,76.5,0" Rotation="0.4606" Scale="1,1,1" UnitType="MissileTurret22" Player="11"/>
+    <ObjectUnit Id="682568923" Position="226,69,0" Rotation="4.7121" Scale="1,1,1" UnitType="SupplyDepotLowered" Player="11"/>
+    <ObjectUnit Id="244068727" Position="4.5,17.5,0" Rotation="4.7121" Scale="1,1,1" UnitType="Flats" Player="10"/>
+    <ObjectUnit Id="489291703" Position="228.5,75.5,0" Rotation="1.5705" Scale="1,1,1" UnitType="BoreholeV" Player="11"/>
+    <ObjectUnit Id="1462483434" Position="16.573,18.2622,0" Rotation="3.2814" Scale="1,1,1" UnitType="AmericanGuard" Player="10"/>
+    <ObjectUnit Id="1378851269" Variation="1" Position="17.5,28.5,0" Rotation="4.7121" Scale="1,1,1" UnitType="Flats" Player="10"/>
+    <ObjectUnit Id="1024459304" Position="20.5,26.5,0" Rotation="4.7121" Scale="1,1,1" UnitType="Flats" Player="10"/>
+    <ObjectUnit Id="88451820" Position="9.5,19.5,0" Rotation="4.7121" Scale="1,1,1" UnitType="Skyscraper" Player="10"/>
+    <ObjectUnit Id="1188127090" Variation="1" Position="9.5,20.5,0" Rotation="4.7121" Scale="1,1,1" UnitType="Skyscraper" Player="10"/>
+    <ObjectUnit Id="1765484399" Position="8.5,30.5,0" Rotation="1.5705" Scale="1,1,1" UnitType="LargeHouse" Player="10"/>
+    <ObjectUnit Id="1436428019" Variation="1" Position="202.5,70.5,0" Rotation="4.7121" Scale="1,1,1" UnitType="Skyscraper" Player="11"/>
+    <ObjectUnit Id="1417487097" Position="225.4987,16.085,0" Rotation="6.2651" Scale="1,1,1" UnitType="Marine" Player="12"/>
+    <ObjectUnit Id="1805450537" Position="27.5,25.5,0" Rotation="1.9333" Scale="1,1,1" UnitType="MissileTurret22" Player="10"/>
+    <ObjectUnit Id="1188661472" Position="2.5,16.5,0" Rotation="5.4975" Scale="1,1,1" UnitType="SupplyDepot234223" Player="10"/>
+    <ObjectUnit Id="1873554079" Variation="1" Position="1.5,5.5,0" Rotation="1.5705" Scale="1,1,1" UnitType="LargeHouse" Player="10"/>
+    <ObjectUnit Id="1645086256" Variation="1" Position="246.5,70.5,0" Rotation="4.7121" Scale="1,1,1" UnitType="Skyscraper" Player="11"/>
+    <ObjectUnit Id="1816651613" Position="5.5,13.5,0" Rotation="4.7121" Scale="1,1,1" UnitType="Flats" Player="10"/>
+    <ObjectUnit Id="1742317403" Variation="1" Position="214.5,53.5,0" Rotation="4.7121" Scale="1,1,1" UnitType="Skyscraper" Player="11"/>
+    <ObjectUnit Id="1669764972" Variation="1" Position="3.5,6.5,0" Rotation="4.7121" Scale="1,1,1" UnitType="Flats" Player="10"/>
+    <ObjectUnit Id="812220064" Position="11.5,22.5,0" Rotation="4.7121" Scale="1,1,1" UnitType="Flats" Player="10"/>
+    <ObjectUnit Id="1925413536" Variation="1" Position="7.5,13.5,0" Rotation="4.7121" Scale="1,1,1" UnitType="Flats" Player="10"/>
+    <ObjectUnit Id="1661752507" Position="12.5375,51.457,0" Rotation="5.841" Scale="1,1,1" UnitType="AmericanGuard" Player="10"/>
+    <ObjectUnit Id="895448210" Variation="1" Position="204.5,66.5,0" Rotation="4.7121" Scale="1,1,1" UnitType="Skyscraper" Player="11"/>
+    <ObjectUnit Id="1059370777" Position="214.7626,4.6523,0" Rotation="1.2001" Scale="1,1,1" UnitType="Marine" Player="12"/>
+    <ObjectUnit Id="1641262501" Position="17.5,26.5,0" Rotation="4.7121" Scale="1,1,1" UnitType="Flats" Player="10"/>
+    <ObjectUnit Id="560085847" Variation="1" Position="209.5,69.5,0" Rotation="4.7121" Scale="1,1,1" UnitType="Skyscraper" Player="11"/>
+    <ObjectUnit Id="556832639" Variation="1" Position="210.5,70.5,0" Rotation="4.7121" Scale="1,1,1" UnitType="Skyscraper" Player="11"/>
+    <ObjectUnit Id="746569407" Position="215,66,0" Rotation="4.7121" Scale="1,1,1" UnitType="SupplyDepotLowered" Player="11"/>
+    <ObjectUnit Id="491182182" Position="2.5,17.5,0" Rotation="4.7121" Scale="1,1,1" UnitType="Flats" Player="10"/>
+    <ObjectUnit Id="141208123" Variation="1" Position="16.5,27.5,0" Rotation="4.7121" Scale="1,1,1" UnitType="Flats" Player="10"/>
+    <ObjectUnit Id="1835220759" Position="23.5,48.5,0" Rotation="1.5705" Scale="1,1,1" UnitType="LargeHouse" Player="10"/>
+    <ObjectUnit Id="710303623" Position="188.3454,47.661,0" Rotation="4.6667" Scale="1,1,1" UnitType="VanguardMBT2" Player="1"/>
+    <ObjectUnit Id="2068460244" Position="208.474,60.8222,0" Rotation="2.4147" Scale="1,1,1" UnitType="NewRussianFederationPeacekeeper" Player="11"/>
+    <ObjectUnit Id="439008476" Variation="1" Position="207.5,65.5,0" Rotation="4.346" Scale="1,1,1" UnitType="MissileTurret22" Player="11"/>
+    <ObjectUnit Id="373763129" Variation="1" Position="19.5,28.5,0" Rotation="4.7121" Scale="1,1,1" UnitType="Flats" Player="10"/>
+    <ObjectUnit Id="1621720159" Variation="1" Position="205.5,75.5,0" Rotation="4.7121" Scale="1,1,1" UnitType="Skyscraper" Player="11"/>
+    <ObjectUnit Id="1660080988" Variation="1" Position="210.5,72.5,0" Rotation="4.7121" Scale="1,1,1" UnitType="Skyscraper" Player="11"/>
+    <ObjectUnit Id="1647080360" Position="25.3891,38.7482,0" Rotation="5.8085" Scale="1,1,1" UnitType="AmericanGuard" Player="10"/>
+    <ObjectUnit Id="1052148253" Position="28.5,30.5,0" Rotation="4.7121" Scale="1,1,1" UnitType="Flats" Player="10"/>
+    <ObjectUnit Id="1230504100" Position="15.5,21.5,0" Rotation="4.7121" Scale="1,1,1" UnitType="Skyscraper" Player="10"/>
+    <ObjectUnit Id="601598262" Position="10.5,50.5,0" Rotation="1.5705" Scale="1,1,1" UnitType="LargeHouse" Player="10"/>
+    <ObjectUnit Id="1271167533" Position="192,62,0" Rotation="4.7121" Scale="1,1,1" UnitType="SupplyDepotLowered" Player="11"/>
+    <ObjectUnit Id="1733695235" Position="26.5,25.5,0" Rotation="4.7121" Scale="1,1,1" UnitType="Flats" Player="10"/>
+    <ObjectUnit Id="1125956850" Variation="1" Position="213.5,55.5,0" Rotation="4.7121" Scale="1,1,1" UnitType="Skyscraper" Player="11"/>
+    <ObjectUnit Id="602950069" Position="182.1308,42.913,0" Rotation="3.7722" Scale="1,1,1" UnitType="VanguardMBT2" Player="1"/>
+    <ObjectUnit Id="592889501" Variation="1" Position="27.5,39.5,0" Rotation="1.5705" Scale="1,1,1" UnitType="LargeHouse" Player="10"/>
+    <ObjectUnit Id="1779000806" Position="7.358,15.9702,0" Rotation="1.4372" Scale="1,1,1" UnitType="AmericanGuard" Player="10"/>
+    <ObjectUnit Id="1369479206" Variation="1" Position="247.5,71.5,0" Rotation="4.7121" Scale="1,1,1" UnitType="Skyscraper" Player="11"/>
+    <ObjectUnit Id="571542437" Position="8.4128,29.2392,0" Rotation="2.3032" Scale="1,1,1" UnitType="AmericanGuard" Player="10"/>
+    <ObjectUnit Id="152635826" Variation="1" Position="211.5,72.5,0" Rotation="5.1152" Scale="1,1,1" UnitType="MissileTurret22" Player="11"/>
+    <ObjectUnit Id="426063641" Position="5.5,10.5,0" Rotation="0.4858" Scale="1,1,1" UnitType="MissileTurret22" Player="10"/>
+    <ObjectUnit Id="802039661" Variation="1" Position="14.5,18.5,0" Rotation="4.7121" Scale="1,1,1" UnitType="Nimbuspillar" Player="10"/>
+    <ObjectUnit Id="1570774641" Position="187.6416,45.9304,0" Rotation="0.1738" Scale="1,1,1" UnitType="VanguardMBT2" Player="1"/>
+    <ObjectUnit Id="757956790" Variation="1" Position="208.5,53.5,0" Rotation="4.7121" Scale="1,1,1" UnitType="Skyscraper" Player="11"/>
+    <ObjectUnit Id="208431094" Position="2.3354,0.846,0" Rotation="4.4013" Scale="1,1,1" UnitType="AmericanGuard" Player="10"/>
+    <ObjectUnit Id="1730114219" Position="223.7558,2.8151,0" Rotation="1.1337" Scale="1,1,1" UnitType="Zergling" Player="15"/>
+    <ObjectUnit Id="294853633" Variation="1" Position="16.5,19.5,0" Rotation="4.7121" Scale="1,1,1" UnitType="Nimbuspillar" Player="10"/>
+    <ObjectUnit Id="176516576" Variation="1" Position="7.5,20.5,0" Rotation="4.7121" Scale="1,1,1" UnitType="Flats" Player="10"/>
+    <ObjectUnit Id="562663903" Variation="1" Position="25.5,29.5,0" Rotation="4.7121" Scale="1,1,1" UnitType="Flats" Player="10"/>
+    <ObjectUnit Id="1942575213" Position="7.5,26.5,0" Rotation="4.7121" Scale="1,1,1" UnitType="Flats" Player="10"/>
+    <ObjectUnit Id="46438365" Variation="1" Position="252.5,71.5,0" Rotation="4.7121" Scale="1,1,1" UnitType="Skyscraper" Player="11"/>
+    <ObjectUnit Id="1489841757" Position="8.5,15.5,0" Rotation="5.4323" Scale="1,1,1" UnitType="MissileTurret22" Player="10"/>
+    <ObjectUnit Id="1422659778" Position="10.5,26.5,0" Rotation="4.7121" Scale="1,1,1" UnitType="Flats" Player="10"/>
+    <ObjectUnit Id="1871382619" Position="173.5847,18.3698,0" Rotation="3.8474" Scale="1,1,1" UnitType="Marine" Player="12"/>
+    <ObjectUnit Id="564194151" Position="16.5,26.5,0" Rotation="4.7121" Scale="1,1,1" UnitType="Flats" Player="10"/>
+    <ObjectUnit Id="543022111" Position="225.6591,5.859,0" Rotation="3.3405" Scale="1,1,1" UnitType="Zergling" Player="15"/>
+    <ObjectUnit Id="656817909" Variation="1" Position="203.5,74.5,0" Rotation="4.7121" Scale="1,1,1" UnitType="Skyscraper" Player="11"/>
+    <ObjectUnit Id="687859373" Variation="1" Position="208.5,55.5,0" Rotation="4.7121" Scale="1,1,1" UnitType="Skyscraper" Player="11"/>
+    <ObjectUnit Id="993832414" Variation="1" Position="215.5,53.5,0" Rotation="4.7121" Scale="1,1,1" UnitType="Skyscraper" Player="11"/>
+    <ObjectUnit Id="1655858072" Position="17.5,42.5,0" Rotation="1.5705" Scale="1,1,1" UnitType="LargeHouse" Player="10"/>
+    <ObjectUnit Id="389825192" Variation="1" Position="16.5,22.5,0" Rotation="4.7121" Scale="1,1,1" UnitType="Flats" Player="10"/>
+    <ObjectUnit Id="451583028" Position="239.5,62.5,0" Rotation="1.5705" Scale="1,1,1" UnitType="BoreholeV" Player="11"/>
+    <ObjectUnit Id="1788395809" Position="8.5,16.5,0" Rotation="5.271" Scale="1,1,1" UnitType="MissileTurret22" Player="10"/>
+    <ObjectUnit Id="1151236678" Position="12.5,17.5,0" Rotation="4.7121" Scale="1,1,1" UnitType="Nimbuspillar" Player="10"/>
+    <ObjectUnit Id="786370647" Position="225.8244,2.3005,0" Rotation="5.5861" Scale="1,1,1" UnitType="Zergling" Player="15"/>
+    <ObjectUnit Id="941983307" Position="19.5,25.5,0" Rotation="0.1337" Scale="1,1,1" UnitType="MissileTurret22" Player="10"/>
+    <ObjectUnit Id="617025143" Position="2.5,6.5,0" Rotation="4.7121" Scale="1,1,1" UnitType="Flats" Player="10"/>
+    <ObjectUnit Id="496407890" Variation="1" Position="205.5,67.5,0" Rotation="4.7121" Scale="1,1,1" UnitType="Skyscraper" Player="11"/>
+    <ObjectUnit Id="575087368" Variation="1" Position="17.5,41.5,0" Rotation="1.5705" Scale="1,1,1" UnitType="LargeHouse" Player="10"/>
+    <ObjectUnit Id="7621751" Position="210,67,0" Rotation="4.7121" Scale="1,1,1" UnitType="SupplyDepotLowered" Player="11"/>
+    <ObjectUnit Id="1705131474" Position="11.5,19.5,0" Rotation="4.7121" Scale="1,1,1" UnitType="Nimbuspillar" Player="10"/>
+    <ObjectUnit Id="1753017472" Position="9.5,32.5,0" Rotation="1.5705" Scale="1,1,1" UnitType="LargeHouse" Player="10"/>
+    <ObjectUnit Id="1275930394" Variation="1" Position="253.5,71.5,0" Rotation="4.7121" Scale="1,1,1" UnitType="Skyscraper" Player="11"/>
+    <ObjectUnit Id="1753604959" Position="8.5,31.5,0" Rotation="1.5705" Scale="1,1,1" UnitType="LargeHouse" Player="10"/>
+    <ObjectUnit Id="938412629" Variation="1" Position="14.5,21.5,0" Rotation="4.7121" Scale="1,1,1" UnitType="Skyscraper" Player="10"/>
+    <ObjectUnit Id="1616059529" Position="226.623,14.3088,0" Rotation="5.0788" Scale="1,1,1" UnitType="Marine" Player="12"/>
+    <ObjectUnit Id="86775751" Variation="1" Position="211.5,50.5,0" Rotation="4.7121" Scale="1,1,1" UnitType="Skyscraper" Player="11"/>
+    <ObjectUnit Id="1318192653" Variation="1" Position="205.5,74.5,0" Rotation="4.7121" Scale="1,1,1" UnitType="Skyscraper" Player="11"/>
+    <ObjectUnit Id="265837791" Variation="1" Position="208.5,73.5,0" Rotation="4.7121" Scale="1,1,1" UnitType="Skyscraper" Player="11"/>
+    <ObjectUnit Id="1990564503" Position="245.5,61.5,0" Rotation="5.4975" Scale="1,1,1" UnitType="SupplyDepot234223" Player="11"/>
+    <ObjectUnit Id="369613741" Position="222.8627,39.7004,0" Rotation="1.593" Scale="1,1,1" UnitType="NewRussianFederationPeacekeeper" Player="11"/>
+    <ObjectUnit Id="1695509594" Position="243.0837,65.4621,0" Rotation="5.6022" Scale="1,1,1" UnitType="NewRussianFederationPeacekeeper" Player="11"/>
+    <ObjectUnit Id="979658903" Position="182.8422,46.7675,0" Rotation="3.614" Scale="1,1,1" UnitType="VanguardMBT2" Player="1"/>
+    <ObjectUnit Id="677527554" Position="8.5,25.5,0" Rotation="4.7121" Scale="1,1,1" UnitType="Flats" Player="10"/>
+    <ObjectUnit Id="1057697378" Variation="1" Position="249.5,67.5,0" Rotation="4.7121" Scale="1,1,1" UnitType="Skyscraper" Player="11"/>
+    <ObjectUnit Id="1251894876" Position="222.1884,8.9448,0" Rotation="0.7756" Scale="1,1,1" UnitType="Zergling" Player="15"/>
+    <ObjectUnit Id="119115834" Variation="1" Position="27.5,30.5,0" Rotation="4.7121" Scale="1,1,1" UnitType="Flats" Player="10"/>
+    <ObjectUnit Id="982590497" Variation="1" Position="26.5,26.5,0" Rotation="4.7121" Scale="1,1,1" UnitType="Flats" Player="10"/>
+    <ObjectUnit Id="1618669622" Position="3.5,5.5,0" Rotation="4.7121" Scale="1,1,1" UnitType="Flats" Player="10"/>
+    <ObjectUnit Id="370776813" Variation="1" Position="13.5,25.5,0" Rotation="4.7121" Scale="1,1,1" UnitType="Flats" Player="10"/>
+    <ObjectUnit Id="792439521" Variation="1" Position="207.5,68.5,0" Rotation="4.7121" Scale="1,1,1" UnitType="Skyscraper" Player="11"/>
+    <ObjectUnit Id="146439051" Position="17.5,21.5,0" Rotation="4.7121" Scale="1,1,1" UnitType="Skyscraper" Player="10"/>
+    <ObjectUnit Id="1425897910" Variation="1" Position="26.5,38.5,0" Rotation="1.5705" Scale="1,1,1" UnitType="LargeHouse" Player="10"/>
+    <ObjectUnit Id="591328585" Variation="1" Position="13.5,20.5,0" Rotation="4.7121" Scale="1,1,1" UnitType="Nimbuspillar" Player="10"/>
+    <ObjectUnit Id="1428242755" Variation="1" Position="13.5,26.5,0" Rotation="4.7121" Scale="1,1,1" UnitType="Flats" Player="10"/>
+    <ObjectUnit Id="407218291" Variation="1" Position="19.5,26.5,0" Rotation="4.7121" Scale="1,1,1" UnitType="Flats" Player="10"/>
+    <ObjectUnit Id="1341217746" Position="177.6992,48.7036,0" Rotation="1.1252" Scale="1,1,1" UnitType="VanguardMBT2" Player="1"/>
+    <ObjectUnit Id="527497510" Variation="1" Position="248.5,67.5,0" Rotation="4.7121" Scale="1,1,1" UnitType="Skyscraper" Player="11"/>
+    <ObjectUnit Id="348085989" Variation="1" Position="207.5,74.5,0" Rotation="4.7121" Scale="1,1,1" UnitType="Skyscraper" Player="11"/>
+    <ObjectUnit Id="1694921352" Variation="1" Position="7.5,17.5,0" Rotation="4.7121" Scale="1,1,1" UnitType="Skyscraper" Player="10"/>
+    <ObjectUnit Id="2084249571" Position="28.5,39.5,0" Rotation="1.5705" Scale="1,1,1" UnitType="LargeHouse" Player="10"/>
+    <ObjectUnit Id="1711017736" Position="218.5,75.5,0" Rotation="5.4975" Scale="1,1,1" UnitType="SupplyDepot234223" Player="11"/>
+    <ObjectUnit Id="1647919212" Variation="1" Position="209.5,55.5,0" Rotation="4.7121" Scale="1,1,1" UnitType="Skyscraper" Player="11"/>
+    <ObjectUnit Id="99639605" Position="17.3,24.7927,0" Rotation="2.387" Scale="1,1,1" UnitType="AmericanGuard" Player="10"/>
+    <ObjectUnit Id="1140935562" Variation="1" Position="15.5,26.5,0" Rotation="4.7121" Scale="1,1,1" UnitType="Flats" Player="10"/>
+    <ObjectUnit Id="214420103" Variation="1" Position="28.5,29.5,0" Rotation="4.7121" Scale="1,1,1" UnitType="Flats" Player="10"/>
+    <ObjectUnit Id="2127955806" Variation="1" Position="5.5,18.5,0" Rotation="4.7121" Scale="1,1,1" UnitType="Skyscraper" Player="10"/>
+    <ObjectUnit Id="355230316" Position="5.5,25.5,0" Rotation="4.7121" Scale="1,1,1" UnitType="Flats" Player="10"/>
+    <ObjectUnit Id="619251097" Position="4.5,18.5,0" Rotation="4.7121" Scale="1,1,1" UnitType="Flats" Player="10"/>
+    <ObjectUnit Id="1453357820" Position="16.5,28.5,0" Rotation="1.5705" Scale="1,1,1" UnitType="LargeHouse" Player="10"/>
+    <ObjectUnit Id="441240806" Variation="1" Position="203.5,71.5,0" Rotation="4.7121" Scale="1,1,1" UnitType="Skyscraper" Player="11"/>
+    <ObjectUnit Id="2147384677" Position="212.4602,42.5512,0" Rotation="0.8896" Scale="1,1,1" UnitType="NewRussianFederationPeacekeeper" Player="11"/>
+    <ObjectUnit Id="1863578429" Variation="1" Position="247.5,70.5,0" Rotation="4.7121" Scale="1,1,1" UnitType="Skyscraper" Player="11"/>
+    <ObjectUnit Id="431751528" Position="13,19,0" Scale="1,1,1" UnitType="NewYork" Player="10"/>
+    <ObjectUnit Id="2001192426" Variation="1" Position="213.5,54.5,0" Rotation="4.7121" Scale="1,1,1" UnitType="Skyscraper" Player="11"/>
+    <ObjectUnit Id="1352249719" Variation="1" Position="8.5,13.5,0" Rotation="4.7121" Scale="1,1,1" UnitType="Flats" Player="10"/>
+    <ObjectUnit Id="1343918610" Position="11.5,18.5,0" Rotation="4.7121" Scale="1,1,1" UnitType="Nimbuspillar" Player="10"/>
+    <ObjectUnit Id="654103170" Variation="1" Position="5.5,11.5,0" Rotation="4.7121" Scale="1,1,1" UnitType="Flats" Player="10"/>
+    <ObjectUnit Id="280428602" Position="24.5,29.5,0" Rotation="4.7121" Scale="1,1,1" UnitType="Flats" Player="10"/>
+    <ObjectUnit Id="1116811238" Position="222,69,0" Rotation="4.7121" Scale="1,1,1" UnitType="SupplyDepotLowered" Player="11"/>
+    <ObjectUnit Id="425720933" Position="219.134,3.0163,0" Rotation="5.4377" Scale="1,1,1" UnitType="Zergling" Player="15"/>
+    <ObjectUnit Id="161900745" Position="10.5,18.5,0" Rotation="4.7121" Scale="1,1,1" UnitType="Nimbuspillar" Player="10"/>
+    <ObjectUnit Id="443770319" Variation="1" Position="27.5,32.5,0" Rotation="1.5705" Scale="1,1,1" UnitType="LargeHouse" Player="10"/>
+    <ObjectUnit Id="867420632" Position="213.2448,2.6718,0" Rotation="4.212" Scale="1,1,1" UnitType="Marine" Player="12"/>
+    <ObjectUnit Id="2078416377" Position="223.4,7.837,0" Rotation="3.024" Scale="1,1,1" UnitType="Zergling" Player="15"/>
+    <ObjectUnit Id="1205438242" Variation="1" Position="6.5,18.5,0" Rotation="4.7121" Scale="1,1,1" UnitType="Skyscraper" Player="10"/>
+    <ObjectUnit Id="1087122651" Position="11.5,51.5,0" Rotation="1.5705" Scale="1,1,1" UnitType="LargeHouse" Player="10"/>
+    <ObjectUnit Id="359988580" Position="28.5,26.5,0" Rotation="4.7121" Scale="1,1,1" UnitType="Flats" Player="10"/>
+    <ObjectUnit Id="709927255" Position="222.2155,12.086,0" Rotation="2.5717" Scale="1,1,1" UnitType="Marine" Player="12"/>
+    <ObjectUnit Id="96960053" Variation="1" Position="30.5,28.5,0" Rotation="0.5776" Scale="1,1,1" UnitType="MissileTurret22" Player="10"/>
+    <ObjectUnit Id="741581854" Position="23.5,49.5,0" Rotation="1.5705" Scale="1,1,1" UnitType="LargeHouse" Player="10"/>
+    <ObjectUnit Id="1694694588" Position="204,65,0" Rotation="4.7121" Scale="1,1,1" UnitType="SupplyDepotLowered" Player="11"/>
+    <ObjectUnit Id="602169945" Variation="1" Position="26.5,39.5,0" Rotation="1.5705" Scale="1,1,1" UnitType="LargeHouse" Player="10"/>
+    <ObjectUnit Id="1396432953" Position="2.5,32.5,0" Rotation="5.4975" Scale="1,1,1" UnitType="SupplyDepot234223" Player="10"/>
+    <ObjectUnit Id="1749539947" Position="10.2243,21.6542,0" Rotation="1.5781" Scale="1,1,1" UnitType="AmericanGuard" Player="10"/>
+    <ObjectUnit Id="1744075403" Variation="1" Position="253.5,69.5,0" Rotation="4.7121" Scale="1,1,1" UnitType="Skyscraper" Player="11"/>
+    <ObjectUnit Id="760701317" Variation="1" Position="210.5,71.5,0" Rotation="4.7121" Scale="1,1,1" UnitType="Skyscraper" Player="11"/>
+    <ObjectUnit Id="245965347" Position="200.7668,56.3161,0" Rotation="4.1052" Scale="1,1,1" UnitType="NewRussianFederationPeacekeeper" Player="11"/>
+    <ObjectUnit Id="1456269482" Variation="1" Position="11.5,17.5,0" Rotation="4.7121" Scale="1,1,1" UnitType="Nimbuspillar" Player="10"/>
+    <ObjectUnit Id="1938936701" Variation="1" Position="11.5,14.5,0" Rotation="4.7121" Scale="1,1,1" UnitType="Skyscraper" Player="10"/>
+    <ObjectUnit Id="619706319" Variation="1" Position="252.5,67.5,0" Rotation="4.7121" Scale="1,1,1" UnitType="Skyscraper" Player="11"/>
+    <ObjectUnit Id="2057727263" Position="244.8813,68.1911,0" Rotation="4.0151" Scale="1,1,1" UnitType="NewRussianFederationPeacekeeper" Player="11"/>
+    <ObjectUnit Id="345479896" Variation="1" Position="18.5,27.5,0" Rotation="4.7121" Scale="1,1,1" UnitType="Flats" Player="10"/>
+    <ObjectUnit Id="897392508" Variation="1" Position="203.5,72.5,0" Rotation="4.7121" Scale="1,1,1" UnitType="Skyscraper" Player="11"/>
+    <ObjectUnit Id="2111647533" Variation="1" Position="10.5,25.5,0" Rotation="4.7121" Scale="1,1,1" UnitType="Flats" Player="10"/>
+    <ObjectUnit Id="214307449" Variation="1" Position="252.5,68.5,0" Rotation="4.7121" Scale="1,1,1" UnitType="Skyscraper" Player="11"/>
+    <ObjectUnit Id="498187878" Position="181.6108,45.025,0" Rotation="1.8093" Scale="1,1,1" UnitType="VanguardMBT2" Player="1"/>
+    <ObjectUnit Id="1201898460" Variation="1" Position="8.5,19.5,0" Rotation="4.7121" Scale="1,1,1" UnitType="Skyscraper" Player="10"/>
+</PlacedObjects>

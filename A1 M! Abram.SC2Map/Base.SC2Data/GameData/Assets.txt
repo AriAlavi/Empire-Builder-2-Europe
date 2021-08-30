@@ -1,0 +1,16 @@
+UI/ResourceIcon0=credits.dds
+UI/ResourceIcon0_Terr=credits.dds
+UI/ResourceIconNoBackground0=credits.dds
+UI/ResourceIconNoBackground0_Terr=credits.dds
+UI/ResourceIcon1=Assets\Textures\btn-tips-droppedterrazine.dds
+UI/ResourceIcon1_Terr=Assets\Textures\btn-tips-droppedterrazine.dds
+UI/ResourceIconNoBackground1=Assets\Textures\btn-tips-droppedterrazine.dds
+UI/ResourceIconNoBackground1_Terr=Assets\Textures\btn-tips-droppedterrazine.dds
+UI/ResourceIcon2=metal.dds
+UI/ResourceIconNoBackground2=metal.dds
+UI/ResourceIconNoBackground2_Terr=metal.dds
+UI/ResourceIcon2_Terr=metal.dds
+UI/ResourceIcon3_Terr=science.dds
+UI/ResourceIcon3=science.dds
+UI/ResourceIconNoBackground3=science.dds
+UI/ResourceIconNoBackground3_Terr=science.dds
